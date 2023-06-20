@@ -9896,7 +9896,7 @@ const routes = [{
   }
 }];
 const router = createRouter({
-  history: createWebHistory("/pjcan-app/"),
+  history: createWebHistory("/pjcan-test/"),
   routes
 });
 router.beforeEach(async (to, from, next) => {
@@ -28437,7 +28437,7 @@ axios.default = axios;
 
 // create an axios instance
 const service = lib_axios.create({
-  baseURL: "/pjcan-app/",
+  baseURL: "/pjcan-test/",
   timeout: 30000
 });
 // request interceptor
