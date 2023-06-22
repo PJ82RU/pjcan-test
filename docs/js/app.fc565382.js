@@ -4942,7 +4942,11 @@ var vue_i18n_esm_bundler = __webpack_require__(5658);
       }
     },
     onboard: {
-      title: "Бортовой компьютер"
+      title: "Бортовой компьютер",
+      description: "Список карточек отображаемых на экране \"Бортовой компьютер\". Порядок меняется путем перетаскивания блока вверх/вниз. Так же можно включить/выключить отображения на странице",
+      reset: {
+        menu: "Упорядочить по умолчанию"
+      }
     }
   },
   scanner: {
@@ -5475,7 +5479,11 @@ var vue_i18n_esm_bundler = __webpack_require__(5658);
       }
     },
     onboard: {
-      title: "On-board"
+      title: "On-board",
+      description: "A list of cards displayed on the On-Board Computer screen. The order is changed by dragging the block up/down. You can also enable/disable the display on the page",
+      reset: {
+        menu: "Arrange by default"
+      }
     }
   },
   scanner: {
@@ -9925,8 +9933,8 @@ router.beforeEach(async (to, from, next) => {
   next();
 });
 /* harmony default export */ var src_router = (router);
-// EXTERNAL MODULE: ./src/store/index.ts + 10 modules
-var store = __webpack_require__(5986);
+// EXTERNAL MODULE: ./src/store/index.ts + 12 modules
+var store = __webpack_require__(9918);
 // EXTERNAL MODULE: ./node_modules/vue-i18n/dist/vue-i18n.esm-bundler.js + 4 modules
 var vue_i18n_esm_bundler = __webpack_require__(5658);
 // EXTERNAL MODULE: ./node_modules/vue3-toastify/dist/esm/index.js
@@ -23820,7 +23828,7 @@ const StructViewConfig = {
 
 /***/ }),
 
-/***/ 5986:
+/***/ 9918:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23848,6 +23856,15 @@ __webpack_require__.d(mutations_namespaceObject, {
   "setMessage": function() { return setMessage; },
   "setOnboardCardList": function() { return setOnboardCardList; },
   "setVisibleMessage": function() { return setVisibleMessage; }
+});
+
+// NAMESPACE OBJECT: ./src/store/modules/app/actions.ts
+var actions_namespaceObject = {};
+__webpack_require__.r(actions_namespaceObject);
+__webpack_require__.d(actions_namespaceObject, {
+  "readOnboardCardList": function() { return readOnboardCardList; },
+  "resetOnboardCardList": function() { return resetOnboardCardList; },
+  "writeOnboardCardList": function() { return writeOnboardCardList; }
 });
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.push.js
@@ -25356,39 +25373,42 @@ var index = {
 };
 /* harmony default export */ var vuex_esm_bundler = ((/* unused pure expression or super */ null && (index)));
 
+;// CONCATENATED MODULE: ./src/store/modules/app/onboard-card-list-default.ts
+/* harmony default export */ var onboard_card_list_default = ([{
+  name: "info",
+  enabled: true,
+  car: [0, 1, 2]
+}, {
+  name: "bose",
+  enabled: false,
+  car: [2]
+}, {
+  name: "engine",
+  enabled: true,
+  car: [0, 1, 2]
+}, {
+  name: "fuel",
+  enabled: true,
+  car: [0, 1, 2]
+}, {
+  name: "movement",
+  enabled: true,
+  car: [0, 1, 2]
+}, {
+  name: "doors",
+  enabled: true,
+  car: [0, 1]
+}, {
+  name: "climate",
+  enabled: true,
+  car: [0, 1, 2]
+}]);
 ;// CONCATENATED MODULE: ./src/store/modules/app/state.ts
+
 const state = {
   messages: [],
   visibleMessage: false,
-  onboardCardList: [{
-    name: "info",
-    enabled: true,
-    car: [0, 1, 2]
-  }, {
-    name: "bose",
-    enabled: false,
-    car: [2]
-  }, {
-    name: "engine",
-    enabled: true,
-    car: [0, 1, 2]
-  }, {
-    name: "fuel",
-    enabled: true,
-    car: [0, 1, 2]
-  }, {
-    name: "movement",
-    enabled: true,
-    car: [0, 1, 2]
-  }, {
-    name: "doors",
-    enabled: true,
-    car: [0, 1]
-  }, {
-    name: "climate",
-    enabled: true,
-    car: [0, 1, 2]
-  }]
+  onboardCardList: onboard_card_list_default
 };
 /* harmony default export */ var app_state = (state);
 ;// CONCATENATED MODULE: ./src/store/modules/app/getters.ts
@@ -25449,17 +25469,60 @@ const setOnboardCardList = (state, value) => {
     ...x
   }));
 };
+;// CONCATENATED MODULE: ./src/store/modules/app/actions.ts
+
+/**
+ * Чтение списка onboardCardList из local storage
+ * @param {any} commit
+ */
+const readOnboardCardList = ({
+  commit
+}) => {
+  const res = window.localStorage.getItem("OnboardCardList");
+  if (res?.length) {
+    try {
+      const onboardCardList = JSON.parse(res);
+      if (Array.isArray(onboardCardList)) {
+        commit("setOnboardCardList", onboardCardList);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }
+};
+/**
+ * Запись списка onboardCardList в local storage
+ * @param {any} commit
+ */
+const writeOnboardCardList = ({
+  getters
+}) => {
+  const res = JSON.stringify(getters.onboardCardList);
+  window.localStorage.setItem("OnboardCardList", res);
+};
+/**
+ * Сбросить значения списка onboardCardList по умолчанию
+ * @param {any} commit
+ * @param {any} dispatch
+ */
+const resetOnboardCardList = ({
+  commit,
+  dispatch
+}) => {
+  commit("setOnboardCardList", onboard_card_list_default);
+  dispatch("writeOnboardCardList");
+};
 ;// CONCATENATED MODULE: ./src/store/modules/app/index.ts
 
 
 
-// import * as actions from "./actions";
+
 /* harmony default export */ var app = ({
   namespaced: true,
   state: app_state,
   getters: getters_namespaceObject,
-  mutations: mutations_namespaceObject
-  // actions
+  mutations: mutations_namespaceObject,
+  actions: actions_namespaceObject
 });
 ;// CONCATENATED MODULE: ./src/store/index.ts
 
@@ -81695,7 +81758,7 @@ function useRender(render) {
 /***/ (function(module) {
 
 "use strict";
-module.exports = JSON.parse('{"name":"pjcan","version":"0.3.8","private":true,"description":"CanBus project for Mazda 3","author":"PJ82. Spiridonov Vladislav","scripts":{"serve":"vue-cli-service serve","build":"vue-cli-service build","build test":"vue-cli-service build --mode test"},"dependencies":{"@egjs/vue3-flicking":"^4.10.2","@mdi/font":"7.0.96","axios":"^1.1.3","bitset":"^5.1.1","core-js":"^3.26.0","eventemitter3":"^4.0.7","moment":"^2.29.4","register-service-worker":"^1.7.2","roboto-fontface":"*","screenfull":"^6.0.2","vue":"^3.2.41","vue-i18n":"^9.2.2","vue-router":"^4.1.6","vue3-toastify":"^0.0.3","vuedraggable":"^4.1.0","vuetify":"^3.1.5","vuex":"^4.1.0","webfontloader":"^1.6.28"},"devDependencies":{"@types/node":"^12.0.2","@types/webfontloader":"^1.6.29","@typescript-eslint/eslint-plugin":"^5.42.0","@typescript-eslint/parser":"^5.42.0","@vue/cli-plugin-babel":"~5.0.8","@vue/cli-plugin-eslint":"~5.0.8","@vue/cli-plugin-pwa":"~5.0.8","@vue/cli-plugin-router":"~5.0.8","@vue/cli-plugin-typescript":"~5.0.8","@vue/cli-plugin-vuex":"~5.0.8","@vue/cli-service":"~5.0.8","@vue/eslint-config-typescript":"^11.0.2","@vueuse/core":"^9.4.0","eslint":"^8.26.0","eslint-config-prettier":"^8.5.0","eslint-plugin-prettier":"^4.2.1","eslint-plugin-vue":"^9.7.0","prettier":"^2.7.1","sass":"^1.56.0","sass-loader":"^13.1.0","script-ext-html-webpack-plugin":"^2.1.5","typescript":"~4.8.4","vue-cli-plugin-vuetify":"~2.5.8","webpack-plugin-vuetify":"^2.0.0"},"eslintConfig":{"root":true,"env":{"node":true},"extends":["plugin:vue/vue3-essential","eslint:recommended","@vue/typescript/recommended","plugin:prettier/recommended"],"parserOptions":{"ecmaVersion":2020},"rules":{}},"browserslist":["> 1%","last 2 versions","not dead","not ie 11"],"productName":"PJCan App"}');
+module.exports = JSON.parse('{"name":"pjcan","version":"0.3.9","private":true,"description":"CanBus project for Mazda 3","author":"PJ82. Spiridonov Vladislav","scripts":{"serve":"vue-cli-service serve","build":"vue-cli-service build","build test":"vue-cli-service build --mode test"},"dependencies":{"@egjs/vue3-flicking":"^4.10.2","@mdi/font":"7.0.96","axios":"^1.1.3","bitset":"^5.1.1","core-js":"^3.26.0","eventemitter3":"^4.0.7","moment":"^2.29.4","register-service-worker":"^1.7.2","roboto-fontface":"*","screenfull":"^6.0.2","vue":"^3.2.41","vue-i18n":"^9.2.2","vue-router":"^4.1.6","vue3-toastify":"^0.0.3","vuedraggable":"^4.1.0","vuetify":"^3.1.5","vuex":"^4.1.0","webfontloader":"^1.6.28"},"devDependencies":{"@types/node":"^12.0.2","@types/webfontloader":"^1.6.29","@typescript-eslint/eslint-plugin":"^5.42.0","@typescript-eslint/parser":"^5.42.0","@vue/cli-plugin-babel":"~5.0.8","@vue/cli-plugin-eslint":"~5.0.8","@vue/cli-plugin-pwa":"~5.0.8","@vue/cli-plugin-router":"~5.0.8","@vue/cli-plugin-typescript":"~5.0.8","@vue/cli-plugin-vuex":"~5.0.8","@vue/cli-service":"~5.0.8","@vue/eslint-config-typescript":"^11.0.2","@vueuse/core":"^9.4.0","eslint":"^8.26.0","eslint-config-prettier":"^8.5.0","eslint-plugin-prettier":"^4.2.1","eslint-plugin-vue":"^9.7.0","prettier":"^2.7.1","sass":"^1.56.0","sass-loader":"^13.1.0","script-ext-html-webpack-plugin":"^2.1.5","typescript":"~4.8.4","vue-cli-plugin-vuetify":"~2.5.8","webpack-plugin-vuetify":"^2.0.0"},"eslintConfig":{"root":true,"env":{"node":true},"extends":["plugin:vue/vue3-essential","eslint:recommended","@vue/typescript/recommended","plugin:prettier/recommended"],"parserOptions":{"ecmaVersion":2020},"rules":{}},"browserslist":["> 1%","last 2 versions","not dead","not ie 11"],"productName":"PJCan App"}');
 
 /***/ })
 
