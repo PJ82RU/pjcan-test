@@ -167,7 +167,7 @@ var Denied = __webpack_require__(3962);
 
 
 
-const Component = (0,runtime_core_esm_bundler/* defineAsyncComponent */.RC)(() => __webpack_require__.e(/* import() */ 328).then(__webpack_require__.bind(__webpack_require__, 328)));
+const Component = (0,runtime_core_esm_bundler/* defineAsyncComponent */.RC)(() => __webpack_require__.e(/* import() */ 176).then(__webpack_require__.bind(__webpack_require__, 7176)));
 /* harmony default export */ var Loadervue_type_script_lang_ts = ({
   name: "Loader",
   components: {
