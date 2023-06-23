@@ -4702,12 +4702,12 @@ var vue_i18n_esm_bundler = __webpack_require__(5658);
       total: {
         title: "Количество топлива",
         description: "Экспериментальное значение (расчетное), л",
-        menu: "LCD: Количество топлива"
+        menu: "LCD: Количество топлива (расчетное)"
       },
       consumption: {
         title: "Расход топлива",
         description: "Экспериментальное значение (расчетное), л/ч",
-        menu: "LCD: Расход топлива"
+        menu: "LCD: Расход топлива (расчетное)"
       },
       settings: {
         title: "Настройки расхода",
@@ -5239,12 +5239,12 @@ var vue_i18n_esm_bundler = __webpack_require__(5658);
       total: {
         title: "Fuel quantity",
         description: "Experimental value (calculated), l",
-        menu: "LCD: Fuel quantity"
+        menu: "LCD: Fuel quantity (calc)"
       },
       consumption: {
         title: "Fuel consumption",
         description: "Experimental value (calculated), l/h",
-        menu: "LCD: Fuel consumption"
+        menu: "LCD: Fuel consumption (calc)"
       },
       settings: {
         title: "Fuel consumption settings",
