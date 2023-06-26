@@ -22435,7 +22435,8 @@ const StructClimateValue = {
   airDLegs: bluetooth/* BluetoothStruct.bit */.GD.bit(),
   airDBody: bluetooth/* BluetoothStruct.bit */.GD.bit(),
   airDWindshield: bluetooth/* BluetoothStruct.bit */.GD.bit(),
-  visible: bluetooth/* BluetoothStruct.bit */.GD.bit(),
+  airDBackWin: bluetooth/* BluetoothStruct.bit */.GD.bit(),
+  eco: bluetooth/* BluetoothStruct.bit */.GD.bit(),
   airRate: bluetooth/* BluetoothStruct.uint8 */.GD.uint8(),
   airType: bluetooth/* BluetoothStruct.uint8 */.GD.uint8(),
   tempType: bluetooth/* BluetoothStruct.uint8 */.GD.uint8(),
@@ -22460,7 +22461,8 @@ class ClimateValue extends BaseModel/* BaseModel */.g {
     (0,defineProperty/* default */.Z)(this, "airDLegs", false);
     (0,defineProperty/* default */.Z)(this, "airDBody", false);
     (0,defineProperty/* default */.Z)(this, "airDWindshield", false);
-    (0,defineProperty/* default */.Z)(this, "visible", false);
+    (0,defineProperty/* default */.Z)(this, "airDBackWin", false);
+    (0,defineProperty/* default */.Z)(this, "eco", false);
     (0,defineProperty/* default */.Z)(this, "airRate", 0);
     (0,defineProperty/* default */.Z)(this, "airType", 0);
     (0,defineProperty/* default */.Z)(this, "tempType", 0);
