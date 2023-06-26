@@ -4654,7 +4654,7 @@ var vue_i18n_esm_bundler = __webpack_require__(5658);
         description: "Нагрузка чего-то на что-то, хз как рассчитывается",
         menu: "LCD: Нагрузка на ДВС"
       },
-      motors: {
+      worktime: {
         title: "Моточасы",
         description: "Общее время работы двигателя",
         menu: "LCD: Моточасы"
@@ -4682,7 +4682,7 @@ var vue_i18n_esm_bundler = __webpack_require__(5658);
           description: "Общее время работы двигателя"
         },
         countRPM: {
-          title: "Счетчик RPM",
+          title: "Счетчик RPM, тыс.",
           description: "Общее количество полных оборотов коленчатого вала двигателя в тысячах"
         }
       }
@@ -5192,7 +5192,7 @@ var vue_i18n_esm_bundler = __webpack_require__(5658);
         description: "The load of something on something, I don’t know how it is calculated",
         menu: "LCD: Engine load"
       },
-      motors: {
+      worktime: {
         title: "Hours",
         description: "Total engine running time",
         menu: "LCD: Hours"
@@ -5219,7 +5219,7 @@ var vue_i18n_esm_bundler = __webpack_require__(5658);
           description: "Total engine operating time"
         },
         countRPM: {
-          title: "RPM counter",
+          title: "RPM counter, thous.",
           description: "The total number of full speed of the crankshaft of the engine in thousands"
         }
       }
@@ -22774,12 +22774,12 @@ var bluetooth = __webpack_require__(9014);
 var BaseModel = __webpack_require__(9036);
 ;// CONCATENATED MODULE: ./src/models/pjcan/variables/engine/StructEngineConfig.ts
 
-const API_VARIABLE_ENGINE_CONFIG_SIZE = 9;
+const API_VARIABLE_ENGINE_CONFIG_SIZE = 17;
 /** Структура данных */
 const StructEngineConfig = {
   showDays: bluetooth/* BluetoothStruct.bit */.GD.bit(),
-  totalSeconds: bluetooth/* BluetoothStruct.uint32 */.GD.uint32(),
-  totalCountRPM: bluetooth/* BluetoothStruct.uint32 */.GD.uint32()
+  totalSeconds: bluetooth/* BluetoothStruct.uint64 */.GD.uint64(),
+  totalCountRPM: bluetooth/* BluetoothStruct.uint64 */.GD.uint64()
 };
 ;// CONCATENATED MODULE: ./src/models/pjcan/variables/engine/EngineConfig.ts
 
@@ -22794,8 +22794,8 @@ class EngineConfig extends BaseModel/* BaseModel */.g {
   constructor(data) {
     super();
     (0,defineProperty/* default */.Z)(this, "showDays", false);
-    (0,defineProperty/* default */.Z)(this, "totalSeconds", 0);
-    (0,defineProperty/* default */.Z)(this, "totalCountRPM", 0);
+    (0,defineProperty/* default */.Z)(this, "totalSeconds", BigInt(0));
+    (0,defineProperty/* default */.Z)(this, "totalCountRPM", BigInt(0));
     if (data) this.set(data);
   }
   /**
@@ -22812,18 +22812,21 @@ class EngineConfig extends BaseModel/* BaseModel */.g {
 }
 ;// CONCATENATED MODULE: ./src/models/pjcan/variables/engine/StructEngineValue.ts
 
-const API_VARIABLE_ENGINE_SIZE = 24;
+const API_VARIABLE_ENGINE_SIZE = 25;
 /** Структура данных */
 const StructEngineValue = {
   enabled: bluetooth/* BluetoothStruct.bit */.GD.bit(),
   coolant: bluetooth/* BluetoothStruct.int8 */.GD.int8(),
   rpm: bluetooth/* BluetoothStruct.uint16 */.GD.uint16(),
-  mseconds: bluetooth/* BluetoothStruct.uint32 */.GD.uint32(),
-  totalSeconds: bluetooth/* BluetoothStruct.uint32 */.GD.uint32(),
-  totalCountRPM: bluetooth/* BluetoothStruct.uint32 */.GD.uint32(),
+  worktime: bluetooth/* BluetoothStruct.uint32 */.GD.uint32(),
   countRPM: bluetooth/* BluetoothStruct.uint32 */.GD.uint32(),
   load: bluetooth/* BluetoothStruct.uint16 */.GD.uint16(),
-  throttle: bluetooth/* BluetoothStruct.uint16 */.GD.uint16()
+  throttle: bluetooth/* BluetoothStruct.uint16 */.GD.uint16(),
+  viewDays: bluetooth/* BluetoothStruct.uint16 */.GD.uint16(),
+  viewHours: bluetooth/* BluetoothStruct.uint8 */.GD.uint8(),
+  viewMinutes: bluetooth/* BluetoothStruct.uint8 */.GD.uint8(),
+  viewSeconds: bluetooth/* BluetoothStruct.uint8 */.GD.uint8(),
+  viewCountRPM: bluetooth/* BluetoothStruct.uint32 */.GD.uint32()
 };
 ;// CONCATENATED MODULE: ./src/models/pjcan/variables/engine/EngineValue.ts
 
@@ -22840,12 +22843,15 @@ class EngineValue extends BaseModel/* BaseModel */.g {
     (0,defineProperty/* default */.Z)(this, "enabled", false);
     (0,defineProperty/* default */.Z)(this, "coolant", 0);
     (0,defineProperty/* default */.Z)(this, "rpm", 0);
-    (0,defineProperty/* default */.Z)(this, "mseconds", 0);
-    (0,defineProperty/* default */.Z)(this, "totalSeconds", 0);
-    (0,defineProperty/* default */.Z)(this, "totalCountRPM", 0);
+    (0,defineProperty/* default */.Z)(this, "worktime", 0);
     (0,defineProperty/* default */.Z)(this, "countRPM", 0);
     (0,defineProperty/* default */.Z)(this, "load", 0);
     (0,defineProperty/* default */.Z)(this, "throttle", 0);
+    (0,defineProperty/* default */.Z)(this, "viewDays", 0);
+    (0,defineProperty/* default */.Z)(this, "viewHours", 0);
+    (0,defineProperty/* default */.Z)(this, "viewMinutes", 0);
+    (0,defineProperty/* default */.Z)(this, "viewSeconds", 0);
+    (0,defineProperty/* default */.Z)(this, "viewCountRPM", 0);
     if (data) this.set(data);
   }
   /**

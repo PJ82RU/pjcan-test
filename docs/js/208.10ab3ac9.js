@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunkpjcan"] = self["webpackChunkpjcan"] || []).push([[176],{
+(self["webpackChunkpjcan"] = self["webpackChunkpjcan"] || []).push([[208],{
 
 /***/ 9363:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
@@ -15818,7 +15818,7 @@ const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.Z)(ViewSettingDial
 
 /***/ }),
 
-/***/ 7176:
+/***/ 6208:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 // ESM COMPAT FLAG
@@ -16392,9 +16392,9 @@ var canbus = __webpack_require__(3956);
 const InfoCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(InfoCardvue_type_script_lang_ts, [['render',InfoCardvue_type_template_id_7cb8bc98_ts_true_render]])
 
 /* harmony default export */ var InfoCard = (InfoCard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/EngineCard.vue?vue&type=template&id=072f92ee&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/EngineCard.vue?vue&type=template&id=8fd4286a&ts=true
 
-function EngineCardvue_type_template_id_072f92ee_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function EngineCardvue_type_template_id_8fd4286a_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_icon_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.up)("icon-card-item");
                                                       
   const _component_input_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.up)("input-card-item");
@@ -16452,10 +16452,9 @@ function EngineCardvue_type_template_id_072f92ee_ts_true_render(_ctx, _cache, $p
         class: "pt-0 pb-0"
       }, {
         default: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_input_card_item, {
-          value: $setup.motors,
-          title: _ctx.$t('onboard.engine.motors.title'),
-          description: _ctx.$t('onboard.engine.motors.description'),
-          type: "time",
+          value: $setup.worktime,
+          title: _ctx.$t('onboard.engine.worktime.title'),
+          description: _ctx.$t('onboard.engine.worktime.description'),
           nodata: !$setup.enabled,
           disabled: !$setup.isLoadedView
         }, null, 8, ["value", "title", "description", "nodata", "disabled"])]),
@@ -16612,9 +16611,9 @@ const ProgressCardItem_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(P
 var VBtn = __webpack_require__(5101);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VIcon/VIcon.mjs + 1 modules
 var VIcon = __webpack_require__(3289);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/EngineConfigDialog.vue?vue&type=template&id=8c57dcb4&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/EngineConfigDialog.vue?vue&type=template&id=3ea1c2ae&ts=true
 
-const EngineConfigDialogvue_type_template_id_8c57dcb4_ts_true_hoisted_1 = {
+const EngineConfigDialogvue_type_template_id_3ea1c2ae_ts_true_hoisted_1 = {
   key: 1
 };
 const _hoisted_2 = {
@@ -16623,7 +16622,7 @@ const _hoisted_2 = {
 const _hoisted_3 = {
   key: 1
 };
-function EngineConfigDialogvue_type_template_id_8c57dcb4_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function EngineConfigDialogvue_type_template_id_3ea1c2ae_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_switch_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.up)("switch-card-item");
                                                       
   const _component_number_field = (0,runtime_core_esm_bundler/* resolveComponent */.up)("number-field");
@@ -16694,7 +16693,7 @@ function EngineConfigDialogvue_type_template_id_8c57dcb4_ts_true_render(_ctx, _c
       }, {
         default: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.Uk)("mdi-restart")]),
         _: 1
-      })) : ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createElementBlock */.iD)("span", EngineConfigDialogvue_type_template_id_8c57dcb4_ts_true_hoisted_1, (0,shared_esm_bundler/* toDisplayString */.zw)(_ctx.$t("btn.reset")), 1))]),
+      })) : ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createElementBlock */.iD)("span", EngineConfigDialogvue_type_template_id_3ea1c2ae_ts_true_hoisted_1, (0,shared_esm_bundler/* toDisplayString */.zw)(_ctx.$t("btn.reset")), 1))]),
       _: 1
     }, 8, ["onClick"]), (0,runtime_core_esm_bundler/* createVNode */.Wm)(VBtn/* VBtn */.T, {
       color: "primary",
@@ -16729,7 +16728,7 @@ function EngineConfigDialogvue_type_template_id_8c57dcb4_ts_true_render(_ctx, _c
 
 
 
-;// CONCATENATED MODULE: ./src/views/onboard/components/EngineConfigDialog.vue?vue&type=template&id=8c57dcb4&ts=true
+;// CONCATENATED MODULE: ./src/views/onboard/components/EngineConfigDialog.vue?vue&type=template&id=3ea1c2ae&ts=true
 
 // EXTERNAL MODULE: ./src/layout/components/DialogTemplate.vue + 6 modules
 var DialogTemplate = __webpack_require__(2196);
@@ -16771,8 +16770,8 @@ var variables_engine = __webpack_require__(7925);
       loaderConfigEngine.value = res.isData;
       if (res.isData) {
         showDays.value = res.showDays;
-        worktime.value = res.totalSeconds > 0 ? Math.round(res.totalSeconds / 60) : 0;
-        totalCountRPM.value = res.totalCountRPM;
+        worktime.value = res.totalSeconds > 0 ? Math.round(Number(res.totalSeconds / BigInt(60))) : 0;
+        totalCountRPM.value = Math.round(Number(res.totalCountRPM / BigInt(1000)));
       }
     };
     /** Сбросить */
@@ -16781,8 +16780,8 @@ var variables_engine = __webpack_require__(7925);
         engine
       } = canbus["default"].configs.variable;
       engine.showDays = showDays.value;
-      engine.totalSeconds = 0;
-      engine.totalCountRPM = 0;
+      engine.totalSeconds = BigInt(0);
+      engine.totalCountRPM = BigInt(0);
       canbus["default"].queryConfig(variables_engine/* API_VARIABLE_ENGINE_CONFIG_EXEC */.LH);
       visible.value = false;
     };
@@ -16792,8 +16791,8 @@ var variables_engine = __webpack_require__(7925);
         engine
       } = canbus["default"].configs.variable;
       engine.showDays = showDays.value;
-      engine.totalSeconds = worktime.value * 60;
-      engine.totalCountRPM = totalCountRPM.value;
+      engine.totalSeconds = BigInt(worktime.value) * BigInt(60);
+      engine.totalCountRPM = BigInt(totalCountRPM.value) * BigInt(1000);
       canbus["default"].queryConfig(variables_engine/* API_VARIABLE_ENGINE_CONFIG_EXEC */.LH);
       visible.value = false;
     };
@@ -16823,7 +16822,7 @@ var variables_engine = __webpack_require__(7925);
 
 
 ;
-const EngineConfigDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(EngineConfigDialogvue_type_script_lang_ts, [['render',EngineConfigDialogvue_type_template_id_8c57dcb4_ts_true_render]])
+const EngineConfigDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(EngineConfigDialogvue_type_script_lang_ts, [['render',EngineConfigDialogvue_type_template_id_3ea1c2ae_ts_true_render]])
 
 /* harmony default export */ var EngineConfigDialog = (EngineConfigDialog_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/EngineCard.vue?vue&type=script&lang=ts
@@ -16857,7 +16856,7 @@ const EngineConfigDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)
     const rpm = (0,reactivity_esm_bundler/* ref */.iH)("");
     const countRPM = (0,reactivity_esm_bundler/* ref */.iH)("");
     const load = (0,reactivity_esm_bundler/* ref */.iH)(0);
-    const motors = (0,reactivity_esm_bundler/* ref */.iH)(0);
+    const worktime = (0,reactivity_esm_bundler/* ref */.iH)("");
     const throttle = (0,reactivity_esm_bundler/* ref */.iH)(0);
     const coolant = (0,reactivity_esm_bundler/* ref */.iH)(0);
     /** Входящие значения ДВС */
@@ -16866,9 +16865,13 @@ const EngineConfigDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)
       if (res.isData) {
         enabled.value = res.enabled;
         rpm.value = res.rpm.toFixed();
-        countRPM.value = (res.totalCountRPM / 1000).toFixed(2);
+        countRPM.value = res.viewCountRPM.toString();
         load.value = res.load / 1000;
-        motors.value = res.totalSeconds;
+        let wt = res.viewDays > 0 ? res.viewDays + "." : "";
+        wt += (res.viewHours < 10 ? "0" : "") + res.viewHours + ":";
+        wt += (res.viewMinutes < 10 ? "0" : "") + res.viewMinutes + ":";
+        wt += (res.viewSeconds < 10 ? "0" : "") + res.viewSeconds;
+        worktime.value = wt;
         throttle.value = res.throttle / 100;
         coolant.value = res.coolant;
       }
@@ -16907,7 +16910,7 @@ const EngineConfigDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)
       title: t("onboard.engine.load.menu")
     }, {
       id: 4,
-      title: t("onboard.engine.motors.menu")
+      title: t("onboard.engine.worktime.menu")
     }, {
       id: 5,
       title: t("onboard.engine.throttle.menu")
@@ -16997,7 +17000,7 @@ const EngineConfigDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)
       rpm,
       countRPM,
       load,
-      motors,
+      worktime,
       throttle,
       coolant,
       menu,
@@ -17018,7 +17021,7 @@ const EngineConfigDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)
 
 
 ;
-const EngineCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(EngineCardvue_type_script_lang_ts, [['render',EngineCardvue_type_template_id_072f92ee_ts_true_render]])
+const EngineCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(EngineCardvue_type_script_lang_ts, [['render',EngineCardvue_type_template_id_8fd4286a_ts_true_render]])
 
 /* harmony default export */ var EngineCard = (EngineCard_exports_);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/FuelCard.vue?vue&type=template&id=0ad2d237&ts=true
