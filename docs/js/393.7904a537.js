@@ -23813,7 +23813,7 @@ const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.Z)(Cardvue_type_sc
 
 /***/ }),
 
-/***/ 1070:
+/***/ 2905:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23829,9 +23829,9 @@ var runtime_core_esm_bundler = __webpack_require__(3396);
 var VSwitch = __webpack_require__(3104);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VTextField/VTextField.mjs
 var VTextField = __webpack_require__(165);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/cards/SwitchCardItem.vue?vue&type=template&id=689ec14a&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/cards/SwitchCardItem.vue?vue&type=template&id=737d97f3&scoped=true&ts=true
 
-const _withScopeId = n => (_pushScopeId("data-v-689ec14a"), n = n(), _popScopeId(), n);
+const _withScopeId = n => (_pushScopeId("data-v-737d97f3"), n = n(), _popScopeId(), n);
 const _hoisted_1 = {
   class: "switch-card-item"
 };
@@ -23863,7 +23863,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 
 
-;// CONCATENATED MODULE: ./src/components/cards/SwitchCardItem.vue?vue&type=template&id=689ec14a&scoped=true&ts=true
+;// CONCATENATED MODULE: ./src/components/cards/SwitchCardItem.vue?vue&type=template&id=737d97f3&scoped=true&ts=true
 
 // EXTERNAL MODULE: ./node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js
 var reactivity_esm_bundler = __webpack_require__(4870);
@@ -23888,16 +23888,22 @@ var reactivity_esm_bundler = __webpack_require__(4870);
     /** Выкл. */
     disabled: Boolean
   },
-  emits: ["update:modelValue"],
+  emits: ["update:modelValue", "change"],
   setup(props, {
     emit
   }) {
     const {
-      modelValue
+      modelValue,
+      disabled
     } = (0,reactivity_esm_bundler/* toRefs */.BK)(props);
     const modelSwitch = (0,runtime_core_esm_bundler/* computed */.Fl)({
       get: () => modelValue.value,
-      set: val => emit("update:modelValue", val)
+      set: val => {
+        if (!disabled.value) {
+          emit("update:modelValue", val);
+          emit("change", val);
+        }
+      }
     });
     return {
       modelSwitch
@@ -23906,10 +23912,10 @@ var reactivity_esm_bundler = __webpack_require__(4870);
 });
 ;// CONCATENATED MODULE: ./src/components/cards/SwitchCardItem.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/cards/SwitchCardItem.vue?vue&type=style&index=0&id=689ec14a&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/cards/SwitchCardItem.vue?vue&type=style&index=0&id=737d97f3&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/cards/SwitchCardItem.vue?vue&type=style&index=0&id=689ec14a&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/components/cards/SwitchCardItem.vue?vue&type=style&index=0&id=737d97f3&lang=scss&scoped=true
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/dist/exportHelper.js
 var exportHelper = __webpack_require__(89);
@@ -23921,7 +23927,7 @@ var exportHelper = __webpack_require__(89);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.Z)(SwitchCardItemvue_type_script_lang_ts, [['render',render],['__scopeId',"data-v-689ec14a"]])
+const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.Z)(SwitchCardItemvue_type_script_lang_ts, [['render',render],['__scopeId',"data-v-737d97f3"]])
 
 /* harmony default export */ var SwitchCardItem = (__exports__);
 
@@ -24049,7 +24055,7 @@ var vue_i18n_esm_bundler = __webpack_require__(5658);
 // EXTERNAL MODULE: ./src/layout/components/DialogTemplate.vue + 6 modules
 var DialogTemplate = __webpack_require__(2196);
 // EXTERNAL MODULE: ./src/components/cards/SwitchCardItem.vue + 6 modules
-var SwitchCardItem = __webpack_require__(1070);
+var SwitchCardItem = __webpack_require__(2905);
 // EXTERNAL MODULE: ./src/components/common/NumberField.vue + 3 modules
 var NumberField = __webpack_require__(5412);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/ViewSettingDialog.vue?vue&type=script&lang=ts
@@ -24295,13 +24301,13 @@ var vue_i18n_esm_bundler = __webpack_require__(5658);
 // EXTERNAL MODULE: ./src/components/cards/Card.vue + 6 modules
 var Card = __webpack_require__(242);
 // EXTERNAL MODULE: ./src/components/cards/SwitchCardItem.vue + 6 modules
-var SwitchCardItem = __webpack_require__(1070);
+var SwitchCardItem = __webpack_require__(2905);
 // EXTERNAL MODULE: ./src/views/onboard/components/ViewSettingDialog.vue + 5 modules
 var ViewSettingDialog = __webpack_require__(6733);
 // EXTERNAL MODULE: ./src/models/pjcan/car/index.ts + 2 modules
 var pjcan_car = __webpack_require__(5178);
-// EXTERNAL MODULE: ./src/api/canbus.ts + 13 modules
-var canbus = __webpack_require__(4077);
+// EXTERNAL MODULE: ./src/api/canbus.ts + 12 modules
+var canbus = __webpack_require__(4225);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/components/LcdCard.vue?vue&type=script&lang=ts
 
 
