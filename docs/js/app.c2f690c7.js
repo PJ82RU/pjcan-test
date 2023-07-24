@@ -4744,8 +4744,8 @@ var vue_i18n_esm_bundler = __webpack_require__(5658);
       title: "Звук",
       menu: "LCD: Звук",
       mute: {
-        title: "Включить звук",
-        description: "Временное включение/выключение звука без изменения текущего уровня"
+        title: "Выключить звук",
+        description: "Временное выключение звука без изменения текущего уровня"
       },
       level: {
         title: "Уровень звука",
@@ -25157,31 +25157,31 @@ var index = {
 /* harmony default export */ var onboard_card_list_default = ([{
   name: "info",
   enabled: true,
-  car: [0, 1, 2]
+  car: [1, 2]
 }, {
   name: "bose",
   enabled: true,
-  car: [0, 2]
+  car: [2]
 }, {
   name: "engine",
   enabled: true,
-  car: [0, 1, 2]
+  car: [1, 2]
 }, {
   name: "fuel",
   enabled: true,
-  car: [0, 1, 2]
+  car: [1, 2]
 }, {
   name: "movement",
   enabled: true,
-  car: [0, 1, 2]
+  car: [1, 2]
 }, {
   name: "doors",
   enabled: true,
-  car: [0, 1, 2]
+  car: [1, 2]
 }, {
   name: "climate",
   enabled: true,
-  car: [0, 1, 2]
+  car: [1, 2]
 }]);
 ;// CONCATENATED MODULE: ./src/store/modules/app/state.ts
 
