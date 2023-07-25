@@ -5633,7 +5633,7 @@ const t = i18n.global.t;
 
 /***/ }),
 
-/***/ 4638:
+/***/ 626:
 /***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10461,9 +10461,9 @@ var VRow = __webpack_require__(6824);
 var VCol = __webpack_require__(8521);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VTextField/VTextField.mjs
 var VTextField = __webpack_require__(165);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/AboutDialog.vue?vue&type=template&id=4a3032e0&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/AboutDialog.vue?vue&type=template&id=742e3285&ts=true
 
-function AboutDialogvue_type_template_id_4a3032e0_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function AboutDialogvue_type_template_id_742e3285_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                                     
                                                       
                                                       
@@ -11230,7 +11230,7 @@ const pkg = __webpack_require__(4147);
             carSupport.value = "Mazda 3 BK";
             break;
           case 2:
-            carSupport.value = "Mazda CX7";
+            carSupport.value = "Mazda CX-7";
             break;
           default:
             carSupport.value = "Mazda";
@@ -11268,7 +11268,7 @@ const pkg = __webpack_require__(4147);
 
 
 ;
-const AboutDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(AboutDialogvue_type_script_lang_ts, [['render',AboutDialogvue_type_template_id_4a3032e0_ts_true_render]])
+const AboutDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(AboutDialogvue_type_script_lang_ts, [['render',AboutDialogvue_type_template_id_742e3285_ts_true_render]])
 
 /* harmony default export */ var AboutDialog = (AboutDialog_exports_);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtnGroup/VBtnGroup.mjs + 1 modules
@@ -81569,6 +81569,6 @@ module.exports = JSON.parse('{"name":"pjcan","version":"0.4.0","private":true,"d
 },
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
-/******/ var __webpack_exports__ = (__webpack_exec__(4638));
+/******/ var __webpack_exports__ = (__webpack_exec__(626));
 /******/ }
 ]);

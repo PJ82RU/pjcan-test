@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunkpjcan"] = self["webpackChunkpjcan"] || []).push([[749],{
+(self["webpackChunkpjcan"] = self["webpackChunkpjcan"] || []).push([[352],{
 
 /***/ 9363:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
@@ -15824,7 +15824,7 @@ const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.Z)(ViewSettingDial
 
 /***/ }),
 
-/***/ 749:
+/***/ 7352:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 // ESM COMPAT FLAG
@@ -15839,7 +15839,7 @@ __webpack_require__.d(__webpack_exports__, {
 var runtime_core_esm_bundler = __webpack_require__(3396);
 // EXTERNAL MODULE: ./node_modules/@vue/shared/dist/shared.esm-bundler.js
 var shared_esm_bundler = __webpack_require__(7139);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/index.vue?vue&type=template&id=1beba099&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/index.vue?vue&type=template&id=10185709&scoped=true&ts=true
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_flicking = (0,runtime_core_esm_bundler/* resolveComponent */.up)("flicking");
@@ -15855,7 +15855,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return (0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createElementBlock */.iD)("div", {
         key: item.name,
         class: (0,shared_esm_bundler/* normalizeClass */.C_)(["mr-4", `flicking-${$setup.display}`])
-      }, [((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createBlock */.j4)((0,runtime_core_esm_bundler/* resolveDynamicComponent */.LL)(`${item.name}-card`)))], 2);
+      }, [((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createBlock */.j4)((0,runtime_core_esm_bundler/* resolveDynamicComponent */.LL)(`${item.name}-card`), {
+        "car-model": $setup.carModel
+      }, null, 8, ["car-model"]))], 2);
     }), 128))]),
     _: 1
   }, 512);
@@ -15872,9 +15874,9 @@ var flicking_esm = __webpack_require__(9363);
 var VRow = __webpack_require__(6824);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VCol.mjs
 var VCol = __webpack_require__(8521);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/InfoCard.vue?vue&type=template&id=7cb8bc98&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/InfoCard.vue?vue&type=template&id=5c6a7246&ts=true
 
-function InfoCardvue_type_template_id_7cb8bc98_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function InfoCardvue_type_template_id_5c6a7246_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_icon_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.up)("icon-card-item");
                                                       
   const _component_input_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.up)("input-card-item");
@@ -15915,7 +15917,8 @@ function InfoCardvue_type_template_id_7cb8bc98_ts_true_render(_ctx, _cache, $pro
           disabled: !$setup.isLoadedSensorView
         }, null, 8, ["value", "title", "description", "nodata", "disabled"])]),
         _: 1
-      }), (0,runtime_core_esm_bundler/* createVNode */.Wm)(VCol/* VCol */.D, {
+      }), $props.carModel === 1 ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createBlock */.j4)(VCol/* VCol */.D, {
+        key: 0,
         cols: "12",
         class: "pt-0 pb-0"
       }, {
@@ -15928,7 +15931,8 @@ function InfoCardvue_type_template_id_7cb8bc98_ts_true_render(_ctx, _cache, $pro
           disabled: !$setup.isLoadedTemperatureView
         }, null, 8, ["value", "title", "description", "nodata", "disabled"])]),
         _: 1
-      }), (0,runtime_core_esm_bundler/* createVNode */.Wm)(VCol/* VCol */.D, {
+      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.kq)("", true), $props.carModel === 1 ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createBlock */.j4)(VCol/* VCol */.D, {
+        key: 1,
         cols: "12",
         class: "pt-0 pb-0"
       }, {
@@ -15941,7 +15945,7 @@ function InfoCardvue_type_template_id_7cb8bc98_ts_true_render(_ctx, _cache, $pro
           disabled: !$setup.isLoadedSensorView
         }, null, 8, ["model-value", "title", "description", "nodata", "disabled"])]),
         _: 1
-      }), (0,runtime_core_esm_bundler/* createVNode */.Wm)(VCol/* VCol */.D, {
+      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.kq)("", true), (0,runtime_core_esm_bundler/* createVNode */.Wm)(VCol/* VCol */.D, {
         cols: "12",
         class: "pt-0 pb-0"
       }, {
@@ -15954,7 +15958,8 @@ function InfoCardvue_type_template_id_7cb8bc98_ts_true_render(_ctx, _cache, $pro
           disabled: !$setup.isLoadedSensorView
         }, null, 8, ["model-value", "title", "description", "nodata", "disabled"])]),
         _: 1
-      }), (0,runtime_core_esm_bundler/* createVNode */.Wm)(VCol/* VCol */.D, {
+      }), $props.carModel === 1 ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createBlock */.j4)(VCol/* VCol */.D, {
+        key: 2,
         cols: "12",
         class: "pt-0 pb-0"
       }, {
@@ -15973,7 +15978,8 @@ function InfoCardvue_type_template_id_7cb8bc98_ts_true_render(_ctx, _cache, $pro
           disabled: !$setup.isLoadedSensorView
         }, null, 8, ["model-value", "title", "description", "colorsTrue", "colorsFalse", "nodata", "disabled"])]),
         _: 1
-      }), (0,runtime_core_esm_bundler/* createVNode */.Wm)(VCol/* VCol */.D, {
+      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.kq)("", true), $props.carModel === 1 ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createBlock */.j4)(VCol/* VCol */.D, {
+        key: 3,
         cols: "12",
         class: "pt-0 pb-0"
       }, {
@@ -15989,7 +15995,7 @@ function InfoCardvue_type_template_id_7cb8bc98_ts_true_render(_ctx, _cache, $pro
           disabled: !$setup.isLoadedSensorView
         }, null, 8, ["model-value", "title", "description", "nodata", "disabled"])]),
         _: 1
-      })]),
+      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.kq)("", true)]),
       _: 1
     })]),
     _: 1
@@ -16199,7 +16205,16 @@ var canbus = __webpack_require__(4225);
     IconCardItem: IconCardItem,
     ViewSettingDialog: ViewSettingDialog/* default */.Z
   },
-  setup() {
+  props: {
+    carModel: {
+      type: Number,
+      default: 0
+    }
+  },
+  setup(props) {
+    const {
+      carModel
+    } = (0,reactivity_esm_bundler/* toRefs */.BK)(props);
     const {
       t
     } = (0,vue_i18n_esm_bundler/* useI18n */.QT)();
@@ -16290,7 +16305,7 @@ var canbus = __webpack_require__(4225);
       canbus["default"].removeListener(variables_temperature/* API_VARIABLE_TEMPERATURE_VIEW_EVENT */.LN, onReceiveTemperatureView);
     });
     // МЕНЮ ОТОБРАЖЕНИЯ
-    const menu = (0,runtime_core_esm_bundler/* computed */.Fl)(() => [{
+    const menu = (0,runtime_core_esm_bundler/* computed */.Fl)(() => carModel.value === 1 ? [{
       id: 0,
       title: t("onboard.info.temperature.menu")
     }, {
@@ -16305,6 +16320,9 @@ var canbus = __webpack_require__(4225);
     }, {
       id: 4,
       title: t("onboard.info.signal.menu")
+    }] : [{
+      id: 2,
+      title: t("onboard.info.reverse.menu")
     }]);
     const menuVisible = (0,reactivity_esm_bundler/* ref */.iH)(false);
     const menuSelected = (0,reactivity_esm_bundler/* ref */.iH)({});
@@ -16402,12 +16420,12 @@ var canbus = __webpack_require__(4225);
 
 
 ;
-const InfoCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(InfoCardvue_type_script_lang_ts, [['render',InfoCardvue_type_template_id_7cb8bc98_ts_true_render]])
+const InfoCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(InfoCardvue_type_script_lang_ts, [['render',InfoCardvue_type_template_id_5c6a7246_ts_true_render]])
 
 /* harmony default export */ var InfoCard = (InfoCard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/EngineCard.vue?vue&type=template&id=8fd4286a&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/EngineCard.vue?vue&type=template&id=6d72b28c&ts=true
 
-function EngineCardvue_type_template_id_8fd4286a_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function EngineCardvue_type_template_id_6d72b28c_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_icon_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.up)("icon-card-item");
                                                       
   const _component_input_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.up)("input-card-item");
@@ -16859,6 +16877,12 @@ const EngineConfigDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)
     ViewSettingDialog: ViewSettingDialog/* default */.Z,
     EngineConfigDialog: EngineConfigDialog
   },
+  props: {
+    carModel: {
+      type: Number,
+      default: 0
+    }
+  },
   setup() {
     const {
       t
@@ -17034,12 +17058,12 @@ const EngineConfigDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)
 
 
 ;
-const EngineCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(EngineCardvue_type_script_lang_ts, [['render',EngineCardvue_type_template_id_8fd4286a_ts_true_render]])
+const EngineCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(EngineCardvue_type_script_lang_ts, [['render',EngineCardvue_type_template_id_6d72b28c_ts_true_render]])
 
 /* harmony default export */ var EngineCard = (EngineCard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/FuelCard.vue?vue&type=template&id=0ad2d237&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/FuelCard.vue?vue&type=template&id=204921e4&ts=true
 
-function FuelCardvue_type_template_id_0ad2d237_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function FuelCardvue_type_template_id_204921e4_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_input_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.up)("input-card-item");
                                                       
                                                       
@@ -17298,6 +17322,12 @@ const FuelConfigDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(F
     ViewSettingDialog: ViewSettingDialog/* default */.Z,
     FuelConfigDialog: FuelConfigDialog
   },
+  props: {
+    carModel: {
+      type: Number,
+      default: 0
+    }
+  },
   setup() {
     const {
       t
@@ -17432,12 +17462,12 @@ const FuelConfigDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(F
 
 
 ;
-const FuelCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(FuelCardvue_type_script_lang_ts, [['render',FuelCardvue_type_template_id_0ad2d237_ts_true_render]])
+const FuelCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(FuelCardvue_type_script_lang_ts, [['render',FuelCardvue_type_template_id_204921e4_ts_true_render]])
 
 /* harmony default export */ var FuelCard = (FuelCard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/MovementCard.vue?vue&type=template&id=43af5f46&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/MovementCard.vue?vue&type=template&id=0dec00ca&ts=true
 
-function MovementCardvue_type_template_id_43af5f46_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function MovementCardvue_type_template_id_0dec00ca_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_input_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.up)("input-card-item");
                                                       
                                                       
@@ -17522,6 +17552,12 @@ var variables_movement = __webpack_require__(6297);
     Card: Card/* default */.Z,
     InputCardItem: InputCardItem/* default */.Z,
     ViewSettingDialog: ViewSettingDialog/* default */.Z
+  },
+  props: {
+    carModel: {
+      type: Number,
+      default: 0
+    }
   },
   setup() {
     const {
@@ -17641,12 +17677,12 @@ var variables_movement = __webpack_require__(6297);
 
 
 ;
-const MovementCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(MovementCardvue_type_script_lang_ts, [['render',MovementCardvue_type_template_id_43af5f46_ts_true_render]])
+const MovementCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(MovementCardvue_type_script_lang_ts, [['render',MovementCardvue_type_template_id_0dec00ca_ts_true_render]])
 
 /* harmony default export */ var MovementCard = (MovementCard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/DoorsCard.vue?vue&type=template&id=5d33d7c0&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/DoorsCard.vue?vue&type=template&id=2919b1d9&ts=true
 
-function DoorsCardvue_type_template_id_5d33d7c0_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function DoorsCardvue_type_template_id_2919b1d9_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_switch_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.up)("switch-card-item");
                                                       
                                                       
@@ -17761,6 +17797,12 @@ var doors = __webpack_require__(3558);
     SwitchCardItem: SwitchCardItem/* default */.Z,
     ViewSettingDialog: ViewSettingDialog/* default */.Z
   },
+  props: {
+    carModel: {
+      type: Number,
+      default: 0
+    }
+  },
   setup() {
     const {
       t
@@ -17849,12 +17891,12 @@ var doors = __webpack_require__(3558);
 
 
 ;
-const DoorsCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(DoorsCardvue_type_script_lang_ts, [['render',DoorsCardvue_type_template_id_5d33d7c0_ts_true_render]])
+const DoorsCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(DoorsCardvue_type_script_lang_ts, [['render',DoorsCardvue_type_template_id_2919b1d9_ts_true_render]])
 
 /* harmony default export */ var DoorsCard = (DoorsCard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/ClimateCard.vue?vue&type=template&id=0cf699c6&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/ClimateCard.vue?vue&type=template&id=4e42cfa6&ts=true
 
-function ClimateCardvue_type_template_id_0cf699c6_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function ClimateCardvue_type_template_id_4e42cfa6_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_icon_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.up)("icon-card-item");
                                                       
   const _component_switch_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.up)("switch-card-item");
@@ -17989,6 +18031,12 @@ var climate = __webpack_require__(2481);
     SwitchCardItem: SwitchCardItem/* default */.Z,
     ViewSettingDialog: ViewSettingDialog/* default */.Z
   },
+  props: {
+    carModel: {
+      type: Number,
+      default: 0
+    }
+  },
   setup() {
     const {
       t
@@ -18092,12 +18140,12 @@ var climate = __webpack_require__(2481);
 
 
 ;
-const ClimateCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(ClimateCardvue_type_script_lang_ts, [['render',ClimateCardvue_type_template_id_0cf699c6_ts_true_render]])
+const ClimateCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(ClimateCardvue_type_script_lang_ts, [['render',ClimateCardvue_type_template_id_4e42cfa6_ts_true_render]])
 
 /* harmony default export */ var ClimateCard = (ClimateCard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/BoseCard.vue?vue&type=template&id=2ff7d4fa&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/BoseCard.vue?vue&type=template&id=27dc6436&ts=true
 
-function BoseCardvue_type_template_id_2ff7d4fa_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function BoseCardvue_type_template_id_27dc6436_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_icon_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.up)("icon-card-item");
                                                       
   const _component_slider_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.up)("slider-card-item");
@@ -18602,6 +18650,12 @@ var debounce = __webpack_require__(9545);
     SelectCardItem: SelectCardItem,
     Card: Card/* default */.Z
   },
+  props: {
+    carModel: {
+      type: Number,
+      default: 0
+    }
+  },
   setup() {
     const {
       t
@@ -18788,7 +18842,7 @@ var debounce = __webpack_require__(9545);
 
 
 ;
-const BoseCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(BoseCardvue_type_script_lang_ts, [['render',BoseCardvue_type_template_id_2ff7d4fa_ts_true_render]])
+const BoseCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(BoseCardvue_type_script_lang_ts, [['render',BoseCardvue_type_template_id_27dc6436_ts_true_render]])
 
 /* harmony default export */ var BoseCard = (BoseCard_exports_);
 // EXTERNAL MODULE: ./src/models/pjcan/car/index.ts + 2 modules
@@ -18843,6 +18897,7 @@ var car = __webpack_require__(5178);
     });
     return {
       flicking,
+      carModel,
       cardList,
       display
     };
@@ -18850,10 +18905,10 @@ var car = __webpack_require__(5178);
 });
 ;// CONCATENATED MODULE: ./src/views/onboard/index.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/index.vue?vue&type=style&index=0&id=1beba099&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/index.vue?vue&type=style&index=0&id=10185709&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/views/onboard/index.vue?vue&type=style&index=0&id=1beba099&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/views/onboard/index.vue?vue&type=style&index=0&id=10185709&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/views/onboard/index.vue
 
@@ -18863,7 +18918,7 @@ var car = __webpack_require__(5178);
 ;
 
 
-const onboard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(onboardvue_type_script_lang_ts, [['render',render],['__scopeId',"data-v-1beba099"]])
+const onboard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(onboardvue_type_script_lang_ts, [['render',render],['__scopeId',"data-v-10185709"]])
 
 /* harmony default export */ var onboard = (onboard_exports_);
 
