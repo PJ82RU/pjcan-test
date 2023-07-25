@@ -3347,7 +3347,7 @@ class Canbus extends (eventemitter3_default()) {
   /** Остановить циклический запрос значений */
   stopFetchValue() {
     this.debounceFetchValue = undefined;
-    this.debounce(() => {}, 1);
+    this.debounce(() => {}, 0);
   }
   /**
    * Событие входящих значений конфигурации
@@ -5633,7 +5633,7 @@ const t = i18n.global.t;
 
 /***/ }),
 
-/***/ 626:
+/***/ 644:
 /***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10801,12 +10801,12 @@ function DeviceResetDialogvue_type_template_id_a9e57686_ts_true_render(_ctx, _ca
 const DeviceResetDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(DeviceResetDialogvue_type_script_lang_ts, [['render',DeviceResetDialogvue_type_template_id_a9e57686_ts_true_render]])
 
 /* harmony default export */ var DeviceResetDialog = (DeviceResetDialog_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Scanner.vue?vue&type=template&id=43cc2344&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Scanner.vue?vue&type=template&id=3fcd546e&ts=true
 
-const Scannervue_type_template_id_43cc2344_ts_true_hoisted_1 = {
+const Scannervue_type_template_id_3fcd546e_ts_true_hoisted_1 = {
   class: "mb-2"
 };
-function Scannervue_type_template_id_43cc2344_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function Scannervue_type_template_id_3fcd546e_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                                               
   const _component_dialog_template = (0,runtime_core_esm_bundler/* resolveComponent */.up)("dialog-template");
   return (0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createBlock */.j4)(_component_dialog_template, {
@@ -10816,7 +10816,7 @@ function Scannervue_type_template_id_43cc2344_ts_true_render(_ctx, _cache, $prop
     title: _ctx.$t('scanner.upload.title'),
     text: ""
   }, {
-    body: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createElementVNode */._)("div", null, (0,shared_esm_bundler/* toDisplayString */.zw)(_ctx.$t("scanner.upload.text")), 1), (0,runtime_core_esm_bundler/* createElementVNode */._)("div", Scannervue_type_template_id_43cc2344_ts_true_hoisted_1, (0,shared_esm_bundler/* toDisplayString */.zw)(_ctx.$t("scanner.upload.leftToLoad", {
+    body: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createElementVNode */._)("div", null, (0,shared_esm_bundler/* toDisplayString */.zw)(_ctx.$t("scanner.upload.text")), 1), (0,runtime_core_esm_bundler/* createElementVNode */._)("div", Scannervue_type_template_id_3fcd546e_ts_true_hoisted_1, (0,shared_esm_bundler/* toDisplayString */.zw)(_ctx.$t("scanner.upload.leftToLoad", {
       n: $setup.leftUploading
     })), 1), (0,runtime_core_esm_bundler/* createVNode */.Wm)(VProgressLinear/* VProgressLinear */.K, {
       color: "primary",
@@ -10833,7 +10833,7 @@ function Scannervue_type_template_id_43cc2344_ts_true_render(_ctx, _cache, $prop
 
 
 
-;// CONCATENATED MODULE: ./src/components/Scanner.vue?vue&type=template&id=43cc2344&ts=true
+;// CONCATENATED MODULE: ./src/components/Scanner.vue?vue&type=template&id=3fcd546e&ts=true
 
 // EXTERNAL MODULE: ./src/models/pjcan/scanner/index.ts + 2 modules
 var scanner = __webpack_require__(577);
@@ -10931,9 +10931,9 @@ const toMac = value => {
           canbus["default"].startFetchValue(scanner/* API_SCANNER_VALUE_EXEC */.v3, scannerValue);
           canbus["default"].addListener(scanner/* API_SCANNER_VALUE_EVENT */.sn, onReceiveValue);
           // запускаем диалог
+          store/* default.commit */.Z.commit("app/clearMessages");
           steps();
         }
-        store/* default.commit */.Z.commit("app/clearMessages");
       } else {
         if (scannerValue) {
           // останавливаем циклический запрос значений сканирования
@@ -11036,7 +11036,7 @@ const toMac = value => {
 
 
 ;
-const Scanner_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(Scannervue_type_script_lang_ts, [['render',Scannervue_type_template_id_43cc2344_ts_true_render]])
+const Scanner_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(Scannervue_type_script_lang_ts, [['render',Scannervue_type_template_id_3fcd546e_ts_true_render]])
 
 /* harmony default export */ var Scanner = (Scanner_exports_);
 // EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 3 modules
@@ -25232,9 +25232,13 @@ const visibleMessage = state => state.visibleMessage;
  * @param state
  */
 const onboardCardList = state => state.onboardCardList;
+// EXTERNAL MODULE: ./src/utils/debounce.ts
+var debounce = __webpack_require__(9545);
 ;// CONCATENATED MODULE: ./src/store/modules/app/mutations.ts
 
 
+
+const mutations_debounce = (0,debounce/* createDebounce */.c)();
 /**
  * Записать новое сообщение
  * @param state
@@ -25247,7 +25251,7 @@ const setMessage = (state, msg) => {
 const setVisibleMessage = (state, value) => {
   state.visibleMessage = value;
   if (!value) {
-    setTimeout(() => src_store.commit("app/freeMessage"), 400);
+    mutations_debounce(() => src_store.commit("app/freeMessage"), 400);
   }
 };
 /**
@@ -25263,7 +25267,10 @@ const freeMessage = state => {
  * Очистить очередь сообщений
  * @param state
  */
-const clearMessages = state => state.messages = [];
+const clearMessages = state => {
+  mutations_debounce(() => {}, 0);
+  state.messages = [];
+};
 /**
  * Изменить список карточек бортового компьютера
  * @param {any} state
@@ -25354,7 +25361,7 @@ const createDebounce = () => {
   let timeout;
   return (fn, delay) => {
     clearTimeout(timeout);
-    timeout = setTimeout(() => fn(), delay || 500);
+    if (delay > 0) timeout = setTimeout(() => fn(), delay);
   };
 };
 
@@ -81594,6 +81601,6 @@ module.exports = JSON.parse('{"name":"pjcan","version":"0.4.1","private":true,"d
 },
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
-/******/ var __webpack_exports__ = (__webpack_exec__(626));
+/******/ var __webpack_exports__ = (__webpack_exec__(644));
 /******/ }
 ]);
