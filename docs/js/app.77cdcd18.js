@@ -22481,6 +22481,7 @@ class VariableConfig extends BaseModel/* BaseModel */.g {
    */
   static update(version) {
     engine/* EngineConfig.update */.EJ.update(version);
+    volume/* VolumeConfig.update */.Rf.update(version);
     VariableConfig.struct = {
       bose: bluetooth/* BluetoothStruct.struct */.GD.struct(bose/* BoseConfig.struct */.jp.struct),
       engine: bluetooth/* BluetoothStruct.struct */.GD.struct(engine/* EngineConfig.struct */.EJ.struct),
@@ -23340,7 +23341,10 @@ var defineProperty = __webpack_require__(7327);
 var bluetooth = __webpack_require__(9014);
 // EXTERNAL MODULE: ./src/models/pjcan/base/BaseModel.ts
 var BaseModel = __webpack_require__(9036);
+// EXTERNAL MODULE: ./src/models/pjcan/variables/engine/index.ts + 3 modules
+var engine = __webpack_require__(2658);
 ;// CONCATENATED MODULE: ./src/models/pjcan/variables/volume/VolumeConfig.ts
+
 
 
 
@@ -23348,10 +23352,35 @@ const API_VARIABLE_VOLUME_CONFIG_EXEC = 201;
 const API_VARIABLE_VOLUME_CONFIG_EVENT = "VariableVolumeConfig";
 /** Модель конфигурации уровня звука */
 class VolumeConfig extends BaseModel/* BaseModel */.g {
+  /**
+   * Обновить версию структуры
+   * @param {IVersion} version Версия протокола
+   */
+  static update(version) {
+    engine/* EngineValue.update */.E_.update(version);
+    if (!version || version.compareString("4.0.3") !== 1) {
+      VolumeConfig.struct = {
+        mute: bluetooth/* BluetoothStruct.bit */.GD.bit(),
+        muteBose: bluetooth/* BluetoothStruct.bit */.GD.bit(),
+        volume: bluetooth/* BluetoothStruct.uint8 */.GD.uint8(),
+        volumeBose: bluetooth/* BluetoothStruct.uint8 */.GD.uint8()
+      };
+      VolumeConfig.size = 3;
+    } else {
+      VolumeConfig.struct = {
+        mute: bluetooth/* BluetoothStruct.bit */.GD.bit(),
+        volume: bluetooth/* BluetoothStruct.uint8 */.GD.uint8(),
+        max: bluetooth/* BluetoothStruct.uint8 */.GD.uint8()
+      };
+      VolumeConfig.size = 3;
+    }
+  }
   constructor(data) {
     super();
     (0,defineProperty/* default */.Z)(this, "mute", false);
+    (0,defineProperty/* default */.Z)(this, "muteBose", false);
     (0,defineProperty/* default */.Z)(this, "volume", 0);
+    (0,defineProperty/* default */.Z)(this, "volumeBose", 0);
     (0,defineProperty/* default */.Z)(this, "max", 0);
     if (data) this.set(data);
   }
@@ -23367,12 +23396,8 @@ class VolumeConfig extends BaseModel/* BaseModel */.g {
     return this._get(this, API_VARIABLE_VOLUME_CONFIG_EXEC, VolumeConfig.size + 1, new bluetooth/* BluetoothStruct */.GD(VolumeConfig.struct));
   }
 }
-(0,defineProperty/* default */.Z)(VolumeConfig, "struct", {
-  mute: bluetooth/* BluetoothStruct.bit */.GD.bit(),
-  volume: bluetooth/* BluetoothStruct.uint8 */.GD.uint8(),
-  max: bluetooth/* BluetoothStruct.uint8 */.GD.uint8()
-});
-(0,defineProperty/* default */.Z)(VolumeConfig, "size", 3);
+(0,defineProperty/* default */.Z)(VolumeConfig, "struct", void 0);
+(0,defineProperty/* default */.Z)(VolumeConfig, "size", void 0);
 ;// CONCATENATED MODULE: ./src/models/pjcan/variables/volume/VolumeValue.ts
 
 
@@ -81562,7 +81587,7 @@ function useRender(render) {
 /***/ (function(module) {
 
 "use strict";
-module.exports = JSON.parse('{"name":"pjcan","version":"0.4.0","private":true,"description":"CanBus project for Mazda 3","author":"PJ82. Spiridonov Vladislav","scripts":{"serve":"vue-cli-service serve","build":"vue-cli-service build","build test":"vue-cli-service build --mode test"},"dependencies":{"@egjs/vue3-flicking":"^4.10.2","@mdi/font":"7.0.96","axios":"^1.1.3","bitset":"^5.1.1","core-js":"^3.26.0","eventemitter3":"^4.0.7","moment":"^2.29.4","register-service-worker":"^1.7.2","roboto-fontface":"*","screenfull":"^6.0.2","vue":"^3.2.41","vue-i18n":"^9.2.2","vue-router":"^4.1.6","vue3-toastify":"^0.0.3","vuedraggable":"^4.1.0","vuetify":"^3.1.5","vuex":"^4.1.0","webfontloader":"^1.6.28"},"devDependencies":{"@types/node":"^12.0.2","@types/webfontloader":"^1.6.29","@typescript-eslint/eslint-plugin":"^5.42.0","@typescript-eslint/parser":"^5.42.0","@vue/cli-plugin-babel":"~5.0.8","@vue/cli-plugin-eslint":"~5.0.8","@vue/cli-plugin-pwa":"~5.0.8","@vue/cli-plugin-router":"~5.0.8","@vue/cli-plugin-typescript":"~5.0.8","@vue/cli-plugin-vuex":"~5.0.8","@vue/cli-service":"~5.0.8","@vue/eslint-config-typescript":"^11.0.2","@vueuse/core":"^9.4.0","eslint":"^8.26.0","eslint-config-prettier":"^8.5.0","eslint-plugin-prettier":"^4.2.1","eslint-plugin-vue":"^9.7.0","prettier":"^2.7.1","sass":"^1.56.0","sass-loader":"^13.1.0","script-ext-html-webpack-plugin":"^2.1.5","typescript":"~4.8.4","vue-cli-plugin-vuetify":"~2.5.8","webpack-plugin-vuetify":"^2.0.0"},"eslintConfig":{"root":true,"env":{"node":true},"extends":["plugin:vue/vue3-essential","eslint:recommended","@vue/typescript/recommended","plugin:prettier/recommended"],"parserOptions":{"ecmaVersion":2020},"rules":{}},"browserslist":["> 1%","last 2 versions","not dead","not ie 11"],"productName":"PJCan App"}');
+module.exports = JSON.parse('{"name":"pjcan","version":"0.4.1","private":true,"description":"CanBus project for Mazda 3","author":"PJ82. Spiridonov Vladislav","scripts":{"serve":"vue-cli-service serve","build":"vue-cli-service build","build test":"vue-cli-service build --mode test"},"dependencies":{"@egjs/vue3-flicking":"^4.10.2","@mdi/font":"7.0.96","axios":"^1.1.3","bitset":"^5.1.1","core-js":"^3.26.0","eventemitter3":"^4.0.7","moment":"^2.29.4","register-service-worker":"^1.7.2","roboto-fontface":"*","screenfull":"^6.0.2","vue":"^3.2.41","vue-i18n":"^9.2.2","vue-router":"^4.1.6","vue3-toastify":"^0.0.3","vuedraggable":"^4.1.0","vuetify":"^3.1.5","vuex":"^4.1.0","webfontloader":"^1.6.28"},"devDependencies":{"@types/node":"^12.0.2","@types/webfontloader":"^1.6.29","@typescript-eslint/eslint-plugin":"^5.42.0","@typescript-eslint/parser":"^5.42.0","@vue/cli-plugin-babel":"~5.0.8","@vue/cli-plugin-eslint":"~5.0.8","@vue/cli-plugin-pwa":"~5.0.8","@vue/cli-plugin-router":"~5.0.8","@vue/cli-plugin-typescript":"~5.0.8","@vue/cli-plugin-vuex":"~5.0.8","@vue/cli-service":"~5.0.8","@vue/eslint-config-typescript":"^11.0.2","@vueuse/core":"^9.4.0","eslint":"^8.26.0","eslint-config-prettier":"^8.5.0","eslint-plugin-prettier":"^4.2.1","eslint-plugin-vue":"^9.7.0","prettier":"^2.7.1","sass":"^1.56.0","sass-loader":"^13.1.0","script-ext-html-webpack-plugin":"^2.1.5","typescript":"~4.8.4","vue-cli-plugin-vuetify":"~2.5.8","webpack-plugin-vuetify":"^2.0.0"},"eslintConfig":{"root":true,"env":{"node":true},"extends":["plugin:vue/vue3-essential","eslint:recommended","@vue/typescript/recommended","plugin:prettier/recommended"],"parserOptions":{"ecmaVersion":2020},"rules":{}},"browserslist":["> 1%","last 2 versions","not dead","not ie 11"],"productName":"PJCan App"}');
 
 /***/ })
 

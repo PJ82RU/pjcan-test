@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunkpjcan"] = self["webpackChunkpjcan"] || []).push([[352],{
+(self["webpackChunkpjcan"] = self["webpackChunkpjcan"] || []).push([[410],{
 
 /***/ 9363:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
@@ -15824,7 +15824,7 @@ const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.Z)(ViewSettingDial
 
 /***/ }),
 
-/***/ 7352:
+/***/ 6410:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 // ESM COMPAT FLAG
@@ -18143,9 +18143,9 @@ var climate = __webpack_require__(2481);
 const ClimateCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(ClimateCardvue_type_script_lang_ts, [['render',ClimateCardvue_type_template_id_4e42cfa6_ts_true_render]])
 
 /* harmony default export */ var ClimateCard = (ClimateCard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/BoseCard.vue?vue&type=template&id=27dc6436&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/BoseCard.vue?vue&type=template&id=4937f932&ts=true
 
-function BoseCardvue_type_template_id_27dc6436_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function BoseCardvue_type_template_id_4937f932_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_icon_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.up)("icon-card-item");
                                                       
   const _component_slider_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.up)("slider-card-item");
@@ -18185,11 +18185,11 @@ function BoseCardvue_type_template_id_27dc6436_ts_true_render(_ctx, _cache, $pro
           "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => $setup.volume = $event),
           title: _ctx.$t('onboard.volume.level.title'),
           description: _ctx.$t('onboard.volume.level.description'),
-          max: $setup.max,
+          max: 63,
           nodata: !$setup.isLoadedVolumeConfig,
           disabled: !$setup.isLoadedVolumeView || !$setup.enabled[0],
           onChange: $setup.onApplyVolumeConfig
-        }, null, 8, ["modelValue", "title", "description", "max", "nodata", "disabled", "onChange"])]),
+        }, null, 8, ["modelValue", "title", "description", "nodata", "disabled", "onChange"])]),
         _: 1
       }), (0,runtime_core_esm_bundler/* createVNode */.Wm)(VCol/* VCol */.D, {
         cols: "12",
@@ -18735,16 +18735,14 @@ var debounce = __webpack_require__(9545);
     const isLoadedVolumeView = (0,reactivity_esm_bundler/* ref */.iH)(false);
     const mute = (0,reactivity_esm_bundler/* ref */.iH)(false);
     const volume = (0,reactivity_esm_bundler/* ref */.iH)(0);
-    const max = (0,reactivity_esm_bundler/* ref */.iH)(0);
     let disabledVolumeConfig = false;
     const debounceVolumeConfig = (0,debounce/* createDebounce */.c)();
     /** Входящие конфигурация звука */
     const onReceiveVolumeConfig = res => {
       isLoadedVolumeConfig.value = res.isData;
       if (res.isData) {
-        mute.value = res.mute;
-        volume.value = res.volume;
-        max.value = res.max;
+        mute.value = res.muteBose;
+        volume.value = res.volumeBose;
         disabledVolumeConfig = false;
       }
     };
@@ -18757,8 +18755,8 @@ var debounce = __webpack_require__(9545);
       if (isLoadedVolumeConfig.value && !disabledVolumeConfig) {
         disabledVolumeConfig = true;
         debounceVolumeConfig(() => disabledVolumeConfig = false, 1000);
-        canbus["default"].configs.variable.volume.mute = mute.value;
-        canbus["default"].configs.variable.volume.volume = volume.value;
+        canbus["default"].configs.variable.volume.muteBose = mute.value;
+        canbus["default"].configs.variable.volume.volumeBose = volume.value;
         canbus["default"].queryConfig(variables_volume/* API_VARIABLE_VOLUME_CONFIG_EXEC */.U0);
       }
     };
@@ -18822,7 +18820,6 @@ var debounce = __webpack_require__(9545);
       centerPointList,
       mute,
       volume,
-      max,
       menu,
       menuVisible,
       menuSelected,
@@ -18842,7 +18839,7 @@ var debounce = __webpack_require__(9545);
 
 
 ;
-const BoseCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(BoseCardvue_type_script_lang_ts, [['render',BoseCardvue_type_template_id_27dc6436_ts_true_render]])
+const BoseCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(BoseCardvue_type_script_lang_ts, [['render',BoseCardvue_type_template_id_4937f932_ts_true_render]])
 
 /* harmony default export */ var BoseCard = (BoseCard_exports_);
 // EXTERNAL MODULE: ./src/models/pjcan/car/index.ts + 2 modules
