@@ -10842,7 +10842,7 @@ var request = __webpack_require__(1312);
 ;// CONCATENATED MODULE: ./src/api/google.ts
 
 const setScanCan = data => {
-  const id = "AKfycbzdZEVlgW2XW2me2f69Ua88UBdBZ6cP34MY7-37q5J6LiWScRx9wxSuXt6kKN0AGSmC2w";
+  const id = "AKfycbwGEW3y_jz8MwL4h7ffem_Bdrojoo-Wmd1tQ9Ot_Sg-8vt7jjjJNhyqgXHsjT323K4l5w";
   return (0,request/* default */.Z)({
     url: `https://script.google.com/macros/s/${id}/exec`,
     method: "POST",
