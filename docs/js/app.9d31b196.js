@@ -5633,7 +5633,7 @@ const t = i18n.global.t;
 
 /***/ }),
 
-/***/ 644:
+/***/ 5319:
 /***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10801,12 +10801,12 @@ function DeviceResetDialogvue_type_template_id_a9e57686_ts_true_render(_ctx, _ca
 const DeviceResetDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(DeviceResetDialogvue_type_script_lang_ts, [['render',DeviceResetDialogvue_type_template_id_a9e57686_ts_true_render]])
 
 /* harmony default export */ var DeviceResetDialog = (DeviceResetDialog_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Scanner.vue?vue&type=template&id=3fcd546e&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Scanner.vue?vue&type=template&id=6d5ea61c&ts=true
 
-const Scannervue_type_template_id_3fcd546e_ts_true_hoisted_1 = {
+const Scannervue_type_template_id_6d5ea61c_ts_true_hoisted_1 = {
   class: "mb-2"
 };
-function Scannervue_type_template_id_3fcd546e_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function Scannervue_type_template_id_6d5ea61c_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                                               
   const _component_dialog_template = (0,runtime_core_esm_bundler/* resolveComponent */.up)("dialog-template");
   return (0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createBlock */.j4)(_component_dialog_template, {
@@ -10816,7 +10816,7 @@ function Scannervue_type_template_id_3fcd546e_ts_true_render(_ctx, _cache, $prop
     title: _ctx.$t('scanner.upload.title'),
     text: ""
   }, {
-    body: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createElementVNode */._)("div", null, (0,shared_esm_bundler/* toDisplayString */.zw)(_ctx.$t("scanner.upload.text")), 1), (0,runtime_core_esm_bundler/* createElementVNode */._)("div", Scannervue_type_template_id_3fcd546e_ts_true_hoisted_1, (0,shared_esm_bundler/* toDisplayString */.zw)(_ctx.$t("scanner.upload.leftToLoad", {
+    body: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createElementVNode */._)("div", null, (0,shared_esm_bundler/* toDisplayString */.zw)(_ctx.$t("scanner.upload.text")), 1), (0,runtime_core_esm_bundler/* createElementVNode */._)("div", Scannervue_type_template_id_6d5ea61c_ts_true_hoisted_1, (0,shared_esm_bundler/* toDisplayString */.zw)(_ctx.$t("scanner.upload.leftToLoad", {
       n: $setup.leftUploading
     })), 1), (0,runtime_core_esm_bundler/* createVNode */.Wm)(VProgressLinear/* VProgressLinear */.K, {
       color: "primary",
@@ -10833,7 +10833,7 @@ function Scannervue_type_template_id_3fcd546e_ts_true_render(_ctx, _cache, $prop
 
 
 
-;// CONCATENATED MODULE: ./src/components/Scanner.vue?vue&type=template&id=3fcd546e&ts=true
+;// CONCATENATED MODULE: ./src/components/Scanner.vue?vue&type=template&id=6d5ea61c&ts=true
 
 // EXTERNAL MODULE: ./src/models/pjcan/scanner/index.ts + 2 modules
 var scanner = __webpack_require__(577);
@@ -10872,6 +10872,7 @@ const toMac = value => {
 };
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Scanner.vue?vue&type=script&lang=ts
+
 
 
 
@@ -11012,8 +11013,10 @@ const toMac = value => {
       }
       scanUploading = true;
       leftUploading.value = scannerBuffer.length;
+      const datetime = moment_default()().format("YYYY.MM.DD HH:mm:ss");
       setScanCan({
         mac: efuseMac,
+        datetime,
         rows: scannerBuffer.splice(0, 32)
       }).then(res => {
         if (res?.success && !scanClose) setTimeout(() => sendScannerBuffer(), 100);else if (res?.error) esm/* toast.error */.Am.error(res?.message);
@@ -11036,7 +11039,7 @@ const toMac = value => {
 
 
 ;
-const Scanner_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(Scannervue_type_script_lang_ts, [['render',Scannervue_type_template_id_3fcd546e_ts_true_render]])
+const Scanner_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(Scannervue_type_script_lang_ts, [['render',Scannervue_type_template_id_6d5ea61c_ts_true_render]])
 
 /* harmony default export */ var Scanner = (Scanner_exports_);
 // EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 3 modules
@@ -25202,7 +25205,7 @@ var index = {
 }, {
   name: "doors",
   enabled: true,
-  car: [1, 2]
+  car: [1]
 }, {
   name: "climate",
   enabled: true,
@@ -81601,6 +81604,6 @@ module.exports = JSON.parse('{"name":"pjcan","version":"0.4.1","private":true,"d
 },
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
-/******/ var __webpack_exports__ = (__webpack_exec__(644));
+/******/ var __webpack_exports__ = (__webpack_exec__(5319));
 /******/ }
 ]);
