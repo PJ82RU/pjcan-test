@@ -5633,7 +5633,7 @@ const t = i18n.global.t;
 
 /***/ }),
 
-/***/ 5319:
+/***/ 8565:
 /***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10801,12 +10801,12 @@ function DeviceResetDialogvue_type_template_id_a9e57686_ts_true_render(_ctx, _ca
 const DeviceResetDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(DeviceResetDialogvue_type_script_lang_ts, [['render',DeviceResetDialogvue_type_template_id_a9e57686_ts_true_render]])
 
 /* harmony default export */ var DeviceResetDialog = (DeviceResetDialog_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Scanner.vue?vue&type=template&id=6d5ea61c&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Scanner.vue?vue&type=template&id=e7f766a4&ts=true
 
-const Scannervue_type_template_id_6d5ea61c_ts_true_hoisted_1 = {
+const Scannervue_type_template_id_e7f766a4_ts_true_hoisted_1 = {
   class: "mb-2"
 };
-function Scannervue_type_template_id_6d5ea61c_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function Scannervue_type_template_id_e7f766a4_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                                               
   const _component_dialog_template = (0,runtime_core_esm_bundler/* resolveComponent */.up)("dialog-template");
   return (0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createBlock */.j4)(_component_dialog_template, {
@@ -10816,7 +10816,7 @@ function Scannervue_type_template_id_6d5ea61c_ts_true_render(_ctx, _cache, $prop
     title: _ctx.$t('scanner.upload.title'),
     text: ""
   }, {
-    body: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createElementVNode */._)("div", null, (0,shared_esm_bundler/* toDisplayString */.zw)(_ctx.$t("scanner.upload.text")), 1), (0,runtime_core_esm_bundler/* createElementVNode */._)("div", Scannervue_type_template_id_6d5ea61c_ts_true_hoisted_1, (0,shared_esm_bundler/* toDisplayString */.zw)(_ctx.$t("scanner.upload.leftToLoad", {
+    body: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createElementVNode */._)("div", null, (0,shared_esm_bundler/* toDisplayString */.zw)(_ctx.$t("scanner.upload.text")), 1), (0,runtime_core_esm_bundler/* createElementVNode */._)("div", Scannervue_type_template_id_e7f766a4_ts_true_hoisted_1, (0,shared_esm_bundler/* toDisplayString */.zw)(_ctx.$t("scanner.upload.leftToLoad", {
       n: $setup.leftUploading
     })), 1), (0,runtime_core_esm_bundler/* createVNode */.Wm)(VProgressLinear/* VProgressLinear */.K, {
       color: "primary",
@@ -10833,7 +10833,7 @@ function Scannervue_type_template_id_6d5ea61c_ts_true_render(_ctx, _cache, $prop
 
 
 
-;// CONCATENATED MODULE: ./src/components/Scanner.vue?vue&type=template&id=6d5ea61c&ts=true
+;// CONCATENATED MODULE: ./src/components/Scanner.vue?vue&type=template&id=e7f766a4&ts=true
 
 // EXTERNAL MODULE: ./src/models/pjcan/scanner/index.ts + 2 modules
 var scanner = __webpack_require__(577);
@@ -10965,6 +10965,12 @@ const toMac = value => {
         btns: [],
         width: "800px"
       };
+      scannerBuffer.push({
+        datetime: message.title,
+        time: "",
+        hexId: "",
+        hexData: ""
+      });
       if (index < 4) {
         message.btns?.push({
           title: t("scanner.btn.next"),
@@ -10995,11 +11001,21 @@ const toMac = value => {
     /** Входящие значения сканирования */
     const onReceiveValue = res => {
       if (res.isData && res.count > 0) {
-        scannerBuffer.push(...res.frames.slice(0, res.count).map(x => ({
-          timestamp: Number(x.timestamp),
-          hexId: "0x" + toHex(x.id),
-          hexData: "0x" + x.data.map(x => toHex(x)).join(":")
-        })));
+        scannerBuffer.push(...res.frames.slice(0, res.count).map(x => {
+          const mm = moment_default().duration(Number(x.timestamp), "milliseconds");
+          const mm_time = {
+            hours: mm.hours(),
+            minutes: mm.minutes(),
+            seconds: mm.seconds(),
+            milliseconds: mm.milliseconds()
+          };
+          return {
+            datetime: moment_default()().format("YYYY.MM.DD HH:mm:ss"),
+            time: mm_time.hours + ":" + (mm_time.minutes < 10 ? "0" : "") + mm.minutes() + ":" + (mm_time.seconds < 10 ? "0" : "") + mm.seconds() + "." + (mm_time.milliseconds < 10 ? "00" : mm_time.milliseconds < 100 ? "0" : "") + mm.milliseconds(),
+            hexId: "0x" + toHex(x.id),
+            hexData: "0x" + x.data.map(x => toHex(x)).join(":")
+          };
+        }));
         sendScannerBuffer();
       }
     };
@@ -11013,11 +11029,9 @@ const toMac = value => {
       }
       scanUploading = true;
       leftUploading.value = scannerBuffer.length;
-      const datetime = moment_default()().format("YYYY.MM.DD HH:mm:ss");
       setScanCan({
         mac: efuseMac,
-        datetime,
-        rows: scannerBuffer.splice(0, 32)
+        rows: scannerBuffer.splice(0, 30)
       }).then(res => {
         if (res?.success && !scanClose) setTimeout(() => sendScannerBuffer(), 100);else if (res?.error) esm/* toast.error */.Am.error(res?.message);
       }).catch(() => esm/* toast.error */.Am.error(t("scanner.notify.errorSend"))).finally(() => {
@@ -11039,7 +11053,7 @@ const toMac = value => {
 
 
 ;
-const Scanner_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(Scannervue_type_script_lang_ts, [['render',Scannervue_type_template_id_6d5ea61c_ts_true_render]])
+const Scanner_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(Scannervue_type_script_lang_ts, [['render',Scannervue_type_template_id_e7f766a4_ts_true_render]])
 
 /* harmony default export */ var Scanner = (Scanner_exports_);
 // EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 3 modules
@@ -81597,13 +81611,13 @@ function useRender(render) {
 /***/ (function(module) {
 
 "use strict";
-module.exports = JSON.parse('{"name":"pjcan","version":"0.4.1","private":true,"description":"CanBus project for Mazda 3","author":"PJ82. Spiridonov Vladislav","scripts":{"serve":"vue-cli-service serve","build":"vue-cli-service build","build test":"vue-cli-service build --mode test"},"dependencies":{"@egjs/vue3-flicking":"^4.10.2","@mdi/font":"7.0.96","axios":"^1.1.3","bitset":"^5.1.1","core-js":"^3.26.0","eventemitter3":"^4.0.7","moment":"^2.29.4","register-service-worker":"^1.7.2","roboto-fontface":"*","screenfull":"^6.0.2","vue":"^3.2.41","vue-i18n":"^9.2.2","vue-router":"^4.1.6","vue3-toastify":"^0.0.3","vuedraggable":"^4.1.0","vuetify":"^3.1.5","vuex":"^4.1.0","webfontloader":"^1.6.28"},"devDependencies":{"@types/node":"^12.0.2","@types/webfontloader":"^1.6.29","@typescript-eslint/eslint-plugin":"^5.42.0","@typescript-eslint/parser":"^5.42.0","@vue/cli-plugin-babel":"~5.0.8","@vue/cli-plugin-eslint":"~5.0.8","@vue/cli-plugin-pwa":"~5.0.8","@vue/cli-plugin-router":"~5.0.8","@vue/cli-plugin-typescript":"~5.0.8","@vue/cli-plugin-vuex":"~5.0.8","@vue/cli-service":"~5.0.8","@vue/eslint-config-typescript":"^11.0.2","@vueuse/core":"^9.4.0","eslint":"^8.26.0","eslint-config-prettier":"^8.5.0","eslint-plugin-prettier":"^4.2.1","eslint-plugin-vue":"^9.7.0","prettier":"^2.7.1","sass":"^1.56.0","sass-loader":"^13.1.0","script-ext-html-webpack-plugin":"^2.1.5","typescript":"~4.8.4","vue-cli-plugin-vuetify":"~2.5.8","webpack-plugin-vuetify":"^2.0.0"},"eslintConfig":{"root":true,"env":{"node":true},"extends":["plugin:vue/vue3-essential","eslint:recommended","@vue/typescript/recommended","plugin:prettier/recommended"],"parserOptions":{"ecmaVersion":2020},"rules":{}},"browserslist":["> 1%","last 2 versions","not dead","not ie 11"],"productName":"PJCan App"}');
+module.exports = JSON.parse('{"name":"pjcan","version":"0.4.2","private":true,"description":"CanBus project for Mazda 3","author":"PJ82. Spiridonov Vladislav","scripts":{"serve":"vue-cli-service serve","build":"vue-cli-service build","build test":"vue-cli-service build --mode test"},"dependencies":{"@egjs/vue3-flicking":"^4.10.2","@mdi/font":"7.0.96","axios":"^1.1.3","bitset":"^5.1.1","core-js":"^3.26.0","eventemitter3":"^4.0.7","moment":"^2.29.4","register-service-worker":"^1.7.2","roboto-fontface":"*","screenfull":"^6.0.2","vue":"^3.2.41","vue-i18n":"^9.2.2","vue-router":"^4.1.6","vue3-toastify":"^0.0.3","vuedraggable":"^4.1.0","vuetify":"^3.1.5","vuex":"^4.1.0","webfontloader":"^1.6.28"},"devDependencies":{"@types/node":"^12.0.2","@types/webfontloader":"^1.6.29","@typescript-eslint/eslint-plugin":"^5.42.0","@typescript-eslint/parser":"^5.42.0","@vue/cli-plugin-babel":"~5.0.8","@vue/cli-plugin-eslint":"~5.0.8","@vue/cli-plugin-pwa":"~5.0.8","@vue/cli-plugin-router":"~5.0.8","@vue/cli-plugin-typescript":"~5.0.8","@vue/cli-plugin-vuex":"~5.0.8","@vue/cli-service":"~5.0.8","@vue/eslint-config-typescript":"^11.0.2","@vueuse/core":"^9.4.0","eslint":"^8.26.0","eslint-config-prettier":"^8.5.0","eslint-plugin-prettier":"^4.2.1","eslint-plugin-vue":"^9.7.0","prettier":"^2.7.1","sass":"^1.56.0","sass-loader":"^13.1.0","script-ext-html-webpack-plugin":"^2.1.5","typescript":"~4.8.4","vue-cli-plugin-vuetify":"~2.5.8","webpack-plugin-vuetify":"^2.0.0"},"eslintConfig":{"root":true,"env":{"node":true},"extends":["plugin:vue/vue3-essential","eslint:recommended","@vue/typescript/recommended","plugin:prettier/recommended"],"parserOptions":{"ecmaVersion":2020},"rules":{}},"browserslist":["> 1%","last 2 versions","not dead","not ie 11"],"productName":"PJCan App"}');
 
 /***/ })
 
 },
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
-/******/ var __webpack_exports__ = (__webpack_exec__(5319));
+/******/ var __webpack_exports__ = (__webpack_exec__(8565));
 /******/ }
 ]);
