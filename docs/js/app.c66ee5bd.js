@@ -2746,8 +2746,8 @@ var bluetooth = __webpack_require__(9014);
 var configs = __webpack_require__(1303);
 // EXTERNAL MODULE: ./src/models/pjcan/base/BaseModel.ts
 var BaseModel = __webpack_require__(9036);
-// EXTERNAL MODULE: ./src/models/pjcan/car/index.ts + 2 modules
-var car = __webpack_require__(5178);
+// EXTERNAL MODULE: ./src/models/pjcan/car/index.ts + 3 modules
+var car = __webpack_require__(3053);
 // EXTERNAL MODULE: ./src/models/pjcan/view/index.ts + 2 modules
 var view = __webpack_require__(7374);
 // EXTERNAL MODULE: ./src/models/pjcan/variables/bose/index.ts + 3 modules
@@ -5633,7 +5633,7 @@ const t = i18n.global.t;
 
 /***/ }),
 
-/***/ 8565:
+/***/ 5119:
 /***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10461,9 +10461,9 @@ var VRow = __webpack_require__(6824);
 var VCol = __webpack_require__(8521);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VTextField/VTextField.mjs
 var VTextField = __webpack_require__(165);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/AboutDialog.vue?vue&type=template&id=742e3285&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/AboutDialog.vue?vue&type=template&id=0b2e9ae8&ts=true
 
-function AboutDialogvue_type_template_id_742e3285_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function AboutDialogvue_type_template_id_0b2e9ae8_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                                     
                                                       
                                                       
@@ -11187,8 +11187,8 @@ const DeviceInfoDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(D
 /* harmony default export */ var DeviceInfoDialog = (DeviceInfoDialog_exports_);
 // EXTERNAL MODULE: ./src/models/pjcan/configs/index.ts + 1 modules
 var configs = __webpack_require__(1303);
-// EXTERNAL MODULE: ./src/models/pjcan/car/index.ts + 2 modules
-var car = __webpack_require__(5178);
+// EXTERNAL MODULE: ./src/models/pjcan/car/index.ts + 3 modules
+var car = __webpack_require__(3053);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/AboutDialog.vue?vue&type=script&lang=ts
 
 
@@ -11243,10 +11243,10 @@ const pkg = __webpack_require__(4147);
     const onReceiveCarConfig = res => {
       if (res.isData) {
         switch (res.carModel) {
-          case 1:
+          case car/* ECarModel.CAR_MODEL_MAZDA3 */.qZ.CAR_MODEL_MAZDA3:
             carSupport.value = "Mazda 3 BK";
             break;
-          case 2:
+          case car/* ECarModel.CAR_MODEL_MAZDA_CX7 */.qZ.CAR_MODEL_MAZDA_CX7:
             carSupport.value = "Mazda CX-7";
             break;
           default:
@@ -11285,7 +11285,7 @@ const pkg = __webpack_require__(4147);
 
 
 ;
-const AboutDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(AboutDialogvue_type_script_lang_ts, [['render',AboutDialogvue_type_template_id_742e3285_ts_true_render]])
+const AboutDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(AboutDialogvue_type_script_lang_ts, [['render',AboutDialogvue_type_template_id_0b2e9ae8_ts_true_render]])
 
 /* harmony default export */ var AboutDialog = (AboutDialog_exports_);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtnGroup/VBtnGroup.mjs + 1 modules
@@ -21327,7 +21327,7 @@ var TButtonPress;
 
 /***/ }),
 
-/***/ 5178:
+/***/ 3053:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21339,7 +21339,8 @@ __webpack_require__.d(__webpack_exports__, {
   "Or": function() { return /* reexport */ API_CAR_VIEW_EVENT; },
   "kn": function() { return /* reexport */ API_CAR_VIEW_EXEC; },
   "XK": function() { return /* reexport */ CarConfig; },
-  "bs": function() { return /* reexport */ CarView; }
+  "bs": function() { return /* reexport */ CarView; },
+  "qZ": function() { return /* reexport */ ECarModel; }
 });
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/defineProperty.js + 3 modules
@@ -21348,7 +21349,15 @@ var defineProperty = __webpack_require__(7327);
 var bluetooth = __webpack_require__(9014);
 // EXTERNAL MODULE: ./src/models/pjcan/base/BaseModel.ts
 var BaseModel = __webpack_require__(9036);
+;// CONCATENATED MODULE: ./src/models/pjcan/car/ECarModel.ts
+var ECarModel;
+(function (ECarModel) {
+  ECarModel[ECarModel["CAR_MODEL_NONE"] = 0] = "CAR_MODEL_NONE";
+  ECarModel[ECarModel["CAR_MODEL_MAZDA3"] = 1] = "CAR_MODEL_MAZDA3";
+  ECarModel[ECarModel["CAR_MODEL_MAZDA_CX7"] = 2] = "CAR_MODEL_MAZDA_CX7";
+})(ECarModel || (ECarModel = {}));
 ;// CONCATENATED MODULE: ./src/models/pjcan/car/CarConfig.ts
+
 
 
 
@@ -21359,7 +21368,7 @@ class CarConfig extends BaseModel/* BaseModel */.g {
   constructor(data) {
     super();
     (0,defineProperty/* default */.Z)(this, "lcd", false);
-    (0,defineProperty/* default */.Z)(this, "carModel", 0);
+    (0,defineProperty/* default */.Z)(this, "carModel", ECarModel.CAR_MODEL_NONE);
     (0,defineProperty/* default */.Z)(this, "logo", "");
     (0,defineProperty/* default */.Z)(this, "hello", "");
     if (data) this.set(data);
@@ -21422,6 +21431,7 @@ class CarView extends BaseModel/* BaseModel */.g {
 
 
 
+
 /***/ }),
 
 /***/ 1303:
@@ -21448,8 +21458,8 @@ var pjcan_version = __webpack_require__(6351);
 var device = __webpack_require__(9065);
 // EXTERNAL MODULE: ./src/models/pjcan/button/index.ts + 5 modules
 var pjcan_button = __webpack_require__(6841);
-// EXTERNAL MODULE: ./src/models/pjcan/car/index.ts + 2 modules
-var car = __webpack_require__(5178);
+// EXTERNAL MODULE: ./src/models/pjcan/car/index.ts + 3 modules
+var car = __webpack_require__(3053);
 // EXTERNAL MODULE: ./src/models/pjcan/teyes/index.ts + 3 modules
 var teyes = __webpack_require__(2754);
 // EXTERNAL MODULE: ./src/models/pjcan/variables/configs/index.ts + 1 modules
@@ -81618,6 +81628,6 @@ module.exports = JSON.parse('{"name":"pjcan","version":"0.4.2","private":true,"d
 },
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
-/******/ var __webpack_exports__ = (__webpack_exec__(8565));
+/******/ var __webpack_exports__ = (__webpack_exec__(5119));
 /******/ }
 ]);
