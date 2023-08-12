@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunkpjcan"] = self["webpackChunkpjcan"] || []).push([[120],{
+(self["webpackChunkpjcan"] = self["webpackChunkpjcan"] || []).push([[234],{
 
 /***/ 9363:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
@@ -15824,7 +15824,7 @@ const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.Z)(ViewSettingDial
 
 /***/ }),
 
-/***/ 1120:
+/***/ 3234:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 // ESM COMPAT FLAG
@@ -16429,9 +16429,9 @@ var car = __webpack_require__(3053);
 const InfoCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(InfoCardvue_type_script_lang_ts, [['render',InfoCardvue_type_template_id_279e77e0_ts_true_render]])
 
 /* harmony default export */ var InfoCard = (InfoCard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/EngineCard.vue?vue&type=template&id=6d72b28c&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/EngineCard.vue?vue&type=template&id=04589c6d&ts=true
 
-function EngineCardvue_type_template_id_6d72b28c_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function EngineCardvue_type_template_id_04589c6d_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_icon_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.up)("icon-card-item");
                                                       
   const _component_input_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.up)("input-card-item");
@@ -16496,7 +16496,8 @@ function EngineCardvue_type_template_id_6d72b28c_ts_true_render(_ctx, _cache, $p
           disabled: !$setup.isLoadedView
         }, null, 8, ["value", "title", "description", "nodata", "disabled"])]),
         _: 1
-      }), (0,runtime_core_esm_bundler/* createVNode */.Wm)(VCol/* VCol */.D, {
+      }), $props.carModel === $options.ECarModel.CAR_MODEL_MAZDA3 ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createBlock */.j4)(VCol/* VCol */.D, {
+        key: 0,
         cols: "12",
         class: "pt-0 pb-0"
       }, {
@@ -16508,7 +16509,7 @@ function EngineCardvue_type_template_id_6d72b28c_ts_true_render(_ctx, _cache, $p
           disabled: !$setup.isLoadedView
         }, null, 8, ["value", "title", "description", "nodata", "disabled"])]),
         _: 1
-      }), (0,runtime_core_esm_bundler/* createVNode */.Wm)(VCol/* VCol */.D, {
+      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.kq)("", true), (0,runtime_core_esm_bundler/* createVNode */.Wm)(VCol/* VCol */.D, {
         cols: "12",
         class: "pt-0 pb-0"
       }, {
@@ -16873,8 +16874,14 @@ const EngineConfigDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)
 
 
 
+
 /* harmony default export */ var EngineCardvue_type_script_lang_ts = ({
   name: "EngineCard",
+  computed: {
+    ECarModel() {
+      return car/* ECarModel */.qZ;
+    }
+  },
   components: {
     Card: Card/* default */.Z,
     InputCardItem: InputCardItem/* default */.Z,
@@ -17064,7 +17071,7 @@ const EngineConfigDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)
 
 
 ;
-const EngineCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(EngineCardvue_type_script_lang_ts, [['render',EngineCardvue_type_template_id_6d72b28c_ts_true_render]])
+const EngineCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(EngineCardvue_type_script_lang_ts, [['render',EngineCardvue_type_template_id_04589c6d_ts_true_render]])
 
 /* harmony default export */ var EngineCard = (EngineCard_exports_);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/FuelCard.vue?vue&type=template&id=204921e4&ts=true

@@ -4641,7 +4641,7 @@ var vue_i18n_esm_bundler = __webpack_require__(5658);
       },
       throttle: {
         title: "Положение дрос. заслонки",
-        description: "Вот как ее положили, так и лежит",
+        description: "Относительное положение дроссельной заслонки",
         menu: "LCD: Положение дроссельной заслонки"
       },
       coolant: {
@@ -5216,7 +5216,7 @@ var vue_i18n_esm_bundler = __webpack_require__(5658);
       },
       throttle: {
         title: "Throttle position",
-        description: "That's how they put it, and it lies",
+        description: "Relative throttle position",
         menu: "LCD: Throttle position"
       },
       coolant: {
