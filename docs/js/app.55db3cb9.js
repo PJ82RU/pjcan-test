@@ -4872,7 +4872,8 @@ var vue_i18n_esm_bundler = __webpack_require__(5658);
       11: "Кнопка показать значения ДВС",
       12: "Кнопка показать значения расхода",
       13: "Кнопка показать значения движения",
-      14: "Кнопка показать значения температуры"
+      14: "Кнопка показать значения температуры",
+      15: "Кнопка Clock 12/24 на LCD"
     },
     definition: {
       title: "Обнаружено нажатие кнопки",
@@ -5458,7 +5459,8 @@ var vue_i18n_esm_bundler = __webpack_require__(5658);
       11: "Show engine values button",
       12: "Show consumption values button",
       13: "Show motion values button",
-      14: "Button to show temperature values"
+      14: "Button to show temperature values",
+      15: "Clock 12/24 button on LCD"
     },
     definition: {
       title: "Button press detected",
@@ -5657,7 +5659,7 @@ const t = i18n.global.t;
 
 /***/ }),
 
-/***/ 1949:
+/***/ 9944:
 /***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6671,9 +6673,9 @@ const VMain = (0,defineComponent/* genericComponent */.ev)()({
     return {};
   }
 });
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=template&id=5161340b&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=template&id=537dc5e5&scoped=true&ts=true
 
-const _withScopeId = n => ((0,runtime_core_esm_bundler/* pushScopeId */.dD)("data-v-5161340b"), n = n(), (0,runtime_core_esm_bundler/* popScopeId */.Cn)(), n);
+const _withScopeId = n => ((0,runtime_core_esm_bundler/* pushScopeId */.dD)("data-v-537dc5e5"), n = n(), (0,runtime_core_esm_bundler/* popScopeId */.Cn)(), n);
 const _hoisted_1 = {
   class: "text-h4"
 };
@@ -6683,7 +6685,7 @@ const _hoisted_2 = /*#__PURE__*/_withScopeId(() => /*#__PURE__*/(0,runtime_core_
 const _hoisted_3 = /*#__PURE__*/_withScopeId(() => /*#__PURE__*/(0,runtime_core_esm_bundler/* createElementVNode */._)("div", {
   class: "base-layout__bg"
 }, null, -1));
-function BaseLayoutvue_type_template_id_5161340b_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function BaseLayoutvue_type_template_id_537dc5e5_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                                           
                                                             
   const _component_icon_custom = (0,runtime_core_esm_bundler/* resolveComponent */.up)("icon-custom");
@@ -6739,8 +6741,9 @@ function BaseLayoutvue_type_template_id_5161340b_scoped_true_ts_true_render(_ctx
         "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => $setup.visibleAbout = $event)
       }, null, 8, ["modelValue"]), (0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_onboard_buttons_dialog, {
         modelValue: $setup.visibleOnboardButtons,
-        "onUpdate:modelValue": _cache[3] || (_cache[3] = $event => $setup.visibleOnboardButtons = $event)
-      }, null, 8, ["modelValue"]), (0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_test_dialog, {
+        "onUpdate:modelValue": _cache[3] || (_cache[3] = $event => $setup.visibleOnboardButtons = $event),
+        "car-model": $setup.carModel
+      }, null, 8, ["modelValue", "car-model"]), (0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_test_dialog, {
         modelValue: $setup.visibleTest,
         "onUpdate:modelValue": _cache[4] || (_cache[4] = $event => $setup.visibleTest = $event)
       }, null, 8, ["modelValue"])]),
@@ -6777,7 +6780,7 @@ function BaseLayoutvue_type_template_id_5161340b_scoped_true_ts_true_render(_ctx
 
 
 
-;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=template&id=5161340b&scoped=true&ts=true
+;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=template&id=537dc5e5&scoped=true&ts=true
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.unshift.js
 var es_array_unshift = __webpack_require__(541);
@@ -11471,9 +11474,9 @@ const AboutDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(AboutD
 /* harmony default export */ var AboutDialog = (AboutDialog_exports_);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtnGroup/VBtnGroup.mjs + 1 modules
 var VBtnGroup = __webpack_require__(401);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=template&id=202e5ccc&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=template&id=749f6ac8&scoped=true&ts=true
 
-function OnboardButtonsDialogvue_type_template_id_202e5ccc_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function OnboardButtonsDialogvue_type_template_id_749f6ac8_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                       
                                                                   
                                                       
@@ -11482,7 +11485,7 @@ function OnboardButtonsDialogvue_type_template_id_202e5ccc_scoped_true_ts_true_r
   return (0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createBlock */.j4)(_component_dialog_template, {
     "content-class": "onboard-buttons",
     modelValue: $setup.visible,
-    "onUpdate:modelValue": _cache[33] || (_cache[33] = $event => $setup.visible = $event),
+    "onUpdate:modelValue": _cache[39] || (_cache[39] = $event => $setup.visible = $event),
     title: _ctx.$t('onboardButtons.title'),
     info: _ctx.$t('onboardButtons.description'),
     icon: "steering-wheel",
@@ -11503,9 +11506,9 @@ function OnboardButtonsDialogvue_type_template_id_202e5ccc_scoped_true_ts_true_r
           default: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createVNode */.Wm)(VBtn/* VBtn */.T, {
             color: "primary",
             size: "x-large",
-            onMousedown: _cache[0] || (_cache[0] = $event => $setup.onTouchPress('btnClock')),
-            onMouseup: _cache[1] || (_cache[1] = $event => $setup.onTouchRelease('btnClock')),
-            onMouseleave: _cache[2] || (_cache[2] = $event => $setup.onTouchRelease('btnClock')),
+            onMousedown: _cache[0] || (_cache[0] = $event => $setup.onPress('btnClock')),
+            onMouseup: _cache[1] || (_cache[1] = $event => $setup.onRelease('btnClock')),
+            onMouseleave: _cache[2] || (_cache[2] = $event => $setup.onRelease('btnClock')),
             onTouchstart: _cache[3] || (_cache[3] = $event => $setup.onTouchPress('btnClock')),
             onTouchend: _cache[4] || (_cache[4] = $event => $setup.onTouchRelease('btnClock')),
             onTouchcancel: _cache[5] || (_cache[5] = $event => $setup.onTouchRelease('btnClock'))
@@ -11515,9 +11518,9 @@ function OnboardButtonsDialogvue_type_template_id_202e5ccc_scoped_true_ts_true_r
           }), (0,runtime_core_esm_bundler/* createVNode */.Wm)(VBtn/* VBtn */.T, {
             color: "primary",
             size: "x-large",
-            onMousedown: _cache[6] || (_cache[6] = $event => $setup.onTouchPress('btnInfo')),
-            onMouseup: _cache[7] || (_cache[7] = $event => $setup.onTouchRelease('btnInfo')),
-            onMouseleave: _cache[8] || (_cache[8] = $event => $setup.onTouchRelease('btnInfo')),
+            onMousedown: _cache[6] || (_cache[6] = $event => $setup.onPress('btnInfo')),
+            onMouseup: _cache[7] || (_cache[7] = $event => $setup.onRelease('btnInfo')),
+            onMouseleave: _cache[8] || (_cache[8] = $event => $setup.onRelease('btnInfo')),
             onTouchstart: _cache[9] || (_cache[9] = $event => $setup.onTouchPress('btnInfo')),
             onTouchend: _cache[10] || (_cache[10] = $event => $setup.onTouchRelease('btnInfo')),
             onTouchcancel: _cache[11] || (_cache[11] = $event => $setup.onTouchRelease('btnInfo'))
@@ -11538,9 +11541,9 @@ function OnboardButtonsDialogvue_type_template_id_202e5ccc_scoped_true_ts_true_r
           default: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createVNode */.Wm)(VBtn/* VBtn */.T, {
             color: "secondary",
             size: "x-large",
-            onMousedown: _cache[12] || (_cache[12] = $event => $setup.onTouchPress('btnClockH')),
-            onMouseup: _cache[13] || (_cache[13] = $event => $setup.onTouchRelease('btnClockH')),
-            onMouseleave: _cache[14] || (_cache[14] = $event => $setup.onTouchRelease('btnClockH')),
+            onMousedown: _cache[12] || (_cache[12] = $event => $setup.onPress('btnClockH')),
+            onMouseup: _cache[13] || (_cache[13] = $event => $setup.onRelease('btnClockH')),
+            onMouseleave: _cache[14] || (_cache[14] = $event => $setup.onRelease('btnClockH')),
             onTouchstart: _cache[15] || (_cache[15] = $event => $setup.onTouchPress('btnClockH')),
             onTouchend: _cache[16] || (_cache[16] = $event => $setup.onTouchRelease('btnClockH')),
             onTouchcancel: _cache[17] || (_cache[17] = $event => $setup.onTouchRelease('btnClockH'))
@@ -11550,9 +11553,9 @@ function OnboardButtonsDialogvue_type_template_id_202e5ccc_scoped_true_ts_true_r
           }), (0,runtime_core_esm_bundler/* createVNode */.Wm)(VBtn/* VBtn */.T, {
             color: "secondary",
             size: "x-large",
-            onMousedown: _cache[18] || (_cache[18] = $event => $setup.onTouchPress('btnClockM')),
-            onMouseup: _cache[19] || (_cache[19] = $event => $setup.onTouchRelease('btnClockM')),
-            onMouseleave: _cache[20] || (_cache[20] = $event => $setup.onTouchRelease('btnClockM')),
+            onMousedown: _cache[18] || (_cache[18] = $event => $setup.onPress('btnClockM')),
+            onMouseup: _cache[19] || (_cache[19] = $event => $setup.onRelease('btnClockM')),
+            onMouseleave: _cache[20] || (_cache[20] = $event => $setup.onRelease('btnClockM')),
             onTouchstart: _cache[21] || (_cache[21] = $event => $setup.onTouchPress('btnClockM')),
             onTouchend: _cache[22] || (_cache[22] = $event => $setup.onTouchRelease('btnClockM')),
             onTouchcancel: _cache[23] || (_cache[23] = $event => $setup.onTouchRelease('btnClockM'))
@@ -11562,24 +11565,38 @@ function OnboardButtonsDialogvue_type_template_id_202e5ccc_scoped_true_ts_true_r
           }), (0,runtime_core_esm_bundler/* createVNode */.Wm)(VBtn/* VBtn */.T, {
             color: "secondary",
             size: "x-large",
-            onMousedown: _cache[24] || (_cache[24] = $event => $setup.onTouchPress('btnClockRM')),
-            onMouseup: _cache[25] || (_cache[25] = $event => $setup.onTouchRelease('btnClockRM')),
-            onMouseleave: _cache[26] || (_cache[26] = $event => $setup.onTouchRelease('btnClockRM')),
+            onMousedown: _cache[24] || (_cache[24] = $event => $setup.onPress('btnClockRM')),
+            onMouseup: _cache[25] || (_cache[25] = $event => $setup.onRelease('btnClockRM')),
+            onMouseleave: _cache[26] || (_cache[26] = $event => $setup.onRelease('btnClockRM')),
             onTouchstart: _cache[27] || (_cache[27] = $event => $setup.onTouchPress('btnClockRM')),
             onTouchend: _cache[28] || (_cache[28] = $event => $setup.onTouchRelease('btnClockRM')),
             onTouchcancel: _cache[29] || (_cache[29] = $event => $setup.onTouchRelease('btnClockRM'))
           }, {
             default: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.Uk)(" RM ")]),
             _: 1
-          }), (0,runtime_core_esm_bundler/* createVNode */.Wm)(VBtn/* VBtn */.T, {
+          }), $props.carModel === $options.ECarModel.CAR_MODEL_MAZDA_CX9_GEN2 ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createBlock */.j4)(VBtn/* VBtn */.T, {
+            key: 0,
             color: "secondary",
             size: "x-large",
-            onMousedown: _cache[30] || (_cache[30] = $event => $setup.onTouchPress('flgClock24', true)),
-            onTouchstart: _cache[31] || (_cache[31] = $event => $setup.onTouchPress('flgClock24', true))
+            onMousedown: _cache[30] || (_cache[30] = $event => $setup.onPress('flgClock24')),
+            onMouseup: _cache[31] || (_cache[31] = $event => $setup.onRelease('flgClock24')),
+            onMouseleave: _cache[32] || (_cache[32] = $event => $setup.onRelease('flgClock24')),
+            onTouchstart: _cache[33] || (_cache[33] = $event => $setup.onTouchPress('flgClock24')),
+            onTouchend: _cache[34] || (_cache[34] = $event => $setup.onTouchRelease('flgClock24')),
+            onTouchcancel: _cache[35] || (_cache[35] = $event => $setup.onTouchRelease('flgClock24'))
           }, {
             default: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.Uk)(" 24/12 ")]),
             _: 1
-          })]),
+          })) : ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createBlock */.j4)(VBtn/* VBtn */.T, {
+            key: 1,
+            color: "secondary",
+            size: "x-large",
+            onMousedown: _cache[36] || (_cache[36] = $event => $setup.onPress('flgClock24', true)),
+            onTouchstart: _cache[37] || (_cache[37] = $event => $setup.onTouchPress('flgClock24', true))
+          }, {
+            default: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.Uk)(" 24/12 ")]),
+            _: 1
+          }))]),
           _: 1
         })]),
         _: 1
@@ -11589,7 +11606,7 @@ function OnboardButtonsDialogvue_type_template_id_202e5ccc_scoped_true_ts_true_r
     btns: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createVNode */.Wm)(VBtn/* VBtn */.T, {
       color: "primary",
       "prepend-icon": "mdi-close",
-      onClick: _cache[32] || (_cache[32] = $event => $setup.visible = false)
+      onClick: _cache[38] || (_cache[38] = $event => $setup.visible = false)
     }, {
       default: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.Uk)((0,shared_esm_bundler/* toDisplayString */.zw)(_ctx.$t("btn.close")), 1)]),
       _: 1
@@ -11611,13 +11628,23 @@ var lcd = __webpack_require__(6026);
 
 
 
+
 /* harmony default export */ var OnboardButtonsDialogvue_type_script_lang_ts = ({
   name: "OnboardButtonsDialog",
+  computed: {
+    ECarModel() {
+      return car/* ECarModel */.qZ;
+    }
+  },
   components: {
     DialogTemplate: DialogTemplate/* default */.Z
   },
   props: {
-    modelValue: Boolean
+    modelValue: Boolean,
+    carModel: {
+      type: Number,
+      default: 0
+    }
   },
   emits: ["update:modelValue"],
   setup(props, {
@@ -11630,12 +11657,46 @@ var lcd = __webpack_require__(6026);
       get: () => modelValue.value,
       set: val => emit("update:modelValue", val)
     });
+    const isTouchDevice = () => {
+      // @ts-ignore
+      return "ontouchstart" in window || navigator?.maxTouchPoints > 0 || navigator?.msMaxTouchPoints > 0;
+    };
     const timeouts = {
-      btnInfo: 0,
-      btnClock: 0,
-      btnClockH: 0,
-      btnClockM: 0,
-      btnClockRM: 0
+      btnInfo: null,
+      btnClock: null,
+      btnClockH: null,
+      btnClockM: null,
+      btnClockRM: null,
+      flgClock24: null
+    };
+    const press = (name, toggle) => {
+      if (timeouts?.[name] === null) {
+        canbus["default"].values.lcd[name] = !toggle ? true : !canbus["default"].values.lcd[name];
+        canbus["default"].queryValue(lcd/* API_LCD_VALUE_EXEC */.Q0);
+        navigator.vibrate(30);
+      } else {
+        clearTimeout(timeouts[name]);
+      }
+      if (!toggle) {
+        timeouts[name] = setTimeout(release, 60000, name);
+      }
+    };
+    const release = name => {
+      if (timeouts?.[name] !== null) {
+        canbus["default"].values.lcd[name] = false;
+        canbus["default"].queryValue(lcd/* API_LCD_VALUE_EXEC */.Q0);
+        navigator.vibrate(20);
+        clearTimeout(timeouts[name]);
+        timeouts[name] = null;
+      }
+    };
+    /**
+     * Событие нажатия на кнопку
+     * @param {string} name Имя кнопки
+     * @param {boolean} toggle Переключатель
+     */
+    const onPress = (name, toggle = false) => {
+      if (!isTouchDevice()) press(name, toggle);
     };
     /**
      * Событие нажатия на кнопку
@@ -11643,39 +11704,37 @@ var lcd = __webpack_require__(6026);
      * @param {boolean} toggle Переключатель
      */
     const onTouchPress = (name, toggle = false) => {
-      canbus["default"].values.lcd[name] = !toggle ? true : !canbus["default"].values.lcd[name];
-      canbus["default"].queryValue(lcd/* API_LCD_VALUE_EXEC */.Q0);
-      navigator.vibrate(30);
-      if (timeouts?.[name]) {
-        clearTimeout(timeouts[name]);
-        timeouts[name] = setTimeout(onTouchRelease, 60000, name);
-      }
+      if (isTouchDevice()) press(name, toggle);
+    };
+    /**
+     * Событие отпуска кнопки
+     * @param {string} name Имя кнопки
+     */
+    const onRelease = name => {
+      if (!isTouchDevice()) release(name);
     };
     /**
      * Событие отпуска кнопки
      * @param {string} name Имя кнопки
      */
     const onTouchRelease = name => {
-      if (canbus["default"].values.lcd[name]) {
-        canbus["default"].values.lcd[name] = false;
-        canbus["default"].queryValue(lcd/* API_LCD_VALUE_EXEC */.Q0);
-        navigator.vibrate(20);
-      }
-      if (timeouts?.[name]) clearTimeout(timeouts[name]);
+      if (isTouchDevice()) release(name);
     };
     return {
       visible,
+      onPress,
       onTouchPress,
+      onRelease,
       onTouchRelease
     };
   }
 });
 ;// CONCATENATED MODULE: ./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=style&index=0&id=202e5ccc&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=style&index=0&id=749f6ac8&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=style&index=0&id=202e5ccc&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=style&index=0&id=749f6ac8&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/components/dialogs/OnboardButtonsDialog.vue
 
@@ -11685,7 +11744,7 @@ var lcd = __webpack_require__(6026);
 ;
 
 
-const OnboardButtonsDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(OnboardButtonsDialogvue_type_script_lang_ts, [['render',OnboardButtonsDialogvue_type_template_id_202e5ccc_scoped_true_ts_true_render],['__scopeId',"data-v-202e5ccc"]])
+const OnboardButtonsDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(OnboardButtonsDialogvue_type_script_lang_ts, [['render',OnboardButtonsDialogvue_type_template_id_749f6ac8_scoped_true_ts_true_render],['__scopeId',"data-v-749f6ac8"]])
 
 /* harmony default export */ var OnboardButtonsDialog = (OnboardButtonsDialog_exports_);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/TestDialog.vue?vue&type=template&id=3bcd2b05&scoped=true&ts=true
@@ -12169,6 +12228,7 @@ var IconCustom = __webpack_require__(1776);
     return {
       title,
       menu,
+      carModel,
       newVersionFirmware,
       visibleAbout,
       visibleOnboardButtons,
@@ -12185,10 +12245,10 @@ var IconCustom = __webpack_require__(1776);
 });
 ;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=style&index=0&id=5161340b&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=style&index=0&id=537dc5e5&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=style&index=0&id=5161340b&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=style&index=0&id=537dc5e5&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue
 
@@ -12198,7 +12258,7 @@ var IconCustom = __webpack_require__(1776);
 ;
 
 
-const BaseLayout_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(BaseLayoutvue_type_script_lang_ts, [['render',BaseLayoutvue_type_template_id_5161340b_scoped_true_ts_true_render],['__scopeId',"data-v-5161340b"]])
+const BaseLayout_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(BaseLayoutvue_type_script_lang_ts, [['render',BaseLayoutvue_type_template_id_537dc5e5_scoped_true_ts_true_render],['__scopeId',"data-v-537dc5e5"]])
 
 /* harmony default export */ var BaseLayout = (BaseLayout_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=script&lang=ts
@@ -21495,7 +21555,8 @@ var TButtonExec;
   TButtonExec[TButtonExec["VARIABLE_ENGINE"] = 11] = "VARIABLE_ENGINE";
   TButtonExec[TButtonExec["VARIABLE_FUEL"] = 12] = "VARIABLE_FUEL";
   TButtonExec[TButtonExec["VARIABLE_MOVEMENT"] = 13] = "VARIABLE_MOVEMENT";
-  TButtonExec[TButtonExec["VARIABLE_TEMPERATURE"] = 14] = "VARIABLE_TEMPERATURE"; // кнопка показать значения температуру
+  TButtonExec[TButtonExec["VARIABLE_TEMPERATURE"] = 14] = "VARIABLE_TEMPERATURE";
+  TButtonExec[TButtonExec["LCD_CLOCK_24"] = 15] = "LCD_CLOCK_24";
 })(TButtonExec || (TButtonExec = {}));
 ;// CONCATENATED MODULE: ./src/models/pjcan/button/TButtonPress.ts
 /* eslint-disable */
@@ -81822,6 +81883,6 @@ module.exports = JSON.parse('{"name":"pjcan","version":"0.4.3","private":true,"d
 },
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
-/******/ var __webpack_exports__ = (__webpack_exec__(1949));
+/******/ var __webpack_exports__ = (__webpack_exec__(9944));
 /******/ }
 ]);
