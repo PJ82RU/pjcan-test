@@ -5657,7 +5657,7 @@ const t = i18n.global.t;
 
 /***/ }),
 
-/***/ 5634:
+/***/ 1949:
 /***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6671,9 +6671,9 @@ const VMain = (0,defineComponent/* genericComponent */.ev)()({
     return {};
   }
 });
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=template&id=7d20b89d&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=template&id=5161340b&scoped=true&ts=true
 
-const _withScopeId = n => ((0,runtime_core_esm_bundler/* pushScopeId */.dD)("data-v-7d20b89d"), n = n(), (0,runtime_core_esm_bundler/* popScopeId */.Cn)(), n);
+const _withScopeId = n => ((0,runtime_core_esm_bundler/* pushScopeId */.dD)("data-v-5161340b"), n = n(), (0,runtime_core_esm_bundler/* popScopeId */.Cn)(), n);
 const _hoisted_1 = {
   class: "text-h4"
 };
@@ -6683,7 +6683,7 @@ const _hoisted_2 = /*#__PURE__*/_withScopeId(() => /*#__PURE__*/(0,runtime_core_
 const _hoisted_3 = /*#__PURE__*/_withScopeId(() => /*#__PURE__*/(0,runtime_core_esm_bundler/* createElementVNode */._)("div", {
   class: "base-layout__bg"
 }, null, -1));
-function BaseLayoutvue_type_template_id_7d20b89d_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function BaseLayoutvue_type_template_id_5161340b_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                                           
                                                             
   const _component_icon_custom = (0,runtime_core_esm_bundler/* resolveComponent */.up)("icon-custom");
@@ -6777,7 +6777,7 @@ function BaseLayoutvue_type_template_id_7d20b89d_scoped_true_ts_true_render(_ctx
 
 
 
-;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=template&id=7d20b89d&scoped=true&ts=true
+;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=template&id=5161340b&scoped=true&ts=true
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.unshift.js
 var es_array_unshift = __webpack_require__(541);
@@ -11990,6 +11990,7 @@ var IconCustom = __webpack_require__(1776);
 
 
 
+
 /* harmony default export */ var BaseLayoutvue_type_script_lang_ts = ({
   name: "BaseLayout",
   components: {
@@ -12012,6 +12013,10 @@ var IconCustom = __webpack_require__(1776);
       return "PJCAN: " + (result?.length > 0 ? t(result) : "");
     });
     const newVersionFirmware = (0,reactivity_esm_bundler/* ref */.iH)(false);
+    const carModel = (0,reactivity_esm_bundler/* ref */.iH)(canbus["default"].configs.car.carModel);
+    const onReceiveCarConfig = res => {
+      if (res.isData) carModel.value = res.carModel;
+    };
     const menu = (0,runtime_core_esm_bundler/* computed */.Fl)(() => {
       const result = [];
       const {
@@ -12032,10 +12037,14 @@ var IconCustom = __webpack_require__(1776);
       }, {
         id: 4,
         title: t("menu.onboardButtons")
-      }, {
-        id: 5,
-        title: t("menu.test")
-      }, {}, {
+      });
+      if (carModel.value !== car/* ECarModel.CAR_MODEL_MAZDA_CX9_GEN2 */.qZ.CAR_MODEL_MAZDA_CX9_GEN2) {
+        result.push({
+          id: 5,
+          title: t("menu.test")
+        });
+      }
+      result.push({}, {
         id: 2,
         title: t("menu.language." + (locale.value !== "ru" ? "russian" : "english"))
       });
@@ -12103,10 +12112,13 @@ var IconCustom = __webpack_require__(1776);
       window.addEventListener("resize", windowSize);
       windowSize();
       canbus["default"].addListener(pjcan_version/* API_VERSION_EVENT */.MK, onCheckVersion);
+      canbus["default"].addListener(car/* API_CAR_CONFIG_EVENT */.Gd, onReceiveCarConfig);
+      onReceiveCarConfig(canbus["default"].configs.car);
     });
     (0,runtime_core_esm_bundler/* onUnmounted */.Ah)(() => {
       window.removeEventListener("resize", windowSize);
       canbus["default"].removeListener(pjcan_version/* API_VERSION_EVENT */.MK, onCheckVersion);
+      canbus["default"].removeListener(car/* API_CAR_CONFIG_EVENT */.Gd, onReceiveCarConfig);
     });
     /** Переключение полноэкранного режима */
     const toggleFullscreen = () => {
@@ -12173,10 +12185,10 @@ var IconCustom = __webpack_require__(1776);
 });
 ;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=style&index=0&id=7d20b89d&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=style&index=0&id=5161340b&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=style&index=0&id=7d20b89d&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=style&index=0&id=5161340b&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue
 
@@ -12186,7 +12198,7 @@ var IconCustom = __webpack_require__(1776);
 ;
 
 
-const BaseLayout_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(BaseLayoutvue_type_script_lang_ts, [['render',BaseLayoutvue_type_template_id_7d20b89d_scoped_true_ts_true_render],['__scopeId',"data-v-7d20b89d"]])
+const BaseLayout_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(BaseLayoutvue_type_script_lang_ts, [['render',BaseLayoutvue_type_template_id_5161340b_scoped_true_ts_true_render],['__scopeId',"data-v-5161340b"]])
 
 /* harmony default export */ var BaseLayout = (BaseLayout_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=script&lang=ts
@@ -25395,7 +25407,7 @@ var index = {
 }, {
   name: "bose",
   enabled: true,
-  car: [2, 3, 4]
+  car: [2, 3]
 }, {
   name: "engine",
   enabled: true,
@@ -81810,6 +81822,6 @@ module.exports = JSON.parse('{"name":"pjcan","version":"0.4.3","private":true,"d
 },
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
-/******/ var __webpack_exports__ = (__webpack_exec__(5634));
+/******/ var __webpack_exports__ = (__webpack_exec__(1949));
 /******/ }
 ]);
