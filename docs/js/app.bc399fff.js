@@ -4869,11 +4869,18 @@ var vue_i18n_esm_bundler = __webpack_require__(5658);
       8: "Кнопка Clock H на LCD",
       9: "Кнопка Clock M на LCD",
       10: "Кнопка Info на LCD",
-      11: "Кнопка показать значения ДВС",
-      12: "Кнопка показать значения расхода",
-      13: "Кнопка показать значения движения",
-      14: "Кнопка показать значения температуры",
-      15: "Кнопка Clock 12/24 на LCD"
+      11: "Показать значения ДВС",
+      12: "Показать значения расхода",
+      13: "Показать значения движения",
+      14: "Показать значения температуры",
+      15: "Кнопка Clock 12/24 на LCD",
+      16: "Голосовое управление",
+      17: "Радио",
+      18: "Камера",
+      19: "Радио: поиск",
+      20: "Эквалайзер",
+      21: "Вкл/выкл дисплея",
+      22: "Телефон"
     },
     definition: {
       title: "Обнаружено нажатие кнопки",
@@ -5019,7 +5026,7 @@ var vue_i18n_esm_bundler = __webpack_require__(5658);
       1: "Mazda 3 BK",
       2: "Mazda CX-7",
       3: "Mazda CX-9",
-      4: "Mazda CX-9 Gen.2"
+      4: "Mazda CX-9 Rest"
     }
   }
 });
@@ -5456,11 +5463,18 @@ var vue_i18n_esm_bundler = __webpack_require__(5658);
       8: "Clock H button on LCD",
       9: "Clock M button on LCD",
       10: "Info button on LCD",
-      11: "Show engine values button",
-      12: "Show consumption values button",
-      13: "Show motion values button",
-      14: "Button to show temperature values",
-      15: "Clock 12/24 button on LCD"
+      11: "Show engine values",
+      12: "Show consumption values",
+      13: "Show motion values",
+      14: "Show temperature values",
+      15: "Clock 12/24 button on LCD",
+      16: "Voice control",
+      17: "Radio",
+      18: "Camera",
+      19: "Radio: search",
+      20: "Equalizer",
+      21: "On/off display",
+      22: "Phone"
     },
     definition: {
       title: "Button press detected",
@@ -5606,7 +5620,7 @@ var vue_i18n_esm_bundler = __webpack_require__(5658);
       1: "Mazda 3 BK",
       2: "Mazda CX-7",
       3: "Mazda CX-9",
-      4: "Mazda CX-9 Gen.2"
+      4: "Mazda CX-9 Rest"
     }
   }
 });
@@ -5659,7 +5673,7 @@ const t = i18n.global.t;
 
 /***/ }),
 
-/***/ 9944:
+/***/ 7650:
 /***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6673,9 +6687,9 @@ const VMain = (0,defineComponent/* genericComponent */.ev)()({
     return {};
   }
 });
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=template&id=537dc5e5&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=template&id=073ef137&scoped=true&ts=true
 
-const _withScopeId = n => ((0,runtime_core_esm_bundler/* pushScopeId */.dD)("data-v-537dc5e5"), n = n(), (0,runtime_core_esm_bundler/* popScopeId */.Cn)(), n);
+const _withScopeId = n => ((0,runtime_core_esm_bundler/* pushScopeId */.dD)("data-v-073ef137"), n = n(), (0,runtime_core_esm_bundler/* popScopeId */.Cn)(), n);
 const _hoisted_1 = {
   class: "text-h4"
 };
@@ -6685,7 +6699,7 @@ const _hoisted_2 = /*#__PURE__*/_withScopeId(() => /*#__PURE__*/(0,runtime_core_
 const _hoisted_3 = /*#__PURE__*/_withScopeId(() => /*#__PURE__*/(0,runtime_core_esm_bundler/* createElementVNode */._)("div", {
   class: "base-layout__bg"
 }, null, -1));
-function BaseLayoutvue_type_template_id_537dc5e5_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function BaseLayoutvue_type_template_id_073ef137_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                                           
                                                             
   const _component_icon_custom = (0,runtime_core_esm_bundler/* resolveComponent */.up)("icon-custom");
@@ -6780,7 +6794,7 @@ function BaseLayoutvue_type_template_id_537dc5e5_scoped_true_ts_true_render(_ctx
 
 
 
-;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=template&id=537dc5e5&scoped=true&ts=true
+;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=template&id=073ef137&scoped=true&ts=true
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.unshift.js
 var es_array_unshift = __webpack_require__(541);
@@ -11474,9 +11488,9 @@ const AboutDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(AboutD
 /* harmony default export */ var AboutDialog = (AboutDialog_exports_);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtnGroup/VBtnGroup.mjs + 1 modules
 var VBtnGroup = __webpack_require__(401);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=template&id=749f6ac8&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=template&id=e1b89ccc&scoped=true&ts=true
 
-function OnboardButtonsDialogvue_type_template_id_749f6ac8_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function OnboardButtonsDialogvue_type_template_id_e1b89ccc_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                       
                                                                   
                                                       
@@ -11574,7 +11588,7 @@ function OnboardButtonsDialogvue_type_template_id_749f6ac8_scoped_true_ts_true_r
           }, {
             default: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.Uk)(" RM ")]),
             _: 1
-          }), $props.carModel === $options.ECarModel.CAR_MODEL_MAZDA_CX9_GEN2 ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createBlock */.j4)(VBtn/* VBtn */.T, {
+          }), $props.carModel === $options.ECarModel.CAR_MODEL_MAZDA_CX9_REST ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createBlock */.j4)(VBtn/* VBtn */.T, {
             key: 0,
             color: "secondary",
             size: "x-large",
@@ -11731,10 +11745,10 @@ var lcd = __webpack_require__(6026);
 });
 ;// CONCATENATED MODULE: ./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=style&index=0&id=749f6ac8&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=style&index=0&id=e1b89ccc&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=style&index=0&id=749f6ac8&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=style&index=0&id=e1b89ccc&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/components/dialogs/OnboardButtonsDialog.vue
 
@@ -11744,7 +11758,7 @@ var lcd = __webpack_require__(6026);
 ;
 
 
-const OnboardButtonsDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(OnboardButtonsDialogvue_type_script_lang_ts, [['render',OnboardButtonsDialogvue_type_template_id_749f6ac8_scoped_true_ts_true_render],['__scopeId',"data-v-749f6ac8"]])
+const OnboardButtonsDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(OnboardButtonsDialogvue_type_script_lang_ts, [['render',OnboardButtonsDialogvue_type_template_id_e1b89ccc_scoped_true_ts_true_render],['__scopeId',"data-v-e1b89ccc"]])
 
 /* harmony default export */ var OnboardButtonsDialog = (OnboardButtonsDialog_exports_);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/TestDialog.vue?vue&type=template&id=3bcd2b05&scoped=true&ts=true
@@ -12097,7 +12111,7 @@ var IconCustom = __webpack_require__(1776);
         id: 4,
         title: t("menu.onboardButtons")
       });
-      if (carModel.value !== car/* ECarModel.CAR_MODEL_MAZDA_CX9_GEN2 */.qZ.CAR_MODEL_MAZDA_CX9_GEN2) {
+      if (carModel.value !== car/* ECarModel.CAR_MODEL_MAZDA_CX9_REST */.qZ.CAR_MODEL_MAZDA_CX9_REST) {
         result.push({
           id: 5,
           title: t("menu.test")
@@ -12245,10 +12259,10 @@ var IconCustom = __webpack_require__(1776);
 });
 ;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=style&index=0&id=537dc5e5&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=style&index=0&id=073ef137&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=style&index=0&id=537dc5e5&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=style&index=0&id=073ef137&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue
 
@@ -12258,7 +12272,7 @@ var IconCustom = __webpack_require__(1776);
 ;
 
 
-const BaseLayout_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(BaseLayoutvue_type_script_lang_ts, [['render',BaseLayoutvue_type_template_id_537dc5e5_scoped_true_ts_true_render],['__scopeId',"data-v-537dc5e5"]])
+const BaseLayout_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(BaseLayoutvue_type_script_lang_ts, [['render',BaseLayoutvue_type_template_id_073ef137_scoped_true_ts_true_render],['__scopeId',"data-v-073ef137"]])
 
 /* harmony default export */ var BaseLayout = (BaseLayout_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=script&lang=ts
@@ -21609,7 +21623,7 @@ var ECarModel;
   ECarModel[ECarModel["CAR_MODEL_MAZDA3"] = 1] = "CAR_MODEL_MAZDA3";
   ECarModel[ECarModel["CAR_MODEL_MAZDA_CX7"] = 2] = "CAR_MODEL_MAZDA_CX7";
   ECarModel[ECarModel["CAR_MODEL_MAZDA_CX9"] = 3] = "CAR_MODEL_MAZDA_CX9";
-  ECarModel[ECarModel["CAR_MODEL_MAZDA_CX9_GEN2"] = 4] = "CAR_MODEL_MAZDA_CX9_GEN2";
+  ECarModel[ECarModel["CAR_MODEL_MAZDA_CX9_REST"] = 4] = "CAR_MODEL_MAZDA_CX9_REST";
 })(ECarModel || (ECarModel = {}));
 ;// CONCATENATED MODULE: ./src/models/pjcan/car/CarConfig.ts
 
@@ -81883,6 +81897,6 @@ module.exports = JSON.parse('{"name":"pjcan","version":"0.4.3","private":true,"d
 },
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
-/******/ var __webpack_exports__ = (__webpack_exec__(9944));
+/******/ var __webpack_exports__ = (__webpack_exec__(7650));
 /******/ }
 ]);

@@ -1,4 +1,4 @@
-(self["webpackChunkpjcan"] = self["webpackChunkpjcan"] || []).push([[664],{
+(self["webpackChunkpjcan"] = self["webpackChunkpjcan"] || []).push([[861],{
 
 /***/ 7066:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
@@ -24164,7 +24164,7 @@ const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.Z)(ViewSettingDial
 
 /***/ }),
 
-/***/ 8664:
+/***/ 6861:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24180,7 +24180,7 @@ __webpack_require__.d(__webpack_exports__, {
 var runtime_core_esm_bundler = __webpack_require__(3396);
 // EXTERNAL MODULE: ./node_modules/@vue/shared/dist/shared.esm-bundler.js
 var shared_esm_bundler = __webpack_require__(7139);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/index.vue?vue&type=template&id=6bb045a9&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/index.vue?vue&type=template&id=4ac63597&scoped=true&ts=true
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_flicking = (0,runtime_core_esm_bundler/* resolveComponent */.up)("flicking");
@@ -24487,9 +24487,9 @@ const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.Z)(LcdCardvue_type
 /* harmony default export */ var LcdCard = (__exports__);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSelect/VSelect.mjs + 1 modules
 var VSelect = __webpack_require__(240);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/components/TeyesCard.vue?vue&type=template&id=397ea709&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/components/TeyesCard.vue?vue&type=template&id=3e729ac9&ts=true
 
-function TeyesCardvue_type_template_id_397ea709_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function TeyesCardvue_type_template_id_3e729ac9_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                             
                                                       
   const _component_switch_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.up)("switch-card-item");
@@ -24520,7 +24520,7 @@ function TeyesCardvue_type_template_id_397ea709_ts_true_render(_ctx, _cache, $pr
           disabled: !$setup.loadedTeyesConfig || typeof $setup.uartBaud !== 'number'
         }, null, 8, ["modelValue", "label", "items", "hint", "disabled"])]),
         _: 1
-      }), $props.carModel !== $options.ECarModel.CAR_MODEL_MAZDA_CX9_GEN2 ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createBlock */.j4)(VCol/* VCol */.D, {
+      }), $props.carModel !== $options.ECarModel.CAR_MODEL_MAZDA_CX9_REST ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createBlock */.j4)(VCol/* VCol */.D, {
         key: 0,
         cols: "12",
         class: "pt-0 pb-0"
@@ -24551,7 +24551,7 @@ function TeyesCardvue_type_template_id_397ea709_ts_true_render(_ctx, _cache, $pr
           onChange: $setup.onApplyTeyesConfig
         }, null, 8, ["modelValue", "title", "description", "nodata", "disabled", "onChange"])]),
         _: 1
-      }), $props.carModel !== $options.ECarModel.CAR_MODEL_MAZDA_CX9 && $props.carModel !== $options.ECarModel.CAR_MODEL_MAZDA_CX9_GEN2 ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createBlock */.j4)(VCol/* VCol */.D, {
+      }), $props.carModel !== $options.ECarModel.CAR_MODEL_MAZDA_CX9 && $props.carModel !== $options.ECarModel.CAR_MODEL_MAZDA_CX9_REST ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createBlock */.j4)(VCol/* VCol */.D, {
         key: 1,
         cols: "12",
         class: "pt-0 pb-0"
@@ -24819,7 +24819,7 @@ var pjcan_teyes = __webpack_require__(2754);
 
 
 ;
-const TeyesCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(TeyesCardvue_type_script_lang_ts, [['render',TeyesCardvue_type_template_id_397ea709_ts_true_render]])
+const TeyesCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(TeyesCardvue_type_script_lang_ts, [['render',TeyesCardvue_type_template_id_3e729ac9_ts_true_render]])
 
 /* harmony default export */ var TeyesCard = (TeyesCard_exports_);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VCard/VCard.mjs + 1 modules
@@ -25053,7 +25053,7 @@ const OnboardCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(Onboar
     const flicking = (0,reactivity_esm_bundler/* ref */.iH)(null);
     (0,runtime_core_esm_bundler/* provide */.JJ)("flicking", flicking);
     const carModel = (0,reactivity_esm_bundler/* ref */.iH)(canbus["default"].configs.car.carModel);
-    const cards = (0,runtime_core_esm_bundler/* computed */.Fl)(() => carModel.value !== pjcan_car/* ECarModel.CAR_MODEL_MAZDA_CX9_GEN2 */.qZ.CAR_MODEL_MAZDA_CX9_GEN2 ? ["lcd", "teyes", "onboard"] : ["teyes", "onboard"]);
+    const cards = (0,runtime_core_esm_bundler/* computed */.Fl)(() => carModel.value !== pjcan_car/* ECarModel.CAR_MODEL_MAZDA_CX9_REST */.qZ.CAR_MODEL_MAZDA_CX9_REST ? ["lcd", "teyes", "onboard"] : ["teyes", "onboard"]);
     const onReceiveCarConfig = res => {
       if (res.isData) carModel.value = res.carModel;
     };
@@ -25074,10 +25074,10 @@ const OnboardCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(Onboar
 });
 ;// CONCATENATED MODULE: ./src/views/options/index.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/index.vue?vue&type=style&index=0&id=6bb045a9&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/index.vue?vue&type=style&index=0&id=4ac63597&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/views/options/index.vue?vue&type=style&index=0&id=6bb045a9&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/views/options/index.vue?vue&type=style&index=0&id=4ac63597&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/views/options/index.vue
 
@@ -25087,7 +25087,7 @@ const OnboardCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(Onboar
 ;
 
 
-const options_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(optionsvue_type_script_lang_ts, [['render',render],['__scopeId',"data-v-6bb045a9"]])
+const options_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(optionsvue_type_script_lang_ts, [['render',render],['__scopeId',"data-v-4ac63597"]])
 
 /* harmony default export */ var options = (options_exports_);
 

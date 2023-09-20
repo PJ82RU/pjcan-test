@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunkpjcan"] = self["webpackChunkpjcan"] || []).push([[299],{
+(self["webpackChunkpjcan"] = self["webpackChunkpjcan"] || []).push([[370],{
 
 /***/ 9363:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
@@ -15824,7 +15824,7 @@ const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.Z)(ViewSettingDial
 
 /***/ }),
 
-/***/ 4299:
+/***/ 370:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 // ESM COMPAT FLAG
@@ -17074,9 +17074,9 @@ const EngineConfigDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)
 const EngineCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(EngineCardvue_type_script_lang_ts, [['render',EngineCardvue_type_template_id_04589c6d_ts_true_render]])
 
 /* harmony default export */ var EngineCard = (EngineCard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/FuelCard.vue?vue&type=template&id=8cab3368&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/FuelCard.vue?vue&type=template&id=4dfaae0c&ts=true
 
-function FuelCardvue_type_template_id_8cab3368_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function FuelCardvue_type_template_id_4dfaae0c_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_input_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.up)("input-card-item");
                                                       
                                                       
@@ -17086,7 +17086,7 @@ function FuelCardvue_type_template_id_8cab3368_ts_true_render(_ctx, _cache, $pro
   return (0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createElementBlock */.iD)(runtime_core_esm_bundler/* Fragment */.HY, null, [(0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_card, {
     class: "fuel-card",
     title: _ctx.$t('onboard.fuel.title'),
-    menu: $props.carModel !== $options.ECarModel.CAR_MODEL_MAZDA_CX9_GEN2 ? $setup.menu : undefined,
+    menu: $props.carModel !== $options.ECarModel.CAR_MODEL_MAZDA_CX9_REST ? $setup.menu : undefined,
     "onClick:menu": $setup.onMenuClick
   }, {
     body: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createVNode */.Wm)(VRow/* VRow */.o, null, {
@@ -17130,7 +17130,7 @@ function FuelCardvue_type_template_id_8cab3368_ts_true_render(_ctx, _cache, $pro
       _: 1
     })]),
     _: 1
-  }, 8, ["title", "menu", "onClick:menu"]), $props.carModel !== $options.ECarModel.CAR_MODEL_MAZDA_CX9_GEN2 ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createBlock */.j4)(_component_view_setting_dialog, {
+  }, 8, ["title", "menu", "onClick:menu"]), $props.carModel !== $options.ECarModel.CAR_MODEL_MAZDA_CX9_REST ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createBlock */.j4)(_component_view_setting_dialog, {
     key: 0,
     modelValue: $setup.menuVisible,
     "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => $setup.menuVisible = $event),
@@ -17482,12 +17482,12 @@ const FuelConfigDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(F
 
 
 ;
-const FuelCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(FuelCardvue_type_script_lang_ts, [['render',FuelCardvue_type_template_id_8cab3368_ts_true_render]])
+const FuelCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(FuelCardvue_type_script_lang_ts, [['render',FuelCardvue_type_template_id_4dfaae0c_ts_true_render]])
 
 /* harmony default export */ var FuelCard = (FuelCard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/MovementCard.vue?vue&type=template&id=562a4285&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/MovementCard.vue?vue&type=template&id=43f4d0c5&ts=true
 
-function MovementCardvue_type_template_id_562a4285_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function MovementCardvue_type_template_id_43f4d0c5_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_input_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.up)("input-card-item");
                                                       
                                                       
@@ -17496,7 +17496,7 @@ function MovementCardvue_type_template_id_562a4285_ts_true_render(_ctx, _cache, 
   return (0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createElementBlock */.iD)(runtime_core_esm_bundler/* Fragment */.HY, null, [(0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_card, {
     class: "movement-card",
     title: _ctx.$t('onboard.movement.title'),
-    menu: $props.carModel !== $options.ECarModel.CAR_MODEL_MAZDA_CX9_GEN2 ? $setup.menu : undefined,
+    menu: $props.carModel !== $options.ECarModel.CAR_MODEL_MAZDA_CX9_REST ? $setup.menu : undefined,
     "onClick:menu": $setup.onMenuClick
   }, {
     body: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createVNode */.Wm)(VRow/* VRow */.o, null, {
@@ -17540,7 +17540,7 @@ function MovementCardvue_type_template_id_562a4285_ts_true_render(_ctx, _cache, 
       _: 1
     })]),
     _: 1
-  }, 8, ["title", "menu", "onClick:menu"]), $props.carModel !== $options.ECarModel.CAR_MODEL_MAZDA_CX9_GEN2 ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createBlock */.j4)(_component_view_setting_dialog, {
+  }, 8, ["title", "menu", "onClick:menu"]), $props.carModel !== $options.ECarModel.CAR_MODEL_MAZDA_CX9_REST ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createBlock */.j4)(_component_view_setting_dialog, {
     key: 0,
     modelValue: $setup.menuVisible,
     "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => $setup.menuVisible = $event),
@@ -17704,7 +17704,7 @@ var variables_movement = __webpack_require__(6297);
 
 
 ;
-const MovementCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(MovementCardvue_type_script_lang_ts, [['render',MovementCardvue_type_template_id_562a4285_ts_true_render]])
+const MovementCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(MovementCardvue_type_script_lang_ts, [['render',MovementCardvue_type_template_id_43f4d0c5_ts_true_render]])
 
 /* harmony default export */ var MovementCard = (MovementCard_exports_);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/DoorsCard.vue?vue&type=template&id=2919b1d9&ts=true
