@@ -23514,8 +23514,8 @@ class TemperatureValue extends BaseModel/* BaseModel */.g {
   }
 }
 (0,defineProperty/* default */.Z)(TemperatureValue, "struct", {
-  in: bluetooth/* BluetoothStruct.uint16 */.GD.uint16(),
-  out: bluetooth/* BluetoothStruct.uint16 */.GD.uint16()
+  in: bluetooth/* BluetoothStruct.int16 */.GD.int16(),
+  out: bluetooth/* BluetoothStruct.int16 */.GD.int16()
 });
 (0,defineProperty/* default */.Z)(TemperatureValue, "size", 4);
 // EXTERNAL MODULE: ./src/models/pjcan/view/index.ts + 2 modules
