@@ -40,8 +40,8 @@ var map = {
 	"./br.js": 3424,
 	"./bs": 6100,
 	"./bs.js": 6100,
-	"./ca": 8976,
-	"./ca.js": 8976,
+	"./ca": 6596,
+	"./ca.js": 6596,
 	"./cs": 3016,
 	"./cs.js": 3016,
 	"./cv": 1052,
@@ -302,7 +302,7 @@ webpackContext.id = 2348;
 
 /***/ }),
 
-/***/ 2636:
+/***/ 8976:
 /***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -408,6 +408,7 @@ __webpack_require__.d(config_mutations_namespaceObject, {
   setVersion: function() { return setVersion; },
   setVolume: function() { return setVolume; },
   setVolumeMuteBose: function() { return setVolumeMuteBose; },
+  setVolumeStartBose: function() { return setVolumeStartBose; },
   setVolumeValueBose: function() { return setVolumeValueBose; }
 });
 
@@ -429,6 +430,8 @@ __webpack_require__.d(value_getters_namespaceObject, {
   fuel: function() { return getters_fuel; },
   movement: function() { return movement; },
   scanner: function() { return scanner; },
+  scannerBuffer: function() { return scannerBuffer; },
+  scannerBufferRead: function() { return scannerBufferRead; },
   sensors: function() { return sensors; },
   sw1: function() { return value_getters_sw1; },
   temperature: function() { return temperature; }
@@ -446,15 +449,10 @@ __webpack_require__.d(value_mutations_namespaceObject, {
   setMovement: function() { return setMovement; },
   setSW1: function() { return value_mutations_setSW1; },
   setScanner: function() { return setScanner; },
+  setScannerBuffer: function() { return setScannerBuffer; },
+  setScannerBufferTitle: function() { return setScannerBufferTitle; },
   setSensors: function() { return setSensors; },
   setTemperature: function() { return setTemperature; }
-});
-
-// NAMESPACE OBJECT: ./src/store/modules/value/actions.ts
-var value_actions_namespaceObject = {};
-__webpack_require__.r(value_actions_namespaceObject);
-__webpack_require__.d(value_actions_namespaceObject, {
-  updateLoop: function() { return updateLoop; }
 });
 
 // NAMESPACE OBJECT: ./src/store/modules/view/getters.ts
@@ -675,7 +673,7 @@ __webpack_require__.d(directives_namespaceObject, {
 var runtime_dom_esm_bundler = __webpack_require__(7764);
 // EXTERNAL MODULE: ./node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js
 var runtime_core_esm_bundler = __webpack_require__(4108);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=template&id=50bf1164&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=template&id=5924fc54&ts=true
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_base_layout = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("base-layout");
@@ -8342,6 +8340,17 @@ if (false) {}
       centerPoint: {
         title: "CenterPoint",
         description: "Технология CenterPoint преобразует стерео-сигналы в многоканальное аудио и одновременно создает более широкую/объемную звуковую область"
+      },
+      volumeConfig: {
+        title: "Настройка запуска",
+        start: {
+          title: "Изменять уровень звука",
+          description: "Устанавливать указанный ниже уровень звука при включении адаптера PJCAN"
+        },
+        level: {
+          title: "Уровень звука",
+          description: "Уровень звука устанавливаемый при включении адаптера PJCAN"
+        }
       }
     }
   },
@@ -8978,6 +8987,17 @@ if (false) {}
       centerPoint: {
         title: "CenterPoint",
         description: "CenterPoint technology converts stereo signals into multi-channel audio and simultaneously creates a wider/surround sound area"
+      },
+      volumeConfig: {
+        title: "Setting up the startup",
+        start: {
+          title: "Change the sound level",
+          description: "Set the sound level specified below when turning on the PJCAN adapter"
+        },
+        level: {
+          title: "Sound level",
+          description: "The sound level set when the PJCAN adapter is turned on"
+        }
       }
     }
   },
@@ -11488,8 +11508,12 @@ class VolumeConfig extends BaseModel {
     super(API_VOLUME_CONFIG_EXEC, true);
     _defineProperty(this, "mute", false);
     _defineProperty(this, "muteBose", false);
+    _defineProperty(this, "start", false);
+    _defineProperty(this, "startBose", false);
     _defineProperty(this, "volume", 0);
     _defineProperty(this, "volumeBose", 0);
+    _defineProperty(this, "startLevel", 0);
+    _defineProperty(this, "startLevelBose", 0);
     if (data) this.set(data);
   }
   /**
@@ -11510,10 +11534,14 @@ class VolumeConfig extends BaseModel {
 _defineProperty(VolumeConfig, "struct", {
   mute: BluetoothStruct.bit(),
   muteBose: BluetoothStruct.bit(),
+  start: BluetoothStruct.bit(),
+  startBose: BluetoothStruct.bit(),
   volume: BluetoothStruct.uint8(),
-  volumeBose: BluetoothStruct.uint8()
+  volumeBose: BluetoothStruct.uint8(),
+  startLevel: BluetoothStruct.uint8(),
+  startLevelBose: BluetoothStruct.uint8()
 });
-_defineProperty(VolumeConfig, "size", 3);
+_defineProperty(VolumeConfig, "size", 5);
 ;// CONCATENATED MODULE: ./src/models/pjcan/volume/index.ts
 
 
@@ -18316,6 +18344,10 @@ class Canbus extends (eventemitter3_default()) {
     _defineProperty(this, "__onVersion", ev => canbus.onVersion(ev));
     _defineProperty(this, "__onIsActivation", ev => canbus.onIsActivation(ev));
     _defineProperty(this, "__onActivation", ev => canbus.onActivation(ev));
+    _defineProperty(this, "scannerInterval", void 0);
+    _defineProperty(this, "scannerValue", void 0);
+    _defineProperty(this, "loopInterval", void 0);
+    _defineProperty(this, "loopChoice", void 0);
     this.bluetooth.addListener(BLUETOOTH_EVENT_CONNECTED, ev => this.onConnected(ev));
     this.bluetooth.addListener(BLUETOOTH_EVENT_RECEIVE, ev => this.onReceive(ev));
   }
@@ -18749,6 +18781,60 @@ class Canbus extends (eventemitter3_default()) {
     action.resetView = resetView;
     this.query(action);
   }
+  /**
+   * Запуск/остановка сканера
+   * @param {boolean} status Статус
+   * @param {function} fn Функция обратного вызова
+   */
+  scanner(status, fn) {
+    if (status && !this.status) return false;
+    const action = new DeviceScannerAction();
+    this.queueDisabled = status;
+    action.enabled = status;
+    this.query(action, false, success => {
+      if (success && status) {
+        if (!this.scannerValue) this.scannerValue = new DeviceScannerValue();
+        if (!this.scannerInterval) {
+          this.scannerInterval = setInterval(() => {
+            if (this.scannerValue) this.query(this.scannerValue, true);else this.scannerFree();
+          }, 500);
+        }
+      }
+      fn(success);
+    });
+    if (!status) this.scannerFree();
+    return true;
+  }
+  /** Очистить значения сканера */
+  scannerFree() {
+    clearInterval(this.scannerInterval);
+    this.scannerInterval = undefined;
+    this.scannerValue = undefined;
+  }
+  /**
+   * Циклический опрос
+   * @param {number[]} list Список ChoiceValue
+   */
+  loop(list) {
+    const result = list.length > 0 && this.status;
+    if (result) {
+      if (!this.loopChoice) this.loopChoice = new ChoiceValue();
+      this.loopChoice.listID = [...list];
+      if (!this.loopInterval) {
+        this.loopInterval = setInterval(() => {
+          if (this.loopChoice) this.query(this.loopChoice, true);else this.loopFree();
+        }, 250);
+        if (this.loopChoice) this.query(this.loopChoice, true);
+      }
+    }
+    return result;
+  }
+  /** Очистить цикл */
+  loopFree() {
+    clearInterval(this.loopInterval);
+    this.loopInterval = undefined;
+    this.loopChoice = undefined;
+  }
 }
 const canbus = new Canbus();
 /* harmony default export */ var api_canbus = (canbus);
@@ -19167,6 +19253,21 @@ const setVolumeValueBose = (state, value) => {
     api_canbus.query(state.volume);
   }
 };
+/**
+ * Volume: Start Bose
+ * @param {any} state
+ * @param {boolean} value Значение
+ */
+const setVolumeStartBose = (state, {
+  enabled,
+  level
+}) => {
+  if (state.volume.isData) {
+    state.volume.startBose = enabled;
+    state.volume.startLevelBose = level;
+    api_canbus.query(state.volume);
+  }
+};
 ;// CONCATENATED MODULE: ./src/store/modules/config/actions.ts
 
 let loop;
@@ -19218,7 +19319,9 @@ const value_state_state = {
   movement: new MovementValue(),
   sensors: new SensorsValue(),
   temperature: new TemperatureValue(),
-  scanner: new DeviceScannerValue()
+  scanner: new DeviceScannerValue(),
+  scannerBuffer: [],
+  scannerBufferReadNumber: 30
 };
 /* harmony default export */ var value_state = (value_state_state);
 ;// CONCATENATED MODULE: ./src/store/modules/value/getters.ts
@@ -19272,7 +19375,20 @@ const temperature = state => state.temperature;
  * @param {any} state
  */
 const scanner = state => state.scanner;
+/**
+ * Значения буфера сканера
+ * @param {any} state
+ */
+const scannerBuffer = state => state.scannerBuffer;
+/**
+ * Чтение 30-ти элементов буфера сканера
+ * @param {any} state
+ */
+const scannerBufferRead = state => state.scannerBuffer.splice(0, state.scannerBufferReadNumber);
 ;// CONCATENATED MODULE: ./src/store/modules/value/mutations.ts
+
+
+
 /**
  * Записать значения кнопки sw1
  * @param {any} state
@@ -19352,43 +19468,57 @@ const setTemperature = (state, data) => {
  */
 const setScanner = (state, data) => {
   state.scanner.set(data);
+  setScannerBuffer(state, false);
 };
-;// CONCATENATED MODULE: ./src/store/modules/value/actions.ts
-
-
-let actions_loop;
 /**
- * Циклическое обновление значений, каждые 250 мс
+ * Записать значения сканирования в буфер
  * @param {any} state
- * @param {number[]} list Список ID
+ * @param {boolean} free Очистить данные перед записью
  */
-const updateLoop = ({
-  getters
-}, list) => {
-  if (list?.length) {
-    const query = () => {
-      const choice = new ChoiceValue();
-      choice.listID = list;
-      api_canbus.query(choice, true);
-    };
-    if (!actions_loop) actions_loop = setInterval(query, 250);
-    query();
-  } else {
-    clearInterval(actions_loop);
-    actions_loop = undefined;
+const setScannerBuffer = (state, free) => {
+  if (free) state.scannerBuffer = [];
+  if (state.scanner.isData && state.scanner.count > 0) {
+    state.scannerBuffer.push(...state.scanner.frames.slice(0, state.scanner.count).map(x => {
+      const mm = moment_default().duration(Number(x.timestamp), "milliseconds");
+      const mm_time = {
+        hours: mm.hours(),
+        minutes: mm.minutes(),
+        seconds: mm.seconds(),
+        milliseconds: mm.milliseconds()
+      };
+      return {
+        datetime: moment_default()().format("YYYY.MM.DD HH:mm:ss"),
+        time: mm_time.hours + ":" + (mm_time.minutes < 10 ? "0" : "") + mm.minutes() + ":" + (mm_time.seconds < 10 ? "0" : "") + mm.seconds() + "." + (mm_time.milliseconds < 10 ? "00" : mm_time.milliseconds < 100 ? "0" : "") + mm.milliseconds(),
+        hexId: "0x" + toHex(x.id),
+        hexData: "0x" + x.data.map(x => toHex(x)).join(":")
+      };
+    }));
   }
+};
+/**
+ * Записать заголовок в буфер
+ * @param {any} state
+ * @param {string} value Текст
+ */
+const setScannerBufferTitle = (state, value) => {
+  state.scannerBuffer.push({
+    datetime: value,
+    time: "",
+    hexId: "",
+    hexData: ""
+  });
 };
 ;// CONCATENATED MODULE: ./src/store/modules/value/index.ts
 
 
 
-
+// import * as actions from "./actions";
 /* harmony default export */ var value = ({
   namespaced: true,
   state: value_state,
   getters: value_getters_namespaceObject,
-  mutations: value_mutations_namespaceObject,
-  actions: value_actions_namespaceObject
+  mutations: value_mutations_namespaceObject
+  // actions
 });
 ;// CONCATENATED MODULE: ./src/store/modules/view/state.ts
 
@@ -28811,9 +28941,9 @@ function vue_router_useRoute() {
   return inject(routeLocationKey);
 }
 
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/index.vue?vue&type=template&id=fff0b326&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/index.vue?vue&type=template&id=4686eee3&scoped=true&ts=true
 
-function onboardvue_type_template_id_fff0b326_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function onboardvue_type_template_id_4686eee3_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_flicking = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("flicking");
   return (0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(_component_flicking, {
     ref: "flicking",
@@ -51289,7 +51419,8 @@ function IconCustomvue_type_template_id_746945aa_ts_true_render(_ctx, _cache, $p
   "volume-r": '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 20.68 19.57"><defs><style>.cls-1,.cls-2{fill:{primary};}.cls-2{font-size:14px;font-family:"Roboto", MyriadPro-Regular, Myriad Pro;}</style></defs><path class="cls-1" d="M2,9v6H6l5,5V4L6,9Z" transform="translate(-2 -2.22)"/><text class="cls-2" transform="translate(11 15.07)">R</text></svg>',
   "volume-l": '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 20.68 19.57"><defs><style>.cls-1,.cls-2{fill:{primary};}.cls-2{font-size:14px;font-family:"Roboto", MyriadPro-Regular, Myriad Pro;}</style></defs><path class="cls-1" d="M22.68,15V9h-4l-5-5V20l5-5Z" transform="translate(-3 -2.22)"/><text class="cls-2" transform="translate(0 15.07)">L</text></svg>',
   "volume-fade-f": '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 20.68 19.57"><defs><style>.cls-1,.cls-2{fill:{primary};}.cls-2{font-size:14px;font-family:"Roboto", MyriadPro-Regular, Myriad Pro;}</style></defs><path class="cls-1" d="M2,9v6H6l5,5V4L6,9Z" transform="translate(-2 -2.22)"/><text class="cls-2" transform="translate(11 15.07)">F</text></svg>',
-  "volume-fade-r": '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 20.68 19.57"><defs><style>.cls-1,.cls-2{fill:{primary};}.cls-2{font-size:14px;font-family:"Roboto", MyriadPro-Regular, Myriad Pro;}</style></defs><path class="cls-1" d="M22.68,15V9h-4l-5-5V20l5-5Z" transform="translate(-3 -2.22)"/><text class="cls-2" transform="translate(0 15.07)">R</text></svg>'
+  "volume-fade-r": '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 20.68 19.57"><defs><style>.cls-1,.cls-2{fill:{primary};}.cls-2{font-size:14px;font-family:"Roboto", MyriadPro-Regular, Myriad Pro;}</style></defs><path class="cls-1" d="M22.68,15V9h-4l-5-5V20l5-5Z" transform="translate(-3 -2.22)"/><text class="cls-2" transform="translate(0 15.07)">R</text></svg>',
+  "volume-setting": '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 97.51 97.52"><g id="uuid-ed5e966f-00a1-478d-a6b3-f625b0ad64c0"><path d="m97.51,48.76c0-11.51-4.09-22.67-11.52-31.46.63-1.05.97-2.25.97-3.48,0-3.73-3.04-6.77-6.78-6.77-1.47,0-2.89.48-4.06,1.36C68.02,2.91,58.57,0,48.76,0s-19.69,3.03-27.9,8.79c-1.24-1.12-2.83-1.74-4.52-1.74-3.74,0-6.77,3.04-6.77,6.77,0,1.5.5,2.94,1.41,4.13C3.89,26.62,0,37.54,0,48.76c0,11.74,4.23,23.05,11.91,31.92-1.48,1.28-2.35,3.15-2.35,5.12,0,3.73,3.04,6.77,6.77,6.77,2.29,0,4.41-1.15,5.66-3.05,7.95,5.24,17.2,8,26.76,8s18.27-2.62,26.08-7.57c1.28,1.65,3.23,2.62,5.34,2.62,3.74,0,6.78-3.04,6.78-6.77,0-1.7-.65-3.34-1.8-4.59,7.98-8.94,12.36-20.44,12.36-32.45Zm-16.33-38.15c1.24,0,2.25,1.01,2.25,2.25s-1.01,2.25-2.25,2.25-2.25-1.01-2.25-2.25,1.01-2.25,2.25-2.25Zm-65.3,0c1.24,0,2.25,1.01,2.25,2.25s-1.01,2.25-2.25,2.25-2.25-1.01-2.25-2.25,1.01-2.25,2.25-2.25Zm-.32,78.54c-1.24,0-2.25-1.01-2.25-2.25s1.01-2.25,2.25-2.25,2.25,1.01,2.25,2.25-1.01,2.25-2.25,2.25Zm65.3,0c-1.24,0-2.25-1.01-2.25-2.25s1.01-2.25,2.25-2.25,2.25,1.01,2.25,2.25-1.01,2.25-2.25,2.25Zm-32.11,1.29c-23.02,0-41.69-18.67-41.69-41.69S25.73,7.07,48.76,7.07s41.69,18.66,41.69,41.69-18.67,41.69-41.69,41.69ZM11.33,44h-1.5c-.38,0-.69.35-.69.77v3.83c0,.42.31.77.69.77h1.5c.38,0,.69-.34.69-.77v-3.83c0-.42-.31-.77-.69-.77ZM50.43,9.17h-3.83c-.42,0-.77.31-.77.69v1.5c0,.38.35.69.77.69h3.83c.42,0,.77-.31.77-.69v-1.5c0-.38-.35-.69-.77-.69Zm0,76.29h-3.83c-.42,0-.77.32-.77.69v1.5c0,.38.35.69.77.69h3.83c.42,0,.77-.31.77-.69v-1.5c0-.38-.35-.69-.77-.69ZM20.58,24.61c.27.27.73.25,1.03-.05l2.54-2.53s0,0,0-.01l.16-.16c.3-.3.32-.76.06-1.03l-1.06-1.06c-.27-.27-.73-.25-1.03.05l-2.53,2.54-.17.17c-.3.3-.32.76-.05,1.03l1.06,1.06Zm55.88,48.29c-.27-.27-.73-.24-1.03.05l-2.53,2.54-.17.17c-.3.3-.32.76-.06,1.03l1.06,1.06c.27.27.73.25,1.03-.05l2.53-2.53s0,0,0,0l.17-.16c.3-.3.32-.76.05-1.03l-1.05-1.06Zm-52.31,2.6s0,0,0,0l-2.54-2.54c-.3-.3-.77-.32-1.03-.05l-1.06,1.06c-.27.27-.25.73.05,1.03l2.54,2.54.17.17c.3.3.77.32,1.03.05l1.06-1.06c.26-.27.24-.73-.06-1.03l-.16-.16Zm48.74-53.49h0s2.54,2.54,2.54,2.54c.3.3.77.32,1.03.05l1.05-1.06c.27-.26.25-.73-.05-1.03l-.17-.17s0,0,0,0l-2.53-2.54c-.3-.3-.77-.32-1.03-.05l-1.06,1.06c-.27.27-.24.73.05,1.03l.17.17Zm14.73,21.98h-1.5c-.38,0-.69.35-.69.77v3.83c0,.42.31.77.69.77h1.5c.37,0,.69-.34.69-.77v-3.83c0-.42-.31-.77-.69-.77Z" style="fill:{secondary}; fill-rule:evenodd;"/></g><g id="uuid-4f4fd268-9ac0-44e5-bdcc-a6fc12268a61"><path d="m78.74,44.38c-.33-2.27-.93-4.51-1.77-6.67-.31-.8-1.44-1.16-2.27-.94-2.68.72-5.48-.22-7.14-2.39-1.69-2.22-1.81-5.31-.3-7.68.47-.74.29-1.73-.41-2.26-1.84-1.38-3.82-2.54-5.89-3.45-.81-.36-1.77-.02-2.18.78-1.23,2.4-4.17,3.96-6.86,3.6-2.8-.39-5.08-2.52-5.66-5.3-.18-.88-1.01-1.46-1.9-1.33-1.62.24-3.21.61-4.76,1.1-.62.2-1.23.41-1.83.64-.55.22-.93.7-1.03,1.25-.05.27-.05.54.03.82.82,2.69-.11,5.63-2.33,7.32-2.13,1.62-5.43,1.74-7.69.29-.74-.48-1.73-.3-2.26.41-1.38,1.85-2.56,3.85-3.48,5.95-.21.48-.18,1.01.05,1.45.16.3.4.56.72.73,2.53,1.3,3.98,4.06,3.6,6.87-.36,2.68-2.45,4.9-5.31,5.67-.94.22-1.43,1.02-1.31,1.89.21,1.44.53,2.86.95,4.26.24.81.52,1.61.83,2.4.31.8,1.47,1.15,2.31.93,2.53-.75,5.4.18,7.1,2.4.45.59.79,1.25,1.01,1.94.62,1.89.4,4.01-.71,5.75-.47.74-.29,1.73.41,2.25.38.28.76.55,1.15.82,1.5,1.02,3.09,1.9,4.73,2.63.82.36,1.77.02,2.18-.77.6-1.17,1.61-2.14,2.79-2.79,1.25-.68,2.69-1,4.06-.81,2.81.38,5.08,2.51,5.66,5.3.13.64.62,1.12,1.21,1.28.22.06.45.08.68.04.09-.01.18-.03.27-.04,1.06-.17,2.12-.39,3.16-.66.83-.22,1.65-.48,2.46-.77.24-.09.47-.17.71-.26.82-.32,1.26-1.22,1-2.07-.83-2.69.11-5.63,2.33-7.32,2.14-1.63,5.44-1.74,7.69-.29.75.48,1.72.3,2.26-.41,1.38-1.84,2.55-3.85,3.48-5.95.36-.82.02-1.77-.77-2.18-2.53-1.3-3.98-4.06-3.6-6.87.36-2.64,2.34-4.88,4.92-5.58l.36-.09c.86-.16,1.46-1.01,1.33-1.9Zm-13.18,9.16l-3.98-2.3-5.39-3.12c.2-1.41.11-2.85-.27-4.26-.74-2.77-2.51-5.08-4.99-6.51-1.11-.64-2.31-1.07-3.53-1.28-1.51-.26-3.07-.2-4.59.21-.71.19-1.39.45-2.05.78-.2.1-.39.2-.58.32-.36.21-.59.62-.59,1.03,0,.43.23.8.62,1.03,0,0,4.63,2.7,6.18,3.6.16.09.24.4.26.51v.08c.04.16.44,3.13.41,3.72-.02.03-.04.06-.06.1-.02.04-.04.07-.06.1-.57.37-2.14,1.05-3.47,1.53h0s-.06.02-.06.02c-.01,0-.03.01-.06.02-.15.04-.38.06-.62-.09-.83-.48-6.05-3.48-6.05-3.48-.4-.23-.74-.21-.95-.15-.5.13-.85.62-.85,1.17,0,3.83,2.05,7.4,5.36,9.32,2.48,1.43,5.36,1.81,8.13,1.07,1.41-.38,2.7-1.03,3.82-1.9l9.41,5.44v.1c-2.16,2.35-4.99,4.14-8.3,5.02-9.32,2.5-18.9-3.04-21.4-12.37-1.54-5.75-.03-11.59,3.54-15.82,2.22-2.63,5.23-4.63,8.81-5.59.24-.07.49-.12.73-.18,1.14-.25,2.29-.39,3.42-.41,1.2-.03,2.38.07,3.53.28,3.89.72,7.43,2.75,10.03,5.73,1.69,1.94,2.98,4.29,3.69,6.95.85,3.17.77,6.36-.07,9.3Z" style="fill:{primary}; fill-rule:evenodd;"/></g></svg>'
 });
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/common/icon-custom/IconCustom.vue?vue&type=script&lang=ts
 
@@ -54084,18 +54215,18 @@ function ProgressCardItemvue_type_template_id_7e2d50a4_scoped_true_ts_true_rende
 const ProgressCardItem_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(ProgressCardItemvue_type_script_lang_ts, [['render',ProgressCardItemvue_type_template_id_7e2d50a4_scoped_true_ts_true_render],['__scopeId',"data-v-7e2d50a4"]])
 
 /* harmony default export */ var ProgressCardItem = (ProgressCardItem_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/EngineConfigDialog.vue?vue&type=template&id=037b7784&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/EngineConfigDialog.vue?vue&type=template&id=308b5d9e&ts=true
 
-const EngineConfigDialogvue_type_template_id_037b7784_ts_true_hoisted_1 = {
+const EngineConfigDialogvue_type_template_id_308b5d9e_ts_true_hoisted_1 = {
   key: 1
 };
-const EngineConfigDialogvue_type_template_id_037b7784_ts_true_hoisted_2 = {
+const EngineConfigDialogvue_type_template_id_308b5d9e_ts_true_hoisted_2 = {
   key: 1
 };
-const EngineConfigDialogvue_type_template_id_037b7784_ts_true_hoisted_3 = {
+const EngineConfigDialogvue_type_template_id_308b5d9e_ts_true_hoisted_3 = {
   key: 1
 };
-function EngineConfigDialogvue_type_template_id_037b7784_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function EngineConfigDialogvue_type_template_id_308b5d9e_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_switch_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("switch-card-item");
                                                       
   const _component_number_field = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("number-field");
@@ -54104,7 +54235,7 @@ function EngineConfigDialogvue_type_template_id_037b7784_ts_true_render(_ctx, _c
                                                       
   const _component_dialog_template = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("dialog-template");
   return (0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(_component_dialog_template, {
-    "content-class": "device-reset",
+    "content-class": "engine-config",
     modelValue: $setup.visible,
     "onUpdate:modelValue": _cache[4] || (_cache[4] = $event => $setup.visible = $event),
     title: _ctx.$t('onboard.engine.settings.title'),
@@ -54166,7 +54297,7 @@ function EngineConfigDialogvue_type_template_id_037b7784_ts_true_render(_ctx, _c
       }, {
         default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.mY)("mdi-restart")]),
         _: 1
-      })) : ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)("span", EngineConfigDialogvue_type_template_id_037b7784_ts_true_hoisted_1, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("btn.reset")), 1))]),
+      })) : ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)("span", EngineConfigDialogvue_type_template_id_308b5d9e_ts_true_hoisted_1, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("btn.reset")), 1))]),
       _: 1
     }, 8, ["onClick"]), (0,runtime_core_esm_bundler/* createVNode */.K2)(VBtn, {
       color: "primary",
@@ -54177,7 +54308,7 @@ function EngineConfigDialogvue_type_template_id_037b7784_ts_true_render(_ctx, _c
       }, {
         default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.mY)("mdi-check")]),
         _: 1
-      })) : ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)("span", EngineConfigDialogvue_type_template_id_037b7784_ts_true_hoisted_2, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("btn.apply")), 1))]),
+      })) : ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)("span", EngineConfigDialogvue_type_template_id_308b5d9e_ts_true_hoisted_2, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("btn.apply")), 1))]),
       _: 1
     }, 8, ["onClick"]), (0,runtime_core_esm_bundler/* createVNode */.K2)(VBtn, {
       color: "primary",
@@ -54188,7 +54319,7 @@ function EngineConfigDialogvue_type_template_id_037b7784_ts_true_render(_ctx, _c
       }, {
         default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.mY)("mdi-close")]),
         _: 1
-      })) : ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)("span", EngineConfigDialogvue_type_template_id_037b7784_ts_true_hoisted_3, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("btn.cancel")), 1))]),
+      })) : ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)("span", EngineConfigDialogvue_type_template_id_308b5d9e_ts_true_hoisted_3, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("btn.cancel")), 1))]),
       _: 1
     })]),
     _: 1
@@ -54201,7 +54332,7 @@ function EngineConfigDialogvue_type_template_id_037b7784_ts_true_render(_ctx, _c
 
 
 
-;// CONCATENATED MODULE: ./src/views/onboard/components/EngineConfigDialog.vue?vue&type=template&id=037b7784&ts=true
+;// CONCATENATED MODULE: ./src/views/onboard/components/EngineConfigDialog.vue?vue&type=template&id=308b5d9e&ts=true
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/EngineConfigDialog.vue?vue&type=script&lang=ts
 
@@ -54209,7 +54340,7 @@ function EngineConfigDialogvue_type_template_id_037b7784_ts_true_render(_ctx, _c
 
 
 /* harmony default export */ var EngineConfigDialogvue_type_script_lang_ts = ({
-  name: "EngineConfig",
+  name: "EngineConfigDialog",
   components: {
     DialogTemplate: DialogTemplate,
     SwitchCardItem: SwitchCardItem,
@@ -54285,7 +54416,7 @@ function EngineConfigDialogvue_type_template_id_037b7784_ts_true_render(_ctx, _c
 
 
 ;
-const EngineConfigDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(EngineConfigDialogvue_type_script_lang_ts, [['render',EngineConfigDialogvue_type_template_id_037b7784_ts_true_render]])
+const EngineConfigDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(EngineConfigDialogvue_type_script_lang_ts, [['render',EngineConfigDialogvue_type_template_id_308b5d9e_ts_true_render]])
 
 /* harmony default export */ var EngineConfigDialog = (EngineConfigDialog_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/EngineCard.vue?vue&type=script&lang=ts
@@ -54508,18 +54639,18 @@ function FuelCardvue_type_template_id_93d84b7e_ts_true_render(_ctx, _cache, $pro
 
 
 
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/FuelConfigDialog.vue?vue&type=template&id=1e85ab2c&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/FuelConfigDialog.vue?vue&type=template&id=07dc1883&ts=true
 
-const FuelConfigDialogvue_type_template_id_1e85ab2c_ts_true_hoisted_1 = {
+const FuelConfigDialogvue_type_template_id_07dc1883_ts_true_hoisted_1 = {
   key: 1
 };
-const FuelConfigDialogvue_type_template_id_1e85ab2c_ts_true_hoisted_2 = {
+const FuelConfigDialogvue_type_template_id_07dc1883_ts_true_hoisted_2 = {
   key: 1
 };
-const FuelConfigDialogvue_type_template_id_1e85ab2c_ts_true_hoisted_3 = {
+const FuelConfigDialogvue_type_template_id_07dc1883_ts_true_hoisted_3 = {
   key: 1
 };
-function FuelConfigDialogvue_type_template_id_1e85ab2c_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function FuelConfigDialogvue_type_template_id_07dc1883_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_number_field = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("number-field");
                                                       
                                                       
@@ -54527,7 +54658,7 @@ function FuelConfigDialogvue_type_template_id_1e85ab2c_ts_true_render(_ctx, _cac
                                                       
   const _component_dialog_template = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("dialog-template");
   return (0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(_component_dialog_template, {
-    "content-class": "device-reset",
+    "content-class": "fuel-config",
     modelValue: $setup.visible,
     "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => $setup.visible = $event),
     title: _ctx.$t('onboard.fuel.settings.title'),
@@ -54565,7 +54696,7 @@ function FuelConfigDialogvue_type_template_id_1e85ab2c_ts_true_render(_ctx, _cac
       }, {
         default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.mY)("mdi-restart")]),
         _: 1
-      })) : ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)("span", FuelConfigDialogvue_type_template_id_1e85ab2c_ts_true_hoisted_1, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("btn.reset")), 1))]),
+      })) : ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)("span", FuelConfigDialogvue_type_template_id_07dc1883_ts_true_hoisted_1, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("btn.reset")), 1))]),
       _: 1
     }, 8, ["onClick"]), (0,runtime_core_esm_bundler/* createVNode */.K2)(VBtn, {
       color: "primary",
@@ -54576,7 +54707,7 @@ function FuelConfigDialogvue_type_template_id_1e85ab2c_ts_true_render(_ctx, _cac
       }, {
         default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.mY)("mdi-check")]),
         _: 1
-      })) : ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)("span", FuelConfigDialogvue_type_template_id_1e85ab2c_ts_true_hoisted_2, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("btn.apply")), 1))]),
+      })) : ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)("span", FuelConfigDialogvue_type_template_id_07dc1883_ts_true_hoisted_2, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("btn.apply")), 1))]),
       _: 1
     }, 8, ["onClick"]), (0,runtime_core_esm_bundler/* createVNode */.K2)(VBtn, {
       color: "primary",
@@ -54587,7 +54718,7 @@ function FuelConfigDialogvue_type_template_id_1e85ab2c_ts_true_render(_ctx, _cac
       }, {
         default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.mY)("mdi-close")]),
         _: 1
-      })) : ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)("span", FuelConfigDialogvue_type_template_id_1e85ab2c_ts_true_hoisted_3, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("btn.cancel")), 1))]),
+      })) : ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)("span", FuelConfigDialogvue_type_template_id_07dc1883_ts_true_hoisted_3, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("btn.cancel")), 1))]),
       _: 1
     })]),
     _: 1
@@ -54600,7 +54731,7 @@ function FuelConfigDialogvue_type_template_id_1e85ab2c_ts_true_render(_ctx, _cac
 
 
 
-;// CONCATENATED MODULE: ./src/views/onboard/components/FuelConfigDialog.vue?vue&type=template&id=1e85ab2c&ts=true
+;// CONCATENATED MODULE: ./src/views/onboard/components/FuelConfigDialog.vue?vue&type=template&id=07dc1883&ts=true
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/FuelConfigDialog.vue?vue&type=script&lang=ts
 
@@ -54664,7 +54795,7 @@ function FuelConfigDialogvue_type_template_id_1e85ab2c_ts_true_render(_ctx, _cac
 
 
 ;
-const FuelConfigDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(FuelConfigDialogvue_type_script_lang_ts, [['render',FuelConfigDialogvue_type_template_id_1e85ab2c_ts_true_render]])
+const FuelConfigDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(FuelConfigDialogvue_type_script_lang_ts, [['render',FuelConfigDialogvue_type_template_id_07dc1883_ts_true_render]])
 
 /* harmony default export */ var FuelConfigDialog = (FuelConfigDialog_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/FuelCard.vue?vue&type=script&lang=ts
@@ -55319,9 +55450,9 @@ function ClimateCardvue_type_template_id_05320176_ts_true_render(_ctx, _cache, $
 const ClimateCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(ClimateCardvue_type_script_lang_ts, [['render',ClimateCardvue_type_template_id_05320176_ts_true_render]])
 
 /* harmony default export */ var ClimateCard = (ClimateCard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/BoseCard.vue?vue&type=template&id=56422b84&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/BoseCard.vue?vue&type=template&id=2db77f9f&ts=true
 
-function BoseCardvue_type_template_id_56422b84_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function BoseCardvue_type_template_id_2db77f9f_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_icon_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("icon-card-item");
                                                       
   const _component_slider_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("slider-card-item");
@@ -55330,6 +55461,7 @@ function BoseCardvue_type_template_id_56422b84_ts_true_render(_ctx, _cache, $pro
                                                       
   const _component_card = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("card");
   const _component_view_setting_dialog = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("view-setting-dialog");
+  const _component_bose_start_dialog = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("bose-start-dialog");
   return (0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)(runtime_core_esm_bundler/* Fragment */.ae, null, [(0,runtime_core_esm_bundler/* createVNode */.K2)(_component_card, {
     class: "climate-card",
     title: _ctx.$t('onboard.bose.title'),
@@ -55495,7 +55627,13 @@ function BoseCardvue_type_template_id_56422b84_ts_true_render(_ctx, _cache, $pro
     view: $setup.menuSelected.view,
     disabled: $setup.menuSelected.disabled,
     "onClick:apply": $setup.onViewApply
-  }, null, 8, ["modelValue", "title", "view", "disabled", "onClick:apply"])], 64);
+  }, null, 8, ["modelValue", "title", "view", "disabled", "onClick:apply"]), (0,runtime_core_esm_bundler/* createVNode */.K2)(_component_bose_start_dialog, {
+    modelValue: $setup.startConfigVisible,
+    "onUpdate:modelValue": _cache[11] || (_cache[11] = $event => $setup.startConfigVisible = $event),
+    enabled: $setup.startEnabled,
+    level: $setup.startLevel,
+    "onClick:apply": $setup.onStartApply
+  }, null, 8, ["modelValue", "enabled", "level", "onClick:apply"])], 64);
 }
 
 /* Vuetify */
@@ -56516,7 +56654,187 @@ function SelectCardItemvue_type_template_id_20c266ba_scoped_true_ts_true_render(
 const SelectCardItem_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(SelectCardItemvue_type_script_lang_ts, [['render',SelectCardItemvue_type_template_id_20c266ba_scoped_true_ts_true_render],['__scopeId',"data-v-20c266ba"]])
 
 /* harmony default export */ var SelectCardItem = (SelectCardItem_exports_);
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/BoseStartDialog.vue?vue&type=template&id=8adf2d60&ts=true
+
+const BoseStartDialogvue_type_template_id_8adf2d60_ts_true_hoisted_1 = {
+  key: 1
+};
+const BoseStartDialogvue_type_template_id_8adf2d60_ts_true_hoisted_2 = {
+  key: 1
+};
+const BoseStartDialogvue_type_template_id_8adf2d60_ts_true_hoisted_3 = {
+  key: 1
+};
+function BoseStartDialogvue_type_template_id_8adf2d60_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+  const _component_switch_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("switch-card-item");
+                                                      
+  const _component_slider_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("slider-card-item");
+                                                      
+                                                        
+                                                      
+  const _component_dialog_template = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("dialog-template");
+  return (0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(_component_dialog_template, {
+    "content-class": "bose-start",
+    modelValue: $setup.visible,
+    "onUpdate:modelValue": _cache[3] || (_cache[3] = $event => $setup.visible = $event),
+    title: _ctx.$t('onboard.bose.volumeConfig.title'),
+    icon: "volume-setting",
+    width: "500px",
+    text: "",
+    actions: ""
+  }, {
+    body: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(VRow, {
+      class: "pb-2"
+    }, {
+      default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(VCol, {
+        cols: "12",
+        class: "pt-0 pb-0"
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(_component_switch_card_item, {
+          modelValue: $setup.valueEnabled,
+          "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => $setup.valueEnabled = $event),
+          title: _ctx.$t('onboard.bose.volumeConfig.start.title'),
+          description: _ctx.$t('onboard.bose.volumeConfig.start.description')
+        }, null, 8, ["modelValue", "title", "description"])]),
+        _: 1
+      }), (0,runtime_core_esm_bundler/* createVNode */.K2)(VCol, {
+        cols: "12",
+        class: "pb-0"
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(_component_slider_card_item, {
+          modelValue: $setup.valueLevel,
+          "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => $setup.valueLevel = $event),
+          title: _ctx.$t('onboard.bose.volumeConfig.level.title'),
+          description: _ctx.$t('onboard.bose.volumeConfig.level.description'),
+          max: 63,
+          disabled: !$setup.valueEnabled
+        }, null, 8, ["modelValue", "title", "description", "disabled"])]),
+        _: 1
+      })]),
+      _: 1
+    })]),
+    btns: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(VBtn, {
+      color: "secondary",
+      onClick: $setup.onResetClick
+    }, {
+      default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [_ctx.$vuetify.display.xs ? ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(VIcon, {
+        key: 0
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.mY)("mdi-restart")]),
+        _: 1
+      })) : ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)("span", BoseStartDialogvue_type_template_id_8adf2d60_ts_true_hoisted_1, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("btn.reset")), 1))]),
+      _: 1
+    }, 8, ["onClick"]), (0,runtime_core_esm_bundler/* createVNode */.K2)(VBtn, {
+      color: "primary",
+      onClick: $setup.onApplyClick
+    }, {
+      default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [_ctx.$vuetify.display.xs ? ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(VIcon, {
+        key: 0
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.mY)("mdi-check")]),
+        _: 1
+      })) : ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)("span", BoseStartDialogvue_type_template_id_8adf2d60_ts_true_hoisted_2, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("btn.apply")), 1))]),
+      _: 1
+    }, 8, ["onClick"]), (0,runtime_core_esm_bundler/* createVNode */.K2)(VBtn, {
+      color: "primary",
+      onClick: _cache[2] || (_cache[2] = $event => $setup.visible = false)
+    }, {
+      default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [_ctx.$vuetify.display.xs ? ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(VIcon, {
+        key: 0
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.mY)("mdi-close")]),
+        _: 1
+      })) : ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)("span", BoseStartDialogvue_type_template_id_8adf2d60_ts_true_hoisted_3, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("btn.cancel")), 1))]),
+      _: 1
+    })]),
+    _: 1
+  }, 8, ["modelValue", "title"]);
+}
+
+/* Vuetify */
+
+
+
+
+
+;// CONCATENATED MODULE: ./src/views/onboard/components/BoseStartDialog.vue?vue&type=template&id=8adf2d60&ts=true
+
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/BoseStartDialog.vue?vue&type=script&lang=ts
+
+
+
+
+
+/* harmony default export */ var BoseStartDialogvue_type_script_lang_ts = ({
+  name: "BoseStartDialog",
+  components: {
+    SliderCardItem: SliderCardItem,
+    DialogTemplate: DialogTemplate,
+    SwitchCardItem: SwitchCardItem,
+    NumberField: NumberField
+  },
+  props: {
+    /** Отображение диалога */
+    modelValue: {
+      type: Boolean,
+      default: false
+    },
+    /** Вкл/выкл */
+    enabled: Boolean,
+    /** Уровень звука */
+    level: Number
+  },
+  emits: ["update:modelValue", "click:apply"],
+  setup(props, context) {
+    const {
+      modelValue,
+      enabled,
+      level
+    } = (0,reactivity_esm_bundler/* toRefs */.kx)(props);
+    const visible = (0,runtime_core_esm_bundler/* computed */.S6)({
+      get: () => modelValue.value,
+      set: val => context.emit("update:modelValue", val)
+    });
+    const valueEnabled = (0,reactivity_esm_bundler/* ref */.IL)(false);
+    const valueLevel = (0,reactivity_esm_bundler/* ref */.IL)(0);
+    /** Сбросить */
+    const onResetClick = () => {
+      valueEnabled.value = enabled.value;
+      valueLevel.value = level.value;
+      if (valueLevel.value > 63) valueLevel.value = 63;
+    };
+    /** Применить изменения и закрыть диалог */
+    const onApplyClick = () => {
+      visible.value = false;
+      if (valueEnabled.value !== enabled.value || valueLevel.value !== level.value) {
+        context.emit("click:apply", valueEnabled.value, valueLevel.value);
+      }
+    };
+    (0,runtime_core_esm_bundler/* watch */.Kg)(visible, val => {
+      if (val) onResetClick();
+    });
+    return {
+      visible,
+      valueEnabled,
+      valueLevel,
+      onResetClick,
+      onApplyClick
+    };
+  }
+});
+;// CONCATENATED MODULE: ./src/views/onboard/components/BoseStartDialog.vue?vue&type=script&lang=ts
+ 
+;// CONCATENATED MODULE: ./src/views/onboard/components/BoseStartDialog.vue
+
+
+
+
+;
+const BoseStartDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(BoseStartDialogvue_type_script_lang_ts, [['render',BoseStartDialogvue_type_template_id_8adf2d60_ts_true_render]])
+
+/* harmony default export */ var BoseStartDialog = (BoseStartDialog_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/BoseCard.vue?vue&type=script&lang=ts
+
 
 
 
@@ -56532,6 +56850,7 @@ const SelectCardItem_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Sel
   name: "BoseCard",
   components: {
     ViewSettingDialog: ViewSettingDialog,
+    BoseStartDialog: BoseStartDialog,
     IconCardItem: IconCardItem,
     InputCardItem: InputCardItem,
     SwitchCardItem: SwitchCardItem,
@@ -56615,8 +56934,14 @@ const SelectCardItem_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Sel
       get: () => src_store.getters["config/volume"].volumeBose,
       set: val => src_store.commit("config/setVolumeValueBose", val)
     });
+    const startConfigVisible = (0,reactivity_esm_bundler/* ref */.IL)(false);
+    const startEnabled = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["config/volume"].startBose);
+    const startLevel = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["config/volume"].startLevelBose);
     const menu = (0,runtime_core_esm_bundler/* computed */.S6)(() => [{
       id: 0,
+      title: t("onboard.bose.volumeConfig.title")
+    }, {
+      id: 1,
       title: t("onboard.bose.menu"),
       view: src_store.getters["view/bose"],
       disabled: !boseViewLoaded.value
@@ -56628,8 +56953,10 @@ const SelectCardItem_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Sel
      * @param {IMenuItem} item Элемент меню
      */
     const onMenuClick = item => {
-      menuVisible.value = true;
-      menuSelected.value = item;
+      if (item.view) {
+        menuVisible.value = true;
+        menuSelected.value = item;
+      } else startConfigVisible.value = true;
     };
     /**
      * Применить параметры отображения на информационном экране
@@ -56637,6 +56964,17 @@ const SelectCardItem_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Sel
      */
     const onViewApply = value => {
       src_store.commit("view/setView", value);
+    };
+    /**
+     * Применить настройки запуска
+     * @param {boolean} enabled Вкл/выкл
+     * @param {number} level Уровень звука
+     */
+    const onStartApply = (enabled, level) => {
+      src_store.commit("config/setVolumeStartBose", {
+        enabled,
+        level
+      });
     };
     return {
       boseConfigLoaded,
@@ -56654,11 +56992,15 @@ const SelectCardItem_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Sel
       centerPointList,
       mute,
       volume,
+      startConfigVisible,
+      startEnabled,
+      startLevel,
       menu,
       menuVisible,
       menuSelected,
       onMenuClick,
-      onViewApply
+      onViewApply,
+      onStartApply
     };
   }
 });
@@ -56670,10 +57012,11 @@ const SelectCardItem_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Sel
 
 
 ;
-const BoseCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(BoseCardvue_type_script_lang_ts, [['render',BoseCardvue_type_template_id_56422b84_ts_true_render]])
+const BoseCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(BoseCardvue_type_script_lang_ts, [['render',BoseCardvue_type_template_id_2db77f9f_ts_true_render]])
 
 /* harmony default export */ var BoseCard = (BoseCard_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/index.vue?vue&type=script&lang=ts
+
 
 
 
@@ -56745,13 +57088,13 @@ const BoseCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(BoseCardv
       return result;
     });
     (0,runtime_core_esm_bundler/* watch */.Kg)(listExec, val => {
-      src_store.dispatch("value/updateLoop", val);
+      api_canbus.loop(val);
     });
     (0,runtime_core_esm_bundler/* onMounted */.u2)(() => {
-      src_store.dispatch("value/updateLoop", listExec.value);
+      api_canbus.loop(listExec.value);
     });
     (0,runtime_core_esm_bundler/* onUnmounted */.wx)(() => {
-      src_store.dispatch("value/updateLoop");
+      api_canbus.loopFree();
     });
     return {
       flicking,
@@ -56762,10 +57105,10 @@ const BoseCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(BoseCardv
 });
 ;// CONCATENATED MODULE: ./src/views/onboard/index.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/index.vue?vue&type=style&index=0&id=fff0b326&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/index.vue?vue&type=style&index=0&id=4686eee3&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/views/onboard/index.vue?vue&type=style&index=0&id=fff0b326&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/views/onboard/index.vue?vue&type=style&index=0&id=4686eee3&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/views/onboard/index.vue
 
@@ -56775,7 +57118,7 @@ const BoseCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(BoseCardv
 ;
 
 
-const onboard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(onboardvue_type_script_lang_ts, [['render',onboardvue_type_template_id_fff0b326_scoped_true_ts_true_render],['__scopeId',"data-v-fff0b326"]])
+const onboard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(onboardvue_type_script_lang_ts, [['render',onboardvue_type_template_id_4686eee3_scoped_true_ts_true_render],['__scopeId',"data-v-4686eee3"]])
 
 /* harmony default export */ var onboard = (onboard_exports_);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/index.vue?vue&type=template&id=4a520ec8&scoped=true&ts=true
@@ -59412,12 +59755,12 @@ function DeviceResetDialogvue_type_template_id_1ad62abf_ts_true_render(_ctx, _ca
 const DeviceResetDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(DeviceResetDialogvue_type_script_lang_ts, [['render',DeviceResetDialogvue_type_template_id_1ad62abf_ts_true_render]])
 
 /* harmony default export */ var DeviceResetDialog = (DeviceResetDialog_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Scanner.vue?vue&type=template&id=1532cf19&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Scanner.vue?vue&type=template&id=2f9d613d&ts=true
 
-const Scannervue_type_template_id_1532cf19_ts_true_hoisted_1 = {
+const Scannervue_type_template_id_2f9d613d_ts_true_hoisted_1 = {
   class: "mb-2"
 };
-function Scannervue_type_template_id_1532cf19_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function Scannervue_type_template_id_2f9d613d_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                                               
   const _component_dialog_template = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("dialog-template");
   return (0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(_component_dialog_template, {
@@ -59427,7 +59770,7 @@ function Scannervue_type_template_id_1532cf19_ts_true_render(_ctx, _cache, $prop
     title: _ctx.$t('scanner.upload.title'),
     text: ""
   }, {
-    body: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createElementVNode */.QD)("div", null, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("scanner.upload.text")), 1), (0,runtime_core_esm_bundler/* createElementVNode */.QD)("div", Scannervue_type_template_id_1532cf19_ts_true_hoisted_1, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("scanner.upload.leftToLoad", {
+    body: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createElementVNode */.QD)("div", null, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("scanner.upload.text")), 1), (0,runtime_core_esm_bundler/* createElementVNode */.QD)("div", Scannervue_type_template_id_2f9d613d_ts_true_hoisted_1, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("scanner.upload.leftToLoad", {
       n: $setup.leftUploading
     })), 1), (0,runtime_core_esm_bundler/* createVNode */.K2)(VProgressLinear, {
       color: "primary",
@@ -59444,7 +59787,7 @@ function Scannervue_type_template_id_1532cf19_ts_true_render(_ctx, _cache, $prop
 
 
 
-;// CONCATENATED MODULE: ./src/components/Scanner.vue?vue&type=template&id=1532cf19&ts=true
+;// CONCATENATED MODULE: ./src/components/Scanner.vue?vue&type=template&id=2f9d613d&ts=true
 
 ;// CONCATENATED MODULE: ./src/api/google.ts
 
@@ -59459,10 +59802,6 @@ const setScanCan = data => {
   });
 };
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Scanner.vue?vue&type=script&lang=ts
-
-
-
-
 
 
 
@@ -59491,49 +59830,26 @@ const setScanCan = data => {
     const {
       t
     } = useI18n();
-    const scannerAction = new DeviceScannerAction();
-    const scannerValue = new DeviceScannerValue();
-    let scannerInterval;
-    const scannerBuffer = [];
+    const scanner = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["value/scanner"]);
     const efuseMac = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["config/info"].efuseMac);
-    let scanUploading = false;
-    let scanClose = false;
     const visibleUploading = (0,reactivity_esm_bundler/* ref */.IL)(false);
     const leftUploading = (0,reactivity_esm_bundler/* ref */.IL)(0);
     const started = (0,runtime_core_esm_bundler/* computed */.S6)({
       get: () => modelValue.value,
       set: val => emit("update:modelValue", val)
     });
+    let scanUploading = false;
+    let scanClose = false;
     (0,runtime_core_esm_bundler/* watch */.Kg)(started, val => {
-      if (val) {
-        if (!api_canbus.bluetooth.connected) {
-          toast_default.error(t("scanner.notify.errorStart"));
-          return;
+      if (!api_canbus.scanner(val, success => {
+        if (val && success) {
+          // запускаем диалог
+          scanClose = false;
+          src_store.commit("app/clearMessages");
+          steps();
         }
-        // включаем сканирование
-        api_canbus.queueDisabled = true;
-        scannerAction.enabled = true;
-        api_canbus.query(scannerAction, false, success => {
-          if (success) {
-            scanClose = false;
-            // запускаем циклический запрос значений сканирования
-            scannerInterval = setInterval(() => api_canbus.query(scannerValue), 500);
-            api_canbus.addListener(API_DEVICE_SCANNER_VALUE_EVENT, onReceiveValue);
-            // запускаем диалог
-            src_store.commit("app/clearMessages");
-            steps();
-          }
-        });
-      } else {
-        if (scannerValue) {
-          // останавливаем циклический запрос значений сканирования
-          api_canbus.removeListener(API_DEVICE_SCANNER_VALUE_EVENT, onReceiveValue);
-          clearInterval(scannerInterval);
-          // выключаем сканирование
-          scannerAction.enabled = false;
-          api_canbus.query(scannerAction);
-          api_canbus.queueDisabled = false;
-        }
+      })) {
+        toast_default.error(t("scanner.notify.errorStart"));
       }
     });
     /**
@@ -59549,12 +59865,7 @@ const setScanCan = data => {
         btns: [],
         width: "800px"
       };
-      scannerBuffer.push({
-        datetime: message.title,
-        time: "",
-        hexId: "",
-        hexData: ""
-      });
+      src_store.commit("value/setScannerBufferTitle", message.title);
       if (index < 4) {
         message.btns?.push({
           title: t("scanner.btn.next"),
@@ -59582,46 +59893,26 @@ const setScanCan = data => {
       }
       src_store.commit("app/setMessage", message);
     };
-    /** Входящие значения сканирования */
-    const onReceiveValue = res => {
-      if (res.isData && res.count > 0) {
-        scannerBuffer.push(...res.frames.slice(0, res.count).map(x => {
-          const mm = moment_default().duration(Number(x.timestamp), "milliseconds");
-          const mm_time = {
-            hours: mm.hours(),
-            minutes: mm.minutes(),
-            seconds: mm.seconds(),
-            milliseconds: mm.milliseconds()
-          };
-          return {
-            datetime: moment_default()().format("YYYY.MM.DD HH:mm:ss"),
-            time: mm_time.hours + ":" + (mm_time.minutes < 10 ? "0" : "") + mm.minutes() + ":" + (mm_time.seconds < 10 ? "0" : "") + mm.seconds() + "." + (mm_time.milliseconds < 10 ? "00" : mm_time.milliseconds < 100 ? "0" : "") + mm.milliseconds(),
-            hexId: "0x" + toHex(x.id),
-            hexData: "0x" + x.data.map(x => toHex(x)).join(":")
-          };
-        }));
-        sendScannerBuffer();
-      }
-    };
     /** Отправка буфера */
     const sendScannerBuffer = () => {
       if (scanUploading) return;
-      if (!scannerBuffer.length) {
+      leftUploading.value = src_store.getters["value/scannerBuffer"].length;
+      if (!leftUploading.value) {
         if (started.value) toast_default.warning(t("scanner.notify.warningSend"));
         visibleUploading.value = false;
         return;
       }
       scanUploading = true;
-      leftUploading.value = scannerBuffer.length;
       setScanCan({
         mac: efuseMac.value,
-        rows: scannerBuffer.splice(0, 30)
+        rows: src_store.getters["value/scannerBufferRead"]
       }).then(res => {
         if (res?.success && !scanClose) setTimeout(() => sendScannerBuffer(), 100);else if (res?.error) toast_default.error(res?.message);
       }).catch(() => toast_default.error(t("scanner.notify.errorSend"))).finally(() => {
         scanUploading = false;
       });
     };
+    (0,runtime_core_esm_bundler/* watch */.Kg)(scanner, () => sendScannerBuffer());
     return {
       visibleUploading,
       started,
@@ -59637,7 +59928,7 @@ const setScanCan = data => {
 
 
 ;
-const Scanner_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Scannervue_type_script_lang_ts, [['render',Scannervue_type_template_id_1532cf19_ts_true_render]])
+const Scanner_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Scannervue_type_script_lang_ts, [['render',Scannervue_type_template_id_2f9d613d_ts_true_render]])
 
 /* harmony default export */ var Scanner = (Scanner_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/DeviceInfoDialog.vue?vue&type=script&lang=ts
@@ -60856,29 +61147,29 @@ const BaseLayout_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(BaseLay
     const onBegin = status => {
       if (status) {
         const choice = new ChoiceValue();
-        if (!src_store.getters["config/mazda"].isData) choice.listID.push(API_MAZDA_CONFIG_EXEC);
-        if (!src_store.getters["config/teyes"].isData) choice.listID.push(API_TEYES_CONFIG_EXEC);
-        if (!src_store.getters["config/engine"].isData) choice.listID.push(API_ENGINE_CONFIG_EXEC);
-        if (!src_store.getters["config/fuel"].isData) choice.listID.push(API_FUEL_CONFIG_EXEC);
-        if (!src_store.getters["config/volume"].isData) choice.listID.push(API_VOLUME_CONFIG_EXEC);
-        if (!src_store.getters["config/bose"].isData) choice.listID.push(API_BOSE_CONFIG_EXEC);
-        if (choice.listID.length) api_canbus.query(choice, true);
-        if (!src_store.getters["config/sw1"].isData) api_canbus.query(src_store.getters["config/sw1"], true);
+        choice.listID.push(API_MAZDA_CONFIG_EXEC);
+        choice.listID.push(API_TEYES_CONFIG_EXEC);
+        choice.listID.push(API_ENGINE_CONFIG_EXEC);
+        choice.listID.push(API_FUEL_CONFIG_EXEC);
+        choice.listID.push(API_VOLUME_CONFIG_EXEC);
+        choice.listID.push(API_BOSE_CONFIG_EXEC);
+        api_canbus.query(choice, true);
+        api_canbus.query(src_store.getters["config/sw1"], true);
         choice.listID = [];
-        if (!src_store.getters["view/worktime"].isData) choice.listID.push(API_DEVICE_VIEW_WORKTIME_EXEC);
-        if (!src_store.getters["view/voltmeter"].isData) choice.listID.push(API_DEVICE_VIEW_VOLTMETER_EXEC);
-        if (!src_store.getters["view/mazda"].isData) choice.listID.push(API_MAZDA_VIEW_EXEC);
-        if (!src_store.getters["view/teyesText"].isData) choice.listID.push(API_TEYES_TEXT_VIEW_EXEC);
-        if (!src_store.getters["view/bose"].isData) choice.listID.push(API_BOSE_VIEW_EXEC);
-        if (!src_store.getters["view/climate"].isData) choice.listID.push(API_CLIMATE_VIEW_EXEC);
-        if (!src_store.getters["view/doors"].isData) choice.listID.push(API_DOORS_VIEW_EXEC);
-        if (!src_store.getters["view/engine"].isData) choice.listID.push(API_ENGINE_VIEW_EXEC);
-        if (!src_store.getters["view/fuel"].isData) choice.listID.push(API_FUEL_VIEW_EXEC);
-        if (!src_store.getters["view/movement"].isData) choice.listID.push(API_MOVEMENT_VIEW_EXEC);
-        if (!src_store.getters["view/sensors"].isData) choice.listID.push(API_SENSORS_VIEW_EXEC);
-        if (!src_store.getters["view/temperature"].isData) choice.listID.push(API_TEMPERATURE_VIEW_EXEC);
-        if (!src_store.getters["view/volume"].isData) choice.listID.push(API_VOLUME_VIEW_EXEC);
-        if (choice.listID.length) api_canbus.query(choice, true);
+        choice.listID.push(API_DEVICE_VIEW_WORKTIME_EXEC);
+        choice.listID.push(API_DEVICE_VIEW_VOLTMETER_EXEC);
+        choice.listID.push(API_MAZDA_VIEW_EXEC);
+        choice.listID.push(API_TEYES_TEXT_VIEW_EXEC);
+        choice.listID.push(API_BOSE_VIEW_EXEC);
+        choice.listID.push(API_CLIMATE_VIEW_EXEC);
+        choice.listID.push(API_DOORS_VIEW_EXEC);
+        choice.listID.push(API_ENGINE_VIEW_EXEC);
+        choice.listID.push(API_FUEL_VIEW_EXEC);
+        choice.listID.push(API_MOVEMENT_VIEW_EXEC);
+        choice.listID.push(API_SENSORS_VIEW_EXEC);
+        choice.listID.push(API_TEMPERATURE_VIEW_EXEC);
+        choice.listID.push(API_VOLUME_VIEW_EXEC);
+        api_canbus.query(choice, true);
       }
     };
     api_canbus.addListener(API_CANBUS_EVENT, onBegin);
@@ -87703,7 +87994,7 @@ if (true) {
 
 /***/ }),
 
-/***/ 8976:
+/***/ 6596:
 /***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -114567,6 +114858,6 @@ module.exports = /*#__PURE__*/JSON.parse('{"name":"pjcan","version":"1.0.0","pri
 },
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
-/******/ var __webpack_exports__ = (__webpack_exec__(2636));
+/******/ var __webpack_exports__ = (__webpack_exec__(8976));
 /******/ }
 ]);
