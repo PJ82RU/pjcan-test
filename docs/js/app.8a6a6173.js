@@ -40,8 +40,8 @@ var map = {
 	"./br.js": 3424,
 	"./bs": 6100,
 	"./bs.js": 6100,
-	"./ca": 6596,
-	"./ca.js": 6596,
+	"./ca": 8976,
+	"./ca.js": 8976,
 	"./cs": 3016,
 	"./cs.js": 3016,
 	"./cv": 1052,
@@ -302,7 +302,7 @@ webpackContext.id = 2348;
 
 /***/ }),
 
-/***/ 8976:
+/***/ 984:
 /***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -312,6 +312,7 @@ var getters_namespaceObject = {};
 __webpack_require__.r(getters_namespaceObject);
 __webpack_require__.d(getters_namespaceObject, {
   message: function() { return message; },
+  notify: function() { return notify; },
   onboardCardList: function() { return onboardCardList; },
   sw1: function() { return sw1; },
   visibleMessage: function() { return visibleMessage; }
@@ -324,6 +325,7 @@ __webpack_require__.d(mutations_namespaceObject, {
   clearMessages: function() { return clearMessages; },
   freeMessage: function() { return freeMessage; },
   setMessage: function() { return setMessage; },
+  setNotify: function() { return setNotify; },
   setOnboardCardList: function() { return setOnboardCardList; },
   setSW1: function() { return setSW1; },
   setVisibleMessage: function() { return setVisibleMessage; }
@@ -347,6 +349,8 @@ __webpack_require__.r(config_getters_namespaceObject);
 __webpack_require__.d(config_getters_namespaceObject, {
   bose: function() { return bose; },
   carModel: function() { return carModel; },
+  datetime: function() { return getters_datetime; },
+  doors: function() { return doors; },
   engine: function() { return engine; },
   fuel: function() { return fuel; },
   info: function() { return info; },
@@ -380,6 +384,15 @@ __webpack_require__.d(config_mutations_namespaceObject, {
   setBoseRadioFM: function() { return setBoseRadioFM; },
   setBoseTreble: function() { return setBoseTreble; },
   setBoseWow: function() { return setBoseWow; },
+  setDatetime: function() { return setDatetime; },
+  setDatetimeShowDate: function() { return setDatetimeShowDate; },
+  setDatetimeShowDateAndDayWeek: function() { return setDatetimeShowDateAndDayWeek; },
+  setDatetimeShowDayWeek: function() { return setDatetimeShowDayWeek; },
+  setDatetimeShowFullDatetime: function() { return setDatetimeShowFullDatetime; },
+  setDatetimeShowTime: function() { return setDatetimeShowTime; },
+  setDatetimeShowTimeAndDayWeek: function() { return setDatetimeShowTimeAndDayWeek; },
+  setDoors: function() { return setDoors; },
+  setDoorsConfig: function() { return setDoorsConfig; },
   setEngine: function() { return setEngine; },
   setEngineConfig: function() { return setEngineConfig; },
   setFuel: function() { return setFuel; },
@@ -409,7 +422,8 @@ __webpack_require__.d(config_mutations_namespaceObject, {
   setVolume: function() { return setVolume; },
   setVolumeMuteBose: function() { return setVolumeMuteBose; },
   setVolumeStartBose: function() { return setVolumeStartBose; },
-  setVolumeValueBose: function() { return setVolumeValueBose; }
+  setVolumeValueBose: function() { return setVolumeValueBose; },
+  synchDatetime: function() { return synchDatetime; }
 });
 
 // NAMESPACE OBJECT: ./src/store/modules/config/actions.ts
@@ -425,7 +439,7 @@ __webpack_require__.r(value_getters_namespaceObject);
 __webpack_require__.d(value_getters_namespaceObject, {
   climate: function() { return climate; },
   device: function() { return device; },
-  doors: function() { return doors; },
+  doors: function() { return getters_doors; },
   engine: function() { return getters_engine; },
   fuel: function() { return getters_fuel; },
   movement: function() { return movement; },
@@ -434,7 +448,8 @@ __webpack_require__.d(value_getters_namespaceObject, {
   scannerBufferRead: function() { return scannerBufferRead; },
   sensors: function() { return sensors; },
   sw1: function() { return value_getters_sw1; },
-  temperature: function() { return temperature; }
+  temperature: function() { return temperature; },
+  test: function() { return test; }
 });
 
 // NAMESPACE OBJECT: ./src/store/modules/value/mutations.ts
@@ -443,7 +458,7 @@ __webpack_require__.r(value_mutations_namespaceObject);
 __webpack_require__.d(value_mutations_namespaceObject, {
   setClimate: function() { return setClimate; },
   setDevice: function() { return setDevice; },
-  setDoors: function() { return setDoors; },
+  setDoors: function() { return mutations_setDoors; },
   setEngine: function() { return mutations_setEngine; },
   setFuel: function() { return mutations_setFuel; },
   setMovement: function() { return setMovement; },
@@ -452,7 +467,8 @@ __webpack_require__.d(value_mutations_namespaceObject, {
   setScannerBuffer: function() { return setScannerBuffer; },
   setScannerBufferTitle: function() { return setScannerBufferTitle; },
   setSensors: function() { return setSensors; },
-  setTemperature: function() { return setTemperature; }
+  setTemperature: function() { return setTemperature; },
+  setTestText: function() { return setTestText; }
 });
 
 // NAMESPACE OBJECT: ./src/store/modules/view/getters.ts
@@ -461,7 +477,8 @@ __webpack_require__.r(view_getters_namespaceObject);
 __webpack_require__.d(view_getters_namespaceObject, {
   bose: function() { return getters_bose; },
   climate: function() { return getters_climate; },
-  doors: function() { return getters_doors; },
+  datetime: function() { return view_getters_datetime; },
+  doors: function() { return view_getters_doors; },
   engine: function() { return view_getters_engine; },
   fuel: function() { return view_getters_fuel; },
   mazda: function() { return getters_mazda; },
@@ -480,7 +497,8 @@ __webpack_require__.r(view_mutations_namespaceObject);
 __webpack_require__.d(view_mutations_namespaceObject, {
   setBose: function() { return mutations_setBose; },
   setClimate: function() { return mutations_setClimate; },
-  setDoors: function() { return mutations_setDoors; },
+  setDatetime: function() { return mutations_setDatetime; },
+  setDoors: function() { return view_mutations_setDoors; },
   setEngine: function() { return view_mutations_setEngine; },
   setFuel: function() { return view_mutations_setFuel; },
   setMazda: function() { return mutations_setMazda; },
@@ -673,7 +691,7 @@ __webpack_require__.d(directives_namespaceObject, {
 var runtime_dom_esm_bundler = __webpack_require__(7764);
 // EXTERNAL MODULE: ./node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js
 var runtime_core_esm_bundler = __webpack_require__(4108);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=template&id=5924fc54&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=template&id=24a28132&ts=true
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_base_layout = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("base-layout");
@@ -683,11037 +701,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 var es_array_push = __webpack_require__(3248);
 // EXTERNAL MODULE: ./node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js
 var reactivity_esm_bundler = __webpack_require__(2500);
-;// CONCATENATED MODULE: ./node_modules/@vue/devtools-api/lib/esm/env.js
-function getDevtoolsGlobalHook() {
-  return getTarget().__VUE_DEVTOOLS_GLOBAL_HOOK__;
-}
-function getTarget() {
-  // @ts-ignore
-  return typeof navigator !== 'undefined' && typeof window !== 'undefined' ? window : typeof __webpack_require__.g !== 'undefined' ? __webpack_require__.g : {};
-}
-const isProxyAvailable = typeof Proxy === 'function';
-;// CONCATENATED MODULE: ./node_modules/@vue/devtools-api/lib/esm/const.js
-const HOOK_SETUP = 'devtools-plugin:setup';
-const HOOK_PLUGIN_SETTINGS_SET = 'plugin:settings:set';
-;// CONCATENATED MODULE: ./node_modules/@vue/devtools-api/lib/esm/time.js
-let supported;
-let perf;
-function isPerformanceSupported() {
-  var _a;
-  if (supported !== undefined) {
-    return supported;
-  }
-  if (typeof window !== 'undefined' && window.performance) {
-    supported = true;
-    perf = window.performance;
-  } else if (typeof __webpack_require__.g !== 'undefined' && ((_a = __webpack_require__.g.perf_hooks) === null || _a === void 0 ? void 0 : _a.performance)) {
-    supported = true;
-    perf = __webpack_require__.g.perf_hooks.performance;
-  } else {
-    supported = false;
-  }
-  return supported;
-}
-function now() {
-  return isPerformanceSupported() ? perf.now() : Date.now();
-}
-;// CONCATENATED MODULE: ./node_modules/@vue/devtools-api/lib/esm/proxy.js
-
-
-
-class ApiProxy {
-  constructor(plugin, hook) {
-    this.target = null;
-    this.targetQueue = [];
-    this.onQueue = [];
-    this.plugin = plugin;
-    this.hook = hook;
-    const defaultSettings = {};
-    if (plugin.settings) {
-      for (const id in plugin.settings) {
-        const item = plugin.settings[id];
-        defaultSettings[id] = item.defaultValue;
-      }
-    }
-    const localSettingsSaveId = `__vue-devtools-plugin-settings__${plugin.id}`;
-    let currentSettings = Object.assign({}, defaultSettings);
-    try {
-      const raw = localStorage.getItem(localSettingsSaveId);
-      const data = JSON.parse(raw);
-      Object.assign(currentSettings, data);
-    } catch (e) {
-      // noop
-    }
-    this.fallbacks = {
-      getSettings() {
-        return currentSettings;
-      },
-      setSettings(value) {
-        try {
-          localStorage.setItem(localSettingsSaveId, JSON.stringify(value));
-        } catch (e) {
-          // noop
-        }
-        currentSettings = value;
-      },
-      now() {
-        return now();
-      }
-    };
-    if (hook) {
-      hook.on(HOOK_PLUGIN_SETTINGS_SET, (pluginId, value) => {
-        if (pluginId === this.plugin.id) {
-          this.fallbacks.setSettings(value);
-        }
-      });
-    }
-    this.proxiedOn = new Proxy({}, {
-      get: (_target, prop) => {
-        if (this.target) {
-          return this.target.on[prop];
-        } else {
-          return (...args) => {
-            this.onQueue.push({
-              method: prop,
-              args
-            });
-          };
-        }
-      }
-    });
-    this.proxiedTarget = new Proxy({}, {
-      get: (_target, prop) => {
-        if (this.target) {
-          return this.target[prop];
-        } else if (prop === 'on') {
-          return this.proxiedOn;
-        } else if (Object.keys(this.fallbacks).includes(prop)) {
-          return (...args) => {
-            this.targetQueue.push({
-              method: prop,
-              args,
-              resolve: () => {}
-            });
-            return this.fallbacks[prop](...args);
-          };
-        } else {
-          return (...args) => {
-            return new Promise(resolve => {
-              this.targetQueue.push({
-                method: prop,
-                args,
-                resolve
-              });
-            });
-          };
-        }
-      }
-    });
-  }
-  async setRealTarget(target) {
-    this.target = target;
-    for (const item of this.onQueue) {
-      this.target.on[item.method](...item.args);
-    }
-    for (const item of this.targetQueue) {
-      item.resolve(await this.target[item.method](...item.args));
-    }
-  }
-}
-;// CONCATENATED MODULE: ./node_modules/@vue/devtools-api/lib/esm/index.js
-
-
-
-
-
-
-
-function esm_setupDevtoolsPlugin(pluginDescriptor, setupFn) {
-  const descriptor = pluginDescriptor;
-  const target = getTarget();
-  const hook = getDevtoolsGlobalHook();
-  const enableProxy = isProxyAvailable && descriptor.enableEarlyProxy;
-  if (hook && (target.__VUE_DEVTOOLS_PLUGIN_API_AVAILABLE__ || !enableProxy)) {
-    hook.emit(HOOK_SETUP, pluginDescriptor, setupFn);
-  } else {
-    const proxy = enableProxy ? new ApiProxy(descriptor, hook) : null;
-    const list = target.__VUE_DEVTOOLS_PLUGINS__ = target.__VUE_DEVTOOLS_PLUGINS__ || [];
-    list.push({
-      pluginDescriptor: descriptor,
-      setupFn,
-      proxy
-    });
-    if (proxy) setupFn(proxy.proxiedTarget);
-  }
-}
-;// CONCATENATED MODULE: ./node_modules/vuex/dist/vuex.esm-bundler.js
-
-/*!
- * vuex v4.1.0
- * (c) 2022 Evan You
- * @license MIT
- */
-
-
-var storeKey = 'store';
-function useStore(key) {
-  if (key === void 0) key = null;
-  return (0,runtime_core_esm_bundler/* inject */.uU)(key !== null ? key : storeKey);
-}
-
-/**
- * Get the first item that pass the test
- * by second argument function
- *
- * @param {Array} list
- * @param {Function} f
- * @return {*}
- */
-function find(list, f) {
-  return list.filter(f)[0];
-}
-
-/**
- * Deep copy the given object considering circular structure.
- * This function caches all nested objects and its copies.
- * If it detects circular structure, use cached copy to avoid infinite loop.
- *
- * @param {*} obj
- * @param {Array<Object>} cache
- * @return {*}
- */
-function deepCopy(obj, cache) {
-  if (cache === void 0) cache = [];
-
-  // just return if obj is immutable value
-  if (obj === null || typeof obj !== 'object') {
-    return obj;
-  }
-
-  // if obj is hit, it is in circular structure
-  var hit = find(cache, function (c) {
-    return c.original === obj;
-  });
-  if (hit) {
-    return hit.copy;
-  }
-  var copy = Array.isArray(obj) ? [] : {};
-  // put the copy into cache at first
-  // because we want to refer it in recursive deepCopy
-  cache.push({
-    original: obj,
-    copy: copy
-  });
-  Object.keys(obj).forEach(function (key) {
-    copy[key] = deepCopy(obj[key], cache);
-  });
-  return copy;
-}
-
-/**
- * forEach for object
- */
-function forEachValue(obj, fn) {
-  Object.keys(obj).forEach(function (key) {
-    return fn(obj[key], key);
-  });
-}
-function vuex_esm_bundler_isObject(obj) {
-  return obj !== null && typeof obj === 'object';
-}
-function isPromise(val) {
-  return val && typeof val.then === 'function';
-}
-function assert(condition, msg) {
-  if (!condition) {
-    throw new Error("[vuex] " + msg);
-  }
-}
-function partial(fn, arg) {
-  return function () {
-    return fn(arg);
-  };
-}
-function genericSubscribe(fn, subs, options) {
-  if (subs.indexOf(fn) < 0) {
-    options && options.prepend ? subs.unshift(fn) : subs.push(fn);
-  }
-  return function () {
-    var i = subs.indexOf(fn);
-    if (i > -1) {
-      subs.splice(i, 1);
-    }
-  };
-}
-function resetStore(store, hot) {
-  store._actions = Object.create(null);
-  store._mutations = Object.create(null);
-  store._wrappedGetters = Object.create(null);
-  store._modulesNamespaceMap = Object.create(null);
-  var state = store.state;
-  // init all modules
-  installModule(store, state, [], store._modules.root, true);
-  // reset state
-  resetStoreState(store, state, hot);
-}
-function resetStoreState(store, state, hot) {
-  var oldState = store._state;
-  var oldScope = store._scope;
-
-  // bind store public getters
-  store.getters = {};
-  // reset local getters cache
-  store._makeLocalGettersCache = Object.create(null);
-  var wrappedGetters = store._wrappedGetters;
-  var computedObj = {};
-  var computedCache = {};
-
-  // create a new effect scope and create computed object inside it to avoid
-  // getters (computed) getting destroyed on component unmount.
-  var scope = (0,reactivity_esm_bundler/* effectScope */.Ul)(true);
-  scope.run(function () {
-    forEachValue(wrappedGetters, function (fn, key) {
-      // use computed to leverage its lazy-caching mechanism
-      // direct inline function use will lead to closure preserving oldState.
-      // using partial to return function with only arguments preserved in closure environment.
-      computedObj[key] = partial(fn, store);
-      computedCache[key] = (0,runtime_core_esm_bundler/* computed */.S6)(function () {
-        return computedObj[key]();
-      });
-      Object.defineProperty(store.getters, key, {
-        get: function () {
-          return computedCache[key].value;
-        },
-        enumerable: true // for local getters
-      });
-    });
-  });
-  store._state = (0,reactivity_esm_bundler/* reactive */.cB)({
-    data: state
-  });
-
-  // register the newly created effect scope to the store so that we can
-  // dispose the effects when this method runs again in the future.
-  store._scope = scope;
-
-  // enable strict mode for new state
-  if (store.strict) {
-    enableStrictMode(store);
-  }
-  if (oldState) {
-    if (hot) {
-      // dispatch changes in all subscribed watchers
-      // to force getter re-evaluation for hot reloading.
-      store._withCommit(function () {
-        oldState.data = null;
-      });
-    }
-  }
-
-  // dispose previously registered effect scope if there is one.
-  if (oldScope) {
-    oldScope.stop();
-  }
-}
-function installModule(store, rootState, path, module, hot) {
-  var isRoot = !path.length;
-  var namespace = store._modules.getNamespace(path);
-
-  // register in namespace map
-  if (module.namespaced) {
-    if (store._modulesNamespaceMap[namespace] && "production" !== 'production') {}
-    store._modulesNamespaceMap[namespace] = module;
-  }
-
-  // set state
-  if (!isRoot && !hot) {
-    var parentState = getNestedState(rootState, path.slice(0, -1));
-    var moduleName = path[path.length - 1];
-    store._withCommit(function () {
-      if (false) {}
-      parentState[moduleName] = module.state;
-    });
-  }
-  var local = module.context = makeLocalContext(store, namespace, path);
-  module.forEachMutation(function (mutation, key) {
-    var namespacedType = namespace + key;
-    registerMutation(store, namespacedType, mutation, local);
-  });
-  module.forEachAction(function (action, key) {
-    var type = action.root ? key : namespace + key;
-    var handler = action.handler || action;
-    registerAction(store, type, handler, local);
-  });
-  module.forEachGetter(function (getter, key) {
-    var namespacedType = namespace + key;
-    registerGetter(store, namespacedType, getter, local);
-  });
-  module.forEachChild(function (child, key) {
-    installModule(store, rootState, path.concat(key), child, hot);
-  });
-}
-
-/**
- * make localized dispatch, commit, getters and state
- * if there is no namespace, just use root ones
- */
-function makeLocalContext(store, namespace, path) {
-  var noNamespace = namespace === '';
-  var local = {
-    dispatch: noNamespace ? store.dispatch : function (_type, _payload, _options) {
-      var args = unifyObjectStyle(_type, _payload, _options);
-      var payload = args.payload;
-      var options = args.options;
-      var type = args.type;
-      if (!options || !options.root) {
-        type = namespace + type;
-        if (false) {}
-      }
-      return store.dispatch(type, payload);
-    },
-    commit: noNamespace ? store.commit : function (_type, _payload, _options) {
-      var args = unifyObjectStyle(_type, _payload, _options);
-      var payload = args.payload;
-      var options = args.options;
-      var type = args.type;
-      if (!options || !options.root) {
-        type = namespace + type;
-        if (false) {}
-      }
-      store.commit(type, payload, options);
-    }
-  };
-
-  // getters and state object must be gotten lazily
-  // because they will be changed by state update
-  Object.defineProperties(local, {
-    getters: {
-      get: noNamespace ? function () {
-        return store.getters;
-      } : function () {
-        return makeLocalGetters(store, namespace);
-      }
-    },
-    state: {
-      get: function () {
-        return getNestedState(store.state, path);
-      }
-    }
-  });
-  return local;
-}
-function makeLocalGetters(store, namespace) {
-  if (!store._makeLocalGettersCache[namespace]) {
-    var gettersProxy = {};
-    var splitPos = namespace.length;
-    Object.keys(store.getters).forEach(function (type) {
-      // skip if the target getter is not match this namespace
-      if (type.slice(0, splitPos) !== namespace) {
-        return;
-      }
-
-      // extract local getter type
-      var localType = type.slice(splitPos);
-
-      // Add a port to the getters proxy.
-      // Define as getter property because
-      // we do not want to evaluate the getters in this time.
-      Object.defineProperty(gettersProxy, localType, {
-        get: function () {
-          return store.getters[type];
-        },
-        enumerable: true
-      });
-    });
-    store._makeLocalGettersCache[namespace] = gettersProxy;
-  }
-  return store._makeLocalGettersCache[namespace];
-}
-function registerMutation(store, type, handler, local) {
-  var entry = store._mutations[type] || (store._mutations[type] = []);
-  entry.push(function wrappedMutationHandler(payload) {
-    handler.call(store, local.state, payload);
-  });
-}
-function registerAction(store, type, handler, local) {
-  var entry = store._actions[type] || (store._actions[type] = []);
-  entry.push(function wrappedActionHandler(payload) {
-    var res = handler.call(store, {
-      dispatch: local.dispatch,
-      commit: local.commit,
-      getters: local.getters,
-      state: local.state,
-      rootGetters: store.getters,
-      rootState: store.state
-    }, payload);
-    if (!isPromise(res)) {
-      res = Promise.resolve(res);
-    }
-    if (store._devtoolHook) {
-      return res.catch(function (err) {
-        store._devtoolHook.emit('vuex:error', err);
-        throw err;
-      });
-    } else {
-      return res;
-    }
-  });
-}
-function registerGetter(store, type, rawGetter, local) {
-  if (store._wrappedGetters[type]) {
-    if (false) {}
-    return;
-  }
-  store._wrappedGetters[type] = function wrappedGetter(store) {
-    return rawGetter(local.state,
-    // local state
-    local.getters,
-    // local getters
-    store.state,
-    // root state
-    store.getters // root getters
-    );
-  };
-}
-function enableStrictMode(store) {
-  (0,runtime_core_esm_bundler/* watch */.Kg)(function () {
-    return store._state.data;
-  }, function () {
-    if (false) {}
-  }, {
-    deep: true,
-    flush: 'sync'
-  });
-}
-function getNestedState(state, path) {
-  return path.reduce(function (state, key) {
-    return state[key];
-  }, state);
-}
-function unifyObjectStyle(type, payload, options) {
-  if (vuex_esm_bundler_isObject(type) && type.type) {
-    options = payload;
-    payload = type;
-    type = type.type;
-  }
-  if (false) {}
-  return {
-    type: type,
-    payload: payload,
-    options: options
-  };
-}
-var LABEL_VUEX_BINDINGS = 'vuex bindings';
-var MUTATIONS_LAYER_ID = 'vuex:mutations';
-var ACTIONS_LAYER_ID = 'vuex:actions';
-var INSPECTOR_ID = 'vuex';
-var actionId = 0;
-function addDevtools(app, store) {
-  esm_setupDevtoolsPlugin({
-    id: 'org.vuejs.vuex',
-    app: app,
-    label: 'Vuex',
-    homepage: 'https://next.vuex.vuejs.org/',
-    logo: 'https://vuejs.org/images/icons/favicon-96x96.png',
-    packageName: 'vuex',
-    componentStateTypes: [LABEL_VUEX_BINDINGS]
-  }, function (api) {
-    api.addTimelineLayer({
-      id: MUTATIONS_LAYER_ID,
-      label: 'Vuex Mutations',
-      color: COLOR_LIME_500
-    });
-    api.addTimelineLayer({
-      id: ACTIONS_LAYER_ID,
-      label: 'Vuex Actions',
-      color: COLOR_LIME_500
-    });
-    api.addInspector({
-      id: INSPECTOR_ID,
-      label: 'Vuex',
-      icon: 'storage',
-      treeFilterPlaceholder: 'Filter stores...'
-    });
-    api.on.getInspectorTree(function (payload) {
-      if (payload.app === app && payload.inspectorId === INSPECTOR_ID) {
-        if (payload.filter) {
-          var nodes = [];
-          flattenStoreForInspectorTree(nodes, store._modules.root, payload.filter, '');
-          payload.rootNodes = nodes;
-        } else {
-          payload.rootNodes = [formatStoreForInspectorTree(store._modules.root, '')];
-        }
-      }
-    });
-    api.on.getInspectorState(function (payload) {
-      if (payload.app === app && payload.inspectorId === INSPECTOR_ID) {
-        var modulePath = payload.nodeId;
-        makeLocalGetters(store, modulePath);
-        payload.state = formatStoreForInspectorState(getStoreModule(store._modules, modulePath), modulePath === 'root' ? store.getters : store._makeLocalGettersCache, modulePath);
-      }
-    });
-    api.on.editInspectorState(function (payload) {
-      if (payload.app === app && payload.inspectorId === INSPECTOR_ID) {
-        var modulePath = payload.nodeId;
-        var path = payload.path;
-        if (modulePath !== 'root') {
-          path = modulePath.split('/').filter(Boolean).concat(path);
-        }
-        store._withCommit(function () {
-          payload.set(store._state.data, path, payload.state.value);
-        });
-      }
-    });
-    store.subscribe(function (mutation, state) {
-      var data = {};
-      if (mutation.payload) {
-        data.payload = mutation.payload;
-      }
-      data.state = state;
-      api.notifyComponentUpdate();
-      api.sendInspectorTree(INSPECTOR_ID);
-      api.sendInspectorState(INSPECTOR_ID);
-      api.addTimelineEvent({
-        layerId: MUTATIONS_LAYER_ID,
-        event: {
-          time: Date.now(),
-          title: mutation.type,
-          data: data
-        }
-      });
-    });
-    store.subscribeAction({
-      before: function (action, state) {
-        var data = {};
-        if (action.payload) {
-          data.payload = action.payload;
-        }
-        action._id = actionId++;
-        action._time = Date.now();
-        data.state = state;
-        api.addTimelineEvent({
-          layerId: ACTIONS_LAYER_ID,
-          event: {
-            time: action._time,
-            title: action.type,
-            groupId: action._id,
-            subtitle: 'start',
-            data: data
-          }
-        });
-      },
-      after: function (action, state) {
-        var data = {};
-        var duration = Date.now() - action._time;
-        data.duration = {
-          _custom: {
-            type: 'duration',
-            display: duration + "ms",
-            tooltip: 'Action duration',
-            value: duration
-          }
-        };
-        if (action.payload) {
-          data.payload = action.payload;
-        }
-        data.state = state;
-        api.addTimelineEvent({
-          layerId: ACTIONS_LAYER_ID,
-          event: {
-            time: Date.now(),
-            title: action.type,
-            groupId: action._id,
-            subtitle: 'end',
-            data: data
-          }
-        });
-      }
-    });
-  });
-}
-
-// extracted from tailwind palette
-var COLOR_LIME_500 = 0x84cc16;
-var COLOR_DARK = 0x666666;
-var COLOR_WHITE = 0xffffff;
-var TAG_NAMESPACED = {
-  label: 'namespaced',
-  textColor: COLOR_WHITE,
-  backgroundColor: COLOR_DARK
-};
-
-/**
- * @param {string} path
- */
-function extractNameFromPath(path) {
-  return path && path !== 'root' ? path.split('/').slice(-2, -1)[0] : 'Root';
-}
-
-/**
- * @param {*} module
- * @return {import('@vue/devtools-api').CustomInspectorNode}
- */
-function formatStoreForInspectorTree(module, path) {
-  return {
-    id: path || 'root',
-    // all modules end with a `/`, we want the last segment only
-    // cart/ -> cart
-    // nested/cart/ -> cart
-    label: extractNameFromPath(path),
-    tags: module.namespaced ? [TAG_NAMESPACED] : [],
-    children: Object.keys(module._children).map(function (moduleName) {
-      return formatStoreForInspectorTree(module._children[moduleName], path + moduleName + '/');
-    })
-  };
-}
-
-/**
- * @param {import('@vue/devtools-api').CustomInspectorNode[]} result
- * @param {*} module
- * @param {string} filter
- * @param {string} path
- */
-function flattenStoreForInspectorTree(result, module, filter, path) {
-  if (path.includes(filter)) {
-    result.push({
-      id: path || 'root',
-      label: path.endsWith('/') ? path.slice(0, path.length - 1) : path || 'Root',
-      tags: module.namespaced ? [TAG_NAMESPACED] : []
-    });
-  }
-  Object.keys(module._children).forEach(function (moduleName) {
-    flattenStoreForInspectorTree(result, module._children[moduleName], filter, path + moduleName + '/');
-  });
-}
-
-/**
- * @param {*} module
- * @return {import('@vue/devtools-api').CustomInspectorState}
- */
-function formatStoreForInspectorState(module, getters, path) {
-  getters = path === 'root' ? getters : getters[path];
-  var gettersKeys = Object.keys(getters);
-  var storeState = {
-    state: Object.keys(module.state).map(function (key) {
-      return {
-        key: key,
-        editable: true,
-        value: module.state[key]
-      };
-    })
-  };
-  if (gettersKeys.length) {
-    var tree = transformPathsToObjectTree(getters);
-    storeState.getters = Object.keys(tree).map(function (key) {
-      return {
-        key: key.endsWith('/') ? extractNameFromPath(key) : key,
-        editable: false,
-        value: canThrow(function () {
-          return tree[key];
-        })
-      };
-    });
-  }
-  return storeState;
-}
-function transformPathsToObjectTree(getters) {
-  var result = {};
-  Object.keys(getters).forEach(function (key) {
-    var path = key.split('/');
-    if (path.length > 1) {
-      var target = result;
-      var leafKey = path.pop();
-      path.forEach(function (p) {
-        if (!target[p]) {
-          target[p] = {
-            _custom: {
-              value: {},
-              display: p,
-              tooltip: 'Module',
-              abstract: true
-            }
-          };
-        }
-        target = target[p]._custom.value;
-      });
-      target[leafKey] = canThrow(function () {
-        return getters[key];
-      });
-    } else {
-      result[key] = canThrow(function () {
-        return getters[key];
-      });
-    }
-  });
-  return result;
-}
-function getStoreModule(moduleMap, path) {
-  var names = path.split('/').filter(function (n) {
-    return n;
-  });
-  return names.reduce(function (module, moduleName, i) {
-    var child = module[moduleName];
-    if (!child) {
-      throw new Error("Missing module \"" + moduleName + "\" for path \"" + path + "\".");
-    }
-    return i === names.length - 1 ? child : child._children;
-  }, path === 'root' ? moduleMap : moduleMap.root._children);
-}
-function canThrow(cb) {
-  try {
-    return cb();
-  } catch (e) {
-    return e;
-  }
-}
-
-// Base data struct for store's module, package with some attribute and method
-var Module = function Module(rawModule, runtime) {
-  this.runtime = runtime;
-  // Store some children item
-  this._children = Object.create(null);
-  // Store the origin module object which passed by programmer
-  this._rawModule = rawModule;
-  var rawState = rawModule.state;
-
-  // Store the origin module's state
-  this.state = (typeof rawState === 'function' ? rawState() : rawState) || {};
-};
-var prototypeAccessors$1 = {
-  namespaced: {
-    configurable: true
-  }
-};
-prototypeAccessors$1.namespaced.get = function () {
-  return !!this._rawModule.namespaced;
-};
-Module.prototype.addChild = function addChild(key, module) {
-  this._children[key] = module;
-};
-Module.prototype.removeChild = function removeChild(key) {
-  delete this._children[key];
-};
-Module.prototype.getChild = function getChild(key) {
-  return this._children[key];
-};
-Module.prototype.hasChild = function hasChild(key) {
-  return key in this._children;
-};
-Module.prototype.update = function update(rawModule) {
-  this._rawModule.namespaced = rawModule.namespaced;
-  if (rawModule.actions) {
-    this._rawModule.actions = rawModule.actions;
-  }
-  if (rawModule.mutations) {
-    this._rawModule.mutations = rawModule.mutations;
-  }
-  if (rawModule.getters) {
-    this._rawModule.getters = rawModule.getters;
-  }
-};
-Module.prototype.forEachChild = function forEachChild(fn) {
-  forEachValue(this._children, fn);
-};
-Module.prototype.forEachGetter = function forEachGetter(fn) {
-  if (this._rawModule.getters) {
-    forEachValue(this._rawModule.getters, fn);
-  }
-};
-Module.prototype.forEachAction = function forEachAction(fn) {
-  if (this._rawModule.actions) {
-    forEachValue(this._rawModule.actions, fn);
-  }
-};
-Module.prototype.forEachMutation = function forEachMutation(fn) {
-  if (this._rawModule.mutations) {
-    forEachValue(this._rawModule.mutations, fn);
-  }
-};
-Object.defineProperties(Module.prototype, prototypeAccessors$1);
-var ModuleCollection = function ModuleCollection(rawRootModule) {
-  // register root module (Vuex.Store options)
-  this.register([], rawRootModule, false);
-};
-ModuleCollection.prototype.get = function get(path) {
-  return path.reduce(function (module, key) {
-    return module.getChild(key);
-  }, this.root);
-};
-ModuleCollection.prototype.getNamespace = function getNamespace(path) {
-  var module = this.root;
-  return path.reduce(function (namespace, key) {
-    module = module.getChild(key);
-    return namespace + (module.namespaced ? key + '/' : '');
-  }, '');
-};
-ModuleCollection.prototype.update = function update$1(rawRootModule) {
-  update([], this.root, rawRootModule);
-};
-ModuleCollection.prototype.register = function register(path, rawModule, runtime) {
-  var this$1$1 = this;
-  if (runtime === void 0) runtime = true;
-  if (false) {}
-  var newModule = new Module(rawModule, runtime);
-  if (path.length === 0) {
-    this.root = newModule;
-  } else {
-    var parent = this.get(path.slice(0, -1));
-    parent.addChild(path[path.length - 1], newModule);
-  }
-
-  // register nested modules
-  if (rawModule.modules) {
-    forEachValue(rawModule.modules, function (rawChildModule, key) {
-      this$1$1.register(path.concat(key), rawChildModule, runtime);
-    });
-  }
-};
-ModuleCollection.prototype.unregister = function unregister(path) {
-  var parent = this.get(path.slice(0, -1));
-  var key = path[path.length - 1];
-  var child = parent.getChild(key);
-  if (!child) {
-    if (false) {}
-    return;
-  }
-  if (!child.runtime) {
-    return;
-  }
-  parent.removeChild(key);
-};
-ModuleCollection.prototype.isRegistered = function isRegistered(path) {
-  var parent = this.get(path.slice(0, -1));
-  var key = path[path.length - 1];
-  if (parent) {
-    return parent.hasChild(key);
-  }
-  return false;
-};
-function update(path, targetModule, newModule) {
-  if (false) {}
-
-  // update target module
-  targetModule.update(newModule);
-
-  // update nested modules
-  if (newModule.modules) {
-    for (var key in newModule.modules) {
-      if (!targetModule.getChild(key)) {
-        if (false) {}
-        return;
-      }
-      update(path.concat(key), targetModule.getChild(key), newModule.modules[key]);
-    }
-  }
-}
-var functionAssert = {
-  assert: function (value) {
-    return typeof value === 'function';
-  },
-  expected: 'function'
-};
-var objectAssert = {
-  assert: function (value) {
-    return typeof value === 'function' || typeof value === 'object' && typeof value.handler === 'function';
-  },
-  expected: 'function or object with "handler" function'
-};
-var assertTypes = {
-  getters: functionAssert,
-  mutations: functionAssert,
-  actions: objectAssert
-};
-function assertRawModule(path, rawModule) {
-  Object.keys(assertTypes).forEach(function (key) {
-    if (!rawModule[key]) {
-      return;
-    }
-    var assertOptions = assertTypes[key];
-    forEachValue(rawModule[key], function (value, type) {
-      assert(assertOptions.assert(value), makeAssertionMessage(path, key, type, value, assertOptions.expected));
-    });
-  });
-}
-function makeAssertionMessage(path, key, type, value, expected) {
-  var buf = key + " should be " + expected + " but \"" + key + "." + type + "\"";
-  if (path.length > 0) {
-    buf += " in module \"" + path.join('.') + "\"";
-  }
-  buf += " is " + JSON.stringify(value) + ".";
-  return buf;
-}
-function createStore(options) {
-  return new Store(options);
-}
-var Store = function Store(options) {
-  var this$1$1 = this;
-  if (options === void 0) options = {};
-  if (false) {}
-  var plugins = options.plugins;
-  if (plugins === void 0) plugins = [];
-  var strict = options.strict;
-  if (strict === void 0) strict = false;
-  var devtools = options.devtools;
-
-  // store internal state
-  this._committing = false;
-  this._actions = Object.create(null);
-  this._actionSubscribers = [];
-  this._mutations = Object.create(null);
-  this._wrappedGetters = Object.create(null);
-  this._modules = new ModuleCollection(options);
-  this._modulesNamespaceMap = Object.create(null);
-  this._subscribers = [];
-  this._makeLocalGettersCache = Object.create(null);
-
-  // EffectScope instance. when registering new getters, we wrap them inside
-  // EffectScope so that getters (computed) would not be destroyed on
-  // component unmount.
-  this._scope = null;
-  this._devtools = devtools;
-
-  // bind commit and dispatch to self
-  var store = this;
-  var ref = this;
-  var dispatch = ref.dispatch;
-  var commit = ref.commit;
-  this.dispatch = function boundDispatch(type, payload) {
-    return dispatch.call(store, type, payload);
-  };
-  this.commit = function boundCommit(type, payload, options) {
-    return commit.call(store, type, payload, options);
-  };
-
-  // strict mode
-  this.strict = strict;
-  var state = this._modules.root.state;
-
-  // init root module.
-  // this also recursively registers all sub-modules
-  // and collects all module getters inside this._wrappedGetters
-  installModule(this, state, [], this._modules.root);
-
-  // initialize the store state, which is responsible for the reactivity
-  // (also registers _wrappedGetters as computed properties)
-  resetStoreState(this, state);
-
-  // apply plugins
-  plugins.forEach(function (plugin) {
-    return plugin(this$1$1);
-  });
-};
-var prototypeAccessors = {
-  state: {
-    configurable: true
-  }
-};
-Store.prototype.install = function install(app, injectKey) {
-  app.provide(injectKey || storeKey, this);
-  app.config.globalProperties.$store = this;
-  var useDevtools = this._devtools !== undefined ? this._devtools :  false || false;
-  if (useDevtools) {
-    addDevtools(app, this);
-  }
-};
-prototypeAccessors.state.get = function () {
-  return this._state.data;
-};
-prototypeAccessors.state.set = function (v) {
-  if (false) {}
-};
-Store.prototype.commit = function commit(_type, _payload, _options) {
-  var this$1$1 = this;
-
-  // check object-style commit
-  var ref = unifyObjectStyle(_type, _payload, _options);
-  var type = ref.type;
-  var payload = ref.payload;
-  var options = ref.options;
-  var mutation = {
-    type: type,
-    payload: payload
-  };
-  var entry = this._mutations[type];
-  if (!entry) {
-    if (false) {}
-    return;
-  }
-  this._withCommit(function () {
-    entry.forEach(function commitIterator(handler) {
-      handler(payload);
-    });
-  });
-  this._subscribers.slice() // shallow copy to prevent iterator invalidation if subscriber synchronously calls unsubscribe
-  .forEach(function (sub) {
-    return sub(mutation, this$1$1.state);
-  });
-  if (false) {}
-};
-Store.prototype.dispatch = function dispatch(_type, _payload) {
-  var this$1$1 = this;
-
-  // check object-style dispatch
-  var ref = unifyObjectStyle(_type, _payload);
-  var type = ref.type;
-  var payload = ref.payload;
-  var action = {
-    type: type,
-    payload: payload
-  };
-  var entry = this._actions[type];
-  if (!entry) {
-    if (false) {}
-    return;
-  }
-  try {
-    this._actionSubscribers.slice() // shallow copy to prevent iterator invalidation if subscriber synchronously calls unsubscribe
-    .filter(function (sub) {
-      return sub.before;
-    }).forEach(function (sub) {
-      return sub.before(action, this$1$1.state);
-    });
-  } catch (e) {
-    if (false) {}
-  }
-  var result = entry.length > 1 ? Promise.all(entry.map(function (handler) {
-    return handler(payload);
-  })) : entry[0](payload);
-  return new Promise(function (resolve, reject) {
-    result.then(function (res) {
-      try {
-        this$1$1._actionSubscribers.filter(function (sub) {
-          return sub.after;
-        }).forEach(function (sub) {
-          return sub.after(action, this$1$1.state);
-        });
-      } catch (e) {
-        if (false) {}
-      }
-      resolve(res);
-    }, function (error) {
-      try {
-        this$1$1._actionSubscribers.filter(function (sub) {
-          return sub.error;
-        }).forEach(function (sub) {
-          return sub.error(action, this$1$1.state, error);
-        });
-      } catch (e) {
-        if (false) {}
-      }
-      reject(error);
-    });
-  });
-};
-Store.prototype.subscribe = function subscribe(fn, options) {
-  return genericSubscribe(fn, this._subscribers, options);
-};
-Store.prototype.subscribeAction = function subscribeAction(fn, options) {
-  var subs = typeof fn === 'function' ? {
-    before: fn
-  } : fn;
-  return genericSubscribe(subs, this._actionSubscribers, options);
-};
-Store.prototype.watch = function watch$1(getter, cb, options) {
-  var this$1$1 = this;
-  if (false) {}
-  return (0,runtime_core_esm_bundler/* watch */.Kg)(function () {
-    return getter(this$1$1.state, this$1$1.getters);
-  }, cb, Object.assign({}, options));
-};
-Store.prototype.replaceState = function replaceState(state) {
-  var this$1$1 = this;
-  this._withCommit(function () {
-    this$1$1._state.data = state;
-  });
-};
-Store.prototype.registerModule = function registerModule(path, rawModule, options) {
-  if (options === void 0) options = {};
-  if (typeof path === 'string') {
-    path = [path];
-  }
-  if (false) {}
-  this._modules.register(path, rawModule);
-  installModule(this, this.state, path, this._modules.get(path), options.preserveState);
-  // reset store to update getters...
-  resetStoreState(this, this.state);
-};
-Store.prototype.unregisterModule = function unregisterModule(path) {
-  var this$1$1 = this;
-  if (typeof path === 'string') {
-    path = [path];
-  }
-  if (false) {}
-  this._modules.unregister(path);
-  this._withCommit(function () {
-    var parentState = getNestedState(this$1$1.state, path.slice(0, -1));
-    delete parentState[path[path.length - 1]];
-  });
-  resetStore(this);
-};
-Store.prototype.hasModule = function hasModule(path) {
-  if (typeof path === 'string') {
-    path = [path];
-  }
-  if (false) {}
-  return this._modules.isRegistered(path);
-};
-Store.prototype.hotUpdate = function hotUpdate(newOptions) {
-  this._modules.update(newOptions);
-  resetStore(this, true);
-};
-Store.prototype._withCommit = function _withCommit(fn) {
-  var committing = this._committing;
-  this._committing = true;
-  fn();
-  this._committing = committing;
-};
-Object.defineProperties(Store.prototype, prototypeAccessors);
-
-/**
- * Reduce the code which written in Vue.js for getting the state.
- * @param {String} [namespace] - Module's namespace
- * @param {Object|Array} states # Object's item can be a function which accept state and getters for param, you can do something for state and getters in it.
- * @param {Object}
- */
-var mapState = normalizeNamespace(function (namespace, states) {
-  var res = {};
-  if (false) {}
-  normalizeMap(states).forEach(function (ref) {
-    var key = ref.key;
-    var val = ref.val;
-    res[key] = function mappedState() {
-      var state = this.$store.state;
-      var getters = this.$store.getters;
-      if (namespace) {
-        var module = getModuleByNamespace(this.$store, 'mapState', namespace);
-        if (!module) {
-          return;
-        }
-        state = module.context.state;
-        getters = module.context.getters;
-      }
-      return typeof val === 'function' ? val.call(this, state, getters) : state[val];
-    };
-    // mark vuex getter for devtools
-    res[key].vuex = true;
-  });
-  return res;
-});
-
-/**
- * Reduce the code which written in Vue.js for committing the mutation
- * @param {String} [namespace] - Module's namespace
- * @param {Object|Array} mutations # Object's item can be a function which accept `commit` function as the first param, it can accept another params. You can commit mutation and do any other things in this function. specially, You need to pass anthor params from the mapped function.
- * @return {Object}
- */
-var mapMutations = normalizeNamespace(function (namespace, mutations) {
-  var res = {};
-  if (false) {}
-  normalizeMap(mutations).forEach(function (ref) {
-    var key = ref.key;
-    var val = ref.val;
-    res[key] = function mappedMutation() {
-      var args = [],
-        len = arguments.length;
-      while (len--) args[len] = arguments[len];
-
-      // Get the commit method from store
-      var commit = this.$store.commit;
-      if (namespace) {
-        var module = getModuleByNamespace(this.$store, 'mapMutations', namespace);
-        if (!module) {
-          return;
-        }
-        commit = module.context.commit;
-      }
-      return typeof val === 'function' ? val.apply(this, [commit].concat(args)) : commit.apply(this.$store, [val].concat(args));
-    };
-  });
-  return res;
-});
-
-/**
- * Reduce the code which written in Vue.js for getting the getters
- * @param {String} [namespace] - Module's namespace
- * @param {Object|Array} getters
- * @return {Object}
- */
-var mapGetters = normalizeNamespace(function (namespace, getters) {
-  var res = {};
-  if (false) {}
-  normalizeMap(getters).forEach(function (ref) {
-    var key = ref.key;
-    var val = ref.val;
-
-    // The namespace has been mutated by normalizeNamespace
-    val = namespace + val;
-    res[key] = function mappedGetter() {
-      if (namespace && !getModuleByNamespace(this.$store, 'mapGetters', namespace)) {
-        return;
-      }
-      if (false) {}
-      return this.$store.getters[val];
-    };
-    // mark vuex getter for devtools
-    res[key].vuex = true;
-  });
-  return res;
-});
-
-/**
- * Reduce the code which written in Vue.js for dispatch the action
- * @param {String} [namespace] - Module's namespace
- * @param {Object|Array} actions # Object's item can be a function which accept `dispatch` function as the first param, it can accept anthor params. You can dispatch action and do any other things in this function. specially, You need to pass anthor params from the mapped function.
- * @return {Object}
- */
-var mapActions = normalizeNamespace(function (namespace, actions) {
-  var res = {};
-  if (false) {}
-  normalizeMap(actions).forEach(function (ref) {
-    var key = ref.key;
-    var val = ref.val;
-    res[key] = function mappedAction() {
-      var args = [],
-        len = arguments.length;
-      while (len--) args[len] = arguments[len];
-
-      // get dispatch function from store
-      var dispatch = this.$store.dispatch;
-      if (namespace) {
-        var module = getModuleByNamespace(this.$store, 'mapActions', namespace);
-        if (!module) {
-          return;
-        }
-        dispatch = module.context.dispatch;
-      }
-      return typeof val === 'function' ? val.apply(this, [dispatch].concat(args)) : dispatch.apply(this.$store, [val].concat(args));
-    };
-  });
-  return res;
-});
-
-/**
- * Rebinding namespace param for mapXXX function in special scoped, and return them by simple object
- * @param {String} namespace
- * @return {Object}
- */
-var createNamespacedHelpers = function (namespace) {
-  return {
-    mapState: mapState.bind(null, namespace),
-    mapGetters: mapGetters.bind(null, namespace),
-    mapMutations: mapMutations.bind(null, namespace),
-    mapActions: mapActions.bind(null, namespace)
-  };
-};
-
-/**
- * Normalize the map
- * normalizeMap([1, 2, 3]) => [ { key: 1, val: 1 }, { key: 2, val: 2 }, { key: 3, val: 3 } ]
- * normalizeMap({a: 1, b: 2, c: 3}) => [ { key: 'a', val: 1 }, { key: 'b', val: 2 }, { key: 'c', val: 3 } ]
- * @param {Array|Object} map
- * @return {Object}
- */
-function normalizeMap(map) {
-  if (!isValidMap(map)) {
-    return [];
-  }
-  return Array.isArray(map) ? map.map(function (key) {
-    return {
-      key: key,
-      val: key
-    };
-  }) : Object.keys(map).map(function (key) {
-    return {
-      key: key,
-      val: map[key]
-    };
-  });
-}
-
-/**
- * Validate whether given map is valid or not
- * @param {*} map
- * @return {Boolean}
- */
-function isValidMap(map) {
-  return Array.isArray(map) || vuex_esm_bundler_isObject(map);
-}
-
-/**
- * Return a function expect two param contains namespace and map. it will normalize the namespace and then the param's function will handle the new namespace and the map.
- * @param {Function} fn
- * @return {Function}
- */
-function normalizeNamespace(fn) {
-  return function (namespace, map) {
-    if (typeof namespace !== 'string') {
-      map = namespace;
-      namespace = '';
-    } else if (namespace.charAt(namespace.length - 1) !== '/') {
-      namespace += '/';
-    }
-    return fn(namespace, map);
-  };
-}
-
-/**
- * Search a special module from store by namespace. if module not exist, print error message.
- * @param {Object} store
- * @param {String} helper
- * @param {String} namespace
- * @return {Object}
- */
-function getModuleByNamespace(store, helper, namespace) {
-  var module = store._modulesNamespaceMap[namespace];
-  if (false) {}
-  return module;
-}
-
-// Credits: borrowed code from fcomb/redux-logger
-
-function createLogger(ref) {
-  if (ref === void 0) ref = {};
-  var collapsed = ref.collapsed;
-  if (collapsed === void 0) collapsed = true;
-  var filter = ref.filter;
-  if (filter === void 0) filter = function (mutation, stateBefore, stateAfter) {
-    return true;
-  };
-  var transformer = ref.transformer;
-  if (transformer === void 0) transformer = function (state) {
-    return state;
-  };
-  var mutationTransformer = ref.mutationTransformer;
-  if (mutationTransformer === void 0) mutationTransformer = function (mut) {
-    return mut;
-  };
-  var actionFilter = ref.actionFilter;
-  if (actionFilter === void 0) actionFilter = function (action, state) {
-    return true;
-  };
-  var actionTransformer = ref.actionTransformer;
-  if (actionTransformer === void 0) actionTransformer = function (act) {
-    return act;
-  };
-  var logMutations = ref.logMutations;
-  if (logMutations === void 0) logMutations = true;
-  var logActions = ref.logActions;
-  if (logActions === void 0) logActions = true;
-  var logger = ref.logger;
-  if (logger === void 0) logger = console;
-  return function (store) {
-    var prevState = deepCopy(store.state);
-    if (typeof logger === 'undefined') {
-      return;
-    }
-    if (logMutations) {
-      store.subscribe(function (mutation, state) {
-        var nextState = deepCopy(state);
-        if (filter(mutation, prevState, nextState)) {
-          var formattedTime = getFormattedTime();
-          var formattedMutation = mutationTransformer(mutation);
-          var message = "mutation " + mutation.type + formattedTime;
-          startMessage(logger, message, collapsed);
-          logger.log('%c prev state', 'color: #9E9E9E; font-weight: bold', transformer(prevState));
-          logger.log('%c mutation', 'color: #03A9F4; font-weight: bold', formattedMutation);
-          logger.log('%c next state', 'color: #4CAF50; font-weight: bold', transformer(nextState));
-          endMessage(logger);
-        }
-        prevState = nextState;
-      });
-    }
-    if (logActions) {
-      store.subscribeAction(function (action, state) {
-        if (actionFilter(action, state)) {
-          var formattedTime = getFormattedTime();
-          var formattedAction = actionTransformer(action);
-          var message = "action " + action.type + formattedTime;
-          startMessage(logger, message, collapsed);
-          logger.log('%c action', 'color: #03A9F4; font-weight: bold', formattedAction);
-          endMessage(logger);
-        }
-      });
-    }
-  };
-}
-function startMessage(logger, message, collapsed) {
-  var startMessage = collapsed ? logger.groupCollapsed : logger.group;
-
-  // render
-  try {
-    startMessage.call(logger, message);
-  } catch (e) {
-    logger.log(message);
-  }
-}
-function endMessage(logger) {
-  try {
-    logger.groupEnd();
-  } catch (e) {
-    logger.log('—— log end ——');
-  }
-}
-function getFormattedTime() {
-  var time = new Date();
-  return " @ " + pad(time.getHours(), 2) + ":" + pad(time.getMinutes(), 2) + ":" + pad(time.getSeconds(), 2) + "." + pad(time.getMilliseconds(), 3);
-}
-function repeat(str, times) {
-  return new Array(times + 1).join(str);
-}
-function pad(num, maxLength) {
-  return repeat('0', maxLength - num.toString().length) + num;
-}
-var index = {
-  version: '4.1.0',
-  Store: Store,
-  storeKey: storeKey,
-  createStore: createStore,
-  useStore: useStore,
-  mapState: mapState,
-  mapMutations: mapMutations,
-  mapGetters: mapGetters,
-  mapActions: mapActions,
-  createNamespacedHelpers: createNamespacedHelpers,
-  createLogger: createLogger
-};
-/* harmony default export */ var vuex_esm_bundler = ((/* unused pure expression or super */ null && (index)));
-
-;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/typeof.js
-function _typeof(o) {
-  "@babel/helpers - typeof";
-
-  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
-    return typeof o;
-  } : function (o) {
-    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
-  }, _typeof(o);
-}
-;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/toPrimitive.js
-
-function toPrimitive(t, r) {
-  if ("object" != _typeof(t) || !t) return t;
-  var e = t[Symbol.toPrimitive];
-  if (void 0 !== e) {
-    var i = e.call(t, r || "default");
-    if ("object" != _typeof(i)) return i;
-    throw new TypeError("@@toPrimitive must return a primitive value.");
-  }
-  return ("string" === r ? String : Number)(t);
-}
-;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/toPropertyKey.js
-
-
-function toPropertyKey(t) {
-  var i = toPrimitive(t, "string");
-  return "symbol" == _typeof(i) ? i : String(i);
-}
-;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/defineProperty.js
-
-function _defineProperty(obj, key, value) {
-  key = toPropertyKey(key);
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-  return obj;
-}
-// EXTERNAL MODULE: ./node_modules/eventemitter3/index.js
-var eventemitter3 = __webpack_require__(7728);
-var eventemitter3_default = /*#__PURE__*/__webpack_require__.n(eventemitter3);
-;// CONCATENATED MODULE: ./node_modules/@intlify/shared/dist/shared.mjs
-
-/*!
-  * shared v9.9.1
-  * (c) 2024 kazuya kawaguchi
-  * Released under the MIT License.
-  */
-/**
- * Original Utilities
- * written by kazuya kawaguchi
- */
-const inBrowser = typeof window !== 'undefined';
-let mark;
-let measure;
-if (false) {}
-const RE_ARGS = /\{([0-9a-zA-Z]+)\}/g;
-/* eslint-disable */
-function shared_format(message, ...args) {
-  if (args.length === 1 && shared_isObject(args[0])) {
-    args = args[0];
-  }
-  if (!args || !args.hasOwnProperty) {
-    args = {};
-  }
-  return message.replace(RE_ARGS, (match, identifier) => {
-    return args.hasOwnProperty(identifier) ? args[identifier] : '';
-  });
-}
-const shared_makeSymbol = (name, shareable = false) => !shareable ? Symbol(name) : Symbol.for(name);
-const generateFormatCacheKey = (locale, key, source) => friendlyJSONstringify({
-  l: locale,
-  k: key,
-  s: source
-});
-const friendlyJSONstringify = json => JSON.stringify(json).replace(/\u2028/g, '\\u2028').replace(/\u2029/g, '\\u2029').replace(/\u0027/g, '\\u0027');
-const shared_isNumber = val => typeof val === 'number' && isFinite(val);
-const isDate = val => toTypeString(val) === '[object Date]';
-const shared_isRegExp = val => toTypeString(val) === '[object RegExp]';
-const isEmptyObject = val => shared_isPlainObject(val) && Object.keys(val).length === 0;
-const shared_assign = Object.assign;
-let _globalThis;
-const getGlobalThis = () => {
-  // prettier-ignore
-  return _globalThis || (_globalThis = typeof globalThis !== 'undefined' ? globalThis : typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : {});
-};
-function escapeHtml(rawText) {
-  return rawText.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
-}
-const shared_hasOwnProperty = Object.prototype.hasOwnProperty;
-function hasOwn(obj, key) {
-  return shared_hasOwnProperty.call(obj, key);
-}
-/* eslint-enable */
-/**
- * Useful Utilities By Evan you
- * Modified by kazuya kawaguchi
- * MIT License
- * https://github.com/vuejs/vue-next/blob/master/packages/shared/src/index.ts
- * https://github.com/vuejs/vue-next/blob/master/packages/shared/src/codeframe.ts
- */
-const shared_isArray = Array.isArray;
-const shared_isFunction = val => typeof val === 'function';
-const shared_isString = val => typeof val === 'string';
-const shared_isBoolean = val => typeof val === 'boolean';
-const isSymbol = val => typeof val === 'symbol';
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const shared_isObject = val => val !== null && typeof val === 'object';
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const shared_isPromise = val => {
-  return shared_isObject(val) && shared_isFunction(val.then) && shared_isFunction(val.catch);
-};
-const objectToString = Object.prototype.toString;
-const toTypeString = value => objectToString.call(value);
-const shared_isPlainObject = val => {
-  if (!shared_isObject(val)) return false;
-  const proto = Object.getPrototypeOf(val);
-  return proto === null || proto.constructor === Object;
-};
-// for converting list and named values to displayed strings.
-const toDisplayString = val => {
-  return val == null ? '' : shared_isArray(val) || shared_isPlainObject(val) && val.toString === objectToString ? JSON.stringify(val, null, 2) : String(val);
-};
-function join(items, separator = '') {
-  return items.reduce((str, item, index) => index === 0 ? str + item : str + separator + item, '');
-}
-const RANGE = 2;
-function generateCodeFrame(source, start = 0, end = source.length) {
-  const lines = source.split(/\r?\n/);
-  let count = 0;
-  const res = [];
-  for (let i = 0; i < lines.length; i++) {
-    count += lines[i].length + 1;
-    if (count >= start) {
-      for (let j = i - RANGE; j <= i + RANGE || end > count; j++) {
-        if (j < 0 || j >= lines.length) continue;
-        const line = j + 1;
-        res.push(`${line}${' '.repeat(3 - String(line).length)}|  ${lines[j]}`);
-        const lineLength = lines[j].length;
-        if (j === i) {
-          // push underline
-          const pad = start - (count - lineLength) + 1;
-          const length = Math.max(1, end > count ? lineLength - pad : end - start);
-          res.push(`   |  ` + ' '.repeat(pad) + '^'.repeat(length));
-        } else if (j > i) {
-          if (end > count) {
-            const length = Math.max(Math.min(end - count, lineLength), 1);
-            res.push(`   |  ` + '^'.repeat(length));
-          }
-          count += lineLength + 1;
-        }
-      }
-      break;
-    }
-  }
-  return res.join('\n');
-}
-function incrementer(code) {
-  let current = code;
-  return () => ++current;
-}
-function shared_warn(msg, err) {
-  if (typeof console !== 'undefined') {
-    console.warn(`[intlify] ` + msg);
-    /* istanbul ignore if */
-    if (err) {
-      console.warn(err.stack);
-    }
-  }
-}
-const hasWarned = {};
-function warnOnce(msg) {
-  if (!hasWarned[msg]) {
-    hasWarned[msg] = true;
-    shared_warn(msg);
-  }
-}
-
-/**
- * Event emitter, forked from the below:
- * - original repository url: https://github.com/developit/mitt
- * - code url: https://github.com/developit/mitt/blob/master/src/index.ts
- * - author: Jason Miller (https://github.com/developit)
- * - license: MIT
- */
-/**
- * Create a event emitter
- *
- * @returns An event emitter
- */
-function createEmitter() {
-  const events = new Map();
-  const emitter = {
-    events,
-    on(event, handler) {
-      const handlers = events.get(event);
-      const added = handlers && handlers.push(handler);
-      if (!added) {
-        events.set(event, [handler]);
-      }
-    },
-    off(event, handler) {
-      const handlers = events.get(event);
-      if (handlers) {
-        handlers.splice(handlers.indexOf(handler) >>> 0, 1);
-      }
-    },
-    emit(event, payload) {
-      (events.get(event) || []).slice().map(handler => handler(payload));
-      (events.get('*') || []).slice().map(handler => handler(event, payload));
-    }
-  };
-  return emitter;
-}
-const isNotObjectOrIsArray = val => !shared_isObject(val) || shared_isArray(val);
-// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types
-function shared_deepCopy(src, des) {
-  // src and des should both be objects, and none of them can be a array
-  if (isNotObjectOrIsArray(src) || isNotObjectOrIsArray(des)) {
-    throw new Error('Invalid value');
-  }
-  const stack = [{
-    src,
-    des
-  }];
-  while (stack.length) {
-    const {
-      src,
-      des
-    } = stack.pop();
-    Object.keys(src).forEach(key => {
-      if (isNotObjectOrIsArray(src[key]) || isNotObjectOrIsArray(des[key])) {
-        // replace with src[key] when:
-        // src[key] or des[key] is not an object, or
-        // src[key] or des[key] is an array
-        des[key] = src[key];
-      } else {
-        // src[key] and des[key] are both objects, merge them
-        stack.push({
-          src: src[key],
-          des: des[key]
-        });
-      }
-    });
-  }
-}
-
-;// CONCATENATED MODULE: ./node_modules/@intlify/message-compiler/dist/message-compiler.esm-browser.js
-
-/*!
-  * message-compiler v9.9.1
-  * (c) 2024 kazuya kawaguchi
-  * Released under the MIT License.
-  */
-const LOCATION_STUB = {
-  start: {
-    line: 1,
-    column: 1,
-    offset: 0
-  },
-  end: {
-    line: 1,
-    column: 1,
-    offset: 0
-  }
-};
-function createPosition(line, column, offset) {
-  return {
-    line,
-    column,
-    offset
-  };
-}
-function createLocation(start, end, source) {
-  const loc = {
-    start,
-    end
-  };
-  if (source != null) {
-    loc.source = source;
-  }
-  return loc;
-}
-
-/**
- * Original Utilities
- * written by kazuya kawaguchi
- */
-const message_compiler_esm_browser_RE_ARGS = /\{([0-9a-zA-Z]+)\}/g;
-/* eslint-disable */
-function message_compiler_esm_browser_format(message, ...args) {
-  if (args.length === 1 && message_compiler_esm_browser_isObject(args[0])) {
-    args = args[0];
-  }
-  if (!args || !args.hasOwnProperty) {
-    args = {};
-  }
-  return message.replace(message_compiler_esm_browser_RE_ARGS, (match, identifier) => {
-    return args.hasOwnProperty(identifier) ? args[identifier] : '';
-  });
-}
-const message_compiler_esm_browser_assign = Object.assign;
-const message_compiler_esm_browser_isString = val => typeof val === 'string';
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const message_compiler_esm_browser_isObject = val => val !== null && typeof val === 'object';
-function message_compiler_esm_browser_join(items, separator = '') {
-  return items.reduce((str, item, index) => index === 0 ? str + item : str + separator + item, '');
-}
-const CompileErrorCodes = {
-  // tokenizer error codes
-  EXPECTED_TOKEN: 1,
-  INVALID_TOKEN_IN_PLACEHOLDER: 2,
-  UNTERMINATED_SINGLE_QUOTE_IN_PLACEHOLDER: 3,
-  UNKNOWN_ESCAPE_SEQUENCE: 4,
-  INVALID_UNICODE_ESCAPE_SEQUENCE: 5,
-  UNBALANCED_CLOSING_BRACE: 6,
-  UNTERMINATED_CLOSING_BRACE: 7,
-  EMPTY_PLACEHOLDER: 8,
-  NOT_ALLOW_NEST_PLACEHOLDER: 9,
-  INVALID_LINKED_FORMAT: 10,
-  // parser error codes
-  MUST_HAVE_MESSAGES_IN_PLURAL: 11,
-  UNEXPECTED_EMPTY_LINKED_MODIFIER: 12,
-  UNEXPECTED_EMPTY_LINKED_KEY: 13,
-  UNEXPECTED_LEXICAL_ANALYSIS: 14,
-  // generator error codes
-  UNHANDLED_CODEGEN_NODE_TYPE: 15,
-  // minifier error codes
-  UNHANDLED_MINIFIER_NODE_TYPE: 16,
-  // Special value for higher-order compilers to pick up the last code
-  // to avoid collision of error codes. This should always be kept as the last
-  // item.
-  __EXTEND_POINT__: 17
-};
-/** @internal */
-const errorMessages = {
-  // tokenizer error messages
-  [CompileErrorCodes.EXPECTED_TOKEN]: `Expected token: '{0}'`,
-  [CompileErrorCodes.INVALID_TOKEN_IN_PLACEHOLDER]: `Invalid token in placeholder: '{0}'`,
-  [CompileErrorCodes.UNTERMINATED_SINGLE_QUOTE_IN_PLACEHOLDER]: `Unterminated single quote in placeholder`,
-  [CompileErrorCodes.UNKNOWN_ESCAPE_SEQUENCE]: `Unknown escape sequence: \\{0}`,
-  [CompileErrorCodes.INVALID_UNICODE_ESCAPE_SEQUENCE]: `Invalid unicode escape sequence: {0}`,
-  [CompileErrorCodes.UNBALANCED_CLOSING_BRACE]: `Unbalanced closing brace`,
-  [CompileErrorCodes.UNTERMINATED_CLOSING_BRACE]: `Unterminated closing brace`,
-  [CompileErrorCodes.EMPTY_PLACEHOLDER]: `Empty placeholder`,
-  [CompileErrorCodes.NOT_ALLOW_NEST_PLACEHOLDER]: `Not allowed nest placeholder`,
-  [CompileErrorCodes.INVALID_LINKED_FORMAT]: `Invalid linked format`,
-  // parser error messages
-  [CompileErrorCodes.MUST_HAVE_MESSAGES_IN_PLURAL]: `Plural must have messages`,
-  [CompileErrorCodes.UNEXPECTED_EMPTY_LINKED_MODIFIER]: `Unexpected empty linked modifier`,
-  [CompileErrorCodes.UNEXPECTED_EMPTY_LINKED_KEY]: `Unexpected empty linked key`,
-  [CompileErrorCodes.UNEXPECTED_LEXICAL_ANALYSIS]: `Unexpected lexical analysis in token: '{0}'`,
-  // generator error messages
-  [CompileErrorCodes.UNHANDLED_CODEGEN_NODE_TYPE]: `unhandled codegen node type: '{0}'`,
-  // minimizer error messages
-  [CompileErrorCodes.UNHANDLED_MINIFIER_NODE_TYPE]: `unhandled mimifier node type: '{0}'`
-};
-function createCompileError(code, loc, options = {}) {
-  const {
-    domain,
-    messages,
-    args
-  } = options;
-  const msg = message_compiler_esm_browser_format((messages || errorMessages)[code] || '', ...(args || []));
-  const error = new SyntaxError(String(msg));
-  error.code = code;
-  if (loc) {
-    error.location = loc;
-  }
-  error.domain = domain;
-  return error;
-}
-/** @internal */
-function defaultOnError(error) {
-  throw error;
-}
-const RE_HTML_TAG = /<\/?[\w\s="/.':;#-\/]+>/;
-const message_compiler_esm_browser_detectHtmlTag = source => RE_HTML_TAG.test(source);
-const CHAR_SP = ' ';
-const CHAR_CR = '\r';
-const CHAR_LF = '\n';
-const CHAR_LS = String.fromCharCode(0x2028);
-const CHAR_PS = String.fromCharCode(0x2029);
-function createScanner(str) {
-  const _buf = str;
-  let _index = 0;
-  let _line = 1;
-  let _column = 1;
-  let _peekOffset = 0;
-  const isCRLF = index => _buf[index] === CHAR_CR && _buf[index + 1] === CHAR_LF;
-  const isLF = index => _buf[index] === CHAR_LF;
-  const isPS = index => _buf[index] === CHAR_PS;
-  const isLS = index => _buf[index] === CHAR_LS;
-  const isLineEnd = index => isCRLF(index) || isLF(index) || isPS(index) || isLS(index);
-  const index = () => _index;
-  const line = () => _line;
-  const column = () => _column;
-  const peekOffset = () => _peekOffset;
-  const charAt = offset => isCRLF(offset) || isPS(offset) || isLS(offset) ? CHAR_LF : _buf[offset];
-  const currentChar = () => charAt(_index);
-  const currentPeek = () => charAt(_index + _peekOffset);
-  function next() {
-    _peekOffset = 0;
-    if (isLineEnd(_index)) {
-      _line++;
-      _column = 0;
-    }
-    if (isCRLF(_index)) {
-      _index++;
-    }
-    _index++;
-    _column++;
-    return _buf[_index];
-  }
-  function peek() {
-    if (isCRLF(_index + _peekOffset)) {
-      _peekOffset++;
-    }
-    _peekOffset++;
-    return _buf[_index + _peekOffset];
-  }
-  function reset() {
-    _index = 0;
-    _line = 1;
-    _column = 1;
-    _peekOffset = 0;
-  }
-  function resetPeek(offset = 0) {
-    _peekOffset = offset;
-  }
-  function skipToPeek() {
-    const target = _index + _peekOffset;
-    // eslint-disable-next-line no-unmodified-loop-condition
-    while (target !== _index) {
-      next();
-    }
-    _peekOffset = 0;
-  }
-  return {
-    index,
-    line,
-    column,
-    peekOffset,
-    charAt,
-    currentChar,
-    currentPeek,
-    next,
-    peek,
-    reset,
-    resetPeek,
-    skipToPeek
-  };
-}
-const EOF = undefined;
-const DOT = '.';
-const LITERAL_DELIMITER = "'";
-const ERROR_DOMAIN$3 = 'tokenizer';
-function createTokenizer(source, options = {}) {
-  const location = options.location !== false;
-  const _scnr = createScanner(source);
-  const currentOffset = () => _scnr.index();
-  const currentPosition = () => createPosition(_scnr.line(), _scnr.column(), _scnr.index());
-  const _initLoc = currentPosition();
-  const _initOffset = currentOffset();
-  const _context = {
-    currentType: 14 /* TokenTypes.EOF */,
-    offset: _initOffset,
-    startLoc: _initLoc,
-    endLoc: _initLoc,
-    lastType: 14 /* TokenTypes.EOF */,
-    lastOffset: _initOffset,
-    lastStartLoc: _initLoc,
-    lastEndLoc: _initLoc,
-    braceNest: 0,
-    inLinked: false,
-    text: ''
-  };
-  const context = () => _context;
-  const {
-    onError
-  } = options;
-  function emitError(code, pos, offset, ...args) {
-    const ctx = context();
-    pos.column += offset;
-    pos.offset += offset;
-    if (onError) {
-      const loc = location ? createLocation(ctx.startLoc, pos) : null;
-      const err = createCompileError(code, loc, {
-        domain: ERROR_DOMAIN$3,
-        args
-      });
-      onError(err);
-    }
-  }
-  function getToken(context, type, value) {
-    context.endLoc = currentPosition();
-    context.currentType = type;
-    const token = {
-      type
-    };
-    if (location) {
-      token.loc = createLocation(context.startLoc, context.endLoc);
-    }
-    if (value != null) {
-      token.value = value;
-    }
-    return token;
-  }
-  const getEndToken = context => getToken(context, 14 /* TokenTypes.EOF */);
-  function eat(scnr, ch) {
-    if (scnr.currentChar() === ch) {
-      scnr.next();
-      return ch;
-    } else {
-      emitError(CompileErrorCodes.EXPECTED_TOKEN, currentPosition(), 0, ch);
-      return '';
-    }
-  }
-  function peekSpaces(scnr) {
-    let buf = '';
-    while (scnr.currentPeek() === CHAR_SP || scnr.currentPeek() === CHAR_LF) {
-      buf += scnr.currentPeek();
-      scnr.peek();
-    }
-    return buf;
-  }
-  function skipSpaces(scnr) {
-    const buf = peekSpaces(scnr);
-    scnr.skipToPeek();
-    return buf;
-  }
-  function isIdentifierStart(ch) {
-    if (ch === EOF) {
-      return false;
-    }
-    const cc = ch.charCodeAt(0);
-    return cc >= 97 && cc <= 122 ||
-    // a-z
-    cc >= 65 && cc <= 90 ||
-    // A-Z
-    cc === 95 // _
-    ;
-  }
-  function isNumberStart(ch) {
-    if (ch === EOF) {
-      return false;
-    }
-    const cc = ch.charCodeAt(0);
-    return cc >= 48 && cc <= 57; // 0-9
-  }
-  function isNamedIdentifierStart(scnr, context) {
-    const {
-      currentType
-    } = context;
-    if (currentType !== 2 /* TokenTypes.BraceLeft */) {
-      return false;
-    }
-    peekSpaces(scnr);
-    const ret = isIdentifierStart(scnr.currentPeek());
-    scnr.resetPeek();
-    return ret;
-  }
-  function isListIdentifierStart(scnr, context) {
-    const {
-      currentType
-    } = context;
-    if (currentType !== 2 /* TokenTypes.BraceLeft */) {
-      return false;
-    }
-    peekSpaces(scnr);
-    const ch = scnr.currentPeek() === '-' ? scnr.peek() : scnr.currentPeek();
-    const ret = isNumberStart(ch);
-    scnr.resetPeek();
-    return ret;
-  }
-  function isLiteralStart(scnr, context) {
-    const {
-      currentType
-    } = context;
-    if (currentType !== 2 /* TokenTypes.BraceLeft */) {
-      return false;
-    }
-    peekSpaces(scnr);
-    const ret = scnr.currentPeek() === LITERAL_DELIMITER;
-    scnr.resetPeek();
-    return ret;
-  }
-  function isLinkedDotStart(scnr, context) {
-    const {
-      currentType
-    } = context;
-    if (currentType !== 8 /* TokenTypes.LinkedAlias */) {
-      return false;
-    }
-    peekSpaces(scnr);
-    const ret = scnr.currentPeek() === "." /* TokenChars.LinkedDot */;
-    scnr.resetPeek();
-    return ret;
-  }
-  function isLinkedModifierStart(scnr, context) {
-    const {
-      currentType
-    } = context;
-    if (currentType !== 9 /* TokenTypes.LinkedDot */) {
-      return false;
-    }
-    peekSpaces(scnr);
-    const ret = isIdentifierStart(scnr.currentPeek());
-    scnr.resetPeek();
-    return ret;
-  }
-  function isLinkedDelimiterStart(scnr, context) {
-    const {
-      currentType
-    } = context;
-    if (!(currentType === 8 /* TokenTypes.LinkedAlias */ || currentType === 12 /* TokenTypes.LinkedModifier */)) {
-      return false;
-    }
-    peekSpaces(scnr);
-    const ret = scnr.currentPeek() === ":" /* TokenChars.LinkedDelimiter */;
-    scnr.resetPeek();
-    return ret;
-  }
-  function isLinkedReferStart(scnr, context) {
-    const {
-      currentType
-    } = context;
-    if (currentType !== 10 /* TokenTypes.LinkedDelimiter */) {
-      return false;
-    }
-    const fn = () => {
-      const ch = scnr.currentPeek();
-      if (ch === "{" /* TokenChars.BraceLeft */) {
-        return isIdentifierStart(scnr.peek());
-      } else if (ch === "@" /* TokenChars.LinkedAlias */ || ch === "%" /* TokenChars.Modulo */ || ch === "|" /* TokenChars.Pipe */ || ch === ":" /* TokenChars.LinkedDelimiter */ || ch === "." /* TokenChars.LinkedDot */ || ch === CHAR_SP || !ch) {
-        return false;
-      } else if (ch === CHAR_LF) {
-        scnr.peek();
-        return fn();
-      } else {
-        // other characters
-        return isIdentifierStart(ch);
-      }
-    };
-    const ret = fn();
-    scnr.resetPeek();
-    return ret;
-  }
-  function isPluralStart(scnr) {
-    peekSpaces(scnr);
-    const ret = scnr.currentPeek() === "|" /* TokenChars.Pipe */;
-    scnr.resetPeek();
-    return ret;
-  }
-  function detectModuloStart(scnr) {
-    const spaces = peekSpaces(scnr);
-    const ret = scnr.currentPeek() === "%" /* TokenChars.Modulo */ && scnr.peek() === "{" /* TokenChars.BraceLeft */;
-    scnr.resetPeek();
-    return {
-      isModulo: ret,
-      hasSpace: spaces.length > 0
-    };
-  }
-  function isTextStart(scnr, reset = true) {
-    const fn = (hasSpace = false, prev = '', detectModulo = false) => {
-      const ch = scnr.currentPeek();
-      if (ch === "{" /* TokenChars.BraceLeft */) {
-        return prev === "%" /* TokenChars.Modulo */ ? false : hasSpace;
-      } else if (ch === "@" /* TokenChars.LinkedAlias */ || !ch) {
-        return prev === "%" /* TokenChars.Modulo */ ? true : hasSpace;
-      } else if (ch === "%" /* TokenChars.Modulo */) {
-        scnr.peek();
-        return fn(hasSpace, "%" /* TokenChars.Modulo */, true);
-      } else if (ch === "|" /* TokenChars.Pipe */) {
-        return prev === "%" /* TokenChars.Modulo */ || detectModulo ? true : !(prev === CHAR_SP || prev === CHAR_LF);
-      } else if (ch === CHAR_SP) {
-        scnr.peek();
-        return fn(true, CHAR_SP, detectModulo);
-      } else if (ch === CHAR_LF) {
-        scnr.peek();
-        return fn(true, CHAR_LF, detectModulo);
-      } else {
-        return true;
-      }
-    };
-    const ret = fn();
-    reset && scnr.resetPeek();
-    return ret;
-  }
-  function takeChar(scnr, fn) {
-    const ch = scnr.currentChar();
-    if (ch === EOF) {
-      return EOF;
-    }
-    if (fn(ch)) {
-      scnr.next();
-      return ch;
-    }
-    return null;
-  }
-  function takeIdentifierChar(scnr) {
-    const closure = ch => {
-      const cc = ch.charCodeAt(0);
-      return cc >= 97 && cc <= 122 ||
-      // a-z
-      cc >= 65 && cc <= 90 ||
-      // A-Z
-      cc >= 48 && cc <= 57 ||
-      // 0-9
-      cc === 95 ||
-      // _
-      cc === 36 // $
-      ;
-    };
-    return takeChar(scnr, closure);
-  }
-  function takeDigit(scnr) {
-    const closure = ch => {
-      const cc = ch.charCodeAt(0);
-      return cc >= 48 && cc <= 57; // 0-9
-    };
-    return takeChar(scnr, closure);
-  }
-  function takeHexDigit(scnr) {
-    const closure = ch => {
-      const cc = ch.charCodeAt(0);
-      return cc >= 48 && cc <= 57 ||
-      // 0-9
-      cc >= 65 && cc <= 70 ||
-      // A-F
-      cc >= 97 && cc <= 102; // a-f
-    };
-    return takeChar(scnr, closure);
-  }
-  function getDigits(scnr) {
-    let ch = '';
-    let num = '';
-    while (ch = takeDigit(scnr)) {
-      num += ch;
-    }
-    return num;
-  }
-  function readModulo(scnr) {
-    skipSpaces(scnr);
-    const ch = scnr.currentChar();
-    if (ch !== "%" /* TokenChars.Modulo */) {
-      emitError(CompileErrorCodes.EXPECTED_TOKEN, currentPosition(), 0, ch);
-    }
-    scnr.next();
-    return "%" /* TokenChars.Modulo */;
-  }
-  function readText(scnr) {
-    let buf = '';
-    while (true) {
-      const ch = scnr.currentChar();
-      if (ch === "{" /* TokenChars.BraceLeft */ || ch === "}" /* TokenChars.BraceRight */ || ch === "@" /* TokenChars.LinkedAlias */ || ch === "|" /* TokenChars.Pipe */ || !ch) {
-        break;
-      } else if (ch === "%" /* TokenChars.Modulo */) {
-        if (isTextStart(scnr)) {
-          buf += ch;
-          scnr.next();
-        } else {
-          break;
-        }
-      } else if (ch === CHAR_SP || ch === CHAR_LF) {
-        if (isTextStart(scnr)) {
-          buf += ch;
-          scnr.next();
-        } else if (isPluralStart(scnr)) {
-          break;
-        } else {
-          buf += ch;
-          scnr.next();
-        }
-      } else {
-        buf += ch;
-        scnr.next();
-      }
-    }
-    return buf;
-  }
-  function readNamedIdentifier(scnr) {
-    skipSpaces(scnr);
-    let ch = '';
-    let name = '';
-    while (ch = takeIdentifierChar(scnr)) {
-      name += ch;
-    }
-    if (scnr.currentChar() === EOF) {
-      emitError(CompileErrorCodes.UNTERMINATED_CLOSING_BRACE, currentPosition(), 0);
-    }
-    return name;
-  }
-  function readListIdentifier(scnr) {
-    skipSpaces(scnr);
-    let value = '';
-    if (scnr.currentChar() === '-') {
-      scnr.next();
-      value += `-${getDigits(scnr)}`;
-    } else {
-      value += getDigits(scnr);
-    }
-    if (scnr.currentChar() === EOF) {
-      emitError(CompileErrorCodes.UNTERMINATED_CLOSING_BRACE, currentPosition(), 0);
-    }
-    return value;
-  }
-  function readLiteral(scnr) {
-    skipSpaces(scnr);
-    eat(scnr, `\'`);
-    let ch = '';
-    let literal = '';
-    const fn = x => x !== LITERAL_DELIMITER && x !== CHAR_LF;
-    while (ch = takeChar(scnr, fn)) {
-      if (ch === '\\') {
-        literal += readEscapeSequence(scnr);
-      } else {
-        literal += ch;
-      }
-    }
-    const current = scnr.currentChar();
-    if (current === CHAR_LF || current === EOF) {
-      emitError(CompileErrorCodes.UNTERMINATED_SINGLE_QUOTE_IN_PLACEHOLDER, currentPosition(), 0);
-      // TODO: Is it correct really?
-      if (current === CHAR_LF) {
-        scnr.next();
-        eat(scnr, `\'`);
-      }
-      return literal;
-    }
-    eat(scnr, `\'`);
-    return literal;
-  }
-  function readEscapeSequence(scnr) {
-    const ch = scnr.currentChar();
-    switch (ch) {
-      case '\\':
-      case `\'`:
-        scnr.next();
-        return `\\${ch}`;
-      case 'u':
-        return readUnicodeEscapeSequence(scnr, ch, 4);
-      case 'U':
-        return readUnicodeEscapeSequence(scnr, ch, 6);
-      default:
-        emitError(CompileErrorCodes.UNKNOWN_ESCAPE_SEQUENCE, currentPosition(), 0, ch);
-        return '';
-    }
-  }
-  function readUnicodeEscapeSequence(scnr, unicode, digits) {
-    eat(scnr, unicode);
-    let sequence = '';
-    for (let i = 0; i < digits; i++) {
-      const ch = takeHexDigit(scnr);
-      if (!ch) {
-        emitError(CompileErrorCodes.INVALID_UNICODE_ESCAPE_SEQUENCE, currentPosition(), 0, `\\${unicode}${sequence}${scnr.currentChar()}`);
-        break;
-      }
-      sequence += ch;
-    }
-    return `\\${unicode}${sequence}`;
-  }
-  function readInvalidIdentifier(scnr) {
-    skipSpaces(scnr);
-    let ch = '';
-    let identifiers = '';
-    const closure = ch => ch !== "{" /* TokenChars.BraceLeft */ && ch !== "}" /* TokenChars.BraceRight */ && ch !== CHAR_SP && ch !== CHAR_LF;
-    while (ch = takeChar(scnr, closure)) {
-      identifiers += ch;
-    }
-    return identifiers;
-  }
-  function readLinkedModifier(scnr) {
-    let ch = '';
-    let name = '';
-    while (ch = takeIdentifierChar(scnr)) {
-      name += ch;
-    }
-    return name;
-  }
-  function readLinkedRefer(scnr) {
-    const fn = (detect = false, buf) => {
-      const ch = scnr.currentChar();
-      if (ch === "{" /* TokenChars.BraceLeft */ || ch === "%" /* TokenChars.Modulo */ || ch === "@" /* TokenChars.LinkedAlias */ || ch === "|" /* TokenChars.Pipe */ || ch === "(" /* TokenChars.ParenLeft */ || ch === ")" /* TokenChars.ParenRight */ || !ch) {
-        return buf;
-      } else if (ch === CHAR_SP) {
-        return buf;
-      } else if (ch === CHAR_LF || ch === DOT) {
-        buf += ch;
-        scnr.next();
-        return fn(detect, buf);
-      } else {
-        buf += ch;
-        scnr.next();
-        return fn(true, buf);
-      }
-    };
-    return fn(false, '');
-  }
-  function readPlural(scnr) {
-    skipSpaces(scnr);
-    const plural = eat(scnr, "|" /* TokenChars.Pipe */);
-    skipSpaces(scnr);
-    return plural;
-  }
-  // TODO: We need refactoring of token parsing ...
-  function readTokenInPlaceholder(scnr, context) {
-    let token = null;
-    const ch = scnr.currentChar();
-    switch (ch) {
-      case "{" /* TokenChars.BraceLeft */:
-        if (context.braceNest >= 1) {
-          emitError(CompileErrorCodes.NOT_ALLOW_NEST_PLACEHOLDER, currentPosition(), 0);
-        }
-        scnr.next();
-        token = getToken(context, 2 /* TokenTypes.BraceLeft */, "{" /* TokenChars.BraceLeft */);
-        skipSpaces(scnr);
-        context.braceNest++;
-        return token;
-      case "}" /* TokenChars.BraceRight */:
-        if (context.braceNest > 0 && context.currentType === 2 /* TokenTypes.BraceLeft */) {
-          emitError(CompileErrorCodes.EMPTY_PLACEHOLDER, currentPosition(), 0);
-        }
-        scnr.next();
-        token = getToken(context, 3 /* TokenTypes.BraceRight */, "}" /* TokenChars.BraceRight */);
-        context.braceNest--;
-        context.braceNest > 0 && skipSpaces(scnr);
-        if (context.inLinked && context.braceNest === 0) {
-          context.inLinked = false;
-        }
-        return token;
-      case "@" /* TokenChars.LinkedAlias */:
-        if (context.braceNest > 0) {
-          emitError(CompileErrorCodes.UNTERMINATED_CLOSING_BRACE, currentPosition(), 0);
-        }
-        token = readTokenInLinked(scnr, context) || getEndToken(context);
-        context.braceNest = 0;
-        return token;
-      default:
-        let validNamedIdentifier = true;
-        let validListIdentifier = true;
-        let validLiteral = true;
-        if (isPluralStart(scnr)) {
-          if (context.braceNest > 0) {
-            emitError(CompileErrorCodes.UNTERMINATED_CLOSING_BRACE, currentPosition(), 0);
-          }
-          token = getToken(context, 1 /* TokenTypes.Pipe */, readPlural(scnr));
-          // reset
-          context.braceNest = 0;
-          context.inLinked = false;
-          return token;
-        }
-        if (context.braceNest > 0 && (context.currentType === 5 /* TokenTypes.Named */ || context.currentType === 6 /* TokenTypes.List */ || context.currentType === 7 /* TokenTypes.Literal */)) {
-          emitError(CompileErrorCodes.UNTERMINATED_CLOSING_BRACE, currentPosition(), 0);
-          context.braceNest = 0;
-          return readToken(scnr, context);
-        }
-        if (validNamedIdentifier = isNamedIdentifierStart(scnr, context)) {
-          token = getToken(context, 5 /* TokenTypes.Named */, readNamedIdentifier(scnr));
-          skipSpaces(scnr);
-          return token;
-        }
-        if (validListIdentifier = isListIdentifierStart(scnr, context)) {
-          token = getToken(context, 6 /* TokenTypes.List */, readListIdentifier(scnr));
-          skipSpaces(scnr);
-          return token;
-        }
-        if (validLiteral = isLiteralStart(scnr, context)) {
-          token = getToken(context, 7 /* TokenTypes.Literal */, readLiteral(scnr));
-          skipSpaces(scnr);
-          return token;
-        }
-        if (!validNamedIdentifier && !validListIdentifier && !validLiteral) {
-          // TODO: we should be re-designed invalid cases, when we will extend message syntax near the future ...
-          token = getToken(context, 13 /* TokenTypes.InvalidPlace */, readInvalidIdentifier(scnr));
-          emitError(CompileErrorCodes.INVALID_TOKEN_IN_PLACEHOLDER, currentPosition(), 0, token.value);
-          skipSpaces(scnr);
-          return token;
-        }
-        break;
-    }
-    return token;
-  }
-  // TODO: We need refactoring of token parsing ...
-  function readTokenInLinked(scnr, context) {
-    const {
-      currentType
-    } = context;
-    let token = null;
-    const ch = scnr.currentChar();
-    if ((currentType === 8 /* TokenTypes.LinkedAlias */ || currentType === 9 /* TokenTypes.LinkedDot */ || currentType === 12 /* TokenTypes.LinkedModifier */ || currentType === 10 /* TokenTypes.LinkedDelimiter */) && (ch === CHAR_LF || ch === CHAR_SP)) {
-      emitError(CompileErrorCodes.INVALID_LINKED_FORMAT, currentPosition(), 0);
-    }
-    switch (ch) {
-      case "@" /* TokenChars.LinkedAlias */:
-        scnr.next();
-        token = getToken(context, 8 /* TokenTypes.LinkedAlias */, "@" /* TokenChars.LinkedAlias */);
-        context.inLinked = true;
-        return token;
-      case "." /* TokenChars.LinkedDot */:
-        skipSpaces(scnr);
-        scnr.next();
-        return getToken(context, 9 /* TokenTypes.LinkedDot */, "." /* TokenChars.LinkedDot */);
-      case ":" /* TokenChars.LinkedDelimiter */:
-        skipSpaces(scnr);
-        scnr.next();
-        return getToken(context, 10 /* TokenTypes.LinkedDelimiter */, ":" /* TokenChars.LinkedDelimiter */);
-      default:
-        if (isPluralStart(scnr)) {
-          token = getToken(context, 1 /* TokenTypes.Pipe */, readPlural(scnr));
-          // reset
-          context.braceNest = 0;
-          context.inLinked = false;
-          return token;
-        }
-        if (isLinkedDotStart(scnr, context) || isLinkedDelimiterStart(scnr, context)) {
-          skipSpaces(scnr);
-          return readTokenInLinked(scnr, context);
-        }
-        if (isLinkedModifierStart(scnr, context)) {
-          skipSpaces(scnr);
-          return getToken(context, 12 /* TokenTypes.LinkedModifier */, readLinkedModifier(scnr));
-        }
-        if (isLinkedReferStart(scnr, context)) {
-          skipSpaces(scnr);
-          if (ch === "{" /* TokenChars.BraceLeft */) {
-            // scan the placeholder
-            return readTokenInPlaceholder(scnr, context) || token;
-          } else {
-            return getToken(context, 11 /* TokenTypes.LinkedKey */, readLinkedRefer(scnr));
-          }
-        }
-        if (currentType === 8 /* TokenTypes.LinkedAlias */) {
-          emitError(CompileErrorCodes.INVALID_LINKED_FORMAT, currentPosition(), 0);
-        }
-        context.braceNest = 0;
-        context.inLinked = false;
-        return readToken(scnr, context);
-    }
-  }
-  // TODO: We need refactoring of token parsing ...
-  function readToken(scnr, context) {
-    let token = {
-      type: 14 /* TokenTypes.EOF */
-    };
-    if (context.braceNest > 0) {
-      return readTokenInPlaceholder(scnr, context) || getEndToken(context);
-    }
-    if (context.inLinked) {
-      return readTokenInLinked(scnr, context) || getEndToken(context);
-    }
-    const ch = scnr.currentChar();
-    switch (ch) {
-      case "{" /* TokenChars.BraceLeft */:
-        return readTokenInPlaceholder(scnr, context) || getEndToken(context);
-      case "}" /* TokenChars.BraceRight */:
-        emitError(CompileErrorCodes.UNBALANCED_CLOSING_BRACE, currentPosition(), 0);
-        scnr.next();
-        return getToken(context, 3 /* TokenTypes.BraceRight */, "}" /* TokenChars.BraceRight */);
-      case "@" /* TokenChars.LinkedAlias */:
-        return readTokenInLinked(scnr, context) || getEndToken(context);
-      default:
-        if (isPluralStart(scnr)) {
-          token = getToken(context, 1 /* TokenTypes.Pipe */, readPlural(scnr));
-          // reset
-          context.braceNest = 0;
-          context.inLinked = false;
-          return token;
-        }
-        const {
-          isModulo,
-          hasSpace
-        } = detectModuloStart(scnr);
-        if (isModulo) {
-          return hasSpace ? getToken(context, 0 /* TokenTypes.Text */, readText(scnr)) : getToken(context, 4 /* TokenTypes.Modulo */, readModulo(scnr));
-        }
-        if (isTextStart(scnr)) {
-          return getToken(context, 0 /* TokenTypes.Text */, readText(scnr));
-        }
-        break;
-    }
-    return token;
-  }
-  function nextToken() {
-    const {
-      currentType,
-      offset,
-      startLoc,
-      endLoc
-    } = _context;
-    _context.lastType = currentType;
-    _context.lastOffset = offset;
-    _context.lastStartLoc = startLoc;
-    _context.lastEndLoc = endLoc;
-    _context.offset = currentOffset();
-    _context.startLoc = currentPosition();
-    if (_scnr.currentChar() === EOF) {
-      return getToken(_context, 14 /* TokenTypes.EOF */);
-    }
-    return readToken(_scnr, _context);
-  }
-  return {
-    nextToken,
-    currentOffset,
-    currentPosition,
-    context
-  };
-}
-const ERROR_DOMAIN$2 = 'parser';
-// Backslash backslash, backslash quote, uHHHH, UHHHHHH.
-const KNOWN_ESCAPES = /(?:\\\\|\\'|\\u([0-9a-fA-F]{4})|\\U([0-9a-fA-F]{6}))/g;
-function fromEscapeSequence(match, codePoint4, codePoint6) {
-  switch (match) {
-    case `\\\\`:
-      return `\\`;
-    case `\\\'`:
-      return `\'`;
-    default:
-      {
-        const codePoint = parseInt(codePoint4 || codePoint6, 16);
-        if (codePoint <= 0xd7ff || codePoint >= 0xe000) {
-          return String.fromCodePoint(codePoint);
-        }
-        // invalid ...
-        // Replace them with U+FFFD REPLACEMENT CHARACTER.
-        return '�';
-      }
-  }
-}
-function createParser(options = {}) {
-  const location = options.location !== false;
-  const {
-    onError
-  } = options;
-  function emitError(tokenzer, code, start, offset, ...args) {
-    const end = tokenzer.currentPosition();
-    end.offset += offset;
-    end.column += offset;
-    if (onError) {
-      const loc = location ? createLocation(start, end) : null;
-      const err = createCompileError(code, loc, {
-        domain: ERROR_DOMAIN$2,
-        args
-      });
-      onError(err);
-    }
-  }
-  function startNode(type, offset, loc) {
-    const node = {
-      type
-    };
-    if (location) {
-      node.start = offset;
-      node.end = offset;
-      node.loc = {
-        start: loc,
-        end: loc
-      };
-    }
-    return node;
-  }
-  function endNode(node, offset, pos, type) {
-    if (type) {
-      node.type = type;
-    }
-    if (location) {
-      node.end = offset;
-      if (node.loc) {
-        node.loc.end = pos;
-      }
-    }
-  }
-  function parseText(tokenizer, value) {
-    const context = tokenizer.context();
-    const node = startNode(3 /* NodeTypes.Text */, context.offset, context.startLoc);
-    node.value = value;
-    endNode(node, tokenizer.currentOffset(), tokenizer.currentPosition());
-    return node;
-  }
-  function parseList(tokenizer, index) {
-    const context = tokenizer.context();
-    const {
-      lastOffset: offset,
-      lastStartLoc: loc
-    } = context; // get brace left loc
-    const node = startNode(5 /* NodeTypes.List */, offset, loc);
-    node.index = parseInt(index, 10);
-    tokenizer.nextToken(); // skip brach right
-    endNode(node, tokenizer.currentOffset(), tokenizer.currentPosition());
-    return node;
-  }
-  function parseNamed(tokenizer, key) {
-    const context = tokenizer.context();
-    const {
-      lastOffset: offset,
-      lastStartLoc: loc
-    } = context; // get brace left loc
-    const node = startNode(4 /* NodeTypes.Named */, offset, loc);
-    node.key = key;
-    tokenizer.nextToken(); // skip brach right
-    endNode(node, tokenizer.currentOffset(), tokenizer.currentPosition());
-    return node;
-  }
-  function parseLiteral(tokenizer, value) {
-    const context = tokenizer.context();
-    const {
-      lastOffset: offset,
-      lastStartLoc: loc
-    } = context; // get brace left loc
-    const node = startNode(9 /* NodeTypes.Literal */, offset, loc);
-    node.value = value.replace(KNOWN_ESCAPES, fromEscapeSequence);
-    tokenizer.nextToken(); // skip brach right
-    endNode(node, tokenizer.currentOffset(), tokenizer.currentPosition());
-    return node;
-  }
-  function parseLinkedModifier(tokenizer) {
-    const token = tokenizer.nextToken();
-    const context = tokenizer.context();
-    const {
-      lastOffset: offset,
-      lastStartLoc: loc
-    } = context; // get linked dot loc
-    const node = startNode(8 /* NodeTypes.LinkedModifier */, offset, loc);
-    if (token.type !== 12 /* TokenTypes.LinkedModifier */) {
-      // empty modifier
-      emitError(tokenizer, CompileErrorCodes.UNEXPECTED_EMPTY_LINKED_MODIFIER, context.lastStartLoc, 0);
-      node.value = '';
-      endNode(node, offset, loc);
-      return {
-        nextConsumeToken: token,
-        node
-      };
-    }
-    // check token
-    if (token.value == null) {
-      emitError(tokenizer, CompileErrorCodes.UNEXPECTED_LEXICAL_ANALYSIS, context.lastStartLoc, 0, getTokenCaption(token));
-    }
-    node.value = token.value || '';
-    endNode(node, tokenizer.currentOffset(), tokenizer.currentPosition());
-    return {
-      node
-    };
-  }
-  function parseLinkedKey(tokenizer, value) {
-    const context = tokenizer.context();
-    const node = startNode(7 /* NodeTypes.LinkedKey */, context.offset, context.startLoc);
-    node.value = value;
-    endNode(node, tokenizer.currentOffset(), tokenizer.currentPosition());
-    return node;
-  }
-  function parseLinked(tokenizer) {
-    const context = tokenizer.context();
-    const linkedNode = startNode(6 /* NodeTypes.Linked */, context.offset, context.startLoc);
-    let token = tokenizer.nextToken();
-    if (token.type === 9 /* TokenTypes.LinkedDot */) {
-      const parsed = parseLinkedModifier(tokenizer);
-      linkedNode.modifier = parsed.node;
-      token = parsed.nextConsumeToken || tokenizer.nextToken();
-    }
-    // asset check token
-    if (token.type !== 10 /* TokenTypes.LinkedDelimiter */) {
-      emitError(tokenizer, CompileErrorCodes.UNEXPECTED_LEXICAL_ANALYSIS, context.lastStartLoc, 0, getTokenCaption(token));
-    }
-    token = tokenizer.nextToken();
-    // skip brace left
-    if (token.type === 2 /* TokenTypes.BraceLeft */) {
-      token = tokenizer.nextToken();
-    }
-    switch (token.type) {
-      case 11 /* TokenTypes.LinkedKey */:
-        if (token.value == null) {
-          emitError(tokenizer, CompileErrorCodes.UNEXPECTED_LEXICAL_ANALYSIS, context.lastStartLoc, 0, getTokenCaption(token));
-        }
-        linkedNode.key = parseLinkedKey(tokenizer, token.value || '');
-        break;
-      case 5 /* TokenTypes.Named */:
-        if (token.value == null) {
-          emitError(tokenizer, CompileErrorCodes.UNEXPECTED_LEXICAL_ANALYSIS, context.lastStartLoc, 0, getTokenCaption(token));
-        }
-        linkedNode.key = parseNamed(tokenizer, token.value || '');
-        break;
-      case 6 /* TokenTypes.List */:
-        if (token.value == null) {
-          emitError(tokenizer, CompileErrorCodes.UNEXPECTED_LEXICAL_ANALYSIS, context.lastStartLoc, 0, getTokenCaption(token));
-        }
-        linkedNode.key = parseList(tokenizer, token.value || '');
-        break;
-      case 7 /* TokenTypes.Literal */:
-        if (token.value == null) {
-          emitError(tokenizer, CompileErrorCodes.UNEXPECTED_LEXICAL_ANALYSIS, context.lastStartLoc, 0, getTokenCaption(token));
-        }
-        linkedNode.key = parseLiteral(tokenizer, token.value || '');
-        break;
-      default:
-        // empty key
-        emitError(tokenizer, CompileErrorCodes.UNEXPECTED_EMPTY_LINKED_KEY, context.lastStartLoc, 0);
-        const nextContext = tokenizer.context();
-        const emptyLinkedKeyNode = startNode(7 /* NodeTypes.LinkedKey */, nextContext.offset, nextContext.startLoc);
-        emptyLinkedKeyNode.value = '';
-        endNode(emptyLinkedKeyNode, nextContext.offset, nextContext.startLoc);
-        linkedNode.key = emptyLinkedKeyNode;
-        endNode(linkedNode, nextContext.offset, nextContext.startLoc);
-        return {
-          nextConsumeToken: token,
-          node: linkedNode
-        };
-    }
-    endNode(linkedNode, tokenizer.currentOffset(), tokenizer.currentPosition());
-    return {
-      node: linkedNode
-    };
-  }
-  function parseMessage(tokenizer) {
-    const context = tokenizer.context();
-    const startOffset = context.currentType === 1 /* TokenTypes.Pipe */ ? tokenizer.currentOffset() : context.offset;
-    const startLoc = context.currentType === 1 /* TokenTypes.Pipe */ ? context.endLoc : context.startLoc;
-    const node = startNode(2 /* NodeTypes.Message */, startOffset, startLoc);
-    node.items = [];
-    let nextToken = null;
-    do {
-      const token = nextToken || tokenizer.nextToken();
-      nextToken = null;
-      switch (token.type) {
-        case 0 /* TokenTypes.Text */:
-          if (token.value == null) {
-            emitError(tokenizer, CompileErrorCodes.UNEXPECTED_LEXICAL_ANALYSIS, context.lastStartLoc, 0, getTokenCaption(token));
-          }
-          node.items.push(parseText(tokenizer, token.value || ''));
-          break;
-        case 6 /* TokenTypes.List */:
-          if (token.value == null) {
-            emitError(tokenizer, CompileErrorCodes.UNEXPECTED_LEXICAL_ANALYSIS, context.lastStartLoc, 0, getTokenCaption(token));
-          }
-          node.items.push(parseList(tokenizer, token.value || ''));
-          break;
-        case 5 /* TokenTypes.Named */:
-          if (token.value == null) {
-            emitError(tokenizer, CompileErrorCodes.UNEXPECTED_LEXICAL_ANALYSIS, context.lastStartLoc, 0, getTokenCaption(token));
-          }
-          node.items.push(parseNamed(tokenizer, token.value || ''));
-          break;
-        case 7 /* TokenTypes.Literal */:
-          if (token.value == null) {
-            emitError(tokenizer, CompileErrorCodes.UNEXPECTED_LEXICAL_ANALYSIS, context.lastStartLoc, 0, getTokenCaption(token));
-          }
-          node.items.push(parseLiteral(tokenizer, token.value || ''));
-          break;
-        case 8 /* TokenTypes.LinkedAlias */:
-          const parsed = parseLinked(tokenizer);
-          node.items.push(parsed.node);
-          nextToken = parsed.nextConsumeToken || null;
-          break;
-      }
-    } while (context.currentType !== 14 /* TokenTypes.EOF */ && context.currentType !== 1 /* TokenTypes.Pipe */);
-    // adjust message node loc
-    const endOffset = context.currentType === 1 /* TokenTypes.Pipe */ ? context.lastOffset : tokenizer.currentOffset();
-    const endLoc = context.currentType === 1 /* TokenTypes.Pipe */ ? context.lastEndLoc : tokenizer.currentPosition();
-    endNode(node, endOffset, endLoc);
-    return node;
-  }
-  function parsePlural(tokenizer, offset, loc, msgNode) {
-    const context = tokenizer.context();
-    let hasEmptyMessage = msgNode.items.length === 0;
-    const node = startNode(1 /* NodeTypes.Plural */, offset, loc);
-    node.cases = [];
-    node.cases.push(msgNode);
-    do {
-      const msg = parseMessage(tokenizer);
-      if (!hasEmptyMessage) {
-        hasEmptyMessage = msg.items.length === 0;
-      }
-      node.cases.push(msg);
-    } while (context.currentType !== 14 /* TokenTypes.EOF */);
-    if (hasEmptyMessage) {
-      emitError(tokenizer, CompileErrorCodes.MUST_HAVE_MESSAGES_IN_PLURAL, loc, 0);
-    }
-    endNode(node, tokenizer.currentOffset(), tokenizer.currentPosition());
-    return node;
-  }
-  function parseResource(tokenizer) {
-    const context = tokenizer.context();
-    const {
-      offset,
-      startLoc
-    } = context;
-    const msgNode = parseMessage(tokenizer);
-    if (context.currentType === 14 /* TokenTypes.EOF */) {
-      return msgNode;
-    } else {
-      return parsePlural(tokenizer, offset, startLoc, msgNode);
-    }
-  }
-  function parse(source) {
-    const tokenizer = createTokenizer(source, message_compiler_esm_browser_assign({}, options));
-    const context = tokenizer.context();
-    const node = startNode(0 /* NodeTypes.Resource */, context.offset, context.startLoc);
-    if (location && node.loc) {
-      node.loc.source = source;
-    }
-    node.body = parseResource(tokenizer);
-    if (options.onCacheKey) {
-      node.cacheKey = options.onCacheKey(source);
-    }
-    // assert whether achieved to EOF
-    if (context.currentType !== 14 /* TokenTypes.EOF */) {
-      emitError(tokenizer, CompileErrorCodes.UNEXPECTED_LEXICAL_ANALYSIS, context.lastStartLoc, 0, source[context.offset] || '');
-    }
-    endNode(node, tokenizer.currentOffset(), tokenizer.currentPosition());
-    return node;
-  }
-  return {
-    parse
-  };
-}
-function getTokenCaption(token) {
-  if (token.type === 14 /* TokenTypes.EOF */) {
-    return 'EOF';
-  }
-  const name = (token.value || '').replace(/\r?\n/gu, '\\n');
-  return name.length > 10 ? name.slice(0, 9) + '…' : name;
-}
-function createTransformer(ast, options = {} // eslint-disable-line
-) {
-  const _context = {
-    ast,
-    helpers: new Set()
-  };
-  const context = () => _context;
-  const helper = name => {
-    _context.helpers.add(name);
-    return name;
-  };
-  return {
-    context,
-    helper
-  };
-}
-function traverseNodes(nodes, transformer) {
-  for (let i = 0; i < nodes.length; i++) {
-    traverseNode(nodes[i], transformer);
-  }
-}
-function traverseNode(node, transformer) {
-  // TODO: if we need pre-hook of transform, should be implemented to here
-  switch (node.type) {
-    case 1 /* NodeTypes.Plural */:
-      traverseNodes(node.cases, transformer);
-      transformer.helper("plural" /* HelperNameMap.PLURAL */);
-      break;
-    case 2 /* NodeTypes.Message */:
-      traverseNodes(node.items, transformer);
-      break;
-    case 6 /* NodeTypes.Linked */:
-      const linked = node;
-      traverseNode(linked.key, transformer);
-      transformer.helper("linked" /* HelperNameMap.LINKED */);
-      transformer.helper("type" /* HelperNameMap.TYPE */);
-      break;
-    case 5 /* NodeTypes.List */:
-      transformer.helper("interpolate" /* HelperNameMap.INTERPOLATE */);
-      transformer.helper("list" /* HelperNameMap.LIST */);
-      break;
-    case 4 /* NodeTypes.Named */:
-      transformer.helper("interpolate" /* HelperNameMap.INTERPOLATE */);
-      transformer.helper("named" /* HelperNameMap.NAMED */);
-      break;
-  }
-  // TODO: if we need post-hook of transform, should be implemented to here
-}
-// transform AST
-function transform(ast, options = {} // eslint-disable-line
-) {
-  const transformer = createTransformer(ast);
-  transformer.helper("normalize" /* HelperNameMap.NORMALIZE */);
-  // traverse
-  ast.body && traverseNode(ast.body, transformer);
-  // set meta information
-  const context = transformer.context();
-  ast.helpers = Array.from(context.helpers);
-}
-function optimize(ast) {
-  const body = ast.body;
-  if (body.type === 2 /* NodeTypes.Message */) {
-    optimizeMessageNode(body);
-  } else {
-    body.cases.forEach(c => optimizeMessageNode(c));
-  }
-  return ast;
-}
-function optimizeMessageNode(message) {
-  if (message.items.length === 1) {
-    const item = message.items[0];
-    if (item.type === 3 /* NodeTypes.Text */ || item.type === 9 /* NodeTypes.Literal */) {
-      message.static = item.value;
-      delete item.value; // optimization for size
-    }
-  } else {
-    const values = [];
-    for (let i = 0; i < message.items.length; i++) {
-      const item = message.items[i];
-      if (!(item.type === 3 /* NodeTypes.Text */ || item.type === 9 /* NodeTypes.Literal */)) {
-        break;
-      }
-      if (item.value == null) {
-        break;
-      }
-      values.push(item.value);
-    }
-    if (values.length === message.items.length) {
-      message.static = message_compiler_esm_browser_join(values);
-      for (let i = 0; i < message.items.length; i++) {
-        const item = message.items[i];
-        if (item.type === 3 /* NodeTypes.Text */ || item.type === 9 /* NodeTypes.Literal */) {
-          delete item.value; // optimization for size
-        }
-      }
-    }
-  }
-}
-const ERROR_DOMAIN$1 = 'minifier';
-/* eslint-disable @typescript-eslint/no-explicit-any */
-function minify(node) {
-  node.t = node.type;
-  switch (node.type) {
-    case 0 /* NodeTypes.Resource */:
-      const resource = node;
-      minify(resource.body);
-      resource.b = resource.body;
-      delete resource.body;
-      break;
-    case 1 /* NodeTypes.Plural */:
-      const plural = node;
-      const cases = plural.cases;
-      for (let i = 0; i < cases.length; i++) {
-        minify(cases[i]);
-      }
-      plural.c = cases;
-      delete plural.cases;
-      break;
-    case 2 /* NodeTypes.Message */:
-      const message = node;
-      const items = message.items;
-      for (let i = 0; i < items.length; i++) {
-        minify(items[i]);
-      }
-      message.i = items;
-      delete message.items;
-      if (message.static) {
-        message.s = message.static;
-        delete message.static;
-      }
-      break;
-    case 3 /* NodeTypes.Text */:
-    case 9 /* NodeTypes.Literal */:
-    case 8 /* NodeTypes.LinkedModifier */:
-    case 7 /* NodeTypes.LinkedKey */:
-      const valueNode = node;
-      if (valueNode.value) {
-        valueNode.v = valueNode.value;
-        delete valueNode.value;
-      }
-      break;
-    case 6 /* NodeTypes.Linked */:
-      const linked = node;
-      minify(linked.key);
-      linked.k = linked.key;
-      delete linked.key;
-      if (linked.modifier) {
-        minify(linked.modifier);
-        linked.m = linked.modifier;
-        delete linked.modifier;
-      }
-      break;
-    case 5 /* NodeTypes.List */:
-      const list = node;
-      list.i = list.index;
-      delete list.index;
-      break;
-    case 4 /* NodeTypes.Named */:
-      const named = node;
-      named.k = named.key;
-      delete named.key;
-      break;
-    default:
-      {
-        throw createCompileError(CompileErrorCodes.UNHANDLED_MINIFIER_NODE_TYPE, null, {
-          domain: ERROR_DOMAIN$1,
-          args: [node.type]
-        });
-      }
-  }
-  delete node.type;
-}
-/* eslint-enable @typescript-eslint/no-explicit-any */
-
-const ERROR_DOMAIN = 'parser';
-function createCodeGenerator(ast, options) {
-  const {
-    sourceMap,
-    filename,
-    breakLineCode,
-    needIndent: _needIndent
-  } = options;
-  const location = options.location !== false;
-  const _context = {
-    filename,
-    code: '',
-    column: 1,
-    line: 1,
-    offset: 0,
-    map: undefined,
-    breakLineCode,
-    needIndent: _needIndent,
-    indentLevel: 0
-  };
-  if (location && ast.loc) {
-    _context.source = ast.loc.source;
-  }
-  const context = () => _context;
-  function push(code, node) {
-    _context.code += code;
-  }
-  function _newline(n, withBreakLine = true) {
-    const _breakLineCode = withBreakLine ? breakLineCode : '';
-    push(_needIndent ? _breakLineCode + `  `.repeat(n) : _breakLineCode);
-  }
-  function indent(withNewLine = true) {
-    const level = ++_context.indentLevel;
-    withNewLine && _newline(level);
-  }
-  function deindent(withNewLine = true) {
-    const level = --_context.indentLevel;
-    withNewLine && _newline(level);
-  }
-  function newline() {
-    _newline(_context.indentLevel);
-  }
-  const helper = key => `_${key}`;
-  const needIndent = () => _context.needIndent;
-  return {
-    context,
-    push,
-    indent,
-    deindent,
-    newline,
-    helper,
-    needIndent
-  };
-}
-function generateLinkedNode(generator, node) {
-  const {
-    helper
-  } = generator;
-  generator.push(`${helper("linked" /* HelperNameMap.LINKED */)}(`);
-  generateNode(generator, node.key);
-  if (node.modifier) {
-    generator.push(`, `);
-    generateNode(generator, node.modifier);
-    generator.push(`, _type`);
-  } else {
-    generator.push(`, undefined, _type`);
-  }
-  generator.push(`)`);
-}
-function generateMessageNode(generator, node) {
-  const {
-    helper,
-    needIndent
-  } = generator;
-  generator.push(`${helper("normalize" /* HelperNameMap.NORMALIZE */)}([`);
-  generator.indent(needIndent());
-  const length = node.items.length;
-  for (let i = 0; i < length; i++) {
-    generateNode(generator, node.items[i]);
-    if (i === length - 1) {
-      break;
-    }
-    generator.push(', ');
-  }
-  generator.deindent(needIndent());
-  generator.push('])');
-}
-function generatePluralNode(generator, node) {
-  const {
-    helper,
-    needIndent
-  } = generator;
-  if (node.cases.length > 1) {
-    generator.push(`${helper("plural" /* HelperNameMap.PLURAL */)}([`);
-    generator.indent(needIndent());
-    const length = node.cases.length;
-    for (let i = 0; i < length; i++) {
-      generateNode(generator, node.cases[i]);
-      if (i === length - 1) {
-        break;
-      }
-      generator.push(', ');
-    }
-    generator.deindent(needIndent());
-    generator.push(`])`);
-  }
-}
-function generateResource(generator, node) {
-  if (node.body) {
-    generateNode(generator, node.body);
-  } else {
-    generator.push('null');
-  }
-}
-function generateNode(generator, node) {
-  const {
-    helper
-  } = generator;
-  switch (node.type) {
-    case 0 /* NodeTypes.Resource */:
-      generateResource(generator, node);
-      break;
-    case 1 /* NodeTypes.Plural */:
-      generatePluralNode(generator, node);
-      break;
-    case 2 /* NodeTypes.Message */:
-      generateMessageNode(generator, node);
-      break;
-    case 6 /* NodeTypes.Linked */:
-      generateLinkedNode(generator, node);
-      break;
-    case 8 /* NodeTypes.LinkedModifier */:
-      generator.push(JSON.stringify(node.value), node);
-      break;
-    case 7 /* NodeTypes.LinkedKey */:
-      generator.push(JSON.stringify(node.value), node);
-      break;
-    case 5 /* NodeTypes.List */:
-      generator.push(`${helper("interpolate" /* HelperNameMap.INTERPOLATE */)}(${helper("list" /* HelperNameMap.LIST */)}(${node.index}))`, node);
-      break;
-    case 4 /* NodeTypes.Named */:
-      generator.push(`${helper("interpolate" /* HelperNameMap.INTERPOLATE */)}(${helper("named" /* HelperNameMap.NAMED */)}(${JSON.stringify(node.key)}))`, node);
-      break;
-    case 9 /* NodeTypes.Literal */:
-      generator.push(JSON.stringify(node.value), node);
-      break;
-    case 3 /* NodeTypes.Text */:
-      generator.push(JSON.stringify(node.value), node);
-      break;
-    default:
-      {
-        throw createCompileError(CompileErrorCodes.UNHANDLED_CODEGEN_NODE_TYPE, null, {
-          domain: ERROR_DOMAIN,
-          args: [node.type]
-        });
-      }
-  }
-}
-// generate code from AST
-const generate = (ast, options = {} // eslint-disable-line
-) => {
-  const mode = message_compiler_esm_browser_isString(options.mode) ? options.mode : 'normal';
-  const filename = message_compiler_esm_browser_isString(options.filename) ? options.filename : 'message.intl';
-  const sourceMap = !!options.sourceMap;
-  // prettier-ignore
-  const breakLineCode = options.breakLineCode != null ? options.breakLineCode : mode === 'arrow' ? ';' : '\n';
-  const needIndent = options.needIndent ? options.needIndent : mode !== 'arrow';
-  const helpers = ast.helpers || [];
-  const generator = createCodeGenerator(ast, {
-    mode,
-    filename,
-    sourceMap,
-    breakLineCode,
-    needIndent
-  });
-  generator.push(mode === 'normal' ? `function __msg__ (ctx) {` : `(ctx) => {`);
-  generator.indent(needIndent);
-  if (helpers.length > 0) {
-    generator.push(`const { ${message_compiler_esm_browser_join(helpers.map(s => `${s}: _${s}`), ', ')} } = ctx`);
-    generator.newline();
-  }
-  generator.push(`return `);
-  generateNode(generator, ast);
-  generator.deindent(needIndent);
-  generator.push(`}`);
-  delete ast.helpers;
-  const {
-    code,
-    map
-  } = generator.context();
-  return {
-    ast,
-    code,
-    map: map ? map.toJSON() : undefined // eslint-disable-line @typescript-eslint/no-explicit-any
-  };
-};
-function baseCompile(source, options = {}) {
-  const assignedOptions = message_compiler_esm_browser_assign({}, options);
-  const jit = !!assignedOptions.jit;
-  const enalbeMinify = !!assignedOptions.minify;
-  const enambeOptimize = assignedOptions.optimize == null ? true : assignedOptions.optimize;
-  // parse source codes
-  const parser = createParser(assignedOptions);
-  const ast = parser.parse(source);
-  if (!jit) {
-    // transform ASTs
-    transform(ast, assignedOptions);
-    // generate javascript codes
-    return generate(ast, assignedOptions);
-  } else {
-    // optimize ASTs
-    enambeOptimize && optimize(ast);
-    // minimize ASTs
-    enalbeMinify && minify(ast);
-    // In JIT mode, no ast transform, no code generation.
-    return {
-      ast,
-      code: ''
-    };
-  }
-}
-
-;// CONCATENATED MODULE: ./node_modules/@intlify/core-base/dist/core-base.mjs
-
-/*!
-  * core-base v9.9.1
-  * (c) 2024 kazuya kawaguchi
-  * Released under the MIT License.
-  */
-
-
-
-
-/**
- * This is only called in esm-bundler builds.
- * istanbul-ignore-next
- */
-function initFeatureFlags() {
-  if (false) {}
-  if (typeof __INTLIFY_JIT_COMPILATION__ !== 'boolean') {
-    getGlobalThis().__INTLIFY_JIT_COMPILATION__ = false;
-  }
-  if (typeof __INTLIFY_DROP_MESSAGE_COMPILER__ !== 'boolean') {
-    getGlobalThis().__INTLIFY_DROP_MESSAGE_COMPILER__ = false;
-  }
-}
-const pathStateMachine = [];
-pathStateMachine[0 /* States.BEFORE_PATH */] = {
-  ["w" /* PathCharTypes.WORKSPACE */]: [0 /* States.BEFORE_PATH */],
-  ["i" /* PathCharTypes.IDENT */]: [3 /* States.IN_IDENT */, 0 /* Actions.APPEND */],
-  ["[" /* PathCharTypes.LEFT_BRACKET */]: [4 /* States.IN_SUB_PATH */],
-  ["o" /* PathCharTypes.END_OF_FAIL */]: [7 /* States.AFTER_PATH */]
-};
-pathStateMachine[1 /* States.IN_PATH */] = {
-  ["w" /* PathCharTypes.WORKSPACE */]: [1 /* States.IN_PATH */],
-  ["." /* PathCharTypes.DOT */]: [2 /* States.BEFORE_IDENT */],
-  ["[" /* PathCharTypes.LEFT_BRACKET */]: [4 /* States.IN_SUB_PATH */],
-  ["o" /* PathCharTypes.END_OF_FAIL */]: [7 /* States.AFTER_PATH */]
-};
-pathStateMachine[2 /* States.BEFORE_IDENT */] = {
-  ["w" /* PathCharTypes.WORKSPACE */]: [2 /* States.BEFORE_IDENT */],
-  ["i" /* PathCharTypes.IDENT */]: [3 /* States.IN_IDENT */, 0 /* Actions.APPEND */],
-  ["0" /* PathCharTypes.ZERO */]: [3 /* States.IN_IDENT */, 0 /* Actions.APPEND */]
-};
-pathStateMachine[3 /* States.IN_IDENT */] = {
-  ["i" /* PathCharTypes.IDENT */]: [3 /* States.IN_IDENT */, 0 /* Actions.APPEND */],
-  ["0" /* PathCharTypes.ZERO */]: [3 /* States.IN_IDENT */, 0 /* Actions.APPEND */],
-  ["w" /* PathCharTypes.WORKSPACE */]: [1 /* States.IN_PATH */, 1 /* Actions.PUSH */],
-  ["." /* PathCharTypes.DOT */]: [2 /* States.BEFORE_IDENT */, 1 /* Actions.PUSH */],
-  ["[" /* PathCharTypes.LEFT_BRACKET */]: [4 /* States.IN_SUB_PATH */, 1 /* Actions.PUSH */],
-  ["o" /* PathCharTypes.END_OF_FAIL */]: [7 /* States.AFTER_PATH */, 1 /* Actions.PUSH */]
-};
-pathStateMachine[4 /* States.IN_SUB_PATH */] = {
-  ["'" /* PathCharTypes.SINGLE_QUOTE */]: [5 /* States.IN_SINGLE_QUOTE */, 0 /* Actions.APPEND */],
-  ["\"" /* PathCharTypes.DOUBLE_QUOTE */]: [6 /* States.IN_DOUBLE_QUOTE */, 0 /* Actions.APPEND */],
-  ["[" /* PathCharTypes.LEFT_BRACKET */]: [4 /* States.IN_SUB_PATH */, 2 /* Actions.INC_SUB_PATH_DEPTH */],
-  ["]" /* PathCharTypes.RIGHT_BRACKET */]: [1 /* States.IN_PATH */, 3 /* Actions.PUSH_SUB_PATH */],
-  ["o" /* PathCharTypes.END_OF_FAIL */]: 8 /* States.ERROR */,
-  ["l" /* PathCharTypes.ELSE */]: [4 /* States.IN_SUB_PATH */, 0 /* Actions.APPEND */]
-};
-pathStateMachine[5 /* States.IN_SINGLE_QUOTE */] = {
-  ["'" /* PathCharTypes.SINGLE_QUOTE */]: [4 /* States.IN_SUB_PATH */, 0 /* Actions.APPEND */],
-  ["o" /* PathCharTypes.END_OF_FAIL */]: 8 /* States.ERROR */,
-  ["l" /* PathCharTypes.ELSE */]: [5 /* States.IN_SINGLE_QUOTE */, 0 /* Actions.APPEND */]
-};
-pathStateMachine[6 /* States.IN_DOUBLE_QUOTE */] = {
-  ["\"" /* PathCharTypes.DOUBLE_QUOTE */]: [4 /* States.IN_SUB_PATH */, 0 /* Actions.APPEND */],
-  ["o" /* PathCharTypes.END_OF_FAIL */]: 8 /* States.ERROR */,
-  ["l" /* PathCharTypes.ELSE */]: [6 /* States.IN_DOUBLE_QUOTE */, 0 /* Actions.APPEND */]
-};
-/**
- * Check if an expression is a literal value.
- */
-const literalValueRE = /^\s?(?:true|false|-?[\d.]+|'[^']*'|"[^"]*")\s?$/;
-function isLiteral(exp) {
-  return literalValueRE.test(exp);
-}
-/**
- * Strip quotes from a string
- */
-function stripQuotes(str) {
-  const a = str.charCodeAt(0);
-  const b = str.charCodeAt(str.length - 1);
-  return a === b && (a === 0x22 || a === 0x27) ? str.slice(1, -1) : str;
-}
-/**
- * Determine the type of a character in a keypath.
- */
-function getPathCharType(ch) {
-  if (ch === undefined || ch === null) {
-    return "o" /* PathCharTypes.END_OF_FAIL */;
-  }
-  const code = ch.charCodeAt(0);
-  switch (code) {
-    case 0x5b: // [
-    case 0x5d: // ]
-    case 0x2e: // .
-    case 0x22: // "
-    case 0x27:
-      // '
-      return ch;
-    case 0x5f: // _
-    case 0x24: // $
-    case 0x2d:
-      // -
-      return "i" /* PathCharTypes.IDENT */;
-    case 0x09: // Tab (HT)
-    case 0x0a: // Newline (LF)
-    case 0x0d: // Return (CR)
-    case 0xa0: // No-break space (NBSP)
-    case 0xfeff: // Byte Order Mark (BOM)
-    case 0x2028: // Line Separator (LS)
-    case 0x2029:
-      // Paragraph Separator (PS)
-      return "w" /* PathCharTypes.WORKSPACE */;
-  }
-  return "i" /* PathCharTypes.IDENT */;
-}
-/**
- * Format a subPath, return its plain form if it is
- * a literal string or number. Otherwise prepend the
- * dynamic indicator (*).
- */
-function formatSubPath(path) {
-  const trimmed = path.trim();
-  // invalid leading 0
-  if (path.charAt(0) === '0' && isNaN(parseInt(path))) {
-    return false;
-  }
-  return isLiteral(trimmed) ? stripQuotes(trimmed) : "*" /* PathCharTypes.ASTARISK */ + trimmed;
-}
-/**
- * Parse a string path into an array of segments
- */
-function parse(path) {
-  const keys = [];
-  let index = -1;
-  let mode = 0 /* States.BEFORE_PATH */;
-  let subPathDepth = 0;
-  let c;
-  let key; // eslint-disable-line
-  let newChar;
-  let type;
-  let transition;
-  let action;
-  let typeMap;
-  const actions = [];
-  actions[0 /* Actions.APPEND */] = () => {
-    if (key === undefined) {
-      key = newChar;
-    } else {
-      key += newChar;
-    }
-  };
-  actions[1 /* Actions.PUSH */] = () => {
-    if (key !== undefined) {
-      keys.push(key);
-      key = undefined;
-    }
-  };
-  actions[2 /* Actions.INC_SUB_PATH_DEPTH */] = () => {
-    actions[0 /* Actions.APPEND */]();
-    subPathDepth++;
-  };
-  actions[3 /* Actions.PUSH_SUB_PATH */] = () => {
-    if (subPathDepth > 0) {
-      subPathDepth--;
-      mode = 4 /* States.IN_SUB_PATH */;
-      actions[0 /* Actions.APPEND */]();
-    } else {
-      subPathDepth = 0;
-      if (key === undefined) {
-        return false;
-      }
-      key = formatSubPath(key);
-      if (key === false) {
-        return false;
-      } else {
-        actions[1 /* Actions.PUSH */]();
-      }
-    }
-  };
-  function maybeUnescapeQuote() {
-    const nextChar = path[index + 1];
-    if (mode === 5 /* States.IN_SINGLE_QUOTE */ && nextChar === "'" /* PathCharTypes.SINGLE_QUOTE */ || mode === 6 /* States.IN_DOUBLE_QUOTE */ && nextChar === "\"" /* PathCharTypes.DOUBLE_QUOTE */) {
-      index++;
-      newChar = '\\' + nextChar;
-      actions[0 /* Actions.APPEND */]();
-      return true;
-    }
-  }
-  while (mode !== null) {
-    index++;
-    c = path[index];
-    if (c === '\\' && maybeUnescapeQuote()) {
-      continue;
-    }
-    type = getPathCharType(c);
-    typeMap = pathStateMachine[mode];
-    transition = typeMap[type] || typeMap["l" /* PathCharTypes.ELSE */] || 8 /* States.ERROR */;
-    // check parse error
-    if (transition === 8 /* States.ERROR */) {
-      return;
-    }
-    mode = transition[0];
-    if (transition[1] !== undefined) {
-      action = actions[transition[1]];
-      if (action) {
-        newChar = c;
-        if (action() === false) {
-          return;
-        }
-      }
-    }
-    // check parse finish
-    if (mode === 7 /* States.AFTER_PATH */) {
-      return keys;
-    }
-  }
-}
-// path token cache
-const cache = new Map();
-/**
- * key-value message resolver
- *
- * @remarks
- * Resolves messages with the key-value structure. Note that messages with a hierarchical structure such as objects cannot be resolved
- *
- * @param obj - A target object to be resolved with path
- * @param path - A {@link Path | path} to resolve the value of message
- *
- * @returns A resolved {@link PathValue | path value}
- *
- * @VueI18nGeneral
- */
-function resolveWithKeyValue(obj, path) {
-  return shared_isObject(obj) ? obj[path] : null;
-}
-/**
- * message resolver
- *
- * @remarks
- * Resolves messages. messages with a hierarchical structure such as objects can be resolved. This resolver is used in VueI18n as default.
- *
- * @param obj - A target object to be resolved with path
- * @param path - A {@link Path | path} to resolve the value of message
- *
- * @returns A resolved {@link PathValue | path value}
- *
- * @VueI18nGeneral
- */
-function resolveValue(obj, path) {
-  // check object
-  if (!shared_isObject(obj)) {
-    return null;
-  }
-  // parse path
-  let hit = cache.get(path);
-  if (!hit) {
-    hit = parse(path);
-    if (hit) {
-      cache.set(path, hit);
-    }
-  }
-  // check hit
-  if (!hit) {
-    return null;
-  }
-  // resolve path value
-  const len = hit.length;
-  let last = obj;
-  let i = 0;
-  while (i < len) {
-    const val = last[hit[i]];
-    if (val === undefined) {
-      return null;
-    }
-    if (shared_isFunction(last)) {
-      return null;
-    }
-    last = val;
-    i++;
-  }
-  return last;
-}
-const DEFAULT_MODIFIER = str => str;
-const DEFAULT_MESSAGE = ctx => ''; // eslint-disable-line
-const DEFAULT_MESSAGE_DATA_TYPE = 'text';
-const DEFAULT_NORMALIZE = values => values.length === 0 ? '' : join(values);
-const DEFAULT_INTERPOLATE = toDisplayString;
-function pluralDefault(choice, choicesLength) {
-  choice = Math.abs(choice);
-  if (choicesLength === 2) {
-    // prettier-ignore
-    return choice ? choice > 1 ? 1 : 0 : 1;
-  }
-  return choice ? Math.min(choice, 2) : 0;
-}
-function getPluralIndex(options) {
-  // prettier-ignore
-  const index = shared_isNumber(options.pluralIndex) ? options.pluralIndex : -1;
-  // prettier-ignore
-  return options.named && (shared_isNumber(options.named.count) || shared_isNumber(options.named.n)) ? shared_isNumber(options.named.count) ? options.named.count : shared_isNumber(options.named.n) ? options.named.n : index : index;
-}
-function normalizeNamed(pluralIndex, props) {
-  if (!props.count) {
-    props.count = pluralIndex;
-  }
-  if (!props.n) {
-    props.n = pluralIndex;
-  }
-}
-function createMessageContext(options = {}) {
-  const locale = options.locale;
-  const pluralIndex = getPluralIndex(options);
-  const pluralRule = shared_isObject(options.pluralRules) && shared_isString(locale) && shared_isFunction(options.pluralRules[locale]) ? options.pluralRules[locale] : pluralDefault;
-  const orgPluralRule = shared_isObject(options.pluralRules) && shared_isString(locale) && shared_isFunction(options.pluralRules[locale]) ? pluralDefault : undefined;
-  const plural = messages => {
-    return messages[pluralRule(pluralIndex, messages.length, orgPluralRule)];
-  };
-  const _list = options.list || [];
-  const list = index => _list[index];
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const _named = options.named || {};
-  shared_isNumber(options.pluralIndex) && normalizeNamed(pluralIndex, _named);
-  const named = key => _named[key];
-  function message(key) {
-    // prettier-ignore
-    const msg = shared_isFunction(options.messages) ? options.messages(key) : shared_isObject(options.messages) ? options.messages[key] : false;
-    return !msg ? options.parent ? options.parent.message(key) // resolve from parent messages
-    : DEFAULT_MESSAGE : msg;
-  }
-  const _modifier = name => options.modifiers ? options.modifiers[name] : DEFAULT_MODIFIER;
-  const normalize = shared_isPlainObject(options.processor) && shared_isFunction(options.processor.normalize) ? options.processor.normalize : DEFAULT_NORMALIZE;
-  const interpolate = shared_isPlainObject(options.processor) && shared_isFunction(options.processor.interpolate) ? options.processor.interpolate : DEFAULT_INTERPOLATE;
-  const type = shared_isPlainObject(options.processor) && shared_isString(options.processor.type) ? options.processor.type : DEFAULT_MESSAGE_DATA_TYPE;
-  const linked = (key, ...args) => {
-    const [arg1, arg2] = args;
-    let type = 'text';
-    let modifier = '';
-    if (args.length === 1) {
-      if (shared_isObject(arg1)) {
-        modifier = arg1.modifier || modifier;
-        type = arg1.type || type;
-      } else if (shared_isString(arg1)) {
-        modifier = arg1 || modifier;
-      }
-    } else if (args.length === 2) {
-      if (shared_isString(arg1)) {
-        modifier = arg1 || modifier;
-      }
-      if (shared_isString(arg2)) {
-        type = arg2 || type;
-      }
-    }
-    const ret = message(key)(ctx);
-    const msg =
-    // The message in vnode resolved with linked are returned as an array by processor.nomalize
-    type === 'vnode' && shared_isArray(ret) && modifier ? ret[0] : ret;
-    return modifier ? _modifier(modifier)(msg, type) : msg;
-  };
-  const ctx = {
-    ["list" /* HelperNameMap.LIST */]: list,
-    ["named" /* HelperNameMap.NAMED */]: named,
-    ["plural" /* HelperNameMap.PLURAL */]: plural,
-    ["linked" /* HelperNameMap.LINKED */]: linked,
-    ["message" /* HelperNameMap.MESSAGE */]: message,
-    ["type" /* HelperNameMap.TYPE */]: type,
-    ["interpolate" /* HelperNameMap.INTERPOLATE */]: interpolate,
-    ["normalize" /* HelperNameMap.NORMALIZE */]: normalize,
-    ["values" /* HelperNameMap.VALUES */]: shared_assign({}, _list, _named)
-  };
-  return ctx;
-}
-let devtools = null;
-function setDevToolsHook(hook) {
-  devtools = hook;
-}
-function getDevToolsHook() {
-  return devtools;
-}
-function initI18nDevTools(i18n, version, meta) {
-  // TODO: queue if devtools is undefined
-  devtools && devtools.emit("i18n:init" /* IntlifyDevToolsHooks.I18nInit */, {
-    timestamp: Date.now(),
-    i18n,
-    version,
-    meta
-  });
-}
-const translateDevTools = /* #__PURE__*/(/* unused pure expression or super */ null && (createDevToolsHook("function:translate" /* IntlifyDevToolsHooks.FunctionTranslate */)));
-function createDevToolsHook(hook) {
-  return payloads => devtools && devtools.emit(hook, payloads);
-}
-const CoreWarnCodes = {
-  NOT_FOUND_KEY: 1,
-  FALLBACK_TO_TRANSLATE: 2,
-  CANNOT_FORMAT_NUMBER: 3,
-  FALLBACK_TO_NUMBER_FORMAT: 4,
-  CANNOT_FORMAT_DATE: 5,
-  FALLBACK_TO_DATE_FORMAT: 6,
-  EXPERIMENTAL_CUSTOM_MESSAGE_COMPILER: 7,
-  __EXTEND_POINT__: 8
-};
-/** @internal */
-const warnMessages = {
-  [CoreWarnCodes.NOT_FOUND_KEY]: `Not found '{key}' key in '{locale}' locale messages.`,
-  [CoreWarnCodes.FALLBACK_TO_TRANSLATE]: `Fall back to translate '{key}' key with '{target}' locale.`,
-  [CoreWarnCodes.CANNOT_FORMAT_NUMBER]: `Cannot format a number value due to not supported Intl.NumberFormat.`,
-  [CoreWarnCodes.FALLBACK_TO_NUMBER_FORMAT]: `Fall back to number format '{key}' key with '{target}' locale.`,
-  [CoreWarnCodes.CANNOT_FORMAT_DATE]: `Cannot format a date value due to not supported Intl.DateTimeFormat.`,
-  [CoreWarnCodes.FALLBACK_TO_DATE_FORMAT]: `Fall back to datetime format '{key}' key with '{target}' locale.`,
-  [CoreWarnCodes.EXPERIMENTAL_CUSTOM_MESSAGE_COMPILER]: `This project is using Custom Message Compiler, which is an experimental feature. It may receive breaking changes or be removed in the future.`
-};
-function getWarnMessage(code, ...args) {
-  return format$1(warnMessages[code], ...args);
-}
-const code = CompileErrorCodes.__EXTEND_POINT__;
-const inc = incrementer(code);
-const CoreErrorCodes = {
-  INVALID_ARGUMENT: code,
-  INVALID_DATE_ARGUMENT: inc(),
-  INVALID_ISO_DATE_ARGUMENT: inc(),
-  NOT_SUPPORT_NON_STRING_MESSAGE: inc(),
-  NOT_SUPPORT_LOCALE_PROMISE_VALUE: inc(),
-  NOT_SUPPORT_LOCALE_ASYNC_FUNCTION: inc(),
-  NOT_SUPPORT_LOCALE_TYPE: inc(),
-  __EXTEND_POINT__: inc() // 25
-};
-function createCoreError(code) {
-  return createCompileError(code, null,  false ? 0 : undefined);
-}
-/** @internal */
-const core_base_errorMessages = {
-  [CoreErrorCodes.INVALID_ARGUMENT]: 'Invalid arguments',
-  [CoreErrorCodes.INVALID_DATE_ARGUMENT]: 'The date provided is an invalid Date object.' + 'Make sure your Date represents a valid date.',
-  [CoreErrorCodes.INVALID_ISO_DATE_ARGUMENT]: 'The argument provided is not a valid ISO date string',
-  [CoreErrorCodes.NOT_SUPPORT_NON_STRING_MESSAGE]: 'Not support non-string message',
-  [CoreErrorCodes.NOT_SUPPORT_LOCALE_PROMISE_VALUE]: 'cannot support promise value',
-  [CoreErrorCodes.NOT_SUPPORT_LOCALE_ASYNC_FUNCTION]: 'cannot support async function',
-  [CoreErrorCodes.NOT_SUPPORT_LOCALE_TYPE]: 'cannot support locale type'
-};
-
-/** @internal */
-function getLocale(context, options) {
-  return options.locale != null ? resolveLocale(options.locale) : resolveLocale(context.locale);
-}
-let _resolveLocale;
-/** @internal */
-function resolveLocale(locale) {
-  if (shared_isString(locale)) {
-    return locale;
-  } else {
-    if (shared_isFunction(locale)) {
-      if (locale.resolvedOnce && _resolveLocale != null) {
-        return _resolveLocale;
-      } else if (locale.constructor.name === 'Function') {
-        const resolve = locale();
-        if (shared_isPromise(resolve)) {
-          throw createCoreError(CoreErrorCodes.NOT_SUPPORT_LOCALE_PROMISE_VALUE);
-        }
-        return _resolveLocale = resolve;
-      } else {
-        throw createCoreError(CoreErrorCodes.NOT_SUPPORT_LOCALE_ASYNC_FUNCTION);
-      }
-    } else {
-      throw createCoreError(CoreErrorCodes.NOT_SUPPORT_LOCALE_TYPE);
-    }
-  }
-}
-/**
- * Fallback with simple implemenation
- *
- * @remarks
- * A fallback locale function implemented with a simple fallback algorithm.
- *
- * Basically, it returns the value as specified in the `fallbackLocale` props, and is processed with the fallback inside intlify.
- *
- * @param ctx - A {@link CoreContext | context}
- * @param fallback - A {@link FallbackLocale | fallback locale}
- * @param start - A starting {@link Locale | locale}
- *
- * @returns Fallback locales
- *
- * @VueI18nGeneral
- */
-function fallbackWithSimple(ctx, fallback, start // eslint-disable-line @typescript-eslint/no-unused-vars
-) {
-  // prettier-ignore
-  return [...new Set([start, ...(shared_isArray(fallback) ? fallback : shared_isObject(fallback) ? Object.keys(fallback) : shared_isString(fallback) ? [fallback] : [start])])];
-}
-/**
- * Fallback with locale chain
- *
- * @remarks
- * A fallback locale function implemented with a fallback chain algorithm. It's used in VueI18n as default.
- *
- * @param ctx - A {@link CoreContext | context}
- * @param fallback - A {@link FallbackLocale | fallback locale}
- * @param start - A starting {@link Locale | locale}
- *
- * @returns Fallback locales
- *
- * @VueI18nSee [Fallbacking](../guide/essentials/fallback)
- *
- * @VueI18nGeneral
- */
-function fallbackWithLocaleChain(ctx, fallback, start) {
-  const startLocale = shared_isString(start) ? start : core_base_DEFAULT_LOCALE;
-  const context = ctx;
-  if (!context.__localeChainCache) {
-    context.__localeChainCache = new Map();
-  }
-  let chain = context.__localeChainCache.get(startLocale);
-  if (!chain) {
-    chain = [];
-    // first block defined by start
-    let block = [start];
-    // while any intervening block found
-    while (shared_isArray(block)) {
-      block = appendBlockToChain(chain, block, fallback);
-    }
-    // prettier-ignore
-    // last block defined by default
-    const defaults = shared_isArray(fallback) || !shared_isPlainObject(fallback) ? fallback : fallback['default'] ? fallback['default'] : null;
-    // convert defaults to array
-    block = shared_isString(defaults) ? [defaults] : defaults;
-    if (shared_isArray(block)) {
-      appendBlockToChain(chain, block, false);
-    }
-    context.__localeChainCache.set(startLocale, chain);
-  }
-  return chain;
-}
-function appendBlockToChain(chain, block, blocks) {
-  let follow = true;
-  for (let i = 0; i < block.length && shared_isBoolean(follow); i++) {
-    const locale = block[i];
-    if (shared_isString(locale)) {
-      follow = appendLocaleToChain(chain, block[i], blocks);
-    }
-  }
-  return follow;
-}
-function appendLocaleToChain(chain, locale, blocks) {
-  let follow;
-  const tokens = locale.split('-');
-  do {
-    const target = tokens.join('-');
-    follow = appendItemToChain(chain, target, blocks);
-    tokens.splice(-1, 1);
-  } while (tokens.length && follow === true);
-  return follow;
-}
-function appendItemToChain(chain, target, blocks) {
-  let follow = false;
-  if (!chain.includes(target)) {
-    follow = true;
-    if (target) {
-      follow = target[target.length - 1] !== '!';
-      const locale = target.replace(/!/g, '');
-      chain.push(locale);
-      if ((shared_isArray(blocks) || shared_isPlainObject(blocks)) && blocks[locale] // eslint-disable-line @typescript-eslint/no-explicit-any
-      ) {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        follow = blocks[locale];
-      }
-    }
-  }
-  return follow;
-}
-
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/**
- * Intlify core-base version
- * @internal
- */
-const VERSION = '9.9.1';
-const NOT_REOSLVED = -1;
-const core_base_DEFAULT_LOCALE = 'en-US';
-const MISSING_RESOLVE_VALUE = '';
-const capitalize = str => `${str.charAt(0).toLocaleUpperCase()}${str.substr(1)}`;
-function getDefaultLinkedModifiers() {
-  return {
-    upper: (val, type) => {
-      // prettier-ignore
-      return type === 'text' && shared_isString(val) ? val.toUpperCase() : type === 'vnode' && shared_isObject(val) && '__v_isVNode' in val ? val.children.toUpperCase() : val;
-    },
-    lower: (val, type) => {
-      // prettier-ignore
-      return type === 'text' && shared_isString(val) ? val.toLowerCase() : type === 'vnode' && shared_isObject(val) && '__v_isVNode' in val ? val.children.toLowerCase() : val;
-    },
-    capitalize: (val, type) => {
-      // prettier-ignore
-      return type === 'text' && shared_isString(val) ? capitalize(val) : type === 'vnode' && shared_isObject(val) && '__v_isVNode' in val ? capitalize(val.children) : val;
-    }
-  };
-}
-let _compiler;
-function registerMessageCompiler(compiler) {
-  _compiler = compiler;
-}
-let _resolver;
-/**
- * Register the message resolver
- *
- * @param resolver - A {@link MessageResolver} function
- *
- * @VueI18nGeneral
- */
-function registerMessageResolver(resolver) {
-  _resolver = resolver;
-}
-let _fallbacker;
-/**
- * Register the locale fallbacker
- *
- * @param fallbacker - A {@link LocaleFallbacker} function
- *
- * @VueI18nGeneral
- */
-function registerLocaleFallbacker(fallbacker) {
-  _fallbacker = fallbacker;
-}
-// Additional Meta for Intlify DevTools
-let _additionalMeta = null;
-/* #__NO_SIDE_EFFECTS__ */
-const setAdditionalMeta = meta => {
-  _additionalMeta = meta;
-};
-/* #__NO_SIDE_EFFECTS__ */
-const getAdditionalMeta = () => _additionalMeta;
-let _fallbackContext = null;
-const setFallbackContext = context => {
-  _fallbackContext = context;
-};
-const getFallbackContext = () => _fallbackContext;
-// ID for CoreContext
-let _cid = 0;
-function createCoreContext(options = {}) {
-  // setup options
-  const onWarn = shared_isFunction(options.onWarn) ? options.onWarn : shared_warn;
-  const version = shared_isString(options.version) ? options.version : VERSION;
-  const locale = shared_isString(options.locale) || shared_isFunction(options.locale) ? options.locale : core_base_DEFAULT_LOCALE;
-  const _locale = shared_isFunction(locale) ? core_base_DEFAULT_LOCALE : locale;
-  const fallbackLocale = shared_isArray(options.fallbackLocale) || shared_isPlainObject(options.fallbackLocale) || shared_isString(options.fallbackLocale) || options.fallbackLocale === false ? options.fallbackLocale : _locale;
-  const messages = shared_isPlainObject(options.messages) ? options.messages : {
-    [_locale]: {}
-  };
-  const datetimeFormats = shared_isPlainObject(options.datetimeFormats) ? options.datetimeFormats : {
-    [_locale]: {}
-  };
-  const numberFormats = shared_isPlainObject(options.numberFormats) ? options.numberFormats : {
-    [_locale]: {}
-  };
-  const modifiers = shared_assign({}, options.modifiers || {}, getDefaultLinkedModifiers());
-  const pluralRules = options.pluralRules || {};
-  const missing = shared_isFunction(options.missing) ? options.missing : null;
-  const missingWarn = shared_isBoolean(options.missingWarn) || shared_isRegExp(options.missingWarn) ? options.missingWarn : true;
-  const fallbackWarn = shared_isBoolean(options.fallbackWarn) || shared_isRegExp(options.fallbackWarn) ? options.fallbackWarn : true;
-  const fallbackFormat = !!options.fallbackFormat;
-  const unresolving = !!options.unresolving;
-  const postTranslation = shared_isFunction(options.postTranslation) ? options.postTranslation : null;
-  const processor = shared_isPlainObject(options.processor) ? options.processor : null;
-  const warnHtmlMessage = shared_isBoolean(options.warnHtmlMessage) ? options.warnHtmlMessage : true;
-  const escapeParameter = !!options.escapeParameter;
-  const messageCompiler = shared_isFunction(options.messageCompiler) ? options.messageCompiler : _compiler;
-  if (false) {}
-  const messageResolver = shared_isFunction(options.messageResolver) ? options.messageResolver : _resolver || resolveWithKeyValue;
-  const localeFallbacker = shared_isFunction(options.localeFallbacker) ? options.localeFallbacker : _fallbacker || fallbackWithSimple;
-  const fallbackContext = shared_isObject(options.fallbackContext) ? options.fallbackContext : undefined;
-  // setup internal options
-  const internalOptions = options;
-  const __datetimeFormatters = shared_isObject(internalOptions.__datetimeFormatters) ? internalOptions.__datetimeFormatters : new Map();
-  const __numberFormatters = shared_isObject(internalOptions.__numberFormatters) ? internalOptions.__numberFormatters : new Map();
-  const __meta = shared_isObject(internalOptions.__meta) ? internalOptions.__meta : {};
-  _cid++;
-  const context = {
-    version,
-    cid: _cid,
-    locale,
-    fallbackLocale,
-    messages,
-    modifiers,
-    pluralRules,
-    missing,
-    missingWarn,
-    fallbackWarn,
-    fallbackFormat,
-    unresolving,
-    postTranslation,
-    processor,
-    warnHtmlMessage,
-    escapeParameter,
-    messageCompiler,
-    messageResolver,
-    localeFallbacker,
-    fallbackContext,
-    onWarn,
-    __meta
-  };
-  {
-    context.datetimeFormats = datetimeFormats;
-    context.numberFormats = numberFormats;
-    context.__datetimeFormatters = __datetimeFormatters;
-    context.__numberFormatters = __numberFormatters;
-  }
-  // for vue-devtools timeline event
-  if (false) {}
-  // NOTE: experimental !!
-  if (false) {}
-  return context;
-}
-/** @internal */
-function isTranslateFallbackWarn(fallback, key) {
-  return fallback instanceof RegExp ? fallback.test(key) : fallback;
-}
-/** @internal */
-function isTranslateMissingWarn(missing, key) {
-  return missing instanceof RegExp ? missing.test(key) : missing;
-}
-/** @internal */
-function handleMissing(context, key, locale, missingWarn, type) {
-  const {
-    missing,
-    onWarn
-  } = context;
-  // for vue-devtools timeline event
-  if (false) {}
-  if (missing !== null) {
-    const ret = missing(context, locale, key, type);
-    return shared_isString(ret) ? ret : key;
-  } else {
-    if (false) {}
-    return key;
-  }
-}
-/** @internal */
-function updateFallbackLocale(ctx, locale, fallback) {
-  const context = ctx;
-  context.__localeChainCache = new Map();
-  ctx.localeFallbacker(ctx, fallback, locale);
-}
-/* eslint-enable @typescript-eslint/no-explicit-any */
-
-function core_base_format(ast) {
-  const msg = ctx => formatParts(ctx, ast);
-  return msg;
-}
-function formatParts(ctx, ast) {
-  const body = ast.b || ast.body;
-  if ((body.t || body.type) === 1 /* NodeTypes.Plural */) {
-    const plural = body;
-    const cases = plural.c || plural.cases;
-    return ctx.plural(cases.reduce((messages, c) => [...messages, formatMessageParts(ctx, c)], []));
-  } else {
-    return formatMessageParts(ctx, body);
-  }
-}
-function formatMessageParts(ctx, node) {
-  const _static = node.s || node.static;
-  if (_static) {
-    return ctx.type === 'text' ? _static : ctx.normalize([_static]);
-  } else {
-    const messages = (node.i || node.items).reduce((acm, c) => [...acm, formatMessagePart(ctx, c)], []);
-    return ctx.normalize(messages);
-  }
-}
-function formatMessagePart(ctx, node) {
-  const type = node.t || node.type;
-  switch (type) {
-    case 3 /* NodeTypes.Text */:
-      const text = node;
-      return text.v || text.value;
-    case 9 /* NodeTypes.Literal */:
-      const literal = node;
-      return literal.v || literal.value;
-    case 4 /* NodeTypes.Named */:
-      const named = node;
-      return ctx.interpolate(ctx.named(named.k || named.key));
-    case 5 /* NodeTypes.List */:
-      const list = node;
-      return ctx.interpolate(ctx.list(list.i != null ? list.i : list.index));
-    case 6 /* NodeTypes.Linked */:
-      const linked = node;
-      const modifier = linked.m || linked.modifier;
-      return ctx.linked(formatMessagePart(ctx, linked.k || linked.key), modifier ? formatMessagePart(ctx, modifier) : undefined, ctx.type);
-    case 7 /* NodeTypes.LinkedKey */:
-      const linkedKey = node;
-      return linkedKey.v || linkedKey.value;
-    case 8 /* NodeTypes.LinkedModifier */:
-      const linkedModifier = node;
-      return linkedModifier.v || linkedModifier.value;
-    default:
-      throw new Error(`unhandled node type on format message part: ${type}`);
-  }
-}
-const WARN_MESSAGE = (/* unused pure expression or super */ null && (`Detected HTML in '{source}' message. Recommend not using HTML messages to avoid XSS.`));
-function checkHtmlMessage(source, warnHtmlMessage) {
-  if (warnHtmlMessage && detectHtmlTag(source)) {
-    warn(format$1(WARN_MESSAGE, {
-      source
-    }));
-  }
-}
-const defaultOnCacheKey = message => message;
-let compileCache = Object.create(null);
-function clearCompileCache() {
-  compileCache = Object.create(null);
-}
-const core_base_isMessageAST = val => shared_isObject(val) && (val.t === 0 || val.type === 0) && ('b' in val || 'body' in val);
-function core_base_baseCompile(message, options = {}) {
-  // error detecting on compile
-  let detectError = false;
-  const onError = options.onError || defaultOnError;
-  options.onError = err => {
-    detectError = true;
-    onError(err);
-  };
-  // compile with mesasge-compiler
-  return {
-    ...baseCompile(message, options),
-    detectError
-  };
-}
-/* #__NO_SIDE_EFFECTS__ */
-const compileToFunction = (message, context) => {
-  if (!shared_isString(message)) {
-    throw createCoreError(CoreErrorCodes.NOT_SUPPORT_NON_STRING_MESSAGE);
-  }
-  {
-    // check HTML message
-    const warnHtmlMessage = shared_isBoolean(context.warnHtmlMessage) ? context.warnHtmlMessage : true;
-     false && 0;
-    // check caches
-    const onCacheKey = context.onCacheKey || defaultOnCacheKey;
-    const cacheKey = onCacheKey(message);
-    const cached = compileCache[cacheKey];
-    if (cached) {
-      return cached;
-    }
-    // compile
-    const {
-      code,
-      detectError
-    } = core_base_baseCompile(message, context);
-    // evaluate function
-    const msg = new Function(`return ${code}`)();
-    // if occurred compile error, don't cache
-    return !detectError ? compileCache[cacheKey] = msg : msg;
-  }
-};
-function compile(message, context) {
-  if (__INTLIFY_JIT_COMPILATION__ && !__INTLIFY_DROP_MESSAGE_COMPILER__ && shared_isString(message)) {
-    // check HTML message
-    const warnHtmlMessage = shared_isBoolean(context.warnHtmlMessage) ? context.warnHtmlMessage : true;
-     false && 0;
-    // check caches
-    const onCacheKey = context.onCacheKey || defaultOnCacheKey;
-    const cacheKey = onCacheKey(message);
-    const cached = compileCache[cacheKey];
-    if (cached) {
-      return cached;
-    }
-    // compile with JIT mode
-    const {
-      ast,
-      detectError
-    } = core_base_baseCompile(message, {
-      ...context,
-      location: "production" !== 'production',
-      jit: true
-    });
-    // compose message function from AST
-    const msg = core_base_format(ast);
-    // if occurred compile error, don't cache
-    return !detectError ? compileCache[cacheKey] = msg : msg;
-  } else {
-    if (false) {}
-    // AST case (passed from bundler)
-    const cacheKey = message.cacheKey;
-    if (cacheKey) {
-      const cached = compileCache[cacheKey];
-      if (cached) {
-        return cached;
-      }
-      // compose message function from message (AST)
-      return compileCache[cacheKey] = core_base_format(message);
-    } else {
-      return core_base_format(message);
-    }
-  }
-}
-const NOOP_MESSAGE_FUNCTION = () => '';
-const isMessageFunction = val => shared_isFunction(val);
-// implementation of `translate` function
-function translate(context, ...args) {
-  const {
-    fallbackFormat,
-    postTranslation,
-    unresolving,
-    messageCompiler,
-    fallbackLocale,
-    messages
-  } = context;
-  const [key, options] = parseTranslateArgs(...args);
-  const missingWarn = shared_isBoolean(options.missingWarn) ? options.missingWarn : context.missingWarn;
-  const fallbackWarn = shared_isBoolean(options.fallbackWarn) ? options.fallbackWarn : context.fallbackWarn;
-  const escapeParameter = shared_isBoolean(options.escapeParameter) ? options.escapeParameter : context.escapeParameter;
-  const resolvedMessage = !!options.resolvedMessage;
-  // prettier-ignore
-  const defaultMsgOrKey = shared_isString(options.default) || shared_isBoolean(options.default) // default by function option
-  ? !shared_isBoolean(options.default) ? options.default : !messageCompiler ? () => key : key : fallbackFormat // default by `fallbackFormat` option
-  ? !messageCompiler ? () => key : key : '';
-  const enableDefaultMsg = fallbackFormat || defaultMsgOrKey !== '';
-  const locale = getLocale(context, options);
-  // escape params
-  escapeParameter && escapeParams(options);
-  // resolve message format
-  // eslint-disable-next-line prefer-const
-  let [formatScope, targetLocale, message] = !resolvedMessage ? resolveMessageFormat(context, key, locale, fallbackLocale, fallbackWarn, missingWarn) : [key, locale, messages[locale] || {}];
-  // NOTE:
-  //  Fix to work around `ssrTransfrom` bug in Vite.
-  //  https://github.com/vitejs/vite/issues/4306
-  //  To get around this, use temporary variables.
-  //  https://github.com/nuxt/framework/issues/1461#issuecomment-954606243
-  let format = formatScope;
-  // if you use default message, set it as message format!
-  let cacheBaseKey = key;
-  if (!resolvedMessage && !(shared_isString(format) || core_base_isMessageAST(format) || isMessageFunction(format))) {
-    if (enableDefaultMsg) {
-      format = defaultMsgOrKey;
-      cacheBaseKey = format;
-    }
-  }
-  // checking message format and target locale
-  if (!resolvedMessage && (!(shared_isString(format) || core_base_isMessageAST(format) || isMessageFunction(format)) || !shared_isString(targetLocale))) {
-    return unresolving ? NOT_REOSLVED : key;
-  }
-  // TODO: refactor
-  if (false) {}
-  // setup compile error detecting
-  let occurred = false;
-  const onError = () => {
-    occurred = true;
-  };
-  // compile message format
-  const msg = !isMessageFunction(format) ? compileMessageFormat(context, key, targetLocale, format, cacheBaseKey, onError) : format;
-  // if occurred compile error, return the message format
-  if (occurred) {
-    return format;
-  }
-  // evaluate message with context
-  const ctxOptions = getMessageContextOptions(context, targetLocale, message, options);
-  const msgContext = createMessageContext(ctxOptions);
-  const messaged = evaluateMessage(context, msg, msgContext);
-  // if use post translation option, proceed it with handler
-  const ret = postTranslation ? postTranslation(messaged, key) : messaged;
-  // NOTE: experimental !!
-  if (false) {}
-  return ret;
-}
-function escapeParams(options) {
-  if (shared_isArray(options.list)) {
-    options.list = options.list.map(item => shared_isString(item) ? escapeHtml(item) : item);
-  } else if (shared_isObject(options.named)) {
-    Object.keys(options.named).forEach(key => {
-      if (shared_isString(options.named[key])) {
-        options.named[key] = escapeHtml(options.named[key]);
-      }
-    });
-  }
-}
-function resolveMessageFormat(context, key, locale, fallbackLocale, fallbackWarn, missingWarn) {
-  const {
-    messages,
-    onWarn,
-    messageResolver: resolveValue,
-    localeFallbacker
-  } = context;
-  const locales = localeFallbacker(context, fallbackLocale, locale); // eslint-disable-line @typescript-eslint/no-explicit-any
-  let message = {};
-  let targetLocale;
-  let format = null;
-  let from = locale;
-  let to = null;
-  const type = 'translate';
-  for (let i = 0; i < locales.length; i++) {
-    targetLocale = to = locales[i];
-    if (false) {}
-    // for vue-devtools timeline event
-    if (false) {}
-    message = messages[targetLocale] || {};
-    // for vue-devtools timeline event
-    let start = null;
-    let startTag;
-    let endTag;
-    if (false) {}
-    if ((format = resolveValue(message, key)) === null) {
-      // if null, resolve with object key path
-      format = message[key]; // eslint-disable-line @typescript-eslint/no-explicit-any
-    }
-    // for vue-devtools timeline event
-    if (false) {}
-    if (shared_isString(format) || core_base_isMessageAST(format) || isMessageFunction(format)) {
-      break;
-    }
-    const missingRet = handleMissing(context,
-    // eslint-disable-line @typescript-eslint/no-explicit-any
-    key, targetLocale, missingWarn, type);
-    if (missingRet !== key) {
-      format = missingRet;
-    }
-    from = to;
-  }
-  return [format, targetLocale, message];
-}
-function compileMessageFormat(context, key, targetLocale, format, cacheBaseKey, onError) {
-  const {
-    messageCompiler,
-    warnHtmlMessage
-  } = context;
-  if (isMessageFunction(format)) {
-    const msg = format;
-    msg.locale = msg.locale || targetLocale;
-    msg.key = msg.key || key;
-    return msg;
-  }
-  if (messageCompiler == null) {
-    const msg = () => format;
-    msg.locale = targetLocale;
-    msg.key = key;
-    return msg;
-  }
-  // for vue-devtools timeline event
-  let start = null;
-  let startTag;
-  let endTag;
-  if (false) {}
-  const msg = messageCompiler(format, getCompileContext(context, targetLocale, cacheBaseKey, format, warnHtmlMessage, onError));
-  // for vue-devtools timeline event
-  if (false) {}
-  msg.locale = targetLocale;
-  msg.key = key;
-  msg.source = format;
-  return msg;
-}
-function evaluateMessage(context, msg, msgCtx) {
-  // for vue-devtools timeline event
-  let start = null;
-  let startTag;
-  let endTag;
-  if (false) {}
-  const messaged = msg(msgCtx);
-  // for vue-devtools timeline event
-  if (false) {}
-  return messaged;
-}
-/** @internal */
-function parseTranslateArgs(...args) {
-  const [arg1, arg2, arg3] = args;
-  const options = {};
-  if (!shared_isString(arg1) && !shared_isNumber(arg1) && !isMessageFunction(arg1) && !core_base_isMessageAST(arg1)) {
-    throw createCoreError(CoreErrorCodes.INVALID_ARGUMENT);
-  }
-  // prettier-ignore
-  const key = shared_isNumber(arg1) ? String(arg1) : isMessageFunction(arg1) ? arg1 : arg1;
-  if (shared_isNumber(arg2)) {
-    options.plural = arg2;
-  } else if (shared_isString(arg2)) {
-    options.default = arg2;
-  } else if (shared_isPlainObject(arg2) && !isEmptyObject(arg2)) {
-    options.named = arg2;
-  } else if (shared_isArray(arg2)) {
-    options.list = arg2;
-  }
-  if (shared_isNumber(arg3)) {
-    options.plural = arg3;
-  } else if (shared_isString(arg3)) {
-    options.default = arg3;
-  } else if (shared_isPlainObject(arg3)) {
-    shared_assign(options, arg3);
-  }
-  return [key, options];
-}
-function getCompileContext(context, locale, key, source, warnHtmlMessage, onError) {
-  return {
-    locale,
-    key,
-    warnHtmlMessage,
-    onError: err => {
-      onError && onError(err);
-      if (false) {} else {
-        throw err;
-      }
-    },
-    onCacheKey: source => generateFormatCacheKey(locale, key, source)
-  };
-}
-function getSourceForCodeFrame(source) {
-  if (isString(source)) {
-    return source;
-  } else {
-    if (source.loc && source.loc.source) {
-      return source.loc.source;
-    }
-  }
-}
-function getMessageContextOptions(context, locale, message, options) {
-  const {
-    modifiers,
-    pluralRules,
-    messageResolver: resolveValue,
-    fallbackLocale,
-    fallbackWarn,
-    missingWarn,
-    fallbackContext
-  } = context;
-  const resolveMessage = key => {
-    let val = resolveValue(message, key);
-    // fallback to root context
-    if (val == null && fallbackContext) {
-      const [,, message] = resolveMessageFormat(fallbackContext, key, locale, fallbackLocale, fallbackWarn, missingWarn);
-      val = resolveValue(message, key);
-    }
-    if (shared_isString(val) || core_base_isMessageAST(val)) {
-      let occurred = false;
-      const onError = () => {
-        occurred = true;
-      };
-      const msg = compileMessageFormat(context, key, locale, val, key, onError);
-      return !occurred ? msg : NOOP_MESSAGE_FUNCTION;
-    } else if (isMessageFunction(val)) {
-      return val;
-    } else {
-      // TODO: should be implemented warning message
-      return NOOP_MESSAGE_FUNCTION;
-    }
-  };
-  const ctxOptions = {
-    locale,
-    modifiers,
-    pluralRules,
-    messages: resolveMessage
-  };
-  if (context.processor) {
-    ctxOptions.processor = context.processor;
-  }
-  if (options.list) {
-    ctxOptions.list = options.list;
-  }
-  if (options.named) {
-    ctxOptions.named = options.named;
-  }
-  if (shared_isNumber(options.plural)) {
-    ctxOptions.pluralIndex = options.plural;
-  }
-  return ctxOptions;
-}
-const intlDefined = typeof Intl !== 'undefined';
-const Availabilities = {
-  dateTimeFormat: intlDefined && typeof Intl.DateTimeFormat !== 'undefined',
-  numberFormat: intlDefined && typeof Intl.NumberFormat !== 'undefined'
-};
-
-// implementation of `datetime` function
-function datetime(context, ...args) {
-  const {
-    datetimeFormats,
-    unresolving,
-    fallbackLocale,
-    onWarn,
-    localeFallbacker
-  } = context;
-  const {
-    __datetimeFormatters
-  } = context;
-  if (false) {}
-  const [key, value, options, overrides] = parseDateTimeArgs(...args);
-  const missingWarn = shared_isBoolean(options.missingWarn) ? options.missingWarn : context.missingWarn;
-  const fallbackWarn = shared_isBoolean(options.fallbackWarn) ? options.fallbackWarn : context.fallbackWarn;
-  const part = !!options.part;
-  const locale = getLocale(context, options);
-  const locales = localeFallbacker(context,
-  // eslint-disable-line @typescript-eslint/no-explicit-any
-  fallbackLocale, locale);
-  if (!shared_isString(key) || key === '') {
-    return new Intl.DateTimeFormat(locale, overrides).format(value);
-  }
-  // resolve format
-  let datetimeFormat = {};
-  let targetLocale;
-  let format = null;
-  let from = locale;
-  let to = null;
-  const type = 'datetime format';
-  for (let i = 0; i < locales.length; i++) {
-    targetLocale = to = locales[i];
-    if (false) {}
-    // for vue-devtools timeline event
-    if (false) {}
-    datetimeFormat = datetimeFormats[targetLocale] || {};
-    format = datetimeFormat[key];
-    if (shared_isPlainObject(format)) break;
-    handleMissing(context, key, targetLocale, missingWarn, type); // eslint-disable-line @typescript-eslint/no-explicit-any
-    from = to;
-  }
-  // checking format and target locale
-  if (!shared_isPlainObject(format) || !shared_isString(targetLocale)) {
-    return unresolving ? NOT_REOSLVED : key;
-  }
-  let id = `${targetLocale}__${key}`;
-  if (!isEmptyObject(overrides)) {
-    id = `${id}__${JSON.stringify(overrides)}`;
-  }
-  let formatter = __datetimeFormatters.get(id);
-  if (!formatter) {
-    formatter = new Intl.DateTimeFormat(targetLocale, shared_assign({}, format, overrides));
-    __datetimeFormatters.set(id, formatter);
-  }
-  return !part ? formatter.format(value) : formatter.formatToParts(value);
-}
-/** @internal */
-const DATETIME_FORMAT_OPTIONS_KEYS = ['localeMatcher', 'weekday', 'era', 'year', 'month', 'day', 'hour', 'minute', 'second', 'timeZoneName', 'formatMatcher', 'hour12', 'timeZone', 'dateStyle', 'timeStyle', 'calendar', 'dayPeriod', 'numberingSystem', 'hourCycle', 'fractionalSecondDigits'];
-/** @internal */
-function parseDateTimeArgs(...args) {
-  const [arg1, arg2, arg3, arg4] = args;
-  const options = {};
-  let overrides = {};
-  let value;
-  if (shared_isString(arg1)) {
-    // Only allow ISO strings - other date formats are often supported,
-    // but may cause different results in different browsers.
-    const matches = arg1.match(/(\d{4}-\d{2}-\d{2})(T|\s)?(.*)/);
-    if (!matches) {
-      throw createCoreError(CoreErrorCodes.INVALID_ISO_DATE_ARGUMENT);
-    }
-    // Some browsers can not parse the iso datetime separated by space,
-    // this is a compromise solution by replace the 'T'/' ' with 'T'
-    const dateTime = matches[3] ? matches[3].trim().startsWith('T') ? `${matches[1].trim()}${matches[3].trim()}` : `${matches[1].trim()}T${matches[3].trim()}` : matches[1].trim();
-    value = new Date(dateTime);
-    try {
-      // This will fail if the date is not valid
-      value.toISOString();
-    } catch (e) {
-      throw createCoreError(CoreErrorCodes.INVALID_ISO_DATE_ARGUMENT);
-    }
-  } else if (isDate(arg1)) {
-    if (isNaN(arg1.getTime())) {
-      throw createCoreError(CoreErrorCodes.INVALID_DATE_ARGUMENT);
-    }
-    value = arg1;
-  } else if (shared_isNumber(arg1)) {
-    value = arg1;
-  } else {
-    throw createCoreError(CoreErrorCodes.INVALID_ARGUMENT);
-  }
-  if (shared_isString(arg2)) {
-    options.key = arg2;
-  } else if (shared_isPlainObject(arg2)) {
-    Object.keys(arg2).forEach(key => {
-      if (DATETIME_FORMAT_OPTIONS_KEYS.includes(key)) {
-        overrides[key] = arg2[key];
-      } else {
-        options[key] = arg2[key];
-      }
-    });
-  }
-  if (shared_isString(arg3)) {
-    options.locale = arg3;
-  } else if (shared_isPlainObject(arg3)) {
-    overrides = arg3;
-  }
-  if (shared_isPlainObject(arg4)) {
-    overrides = arg4;
-  }
-  return [options.key || '', value, options, overrides];
-}
-/** @internal */
-function clearDateTimeFormat(ctx, locale, format) {
-  const context = ctx;
-  for (const key in format) {
-    const id = `${locale}__${key}`;
-    if (!context.__datetimeFormatters.has(id)) {
-      continue;
-    }
-    context.__datetimeFormatters.delete(id);
-  }
-}
-
-// implementation of `number` function
-function number(context, ...args) {
-  const {
-    numberFormats,
-    unresolving,
-    fallbackLocale,
-    onWarn,
-    localeFallbacker
-  } = context;
-  const {
-    __numberFormatters
-  } = context;
-  if (false) {}
-  const [key, value, options, overrides] = parseNumberArgs(...args);
-  const missingWarn = shared_isBoolean(options.missingWarn) ? options.missingWarn : context.missingWarn;
-  const fallbackWarn = shared_isBoolean(options.fallbackWarn) ? options.fallbackWarn : context.fallbackWarn;
-  const part = !!options.part;
-  const locale = getLocale(context, options);
-  const locales = localeFallbacker(context,
-  // eslint-disable-line @typescript-eslint/no-explicit-any
-  fallbackLocale, locale);
-  if (!shared_isString(key) || key === '') {
-    return new Intl.NumberFormat(locale, overrides).format(value);
-  }
-  // resolve format
-  let numberFormat = {};
-  let targetLocale;
-  let format = null;
-  let from = locale;
-  let to = null;
-  const type = 'number format';
-  for (let i = 0; i < locales.length; i++) {
-    targetLocale = to = locales[i];
-    if (false) {}
-    // for vue-devtools timeline event
-    if (false) {}
-    numberFormat = numberFormats[targetLocale] || {};
-    format = numberFormat[key];
-    if (shared_isPlainObject(format)) break;
-    handleMissing(context, key, targetLocale, missingWarn, type); // eslint-disable-line @typescript-eslint/no-explicit-any
-    from = to;
-  }
-  // checking format and target locale
-  if (!shared_isPlainObject(format) || !shared_isString(targetLocale)) {
-    return unresolving ? NOT_REOSLVED : key;
-  }
-  let id = `${targetLocale}__${key}`;
-  if (!isEmptyObject(overrides)) {
-    id = `${id}__${JSON.stringify(overrides)}`;
-  }
-  let formatter = __numberFormatters.get(id);
-  if (!formatter) {
-    formatter = new Intl.NumberFormat(targetLocale, shared_assign({}, format, overrides));
-    __numberFormatters.set(id, formatter);
-  }
-  return !part ? formatter.format(value) : formatter.formatToParts(value);
-}
-/** @internal */
-const NUMBER_FORMAT_OPTIONS_KEYS = ['localeMatcher', 'style', 'currency', 'currencyDisplay', 'currencySign', 'useGrouping', 'minimumIntegerDigits', 'minimumFractionDigits', 'maximumFractionDigits', 'minimumSignificantDigits', 'maximumSignificantDigits', 'compactDisplay', 'notation', 'signDisplay', 'unit', 'unitDisplay', 'roundingMode', 'roundingPriority', 'roundingIncrement', 'trailingZeroDisplay'];
-/** @internal */
-function parseNumberArgs(...args) {
-  const [arg1, arg2, arg3, arg4] = args;
-  const options = {};
-  let overrides = {};
-  if (!shared_isNumber(arg1)) {
-    throw createCoreError(CoreErrorCodes.INVALID_ARGUMENT);
-  }
-  const value = arg1;
-  if (shared_isString(arg2)) {
-    options.key = arg2;
-  } else if (shared_isPlainObject(arg2)) {
-    Object.keys(arg2).forEach(key => {
-      if (NUMBER_FORMAT_OPTIONS_KEYS.includes(key)) {
-        overrides[key] = arg2[key];
-      } else {
-        options[key] = arg2[key];
-      }
-    });
-  }
-  if (shared_isString(arg3)) {
-    options.locale = arg3;
-  } else if (shared_isPlainObject(arg3)) {
-    overrides = arg3;
-  }
-  if (shared_isPlainObject(arg4)) {
-    overrides = arg4;
-  }
-  return [options.key || '', value, options, overrides];
-}
-/** @internal */
-function clearNumberFormat(ctx, locale, format) {
-  const context = ctx;
-  for (const key in format) {
-    const id = `${locale}__${key}`;
-    if (!context.__numberFormatters.has(id)) {
-      continue;
-    }
-    context.__numberFormatters.delete(id);
-  }
-}
-{
-  initFeatureFlags();
-}
-
-;// CONCATENATED MODULE: ./node_modules/vue-i18n/dist/vue-i18n.mjs
-
-/*!
-  * vue-i18n v9.9.1
-  * (c) 2024 kazuya kawaguchi
-  * Released under the MIT License.
-  */
-
-
-
-
-
-/**
- * Vue I18n Version
- *
- * @remarks
- * Semver format. Same format as the package.json `version` field.
- *
- * @VueI18nGeneral
- */
-const vue_i18n_VERSION = '9.9.1';
-/**
- * This is only called in esm-bundler builds.
- * istanbul-ignore-next
- */
-function vue_i18n_initFeatureFlags() {
-  if (false) {}
-  if (false) {}
-  if (typeof __INTLIFY_JIT_COMPILATION__ !== 'boolean') {
-    getGlobalThis().__INTLIFY_JIT_COMPILATION__ = false;
-  }
-  if (typeof __INTLIFY_DROP_MESSAGE_COMPILER__ !== 'boolean') {
-    getGlobalThis().__INTLIFY_DROP_MESSAGE_COMPILER__ = false;
-  }
-  if (false) {}
-}
-const code$1 = CoreWarnCodes.__EXTEND_POINT__;
-const inc$1 = incrementer(code$1);
-const I18nWarnCodes = {
-  FALLBACK_TO_ROOT: code$1,
-  NOT_SUPPORTED_PRESERVE: inc$1(),
-  NOT_SUPPORTED_FORMATTER: inc$1(),
-  NOT_SUPPORTED_PRESERVE_DIRECTIVE: inc$1(),
-  NOT_SUPPORTED_GET_CHOICE_INDEX: inc$1(),
-  COMPONENT_NAME_LEGACY_COMPATIBLE: inc$1(),
-  NOT_FOUND_PARENT_SCOPE: inc$1(),
-  IGNORE_OBJ_FLATTEN: inc$1(),
-  NOTICE_DROP_ALLOW_COMPOSITION: inc$1() // 17
-};
-const vue_i18n_warnMessages = {
-  [I18nWarnCodes.FALLBACK_TO_ROOT]: `Fall back to {type} '{key}' with root locale.`,
-  [I18nWarnCodes.NOT_SUPPORTED_PRESERVE]: `Not supported 'preserve'.`,
-  [I18nWarnCodes.NOT_SUPPORTED_FORMATTER]: `Not supported 'formatter'.`,
-  [I18nWarnCodes.NOT_SUPPORTED_PRESERVE_DIRECTIVE]: `Not supported 'preserveDirectiveContent'.`,
-  [I18nWarnCodes.NOT_SUPPORTED_GET_CHOICE_INDEX]: `Not supported 'getChoiceIndex'.`,
-  [I18nWarnCodes.COMPONENT_NAME_LEGACY_COMPATIBLE]: `Component name legacy compatible: '{name}' -> 'i18n'`,
-  [I18nWarnCodes.NOT_FOUND_PARENT_SCOPE]: `Not found parent scope. use the global scope.`,
-  [I18nWarnCodes.IGNORE_OBJ_FLATTEN]: `Ignore object flatten: '{key}' key has an string value`,
-  [I18nWarnCodes.NOTICE_DROP_ALLOW_COMPOSITION]: `'allowComposition' option will be dropped in the next major version. For more information, please see 👉 https://tinyurl.com/2p97mcze`
-};
-function vue_i18n_getWarnMessage(code, ...args) {
-  return format(vue_i18n_warnMessages[code], ...args);
-}
-const vue_i18n_code = CoreErrorCodes.__EXTEND_POINT__;
-const vue_i18n_inc = incrementer(vue_i18n_code);
-const I18nErrorCodes = {
-  // composer module errors
-  UNEXPECTED_RETURN_TYPE: vue_i18n_code,
-  // legacy module errors
-  INVALID_ARGUMENT: vue_i18n_inc(),
-  // i18n module errors
-  MUST_BE_CALL_SETUP_TOP: vue_i18n_inc(),
-  NOT_INSTALLED: vue_i18n_inc(),
-  NOT_AVAILABLE_IN_LEGACY_MODE: vue_i18n_inc(),
-  // directive module errors
-  REQUIRED_VALUE: vue_i18n_inc(),
-  INVALID_VALUE: vue_i18n_inc(),
-  // vue-devtools errors
-  CANNOT_SETUP_VUE_DEVTOOLS_PLUGIN: vue_i18n_inc(),
-  NOT_INSTALLED_WITH_PROVIDE: vue_i18n_inc(),
-  // unexpected error
-  UNEXPECTED_ERROR: vue_i18n_inc(),
-  // not compatible legacy vue-i18n constructor
-  NOT_COMPATIBLE_LEGACY_VUE_I18N: vue_i18n_inc(),
-  // bridge support vue 2.x only
-  BRIDGE_SUPPORT_VUE_2_ONLY: vue_i18n_inc(),
-  // need to define `i18n` option in `allowComposition: true` and `useScope: 'local' at `useI18n``
-  MUST_DEFINE_I18N_OPTION_IN_ALLOW_COMPOSITION: vue_i18n_inc(),
-  // Not available Compostion API in Legacy API mode. Please make sure that the legacy API mode is working properly
-  NOT_AVAILABLE_COMPOSITION_IN_LEGACY: vue_i18n_inc(),
-  // for enhancement
-  __EXTEND_POINT__: vue_i18n_inc() // 40
-};
-function createI18nError(code, ...args) {
-  return createCompileError(code, null,  false ? 0 : undefined);
-}
-const vue_i18n_errorMessages = {
-  [I18nErrorCodes.UNEXPECTED_RETURN_TYPE]: 'Unexpected return type in composer',
-  [I18nErrorCodes.INVALID_ARGUMENT]: 'Invalid argument',
-  [I18nErrorCodes.MUST_BE_CALL_SETUP_TOP]: 'Must be called at the top of a `setup` function',
-  [I18nErrorCodes.NOT_INSTALLED]: 'Need to install with `app.use` function',
-  [I18nErrorCodes.UNEXPECTED_ERROR]: 'Unexpected error',
-  [I18nErrorCodes.NOT_AVAILABLE_IN_LEGACY_MODE]: 'Not available in legacy mode',
-  [I18nErrorCodes.REQUIRED_VALUE]: `Required in value: {0}`,
-  [I18nErrorCodes.INVALID_VALUE]: `Invalid value`,
-  [I18nErrorCodes.CANNOT_SETUP_VUE_DEVTOOLS_PLUGIN]: `Cannot setup vue-devtools plugin`,
-  [I18nErrorCodes.NOT_INSTALLED_WITH_PROVIDE]: 'Need to install with `provide` function',
-  [I18nErrorCodes.NOT_COMPATIBLE_LEGACY_VUE_I18N]: 'Not compatible legacy VueI18n.',
-  [I18nErrorCodes.BRIDGE_SUPPORT_VUE_2_ONLY]: 'vue-i18n-bridge support Vue 2.x only',
-  [I18nErrorCodes.MUST_DEFINE_I18N_OPTION_IN_ALLOW_COMPOSITION]: 'Must define ‘i18n’ option or custom block in Composition API with using local scope in Legacy API mode',
-  [I18nErrorCodes.NOT_AVAILABLE_COMPOSITION_IN_LEGACY]: 'Not available Compostion API in Legacy API mode. Please make sure that the legacy API mode is working properly'
-};
-const TranslateVNodeSymbol = /* #__PURE__*/shared_makeSymbol('__translateVNode');
-const DatetimePartsSymbol = /* #__PURE__*/shared_makeSymbol('__datetimeParts');
-const NumberPartsSymbol = /* #__PURE__*/shared_makeSymbol('__numberParts');
-const EnableEmitter = /* #__PURE__*/(/* unused pure expression or super */ null && (makeSymbol('__enableEmitter')));
-const DisableEmitter = /* #__PURE__*/(/* unused pure expression or super */ null && (makeSymbol('__disableEmitter')));
-const SetPluralRulesSymbol = shared_makeSymbol('__setPluralRules');
-shared_makeSymbol('__intlifyMeta');
-const InejctWithOptionSymbol = /* #__PURE__*/shared_makeSymbol('__injectWithOption');
-const DisposeSymbol = /* #__PURE__*/shared_makeSymbol('__dispose');
-const __VUE_I18N_BRIDGE__ = '__VUE_I18N_BRIDGE__';
-
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/**
- * Transform flat json in obj to normal json in obj
- */
-function handleFlatJson(obj) {
-  // check obj
-  if (!shared_isObject(obj)) {
-    return obj;
-  }
-  for (const key in obj) {
-    // check key
-    if (!hasOwn(obj, key)) {
-      continue;
-    }
-    // handle for normal json
-    if (!key.includes('.')) {
-      // recursive process value if value is also a object
-      if (shared_isObject(obj[key])) {
-        handleFlatJson(obj[key]);
-      }
-    }
-    // handle for flat json, transform to normal json
-    else {
-      // go to the last object
-      const subKeys = key.split('.');
-      const lastIndex = subKeys.length - 1;
-      let currentObj = obj;
-      let hasStringValue = false;
-      for (let i = 0; i < lastIndex; i++) {
-        if (!(subKeys[i] in currentObj)) {
-          currentObj[subKeys[i]] = {};
-        }
-        if (!shared_isObject(currentObj[subKeys[i]])) {
-           false && 0;
-          hasStringValue = true;
-          break;
-        }
-        currentObj = currentObj[subKeys[i]];
-      }
-      // update last object value, delete old property
-      if (!hasStringValue) {
-        currentObj[subKeys[lastIndex]] = obj[key];
-        delete obj[key];
-      }
-      // recursive process value if value is also a object
-      if (shared_isObject(currentObj[subKeys[lastIndex]])) {
-        handleFlatJson(currentObj[subKeys[lastIndex]]);
-      }
-    }
-  }
-  return obj;
-}
-function getLocaleMessages(locale, options) {
-  const {
-    messages,
-    __i18n,
-    messageResolver,
-    flatJson
-  } = options;
-  // prettier-ignore
-  const ret = shared_isPlainObject(messages) ? messages : shared_isArray(__i18n) ? {} : {
-    [locale]: {}
-  };
-  // merge locale messages of i18n custom block
-  if (shared_isArray(__i18n)) {
-    __i18n.forEach(custom => {
-      if ('locale' in custom && 'resource' in custom) {
-        const {
-          locale,
-          resource
-        } = custom;
-        if (locale) {
-          ret[locale] = ret[locale] || {};
-          shared_deepCopy(resource, ret[locale]);
-        } else {
-          shared_deepCopy(resource, ret);
-        }
-      } else {
-        shared_isString(custom) && shared_deepCopy(JSON.parse(custom), ret);
-      }
-    });
-  }
-  // handle messages for flat json
-  if (messageResolver == null && flatJson) {
-    for (const key in ret) {
-      if (hasOwn(ret, key)) {
-        handleFlatJson(ret[key]);
-      }
-    }
-  }
-  return ret;
-}
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function getComponentOptions(instance) {
-  return instance.type;
-}
-function adjustI18nResources(gl, options, componentOptions // eslint-disable-line @typescript-eslint/no-explicit-any
-) {
-  let messages = shared_isObject(options.messages) ? options.messages : {};
-  if ('__i18nGlobal' in componentOptions) {
-    messages = getLocaleMessages(gl.locale.value, {
-      messages,
-      __i18n: componentOptions.__i18nGlobal
-    });
-  }
-  // merge locale messages
-  const locales = Object.keys(messages);
-  if (locales.length) {
-    locales.forEach(locale => {
-      gl.mergeLocaleMessage(locale, messages[locale]);
-    });
-  }
-  {
-    // merge datetime formats
-    if (shared_isObject(options.datetimeFormats)) {
-      const locales = Object.keys(options.datetimeFormats);
-      if (locales.length) {
-        locales.forEach(locale => {
-          gl.mergeDateTimeFormat(locale, options.datetimeFormats[locale]);
-        });
-      }
-    }
-    // merge number formats
-    if (shared_isObject(options.numberFormats)) {
-      const locales = Object.keys(options.numberFormats);
-      if (locales.length) {
-        locales.forEach(locale => {
-          gl.mergeNumberFormat(locale, options.numberFormats[locale]);
-        });
-      }
-    }
-  }
-}
-function createTextNode(key) {
-  return (0,runtime_core_esm_bundler/* createVNode */.K2)(runtime_core_esm_bundler/* Text */.a, null, key, 0);
-}
-/* eslint-enable @typescript-eslint/no-explicit-any */
-
-/* eslint-disable @typescript-eslint/no-explicit-any */
-// extend VNode interface
-const DEVTOOLS_META = '__INTLIFY_META__';
-const NOOP_RETURN_ARRAY = () => [];
-const NOOP_RETURN_FALSE = () => false;
-let composerID = 0;
-function defineCoreMissingHandler(missing) {
-  return (ctx, locale, key, type) => {
-    return missing(locale, key, (0,runtime_core_esm_bundler/* getCurrentInstance */._S)() || undefined, type);
-  };
-}
-// for Intlify DevTools
-/* #__NO_SIDE_EFFECTS__ */
-const getMetaInfo = () => {
-  const instance = getCurrentInstance();
-  let meta = null; // eslint-disable-line @typescript-eslint/no-explicit-any
-  return instance && (meta = getComponentOptions(instance)[DEVTOOLS_META]) ? {
-    [DEVTOOLS_META]: meta
-  } // eslint-disable-line @typescript-eslint/no-explicit-any
-  : null;
-};
-/**
- * Create composer interface factory
- *
- * @internal
- */
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-function createComposer(options = {}, VueI18nLegacy) {
-  const {
-    __root,
-    __injectWithOption
-  } = options;
-  const _isGlobal = __root === undefined;
-  const flatJson = options.flatJson;
-  const _ref = inBrowser ? reactivity_esm_bundler/* ref */.IL : reactivity_esm_bundler/* shallowRef */.kl;
-  let _inheritLocale = shared_isBoolean(options.inheritLocale) ? options.inheritLocale : true;
-  const _locale = _ref(
-  // prettier-ignore
-  __root && _inheritLocale ? __root.locale.value : shared_isString(options.locale) ? options.locale : core_base_DEFAULT_LOCALE);
-  const _fallbackLocale = _ref(
-  // prettier-ignore
-  __root && _inheritLocale ? __root.fallbackLocale.value : shared_isString(options.fallbackLocale) || shared_isArray(options.fallbackLocale) || shared_isPlainObject(options.fallbackLocale) || options.fallbackLocale === false ? options.fallbackLocale : _locale.value);
-  const _messages = _ref(getLocaleMessages(_locale.value, options));
-  // prettier-ignore
-  const _datetimeFormats = _ref(shared_isPlainObject(options.datetimeFormats) ? options.datetimeFormats : {
-    [_locale.value]: {}
-  });
-  // prettier-ignore
-  const _numberFormats = _ref(shared_isPlainObject(options.numberFormats) ? options.numberFormats : {
-    [_locale.value]: {}
-  });
-  // warning suppress options
-  // prettier-ignore
-  let _missingWarn = __root ? __root.missingWarn : shared_isBoolean(options.missingWarn) || shared_isRegExp(options.missingWarn) ? options.missingWarn : true;
-  // prettier-ignore
-  let _fallbackWarn = __root ? __root.fallbackWarn : shared_isBoolean(options.fallbackWarn) || shared_isRegExp(options.fallbackWarn) ? options.fallbackWarn : true;
-  // prettier-ignore
-  let _fallbackRoot = __root ? __root.fallbackRoot : shared_isBoolean(options.fallbackRoot) ? options.fallbackRoot : true;
-  // configure fall back to root
-  let _fallbackFormat = !!options.fallbackFormat;
-  // runtime missing
-  let _missing = shared_isFunction(options.missing) ? options.missing : null;
-  let _runtimeMissing = shared_isFunction(options.missing) ? defineCoreMissingHandler(options.missing) : null;
-  // postTranslation handler
-  let _postTranslation = shared_isFunction(options.postTranslation) ? options.postTranslation : null;
-  // prettier-ignore
-  let _warnHtmlMessage = __root ? __root.warnHtmlMessage : shared_isBoolean(options.warnHtmlMessage) ? options.warnHtmlMessage : true;
-  let _escapeParameter = !!options.escapeParameter;
-  // custom linked modifiers
-  // prettier-ignore
-  const _modifiers = __root ? __root.modifiers : shared_isPlainObject(options.modifiers) ? options.modifiers : {};
-  // pluralRules
-  let _pluralRules = options.pluralRules || __root && __root.pluralRules;
-  // runtime context
-  // eslint-disable-next-line prefer-const
-  let _context;
-  const getCoreContext = () => {
-    _isGlobal && setFallbackContext(null);
-    const ctxOptions = {
-      version: vue_i18n_VERSION,
-      locale: _locale.value,
-      fallbackLocale: _fallbackLocale.value,
-      messages: _messages.value,
-      modifiers: _modifiers,
-      pluralRules: _pluralRules,
-      missing: _runtimeMissing === null ? undefined : _runtimeMissing,
-      missingWarn: _missingWarn,
-      fallbackWarn: _fallbackWarn,
-      fallbackFormat: _fallbackFormat,
-      unresolving: true,
-      postTranslation: _postTranslation === null ? undefined : _postTranslation,
-      warnHtmlMessage: _warnHtmlMessage,
-      escapeParameter: _escapeParameter,
-      messageResolver: options.messageResolver,
-      messageCompiler: options.messageCompiler,
-      __meta: {
-        framework: 'vue'
-      }
-    };
-    {
-      ctxOptions.datetimeFormats = _datetimeFormats.value;
-      ctxOptions.numberFormats = _numberFormats.value;
-      ctxOptions.__datetimeFormatters = shared_isPlainObject(_context) ? _context.__datetimeFormatters : undefined;
-      ctxOptions.__numberFormatters = shared_isPlainObject(_context) ? _context.__numberFormatters : undefined;
-    }
-    if (false) {}
-    const ctx = createCoreContext(ctxOptions);
-    _isGlobal && setFallbackContext(ctx);
-    return ctx;
-  };
-  _context = getCoreContext();
-  updateFallbackLocale(_context, _locale.value, _fallbackLocale.value);
-  // track reactivity
-  function trackReactivityValues() {
-    return [_locale.value, _fallbackLocale.value, _messages.value, _datetimeFormats.value, _numberFormats.value];
-  }
-  // locale
-  const locale = (0,runtime_core_esm_bundler/* computed */.S6)({
-    get: () => _locale.value,
-    set: val => {
-      _locale.value = val;
-      _context.locale = _locale.value;
-    }
-  });
-  // fallbackLocale
-  const fallbackLocale = (0,runtime_core_esm_bundler/* computed */.S6)({
-    get: () => _fallbackLocale.value,
-    set: val => {
-      _fallbackLocale.value = val;
-      _context.fallbackLocale = _fallbackLocale.value;
-      updateFallbackLocale(_context, _locale.value, val);
-    }
-  });
-  // messages
-  const messages = (0,runtime_core_esm_bundler/* computed */.S6)(() => _messages.value);
-  // datetimeFormats
-  const datetimeFormats = /* #__PURE__*/(0,runtime_core_esm_bundler/* computed */.S6)(() => _datetimeFormats.value);
-  // numberFormats
-  const numberFormats = /* #__PURE__*/(0,runtime_core_esm_bundler/* computed */.S6)(() => _numberFormats.value);
-  // getPostTranslationHandler
-  function getPostTranslationHandler() {
-    return shared_isFunction(_postTranslation) ? _postTranslation : null;
-  }
-  // setPostTranslationHandler
-  function setPostTranslationHandler(handler) {
-    _postTranslation = handler;
-    _context.postTranslation = handler;
-  }
-  // getMissingHandler
-  function getMissingHandler() {
-    return _missing;
-  }
-  // setMissingHandler
-  function setMissingHandler(handler) {
-    if (handler !== null) {
-      _runtimeMissing = defineCoreMissingHandler(handler);
-    }
-    _missing = handler;
-    _context.missing = _runtimeMissing;
-  }
-  function isResolvedTranslateMessage(type, arg // eslint-disable-line @typescript-eslint/no-explicit-any
-  ) {
-    return type !== 'translate' || !arg.resolvedMessage;
-  }
-  const wrapWithDeps = (fn, argumentParser, warnType, fallbackSuccess, fallbackFail, successCondition) => {
-    trackReactivityValues(); // track reactive dependency
-    // NOTE: experimental !!
-    let ret;
-    try {
-      if (false) {}
-      if (!_isGlobal) {
-        _context.fallbackContext = __root ? getFallbackContext() : undefined;
-      }
-      ret = fn(_context);
-    } finally {
-      if (false) {}
-      if (!_isGlobal) {
-        _context.fallbackContext = undefined;
-      }
-    }
-    if (warnType !== 'translate exists' &&
-    // for not `te` (e.g `t`)
-    shared_isNumber(ret) && ret === NOT_REOSLVED || warnType === 'translate exists' && !ret // for `te`
-    ) {
-      const [key, arg2] = argumentParser();
-      if (false) {}
-      return __root && _fallbackRoot ? fallbackSuccess(__root) : fallbackFail(key);
-    } else if (successCondition(ret)) {
-      return ret;
-    } else {
-      /* istanbul ignore next */
-      throw createI18nError(I18nErrorCodes.UNEXPECTED_RETURN_TYPE);
-    }
-  };
-  // t
-  function t(...args) {
-    return wrapWithDeps(context => Reflect.apply(translate, null, [context, ...args]), () => parseTranslateArgs(...args), 'translate', root => Reflect.apply(root.t, root, [...args]), key => key, val => shared_isString(val));
-  }
-  // rt
-  function rt(...args) {
-    const [arg1, arg2, arg3] = args;
-    if (arg3 && !shared_isObject(arg3)) {
-      throw createI18nError(I18nErrorCodes.INVALID_ARGUMENT);
-    }
-    return t(...[arg1, arg2, shared_assign({
-      resolvedMessage: true
-    }, arg3 || {})]);
-  }
-  // d
-  function d(...args) {
-    return wrapWithDeps(context => Reflect.apply(datetime, null, [context, ...args]), () => parseDateTimeArgs(...args), 'datetime format', root => Reflect.apply(root.d, root, [...args]), () => MISSING_RESOLVE_VALUE, val => shared_isString(val));
-  }
-  // n
-  function n(...args) {
-    return wrapWithDeps(context => Reflect.apply(number, null, [context, ...args]), () => parseNumberArgs(...args), 'number format', root => Reflect.apply(root.n, root, [...args]), () => MISSING_RESOLVE_VALUE, val => shared_isString(val));
-  }
-  // for custom processor
-  function normalize(values) {
-    return values.map(val => shared_isString(val) || shared_isNumber(val) || shared_isBoolean(val) ? createTextNode(String(val)) : val);
-  }
-  const interpolate = val => val;
-  const processor = {
-    normalize,
-    interpolate,
-    type: 'vnode'
-  };
-  // translateVNode, using for `i18n-t` component
-  function translateVNode(...args) {
-    return wrapWithDeps(context => {
-      let ret;
-      const _context = context;
-      try {
-        _context.processor = processor;
-        ret = Reflect.apply(translate, null, [_context, ...args]);
-      } finally {
-        _context.processor = null;
-      }
-      return ret;
-    }, () => parseTranslateArgs(...args), 'translate',
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    root => root[TranslateVNodeSymbol](...args), key => [createTextNode(key)], val => shared_isArray(val));
-  }
-  // numberParts, using for `i18n-n` component
-  function numberParts(...args) {
-    return wrapWithDeps(context => Reflect.apply(number, null, [context, ...args]), () => parseNumberArgs(...args), 'number format',
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    root => root[NumberPartsSymbol](...args), NOOP_RETURN_ARRAY, val => shared_isString(val) || shared_isArray(val));
-  }
-  // datetimeParts, using for `i18n-d` component
-  function datetimeParts(...args) {
-    return wrapWithDeps(context => Reflect.apply(datetime, null, [context, ...args]), () => parseDateTimeArgs(...args), 'datetime format',
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    root => root[DatetimePartsSymbol](...args), NOOP_RETURN_ARRAY, val => shared_isString(val) || shared_isArray(val));
-  }
-  function setPluralRules(rules) {
-    _pluralRules = rules;
-    _context.pluralRules = _pluralRules;
-  }
-  // te
-  function te(key, locale) {
-    return wrapWithDeps(() => {
-      if (!key) {
-        return false;
-      }
-      const targetLocale = shared_isString(locale) ? locale : _locale.value;
-      const message = getLocaleMessage(targetLocale);
-      const resolved = _context.messageResolver(message, key);
-      return core_base_isMessageAST(resolved) || isMessageFunction(resolved) || shared_isString(resolved);
-    }, () => [key], 'translate exists', root => {
-      return Reflect.apply(root.te, root, [key, locale]);
-    }, NOOP_RETURN_FALSE, val => shared_isBoolean(val));
-  }
-  function resolveMessages(key) {
-    let messages = null;
-    const locales = fallbackWithLocaleChain(_context, _fallbackLocale.value, _locale.value);
-    for (let i = 0; i < locales.length; i++) {
-      const targetLocaleMessages = _messages.value[locales[i]] || {};
-      const messageValue = _context.messageResolver(targetLocaleMessages, key);
-      if (messageValue != null) {
-        messages = messageValue;
-        break;
-      }
-    }
-    return messages;
-  }
-  // tm
-  function tm(key) {
-    const messages = resolveMessages(key);
-    // prettier-ignore
-    return messages != null ? messages : __root ? __root.tm(key) || {} : {};
-  }
-  // getLocaleMessage
-  function getLocaleMessage(locale) {
-    return _messages.value[locale] || {};
-  }
-  // setLocaleMessage
-  function setLocaleMessage(locale, message) {
-    if (flatJson) {
-      const _message = {
-        [locale]: message
-      };
-      for (const key in _message) {
-        if (hasOwn(_message, key)) {
-          handleFlatJson(_message[key]);
-        }
-      }
-      message = _message[locale];
-    }
-    _messages.value[locale] = message;
-    _context.messages = _messages.value;
-  }
-  // mergeLocaleMessage
-  function mergeLocaleMessage(locale, message) {
-    _messages.value[locale] = _messages.value[locale] || {};
-    const _message = {
-      [locale]: message
-    };
-    if (flatJson) {
-      for (const key in _message) {
-        if (hasOwn(_message, key)) {
-          handleFlatJson(_message[key]);
-        }
-      }
-    }
-    message = _message[locale];
-    shared_deepCopy(message, _messages.value[locale]);
-    _context.messages = _messages.value;
-  }
-  // getDateTimeFormat
-  function getDateTimeFormat(locale) {
-    return _datetimeFormats.value[locale] || {};
-  }
-  // setDateTimeFormat
-  function setDateTimeFormat(locale, format) {
-    _datetimeFormats.value[locale] = format;
-    _context.datetimeFormats = _datetimeFormats.value;
-    clearDateTimeFormat(_context, locale, format);
-  }
-  // mergeDateTimeFormat
-  function mergeDateTimeFormat(locale, format) {
-    _datetimeFormats.value[locale] = shared_assign(_datetimeFormats.value[locale] || {}, format);
-    _context.datetimeFormats = _datetimeFormats.value;
-    clearDateTimeFormat(_context, locale, format);
-  }
-  // getNumberFormat
-  function getNumberFormat(locale) {
-    return _numberFormats.value[locale] || {};
-  }
-  // setNumberFormat
-  function setNumberFormat(locale, format) {
-    _numberFormats.value[locale] = format;
-    _context.numberFormats = _numberFormats.value;
-    clearNumberFormat(_context, locale, format);
-  }
-  // mergeNumberFormat
-  function mergeNumberFormat(locale, format) {
-    _numberFormats.value[locale] = shared_assign(_numberFormats.value[locale] || {}, format);
-    _context.numberFormats = _numberFormats.value;
-    clearNumberFormat(_context, locale, format);
-  }
-  // for debug
-  composerID++;
-  // watch root locale & fallbackLocale
-  if (__root && inBrowser) {
-    (0,runtime_core_esm_bundler/* watch */.Kg)(__root.locale, val => {
-      if (_inheritLocale) {
-        _locale.value = val;
-        _context.locale = val;
-        updateFallbackLocale(_context, _locale.value, _fallbackLocale.value);
-      }
-    });
-    (0,runtime_core_esm_bundler/* watch */.Kg)(__root.fallbackLocale, val => {
-      if (_inheritLocale) {
-        _fallbackLocale.value = val;
-        _context.fallbackLocale = val;
-        updateFallbackLocale(_context, _locale.value, _fallbackLocale.value);
-      }
-    });
-  }
-  // define basic composition API!
-  const composer = {
-    id: composerID,
-    locale,
-    fallbackLocale,
-    get inheritLocale() {
-      return _inheritLocale;
-    },
-    set inheritLocale(val) {
-      _inheritLocale = val;
-      if (val && __root) {
-        _locale.value = __root.locale.value;
-        _fallbackLocale.value = __root.fallbackLocale.value;
-        updateFallbackLocale(_context, _locale.value, _fallbackLocale.value);
-      }
-    },
-    get availableLocales() {
-      return Object.keys(_messages.value).sort();
-    },
-    messages,
-    get modifiers() {
-      return _modifiers;
-    },
-    get pluralRules() {
-      return _pluralRules || {};
-    },
-    get isGlobal() {
-      return _isGlobal;
-    },
-    get missingWarn() {
-      return _missingWarn;
-    },
-    set missingWarn(val) {
-      _missingWarn = val;
-      _context.missingWarn = _missingWarn;
-    },
-    get fallbackWarn() {
-      return _fallbackWarn;
-    },
-    set fallbackWarn(val) {
-      _fallbackWarn = val;
-      _context.fallbackWarn = _fallbackWarn;
-    },
-    get fallbackRoot() {
-      return _fallbackRoot;
-    },
-    set fallbackRoot(val) {
-      _fallbackRoot = val;
-    },
-    get fallbackFormat() {
-      return _fallbackFormat;
-    },
-    set fallbackFormat(val) {
-      _fallbackFormat = val;
-      _context.fallbackFormat = _fallbackFormat;
-    },
-    get warnHtmlMessage() {
-      return _warnHtmlMessage;
-    },
-    set warnHtmlMessage(val) {
-      _warnHtmlMessage = val;
-      _context.warnHtmlMessage = val;
-    },
-    get escapeParameter() {
-      return _escapeParameter;
-    },
-    set escapeParameter(val) {
-      _escapeParameter = val;
-      _context.escapeParameter = val;
-    },
-    t,
-    getLocaleMessage,
-    setLocaleMessage,
-    mergeLocaleMessage,
-    getPostTranslationHandler,
-    setPostTranslationHandler,
-    getMissingHandler,
-    setMissingHandler,
-    [SetPluralRulesSymbol]: setPluralRules
-  };
-  {
-    composer.datetimeFormats = datetimeFormats;
-    composer.numberFormats = numberFormats;
-    composer.rt = rt;
-    composer.te = te;
-    composer.tm = tm;
-    composer.d = d;
-    composer.n = n;
-    composer.getDateTimeFormat = getDateTimeFormat;
-    composer.setDateTimeFormat = setDateTimeFormat;
-    composer.mergeDateTimeFormat = mergeDateTimeFormat;
-    composer.getNumberFormat = getNumberFormat;
-    composer.setNumberFormat = setNumberFormat;
-    composer.mergeNumberFormat = mergeNumberFormat;
-    composer[InejctWithOptionSymbol] = __injectWithOption;
-    composer[TranslateVNodeSymbol] = translateVNode;
-    composer[DatetimePartsSymbol] = datetimeParts;
-    composer[NumberPartsSymbol] = numberParts;
-  }
-  // for vue-devtools timeline event
-  if (false) {}
-  return composer;
-}
-/* eslint-enable @typescript-eslint/no-explicit-any */
-
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/**
- * Convert to I18n Composer Options from VueI18n Options
- *
- * @internal
- */
-function convertComposerOptions(options) {
-  const locale = isString(options.locale) ? options.locale : DEFAULT_LOCALE;
-  const fallbackLocale = isString(options.fallbackLocale) || isArray(options.fallbackLocale) || isPlainObject(options.fallbackLocale) || options.fallbackLocale === false ? options.fallbackLocale : locale;
-  const missing = isFunction(options.missing) ? options.missing : undefined;
-  const missingWarn = isBoolean(options.silentTranslationWarn) || isRegExp(options.silentTranslationWarn) ? !options.silentTranslationWarn : true;
-  const fallbackWarn = isBoolean(options.silentFallbackWarn) || isRegExp(options.silentFallbackWarn) ? !options.silentFallbackWarn : true;
-  const fallbackRoot = isBoolean(options.fallbackRoot) ? options.fallbackRoot : true;
-  const fallbackFormat = !!options.formatFallbackMessages;
-  const modifiers = isPlainObject(options.modifiers) ? options.modifiers : {};
-  const pluralizationRules = options.pluralizationRules;
-  const postTranslation = isFunction(options.postTranslation) ? options.postTranslation : undefined;
-  const warnHtmlMessage = isString(options.warnHtmlInMessage) ? options.warnHtmlInMessage !== 'off' : true;
-  const escapeParameter = !!options.escapeParameterHtml;
-  const inheritLocale = isBoolean(options.sync) ? options.sync : true;
-  if (false) {}
-  if (false) {}
-  let messages = options.messages;
-  if (isPlainObject(options.sharedMessages)) {
-    const sharedMessages = options.sharedMessages;
-    const locales = Object.keys(sharedMessages);
-    messages = locales.reduce((messages, locale) => {
-      const message = messages[locale] || (messages[locale] = {});
-      assign(message, sharedMessages[locale]);
-      return messages;
-    }, messages || {});
-  }
-  const {
-    __i18n,
-    __root,
-    __injectWithOption
-  } = options;
-  const datetimeFormats = options.datetimeFormats;
-  const numberFormats = options.numberFormats;
-  const flatJson = options.flatJson;
-  return {
-    locale,
-    fallbackLocale,
-    messages,
-    flatJson,
-    datetimeFormats,
-    numberFormats,
-    missing,
-    missingWarn,
-    fallbackWarn,
-    fallbackRoot,
-    fallbackFormat,
-    modifiers,
-    pluralRules: pluralizationRules,
-    postTranslation,
-    warnHtmlMessage,
-    escapeParameter,
-    messageResolver: options.messageResolver,
-    inheritLocale,
-    __i18n,
-    __root,
-    __injectWithOption
-  };
-}
-/**
- * create VueI18n interface factory
- *
- * @internal
- */
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-function createVueI18n(options = {}, VueI18nLegacy) {
-  {
-    const composer = createComposer(convertComposerOptions(options));
-    const {
-      __extender
-    } = options;
-    // defines VueI18n
-    const vueI18n = {
-      // id
-      id: composer.id,
-      // locale
-      get locale() {
-        return composer.locale.value;
-      },
-      set locale(val) {
-        composer.locale.value = val;
-      },
-      // fallbackLocale
-      get fallbackLocale() {
-        return composer.fallbackLocale.value;
-      },
-      set fallbackLocale(val) {
-        composer.fallbackLocale.value = val;
-      },
-      // messages
-      get messages() {
-        return composer.messages.value;
-      },
-      // datetimeFormats
-      get datetimeFormats() {
-        return composer.datetimeFormats.value;
-      },
-      // numberFormats
-      get numberFormats() {
-        return composer.numberFormats.value;
-      },
-      // availableLocales
-      get availableLocales() {
-        return composer.availableLocales;
-      },
-      // formatter
-      get formatter() {
-         false && 0;
-        // dummy
-        return {
-          interpolate() {
-            return [];
-          }
-        };
-      },
-      set formatter(val) {
-         false && 0;
-      },
-      // missing
-      get missing() {
-        return composer.getMissingHandler();
-      },
-      set missing(handler) {
-        composer.setMissingHandler(handler);
-      },
-      // silentTranslationWarn
-      get silentTranslationWarn() {
-        return isBoolean(composer.missingWarn) ? !composer.missingWarn : composer.missingWarn;
-      },
-      set silentTranslationWarn(val) {
-        composer.missingWarn = isBoolean(val) ? !val : val;
-      },
-      // silentFallbackWarn
-      get silentFallbackWarn() {
-        return isBoolean(composer.fallbackWarn) ? !composer.fallbackWarn : composer.fallbackWarn;
-      },
-      set silentFallbackWarn(val) {
-        composer.fallbackWarn = isBoolean(val) ? !val : val;
-      },
-      // modifiers
-      get modifiers() {
-        return composer.modifiers;
-      },
-      // formatFallbackMessages
-      get formatFallbackMessages() {
-        return composer.fallbackFormat;
-      },
-      set formatFallbackMessages(val) {
-        composer.fallbackFormat = val;
-      },
-      // postTranslation
-      get postTranslation() {
-        return composer.getPostTranslationHandler();
-      },
-      set postTranslation(handler) {
-        composer.setPostTranslationHandler(handler);
-      },
-      // sync
-      get sync() {
-        return composer.inheritLocale;
-      },
-      set sync(val) {
-        composer.inheritLocale = val;
-      },
-      // warnInHtmlMessage
-      get warnHtmlInMessage() {
-        return composer.warnHtmlMessage ? 'warn' : 'off';
-      },
-      set warnHtmlInMessage(val) {
-        composer.warnHtmlMessage = val !== 'off';
-      },
-      // escapeParameterHtml
-      get escapeParameterHtml() {
-        return composer.escapeParameter;
-      },
-      set escapeParameterHtml(val) {
-        composer.escapeParameter = val;
-      },
-      // preserveDirectiveContent
-      get preserveDirectiveContent() {
-         false && 0;
-        return true;
-      },
-      set preserveDirectiveContent(val) {
-         false && 0;
-      },
-      // pluralizationRules
-      get pluralizationRules() {
-        return composer.pluralRules || {};
-      },
-      // for internal
-      __composer: composer,
-      // t
-      t(...args) {
-        const [arg1, arg2, arg3] = args;
-        const options = {};
-        let list = null;
-        let named = null;
-        if (!isString(arg1)) {
-          throw createI18nError(I18nErrorCodes.INVALID_ARGUMENT);
-        }
-        const key = arg1;
-        if (isString(arg2)) {
-          options.locale = arg2;
-        } else if (isArray(arg2)) {
-          list = arg2;
-        } else if (isPlainObject(arg2)) {
-          named = arg2;
-        }
-        if (isArray(arg3)) {
-          list = arg3;
-        } else if (isPlainObject(arg3)) {
-          named = arg3;
-        }
-        // return composer.t(key, (list || named || {}) as any, options)
-        return Reflect.apply(composer.t, composer, [key, list || named || {}, options]);
-      },
-      rt(...args) {
-        return Reflect.apply(composer.rt, composer, [...args]);
-      },
-      // tc
-      tc(...args) {
-        const [arg1, arg2, arg3] = args;
-        const options = {
-          plural: 1
-        };
-        let list = null;
-        let named = null;
-        if (!isString(arg1)) {
-          throw createI18nError(I18nErrorCodes.INVALID_ARGUMENT);
-        }
-        const key = arg1;
-        if (isString(arg2)) {
-          options.locale = arg2;
-        } else if (isNumber(arg2)) {
-          options.plural = arg2;
-        } else if (isArray(arg2)) {
-          list = arg2;
-        } else if (isPlainObject(arg2)) {
-          named = arg2;
-        }
-        if (isString(arg3)) {
-          options.locale = arg3;
-        } else if (isArray(arg3)) {
-          list = arg3;
-        } else if (isPlainObject(arg3)) {
-          named = arg3;
-        }
-        // return composer.t(key, (list || named || {}) as any, options)
-        return Reflect.apply(composer.t, composer, [key, list || named || {}, options]);
-      },
-      // te
-      te(key, locale) {
-        return composer.te(key, locale);
-      },
-      // tm
-      tm(key) {
-        return composer.tm(key);
-      },
-      // getLocaleMessage
-      getLocaleMessage(locale) {
-        return composer.getLocaleMessage(locale);
-      },
-      // setLocaleMessage
-      setLocaleMessage(locale, message) {
-        composer.setLocaleMessage(locale, message);
-      },
-      // mergeLocaleMessage
-      mergeLocaleMessage(locale, message) {
-        composer.mergeLocaleMessage(locale, message);
-      },
-      // d
-      d(...args) {
-        return Reflect.apply(composer.d, composer, [...args]);
-      },
-      // getDateTimeFormat
-      getDateTimeFormat(locale) {
-        return composer.getDateTimeFormat(locale);
-      },
-      // setDateTimeFormat
-      setDateTimeFormat(locale, format) {
-        composer.setDateTimeFormat(locale, format);
-      },
-      // mergeDateTimeFormat
-      mergeDateTimeFormat(locale, format) {
-        composer.mergeDateTimeFormat(locale, format);
-      },
-      // n
-      n(...args) {
-        return Reflect.apply(composer.n, composer, [...args]);
-      },
-      // getNumberFormat
-      getNumberFormat(locale) {
-        return composer.getNumberFormat(locale);
-      },
-      // setNumberFormat
-      setNumberFormat(locale, format) {
-        composer.setNumberFormat(locale, format);
-      },
-      // mergeNumberFormat
-      mergeNumberFormat(locale, format) {
-        composer.mergeNumberFormat(locale, format);
-      },
-      // getChoiceIndex
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      getChoiceIndex(choice, choicesLength) {
-         false && 0;
-        return -1;
-      }
-    };
-    vueI18n.__extender = __extender;
-    // for vue-devtools timeline event
-    if (false) {}
-    return vueI18n;
-  }
-}
-/* eslint-enable @typescript-eslint/no-explicit-any */
-
-const baseFormatProps = {
-  tag: {
-    type: [String, Object]
-  },
-  locale: {
-    type: String
-  },
-  scope: {
-    type: String,
-    // NOTE: avoid https://github.com/microsoft/rushstack/issues/1050
-    validator: (val /* ComponentI18nScope */) => val === 'parent' || val === 'global',
-    default: 'parent' /* ComponentI18nScope */
-  },
-  i18n: {
-    type: Object
-  }
-};
-function getInterpolateArg(
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-{
-  slots
-},
-// SetupContext,
-keys) {
-  if (keys.length === 1 && keys[0] === 'default') {
-    // default slot with list
-    const ret = slots.default ? slots.default() : [];
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return ret.reduce((slot, current) => {
-      return [...slot,
-      // prettier-ignore
-      ...(current.type === runtime_core_esm_bundler/* Fragment */.ae ? current.children : [current])];
-    }, []);
-  } else {
-    // named slots
-    return keys.reduce((arg, key) => {
-      const slot = slots[key];
-      if (slot) {
-        arg[key] = slot();
-      }
-      return arg;
-    }, {});
-  }
-}
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function getFragmentableTag(tag) {
-  return runtime_core_esm_bundler/* Fragment */.ae;
-}
-const TranslationImpl = /*#__PURE__*/(0,runtime_core_esm_bundler/* defineComponent */._M)({
-  /* eslint-disable */
-  name: 'i18n-t',
-  props: shared_assign({
-    keypath: {
-      type: String,
-      required: true
-    },
-    plural: {
-      type: [Number, String],
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      validator: val => shared_isNumber(val) || !isNaN(val)
-    }
-  }, baseFormatProps),
-  /* eslint-enable */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  setup(props, context) {
-    const {
-      slots,
-      attrs
-    } = context;
-    // NOTE: avoid https://github.com/microsoft/rushstack/issues/1050
-    const i18n = props.i18n || useI18n({
-      useScope: props.scope,
-      __useComponent: true
-    });
-    return () => {
-      const keys = Object.keys(slots).filter(key => key !== '_');
-      const options = {};
-      if (props.locale) {
-        options.locale = props.locale;
-      }
-      if (props.plural !== undefined) {
-        options.plural = shared_isString(props.plural) ? +props.plural : props.plural;
-      }
-      const arg = getInterpolateArg(context, keys);
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const children = i18n[TranslateVNodeSymbol](props.keypath, arg, options);
-      const assignedAttrs = shared_assign({}, attrs);
-      const tag = shared_isString(props.tag) || shared_isObject(props.tag) ? props.tag : getFragmentableTag();
-      return (0,runtime_core_esm_bundler.h)(tag, assignedAttrs, children);
-    };
-  }
-});
-/**
- * export the public type for h/tsx inference
- * also to avoid inline import() in generated d.ts files
- */
-/**
- * Translation Component
- *
- * @remarks
- * See the following items for property about details
- *
- * @VueI18nSee [TranslationProps](component#translationprops)
- * @VueI18nSee [BaseFormatProps](component#baseformatprops)
- * @VueI18nSee [Component Interpolation](../guide/advanced/component)
- *
- * @example
- * ```html
- * <div id="app">
- *   <!-- ... -->
- *   <i18n keypath="term" tag="label" for="tos">
- *     <a :href="url" target="_blank">{{ $t('tos') }}</a>
- *   </i18n>
- *   <!-- ... -->
- * </div>
- * ```
- * ```js
- * import { createApp } from 'vue'
- * import { createI18n } from 'vue-i18n'
- *
- * const messages = {
- *   en: {
- *     tos: 'Term of Service',
- *     term: 'I accept xxx {0}.'
- *   },
- *   ja: {
- *     tos: '利用規約',
- *     term: '私は xxx の{0}に同意します。'
- *   }
- * }
- *
- * const i18n = createI18n({
- *   locale: 'en',
- *   messages
- * })
- *
- * const app = createApp({
- *   data: {
- *     url: '/term'
- *   }
- * }).use(i18n).mount('#app')
- * ```
- *
- * @VueI18nComponent
- */
-const Translation = TranslationImpl;
-const I18nT = (/* unused pure expression or super */ null && (Translation));
-function isVNode(target) {
-  return shared_isArray(target) && !shared_isString(target[0]);
-}
-function renderFormatter(props, context, slotKeys, partFormatter) {
-  const {
-    slots,
-    attrs
-  } = context;
-  return () => {
-    const options = {
-      part: true
-    };
-    let overrides = {};
-    if (props.locale) {
-      options.locale = props.locale;
-    }
-    if (shared_isString(props.format)) {
-      options.key = props.format;
-    } else if (shared_isObject(props.format)) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      if (shared_isString(props.format.key)) {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        options.key = props.format.key;
-      }
-      // Filter out number format options only
-      overrides = Object.keys(props.format).reduce((options, prop) => {
-        return slotKeys.includes(prop) ? shared_assign({}, options, {
-          [prop]: props.format[prop]
-        }) // eslint-disable-line @typescript-eslint/no-explicit-any
-        : options;
-      }, {});
-    }
-    const parts = partFormatter(...[props.value, options, overrides]);
-    let children = [options.key];
-    if (shared_isArray(parts)) {
-      children = parts.map((part, index) => {
-        const slot = slots[part.type];
-        const node = slot ? slot({
-          [part.type]: part.value,
-          index,
-          parts
-        }) : [part.value];
-        if (isVNode(node)) {
-          node[0].key = `${part.type}-${index}`;
-        }
-        return node;
-      });
-    } else if (shared_isString(parts)) {
-      children = [parts];
-    }
-    const assignedAttrs = shared_assign({}, attrs);
-    const tag = shared_isString(props.tag) || shared_isObject(props.tag) ? props.tag : getFragmentableTag();
-    return (0,runtime_core_esm_bundler.h)(tag, assignedAttrs, children);
-  };
-}
-const NumberFormatImpl = /*#__PURE__*/(0,runtime_core_esm_bundler/* defineComponent */._M)({
-  /* eslint-disable */
-  name: 'i18n-n',
-  props: shared_assign({
-    value: {
-      type: Number,
-      required: true
-    },
-    format: {
-      type: [String, Object]
-    }
-  }, baseFormatProps),
-  /* eslint-enable */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  setup(props, context) {
-    const i18n = props.i18n || useI18n({
-      useScope: 'parent',
-      __useComponent: true
-    });
-    return renderFormatter(props, context, NUMBER_FORMAT_OPTIONS_KEYS, (...args) =>
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    i18n[NumberPartsSymbol](...args));
-  }
-});
-/**
- * export the public type for h/tsx inference
- * also to avoid inline import() in generated d.ts files
- */
-/**
- * Number Format Component
- *
- * @remarks
- * See the following items for property about details
- *
- * @VueI18nSee [FormattableProps](component#formattableprops)
- * @VueI18nSee [BaseFormatProps](component#baseformatprops)
- * @VueI18nSee [Custom Formatting](../guide/essentials/number#custom-formatting)
- *
- * @VueI18nDanger
- * Not supported IE, due to no support `Intl.NumberFormat#formatToParts` in [IE](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/formatToParts)
- *
- * If you want to use it, you need to use [polyfill](https://github.com/formatjs/formatjs/tree/main/packages/intl-numberformat)
- *
- * @VueI18nComponent
- */
-const NumberFormat = NumberFormatImpl;
-const I18nN = (/* unused pure expression or super */ null && (NumberFormat));
-const DatetimeFormatImpl = /* #__PURE__*/(0,runtime_core_esm_bundler/* defineComponent */._M)({
-  /* eslint-disable */
-  name: 'i18n-d',
-  props: shared_assign({
-    value: {
-      type: [Number, Date],
-      required: true
-    },
-    format: {
-      type: [String, Object]
-    }
-  }, baseFormatProps),
-  /* eslint-enable */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  setup(props, context) {
-    const i18n = props.i18n || useI18n({
-      useScope: 'parent',
-      __useComponent: true
-    });
-    return renderFormatter(props, context, DATETIME_FORMAT_OPTIONS_KEYS, (...args) =>
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    i18n[DatetimePartsSymbol](...args));
-  }
-});
-/**
- * Datetime Format Component
- *
- * @remarks
- * See the following items for property about details
- *
- * @VueI18nSee [FormattableProps](component#formattableprops)
- * @VueI18nSee [BaseFormatProps](component#baseformatprops)
- * @VueI18nSee [Custom Formatting](../guide/essentials/datetime#custom-formatting)
- *
- * @VueI18nDanger
- * Not supported IE, due to no support `Intl.DateTimeFormat#formatToParts` in [IE](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/formatToParts)
- *
- * If you want to use it, you need to use [polyfill](https://github.com/formatjs/formatjs/tree/main/packages/intl-datetimeformat)
- *
- * @VueI18nComponent
- */
-const DatetimeFormat = DatetimeFormatImpl;
-const I18nD = (/* unused pure expression or super */ null && (DatetimeFormat));
-function getComposer$2(i18n, instance) {
-  const i18nInternal = i18n;
-  if (i18n.mode === 'composition') {
-    return i18nInternal.__getInstance(instance) || i18n.global;
-  } else {
-    const vueI18n = i18nInternal.__getInstance(instance);
-    return vueI18n != null ? vueI18n.__composer : i18n.global.__composer;
-  }
-}
-function vTDirective(i18n) {
-  const _process = binding => {
-    const {
-      instance,
-      modifiers,
-      value
-    } = binding;
-    /* istanbul ignore if */
-    if (!instance || !instance.$) {
-      throw createI18nError(I18nErrorCodes.UNEXPECTED_ERROR);
-    }
-    const composer = getComposer$2(i18n, instance.$);
-    if (false) {}
-    const parsedValue = parseValue(value);
-    return [Reflect.apply(composer.t, composer, [...makeParams(parsedValue)]), composer];
-  };
-  const register = (el, binding) => {
-    const [textContent, composer] = _process(binding);
-    if (inBrowser && i18n.global === composer) {
-      // global scope only
-      el.__i18nWatcher = (0,runtime_core_esm_bundler/* watch */.Kg)(composer.locale, () => {
-        binding.instance && binding.instance.$forceUpdate();
-      });
-    }
-    el.__composer = composer;
-    el.textContent = textContent;
-  };
-  const unregister = el => {
-    if (inBrowser && el.__i18nWatcher) {
-      el.__i18nWatcher();
-      el.__i18nWatcher = undefined;
-      delete el.__i18nWatcher;
-    }
-    if (el.__composer) {
-      el.__composer = undefined;
-      delete el.__composer;
-    }
-  };
-  const update = (el, {
-    value
-  }) => {
-    if (el.__composer) {
-      const composer = el.__composer;
-      const parsedValue = parseValue(value);
-      el.textContent = Reflect.apply(composer.t, composer, [...makeParams(parsedValue)]);
-    }
-  };
-  const getSSRProps = binding => {
-    const [textContent] = _process(binding);
-    return {
-      textContent
-    };
-  };
-  return {
-    created: register,
-    unmounted: unregister,
-    beforeUpdate: update,
-    getSSRProps
-  };
-}
-function parseValue(value) {
-  if (shared_isString(value)) {
-    return {
-      path: value
-    };
-  } else if (shared_isPlainObject(value)) {
-    if (!('path' in value)) {
-      throw createI18nError(I18nErrorCodes.REQUIRED_VALUE, 'path');
-    }
-    return value;
-  } else {
-    throw createI18nError(I18nErrorCodes.INVALID_VALUE);
-  }
-}
-function makeParams(value) {
-  const {
-    path,
-    locale,
-    args,
-    choice,
-    plural
-  } = value;
-  const options = {};
-  const named = args || {};
-  if (shared_isString(locale)) {
-    options.locale = locale;
-  }
-  if (shared_isNumber(choice)) {
-    options.plural = choice;
-  }
-  if (shared_isNumber(plural)) {
-    options.plural = plural;
-  }
-  return [path, named, options];
-}
-function apply(app, i18n, ...options) {
-  const pluginOptions = shared_isPlainObject(options[0]) ? options[0] : {};
-  const useI18nComponentName = !!pluginOptions.useI18nComponentName;
-  const globalInstall = shared_isBoolean(pluginOptions.globalInstall) ? pluginOptions.globalInstall : true;
-  if (false) {}
-  if (globalInstall) {
-    [!useI18nComponentName ? Translation.name : 'i18n', 'I18nT'].forEach(name => app.component(name, Translation));
-    [NumberFormat.name, 'I18nN'].forEach(name => app.component(name, NumberFormat));
-    [DatetimeFormat.name, 'I18nD'].forEach(name => app.component(name, DatetimeFormat));
-  }
-  // install directive
-  {
-    app.directive('t', vTDirective(i18n));
-  }
-}
-const VueDevToolsLabels = {
-  ["vue-devtools-plugin-vue-i18n" /* VueDevToolsIDs.PLUGIN */]: 'Vue I18n devtools',
-  ["vue-i18n-resource-inspector" /* VueDevToolsIDs.CUSTOM_INSPECTOR */]: 'I18n Resources',
-  ["vue-i18n-timeline" /* VueDevToolsIDs.TIMELINE */]: 'Vue I18n'
-};
-const VueDevToolsPlaceholders = {
-  ["vue-i18n-resource-inspector" /* VueDevToolsIDs.CUSTOM_INSPECTOR */]: 'Search for scopes ...'
-};
-const VueDevToolsTimelineColors = {
-  ["vue-i18n-timeline" /* VueDevToolsIDs.TIMELINE */]: 0xffcd19
-};
-const VUE_I18N_COMPONENT_TYPES = 'vue-i18n: composer properties';
-let devtoolsApi;
-async function enableDevTools(app, i18n) {
-  return new Promise((resolve, reject) => {
-    try {
-      setupDevtoolsPlugin({
-        id: "vue-devtools-plugin-vue-i18n" /* VueDevToolsIDs.PLUGIN */,
-        label: VueDevToolsLabels["vue-devtools-plugin-vue-i18n" /* VueDevToolsIDs.PLUGIN */],
-        packageName: 'vue-i18n',
-        homepage: 'https://vue-i18n.intlify.dev',
-        logo: 'https://vue-i18n.intlify.dev/vue-i18n-devtools-logo.png',
-        componentStateTypes: [VUE_I18N_COMPONENT_TYPES],
-        app: app // eslint-disable-line @typescript-eslint/no-explicit-any
-      }, api => {
-        devtoolsApi = api;
-        api.on.visitComponentTree(({
-          componentInstance,
-          treeNode
-        }) => {
-          updateComponentTreeTags(componentInstance, treeNode, i18n);
-        });
-        api.on.inspectComponent(({
-          componentInstance,
-          instanceData
-        }) => {
-          if (componentInstance.vnode.el && componentInstance.vnode.el.__VUE_I18N__ && instanceData) {
-            if (i18n.mode === 'legacy') {
-              // ignore global scope on legacy mode
-              if (componentInstance.vnode.el.__VUE_I18N__ !== i18n.global.__composer) {
-                inspectComposer(instanceData, componentInstance.vnode.el.__VUE_I18N__);
-              }
-            } else {
-              inspectComposer(instanceData, componentInstance.vnode.el.__VUE_I18N__);
-            }
-          }
-        });
-        api.addInspector({
-          id: "vue-i18n-resource-inspector" /* VueDevToolsIDs.CUSTOM_INSPECTOR */,
-          label: VueDevToolsLabels["vue-i18n-resource-inspector" /* VueDevToolsIDs.CUSTOM_INSPECTOR */],
-          icon: 'language',
-          treeFilterPlaceholder: VueDevToolsPlaceholders["vue-i18n-resource-inspector" /* VueDevToolsIDs.CUSTOM_INSPECTOR */]
-        });
-        api.on.getInspectorTree(payload => {
-          if (payload.app === app && payload.inspectorId === "vue-i18n-resource-inspector" /* VueDevToolsIDs.CUSTOM_INSPECTOR */) {
-            registerScope(payload, i18n);
-          }
-        });
-        const roots = new Map();
-        api.on.getInspectorState(async payload => {
-          if (payload.app === app && payload.inspectorId === "vue-i18n-resource-inspector" /* VueDevToolsIDs.CUSTOM_INSPECTOR */) {
-            api.unhighlightElement();
-            inspectScope(payload, i18n);
-            if (payload.nodeId === 'global') {
-              if (!roots.has(payload.app)) {
-                const [root] = await api.getComponentInstances(payload.app);
-                roots.set(payload.app, root);
-              }
-              api.highlightElement(roots.get(payload.app));
-            } else {
-              const instance = getComponentInstance(payload.nodeId, i18n);
-              instance && api.highlightElement(instance);
-            }
-          }
-        });
-        api.on.editInspectorState(payload => {
-          if (payload.app === app && payload.inspectorId === "vue-i18n-resource-inspector" /* VueDevToolsIDs.CUSTOM_INSPECTOR */) {
-            editScope(payload, i18n);
-          }
-        });
-        api.addTimelineLayer({
-          id: "vue-i18n-timeline" /* VueDevToolsIDs.TIMELINE */,
-          label: VueDevToolsLabels["vue-i18n-timeline" /* VueDevToolsIDs.TIMELINE */],
-          color: VueDevToolsTimelineColors["vue-i18n-timeline" /* VueDevToolsIDs.TIMELINE */]
-        });
-        resolve(true);
-      });
-    } catch (e) {
-      console.error(e);
-      reject(false);
-    }
-  });
-}
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function getI18nScopeLable(instance) {
-  return instance.type.name || instance.type.displayName || instance.type.__file || 'Anonymous';
-}
-function updateComponentTreeTags(instance,
-// eslint-disable-line @typescript-eslint/no-explicit-any
-treeNode, i18n) {
-  // prettier-ignore
-  const global = i18n.mode === 'composition' ? i18n.global : i18n.global.__composer;
-  if (instance && instance.vnode.el && instance.vnode.el.__VUE_I18N__) {
-    // add custom tags local scope only
-    if (instance.vnode.el.__VUE_I18N__ !== global) {
-      const tag = {
-        label: `i18n (${getI18nScopeLable(instance)} Scope)`,
-        textColor: 0x000000,
-        backgroundColor: 0xffcd19
-      };
-      treeNode.tags.push(tag);
-    }
-  }
-}
-function inspectComposer(instanceData, composer) {
-  const type = VUE_I18N_COMPONENT_TYPES;
-  instanceData.state.push({
-    type,
-    key: 'locale',
-    editable: true,
-    value: composer.locale.value
-  });
-  instanceData.state.push({
-    type,
-    key: 'availableLocales',
-    editable: false,
-    value: composer.availableLocales
-  });
-  instanceData.state.push({
-    type,
-    key: 'fallbackLocale',
-    editable: true,
-    value: composer.fallbackLocale.value
-  });
-  instanceData.state.push({
-    type,
-    key: 'inheritLocale',
-    editable: true,
-    value: composer.inheritLocale
-  });
-  instanceData.state.push({
-    type,
-    key: 'messages',
-    editable: false,
-    value: getLocaleMessageValue(composer.messages.value)
-  });
-  {
-    instanceData.state.push({
-      type,
-      key: 'datetimeFormats',
-      editable: false,
-      value: composer.datetimeFormats.value
-    });
-    instanceData.state.push({
-      type,
-      key: 'numberFormats',
-      editable: false,
-      value: composer.numberFormats.value
-    });
-  }
-}
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function getLocaleMessageValue(messages) {
-  const value = {};
-  Object.keys(messages).forEach(key => {
-    const v = messages[key];
-    if (isFunction(v) && 'source' in v) {
-      value[key] = getMessageFunctionDetails(v);
-    } else if (isMessageAST(v) && v.loc && v.loc.source) {
-      value[key] = v.loc.source;
-    } else if (isObject(v)) {
-      value[key] = getLocaleMessageValue(v);
-    } else {
-      value[key] = v;
-    }
-  });
-  return value;
-}
-const ESC = {
-  '<': '&lt;',
-  '>': '&gt;',
-  '"': '&quot;',
-  '&': '&amp;'
-};
-function vue_i18n_escape(s) {
-  return s.replace(/[<>"&]/g, escapeChar);
-}
-function escapeChar(a) {
-  return ESC[a] || a;
-}
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function getMessageFunctionDetails(func) {
-  const argString = func.source ? `("${vue_i18n_escape(func.source)}")` : `(?)`;
-  return {
-    _custom: {
-      type: 'function',
-      display: `<span>ƒ</span> ${argString}`
-    }
-  };
-}
-function registerScope(payload, i18n) {
-  payload.rootNodes.push({
-    id: 'global',
-    label: 'Global Scope'
-  });
-  // prettier-ignore
-  const global = i18n.mode === 'composition' ? i18n.global : i18n.global.__composer;
-  for (const [keyInstance, instance] of i18n.__instances) {
-    // prettier-ignore
-    const composer = i18n.mode === 'composition' ? instance : instance.__composer;
-    if (global === composer) {
-      continue;
-    }
-    payload.rootNodes.push({
-      id: composer.id.toString(),
-      label: `${getI18nScopeLable(keyInstance)} Scope`
-    });
-  }
-}
-function getComponentInstance(nodeId, i18n) {
-  let instance = null;
-  if (nodeId !== 'global') {
-    for (const [component, composer] of i18n.__instances.entries()) {
-      if (composer.id.toString() === nodeId) {
-        instance = component;
-        break;
-      }
-    }
-  }
-  return instance;
-}
-function getComposer$1(nodeId, i18n) {
-  if (nodeId === 'global') {
-    return i18n.mode === 'composition' ? i18n.global : i18n.global.__composer;
-  } else {
-    const instance = Array.from(i18n.__instances.values()).find(item => item.id.toString() === nodeId);
-    if (instance) {
-      return i18n.mode === 'composition' ? instance : instance.__composer;
-    } else {
-      return null;
-    }
-  }
-}
-function inspectScope(payload, i18n
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-) {
-  const composer = getComposer$1(payload.nodeId, i18n);
-  if (composer) {
-    // TODO:
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    payload.state = makeScopeInspectState(composer);
-  }
-  return null;
-}
-function makeScopeInspectState(composer) {
-  const state = {};
-  const localeType = 'Locale related info';
-  const localeStates = [{
-    type: localeType,
-    key: 'locale',
-    editable: true,
-    value: composer.locale.value
-  }, {
-    type: localeType,
-    key: 'fallbackLocale',
-    editable: true,
-    value: composer.fallbackLocale.value
-  }, {
-    type: localeType,
-    key: 'availableLocales',
-    editable: false,
-    value: composer.availableLocales
-  }, {
-    type: localeType,
-    key: 'inheritLocale',
-    editable: true,
-    value: composer.inheritLocale
-  }];
-  state[localeType] = localeStates;
-  const localeMessagesType = 'Locale messages info';
-  const localeMessagesStates = [{
-    type: localeMessagesType,
-    key: 'messages',
-    editable: false,
-    value: getLocaleMessageValue(composer.messages.value)
-  }];
-  state[localeMessagesType] = localeMessagesStates;
-  {
-    const datetimeFormatsType = 'Datetime formats info';
-    const datetimeFormatsStates = [{
-      type: datetimeFormatsType,
-      key: 'datetimeFormats',
-      editable: false,
-      value: composer.datetimeFormats.value
-    }];
-    state[datetimeFormatsType] = datetimeFormatsStates;
-    const numberFormatsType = 'Datetime formats info';
-    const numberFormatsStates = [{
-      type: numberFormatsType,
-      key: 'numberFormats',
-      editable: false,
-      value: composer.numberFormats.value
-    }];
-    state[numberFormatsType] = numberFormatsStates;
-  }
-  return state;
-}
-function addTimelineEvent(event, payload) {
-  if (devtoolsApi) {
-    let groupId;
-    if (payload && 'groupId' in payload) {
-      groupId = payload.groupId;
-      delete payload.groupId;
-    }
-    devtoolsApi.addTimelineEvent({
-      layerId: "vue-i18n-timeline" /* VueDevToolsIDs.TIMELINE */,
-      event: {
-        title: event,
-        groupId,
-        time: Date.now(),
-        meta: {},
-        data: payload || {},
-        logType: event === "compile-error" /* VueDevToolsTimelineEvents.COMPILE_ERROR */ ? 'error' : event === "fallback" /* VueDevToolsTimelineEvents.FALBACK */ || event === "missing" /* VueDevToolsTimelineEvents.MISSING */ ? 'warning' : 'default'
-      }
-    });
-  }
-}
-function editScope(payload, i18n) {
-  const composer = getComposer$1(payload.nodeId, i18n);
-  if (composer) {
-    const [field] = payload.path;
-    if (field === 'locale' && isString(payload.state.value)) {
-      composer.locale.value = payload.state.value;
-    } else if (field === 'fallbackLocale' && (isString(payload.state.value) || isArray(payload.state.value) || isObject(payload.state.value))) {
-      composer.fallbackLocale.value = payload.state.value;
-    } else if (field === 'inheritLocale' && isBoolean(payload.state.value)) {
-      composer.inheritLocale = payload.state.value;
-    }
-  }
-}
-
-/**
- * Supports compatibility for legacy vue-i18n APIs
- * This mixin is used when we use vue-i18n@v9.x or later
- */
-function defineMixin(vuei18n, composer, i18n) {
-  return {
-    beforeCreate() {
-      const instance = getCurrentInstance();
-      /* istanbul ignore if */
-      if (!instance) {
-        throw createI18nError(I18nErrorCodes.UNEXPECTED_ERROR);
-      }
-      const options = this.$options;
-      if (options.i18n) {
-        const optionsI18n = options.i18n;
-        if (options.__i18n) {
-          optionsI18n.__i18n = options.__i18n;
-        }
-        optionsI18n.__root = composer;
-        if (this === this.$root) {
-          // merge option and gttach global
-          this.$i18n = mergeToGlobal(vuei18n, optionsI18n);
-        } else {
-          optionsI18n.__injectWithOption = true;
-          optionsI18n.__extender = i18n.__vueI18nExtend;
-          // atttach local VueI18n instance
-          this.$i18n = createVueI18n(optionsI18n);
-          // extend VueI18n instance
-          const _vueI18n = this.$i18n;
-          if (_vueI18n.__extender) {
-            _vueI18n.__disposer = _vueI18n.__extender(this.$i18n);
-          }
-        }
-      } else if (options.__i18n) {
-        if (this === this.$root) {
-          // merge option and gttach global
-          this.$i18n = mergeToGlobal(vuei18n, options);
-        } else {
-          // atttach local VueI18n instance
-          this.$i18n = createVueI18n({
-            __i18n: options.__i18n,
-            __injectWithOption: true,
-            __extender: i18n.__vueI18nExtend,
-            __root: composer
-          });
-          // extend VueI18n instance
-          const _vueI18n = this.$i18n;
-          if (_vueI18n.__extender) {
-            _vueI18n.__disposer = _vueI18n.__extender(this.$i18n);
-          }
-        }
-      } else {
-        // attach global VueI18n instance
-        this.$i18n = vuei18n;
-      }
-      if (options.__i18nGlobal) {
-        adjustI18nResources(composer, options, options);
-      }
-      // defines vue-i18n legacy APIs
-      this.$t = (...args) => this.$i18n.t(...args);
-      this.$rt = (...args) => this.$i18n.rt(...args);
-      this.$tc = (...args) => this.$i18n.tc(...args);
-      this.$te = (key, locale) => this.$i18n.te(key, locale);
-      this.$d = (...args) => this.$i18n.d(...args);
-      this.$n = (...args) => this.$i18n.n(...args);
-      this.$tm = key => this.$i18n.tm(key);
-      i18n.__setInstance(instance, this.$i18n);
-    },
-    mounted() {
-      /* istanbul ignore if */
-      if (false) {}
-    },
-    unmounted() {
-      const instance = getCurrentInstance();
-      /* istanbul ignore if */
-      if (!instance) {
-        throw createI18nError(I18nErrorCodes.UNEXPECTED_ERROR);
-      }
-      const _vueI18n = this.$i18n;
-      /* istanbul ignore if */
-      if (false) {}
-      delete this.$t;
-      delete this.$rt;
-      delete this.$tc;
-      delete this.$te;
-      delete this.$d;
-      delete this.$n;
-      delete this.$tm;
-      if (_vueI18n.__disposer) {
-        _vueI18n.__disposer();
-        delete _vueI18n.__disposer;
-        delete _vueI18n.__extender;
-      }
-      i18n.__deleteInstance(instance);
-      delete this.$i18n;
-    }
-  };
-}
-function mergeToGlobal(g, options) {
-  g.locale = options.locale || g.locale;
-  g.fallbackLocale = options.fallbackLocale || g.fallbackLocale;
-  g.missing = options.missing || g.missing;
-  g.silentTranslationWarn = options.silentTranslationWarn || g.silentFallbackWarn;
-  g.silentFallbackWarn = options.silentFallbackWarn || g.silentFallbackWarn;
-  g.formatFallbackMessages = options.formatFallbackMessages || g.formatFallbackMessages;
-  g.postTranslation = options.postTranslation || g.postTranslation;
-  g.warnHtmlInMessage = options.warnHtmlInMessage || g.warnHtmlInMessage;
-  g.escapeParameterHtml = options.escapeParameterHtml || g.escapeParameterHtml;
-  g.sync = options.sync || g.sync;
-  g.__composer[SetPluralRulesSymbol](options.pluralizationRules || g.pluralizationRules);
-  const messages = getLocaleMessages(g.locale, {
-    messages: options.messages,
-    __i18n: options.__i18n
-  });
-  Object.keys(messages).forEach(locale => g.mergeLocaleMessage(locale, messages[locale]));
-  if (options.datetimeFormats) {
-    Object.keys(options.datetimeFormats).forEach(locale => g.mergeDateTimeFormat(locale, options.datetimeFormats[locale]));
-  }
-  if (options.numberFormats) {
-    Object.keys(options.numberFormats).forEach(locale => g.mergeNumberFormat(locale, options.numberFormats[locale]));
-  }
-  return g;
-}
-
-/**
- * Injection key for {@link useI18n}
- *
- * @remarks
- * The global injection key for I18n instances with `useI18n`. this injection key is used in Web Components.
- * Specify the i18n instance created by {@link createI18n} together with `provide` function.
- *
- * @VueI18nGeneral
- */
-const I18nInjectionKey = /* #__PURE__*/shared_makeSymbol('global-vue-i18n');
-// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types
-function createI18n(options = {}, VueI18nLegacy) {
-  // prettier-ignore
-  const __legacyMode =  false ? 0 : false;
-  // prettier-ignore
-  const __globalInjection = shared_isBoolean(options.globalInjection) ? options.globalInjection : true;
-  // prettier-ignore
-  const __allowComposition =  false ? 0 : true;
-  const __instances = new Map();
-  const [globalScope, __global] = createGlobal(options, __legacyMode);
-  const symbol = /* #__PURE__*/shared_makeSymbol( false ? 0 : '');
-  if (false) {}
-  function __getInstance(component) {
-    return __instances.get(component) || null;
-  }
-  function __setInstance(component, instance) {
-    __instances.set(component, instance);
-  }
-  function __deleteInstance(component) {
-    __instances.delete(component);
-  }
-  {
-    const i18n = {
-      // mode
-      get mode() {
-        return  false ? 0 : 'composition';
-      },
-      // allowComposition
-      get allowComposition() {
-        return __allowComposition;
-      },
-      // install plugin
-      async install(app, ...options) {
-        if (false) {}
-        // setup global provider
-        app.__VUE_I18N_SYMBOL__ = symbol;
-        app.provide(app.__VUE_I18N_SYMBOL__, i18n);
-        // set composer & vuei18n extend hook options from plugin options
-        if (shared_isPlainObject(options[0])) {
-          const opts = options[0];
-          i18n.__composerExtend = opts.__composerExtend;
-          i18n.__vueI18nExtend = opts.__vueI18nExtend;
-        }
-        // global method and properties injection for Composition API
-        let globalReleaseHandler = null;
-        if (!__legacyMode && __globalInjection) {
-          globalReleaseHandler = injectGlobalFields(app, i18n.global);
-        }
-        // install built-in components and directive
-        if (true) {
-          apply(app, i18n, ...options);
-        }
-        // setup mixin for Legacy API
-        if (false) {}
-        // release global scope
-        const unmountApp = app.unmount;
-        app.unmount = () => {
-          globalReleaseHandler && globalReleaseHandler();
-          i18n.dispose();
-          unmountApp();
-        };
-        // setup vue-devtools plugin
-        if (false) {}
-      },
-      // global accessor
-      get global() {
-        return __global;
-      },
-      dispose() {
-        globalScope.stop();
-      },
-      // @internal
-      __instances,
-      // @internal
-      __getInstance,
-      // @internal
-      __setInstance,
-      // @internal
-      __deleteInstance
-    };
-    return i18n;
-  }
-}
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-function useI18n(options = {}) {
-  const instance = (0,runtime_core_esm_bundler/* getCurrentInstance */._S)();
-  if (instance == null) {
-    throw createI18nError(I18nErrorCodes.MUST_BE_CALL_SETUP_TOP);
-  }
-  if (!instance.isCE && instance.appContext.app != null && !instance.appContext.app.__VUE_I18N_SYMBOL__) {
-    throw createI18nError(I18nErrorCodes.NOT_INSTALLED);
-  }
-  const i18n = getI18nInstance(instance);
-  const gl = getGlobalComposer(i18n);
-  const componentOptions = getComponentOptions(instance);
-  const scope = getScope(options, componentOptions);
-  if (false) {}
-  if (scope === 'global') {
-    adjustI18nResources(gl, options, componentOptions);
-    return gl;
-  }
-  if (scope === 'parent') {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    let composer = getComposer(i18n, instance, options.__useComponent);
-    if (composer == null) {
-      if (false) {}
-      composer = gl;
-    }
-    return composer;
-  }
-  const i18nInternal = i18n;
-  let composer = i18nInternal.__getInstance(instance);
-  if (composer == null) {
-    const composerOptions = shared_assign({}, options);
-    if ('__i18n' in componentOptions) {
-      composerOptions.__i18n = componentOptions.__i18n;
-    }
-    if (gl) {
-      composerOptions.__root = gl;
-    }
-    composer = createComposer(composerOptions);
-    if (i18nInternal.__composerExtend) {
-      composer[DisposeSymbol] = i18nInternal.__composerExtend(composer);
-    }
-    setupLifeCycle(i18nInternal, instance, composer);
-    i18nInternal.__setInstance(instance, composer);
-  }
-  return composer;
-}
-/**
- * Cast to VueI18n legacy compatible type
- *
- * @remarks
- * This API is provided only with [vue-i18n-bridge](https://vue-i18n.intlify.dev/guide/migration/ways.html#what-is-vue-i18n-bridge).
- *
- * The purpose of this function is to convert an {@link I18n} instance created with {@link createI18n | createI18n(legacy: true)} into a `vue-i18n@v8.x` compatible instance of `new VueI18n` in a TypeScript environment.
- *
- * @param i18n - An instance of {@link I18n}
- * @returns A i18n instance which is casted to {@link VueI18n} type
- *
- * @VueI18nTip
- * :new: provided by **vue-i18n-bridge only**
- *
- * @VueI18nGeneral
- */
-/* #__NO_SIDE_EFFECTS__ */
-const castToVueI18n = (i18n
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-) => {
-  if (!(__VUE_I18N_BRIDGE__ in i18n)) {
-    throw createI18nError(I18nErrorCodes.NOT_COMPATIBLE_LEGACY_VUE_I18N);
-  }
-  return i18n;
-};
-function createGlobal(options, legacyMode, VueI18nLegacy // eslint-disable-line @typescript-eslint/no-explicit-any
-) {
-  const scope = (0,reactivity_esm_bundler/* effectScope */.Ul)();
-  {
-    const obj =  false ? 0 : scope.run(() => createComposer(options));
-    if (obj == null) {
-      throw createI18nError(I18nErrorCodes.UNEXPECTED_ERROR);
-    }
-    return [scope, obj];
-  }
-}
-function getI18nInstance(instance) {
-  {
-    const i18n = (0,runtime_core_esm_bundler/* inject */.uU)(!instance.isCE ? instance.appContext.app.__VUE_I18N_SYMBOL__ : I18nInjectionKey);
-    /* istanbul ignore if */
-    if (!i18n) {
-      throw createI18nError(!instance.isCE ? I18nErrorCodes.UNEXPECTED_ERROR : I18nErrorCodes.NOT_INSTALLED_WITH_PROVIDE);
-    }
-    return i18n;
-  }
-}
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function getScope(options, componentOptions) {
-  // prettier-ignore
-  return isEmptyObject(options) ? '__i18n' in componentOptions ? 'local' : 'global' : !options.useScope ? 'local' : options.useScope;
-}
-function getGlobalComposer(i18n) {
-  // prettier-ignore
-  return i18n.mode === 'composition' ? i18n.global : i18n.global.__composer;
-}
-function getComposer(i18n, target, useComponent = false) {
-  let composer = null;
-  const root = target.root;
-  let current = getParentComponentInstance(target, useComponent);
-  while (current != null) {
-    const i18nInternal = i18n;
-    if (i18n.mode === 'composition') {
-      composer = i18nInternal.__getInstance(current);
-    } else {
-      if (false) {}
-    }
-    if (composer != null) {
-      break;
-    }
-    if (root === current) {
-      break;
-    }
-    current = current.parent;
-  }
-  return composer;
-}
-function getParentComponentInstance(target, useComponent = false) {
-  if (target == null) {
-    return null;
-  }
-  {
-    // if `useComponent: true` will be specified, we get lexical scope owner instance for use-case slots
-    return !useComponent ? target.parent : target.vnode.ctx || target.parent; // eslint-disable-line @typescript-eslint/no-explicit-any
-  }
-}
-function setupLifeCycle(i18n, target, composer) {
-  let emitter = null;
-  {
-    (0,runtime_core_esm_bundler/* onMounted */.u2)(() => {
-      // inject composer instance to DOM for intlify-devtools
-      if (false) {}
-    }, target);
-    (0,runtime_core_esm_bundler/* onUnmounted */.wx)(() => {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const _composer = composer;
-      // remove composer instance from DOM for intlify-devtools
-      if (false) {}
-      i18n.__deleteInstance(target);
-      // dispose extended resources
-      const dispose = _composer[DisposeSymbol];
-      if (dispose) {
-        dispose();
-        delete _composer[DisposeSymbol];
-      }
-    }, target);
-  }
-}
-function useI18nForLegacy(instance, scope, root, options = {} // eslint-disable-line @typescript-eslint/no-explicit-any
-) {
-  const isLocalScope = scope === 'local';
-  const _composer = shallowRef(null);
-  if (isLocalScope && instance.proxy && !(instance.proxy.$options.i18n || instance.proxy.$options.__i18n)) {
-    throw createI18nError(I18nErrorCodes.MUST_DEFINE_I18N_OPTION_IN_ALLOW_COMPOSITION);
-  }
-  const _inheritLocale = isBoolean(options.inheritLocale) ? options.inheritLocale : !isString(options.locale);
-  const _locale = ref(
-  // prettier-ignore
-  !isLocalScope || _inheritLocale ? root.locale.value : isString(options.locale) ? options.locale : DEFAULT_LOCALE);
-  const _fallbackLocale = ref(
-  // prettier-ignore
-  !isLocalScope || _inheritLocale ? root.fallbackLocale.value : isString(options.fallbackLocale) || isArray(options.fallbackLocale) || isPlainObject(options.fallbackLocale) || options.fallbackLocale === false ? options.fallbackLocale : _locale.value);
-  const _messages = ref(getLocaleMessages(_locale.value, options));
-  // prettier-ignore
-  const _datetimeFormats = ref(isPlainObject(options.datetimeFormats) ? options.datetimeFormats : {
-    [_locale.value]: {}
-  });
-  // prettier-ignore
-  const _numberFormats = ref(isPlainObject(options.numberFormats) ? options.numberFormats : {
-    [_locale.value]: {}
-  });
-  // prettier-ignore
-  const _missingWarn = isLocalScope ? root.missingWarn : isBoolean(options.missingWarn) || isRegExp(options.missingWarn) ? options.missingWarn : true;
-  // prettier-ignore
-  const _fallbackWarn = isLocalScope ? root.fallbackWarn : isBoolean(options.fallbackWarn) || isRegExp(options.fallbackWarn) ? options.fallbackWarn : true;
-  // prettier-ignore
-  const _fallbackRoot = isLocalScope ? root.fallbackRoot : isBoolean(options.fallbackRoot) ? options.fallbackRoot : true;
-  // configure fall back to root
-  const _fallbackFormat = !!options.fallbackFormat;
-  // runtime missing
-  const _missing = isFunction(options.missing) ? options.missing : null;
-  // postTranslation handler
-  const _postTranslation = isFunction(options.postTranslation) ? options.postTranslation : null;
-  // prettier-ignore
-  const _warnHtmlMessage = isLocalScope ? root.warnHtmlMessage : isBoolean(options.warnHtmlMessage) ? options.warnHtmlMessage : true;
-  const _escapeParameter = !!options.escapeParameter;
-  // prettier-ignore
-  const _modifiers = isLocalScope ? root.modifiers : isPlainObject(options.modifiers) ? options.modifiers : {};
-  // pluralRules
-  const _pluralRules = options.pluralRules || isLocalScope && root.pluralRules;
-  // track reactivity
-  function trackReactivityValues() {
-    return [_locale.value, _fallbackLocale.value, _messages.value, _datetimeFormats.value, _numberFormats.value];
-  }
-  // locale
-  const locale = computed({
-    get: () => {
-      return _composer.value ? _composer.value.locale.value : _locale.value;
-    },
-    set: val => {
-      if (_composer.value) {
-        _composer.value.locale.value = val;
-      }
-      _locale.value = val;
-    }
-  });
-  // fallbackLocale
-  const fallbackLocale = computed({
-    get: () => {
-      return _composer.value ? _composer.value.fallbackLocale.value : _fallbackLocale.value;
-    },
-    set: val => {
-      if (_composer.value) {
-        _composer.value.fallbackLocale.value = val;
-      }
-      _fallbackLocale.value = val;
-    }
-  });
-  // messages
-  const messages = computed(() => {
-    if (_composer.value) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      return _composer.value.messages.value;
-    } else {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      return _messages.value;
-    }
-  });
-  const datetimeFormats = computed(() => _datetimeFormats.value);
-  const numberFormats = computed(() => _numberFormats.value);
-  function getPostTranslationHandler() {
-    return _composer.value ? _composer.value.getPostTranslationHandler() : _postTranslation;
-  }
-  function setPostTranslationHandler(handler) {
-    if (_composer.value) {
-      _composer.value.setPostTranslationHandler(handler);
-    }
-  }
-  function getMissingHandler() {
-    return _composer.value ? _composer.value.getMissingHandler() : _missing;
-  }
-  function setMissingHandler(handler) {
-    if (_composer.value) {
-      _composer.value.setMissingHandler(handler);
-    }
-  }
-  function warpWithDeps(fn) {
-    trackReactivityValues();
-    return fn();
-  }
-  function t(...args) {
-    return _composer.value ? warpWithDeps(() => Reflect.apply(_composer.value.t, null, [...args])) : warpWithDeps(() => '');
-  }
-  function rt(...args) {
-    return _composer.value ? Reflect.apply(_composer.value.rt, null, [...args]) : '';
-  }
-  function d(...args) {
-    return _composer.value ? warpWithDeps(() => Reflect.apply(_composer.value.d, null, [...args])) : warpWithDeps(() => '');
-  }
-  function n(...args) {
-    return _composer.value ? warpWithDeps(() => Reflect.apply(_composer.value.n, null, [...args])) : warpWithDeps(() => '');
-  }
-  function tm(key) {
-    return _composer.value ? _composer.value.tm(key) : {};
-  }
-  function te(key, locale) {
-    return _composer.value ? _composer.value.te(key, locale) : false;
-  }
-  function getLocaleMessage(locale) {
-    return _composer.value ? _composer.value.getLocaleMessage(locale) : {};
-  }
-  function setLocaleMessage(locale, message) {
-    if (_composer.value) {
-      _composer.value.setLocaleMessage(locale, message);
-      _messages.value[locale] = message;
-    }
-  }
-  function mergeLocaleMessage(locale, message) {
-    if (_composer.value) {
-      _composer.value.mergeLocaleMessage(locale, message);
-    }
-  }
-  function getDateTimeFormat(locale) {
-    return _composer.value ? _composer.value.getDateTimeFormat(locale) : {};
-  }
-  function setDateTimeFormat(locale, format) {
-    if (_composer.value) {
-      _composer.value.setDateTimeFormat(locale, format);
-      _datetimeFormats.value[locale] = format;
-    }
-  }
-  function mergeDateTimeFormat(locale, format) {
-    if (_composer.value) {
-      _composer.value.mergeDateTimeFormat(locale, format);
-    }
-  }
-  function getNumberFormat(locale) {
-    return _composer.value ? _composer.value.getNumberFormat(locale) : {};
-  }
-  function setNumberFormat(locale, format) {
-    if (_composer.value) {
-      _composer.value.setNumberFormat(locale, format);
-      _numberFormats.value[locale] = format;
-    }
-  }
-  function mergeNumberFormat(locale, format) {
-    if (_composer.value) {
-      _composer.value.mergeNumberFormat(locale, format);
-    }
-  }
-  const wrapper = {
-    get id() {
-      return _composer.value ? _composer.value.id : -1;
-    },
-    locale,
-    fallbackLocale,
-    messages,
-    datetimeFormats,
-    numberFormats,
-    get inheritLocale() {
-      return _composer.value ? _composer.value.inheritLocale : _inheritLocale;
-    },
-    set inheritLocale(val) {
-      if (_composer.value) {
-        _composer.value.inheritLocale = val;
-      }
-    },
-    get availableLocales() {
-      return _composer.value ? _composer.value.availableLocales : Object.keys(_messages.value);
-    },
-    get modifiers() {
-      return _composer.value ? _composer.value.modifiers : _modifiers;
-    },
-    get pluralRules() {
-      return _composer.value ? _composer.value.pluralRules : _pluralRules;
-    },
-    get isGlobal() {
-      return _composer.value ? _composer.value.isGlobal : false;
-    },
-    get missingWarn() {
-      return _composer.value ? _composer.value.missingWarn : _missingWarn;
-    },
-    set missingWarn(val) {
-      if (_composer.value) {
-        _composer.value.missingWarn = val;
-      }
-    },
-    get fallbackWarn() {
-      return _composer.value ? _composer.value.fallbackWarn : _fallbackWarn;
-    },
-    set fallbackWarn(val) {
-      if (_composer.value) {
-        _composer.value.missingWarn = val;
-      }
-    },
-    get fallbackRoot() {
-      return _composer.value ? _composer.value.fallbackRoot : _fallbackRoot;
-    },
-    set fallbackRoot(val) {
-      if (_composer.value) {
-        _composer.value.fallbackRoot = val;
-      }
-    },
-    get fallbackFormat() {
-      return _composer.value ? _composer.value.fallbackFormat : _fallbackFormat;
-    },
-    set fallbackFormat(val) {
-      if (_composer.value) {
-        _composer.value.fallbackFormat = val;
-      }
-    },
-    get warnHtmlMessage() {
-      return _composer.value ? _composer.value.warnHtmlMessage : _warnHtmlMessage;
-    },
-    set warnHtmlMessage(val) {
-      if (_composer.value) {
-        _composer.value.warnHtmlMessage = val;
-      }
-    },
-    get escapeParameter() {
-      return _composer.value ? _composer.value.escapeParameter : _escapeParameter;
-    },
-    set escapeParameter(val) {
-      if (_composer.value) {
-        _composer.value.escapeParameter = val;
-      }
-    },
-    t,
-    getPostTranslationHandler,
-    setPostTranslationHandler,
-    getMissingHandler,
-    setMissingHandler,
-    rt,
-    d,
-    n,
-    tm,
-    te,
-    getLocaleMessage,
-    setLocaleMessage,
-    mergeLocaleMessage,
-    getDateTimeFormat,
-    setDateTimeFormat,
-    mergeDateTimeFormat,
-    getNumberFormat,
-    setNumberFormat,
-    mergeNumberFormat
-  };
-  function sync(composer) {
-    composer.locale.value = _locale.value;
-    composer.fallbackLocale.value = _fallbackLocale.value;
-    Object.keys(_messages.value).forEach(locale => {
-      composer.mergeLocaleMessage(locale, _messages.value[locale]);
-    });
-    Object.keys(_datetimeFormats.value).forEach(locale => {
-      composer.mergeDateTimeFormat(locale, _datetimeFormats.value[locale]);
-    });
-    Object.keys(_numberFormats.value).forEach(locale => {
-      composer.mergeNumberFormat(locale, _numberFormats.value[locale]);
-    });
-    composer.escapeParameter = _escapeParameter;
-    composer.fallbackFormat = _fallbackFormat;
-    composer.fallbackRoot = _fallbackRoot;
-    composer.fallbackWarn = _fallbackWarn;
-    composer.missingWarn = _missingWarn;
-    composer.warnHtmlMessage = _warnHtmlMessage;
-  }
-  onBeforeMount(() => {
-    if (instance.proxy == null || instance.proxy.$i18n == null) {
-      throw createI18nError(I18nErrorCodes.NOT_AVAILABLE_COMPOSITION_IN_LEGACY);
-    }
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const composer = _composer.value = instance.proxy.$i18n.__composer;
-    if (scope === 'global') {
-      _locale.value = composer.locale.value;
-      _fallbackLocale.value = composer.fallbackLocale.value;
-      _messages.value = composer.messages.value;
-      _datetimeFormats.value = composer.datetimeFormats.value;
-      _numberFormats.value = composer.numberFormats.value;
-    } else if (isLocalScope) {
-      sync(composer);
-    }
-  });
-  return wrapper;
-}
-const globalExportProps = ['locale', 'fallbackLocale', 'availableLocales'];
-const globalExportMethods = ['t', 'rt', 'd', 'n', 'tm', 'te'];
-function injectGlobalFields(app, composer) {
-  const i18n = Object.create(null);
-  globalExportProps.forEach(prop => {
-    const desc = Object.getOwnPropertyDescriptor(composer, prop);
-    if (!desc) {
-      throw createI18nError(I18nErrorCodes.UNEXPECTED_ERROR);
-    }
-    const wrap = (0,reactivity_esm_bundler/* isRef */.Ir)(desc.value) // check computed props
-    ? {
-      get() {
-        return desc.value.value;
-      },
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      set(val) {
-        desc.value.value = val;
-      }
-    } : {
-      get() {
-        return desc.get && desc.get();
-      }
-    };
-    Object.defineProperty(i18n, prop, wrap);
-  });
-  app.config.globalProperties.$i18n = i18n;
-  globalExportMethods.forEach(method => {
-    const desc = Object.getOwnPropertyDescriptor(composer, method);
-    if (!desc || !desc.value) {
-      throw createI18nError(I18nErrorCodes.UNEXPECTED_ERROR);
-    }
-    Object.defineProperty(app.config.globalProperties, `$${method}`, desc);
-  });
-  const dispose = () => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    delete app.config.globalProperties.$i18n;
-    globalExportMethods.forEach(method => {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      delete app.config.globalProperties[`$${method}`];
-    });
-  };
-  return dispose;
-}
-{
-  vue_i18n_initFeatureFlags();
-}
-// register message compiler at vue-i18n
-if (__INTLIFY_JIT_COMPILATION__) {
-  registerMessageCompiler(compile);
-} else {
-  registerMessageCompiler(compileToFunction);
-}
-// register message resolver at vue-i18n
-registerMessageResolver(resolveValue);
-// register fallback locale at vue-i18n
-registerLocaleFallbacker(fallbackWithLocaleChain);
-// NOTE: experimental !!
-if (false) {}
-if (false) {}
-
-;// CONCATENATED MODULE: ./src/lang/ru.ts
-/* harmony default export */ var ru = ({
-  BLE: {
-    title: "Bluetooth",
-    btn: {
-      connect: "Подключиться",
-      disconnect: "Отключиться"
-    },
-    dialog: {
-      noConnected: "Вы не подключены ни к одному устройству Bluetooth.",
-      connected: "Вы подключены к устройству Bluetooth PJCAN."
-    },
-    notify: {
-      noConnected: "Нет подключения устройству Bluetooth.",
-      connected: "PJCAN подключен",
-      disconnected: "PJCAN отключен",
-      lostConnected: "Потеряно подключение с устройством Bluetooth PJCAN. Пытаюсь восстановить связь...",
-      noData: "Нет данных для отправки"
-    },
-    server: {
-      deviceSelected: "Выбрано {n} Bluetooth устройство.",
-      deviceDisconnected: "Устройство Bluetooth {n} отключено.",
-      GATTConnect: "Подключение к GATT серверу ...",
-      getService: "GATT сервер подключен, читаю сервис ...",
-      getCharacteristic: "Сервис получен, читаю характеристику ...",
-      characteristicDone: "Характеристика получена.",
-      startNotifications: "Запуск уведомлений ...",
-      notificationsDone: "Уведомления запущены.",
-      reconnect: "Повторная попытка через {n} сек... (осталось {c} попыток)",
-      reconnectRestored: "Соединение с устройством Bluetooth PJCAN восстановлено.",
-      connectionLost: "Связь с устройством Bluetooth PJCAN потеряна.",
-      receive: "Входящие данные: ID {n}",
-      send: "Исходящие данные: ID {n}",
-      versionProtocol: "Версия протокола: {mj}.{mn}.{bl}.{rv}"
-    }
-  },
-  update: {
-    title: "Обновление PJCAN",
-    warning: "Внимание!",
-    btn: {
-      update: "Обновить",
-      later: "Позже"
-    },
-    dialog: {
-      updateTo: "Обновить прошивку PJCAN до версии {version} ?",
-      browserOutdated: "Версия вашего браузера устарела.\n" + "Обновите его и откройте web-приложение заново."
-    },
-    process: {
-      preparation: "Подготовка к загрузке ...",
-      upload: "Загрузка прошивки",
-      update: "Обновление прошивки ...",
-      timeLeft: "Оставшееся время"
-    },
-    notify: {
-      newVersion: "Доступно обновление {version}",
-      completed: "Прошивка успешно завершена",
-      warning: "Прошивка завершена не удачно. Выключите и включите устройство, и попробуйте обновить еще раз",
-      error: "Ошибка обновления прошивки",
-      errorDownload: "Ошибка загрузки прошивки с сервера. Возможно отсутствует подключение к сети интернет",
-      errorUpload: "Ошибка загрузки прошивки на устройство PJCAN. Возможно отсутствует подключение по Bluetooth",
-      errorWaitUpdate: "Истекло время ожидания устройства PJCAN. Выключите и включите устройство, и попробуйте обновить еще раз"
-    }
-  },
-  error: {
-    title: "Что смотришь,\nпиши PJ82",
-    version: "Ошибка запроса версии устройства. Переподключите устройство PJCAN"
-  },
-  rules: {
-    required: "Обязательное поле",
-    counter: "Максимум {n} символов | Максимум {n} символ | Максимум {n} символа | Максимум {n} символов",
-    english: "Ввод только английских символов и цифр"
-  },
-  menu: {
-    onboard: "Бортовой компьютер",
-    onboardButtons: "Кнопки БК",
-    test: "Тестирование",
-    language: {
-      russian: "Russian language",
-      english: "English language"
-    },
-    settings: {
-      buttonsSW1: "Кнопки руля",
-      buttonsSW3: "Кнопки SW3",
-      options: "Параметры"
-    },
-    update: "Обновить до {version}",
-    about: "О программе"
-  },
-  activation: {
-    success: "Устройство успешно активировано! Устройство перезагружается ...",
-    error: "Устройство не активировано. Обратитесь к разработчику."
-  },
-  about: {
-    title: "О программе",
-    version: "Версия web-приложения",
-    versionFirmware: "Версия прошивки PJCAN",
-    carSupport: "Поддержка автомобиля",
-    author: "Автор",
-    sha: "Хеш устройства"
-  },
-  deviceInfo: {
-    title: "Техническая информация",
-    // chipCores: "Количество ядер",
-    // chipModel: "Модель чипа",
-    // chipRevision: "Номер ревизии чипа",
-    cpuFreqMHz: "Частота ЦП, МГц",
-    // cycleCount: "Количество циклов",
-    efuseMac: "MAC-адрес",
-    // flashChipMode: "Режим флеш-памяти",
-    // flashChipSize: "Размер флеш-памяти, байт",
-    // flashChipSpeed: "Частота флеш-памяти",
-    // heapSize: "Размер кучи в памяти",
-    // freeHeap: "Свободной кучи в памяти",
-    // maxAllocHeap: "Размер самого большого блока кучи",
-    // minFreeHeap: "Наименьший уровень свободной кучи",
-    // psramSize: "Размер SPI RAM",
-    // freePsram: "Свободной SPI RAM",
-    // maxAllocPsram: "Размер самого большого блока SPI RAM",
-    // minFreePsram: "Наименьший уровень свободной SPI RAM",
-    freeSketchSpace: "Свободное место для прошивки",
-    sdkVersion: "Версия SDK",
-    sketchMD5: "MD5 прошивки",
-    sketchSize: "Размер прошивки",
-    temperatureChip: "Температура чипа",
-    sha: "SHA",
-    hardware: "Версия платы"
-  },
-  deviceReset: {
-    title: "Сброс конфигурации устройства",
-    config: "Сбросить значения конфигурации по умолчанию",
-    view: "Сбросить значения конфигурации отображения по умолчанию"
-  },
-  btn: {
-    apply: "Применить",
-    cancel: "Отмена",
-    close: "Закрыть",
-    deviceInfo: "Об устройстве",
-    deviceReset: "Сбросить конфигурацию",
-    reset: "Сбросить",
-    ok: "OK"
-  },
-  onboard: {
-    title: "Бортовой компьютер",
-    viewSetting: {
-      enabled: {
-        title: "Отображать информацию",
-        description: "Статус отображения информации на информационном экране"
-      },
-      type: {
-        title: "Стиль отображения информации",
-        description: "Отображать статичный текст, мигающий или в стиле бегущий строки",
-        items: ["Обычный текст", "Мигание текста", "Бегущая строка"]
-      },
-      time: {
-        title: "Время отображения, сек.",
-        description: "Показывать на информационном экране указанное количество секунд"
-      },
-      delay: {
-        title: "Время паузы отображения, сек.",
-        description: "Пауза отображения информации указанное количество секунд"
-      }
-    },
-    info: {
-      title: "Информация",
-      acc: {
-        title: "ACC",
-        description: "Питание автомобиля"
-      },
-      worktime: {
-        title: "Время работы",
-        description: "Время работы устройства с момента включения",
-        menu: "LCD: Время работы"
-      },
-      voltmeter: {
-        title: "Напряжение",
-        description: "Напряжение бортовой сети в вольтах",
-        menu: "LCD: Напряжение"
-      },
-      temperature: {
-        title: "Температура воздуха",
-        description: "Показания внешней температуры автомобиля",
-        menu: "LCD: Температура воздуха"
-      },
-      handbrake: {
-        title: "Ручной тормоз",
-        description: "Положение ручного тормоза",
-        menu: "LCD: Ручной тормоз"
-      },
-      reverse: {
-        title: "Задний ход",
-        description: "Ручка КПП в положении R",
-        menu: "LCD: Задний ход"
-      },
-      safetyBelt: {
-        title: "Ремень безопасности",
-        description: "Ремень безопасности водителя и пассажира",
-        menu: "LCD: Ремень безопасности"
-      },
-      signal: {
-        title: "Сигнал поворота",
-        description: "Сигнал поворота и аварийной остановки",
-        menu: "LCD: Сигнал поворота"
-      }
-    },
-    engine: {
-      title: "Двигатель",
-      enabled: {
-        title: "Работа ДВС",
-        description: "Текущее состояние ДВС",
-        menu: "LCD: Работа ДВС"
-      },
-      RPM: {
-        title: "RPM двигателя",
-        description: "Текущее количество полных оборотов коленчатого вала двигателя в минуту",
-        menu: "LCD: RPM двигателя"
-      },
-      countRPM: {
-        title: "Счетчик RPM, тыс.",
-        description: "Общее количество полных оборотов коленчатого вала двигателя в тысячах",
-        menu: "LCD: Счетчик RPM"
-      },
-      load: {
-        title: "Нагрузка на ДВС",
-        description: "Нагрузка чего-то на что-то, хз как рассчитывается",
-        menu: "LCD: Нагрузка на ДВС"
-      },
-      worktime: {
-        title: "Моточасы",
-        description: "Общее время работы двигателя",
-        menu: "LCD: Моточасы"
-      },
-      throttle: {
-        title: "Положение дрос. заслонки",
-        description: "Относительное положение дроссельной заслонки",
-        menu: "LCD: Положение дроссельной заслонки"
-      },
-      coolant: {
-        title: "Температура антифриза",
-        description: "Температура охлаждающей жидкости",
-        menu: "LCD: Температура антифриза"
-      },
-      settings: {
-        title: "Настройки статистики ДВС",
-        menu: "Настройки статистики",
-        showDays: {
-          title: "Показывать дни в статистике",
-          titleShort: "Показывать дни",
-          description: "Отображать моточасы на информационном экране в формате d.hh:mm:ss"
-        },
-        worktime: {
-          title: "Время работы, мин.",
-          description: "Общее время работы двигателя"
-        },
-        countRPM: {
-          title: "Счетчик RPM, тыс.",
-          description: "Общее количество полных оборотов коленчатого вала двигателя в тысячах"
-        }
-      }
-    },
-    fuel: {
-      title: "Топливо",
-      current: {
-        title: "Расход топлива",
-        description: "Значение БК, л/100 км",
-        menu: "LCD: Расход топлива"
-      },
-      avg: {
-        title: "Средний расход",
-        description: "Значение БК, л/100 км",
-        menu: "LCD: Средний расход"
-      },
-      settings: {
-        title: "Настройки расхода",
-        menu: "Настройки расхода",
-        ratio: {
-          title: "Коэффициент расхода топлива",
-          description: "Для корректировки расхода ГБО или др. вида топлива"
-        }
-      }
-    },
-    movement: {
-      title: "Спидометр",
-      speed: {
-        title: "Скорость автомобиля",
-        description: "Значение БК, км/ч",
-        menu: "LCD: Скорость автомобиля"
-      },
-      speedAVG: {
-        title: "Средняя скорость",
-        description: "Значение БК, км/ч",
-        menu: "LCD: Средняя скорость"
-      },
-      restWay: {
-        title: "Остаток пути, км",
-        description: "Значение БК в км",
-        menu: "LCD: Остаток пути"
-      }
-    },
-    doors: {
-      title: "Двери",
-      menu: "LCD: Двери",
-      doorFL: {
-        title: "Передняя левая",
-        description: "Текущее состояние передней левой двери"
-      },
-      doorFR: {
-        title: "Передняя правая",
-        description: "Текущее состояние передней правой двери"
-      },
-      doorBL: {
-        title: "Задняя левая",
-        description: "Текущее состояние задней левой двери"
-      },
-      doorBR: {
-        title: "Задняя правая",
-        description: "Текущее состояние задней правой двери"
-      },
-      trunk: {
-        title: "Багажник",
-        description: "Текущее состояние багажника"
-      }
-    },
-    volume: {
-      title: "Звук",
-      menu: "LCD: Звук",
-      mute: {
-        title: "Выключить звук",
-        description: "Временное выключение звука без изменения текущего уровня"
-      },
-      level: {
-        title: "Уровень звука",
-        description: "Текущее значение уровня звука"
-      }
-    },
-    climate: {
-      title: "Климат-контроль",
-      menu: "LCD: Климат-контроль",
-      enabled: {
-        title: "Статус работы",
-        description: "Статус работы блока климат-контроля"
-      },
-      autoMode: {
-        title: "Auto",
-        description: "Автоматический режим работы блока климата"
-      },
-      ac: {
-        title: "AC",
-        description: "Работа кондиционера"
-      },
-      temperature: {
-        title: "Температура",
-        description: "Установленное значение температуры блока климат-контроля"
-      },
-      air: {
-        title: "Вентиляция салона",
-        description: "Циркуляция воздуха внутри салона"
-      },
-      blow: {
-        title: "Воздушный поток",
-        description: "Направление воздушного потока"
-      }
-    },
-    bose: {
-      title: "Bose",
-      menu: "LCD: Bose",
-      enabled: {
-        title: "Включение Bose",
-        description: "Включение/выключение усилителя звука Bose"
-      },
-      audioPLT: {
-        title: "Audio PLT",
-        description: "Представляет собой систему подавления шумов, которая непрерывно регулирует звучание для компенсации фонового шума и скорости автомобиля"
-      },
-      radioFM: {
-        title: "Radio FM",
-        description: "Включение/выключение радио FM"
-      },
-      wow: {
-        title: "Wow",
-        description: "Звуковой сигнал при изменении параметров"
-      },
-      balance: {
-        title: "Balance",
-        description: "Смещение звукового баланса вправо или влево"
-      },
-      bass: {
-        title: "Bass",
-        description: "Усиление низких частот"
-      },
-      fade: {
-        title: "Fade",
-        description: "Смещение звукового баланса вперед или назад"
-      },
-      treble: {
-        title: "Treble",
-        description: "Усиление высоких частот"
-      },
-      centerPoint: {
-        title: "CenterPoint",
-        description: "Технология CenterPoint преобразует стерео-сигналы в многоканальное аудио и одновременно создает более широкую/объемную звуковую область"
-      },
-      volumeConfig: {
-        title: "Настройка запуска",
-        start: {
-          title: "Изменять уровень звука",
-          description: "Устанавливать указанный ниже уровень звука при включении адаптера PJCAN"
-        },
-        level: {
-          title: "Уровень звука",
-          description: "Уровень звука устанавливаемый при включении адаптера PJCAN"
-        }
-      }
-    }
-  },
-  buttons: {
-    title: "Настройки кнопок",
-    extendedMode: "Режим Mode",
-    hintMode: " (режим Mode)",
-    mode: "Кнопка MODE",
-    setUp: "Кнопка SET UP",
-    setDown: "Кнопка SET DOWN",
-    volUp: "Кнопка VOL +",
-    volDown: "Кнопка VOL -",
-    volMute: "Кнопка VOL MUTE",
-    extended: {
-      title: "Расширенный режим",
-      description: "Поддержка двойного, тройного нажатия и удержания кнопки"
-    },
-    resistance: {
-      title: "Сопротивление кнопки",
-      description: "Интервал сопротивления кнопки",
-      cur: {
-        title: "Текущее сопротивление",
-        description: "Значение сопротивления нажатой кнопки. Изменить нельзя"
-      },
-      min: {
-        title: "Минимальное сопротивление",
-        description: "Укажите минимальное значение кнопки, но не допускайте пересечение значений с другими кнопками"
-      },
-      max: {
-        title: "Максимальное сопротивление",
-        description: "Укажите максимальное значение кнопки, но не допускайте пересечение значений с другими кнопками"
-      }
-    },
-    pressSingle: {
-      title: "Кнопка нажата 1 раз",
-      description: "Функция, которая выполняется при нажатии кнопки"
-    },
-    pressDual: {
-      title: "Кнопка нажата 2 раза",
-      description: "Функция, которая выполняется при нажатии кнопки 2 раза"
-    },
-    pressTriple: {
-      title: "Кнопка нажата 3 раза",
-      description: "Функция, которая выполняется при нажатии кнопки 3 раза"
-    },
-    pressHold: {
-      title: "Удержание кнопки",
-      description: "Функция, которая выполняется при нажатии и удержании кнопки 3 и более секунд.",
-      time: {
-        title: "Время удержания кнопки",
-        description: "Время удержания кнопки, сек."
-      }
-    },
-    functions: {
-      0: "Нет действия",
-      1: "Перейти в режим Mode",
-      2: "Выход из режима Mode",
-      3: "Нажатие кнопки MODE",
-      4: "Нажатие кнопки SET UP",
-      5: "Нажатие кнопки SET DOWN",
-      6: "Нажатие кнопки уровень звука +",
-      7: "Нажатие кнопки уровень звука -",
-      8: "Нажатие кнопки отк. звука",
-      9: "Удержание кнопки CLOCK",
-      10: "Нажатие кнопки CLOCK",
-      11: "Нажатие кнопки CLOCK H",
-      12: "Нажатие кнопки CLOCK M",
-      13: "Нажатие кнопки CLOCK 24/12",
-      14: "Удержание кнопки INFO",
-      15: "Нажатие кнопки INFO",
-      16: "Показать значения ДВС",
-      17: "Показать значения расхода",
-      18: "Показать значения движения",
-      19: "Показать значения температуры",
-      20: "Голосовое управление",
-      21: "Радио",
-      22: "Камера",
-      23: "Радио: поиск",
-      24: "Эквалайзер",
-      25: "Вкл/выкл дисплея",
-      26: "Телефон"
-    },
-    definition: {
-      title: "Обнаружено нажатие кнопки",
-      type: {
-        title: "Тип кнопки",
-        description: "Выберите тип кнопки для дальнейшего ее использования"
-      }
-    },
-    adding: "Создание кнопки",
-    edit: "Редактирование кнопки",
-    name: "Наименование кнопки"
-  },
-  onboardButtons: {
-    title: "Кнопки БК",
-    buttons: {
-      modeClock: "Mode CLOCK",
-      modeInfo: "Mode INFO",
-      clock: "CLOCK",
-      info: "INFO",
-      clockH: "H",
-      clockM: "M",
-      clockRM: "RM",
-      clock24: "24/12"
-    }
-  },
-  test: {
-    title: "Тестирование",
-    description: 'Введите текст (только латинские символы и цифры), выберите стиль и выравнивание, укажите время отображения и нажмите "Показать"',
-    text: {
-      title: "Текст",
-      description: "Текст отображаемый на информационном экране"
-    },
-    btnShow: "Показать"
-  },
-  options: {
-    title: "Параметры",
-    lcd: {
-      title: "LCD",
-      enabled: {
-        title: "LCD",
-        description: "Включить/выключить вывод информации на информационный экран"
-      },
-      logo: {
-        title: "Логотип",
-        description: "Тест отображаемый в момент отсутствия данных для вывода на LCD. Максимум 12 символов",
-        menu: "LCD: Логотип"
-      },
-      hello: {
-        title: "Текст приветствия",
-        description: "Тест отображаемый при включении ACC. Максимум 32 символов",
-        menu: "LCD: Текст приветствия"
-      }
-    },
-    teyes: {
-      title: "ГУ",
-      protocol: {
-        title: "Протокол UART",
-        description: "Протокол UART для связи PJCAN с ГУ",
-        list: {
-          1: "Raise HM_ND00 2017.12.11 (19200)",
-          2: "Raise HM_ND01 2019.06.21 (38400)",
-          3: "SimpleSoft MZ_SS_07A (38400)",
-          4: "SimpleSoft RP5_MZ_002 (38400)"
-        }
-      },
-      reverseUart: {
-        title: "Поменять контакты UART",
-        description: "Поменять контакты UART местами, если нет связи PJCAN с ГУ"
-      },
-      lcdShow: {
-        title: "Показывать информацию ГУ",
-        description: "Показывать текст ГУ на информационном экране (БК) вместо логотипа",
-        menu: "LCD: Показывать текст ГУ"
-      },
-      sendButton: {
-        title: "Кнопки руля",
-        description: "Поддержка управления ГУ кнопками на руле"
-      },
-      sendClimate: {
-        title: "Показать климат на ГУ",
-        description: "Показать панель климата на ГУ (если протокол поддерживает данный функционал)"
-      },
-      sendDoors: {
-        title: "Показать статус дверей на ГУ",
-        description: "Показать статус дверей автомобиля на ГУ (если протокол поддерживает данный функционал)"
-      },
-      parseVolume: {
-        title: "Управлять уровнем звука на ГУ",
-        description: "Рекомендуется выключить этот параметр, для прямого управления звуком усилителя Bose"
-      },
-      receiveText: {
-        title: "Принимать информацию ГУ",
-        description: "Принимать входящие значения ГУ: название радиостанций и др."
-      },
-      receiveClock: {
-        title: "Время ГУ",
-        description: "Принимать входящее значение времени от ГУ (если протокол поддерживает данный функционал)"
-      },
-      receiveButtons: {
-        title: "Кнопки ГУ",
-        description: "Поддержка кнопок ГУ: CLOCK, HOUR, MIN (если протокол поддерживает данный функционал)"
-      }
-    },
-    onboard: {
-      title: "Бортовой компьютер",
-      description: 'Список карточек отображаемых на экране "Бортовой компьютер". Порядок меняется путем перетаскивания блока вверх/вниз. Так же можно включить/выключить отображения на странице',
-      reset: {
-        menu: "Упорядочить по умолчанию"
-      }
-    }
-  },
-  scanner: {
-    dialog: {
-      title: "Сканирование can-шины",
-      text: "Начать сканирование can-шины?\n" + "Значения сканирования будут автоматически отправлены PJ82."
-    },
-    btn: {
-      start: "Начать",
-      next: "Далее",
-      finish: "Финиш"
-    },
-    step: {
-      0: {
-        title: "Сканирование значений двигателя",
-        text: 'Запустите двигатель автомобиля и нажмите кнопку "Далее"'
-      },
-      1: {
-        title: "Сканирование значений дверей",
-        text: "1. Откройте водительскую дверь и закройте ее;\n" + "2. Откройте пассажирскую дверь за водителем и закройте ее;\n" + "3. Откройте багажник и закройте его;\n" + "4. Откройте пассажирскую дверь сзади справа и закройте ее;\n" + "5. Откройте пассажирскую дверь спереди справа и закройте ее.\n" + "\n" + 'Вернитесь в салон и нажмите кнопку "Далее"'
-      },
-      2: {
-        title: "Сканирование значений сигналов",
-        text: "1. Пристегните ремень безопасности водителя;\n" + "2. Пристегните ремень безопасности переднего пассажира;\n" + "3. Пристегните ремни безопасности задних пассажиров;\n" + "4. Включите сигнал левого поворота, затем правого, выключите;\n" + "5. Включите сигнал аварийной остановки, выключите его.\n" + "\n" + 'Нажмите кнопку "Далее"'
-      },
-      3: {
-        title: "Сканирование значений климата",
-        text: "1. Включите/выключите AUTO;\n" + "2. Включите/выключите AC;\n" + "3. Измените направление воздушного потока;\n" + "4. Изменить скорость воздушного потока.\n" + "\n" + 'Нажмите кнопку "Далее"'
-      },
-      4: {
-        title: "Сканирование значений движения",
-        text: "1. Снимите автомобиль с ручного тормоза;\n" + "2. Включите заднюю передачу и немного сдайте назад;\n" + "3. Включите режим драйва АКПП или переключите передачу МКПП и начните движение вперед.\n" + "\n" + 'После завершения движения автомобиля заглушите двигатель и нажмите кнопку "Финиш"'
-      }
-    },
-    notify: {
-      errorStart: "Сканирование не запущено.\n" + "Проверьте подключение к устройству PJCAN.",
-      errorSend: "Ошибка отправки пакета данных сканирования.",
-      warningSend: "Нет данных сканирования для отправки."
-    },
-    upload: {
-      title: "Загрузка на сервер",
-      text: "Загрузка отсканированных значений на сервер.",
-      leftToLoad: "Нет пакетов для загрузки | Осталось загрузить {n} пакет | Осталось загрузить {n} пакета | Осталось загрузить {n} пакетов"
-    }
-  },
-  choosingCarModel: {
-    title: "Выбор модели автомобиля",
-    label: "Модель автомобиля",
-    description: "Возможность изменить модель автомобиля поддерживаемое адаптером PJCAN",
-    carModels: {
-      0: "Mazda",
-      1: "Mazda 3 BK",
-      2: "Mazda 3 BL (не поддерживается)",
-      3: "Mazda 6 GG",
-      4: "Mazda 6 GH (не поддерживается)",
-      5: "Mazda CX-7",
-      6: "Mazda CX-7 rest",
-      7: "Mazda CX-9",
-      8: "Mazda CX-9 rest"
-    }
-  }
-});
-;// CONCATENATED MODULE: ./src/lang/en.ts
-/* harmony default export */ var en = ({
-  BLE: {
-    title: "Bluetooth",
-    btn: {
-      connect: "Connect",
-      disconnect: "Disconnect"
-    },
-    dialog: {
-      noConnected: "You are not connected to any Bluetooth device.",
-      connected: "You are connected to a PJCAN Bluetooth device."
-    },
-    notify: {
-      noConnected: "No connection to Bluetooth device.",
-      connected: "PJCAN connected",
-      disconnected: "PJCAN disabled",
-      lostConnected: "Lost connection with PJCAN Bluetooth device. Trying to reconnect...",
-      noData: "No data to send"
-    },
-    server: {
-      deviceSelected: "{n} bluetooth device selected.",
-      deviceDisconnected: "Bluetooth device {n} is disconnected.",
-      GATTConnect: "Connecting to GATT server...",
-      getService: "GATT server connected, reading service...",
-      getCharacteristic: "Service received, read the characteristic ...",
-      characteristicDone: "Characteristic received.",
-      startNotifications: "Launching notifications...",
-      notificationsDone: "Notifications started.",
-      reconnect: "Retrying in {n} seconds... ({c} attempts remaining)",
-      reconnectRestored: "The connection to the PJCAN Bluetooth device has been re-established.",
-      connectionLost: "Communication with the PJCAN Bluetooth device has been lost.",
-      receive: "Receive data: ID {n}",
-      send: "Sending data: ID {n}",
-      versionProtocol: "Protocol version: {mj}.{mn}.{bl}.{rv}"
-    }
-  },
-  update: {
-    title: "Update PJCAN",
-    warning: "Attention!",
-    btn: {
-      update: "Update",
-      later: "Later"
-    },
-    dialog: {
-      updateTo: "Update PJCAN firmware to version {version} ?",
-      browserOutdated: "Your browser version is outdated.\n" + "Update it and open the web application again."
-    },
-    process: {
-      preparation: "Preparing to upload...",
-      upload: "Uploading Firmware",
-      update: "Firmware update...",
-      timeLeft: "Time left"
-    },
-    notify: {
-      newVersion: "Update available {version}",
-      completed: "Firmware completed successfully",
-      warning: "The firmware was not completed successfully. Turn your device off and on and try updating again",
-      error: "Firmware update error",
-      errorDownload: "Error downloading firmware from the server. You may not be connected to the Internet",
-      errorUpload: "Error uploading firmware to PJCAN device. Possibly no Bluetooth connection",
-      errorWaitUpdate: "The PJCAN device timed out. Turn your device off and on and try updating again"
-    }
-  },
-  error: {
-    title: "What are you watching,\nwrite PJ82",
-    version: "Error requesting the device version. Reconnect the PJCAN device"
-  },
-  rules: {
-    required: "Required",
-    counter: "Max {n} characters | Max {n} character | Max {n} characters | Max {n} characters",
-    english: "Invalid English"
-  },
-  menu: {
-    onboard: "On-board",
-    onboardButtons: "On-board computer buttons",
-    test: "Testing",
-    language: {
-      russian: "Русский язык",
-      english: "Английский язык"
-    },
-    settings: {
-      buttonsSW1: "Steering wheel buttons",
-      buttonsSW3: "SW3 buttons",
-      options: "Options"
-    },
-    update: "Upgrade to {version}",
-    about: "About"
-  },
-  activation: {
-    success: "Device successfully activated! The device is rebooting...",
-    error: "The device is not activated. Contact the developer."
-  },
-  about: {
-    title: "About",
-    version: "Web application version",
-    versionFirmware: "PJCAN firmware version",
-    carSupport: "Car support",
-    author: "Author",
-    sha: "Device hash"
-  },
-  deviceInfo: {
-    title: "Technical information",
-    cpuFreqMHz: "CPU freq MHz",
-    efuseMac: "Efuse MAC",
-    freeSketchSpace: "Free sketch space",
-    sdkVersion: "SDK version",
-    sketchMD5: "Sketch MD5",
-    sketchSize: "Sketch size",
-    temperatureChip: "Temperature chip",
-    sha: "SHA",
-    hardware: "Board version"
-  },
-  deviceReset: {
-    title: "Reset device configuration",
-    config: "Reset configuration defaults",
-    view: "Reset default display configuration values"
-  },
-  btn: {
-    apply: "Apply",
-    cancel: "Cancel",
-    close: "Close",
-    deviceInfo: "About device",
-    deviceReset: "Reset configuration",
-    reset: "Reset",
-    ok: "OK"
-  },
-  onboard: {
-    title: "On-board",
-    viewSetting: {
-      enabled: {
-        title: "Display information",
-        description: "Status display information on the information screen"
-      },
-      type: {
-        title: "Information display style",
-        description: "Display static text, blinking or in a ticker style",
-        items: ["Plain text", "Flashing text", "Ticker"]
-      },
-      time: {
-        title: "Display time, sec.",
-        description: "Show the specified number of seconds on the information screen"
-      },
-      delay: {
-        title: "Display pause time, sec.",
-        description: "Pause the information display for the specified number of seconds"
-      }
-    },
-    info: {
-      title: "Information",
-      acc: {
-        title: "ACC",
-        description: "Car power"
-      },
-      worktime: {
-        title: "Worktime",
-        description: "Operating time of the device from the moment of switching on",
-        menu: "LCD: Worktime"
-      },
-      voltmeter: {
-        title: "Voltage",
-        description: "On-board mains voltage in volts",
-        menu: "LCD: Voltage"
-      },
-      temperature: {
-        title: "Air temperature",
-        description: "Reading the outside temperature of the car",
-        menu: "LCD: Air temperature"
-      },
-      handbrake: {
-        title: "Hand brake",
-        description: "Handbrake position",
-        menu: "LCD: Hand brake"
-      },
-      reverse: {
-        title: "Reverse",
-        description: "Gear knob in R",
-        menu: "LCD: Reverse"
-      },
-      safetyBelt: {
-        title: "Safety belt",
-        description: "Seat belt driver and passenger",
-        menu: "LCD: Safety belt"
-      },
-      signal: {
-        title: "Turn signal",
-        description: "Turn signal and emergency stop",
-        menu: "LCD: Turn signal"
-      }
-    },
-    engine: {
-      title: "Engine",
-      enabled: {
-        title: "Engine operation",
-        description: "The current state of the internal combustion engine",
-        menu: "LCD: Engine operation"
-      },
-      RPM: {
-        title: "Engine RPM",
-        description: "Current number of complete engine revolutions per minute",
-        menu: "LCD: Engine RPM"
-      },
-      countRPM: {
-        title: "RPM counter, thous.",
-        description: "The total number of complete revolutions of the engine crankshaft in thousands",
-        menu: "LCD: RPM counter"
-      },
-      load: {
-        title: "Engine load",
-        description: "The load of something on something, I don’t know how it is calculated",
-        menu: "LCD: Engine load"
-      },
-      worktime: {
-        title: "Hours",
-        description: "Total engine running time",
-        menu: "LCD: Hours"
-      },
-      throttle: {
-        title: "Throttle position",
-        description: "Relative throttle position",
-        menu: "LCD: Throttle position"
-      },
-      coolant: {
-        title: "Coolant temperature",
-        description: "Coolant temperature",
-        menu: "LCD: Coolant temperature"
-      },
-      settings: {
-        title: "Settings of engine statistics",
-        menu: "Statistics settings",
-        showDays: {
-          title: "Show days in statistics",
-          description: "Display the mothers on the information screen in d.hh:mm:ss"
-        },
-        worktime: {
-          title: "Opening time, min.",
-          description: "Total engine operating time"
-        },
-        countRPM: {
-          title: "RPM counter, thous.",
-          description: "The total number of full speed of the crankshaft of the engine in thousands"
-        }
-      }
-    },
-    fuel: {
-      title: "Fuel",
-      current: {
-        title: "Fuel consumption",
-        description: "The value of the on-board, l/100 km",
-        menu: "LCD: Fuel consumption"
-      },
-      avg: {
-        title: "Average consumption",
-        description: "The value of the on-board, l/100 km",
-        menu: "LCD: Average consumption"
-      },
-      settings: {
-        title: "Fuel consumption settings",
-        menu: "Consumption settings",
-        ratio: {
-          title: "Fuel consumption coefficient",
-          description: "To configure the gas flow rate or other type of fuel"
-        }
-      }
-    },
-    movement: {
-      title: "Speedometer",
-      speed: {
-        title: "Car speed",
-        description: "On-board value, km/h",
-        menu: "LCD: Car speed"
-      },
-      speedAVG: {
-        title: "Average speed",
-        description: "On-board value, km/h",
-        menu: "LCD: Average speed"
-      },
-      restWay: {
-        title: "The rest of the way, km",
-        description: "On-board value, km",
-        menu: "LCD: Rest of the way"
-      }
-    },
-    doors: {
-      title: "Doors",
-      menu: "LCD: Doors",
-      doorFL: {
-        title: "Front left",
-        description: "Current state of front left door"
-      },
-      doorFR: {
-        title: "Front right",
-        description: "Current state of front right door"
-      },
-      doorBL: {
-        title: "Rear left",
-        description: "The current state of the rear left door"
-      },
-      doorBR: {
-        title: "Rear right",
-        description: "The current state of the rear right door"
-      },
-      trunk: {
-        title: "Trunk",
-        description: "The current state of the trunk"
-      }
-    },
-    volume: {
-      title: "Volume",
-      menu: "LCD: Volume",
-      mute: {
-        title: "Turn on volume",
-        description: "Temporarily turn on/off the sound without changing the current level"
-      },
-      level: {
-        title: "Volume level",
-        description: "Current sound level value"
-      }
-    },
-    climate: {
-      title: "Climate control",
-      menu: "LCD: Climate control",
-      enabled: {
-        title: "Work status",
-        description: "Operation status of the climate control unit"
-      },
-      autoMode: {
-        title: "Auto",
-        description: "Automatic mode of operation of the climate unit"
-      },
-      ac: {
-        title: "AC",
-        description: "Air conditioner operation"
-      },
-      temperature: {
-        title: "Temperature",
-        description: "Climate unit temperature setpoint"
-      },
-      air: {
-        title: "Cabin ventilation",
-        description: "Air circulation inside the cabin"
-      },
-      blow: {
-        title: "Air flow",
-        description: "Airflow direction"
-      }
-    },
-    bose: {
-      title: "Bose",
-      menu: "LCD: Bose",
-      enabled: {
-        title: "Enabling Bose",
-        description: "Turning on/off the Bose sound amplifier"
-      },
-      audioPLT: {
-        title: "Audio PLT",
-        description: "It is a noise suppression system that continuously adjusts the sound to compensate for background noise and vehicle speed"
-      },
-      radioFM: {
-        title: "Radio FM",
-        description: "Turning on/off the FM radio"
-      },
-      wow: {
-        title: "Wow",
-        description: "Sound signal when changing parameters"
-      },
-      balance: {
-        title: "Balance",
-        description: "Shifting the sound balance to the right or left"
-      },
-      bass: {
-        title: "Bass",
-        description: "Amplification of low frequencies"
-      },
-      fade: {
-        title: "Fade",
-        description: "Shifting the sound balance forward or backward"
-      },
-      treble: {
-        title: "Treble",
-        description: "Amplification of high frequencies"
-      },
-      centerPoint: {
-        title: "CenterPoint",
-        description: "CenterPoint technology converts stereo signals into multi-channel audio and simultaneously creates a wider/surround sound area"
-      },
-      volumeConfig: {
-        title: "Setting up the startup",
-        start: {
-          title: "Change the sound level",
-          description: "Set the sound level specified below when turning on the PJCAN adapter"
-        },
-        level: {
-          title: "Sound level",
-          description: "The sound level set when the PJCAN adapter is turned on"
-        }
-      }
-    }
-  },
-  buttons: {
-    title: "Button settings",
-    extendedMode: "Advanced mode",
-    hintMode: " (advanced mode)",
-    mode: "MODE button",
-    seekUp: "SET UP button",
-    seekDown: "SET DOWN button",
-    volUp: "VOL + button",
-    volDown: "VOL - button",
-    volMute: "VOL MUTE button",
-    extended: {
-      title: "Extended mode",
-      description: "Support for double, triple button pressing and holding"
-    },
-    resistance: {
-      title: "Button resistance",
-      description: "The resistance interval of the button in units",
-      cur: {
-        title: "Current resistance",
-        description: "The value of the resistance of the pressed button. You can't change it"
-      },
-      min: {
-        title: "Minimum resistance",
-        description: "Specify the minimum value of the button, but do not allow the values to overlap with other buttons"
-      },
-      max: {
-        title: "Maximum resistance",
-        description: "Specify the maximum value of the button, but do not allow the values to overlap with other buttons"
-      }
-    },
-    pressSingle: {
-      title: "Button pressed 1 time",
-      description: "The function that is executed when the button is pressed"
-    },
-    pressDual: {
-      title: "Button pressed 2 times",
-      description: "Function that is executed when the button is pressed 2 times"
-    },
-    pressTriple: {
-      title: "Button pressed 3 times",
-      description: "Function that is executed when the button is pressed 3 times"
-    },
-    pressHold: {
-      title: "Button hold",
-      description: "A function that is performed when the button is pressed and held for 3 or more seconds.",
-      time: {
-        title: "Button holding time",
-        description: "Button holding time, sec."
-      }
-    },
-    functions: {
-      0: "No action",
-      1: "Switch to the Mode",
-      2: "Exiting the Mode",
-      3: "Pressing the MODE button",
-      4: "Pressing the SET UP button",
-      5: "Pressing the SET DOWN button",
-      6: "Pressing the sound level + button",
-      7: "Pressing the sound level - button",
-      8: "Pressing the mute sound button",
-      9: "Holding the CLOCK button",
-      10: "Pressing the CLOCK button",
-      11: "Pressing the CLOCK H button",
-      12: "Pressing the CLOCK M button",
-      13: "Pressing the CLOCK 24/12 button",
-      14: "Holding the INFO button",
-      15: "Pressing the INFO button",
-      16: "Show the values of the engine",
-      17: "Show flow values",
-      18: "Show movement values",
-      19: "Show temperature values",
-      20: "Voice control",
-      21: "Radio",
-      22: "Camera",
-      23: "Radio: search",
-      24: "Equalizer",
-      25: "Turning off the display",
-      26: "Phone"
-    },
-    definition: {
-      title: "Button press detected",
-      type: {
-        title: "Button type",
-        description: "Select the button type for further use"
-      }
-    },
-    adding: "Adding a button",
-    edit: "Editing a button",
-    name: "Name of the button"
-  },
-  onboardButtons: {
-    title: "On-board buttons",
-    buttons: {
-      modeClock: "Mode CLOCK",
-      modeInfo: "Mode INFO",
-      clock: "CLOCK",
-      info: "INFO",
-      clockH: "H",
-      clockM: "M",
-      clockRM: "RM",
-      clock24: "24/12"
-    }
-  },
-  test: {
-    title: "Testing",
-    description: 'Enter the text (only Latin symbols and numbers), select style and leveling, indicate the display time and click "Show"',
-    text: {
-      title: "Text",
-      description: "The text displayed on the information screen"
-    },
-    btnShow: "Show"
-  },
-  options: {
-    title: "Options",
-    lcd: {
-      title: "LCD",
-      enabled: {
-        title: "LCD",
-        description: "Turn on/off the output of the information on the information screen"
-      },
-      logo: {
-        title: "Logo",
-        description: "The test displayed at the time of the absence of data for output to LCD. Maximum 12 characters",
-        menu: "LCD: Logo"
-      },
-      hello: {
-        title: "Hello",
-        description: "Displayed test when switched by ACC. Maximum 32 characters",
-        menu: "LCD: Hello"
-      }
-    },
-    teyes: {
-      title: "Teyes",
-      protocol: {
-        title: "UART Protocol",
-        description: "UART protocol for PJCAN communication with Teyes",
-        list: {
-          1: "Raise HM_ND00 2017.12.11 (19200)",
-          2: "Raise HM_ND01 2019.06.21 (38400)",
-          3: "SimpleSoft MZ_SS_07A (38400)",
-          4: "SimpleSoft RP5_MZ_002 (38400)"
-        }
-      },
-      reverseUart: {
-        title: "Change UART contacts",
-        description: "Enable if there is no PJCAN connection with multimedia"
-      },
-      lcdShow: {
-        title: "Show the text Teyes",
-        description: "Show the text of the Teyes on the information screen instead of the logo",
-        menu: "LCD: Show the text Teyes"
-      },
-      sendButton: {
-        title: "Steering wheel buttons",
-        description: "Control of Teyes by buttons on the steering wheel"
-      },
-      sendClimate: {
-        title: "Show climate on Teyes",
-        description: "Show climate control values on Teyes (if the protocol supports this functionality)"
-      },
-      sendDoors: {
-        title: "Show the status of doors on Teyes",
-        description: "Show the status of the car doors on Teyes (if the protocol supports this functionality)"
-      },
-      parseVolume: {
-        title: "Control the sound level on Teyes",
-        description: "It is recommended to turn off this parameter to directly control the sound of the Bose amplifier"
-      },
-      receiveText: {
-        title: "Accept Teyes information",
-        description: "Accept incoming Teyes values: name of radio stations, etc."
-      },
-      receiveClock: {
-        title: "Teyes time",
-        description: "Accept incoming time value from Teyes (if the protocol supports this functionality)"
-      },
-      receiveButtons: {
-        title: "Teyes Buttons",
-        description: "Support for Teyes buttons: CLOCK, HOUR, MIN (if the protocol supports this functionality)"
-      }
-    },
-    onboard: {
-      title: "On-board",
-      description: "A list of cards displayed on the On-Board Computer screen. The order is changed by dragging the block up/down. You can also enable/disable the display on the page",
-      reset: {
-        menu: "Arrange by default"
-      }
-    }
-  },
-  scanner: {
-    dialog: {
-      title: "Scanning canbus",
-      text: "Start scanning can-shines?\n" + "Scanning values will be automatically sent PJ82."
-    },
-    btn: {
-      start: "Begin",
-      next: "Next",
-      finish: "Finish"
-    },
-    step: {
-      0: {
-        title: "Scanning of engine values",
-        text: 'Run the car engine and press the "Next" button'
-      },
-      1: {
-        title: "Scanning doors",
-        text: "1. Open the driver's door and close it;\n" + "2. Open the passenger door behind the driver and close it;\n" + "3. Open the trunk and close it;\n" + "4. Open the passenger door behind on the right and close it;\n" + "5. Open the passenger door in front on the right and close it.\n" + "\n" + 'Return to the salon and click the "Next" button'
-      },
-      2: {
-        title: "Scanning of signal values",
-        text: "1. Fasten the driver safety belt;\n" + "2. Fasten the front passenger safety belt;\n" + "3. Fasten the seat belts of the rear passengers;\n" + "4. Turn on the left turn signal, then the right, turn off;\n" + "5. Turn on the emergency stop signal, turn it off.\n" + "\n" + 'Click "Next"'
-      },
-      3: {
-        title: "Scanning of climate values",
-        text: "1. Turn on/off Auto;\n" + "2. Turn on/off the AC;\n" + "3. Change the direction of the air flow;\n" + "4. Change the speed of the air flow.\n" + "\n" + 'Click "Next"'
-      },
-      4: {
-        title: "Scanning of movement values",
-        text: "1. Remove the car from the hand brake;\n" + "2. Turn on the rear gear and hand back a little;\n" + "3. Turn on the automatic transmission mode or switch the PMPP transmission and start moving forward.\n" + "\n" + 'After completing the movement of the car, drown out the engine and press the "finish" button'
-      }
-    },
-    notify: {
-      errorStart: "Scanning is not running.\n" + "Check the connection to the PJCAN device.",
-      errorSend: "Error sending scan data packet.",
-      warningSend: "There is no scan data to send."
-    },
-    upload: {
-      title: "Uploading to the server",
-      text: "Uploading scanned values to the server.",
-      leftToLoad: "No packages to download | Left to download {n} package | Left to download {n} package | There are {n} packages left to download"
-    }
-  },
-  choosingCarModel: {
-    title: "Choosing a car model",
-    label: "Car model",
-    description: "The ability to change the car model supported by the PJCAN adapter",
-    carModels: {
-      0: "Mazda",
-      1: "Mazda 3 BK",
-      2: "Mazda 3 BL (not supported)",
-      3: "Mazda 6 GG",
-      4: "Mazda 6 GH (not supported)",
-      5: "Mazda CX-7",
-      6: "Mazda CX-7 rest",
-      7: "Mazda CX-9",
-      8: "Mazda CX-9 rest"
-    }
-  }
-});
-// EXTERNAL MODULE: ./node_modules/moment/moment.js
-var moment = __webpack_require__(4648);
-var moment_default = /*#__PURE__*/__webpack_require__.n(moment);
-;// CONCATENATED MODULE: ./src/lang/index.ts
-// noinspection JSUnresolvedVariable,JSValidateTypes,JSUnresolvedFunction,DuplicatedCode
-
-
-
-
-const defaultLocale = "ru";
-const messages = {
-  ru: ru,
-  en: en
-};
-/** Список доступных языков */
-const getLanguageList = () => Object.keys(messages);
-const getLanguage = () => {
-  // @ts-ignore
-  const language = (navigator.language || navigator.browserLanguage).toLowerCase();
-  const locale = getLanguageList().find(x => language.indexOf(x) > -1) ?? defaultLocale;
-  moment_default().locale(locale);
-  return locale;
-};
-const i18n = createI18n({
-  locale: getLanguage(),
-  fallbackLocale: "en",
-  messages,
-  warnHtmlMessage: false,
-  pluralizationRules: {
-    ru: (choice, choicesLength) => {
-      if (choice === 0) return 0;
-      const teen = choice > 10 && choice < 20;
-      const endsWithOne = choice % 10 === 1;
-      return choicesLength < 4 ? !teen && endsWithOne ? 1 : 2 : !teen && endsWithOne ? 1 : !teen && choice % 10 >= 2 && choice % 10 <= 4 ? 2 : choicesLength < 4 ? 2 : 3;
-    },
-    en: (choice, choicesLength) => {
-      if (choice === 0) return 0;
-      const teen = choice > 10 && choice < 20;
-      const endsWithOne = choice % 10 === 1;
-      return choicesLength < 4 ? !teen && endsWithOne ? 1 : 2 : !teen && endsWithOne ? 1 : !teen && choice % 10 >= 2 && choice % 10 <= 4 ? 2 : choicesLength < 4 ? 2 : 3;
-    }
-  }
-});
-const t = i18n.global.t;
-/* harmony default export */ var lang = (i18n);
-
-;// CONCATENATED MODULE: ./src/components/bluetooth/TConnectedStatus.ts
-/* eslint-disable */
-var TConnectedStatus;
-(function (TConnectedStatus) {
-  TConnectedStatus[TConnectedStatus["NO_CONNECT"] = 0] = "NO_CONNECT";
-  TConnectedStatus[TConnectedStatus["CONNECT"] = 1] = "CONNECT";
-  TConnectedStatus[TConnectedStatus["WAIT_CONNECT"] = 2] = "WAIT_CONNECT";
-  TConnectedStatus[TConnectedStatus["DISCONNECT"] = 3] = "DISCONNECT";
-})(TConnectedStatus || (TConnectedStatus = {}));
-;// CONCATENATED MODULE: ./src/components/bluetooth/Bluetooth.ts
-
-/* eslint-disable no-undef */
-
-
-
-const BLUETOOTH_SERVICE_UUID = "cc9e7b30-9834-488f-b762-aa62f5022dd4";
-const BLUETOOTH_CHARACTERISTIC_UUID = "cc9e7b31-9834-488f-b762-aa62f5022dd4";
-const BLUETOOTH_SIZE_MAX = 512;
-const BLUETOOTH_EVENT_CONNECTED = "Connected"; // Событие подключения
-const BLUETOOTH_EVENT_RECEIVE = "Receive"; // Событие входящих данных
-const BLUETOOTH_EVENT_SEND = "Send"; // Событие исходящих данных
-const dev = "production" === "development";
-/** Bluetooth */
-class Bluetooth extends (eventemitter3_default()) {
-  constructor(counterReSendMax = 6) {
-    super();
-    /** Объект устройства */
-    _defineProperty(this, "_device", void 0);
-    /** Характеристика устройства */
-    _defineProperty(this, "_characteristic", void 0);
-    /** Счетчик повторной отправки */
-    _defineProperty(this, "_counterReSend", 0);
-    /** Максимальное значение счетчика повторной отправки */
-    _defineProperty(this, "counterReSendMax", void 0);
-    this.clear();
-    this.counterReSendMax = counterReSendMax;
-  }
-  /** Очистка переменных */
-  clear() {
-    this._device = undefined;
-    this._characteristic = undefined;
-  }
-  /** Статус подключения */
-  get connected() {
-    return !!this._device?.gatt?.connected;
-  }
-  /** Запустить выбор Bluetooth устройства и подключиться к выбранному */
-  connect() {
-    if (!navigator.bluetooth) {
-      this.emit(BLUETOOTH_EVENT_CONNECTED, TConnectedStatus.NO_CONNECT);
-      return Promise.resolve();
-    }
-    return this._device ? Promise.resolve() : this.requestBluetoothDevice().then(device => this.reconnect(device)).catch(e => {
-      this.emit(BLUETOOTH_EVENT_CONNECTED, TConnectedStatus.NO_CONNECT);
-      console.log(e);
-    });
-  }
-  /**
-   * Переподключение к устройству
-   * @param {BluetoothDevice} device Объект устройства
-   */
-  reconnect(device) {
-    return this.connectDeviceAndCharacteristic(device)?.then(characteristic => this.delayPromise(250, characteristic)).then(characteristic => this.startNotifications(characteristic));
-  }
-  /** Отключение от Bluetooth устройства */
-  disconnect() {
-    if (this._device) {
-      const device = this._device;
-      this.clear();
-      device.gatt?.disconnect();
-      if (dev) console.log(t("BLE.server.deviceDisconnected", {
-        n: device.name
-      }));
-      this.emit(BLUETOOTH_EVENT_CONNECTED, TConnectedStatus.DISCONNECT);
-    }
-  }
-  /** Запрос выбора Bluetooth устройства */
-  requestBluetoothDevice() {
-    return navigator.bluetooth.requestDevice({
-      filters: [{
-        services: [BLUETOOTH_SERVICE_UUID]
-      }]
-    }).then(device => {
-      if (dev) console.log(t("BLE.server.deviceSelected", {
-        n: device.name
-      }));
-      // device.removeEventListener("gattserverdisconnected", null);
-      device.addEventListener("gattserverdisconnected", () => this.handleDisconnection());
-      this._device = device;
-      return device;
-    });
-  }
-  /** Подключение к определенному устройству, получение сервиса и характеристики */
-  connectDeviceAndCharacteristic(device) {
-    if (device.gatt?.connected && !!this._characteristic) return Promise.resolve(this._characteristic);
-    if (dev) console.log(t("BLE.server.GATTConnect"));
-    return device.gatt?.connect().then(server => {
-      if (dev) console.log(t("BLE.server.getService"));
-      return server.getPrimaryService(BLUETOOTH_SERVICE_UUID);
-    }).then(service => {
-      if (dev) console.log(t("BLE.server.getCharacteristic"));
-      return service.getCharacteristic(BLUETOOTH_CHARACTERISTIC_UUID);
-    }).then(characteristic => {
-      if (dev) console.log(t("BLE.server.characteristicDone"));
-      // characteristic.removeEventListener("characteristicvaluechanged", null);
-      characteristic.addEventListener("characteristicvaluechanged", ev => this.handleCharacteristicValueChanged(ev));
-      // запускает процесс чтения данных
-      characteristic?.readValue();
-      this._characteristic = characteristic;
-      return characteristic;
-    });
-  }
-  /** Включение получения уведомлений об изменении характеристики */
-  startNotifications(characteristic) {
-    if (dev) console.log(t("BLE.server.startNotifications"));
-    return characteristic?.startNotifications().then(() => {
-      if (dev) console.log(t("BLE.server.notificationsDone"));
-      this.emit(BLUETOOTH_EVENT_CONNECTED, TConnectedStatus.CONNECT);
-    });
-  }
-  /**
-   * Переподключение к Bluetooth устройству
-   * @param {number} max Максимальное кол. попыток подключения
-   * @param {number} delay Таймаут подключения, сек.
-   * @param {() => any} toTry Метод проверки подключения
-   * @param {(server: BluetoothRemoteGATTServer) => void} success Метод вызываемый при успешном подключении
-   * @param {() => void} fail Метод вызываемый при невозможности подключиться
-   */
-  exponentialBackoff(max, delay, toTry, success, fail) {
-    toTry().then(server => success(server)).catch(() => {
-      if (max === 0) return fail();
-      if (dev) console.log(t("BLE.server.reconnect", {
-        n: delay,
-        c: max
-      }));
-      setTimeout(() => {
-        this.exponentialBackoff(--max, delay * 2, toTry, success, fail);
-      }, delay * 1000);
-    });
-  }
-  /** Событие отключения от устройства Bluetooth */
-  handleDisconnection() {
-    if (!this._device) return;
-    // попытка подключиться повторно
-    this.exponentialBackoff(3, 2, () => {
-      this.emit(BLUETOOTH_EVENT_CONNECTED, TConnectedStatus.WAIT_CONNECT);
-      if (this._device) return this.reconnect(this._device);
-    }, () => {
-      if (dev) console.log(t("BLE.server.reconnectRestored"));
-      // this.emit(BLUETOOTH_EVENT_CONNECTED, TConnectedStatus.CONNECT);
-    }, () => {
-      if (dev) console.log(t("BLE.server.connectionLost"));
-      this.emit(BLUETOOTH_EVENT_CONNECTED, TConnectedStatus.NO_CONNECT);
-      this.clear();
-    });
-  }
-  /** Событие входящих данных */
-  handleCharacteristicValueChanged(ev) {
-    const {
-      value
-    } = ev.target;
-    if (value?.byteLength > 0) {
-      if (dev) console.log(t("BLE.server.receive", {
-        n: "0x" + value.getUint8(0).toString(16)
-      }), value);
-      this.emit(BLUETOOTH_EVENT_RECEIVE, value);
-    }
-  }
-  /**
-   * Отправить данные
-   * @param data Отправляемые данные
-   */
-  send(data) {
-    if (!this.connected) {
-      // this.emit(BLUETOOTH_EVENT_CONNECTED, TConnectedStatus.NO_CONNECT);
-      return Promise.reject("No connection");
-    }
-    if (!data) {
-      this.emit(BLUETOOTH_EVENT_SEND);
-      return Promise.reject("No data available");
-    }
-    if (dev) console.log(t("BLE.server.send", {
-      n: "0x" + data.getUint8(0).toString(16)
-    }), data);
-    return this._characteristic?.writeValue(data).then(() => {
-      this._counterReSend = 0;
-    }).catch(() => {
-      return Promise.resolve().then(() => this.delayPromise(50)).then(() => {
-        this._counterReSend++;
-        return this._counterReSend < this.counterReSendMax ? this.send(data) : Promise.reject("The counter has reached its maximum value");
-      });
-    }) ?? Promise.reject("No characteristic");
-  }
-  /**
-   * Таймаут Promise
-   * @param {number} timeout Время паузы, мс
-   * @param {T} arg Передаваемые аргументы
-   */
-  delayPromise(timeout, arg) {
-    return new Promise(resolve => {
-      setTimeout(resolve, timeout, arg);
-    });
-  }
-}
-// EXTERNAL MODULE: ./node_modules/bitset/bitset.js
-var bitset = __webpack_require__(8592);
-var bitset_default = /*#__PURE__*/__webpack_require__.n(bitset);
-;// CONCATENATED MODULE: ./src/components/bluetooth/TTypeValue.ts
-/* eslint-disable */
-/** Типы данных */
-var TTypeValue;
-(function (TTypeValue) {
-  TTypeValue[TTypeValue["TYPE_BIT"] = 0] = "TYPE_BIT";
-  TTypeValue[TTypeValue["TYPE_UINT8"] = 1] = "TYPE_UINT8";
-  TTypeValue[TTypeValue["TYPE_INT8"] = 2] = "TYPE_INT8";
-  TTypeValue[TTypeValue["TYPE_UINT16"] = 3] = "TYPE_UINT16";
-  TTypeValue[TTypeValue["TYPE_INT16"] = 4] = "TYPE_INT16";
-  TTypeValue[TTypeValue["TYPE_UINT32"] = 5] = "TYPE_UINT32";
-  TTypeValue[TTypeValue["TYPE_INT32"] = 6] = "TYPE_INT32";
-  TTypeValue[TTypeValue["TYPE_FLOAT32"] = 7] = "TYPE_FLOAT32";
-  TTypeValue[TTypeValue["TYPE_UINT64"] = 8] = "TYPE_UINT64";
-  TTypeValue[TTypeValue["TYPE_INT64"] = 9] = "TYPE_INT64";
-  TTypeValue[TTypeValue["TYPE_FLOAT64"] = 10] = "TYPE_FLOAT64";
-  TTypeValue[TTypeValue["TYPE_CHAR"] = 11] = "TYPE_CHAR";
-  TTypeValue[TTypeValue["TYPE_STRUCT"] = 12] = "TYPE_STRUCT";
-})(TTypeValue || (TTypeValue = {}));
-;// CONCATENATED MODULE: ./src/components/bluetooth/BluetoothStruct.ts
-
-
-
-
-/** Парсинг структуры данных С++ */
-class BluetoothStruct {
-  static bit() {
-    return [TTypeValue.TYPE_BIT];
-  }
-  static uint8(length = 0) {
-    return [TTypeValue.TYPE_UINT8, length];
-  }
-  static int8(length = 0) {
-    return [TTypeValue.TYPE_INT8, length];
-  }
-  static uint16(length = 0) {
-    return [TTypeValue.TYPE_UINT16, length];
-  }
-  static int16(length = 0) {
-    return [TTypeValue.TYPE_INT16, length];
-  }
-  static uint32(length = 0) {
-    return [TTypeValue.TYPE_UINT32, length];
-  }
-  static int32(length = 0) {
-    return [TTypeValue.TYPE_INT32, length];
-  }
-  static float32(length = 0) {
-    return [TTypeValue.TYPE_FLOAT32, length];
-  }
-  static uint64(length = 0) {
-    return [TTypeValue.TYPE_UINT64, length];
-  }
-  static int64(length = 0) {
-    return [TTypeValue.TYPE_INT64, length];
-  }
-  static float64(length = 0) {
-    return [TTypeValue.TYPE_FLOAT64, length];
-  }
-  static char(length) {
-    return [TTypeValue.TYPE_CHAR, length];
-  }
-  static struct(data, length = 0) {
-    return [TTypeValue.TYPE_STRUCT, data, length];
-  }
-  constructor(data) {
-    /** Прямой порядок байтов */
-    _defineProperty(this, "littleEndian", true);
-    /** Смещение */
-    _defineProperty(this, "offset", 0);
-    /** Буфер данных */
-    _defineProperty(this, "buffer", null);
-    /** Смещение бит */
-    _defineProperty(this, "bit_offset", 0);
-    /** Буфер бит данных */
-    _defineProperty(this, "bit_buffer", null);
-    /** Структура данных */
-    _defineProperty(this, "structData", void 0);
-    this.structData = data;
-  }
-  /** Очистить буфер */
-  free() {
-    this.offset = 0;
-    this.buffer = null;
-    this.bit_offset = 0;
-    this.bit_buffer = null;
-  }
-  /** Очистить буфер бит */
-  freeBitBuffer() {
-    this.bit_offset = 0;
-    this.bit_buffer = null;
-    this.offset++;
-  }
-  /** Чтение бита */
-  getBit() {
-    let result = false;
-    if (this.buffer) {
-      if (!this.bit_buffer) this.bit_buffer = new (bitset_default())(this.buffer.getUint8(this.offset));
-      result = this.bit_buffer.get(this.bit_offset++) === 1;
-      if (this.bit_offset > 7) this.freeBitBuffer();
-    }
-    return result;
-  }
-  /**
-   * Запись бита
-   * @param val Значение
-   */
-  setBit(val) {
-    if (this.buffer) {
-      if (!this.bit_buffer) this.bit_buffer = new (bitset_default())(this.buffer.getUint8(this.offset));
-      // @ts-ignore
-      this.buffer.setUint8(this.offset, this.bit_buffer.set(this.bit_offset++, val ? 1 : 0).data[0]);
-      if (this.bit_offset > 7) this.freeBitBuffer();
-    }
-  }
-  /**
-   * Чтение Int8
-   * @param u      UInt8
-   * @param length Количество значений массива
-   */
-  getInt8(u, length) {
-    const result = [];
-    if (this.buffer) {
-      for (let i = 0; i < length; i++) {
-        result.push(u ? this.buffer.getUint8(this.offset++) : this.buffer.getInt8(this.offset++));
-      }
-    }
-    return result;
-  }
-  /**
-   * Запись Int8
-   * @param u      UInt8
-   * @param val    Массив значений
-   * @param length Количество значений массива
-   */
-  setInt8(u, val, length) {
-    if (this.buffer) {
-      for (let i = 0; i < length; i++) {
-        if (u) this.buffer.setUint8(this.offset++, val[i]);else this.buffer.setInt8(this.offset++, val[i]);
-      }
-    }
-  }
-  /**
-   * Чтение Int16
-   * @param u      UInt16
-   * @param length Количество значений массива
-   */
-  getInt16(u, length) {
-    const result = [];
-    if (this.buffer) {
-      for (let i = 0; i < length; i++) {
-        result.push(u ? this.buffer.getUint16(this.offset, this.littleEndian) : this.buffer.getInt16(this.offset, this.littleEndian));
-        this.offset += 2;
-      }
-    }
-    return result;
-  }
-  /**
-   * Запись Int16
-   * @param u      UInt16
-   * @param val    Значение
-   * @param length Количество значений массива
-   */
-  setInt16(u, val, length) {
-    if (this.buffer) {
-      for (let i = 0; i < length; i++) {
-        if (u) this.buffer.setUint16(this.offset, val[i], this.littleEndian);else this.buffer.setInt16(this.offset, val[i], this.littleEndian);
-        this.offset += 2;
-      }
-    }
-  }
-  /**
-   * Чтение        Int32
-   * @param u      UInt32
-   * @param length Количество значений массива
-   */
-  getInt32(u, length) {
-    const result = [];
-    if (this.buffer) {
-      for (let i = 0; i < length; i++) {
-        result.push(u ? this.buffer.getUint32(this.offset, this.littleEndian) : this.buffer.getInt32(this.offset, this.littleEndian));
-        this.offset += 4;
-      }
-    }
-    return result;
-  }
-  /**
-   * Запись Int32
-   * @param u      UInt32
-   * @param val    Значение
-   * @param length Количество значений массива
-   */
-  setInt32(u, val, length) {
-    if (this.buffer) {
-      for (let i = 0; i < length; i++) {
-        if (u) this.buffer.setUint32(this.offset, val[i], this.littleEndian);else this.buffer.setInt32(this.offset, val[i], this.littleEndian);
-        this.offset += 4;
-      }
-    }
-  }
-  /**
-   * Чтение        Float32
-   * @param length Количество значений массива
-   */
-  getFloat32(length) {
-    const result = [];
-    if (this.buffer) {
-      for (let i = 0; i < length; i++) {
-        result.push(this.buffer.getFloat32(this.offset, this.littleEndian));
-        this.offset += 4;
-      }
-    }
-    return result;
-  }
-  /**
-   * Запись Float32
-   * @param val    Значение
-   * @param length Количество значений массива
-   */
-  setFloat32(val, length) {
-    if (this.buffer) {
-      for (let i = 0; i < length; i++) {
-        this.buffer.setFloat32(this.offset, val[i], this.littleEndian);
-        this.offset += 4;
-      }
-    }
-  }
-  /**
-   * Чтение Int64
-   * @param u      UInt64
-   * @param length Количество значений массива
-   */
-  getInt64(u, length) {
-    const result = [];
-    if (this.buffer) {
-      for (let i = 0; i < length; i++) {
-        result.push(u ? this.buffer.getBigUint64(this.offset, this.littleEndian) : this.buffer.getBigInt64(this.offset, this.littleEndian));
-        this.offset += 8;
-      }
-    }
-    return result;
-  }
-  /**
-   * Запись Int64
-   * @param u      UInt64
-   * @param val    Значение
-   * @param length Количество значений массива
-   */
-  setInt64(u, val, length) {
-    if (this.buffer) {
-      for (let i = 0; i < length; i++) {
-        if (u) this.buffer.setBigUint64(this.offset, val[i], this.littleEndian);else this.buffer.setBigInt64(this.offset, val[i], this.littleEndian);
-        this.offset += 8;
-      }
-    }
-  }
-  /**
-   * Чтение        Float64
-   * @param length Количество значений массива
-   */
-  getFloat64(length) {
-    const result = [];
-    if (this.buffer) {
-      for (let i = 0; i < length; i++) {
-        result.push(this.buffer.getFloat64(this.offset, this.littleEndian));
-        this.offset += 8;
-      }
-    }
-    return result;
-  }
-  /**
-   * Запись Float64
-   * @param val    Значение
-   * @param length Количество значений массива
-   */
-  setFloat64(val, length) {
-    if (this.buffer) {
-      for (let i = 0; i < length; i++) {
-        this.buffer.setFloat64(this.offset, val[i], this.littleEndian);
-        this.offset += 8;
-      }
-    }
-  }
-  /**
-   * Чтение строки
-   * @param length Длина строки
-   */
-  getChars(length) {
-    let result = "";
-    if (this.buffer) {
-      for (let i = 0; i < length; i++) {
-        const byte = this.buffer.getUint8(this.offset++);
-        if (byte > 19 && byte < 127) result += String.fromCharCode(byte);
-      }
-    }
-    return result;
-  }
-  /**
-   * Запись строки
-   * @param str    Строка
-   * @param length Длина копирования
-   */
-  setChars(str, length) {
-    if (this.buffer) {
-      // noinspection SpellCheckingInspection
-      const lenstr = str.length;
-      for (let i = 0; i < length; i++) this.buffer.setInt8(this.offset++, i < lenstr ? str.charCodeAt(i) : 0);
-    }
-  }
-  /**
-   * Декодировать значения
-   * @param buffer Буфер данных
-   * @param data   Структура для данных
-   * @param offset Начало смещения
-   */
-  decode(buffer, data, offset = 0) {
-    this.buffer = buffer;
-    this.offset = offset;
-    for (const [key, value] of Object.entries(this.structData)) {
-      if (value[0] !== TTypeValue.TYPE_BIT) {
-        if (this.bit_offset > 0) this.freeBitBuffer();
-        switch (value[0]) {
-          case TTypeValue.TYPE_UINT8:
-            if (value[1] > 0) data[key] = this.getInt8(true, value[1]);else data[key] = this.getInt8(true, 1)[0];
-            break;
-          case TTypeValue.TYPE_INT8:
-            if (value[1] > 0) data[key] = this.getInt8(false, value[1]);else data[key] = this.getInt8(false, 1)[0];
-            break;
-          case TTypeValue.TYPE_UINT16:
-            if (value[1] > 0) data[key] = this.getInt16(true, value[1]);else data[key] = this.getInt16(true, 1)[0];
-            break;
-          case TTypeValue.TYPE_INT16:
-            if (value[1] > 0) data[key] = this.getInt16(false, value[1]);else data[key] = this.getInt16(false, 1)[0];
-            break;
-          case TTypeValue.TYPE_UINT32:
-            if (value[1] > 0) data[key] = this.getInt32(true, value[1]);else data[key] = this.getInt32(true, 1)[0];
-            break;
-          case TTypeValue.TYPE_INT32:
-            if (value[1] > 0) data[key] = this.getInt32(false, value[1]);else data[key] = this.getInt32(false, 1)[0];
-            break;
-          case TTypeValue.TYPE_FLOAT32:
-            if (value[1] > 0) data[key] = this.getFloat32(value[1]);else data[key] = this.getFloat32(1)[0];
-            break;
-          case TTypeValue.TYPE_UINT64:
-            if (value[1] > 0) data[key] = this.getInt64(true, value[1]);else data[key] = this.getInt64(true, 1)[0];
-            break;
-          case TTypeValue.TYPE_INT64:
-            if (value[1] > 0) data[key] = this.getInt64(false, value[1]);else data[key] = this.getInt64(false, 1)[0];
-            break;
-          case TTypeValue.TYPE_FLOAT64:
-            if (value[1] > 0) data[key] = this.getFloat64(value[1]);else data[key] = this.getFloat64(1)[0];
-            break;
-          case TTypeValue.TYPE_CHAR:
-            data[key] = this.getChars(value[1]);
-            break;
-          case TTypeValue.TYPE_STRUCT:
-            if (value[2] > 0) {
-              for (let i = 0; i < value[2]; i++) {
-                this.offset = new BluetoothStruct(value[1]).decode(buffer, data[key][i], this.offset);
-              }
-            } else {
-              this.offset = new BluetoothStruct(value[1]).decode(buffer, data[key], this.offset);
-            }
-            break;
-        }
-      } else {
-        data[key] = this.getBit();
-      }
-    }
-    if (this.bit_offset > 0) this.freeBitBuffer();
-    return this.offset;
-  }
-  /**
-   * Кодировать значения
-   * @param buffer Буфер данных
-   * @param data   Структура для данных
-   * @param offset Начало смещения
-   */
-  encode(buffer, data, offset = 0) {
-    this.buffer = buffer;
-    this.offset = offset;
-    for (const [key, value] of Object.entries(this.structData)) {
-      if (data[key] !== undefined) {
-        if (value[0] !== TTypeValue.TYPE_BIT) {
-          if (this.bit_offset > 0) this.freeBitBuffer();
-          switch (value[0]) {
-            case TTypeValue.TYPE_UINT8:
-              if (value[1] > 0) this.setInt8(true, data[key], value[1]);else this.setInt8(true, [data[key]], 1);
-              break;
-            case TTypeValue.TYPE_INT8:
-              if (value[1] > 0) this.setInt8(false, data[key], value[1]);else this.setInt8(false, [data[key]], 1);
-              break;
-            case TTypeValue.TYPE_UINT16:
-              if (value[1] > 0) this.setInt16(true, data[key], value[1]);else this.setInt16(true, [data[key]], 1);
-              break;
-            case TTypeValue.TYPE_INT16:
-              if (value[1] > 0) this.setInt16(false, data[key], value[1]);else this.setInt16(false, [data[key]], 1);
-              break;
-            case TTypeValue.TYPE_UINT32:
-              if (value[1] > 0) this.setInt32(true, data[key], value[1]);else this.setInt32(true, [data[key]], 1);
-              break;
-            case TTypeValue.TYPE_INT32:
-              if (value[1] > 0) this.setInt32(false, data[key], value[1]);else this.setInt32(false, [data[key]], 1);
-              break;
-            case TTypeValue.TYPE_FLOAT32:
-              if (value[1] > 0) this.setFloat32(data[key], value[1]);else this.setFloat32([data[key]], 1);
-              break;
-            case TTypeValue.TYPE_UINT64:
-              if (value[1] > 0) this.setInt64(true, data[key], value[1]);else this.setInt64(true, [data[key]], 1);
-              break;
-            case TTypeValue.TYPE_INT64:
-              if (value[1] > 0) this.setInt64(false, data[key], value[1]);else this.setInt64(false, [data[key]], 1);
-              break;
-            case TTypeValue.TYPE_FLOAT64:
-              if (value[1] > 0) this.setFloat64(data[key], value[1]);else this.setFloat64([data[key]], 1);
-              break;
-            case TTypeValue.TYPE_CHAR:
-              this.setChars(data[key], value[1]);
-              break;
-            case TTypeValue.TYPE_STRUCT:
-              if (value[2] > 0) {
-                for (let i = 0; i < value[2]; i++) {
-                  this.offset = new BluetoothStruct(value[1]).encode(buffer, data[key][i], this.offset);
-                }
-              } else this.offset = new BluetoothStruct(value[1]).encode(buffer, data[key], this.offset);
-          }
-        } else this.setBit(data[key]);
-      }
-    }
-    if (this.bit_offset > 0) this.freeBitBuffer();
-    return this.offset;
-  }
-}
-;// CONCATENATED MODULE: ./src/components/bluetooth/index.ts
-
-
-
-
-
-;// CONCATENATED MODULE: ./src/models/pjcan/base/BaseModel.ts
-
-const API_CANBUS_EVENT = "Canbus";
-/** Базовая модель */
-class BaseModel {
-  constructor(exec, highPriority = false) {
-    _defineProperty(this, "exec", void 0);
-    _defineProperty(this, "highPriority", void 0);
-    _defineProperty(this, "skipActivationCheck", false);
-    _defineProperty(this, "id", 0);
-    _defineProperty(this, "isData", false);
-    this.exec = exec;
-    this.highPriority = highPriority;
-  }
-  /**
-   * Запись данных
-   * @param {any} th Объект модели
-   * @param {number} exec Команда API
-   * @param {number} size Размер данных
-   * @param {IBluetoothStruct} struct Структура данных
-   * @param {DataView} buf Буфер данных
-   * @protected
-   */
-  _set(th, exec, size, struct, buf) {
-    const id = buf.getUint8(0);
-    const sizeData = buf.byteLength >= 3 ? buf.getUint16(1, true) : 0;
-    const result = id === exec && sizeData === size;
-    if (result) {
-      try {
-        struct.decode(buf, th, 3);
-        this.isData = true;
-      } catch (e) {
-        console.log(e);
-      }
-    }
-    return result;
-  }
-  /**
-   * Чтение данных
-   * @param {any} th Объект модели
-   * @param {number} exec Команда API
-   * @param {number} size Длина данных
-   * @param {IBluetoothStruct} struct Структура данных
-   */
-  _get(th, exec, size = 0, struct) {
-    const buf = new DataView(new ArrayBuffer(size + 3));
-    buf.setUint8(0, exec);
-    buf.setUint16(1, size, true);
-    if (size > 0) {
-      try {
-        struct?.encode(buf, th, 3);
-      } catch (e) {
-        console.log(e);
-        buf.setUint16(1, 0, true);
-      }
-    }
-    return buf;
-  }
-}
-;// CONCATENATED MODULE: ./src/models/pjcan/mazda/TCarModel.ts
-/* eslint-disable no-unused-vars */
-var TCarModel;
-(function (TCarModel) {
-  TCarModel[TCarModel["CAR_MODEL_UNKNOWN"] = 0] = "CAR_MODEL_UNKNOWN";
-  TCarModel[TCarModel["CAR_MODEL_MAZDA_3_BK"] = 1] = "CAR_MODEL_MAZDA_3_BK";
-  TCarModel[TCarModel["CAR_MODEL_MAZDA_3_BL"] = 2] = "CAR_MODEL_MAZDA_3_BL";
-  TCarModel[TCarModel["CAR_MODEL_MAZDA_6_GG"] = 3] = "CAR_MODEL_MAZDA_6_GG";
-  TCarModel[TCarModel["CAR_MODEL_MAZDA_6_GH"] = 4] = "CAR_MODEL_MAZDA_6_GH";
-  TCarModel[TCarModel["CAR_MODEL_MAZDA_CX7"] = 5] = "CAR_MODEL_MAZDA_CX7";
-  TCarModel[TCarModel["CAR_MODEL_MAZDA_CX7_REST"] = 6] = "CAR_MODEL_MAZDA_CX7_REST";
-  TCarModel[TCarModel["CAR_MODEL_MAZDA_CX9"] = 7] = "CAR_MODEL_MAZDA_CX9";
-  TCarModel[TCarModel["CAR_MODEL_MAZDA_CX9_REST"] = 8] = "CAR_MODEL_MAZDA_CX9_REST";
-})(TCarModel || (TCarModel = {}));
-;// CONCATENATED MODULE: ./src/models/pjcan/mazda/MazdaConfig.ts
-
-
-
-
-const API_MAZDA_CONFIG_EXEC = 0x40;
-const API_MAZDA_CONFIG_EVENT = "MazdaConfig";
-const API_MAZDA_VIEW_EXEC = 0x43;
-const API_MAZDA_VIEW_EVENT = "MazdaView";
-/** Модель параметров автомобиля */
-class MazdaConfig extends BaseModel {
-  constructor(data) {
-    super(API_MAZDA_CONFIG_EXEC);
-    _defineProperty(this, "lcd", false);
-    _defineProperty(this, "carModel", TCarModel.CAR_MODEL_UNKNOWN);
-    _defineProperty(this, "logo", "");
-    _defineProperty(this, "hello", "");
-    this.skipActivationCheck = true;
-    if (data) this.set(data);
-  }
-  /**
-   * Запись данных
-   * @param {DataView} buf Буфер данных
-   */
-  set(buf) {
-    return this._set(this, this.exec, MazdaConfig.size, new BluetoothStruct(MazdaConfig.struct), buf);
-  }
-  /**
-   * Чтение данных
-   * @param {boolean} request Только запрос
-   */
-  get(request) {
-    return request ? this._get(this, this.exec) : this._get(this, this.exec, MazdaConfig.size, new BluetoothStruct(MazdaConfig.struct));
-  }
-}
-_defineProperty(MazdaConfig, "struct", {
-  lcd: BluetoothStruct.bit(),
-  carModel: BluetoothStruct.uint8(),
-  logo: BluetoothStruct.char(12),
-  hello: BluetoothStruct.char(32)
-});
-_defineProperty(MazdaConfig, "size", 46);
-;// CONCATENATED MODULE: ./src/models/pjcan/mazda/TMazdaButton.ts
-/* eslint-disable no-unused-vars */
-var TMazdaButton;
-(function (TMazdaButton) {
-  TMazdaButton[TMazdaButton["MAZDA_BUTTON_NONE"] = 0] = "MAZDA_BUTTON_NONE";
-  TMazdaButton[TMazdaButton["MAZDA_BUTTON_CLOCK"] = 1] = "MAZDA_BUTTON_CLOCK";
-  TMazdaButton[TMazdaButton["MAZDA_BUTTON_INFO"] = 2] = "MAZDA_BUTTON_INFO";
-  TMazdaButton[TMazdaButton["MAZDA_BUTTON_CLOCK_H"] = 3] = "MAZDA_BUTTON_CLOCK_H";
-  TMazdaButton[TMazdaButton["MAZDA_BUTTON_CLOCK_M"] = 4] = "MAZDA_BUTTON_CLOCK_M";
-  TMazdaButton[TMazdaButton["MAZDA_BUTTON_CLOCK_RM"] = 5] = "MAZDA_BUTTON_CLOCK_RM";
-  TMazdaButton[TMazdaButton["MAZDA_BUTTON_CLOCK_24"] = 6] = "MAZDA_BUTTON_CLOCK_24";
-})(TMazdaButton || (TMazdaButton = {}));
-;// CONCATENATED MODULE: ./src/models/pjcan/mazda/MazdaAction.ts
-
-
-
-
-const API_MAZDA_ACTION_EXEC = 0x42;
-const API_MAZDA_ACTION_EVENT = "MazdaAction";
-/** Модель действий устройства */
-class MazdaAction extends BaseModel {
-  constructor() {
-    super(API_MAZDA_ACTION_EXEC);
-    _defineProperty(this, "btnPress", false);
-    _defineProperty(this, "btnSimulation", false);
-    _defineProperty(this, "btnType", TMazdaButton.MAZDA_BUTTON_NONE);
-    _defineProperty(this, "timePress", 0);
-  }
-  /**
-   * Запись данных
-   * @param {DataView} buf Буфер данных
-   */
-  set(buf) {
-    return false;
-  }
-  /** Чтение данных */
-  get() {
-    return this._get(this, this.exec, MazdaAction.size, new BluetoothStruct(MazdaAction.struct));
-  }
-}
-_defineProperty(MazdaAction, "struct", {
-  btnPress: BluetoothStruct.bit(),
-  btnSimulation: BluetoothStruct.bit(),
-  btnType: BluetoothStruct.uint8(),
-  timePress: BluetoothStruct.uint16()
-});
-_defineProperty(MazdaAction, "size", 4);
-;// CONCATENATED MODULE: ./src/models/pjcan/mazda/index.ts
-
-
-
-
-
-;// CONCATENATED MODULE: ./src/store/modules/app/onboard-card-list-default.ts
-
-/* harmony default export */ var onboard_card_list_default = ([{
-  name: "info",
-  enabled: true,
-  car: [TCarModel.CAR_MODEL_MAZDA_3_BK, TCarModel.CAR_MODEL_MAZDA_3_BL, TCarModel.CAR_MODEL_MAZDA_6_GG, TCarModel.CAR_MODEL_MAZDA_6_GH, TCarModel.CAR_MODEL_MAZDA_CX7, TCarModel.CAR_MODEL_MAZDA_CX7_REST, TCarModel.CAR_MODEL_MAZDA_CX9, TCarModel.CAR_MODEL_MAZDA_CX9_REST]
-}, {
-  name: "bose",
-  enabled: true,
-  car: [TCarModel.CAR_MODEL_MAZDA_CX7, TCarModel.CAR_MODEL_MAZDA_CX7_REST, TCarModel.CAR_MODEL_MAZDA_CX9]
-}, {
-  name: "engine",
-  enabled: true,
-  car: [TCarModel.CAR_MODEL_MAZDA_3_BK, TCarModel.CAR_MODEL_MAZDA_CX7, TCarModel.CAR_MODEL_MAZDA_CX7_REST, TCarModel.CAR_MODEL_MAZDA_CX9, TCarModel.CAR_MODEL_MAZDA_CX9_REST]
-}, {
-  name: "fuel",
-  enabled: true,
-  car: [TCarModel.CAR_MODEL_MAZDA_3_BK, TCarModel.CAR_MODEL_MAZDA_CX7, TCarModel.CAR_MODEL_MAZDA_CX7_REST, TCarModel.CAR_MODEL_MAZDA_CX9, TCarModel.CAR_MODEL_MAZDA_CX9_REST]
-}, {
-  name: "movement",
-  enabled: true,
-  car: [TCarModel.CAR_MODEL_MAZDA_3_BK, TCarModel.CAR_MODEL_MAZDA_CX7, TCarModel.CAR_MODEL_MAZDA_CX7_REST, TCarModel.CAR_MODEL_MAZDA_CX9, TCarModel.CAR_MODEL_MAZDA_CX9_REST]
-}, {
-  name: "doors",
-  enabled: true,
-  car: [TCarModel.CAR_MODEL_MAZDA_3_BK]
-}, {
-  name: "climate",
-  enabled: true,
-  car: [TCarModel.CAR_MODEL_MAZDA_3_BK, TCarModel.CAR_MODEL_MAZDA_6_GG, TCarModel.CAR_MODEL_MAZDA_CX7, TCarModel.CAR_MODEL_MAZDA_CX7_REST, TCarModel.CAR_MODEL_MAZDA_CX9, TCarModel.CAR_MODEL_MAZDA_CX9_REST]
-}]);
-;// CONCATENATED MODULE: ./src/store/modules/app/buttons-default.ts
-
-/* harmony default export */ var buttons_default = ([{
-  id: 1,
-  title: t("buttons.mode"),
-  icon: "mdi-menu"
-}, {
-  id: 2,
-  title: t("buttons.setUp"),
-  icon: "mdi-play"
-}, {
-  id: 3,
-  title: t("buttons.setDown"),
-  icon: "mdi-play"
-}, {
-  id: 4,
-  title: t("buttons.volUp"),
-  icon: "mdi-volume-plus"
-}, {
-  id: 5,
-  title: t("buttons.volDown"),
-  icon: "mdi-volume-minus"
-}, {
-  id: 6,
-  title: t("buttons.volMute"),
-  icon: "mdi-volume-mute"
-}]);
-;// CONCATENATED MODULE: ./src/store/modules/app/state.ts
-
-
-const state = {
-  messages: [],
-  visibleMessage: false,
-  mazda: null,
-  onboardCardList: onboard_card_list_default,
-  sw1: buttons_default
-};
-/* harmony default export */ var app_state = (state);
-;// CONCATENATED MODULE: ./src/store/modules/app/getters.ts
-/**
- * Сообщение из очереди сообщений
- * @param {any} state
- */
-const message = state => state.messages?.[0];
-/**
- * Отображение диалога сообщения
- * @param {any} state
- */
-const visibleMessage = state => state.visibleMessage;
-/**
- * Список карточек бортового компьютера
- * @param {any} state
- */
-const onboardCardList = state => state.onboardCardList;
-/**
- * Список кнопок SW1
- * @param {any} state
- */
-const sw1 = state => state.sw1;
-;// CONCATENATED MODULE: ./src/utils/debounce.ts
-/** Создать debounce */
-const createDebounce = () => {
-  let timeout;
-  return (fn, delay) => {
-    clearTimeout(timeout);
-    if (delay > 0) timeout = setTimeout(() => fn(), delay);
-  };
-};
-
-;// CONCATENATED MODULE: ./src/store/modules/app/mutations.ts
-
-
-
-const debounce = createDebounce();
-/**
- * Записать новое сообщение
- * @param state
- * @param {IMessage} msg Сообщение
- */
-const setMessage = (state, msg) => {
-  state.messages.push(msg);
-  state.visibleMessage = true;
-};
-const setVisibleMessage = (state, value) => {
-  state.visibleMessage = value;
-  if (!value) {
-    debounce(() => src_store.commit("app/freeMessage"), 400);
-  }
-};
-/**
- * Удалить первое сообщение из очереди сообщений
- * @param state
- */
-const freeMessage = state => {
-  if (state.messages?.[0]) {
-    state.messages.splice(0, 1);
-  }
-};
-/**
- * Очистить очередь сообщений
- * @param state
- */
-const clearMessages = state => {
-  debounce(() => {}, 0);
-  state.messages = [];
-};
-/**
- * Изменить список карточек бортового компьютера
- * @param {any} state
- * @param {IOnboardCard[]} value Новый список
- */
-const setOnboardCardList = (state, value) => {
-  state.onboardCardList = [...value].map(x => ({
-    ...x
-  }));
-};
-/**
- * Записать список кнопок SW1
- * @param {any} state
- * @param {IButtonCard[]} value Новый список
- */
-const setSW1 = (state, value) => {
-  state.sw1 = [...value].map(x => ({
-    id: x.id,
-    title: x.title,
-    icon: x.icon
-  }));
-};
-;// CONCATENATED MODULE: ./src/store/modules/app/actions.ts
-
-
-/**
- * Чтение списка onboardCardList из local storage
- * @param {any} commit
- */
-const readOnboardCardList = ({
-  commit
-}) => {
-  const res = window.localStorage.getItem("OnboardCardList");
-  if (res?.length) {
-    try {
-      const onboardCardList = JSON.parse(res);
-      if (Array.isArray(onboardCardList)) {
-        commit("setOnboardCardList", onboardCardList);
-      }
-    } catch (e) {
-      console.log(e);
-    }
-  }
-};
-/**
- * Запись списка onboardCardList в local storage
- * @param {any} commit
- */
-const writeOnboardCardList = ({
-  getters
-}) => {
-  const res = JSON.stringify(getters.onboardCardList);
-  window.localStorage.setItem("OnboardCardList", res);
-};
-/**
- * Сбросить значения списка onboardCardList по умолчанию
- * @param {any} commit
- * @param {any} dispatch
- */
-const resetOnboardCardList = ({
-  commit,
-  dispatch
-}) => {
-  commit("setOnboardCardList", onboard_card_list_default);
-  dispatch("writeOnboardCardList");
-};
-/**
- * Чтение списка кнопок SW1 из local storage
- * @param {any} commit
- */
-const readSW1 = ({
-  commit
-}) => {
-  const res = window.localStorage.getItem("ListButtonsSW1");
-  if (res?.length) {
-    try {
-      const list = JSON.parse(res);
-      if (Array.isArray(list)) {
-        commit("setSW1", list);
-      }
-    } catch (e) {
-      console.log(e);
-    }
-  }
-};
-/**
- * Запись списка кнопок SW1 в local storage
- * @param {any} commit
- */
-const writeSW1 = ({
-  getters
-}) => {
-  const res = JSON.stringify(getters.sw1);
-  window.localStorage.setItem("ListButtonsSW1", res);
-};
-/**
- * Сбросить значения списка кнопок SW1 по умолчанию
- * @param {any} commit
- * @param {any} dispatch
- */
-const resetSW1 = ({
-  commit,
-  dispatch
-}) => {
-  commit("setSW1", buttons_default);
-  dispatch("writeSW1");
-};
-;// CONCATENATED MODULE: ./src/store/modules/app/index.ts
-
-
-
-
-/* harmony default export */ var app = ({
-  namespaced: true,
-  state: app_state,
-  getters: getters_namespaceObject,
-  mutations: mutations_namespaceObject,
-  actions: actions_namespaceObject
-});
-;// CONCATENATED MODULE: ./src/models/pjcan/device/DeviceConfig.ts
-
-
-
-const API_DEVICE_CONFIG_EXEC = 0x02;
-const API_DEVICE_CONFIG_EVENT = "DeviceConfig";
-const API_DEVICE_VIEW_WORKTIME_EXEC = 0x0a;
-const API_DEVICE_VIEW_WORKTIME_EVENT = "DeviceWorktime";
-const API_DEVICE_VIEW_VOLTMETER_EXEC = 0x0b;
-const API_DEVICE_VIEW_VOLTMETER_EVENT = "DeviceVoltmeter";
-/** Модель параметров устройства */
-class DeviceConfig extends BaseModel {
-  constructor(data) {
-    super(API_DEVICE_CONFIG_EXEC);
-    _defineProperty(this, "serial", "");
-    this.skipActivationCheck = true;
-    if (data) this.set(data);
-  }
-  /**
-   * Запись данных
-   * @param {DataView} buf Буфер данных
-   */
-  set(buf) {
-    return this._set(this, this.exec, DeviceConfig.size, new BluetoothStruct(DeviceConfig.struct), buf);
-  }
-  /**
-   * Чтение данных
-   * @param {boolean} request Только запрос
-   */
-  get(request) {
-    return request ? this._get(this, this.exec) : this._get(this, this.exec, DeviceConfig.size, new BluetoothStruct(DeviceConfig.struct));
-  }
-}
-_defineProperty(DeviceConfig, "struct", {
-  serial: BluetoothStruct.char(64)
-});
-_defineProperty(DeviceConfig, "size", 64);
-;// CONCATENATED MODULE: ./src/models/pjcan/device/DeviceInfo.ts
-
-
-
-const API_DEVICE_INFO_EXEC = 0x01;
-const API_DEVICE_INFO_EVENT = "DeviceInfo";
-/** Модель характеристик устройства */
-class DeviceInfo extends BaseModel {
-  constructor(data) {
-    super(API_DEVICE_INFO_EXEC);
-    _defineProperty(this, "chipCores", 0);
-    _defineProperty(this, "chipModel", "");
-    _defineProperty(this, "chipRevision", 0);
-    _defineProperty(this, "cpuFreqMHz", 0);
-    _defineProperty(this, "cycleCount", 0);
-    _defineProperty(this, "efuseMac", BigInt(0));
-    _defineProperty(this, "flashChipMode", 0);
-    _defineProperty(this, "flashChipSize", 0);
-    _defineProperty(this, "flashChipSpeed", 0);
-    _defineProperty(this, "freeHeap", 0);
-    _defineProperty(this, "freePsram", 0);
-    _defineProperty(this, "freeSketchSpace", 0);
-    _defineProperty(this, "heapSize", 0);
-    _defineProperty(this, "maxAllocHeap", 0);
-    _defineProperty(this, "maxAllocPsram", 0);
-    _defineProperty(this, "minFreeHeap", 0);
-    _defineProperty(this, "minFreePsram", 0);
-    _defineProperty(this, "psramSize", 0);
-    _defineProperty(this, "sdkVersion", "");
-    _defineProperty(this, "sketchMD5", "");
-    _defineProperty(this, "sketchSize", 0);
-    _defineProperty(this, "temperatureChip", 0);
-    _defineProperty(this, "sha", [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
-    _defineProperty(this, "hardware", "");
-    this.skipActivationCheck = true;
-    if (data) this.set(data);
-  }
-  /**
-   * Запись данных
-   * @param {DataView} buf Буфер данных
-   */
-  set(buf) {
-    return this._set(this, this.exec, DeviceInfo.size, new BluetoothStruct(DeviceInfo.struct), buf);
-  }
-  /** Чтение данных */
-  get() {
-    return this._get(this, this.exec);
-  }
-}
-_defineProperty(DeviceInfo, "struct", {
-  chipCores: BluetoothStruct.uint8(),
-  chipModel: BluetoothStruct.char(16),
-  chipRevision: BluetoothStruct.uint8(),
-  cpuFreqMHz: BluetoothStruct.uint32(),
-  cycleCount: BluetoothStruct.uint32(),
-  efuseMac: BluetoothStruct.uint64(),
-  flashChipMode: BluetoothStruct.uint8(),
-  flashChipSize: BluetoothStruct.uint32(),
-  flashChipSpeed: BluetoothStruct.uint32(),
-  freeHeap: BluetoothStruct.uint32(),
-  freePsram: BluetoothStruct.uint32(),
-  freeSketchSpace: BluetoothStruct.uint32(),
-  heapSize: BluetoothStruct.uint32(),
-  maxAllocHeap: BluetoothStruct.uint32(),
-  maxAllocPsram: BluetoothStruct.uint32(),
-  minFreeHeap: BluetoothStruct.uint32(),
-  minFreePsram: BluetoothStruct.uint32(),
-  psramSize: BluetoothStruct.uint32(),
-  sdkVersion: BluetoothStruct.char(8),
-  sketchMD5: BluetoothStruct.char(16),
-  sketchSize: BluetoothStruct.uint32(),
-  temperatureChip: BluetoothStruct.uint32(),
-  sha: BluetoothStruct.uint8(32),
-  hardware: BluetoothStruct.char(32)
-});
-_defineProperty(DeviceInfo, "size", 175);
-;// CONCATENATED MODULE: ./src/models/pjcan/device/DeviceValue.ts
-
-var _DeviceValue;
-
-
-const API_DEVICE_VALUE_EXEC = 0x03;
-const API_DEVICE_VALUE_EVENT = "DeviceValue";
-/** Модель значений устройства */
-class DeviceValue extends BaseModel {
-  constructor(data) {
-    super(API_DEVICE_VALUE_EXEC);
-    _defineProperty(this, "activation", false);
-    _defineProperty(this, "state_led_work", false);
-    _defineProperty(this, "state_reverse", false);
-    _defineProperty(this, "state_r_position", false);
-    _defineProperty(this, "state_amp_illum", false);
-    _defineProperty(this, "hardware", {
-      major: 0,
-      minor: 0,
-      build: 0,
-      revision: 0
-    });
-    _defineProperty(this, "led", 0);
-    _defineProperty(this, "voltmeter", 0);
-    _defineProperty(this, "worktime", 0);
-    this.skipActivationCheck = true;
-    if (data) this.set(data);
-  }
-  /**
-   * Запись данных
-   * @param {DataView} buf Буфер данных
-   */
-  set(buf) {
-    return this._set(this, this.exec, DeviceValue.size, new BluetoothStruct(DeviceValue.struct), buf);
-  }
-  /** Чтение данных */
-  get() {
-    return this._get(this, this.exec);
-  }
-}
-_DeviceValue = DeviceValue;
-_defineProperty(DeviceValue, "structHardware", {
-  major: BluetoothStruct.uint8(),
-  minor: BluetoothStruct.uint8(),
-  build: BluetoothStruct.uint8(),
-  revision: BluetoothStruct.uint8()
-});
-_defineProperty(DeviceValue, "struct", {
-  activation: BluetoothStruct.bit(),
-  state_led_work: BluetoothStruct.bit(),
-  state_reverse: BluetoothStruct.bit(),
-  state_r_position: BluetoothStruct.bit(),
-  state_amp_illum: BluetoothStruct.bit(),
-  hardware: BluetoothStruct.struct(_DeviceValue.structHardware),
-  led: BluetoothStruct.uint8(),
-  voltmeter: BluetoothStruct.uint16(),
-  worktime: BluetoothStruct.uint32()
-});
-_defineProperty(DeviceValue, "size", 12);
-;// CONCATENATED MODULE: ./src/models/pjcan/device/DeviceAction.ts
-
-
-
-const API_DEVICE_ACTION_EXEC = 0x04;
-const API_DEVICE_ACTION_EVENT = "DeviceAction";
-/** Модель действий устройства */
-class DeviceAction extends BaseModel {
-  constructor() {
-    super(API_DEVICE_ACTION_EXEC);
-    _defineProperty(this, "reboot", false);
-    _defineProperty(this, "resetConfig", false);
-    _defineProperty(this, "resetView", false);
-    _defineProperty(this, "save", false);
-    _defineProperty(this, "format", false);
-    this.skipActivationCheck = true;
-  }
-  /**
-   * Запись данных
-   * @param {DataView} buf Буфер данных
-   */
-  set(buf) {
-    return false;
-  }
-  /** Чтение данных */
-  get() {
-    return this._get(this, this.exec, DeviceAction.size, new BluetoothStruct(DeviceAction.struct));
-  }
-}
-_defineProperty(DeviceAction, "struct", {
-  reboot: BluetoothStruct.bit(),
-  resetConfig: BluetoothStruct.bit(),
-  resetView: BluetoothStruct.bit(),
-  save: BluetoothStruct.bit(),
-  format: BluetoothStruct.bit()
-});
-_defineProperty(DeviceAction, "size", 1);
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es.typed-array.to-reversed.js
-var es_typed_array_to_reversed = __webpack_require__(2912);
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es.typed-array.to-sorted.js
-var es_typed_array_to_sorted = __webpack_require__(9904);
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es.typed-array.with.js
-var es_typed_array_with = __webpack_require__(6096);
-;// CONCATENATED MODULE: ./src/models/pjcan/device/DeviceUpdate.ts
-
-
-
-
-
-
-const API_DEVICE_UPDATE_EXEC = 0x05;
-const API_DEVICE_UPDATE_EVENT = "DeviceUpdate";
-const API_DEVICE_UPDATE_EVENT_ERROR = "DeviceUpdateError";
-/** Модель обновления прошивки */
-class DeviceUpdate extends (eventemitter3_default()) {
-  get uploading() {
-    return this.offset > 0 ? this.offset / this.total : 0;
-  }
-  constructor(data) {
-    super();
-    _defineProperty(this, "firmwareUrl", "");
-    _defineProperty(this, "firmwareData", new Uint8Array(0));
-    _defineProperty(this, "offset", 0);
-    _defineProperty(this, "error", 0);
-    _defineProperty(this, "encrypt", false);
-    _defineProperty(this, "iv", false);
-    _defineProperty(this, "ivData", new Uint8Array(0));
-    _defineProperty(this, "begin", false);
-    _defineProperty(this, "end", false);
-    _defineProperty(this, "abort", false);
-    _defineProperty(this, "total", 0);
-    _defineProperty(this, "size", 0);
-    _defineProperty(this, "highPriority", true);
-    if (data) this.set(data);
-  }
-  /** Очистить данные */
-  clear() {
-    this.firmwareData = new Uint8Array(0);
-    this.offset = 0;
-    this.error = 0;
-    this.begin = false;
-    this.end = false;
-    this.abort = false;
-    this.encrypt = false;
-    this.total = 0;
-    this.size = 0;
-  }
-  /**
-   * Записать значение IV
-   * @param res
-   */
-  setIV(res) {
-    this.iv = !!res && res?.length % 2 === 0 && /^[a-f\d]+$/i.test(res);
-    if (this.iv) {
-      this.ivData = new Uint8Array(res.length / 2);
-      let pos = 0;
-      for (let i = 0; i < res.length; i += 2) {
-        this.ivData[pos] = parseInt(res.substring(i, i + 2), 16);
-        pos++;
-      }
-    }
-    return this.iv;
-  }
-  /**
-   * Запись данных
-   * @param {DataView} buf Буфер данных
-   */
-  set(buf) {
-    const id = buf.getUint8(0);
-    const sizeData = buf.byteLength >= 3 ? buf.getUint16(1, true) : 0;
-    const result = id === API_DEVICE_UPDATE_EXEC && sizeData === 1;
-    if (result) {
-      this.error = buf.getUint8(3);
-      this.emit(API_DEVICE_UPDATE_EVENT, this.error);
-    }
-  }
-  /** Чтение данных */
-  get() {
-    const buf = new DataView(new ArrayBuffer(DeviceUpdate.size + 3));
-    buf.setUint8(0, API_DEVICE_UPDATE_EXEC);
-    buf.setUint16(1, DeviceUpdate.size, true);
-    try {
-      this.begin = !this.begin && this.offset === 0;
-      if (this.begin && this.encrypt && this.iv) {
-        this.size = this.ivData.length;
-        for (let i = 0; i < this.size; i++) {
-          buf.setUint8(10 + i, this.ivData[i]);
-        }
-      } else {
-        this.size = this.total - this.offset;
-        if (this.size > 496) this.size = 496;else if (this.size < 0) this.size = 0;
-        for (let i = 0; i < this.size; i++) {
-          buf.setUint8(10 + i, this.firmwareData[this.offset]);
-          this.offset++;
-        }
-      }
-      this.end = this.offset >= this.total;
-      new BluetoothStruct(DeviceUpdate.struct)?.encode(buf, this, 3);
-    } catch (e) {
-      console.log(e);
-      buf.setUint16(1, 0, true);
-    }
-    return buf;
-  }
-}
-_defineProperty(DeviceUpdate, "struct", {
-  begin: BluetoothStruct.bit(),
-  end: BluetoothStruct.bit(),
-  abort: BluetoothStruct.bit(),
-  encrypt: BluetoothStruct.bit(),
-  iv: BluetoothStruct.bit(),
-  total: BluetoothStruct.uint32(),
-  size: BluetoothStruct.uint16()
-});
-_defineProperty(DeviceUpdate, "size", 503);
-;// CONCATENATED MODULE: ./src/models/pjcan/device/DeviceScannerAction.ts
-
-
-
-const API_DEVICE_SCANNER_CONFIG_EXEC = 0x07;
-const API_DEVICE_SCANNER_CONFIG_EVENT = "DeviceScannerAction";
-class DeviceScannerAction extends BaseModel {
-  constructor(data) {
-    super(API_DEVICE_SCANNER_CONFIG_EXEC, true);
-    _defineProperty(this, "enabled", false);
-    _defineProperty(this, "shutdown", 5);
-  }
-  /**
-   * Запись данных
-   * @param {DataView} buf Буфер данных
-   */
-  set(buf) {
-    return false;
-  }
-  /** Чтение данных */
-  get() {
-    return this._get(this, this.exec, DeviceScannerAction.size, new BluetoothStruct(DeviceScannerAction.struct));
-  }
-}
-_defineProperty(DeviceScannerAction, "struct", {
-  enabled: BluetoothStruct.bit(),
-  shutdown: BluetoothStruct.uint8()
-});
-_defineProperty(DeviceScannerAction, "size", 2);
-;// CONCATENATED MODULE: ./src/models/pjcan/device/DeviceScannerValue.ts
-
-
-
-
-const API_DEVICE_SCANNER_VALUE_EXEC = 0x06;
-const API_DEVICE_SCANNER_VALUE_EVENT = "DeviceScannerValue";
-class DeviceScannerValue extends BaseModel {
-  constructor(data) {
-    super(API_DEVICE_SCANNER_VALUE_EXEC, true);
-    _defineProperty(this, "count", 0);
-    _defineProperty(this, "frames", []);
-    for (let i = 0; i < 16; i++) {
-      this.frames.push({
-        receive: false,
-        send: false,
-        id: 0,
-        data: [0, 0, 0, 0, 0, 0, 0, 0],
-        length: 0,
-        timestamp: BigInt(0)
-      });
-    }
-    if (data) this.set(data);
-  }
-  /**
-   * Запись данных
-   * @param {DataView} buf Буфер данных
-   */
-  set(buf) {
-    return this._set(this, this.exec, DeviceScannerValue.size, new BluetoothStruct(DeviceScannerValue.struct), buf);
-  }
-  /** Чтение данных */
-  get() {
-    const buf = new DataView(new ArrayBuffer(3));
-    buf.setUint8(0, this.exec);
-    buf.setUint16(1, 0, true);
-    return buf;
-  }
-}
-_defineProperty(DeviceScannerValue, "struct", {
-  count: BluetoothStruct.uint8(),
-  frames: BluetoothStruct.struct({
-    id: BluetoothStruct.uint32(),
-    data: BluetoothStruct.uint8(8),
-    length: BluetoothStruct.uint8(),
-    timestamp: BluetoothStruct.uint64()
-  }, 16)
-});
-_defineProperty(DeviceScannerValue, "size", 337);
-;// CONCATENATED MODULE: ./src/models/pjcan/device/index.ts
-
-
-
-
-
-
-
-
-;// CONCATENATED MODULE: ./src/models/pjcan/teyes/TProtocol.ts
-/* eslint-disable */
-var TProtocol;
-(function (TProtocol) {
-  TProtocol[TProtocol["PROTOCOL_PJCAN"] = 0] = "PROTOCOL_PJCAN";
-  TProtocol[TProtocol["PROTOCOL_RAISE_HM_ND00"] = 1] = "PROTOCOL_RAISE_HM_ND00";
-  TProtocol[TProtocol["PROTOCOL_RAISE_HM_ND01"] = 2] = "PROTOCOL_RAISE_HM_ND01";
-  TProtocol[TProtocol["PROTOCOL_SIMPLE_SOFT_MZ_SS_07A"] = 3] = "PROTOCOL_SIMPLE_SOFT_MZ_SS_07A";
-  TProtocol[TProtocol["PROTOCOL_SIMPLE_SOFT_RP5_MZ_002"] = 4] = "PROTOCOL_SIMPLE_SOFT_RP5_MZ_002";
-})(TProtocol || (TProtocol = {}));
-;// CONCATENATED MODULE: ./src/models/pjcan/teyes/TeyesConfig.ts
-
-
-
-
-const API_TEYES_CONFIG_EXEC = 0x50;
-const API_TEYES_CONFIG_EVENT = "TeyesConfig";
-/** Модель параметров Teyes */
-class TeyesConfig extends BaseModel {
-  constructor(data) {
-    super(API_TEYES_CONFIG_EXEC);
-    _defineProperty(this, "receiveClock", false);
-    _defineProperty(this, "receiveButtons", false);
-    _defineProperty(this, "receiveText", false);
-    _defineProperty(this, "sendButton", false);
-    _defineProperty(this, "sendClimate", false);
-    _defineProperty(this, "sendDoors", false);
-    _defineProperty(this, "parseVolume", false);
-    _defineProperty(this, "lcdShow", false);
-    _defineProperty(this, "reverseUart", false);
-    _defineProperty(this, "protocol", TProtocol.PROTOCOL_RAISE_HM_ND01);
-    if (data) this.set(data);
-  }
-  /**
-   * Запись данных
-   * @param {DataView} buf Буфер данных
-   */
-  set(buf) {
-    return this._set(this, this.exec, TeyesConfig.size, new BluetoothStruct(TeyesConfig.struct), buf);
-  }
-  /**
-   * Чтение данных
-   * @param {boolean} request Только запрос
-   */
-  get(request) {
-    return request ? this._get(this, this.exec) : this._get(this, this.exec, TeyesConfig.size, new BluetoothStruct(TeyesConfig.struct));
-  }
-}
-_defineProperty(TeyesConfig, "struct", {
-  receiveClock: BluetoothStruct.bit(),
-  receiveButtons: BluetoothStruct.bit(),
-  receiveText: BluetoothStruct.bit(),
-  sendButton: BluetoothStruct.bit(),
-  sendClimate: BluetoothStruct.bit(),
-  sendDoors: BluetoothStruct.bit(),
-  parseVolume: BluetoothStruct.bit(),
-  lcdShow: BluetoothStruct.bit(),
-  reverseUart: BluetoothStruct.bit(),
-  protocol: BluetoothStruct.uint8()
-});
-_defineProperty(TeyesConfig, "size", 3);
-;// CONCATENATED MODULE: ./src/models/pjcan/teyes/TeyesText.ts
-
-
-
-const API_TEYES_TEXT_EXEC = 0x51;
-const API_TEYES_TEXT_EVENT = "TeyesText";
-const API_TEYES_TEXT_VIEW_EXEC = 0x53;
-const API_TEYES_TEXT_VIEW_EVENT = "TeyesTextView";
-/** Модель значения текста Teyes */
-class TeyesText extends BaseModel {
-  constructor(data) {
-    super(API_TEYES_TEXT_EXEC);
-    _defineProperty(this, "text", "");
-    if (data) this.set(data);
-  }
-  /**
-   * Запись данных
-   * @param {DataView} buf Буфер данных
-   */
-  set(buf) {
-    return this._set(this, this.exec, TeyesText.size, new BluetoothStruct(TeyesText.struct), buf);
-  }
-  /**
-   * Чтение данных
-   * @param {boolean} request Только запрос
-   */
-  get(request) {
-    return request ? this._get(this, this.exec) : this._get(this, this.exec, TeyesText.size, new BluetoothStruct(TeyesText.struct));
-  }
-}
-_defineProperty(TeyesText, "struct", {
-  text: BluetoothStruct.char(12)
-});
-_defineProperty(TeyesText, "size", 12);
-;// CONCATENATED MODULE: ./src/models/pjcan/teyes/index.ts
-
-
-
-
-;// CONCATENATED MODULE: ./src/models/pjcan/buttons/ButtonsConfig.ts
-
-
-
-
-const API_BUTTONS_SW1_CONFIG_EXEC = 0x30;
-const API_BUTTONS_SW1_CONFIG_EVENT = "ButtonsSW1Config";
-const API_BUTTONS_SW3_CONFIG_EXEC = 0x3a;
-const API_BUTTONS_SW3_CONFIG_EVENT = "ButtonsSW3Config";
-/** Модель конфигурации кнопок */
-class ButtonsConfig extends BaseModel {
-  constructor(exec = API_BUTTONS_SW1_CONFIG_EXEC, data) {
-    super(exec);
-    _defineProperty(this, "enabled", false);
-    _defineProperty(this, "programming", false);
-    _defineProperty(this, "items", []);
-    for (let i = 0; i < 7; i++) {
-      const item = {
-        extended: false,
-        hold: 0,
-        resistanceMin: 0,
-        resistanceMax: 0,
-        exec: new Array(5),
-        execMode: new Array(5)
-      };
-      this.items.push(item);
-    }
-    if (data) this.set(data);
-  }
-  /**
-   * Запись данных
-   * @param {DataView} buf Буфер данных
-   */
-  set(buf) {
-    return this._set(this, this.exec, ButtonsConfig.size, new BluetoothStruct(ButtonsConfig.struct), buf);
-  }
-  /**
-   * Чтение данных
-   * @param {boolean} request Только запрос
-   */
-  get(request) {
-    return request ? this._get(this, this.exec) : this._get(this, this.exec, ButtonsConfig.size, new BluetoothStruct(ButtonsConfig.struct));
-  }
-  /**
-   * Запись параметров кнопки
-   * @param {IButtonConfigItem} value Новое значение
-   */
-  setItem(value) {
-    const index = this.items.findIndex(x => x.id === value.id);
-    if (index < 0) return false;
-    const item = this.items[index];
-    item.extended = value.extended;
-    item.id = value.id;
-    item.hold = value.hold;
-    item.resistanceMin = value.resistanceMin;
-    item.resistanceMax = value.resistanceMax;
-    item.exec = [...value.exec];
-    item.execMode = [...value.execMode];
-    return true;
-  }
-}
-_defineProperty(ButtonsConfig, "struct", {
-  enabled: BluetoothStruct.bit(),
-  programming: BluetoothStruct.bit(),
-  items: BluetoothStruct.struct({
-    extended: BluetoothStruct.bit(),
-    id: BluetoothStruct.uint8(),
-    hold: BluetoothStruct.uint8(),
-    resistanceMin: BluetoothStruct.uint16(),
-    resistanceMax: BluetoothStruct.uint16(),
-    exec: BluetoothStruct.uint8(5),
-    execMode: BluetoothStruct.uint8(5)
-  }, 7)
-});
-_defineProperty(ButtonsConfig, "size", 120);
-;// CONCATENATED MODULE: ./src/models/pjcan/buttons/TButtonType.ts
-/* eslint-disable */
-var TButtonType;
-(function (TButtonType) {
-  TButtonType[TButtonType["PRESS_RELEASE"] = 0] = "PRESS_RELEASE";
-  TButtonType[TButtonType["PRESS_SINGLE"] = 1] = "PRESS_SINGLE";
-  TButtonType[TButtonType["PRESS_DUAL"] = 2] = "PRESS_DUAL";
-  TButtonType[TButtonType["PRESS_TRIPLE"] = 3] = "PRESS_TRIPLE";
-  TButtonType[TButtonType["PRESS_HOLD"] = 4] = "PRESS_HOLD";
-})(TButtonType || (TButtonType = {}));
-;// CONCATENATED MODULE: ./src/models/pjcan/buttons/TButtonExec.ts
-/* eslint-disable */
-/** Список ID функций кнопки */
-var TButtonExec;
-(function (TButtonExec) {
-  TButtonExec[TButtonExec["BUTTON_EXEC_NONE"] = 0] = "BUTTON_EXEC_NONE";
-  TButtonExec[TButtonExec["BUTTON_EXEC_ENTERING_MODE"] = 1] = "BUTTON_EXEC_ENTERING_MODE";
-  TButtonExec[TButtonExec["BUTTON_EXEC_EXITING_MODE"] = 2] = "BUTTON_EXEC_EXITING_MODE";
-  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_MODE"] = 3] = "BUTTON_EXEC_PRESS_MODE";
-  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_SET_UP"] = 4] = "BUTTON_EXEC_PRESS_SET_UP";
-  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_SET_DOWN"] = 5] = "BUTTON_EXEC_PRESS_SET_DOWN";
-  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_VOLUME_UP"] = 6] = "BUTTON_EXEC_PRESS_VOLUME_UP";
-  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_VOLUME_DOWN"] = 7] = "BUTTON_EXEC_PRESS_VOLUME_DOWN";
-  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_MUTE"] = 8] = "BUTTON_EXEC_PRESS_MUTE";
-  TButtonExec[TButtonExec["BUTTON_EXEC_HOLD_CLOCK"] = 9] = "BUTTON_EXEC_HOLD_CLOCK";
-  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_CLOCK"] = 10] = "BUTTON_EXEC_PRESS_CLOCK";
-  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_CLOCK_H"] = 11] = "BUTTON_EXEC_PRESS_CLOCK_H";
-  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_CLOCK_M"] = 12] = "BUTTON_EXEC_PRESS_CLOCK_M";
-  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_CLOCK_24"] = 13] = "BUTTON_EXEC_PRESS_CLOCK_24";
-  TButtonExec[TButtonExec["BUTTON_EXEC_HOLD_INFO"] = 14] = "BUTTON_EXEC_HOLD_INFO";
-  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_INFO"] = 15] = "BUTTON_EXEC_PRESS_INFO";
-  TButtonExec[TButtonExec["BUTTON_EXEC_VIEW_ENGINE"] = 16] = "BUTTON_EXEC_VIEW_ENGINE";
-  TButtonExec[TButtonExec["BUTTON_EXEC_VIEW_FUEL"] = 17] = "BUTTON_EXEC_VIEW_FUEL";
-  TButtonExec[TButtonExec["BUTTON_EXEC_VIEW_MOVEMENT"] = 18] = "BUTTON_EXEC_VIEW_MOVEMENT";
-  TButtonExec[TButtonExec["BUTTON_EXEC_VIEW_TEMPERATURE"] = 19] = "BUTTON_EXEC_VIEW_TEMPERATURE";
-  TButtonExec[TButtonExec["BUTTON_EXEC_TEYES_VOICE"] = 20] = "BUTTON_EXEC_TEYES_VOICE";
-  TButtonExec[TButtonExec["BUTTON_EXEC_TEYES_RADIO"] = 21] = "BUTTON_EXEC_TEYES_RADIO";
-  TButtonExec[TButtonExec["BUTTON_EXEC_TEYES_CAMERA"] = 22] = "BUTTON_EXEC_TEYES_CAMERA";
-  TButtonExec[TButtonExec["BUTTON_EXEC_TEYES_RADIO_SEARCH"] = 23] = "BUTTON_EXEC_TEYES_RADIO_SEARCH";
-  TButtonExec[TButtonExec["BUTTON_EXEC_TEYES_EQUALIZER"] = 24] = "BUTTON_EXEC_TEYES_EQUALIZER";
-  TButtonExec[TButtonExec["BUTTON_EXEC_TEYES_DISPLAY_ON_OFF"] = 25] = "BUTTON_EXEC_TEYES_DISPLAY_ON_OFF";
-  TButtonExec[TButtonExec["BUTTON_EXEC_TEYES_PHONE"] = 26] = "BUTTON_EXEC_TEYES_PHONE"; // телефон ГУ
-})(TButtonExec || (TButtonExec = {}));
-;// CONCATENATED MODULE: ./src/models/pjcan/buttons/ButtonValue.ts
-
-
-
-
-
-const API_BUTTON_SW1_VALUE_EXEC = 0x31;
-const API_BUTTON_SW1_VALUE_EVENT = "ButtonSW1Value";
-const API_BUTTON_SW3_VALUE_EXEC = 0x3b;
-const API_BUTTON_SW3_VALUE_EVENT = "ButtonSW3Value";
-/** Модель значений кнопок */
-class ButtonValue extends BaseModel {
-  constructor(exec = API_BUTTON_SW1_VALUE_EXEC, data) {
-    super(exec);
-    _defineProperty(this, "layered", false);
-    _defineProperty(this, "id", 0);
-    _defineProperty(this, "btnExec", TButtonExec.BUTTON_EXEC_NONE);
-    _defineProperty(this, "btnExecMode", TButtonExec.BUTTON_EXEC_NONE);
-    _defineProperty(this, "count", 0);
-    _defineProperty(this, "type", TButtonType.PRESS_RELEASE);
-    _defineProperty(this, "resistance", 0);
-    if (data) this.set(data);
-  }
-  /**
-   * Запись данных
-   * @param {DataView} buf Буфер данных
-   */
-  set(buf) {
-    return this._set(this, this.exec, ButtonValue.size, new BluetoothStruct(ButtonValue.struct), buf);
-  }
-  /** Чтение данных */
-  get() {
-    return this._get(this, this.exec);
-  }
-}
-_defineProperty(ButtonValue, "struct", {
-  layered: BluetoothStruct.bit(),
-  id: BluetoothStruct.uint8(),
-  btnExec: BluetoothStruct.uint8(),
-  btnExecMode: BluetoothStruct.uint8(),
-  count: BluetoothStruct.uint8(),
-  type: BluetoothStruct.uint8(),
-  resistance: BluetoothStruct.uint16()
-});
-_defineProperty(ButtonValue, "size", 8);
-;// CONCATENATED MODULE: ./src/models/pjcan/buttons/ButtonsAction.ts
-
-
-
-const API_BUTTONS_SW1_ACTION_EXEC = 0x32;
-const API_BUTTONS_SW1_ACTION_EVENT = "ButtonsSW1Action";
-const API_BUTTONS_SW3_ACTION_EXEC = 0x3c;
-const API_BUTTONS_SW3_ACTION_EVENT = "ButtonsSW3Action";
-/** Модель конфигурации кнопок */
-class ButtonsAction extends BaseModel {
-  constructor(exec = API_BUTTONS_SW1_ACTION_EXEC) {
-    super(exec);
-    _defineProperty(this, "empty", false);
-    _defineProperty(this, "defaultMazda3", false);
-    _defineProperty(this, "defaultMazdaCX7", false);
-  }
-  /**
-   * Запись данных
-   * @param {DataView} buf Буфер данных
-   */
-  set(buf) {
-    return false;
-  }
-  /** Чтение данных */
-  get() {
-    return this._get(this, this.exec, ButtonsAction.size, new BluetoothStruct(ButtonsAction.struct));
-  }
-}
-_defineProperty(ButtonsAction, "struct", {
-  empty: BluetoothStruct.bit(),
-  defaultMazda3: BluetoothStruct.bit(),
-  defaultMazdaCX7: BluetoothStruct.bit()
-});
-_defineProperty(ButtonsAction, "size", 1);
-;// CONCATENATED MODULE: ./src/models/pjcan/buttons/TButtonItem.ts
-/* eslint-disable */
-/** Список ID кнопки */
-var TButtonItem;
-(function (TButtonItem) {
-  TButtonItem[TButtonItem["BUTTON_MODE"] = 0] = "BUTTON_MODE";
-  TButtonItem[TButtonItem["BUTTON_SET_UP"] = 1] = "BUTTON_SET_UP";
-  TButtonItem[TButtonItem["BUTTON_SET_DOWN"] = 2] = "BUTTON_SET_DOWN";
-  TButtonItem[TButtonItem["BUTTON_VOL_UP"] = 3] = "BUTTON_VOL_UP";
-  TButtonItem[TButtonItem["BUTTON_VOL_DOWN"] = 4] = "BUTTON_VOL_DOWN";
-  TButtonItem[TButtonItem["BUTTON_VOL_MUTE"] = 5] = "BUTTON_VOL_MUTE"; // кнопка выкл. звука
-})(TButtonItem || (TButtonItem = {}));
-;// CONCATENATED MODULE: ./src/models/pjcan/buttons/TButtonPress.ts
-/* eslint-disable */
-/** Список ID действий кнопки */
-var TButtonPress;
-(function (TButtonPress) {
-  TButtonPress[TButtonPress["RELEASE"] = 0] = "RELEASE";
-  TButtonPress[TButtonPress["PRESS_SINGLE"] = 1] = "PRESS_SINGLE";
-  TButtonPress[TButtonPress["PRESS_DUAL"] = 2] = "PRESS_DUAL";
-  TButtonPress[TButtonPress["PRESS_TRIPLE"] = 3] = "PRESS_TRIPLE";
-  TButtonPress[TButtonPress["PRESS_HOLD"] = 4] = "PRESS_HOLD";
-})(TButtonPress || (TButtonPress = {}));
-;// CONCATENATED MODULE: ./src/models/pjcan/buttons/index.ts
-
-
-
-
-
-
-
-
-;// CONCATENATED MODULE: ./src/models/pjcan/bose/TCenterPoint.ts
-/* eslint-disable */
-var TCenterPoint;
-(function (TCenterPoint) {
-  TCenterPoint[TCenterPoint["CENTERPOINT_OFF"] = 0] = "CENTERPOINT_OFF";
-  TCenterPoint[TCenterPoint["CENTERPOINT_MIN"] = 1] = "CENTERPOINT_MIN";
-  TCenterPoint[TCenterPoint["CENTERPOINT_LOW"] = 2] = "CENTERPOINT_LOW";
-  TCenterPoint[TCenterPoint["CENTERPOINT_MID"] = 3] = "CENTERPOINT_MID";
-  TCenterPoint[TCenterPoint["CENTERPOINT_HI"] = 4] = "CENTERPOINT_HI";
-  TCenterPoint[TCenterPoint["CENTERPOINT_MAX"] = 5] = "CENTERPOINT_MAX";
-})(TCenterPoint || (TCenterPoint = {}));
-;// CONCATENATED MODULE: ./src/models/pjcan/bose/BoseConfig.ts
-
-
-
-
-const API_BOSE_CONFIG_EXEC = 0x60;
-const API_BOSE_CONFIG_EVENT = "BoseConfig";
-const API_BOSE_VIEW_EXEC = 0x63;
-const API_BOSE_VIEW_EVENT = "BoseView";
-/** Модель параметров Bose */
-class BoseConfig extends BaseModel {
-  constructor(data) {
-    super(API_BOSE_CONFIG_EXEC);
-    _defineProperty(this, "on", false);
-    _defineProperty(this, "audioPlt", false);
-    _defineProperty(this, "radioFM", false);
-    _defineProperty(this, "wow", false);
-    _defineProperty(this, "press", false);
-    _defineProperty(this, "balance", 0);
-    _defineProperty(this, "bass", 0);
-    _defineProperty(this, "fade", 0);
-    _defineProperty(this, "treble", 0);
-    _defineProperty(this, "centerPoint", TCenterPoint.CENTERPOINT_OFF);
-    if (data) this.set(data);
-  }
-  /**
-   * Запись данных
-   * @param {DataView} buf Буфер данных
-   */
-  set(buf) {
-    return this._set(this, this.exec, BoseConfig.size, new BluetoothStruct(BoseConfig.struct), buf);
-  }
-  /**
-   * Чтение данных
-   * @param {boolean} request Только запрос
-   */
-  get(request) {
-    return request ? this._get(this, this.exec) : this._get(this, this.exec, BoseConfig.size, new BluetoothStruct(BoseConfig.struct));
-  }
-}
-_defineProperty(BoseConfig, "struct", {
-  on: BluetoothStruct.bit(),
-  audioPlt: BluetoothStruct.bit(),
-  radioFM: BluetoothStruct.bit(),
-  wow: BluetoothStruct.bit(),
-  press: BluetoothStruct.bit(),
-  balance: BluetoothStruct.int8(),
-  bass: BluetoothStruct.int8(),
-  fade: BluetoothStruct.int8(),
-  treble: BluetoothStruct.int8(),
-  centerPoint: BluetoothStruct.uint8()
-});
-_defineProperty(BoseConfig, "size", 6);
-;// CONCATENATED MODULE: ./src/models/pjcan/bose/index.ts
-
-
-
-;// CONCATENATED MODULE: ./src/models/pjcan/engine/EngineConfig.ts
-
-
-
-const API_ENGINE_CONFIG_EXEC = 0x90;
-const API_ENGINE_CONFIG_EVENT = "EngineConfig";
-/** Модель конфигурации ДВС */
-class EngineConfig extends BaseModel {
-  constructor(data) {
-    super(API_ENGINE_CONFIG_EXEC);
-    _defineProperty(this, "showDays", false);
-    _defineProperty(this, "totalWorktime", BigInt(0));
-    _defineProperty(this, "totalCountRPM", BigInt(0));
-    if (data) this.set(data);
-  }
-  /**
-   * Запись данных
-   * @param {DataView} buf Буфер данных
-   */
-  set(buf) {
-    return this._set(this, this.exec, EngineConfig.size, new BluetoothStruct(EngineConfig.struct), buf);
-  }
-  /**
-   * Чтение данных
-   * @param {boolean} request Только запрос
-   */
-  get(request) {
-    return request ? this._get(this, this.exec) : this._get(this, this.exec, EngineConfig.size, new BluetoothStruct(EngineConfig.struct));
-  }
-}
-_defineProperty(EngineConfig, "struct", {
-  showDays: BluetoothStruct.bit(),
-  totalWorktime: BluetoothStruct.uint64(),
-  totalCountRPM: BluetoothStruct.uint64()
-});
-_defineProperty(EngineConfig, "size", 17);
-;// CONCATENATED MODULE: ./src/models/pjcan/engine/EngineValue.ts
-
-
-
-const API_ENGINE_VALUE_EXEC = 0x91;
-const API_ENGINE_VALUE_EVENT = "EngineValue";
-/** Модель значений ДВС */
-class EngineValue extends BaseModel {
-  constructor(data) {
-    super(API_ENGINE_VALUE_EXEC);
-    _defineProperty(this, "on", false);
-    _defineProperty(this, "coolant", 0);
-    _defineProperty(this, "rpm", 0);
-    _defineProperty(this, "worktime", 0);
-    _defineProperty(this, "countRPM", 0);
-    _defineProperty(this, "load", 0);
-    _defineProperty(this, "throttle", 0);
-    _defineProperty(this, "viewDays", 0);
-    _defineProperty(this, "viewHours", 0);
-    _defineProperty(this, "viewMinutes", 0);
-    _defineProperty(this, "viewSeconds", 0);
-    _defineProperty(this, "viewCountRPM", 0);
-    if (data) this.set(data);
-  }
-  /**
-   * Запись данных
-   * @param {DataView} buf Буфер данных
-   */
-  set(buf) {
-    return this._set(this, this.exec, EngineValue.size, new BluetoothStruct(EngineValue.struct), buf);
-  }
-  /** Чтение данных */
-  get() {
-    return this._get(this, this.exec);
-  }
-}
-_defineProperty(EngineValue, "struct", {
-  on: BluetoothStruct.bit(),
-  coolant: BluetoothStruct.int8(),
-  rpm: BluetoothStruct.uint16(),
-  worktime: BluetoothStruct.uint32(),
-  countRPM: BluetoothStruct.uint32(),
-  load: BluetoothStruct.uint16(),
-  throttle: BluetoothStruct.uint16(),
-  viewDays: BluetoothStruct.uint16(),
-  viewHours: BluetoothStruct.uint8(),
-  viewMinutes: BluetoothStruct.uint8(),
-  viewSeconds: BluetoothStruct.uint8(),
-  viewCountRPM: BluetoothStruct.uint32()
-});
-_defineProperty(EngineValue, "size", 25);
-;// CONCATENATED MODULE: ./src/models/pjcan/view/TViewType.ts
-/* eslint-disable */
-/** Тип отображения текста */
-var TViewType;
-(function (TViewType) {
-  TViewType[TViewType["VIEW_TEXT_SIMPLE"] = 0] = "VIEW_TEXT_SIMPLE";
-  TViewType[TViewType["VIEW_TEXT_FLICKERING"] = 1] = "VIEW_TEXT_FLICKERING";
-  TViewType[TViewType["VIEW_TEXT_TICKER"] = 2] = "VIEW_TEXT_TICKER"; // бегущая строка
-})(TViewType || (TViewType = {}));
-;// CONCATENATED MODULE: ./src/models/pjcan/view/ViewConfig.ts
-
-
-
-
-/** Модель параметров отображения */
-class ViewConfig extends BaseModel {
-  constructor(exec = 0, data) {
-    super(exec);
-    _defineProperty(this, "enabled", false);
-    _defineProperty(this, "type", TViewType.VIEW_TEXT_SIMPLE);
-    _defineProperty(this, "time", 0);
-    _defineProperty(this, "delay", 0);
-    if (data) this.set(data);
-  }
-  /**
-   * Запись данных
-   * @param {DataView} buf Буфер данных
-   */
-  set(buf) {
-    return this._set(this, this.exec, ViewConfig.size, new BluetoothStruct(ViewConfig.struct), buf);
-  }
-  /**
-   * Чтение данных
-   * @param {boolean} request Только запрос
-   */
-  get(request) {
-    return request ? this._get(this, this.exec) : this._get(this, this.exec, ViewConfig.size, new BluetoothStruct(ViewConfig.struct));
-  }
-}
-_defineProperty(ViewConfig, "struct", {
-  enabled: BluetoothStruct.bit(),
-  type: BluetoothStruct.uint8(),
-  time: BluetoothStruct.uint8(),
-  delay: BluetoothStruct.uint8()
-});
-_defineProperty(ViewConfig, "size", 4);
-;// CONCATENATED MODULE: ./src/models/pjcan/view/index.ts
-
-
-
-;// CONCATENATED MODULE: ./src/models/pjcan/engine/EngineViews.ts
-
-
-
-
-const API_ENGINE_VIEW_EXEC = 0x93;
-const API_ENGINE_VIEW_EVENT = "EngineView";
-const API_ENGINE_VIEW_ENABLED_EXEC = 0x94;
-const API_ENGINE_VIEW_ENABLED_EVENT = "EngineViewEnabled";
-const API_ENGINE_VIEW_TOTAL_WORKTIME_EXEC = 0x95;
-const API_ENGINE_VIEW_TOTAL_WORKTIME_EVENT = "EngineViewTotalWorktime";
-const API_ENGINE_VIEW_TOTAL_COUNT_RPM_EXEC = 0x96;
-const API_ENGINE_VIEW_TOTAL_COUNT_RPM_EVENT = "EngineViewTotalCountRPM";
-const API_ENGINE_VIEW_COOLANT_EXEC = 0x97;
-const API_ENGINE_VIEW_COOLANT_EVENT = "EngineViewCoolant";
-const API_ENGINE_VIEW_RPM_EXEC = 0x98;
-const API_ENGINE_VIEW_RPM_EVENT = "EngineViewRPM";
-const API_ENGINE_VIEW_LOAD_EXEC = 0x99;
-const API_ENGINE_VIEW_LOAD_EVENT = "EngineViewLoad";
-const API_ENGINE_VIEW_THROTTLE_EXEC = 0x9a;
-const API_ENGINE_VIEW_THROTTLE_EVENT = "EngineViewThrottle";
-/** Модель параметров отображения данных ДВС */
-class EngineViews extends BaseModel {
-  constructor(data) {
-    super(API_ENGINE_VIEW_EXEC);
-    _defineProperty(this, "enabled", new ViewConfig(API_ENGINE_VIEW_ENABLED_EXEC));
-    _defineProperty(this, "totalWorktime", new ViewConfig(API_ENGINE_VIEW_TOTAL_WORKTIME_EXEC));
-    _defineProperty(this, "totalCountRPM", new ViewConfig(API_ENGINE_VIEW_TOTAL_COUNT_RPM_EXEC));
-    _defineProperty(this, "coolant", new ViewConfig(API_ENGINE_VIEW_COOLANT_EXEC));
-    _defineProperty(this, "rpm", new ViewConfig(API_ENGINE_VIEW_RPM_EXEC));
-    _defineProperty(this, "load", new ViewConfig(API_ENGINE_VIEW_LOAD_EXEC));
-    _defineProperty(this, "throttle", new ViewConfig(API_ENGINE_VIEW_THROTTLE_EXEC));
-    if (data) this.set(data);
-  }
-  /**
-   * Запись данных
-   * @param {DataView} buf Буфер данных
-   */
-  set(buf) {
-    const result = this._set(this, this.exec, EngineViews.size, new BluetoothStruct(EngineViews.struct), buf);
-    if (result) {
-      this.enabled.isData = true;
-      this.totalWorktime.isData = true;
-      this.totalCountRPM.isData = true;
-      this.coolant.isData = true;
-      this.rpm.isData = true;
-      this.load.isData = true;
-      this.throttle.isData = true;
-    }
-    return result;
-  }
-  /** Чтение данных */
-  get() {
-    return this._get(this, this.exec);
-  }
-}
-_defineProperty(EngineViews, "struct", {
-  enabled: BluetoothStruct.struct(ViewConfig.struct),
-  totalWorktime: BluetoothStruct.struct(ViewConfig.struct),
-  totalCountRPM: BluetoothStruct.struct(ViewConfig.struct),
-  coolant: BluetoothStruct.struct(ViewConfig.struct),
-  rpm: BluetoothStruct.struct(ViewConfig.struct),
-  load: BluetoothStruct.struct(ViewConfig.struct),
-  throttle: BluetoothStruct.struct(ViewConfig.struct)
-});
-_defineProperty(EngineViews, "size", 28);
-;// CONCATENATED MODULE: ./src/models/pjcan/engine/index.ts
-
-
-
-
-;// CONCATENATED MODULE: ./src/models/pjcan/fuel/FuelConfig.ts
-
-
-
-const API_FUEL_CONFIG_EXEC = 0xa0;
-const API_FUEL_CONFIG_EVENT = "FuelConfig";
-/** Модель конфигурации расхода топлива */
-class FuelConfig extends BaseModel {
-  constructor(data) {
-    super(API_FUEL_CONFIG_EXEC);
-    _defineProperty(this, "ratio", 0);
-    if (data) this.set(data);
-  }
-  /**
-   * Запись данных
-   * @param {DataView} buf Буфер данных
-   */
-  set(buf) {
-    return this._set(this, this.exec, FuelConfig.size, new BluetoothStruct(FuelConfig.struct), buf);
-  }
-  /**
-   * Чтение данных
-   * @param {boolean} request Только запрос
-   */
-  get(request) {
-    return request ? this._get(this, this.exec) : this._get(this, this.exec, FuelConfig.size, new BluetoothStruct(FuelConfig.struct));
-  }
-}
-_defineProperty(FuelConfig, "struct", {
-  ratio: BluetoothStruct.uint16()
-});
-_defineProperty(FuelConfig, "size", 2);
-;// CONCATENATED MODULE: ./src/models/pjcan/fuel/FuelValue.ts
-
-
-
-const API_FUEL_VALUE_EXEC = 0xa1;
-const API_FUEL_VALUE_EVENT = "FuelValue";
-/** Модель значений расхода топлива */
-class FuelValue extends BaseModel {
-  constructor(data) {
-    super(API_FUEL_VALUE_EXEC);
-    _defineProperty(this, "current", 0);
-    _defineProperty(this, "avg", 0);
-    if (data) this.set(data);
-  }
-  /**
-   * Запись данных
-   * @param {DataView} buf Буфер данных
-   */
-  set(buf) {
-    return this._set(this, this.exec, FuelValue.size, new BluetoothStruct(FuelValue.struct), buf);
-  }
-  /** Чтение данных */
-  get() {
-    return this._get(this, this.exec);
-  }
-}
-_defineProperty(FuelValue, "struct", {
-  current: BluetoothStruct.uint16(),
-  avg: BluetoothStruct.uint16()
-});
-_defineProperty(FuelValue, "size", 4);
-;// CONCATENATED MODULE: ./src/models/pjcan/fuel/FuelViews.ts
-
-
-
-
-const API_FUEL_VIEW_EXEC = 0xa3;
-const API_FUEL_VIEW_EVENT = "FuelView";
-const API_FUEL_VIEW_CURRENT_EXEC = 0xa4;
-const API_FUEL_VIEW_CURRENT_EVENT = "FuelViewCurrent";
-const API_FUEL_VIEW_AVG_EXEC = 0xa5;
-const API_FUEL_VIEW_AVG_EVENT = "FuelViewAVG";
-/** Модель параметров отображения данных расхода топлива */
-class FuelViews extends BaseModel {
-  constructor(data) {
-    super(API_FUEL_VIEW_EXEC);
-    _defineProperty(this, "current", new ViewConfig(API_FUEL_VIEW_CURRENT_EXEC));
-    _defineProperty(this, "avg", new ViewConfig(API_FUEL_VIEW_AVG_EXEC));
-    if (data) this.set(data);
-  }
-  /**
-   * Запись данных
-   * @param {DataView} buf Буфер данных
-   */
-  set(buf) {
-    const result = this._set(this, this.exec, FuelViews.size, new BluetoothStruct(FuelViews.struct), buf);
-    if (result) {
-      this.current.isData = true;
-      this.avg.isData = true;
-    }
-    return result;
-  }
-  /** Чтение данных */
-  get() {
-    return this._get(this, this.exec);
-  }
-}
-_defineProperty(FuelViews, "struct", {
-  current: BluetoothStruct.struct(ViewConfig.struct),
-  avg: BluetoothStruct.struct(ViewConfig.struct)
-});
-_defineProperty(FuelViews, "size", 8);
-;// CONCATENATED MODULE: ./src/models/pjcan/fuel/index.ts
-
-
-
-
-;// CONCATENATED MODULE: ./src/models/pjcan/volume/VolumeConfig.ts
-
-
-
-const API_VOLUME_CONFIG_EXEC = 0xe0;
-const API_VOLUME_CONFIG_EVENT = "VolumeConfig";
-const API_VOLUME_VIEW_EXEC = 0xe3;
-const API_VOLUME_VIEW_EVENT = "VolumeView";
-/** Модель конфигурации уровня звука */
-class VolumeConfig extends BaseModel {
-  constructor(data) {
-    super(API_VOLUME_CONFIG_EXEC, true);
-    _defineProperty(this, "mute", false);
-    _defineProperty(this, "muteBose", false);
-    _defineProperty(this, "start", false);
-    _defineProperty(this, "startBose", false);
-    _defineProperty(this, "volume", 0);
-    _defineProperty(this, "volumeBose", 0);
-    _defineProperty(this, "startLevel", 0);
-    _defineProperty(this, "startLevelBose", 0);
-    if (data) this.set(data);
-  }
-  /**
-   * Запись данных
-   * @param {DataView} buf Буфер данных
-   */
-  set(buf) {
-    return this._set(this, this.exec, VolumeConfig.size, new BluetoothStruct(VolumeConfig.struct), buf);
-  }
-  /**
-   * Чтение данных
-   * @param {boolean} request Только запрос
-   */
-  get(request) {
-    return request ? this._get(this, this.exec) : this._get(this, this.exec, VolumeConfig.size, new BluetoothStruct(VolumeConfig.struct));
-  }
-}
-_defineProperty(VolumeConfig, "struct", {
-  mute: BluetoothStruct.bit(),
-  muteBose: BluetoothStruct.bit(),
-  start: BluetoothStruct.bit(),
-  startBose: BluetoothStruct.bit(),
-  volume: BluetoothStruct.uint8(),
-  volumeBose: BluetoothStruct.uint8(),
-  startLevel: BluetoothStruct.uint8(),
-  startLevelBose: BluetoothStruct.uint8()
-});
-_defineProperty(VolumeConfig, "size", 5);
-;// CONCATENATED MODULE: ./src/models/pjcan/volume/index.ts
-
-
-;// CONCATENATED MODULE: ./src/models/pjcan/version/Version.ts
-
-
-
-const API_VERSION_EXEC = 0x00;
-const API_VERSION_EVENT = "Version";
-const API_NEW_VERSION_EVENT = "NewVersion";
-/** Модель версии */
-class Version extends BaseModel {
-  /** Наличие версии */
-  get is() {
-    return this.major > 0;
-  }
-  /** Строковое представление */
-  get toString() {
-    return `${this.major}.${this.minor}.${this.build}.${this.revision}`;
-  }
-  constructor(data) {
-    super(API_VERSION_EXEC, true);
-    _defineProperty(this, "major", 0);
-    _defineProperty(this, "minor", 0);
-    _defineProperty(this, "build", 0);
-    _defineProperty(this, "revision", 0);
-    this.skipActivationCheck = true;
-    if (data) this.set(data);
-  }
-  /**
-   * Сравнение версий
-   * @param {IVersion} ver Объект версии
-   * @param {number} len Длина сравниваемой версии (от 1 до 4)
-   */
-  compare(ver, len) {
-    const verA = [this.major, this.minor, this.build, this.revision];
-    const verB = [ver.major, ver.minor, ver.build, ver.revision];
-    if (len < 1) len = 1;else if (len > 4) len = 4;
-    for (let i = 0; i < len; i++) {
-      if (verB[i] > verA[i]) return 1;else if (verB[i] < verA[i]) return -1;
-    }
-    return 0;
-  }
-  compareString(ver) {
-    if (ver?.length > 0) {
-      const verA = [this.major, this.minor, this.build, this.revision];
-      const verB = ver.split(".")?.map(x => parseInt(x));
-      if (verB?.length > 0) {
-        let len = verB.length;
-        if (len > 4) len = 4;
-        for (let i = 0; i < len; i++) {
-          if (verB[i] > verA[i]) return 1;else if (verB[i] < verA[i]) return -1;
-        }
-      }
-    }
-    return 0;
-  }
-  /** Очистить значения версии */
-  clear() {
-    this.major = 0;
-    this.minor = 0;
-    this.build = 0;
-    this.revision = 0;
-  }
-  /**
-   * Запись версии
-   * @param {IVersion} ver Версия
-   */
-  setVersion(ver) {
-    if (this.is || !ver.is) return false;
-    this.major = ver.major;
-    this.minor = ver.minor;
-    this.build = ver.build;
-    this.revision = ver.revision;
-    return true;
-  }
-  /**
-   * Запись данных
-   * @param {DataView} buf Буфер данных
-   */
-  set(buf) {
-    return this._set(this, this.exec, Version.size, new BluetoothStruct(Version.struct), buf);
-  }
-  /** Чтение данных */
-  get() {
-    return this._get(this, this.exec);
-  }
-}
-_defineProperty(Version, "struct", {
-  major: BluetoothStruct.uint8(),
-  minor: BluetoothStruct.uint8(),
-  build: BluetoothStruct.uint8(),
-  revision: BluetoothStruct.uint8()
-});
-_defineProperty(Version, "size", 4);
-;// CONCATENATED MODULE: ./src/models/pjcan/version/index.ts
-
-
-;// CONCATENATED MODULE: ./src/store/modules/config/state.ts
-
-
-
-
-
-
-
-
-
-const state_state = {
-  version: new Version(),
-  info: new DeviceInfo(),
-  mazda: new MazdaConfig(),
-  teyes: new TeyesConfig(),
-  sw1: new ButtonsConfig(),
-  bose: new BoseConfig(),
-  engine: new EngineConfig(),
-  fuel: new FuelConfig(),
-  volume: new VolumeConfig()
-};
-/* harmony default export */ var config_state = (state_state);
-;// CONCATENATED MODULE: ./src/store/modules/config/getters.ts
-
-/**
- * Версия прошивки
- * @param {any} state
- */
-const version = state => state.version;
-/**
- * Информация об устройстве
- * @param {any} state
- */
-const info = state => state.info;
-/**
- * Конфигурация автомобиля
- * @param {any} state
- */
-const mazda = state => state.mazda;
-/**
- * Модель автомобиля
- * @param {any} state
- */
-const carModel = state => state.mazda.isData ? state.mazda.carModel : TCarModel.CAR_MODEL_UNKNOWN;
-/**
- * Конфигурация Teyes
- * @param {any} state
- */
-const teyes = state => state.teyes;
-/**
- * Конфигурация кнопок sw1
- * @param {any} state
- */
-const getters_sw1 = state => state.sw1;
-/**
- * Конфигурация Bose
- * @param {any} state
- */
-const bose = state => state.bose;
-/**
- * Конфигурация ДВС
- * @param {any} state
- */
-const engine = state => state.engine;
-/**
- * Конфигурация расхода
- * @param {any} state
- */
-const fuel = state => state.fuel;
-/**
- * Конфигурация уровня звука
- * @param {any} state
- */
-const volume = state => state.volume;
 ;// CONCATENATED MODULE: ./node_modules/vue3-toastify/dist/esm/index.js
 
 var __defProp = Object.defineProperty;
@@ -14751,6 +3738,11323 @@ function updateGlobalOptions() {
 }
 var src_default = Vue3Toastify;
 
+;// CONCATENATED MODULE: ./node_modules/@intlify/shared/dist/shared.mjs
+
+/*!
+  * shared v9.9.1
+  * (c) 2024 kazuya kawaguchi
+  * Released under the MIT License.
+  */
+/**
+ * Original Utilities
+ * written by kazuya kawaguchi
+ */
+const inBrowser = typeof window !== 'undefined';
+let mark;
+let measure;
+if (false) {}
+const RE_ARGS = /\{([0-9a-zA-Z]+)\}/g;
+/* eslint-disable */
+function shared_format(message, ...args) {
+  if (args.length === 1 && shared_isObject(args[0])) {
+    args = args[0];
+  }
+  if (!args || !args.hasOwnProperty) {
+    args = {};
+  }
+  return message.replace(RE_ARGS, (match, identifier) => {
+    return args.hasOwnProperty(identifier) ? args[identifier] : '';
+  });
+}
+const shared_makeSymbol = (name, shareable = false) => !shareable ? Symbol(name) : Symbol.for(name);
+const generateFormatCacheKey = (locale, key, source) => friendlyJSONstringify({
+  l: locale,
+  k: key,
+  s: source
+});
+const friendlyJSONstringify = json => JSON.stringify(json).replace(/\u2028/g, '\\u2028').replace(/\u2029/g, '\\u2029').replace(/\u0027/g, '\\u0027');
+const shared_isNumber = val => typeof val === 'number' && isFinite(val);
+const isDate = val => toTypeString(val) === '[object Date]';
+const shared_isRegExp = val => toTypeString(val) === '[object RegExp]';
+const isEmptyObject = val => shared_isPlainObject(val) && Object.keys(val).length === 0;
+const shared_assign = Object.assign;
+let _globalThis;
+const getGlobalThis = () => {
+  // prettier-ignore
+  return _globalThis || (_globalThis = typeof globalThis !== 'undefined' ? globalThis : typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : {});
+};
+function escapeHtml(rawText) {
+  return rawText.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
+}
+const shared_hasOwnProperty = Object.prototype.hasOwnProperty;
+function hasOwn(obj, key) {
+  return shared_hasOwnProperty.call(obj, key);
+}
+/* eslint-enable */
+/**
+ * Useful Utilities By Evan you
+ * Modified by kazuya kawaguchi
+ * MIT License
+ * https://github.com/vuejs/vue-next/blob/master/packages/shared/src/index.ts
+ * https://github.com/vuejs/vue-next/blob/master/packages/shared/src/codeframe.ts
+ */
+const shared_isArray = Array.isArray;
+const shared_isFunction = val => typeof val === 'function';
+const shared_isString = val => typeof val === 'string';
+const shared_isBoolean = val => typeof val === 'boolean';
+const isSymbol = val => typeof val === 'symbol';
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const shared_isObject = val => val !== null && typeof val === 'object';
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const isPromise = val => {
+  return shared_isObject(val) && shared_isFunction(val.then) && shared_isFunction(val.catch);
+};
+const objectToString = Object.prototype.toString;
+const toTypeString = value => objectToString.call(value);
+const shared_isPlainObject = val => {
+  if (!shared_isObject(val)) return false;
+  const proto = Object.getPrototypeOf(val);
+  return proto === null || proto.constructor === Object;
+};
+// for converting list and named values to displayed strings.
+const toDisplayString = val => {
+  return val == null ? '' : shared_isArray(val) || shared_isPlainObject(val) && val.toString === objectToString ? JSON.stringify(val, null, 2) : String(val);
+};
+function join(items, separator = '') {
+  return items.reduce((str, item, index) => index === 0 ? str + item : str + separator + item, '');
+}
+const RANGE = 2;
+function generateCodeFrame(source, start = 0, end = source.length) {
+  const lines = source.split(/\r?\n/);
+  let count = 0;
+  const res = [];
+  for (let i = 0; i < lines.length; i++) {
+    count += lines[i].length + 1;
+    if (count >= start) {
+      for (let j = i - RANGE; j <= i + RANGE || end > count; j++) {
+        if (j < 0 || j >= lines.length) continue;
+        const line = j + 1;
+        res.push(`${line}${' '.repeat(3 - String(line).length)}|  ${lines[j]}`);
+        const lineLength = lines[j].length;
+        if (j === i) {
+          // push underline
+          const pad = start - (count - lineLength) + 1;
+          const length = Math.max(1, end > count ? lineLength - pad : end - start);
+          res.push(`   |  ` + ' '.repeat(pad) + '^'.repeat(length));
+        } else if (j > i) {
+          if (end > count) {
+            const length = Math.max(Math.min(end - count, lineLength), 1);
+            res.push(`   |  ` + '^'.repeat(length));
+          }
+          count += lineLength + 1;
+        }
+      }
+      break;
+    }
+  }
+  return res.join('\n');
+}
+function incrementer(code) {
+  let current = code;
+  return () => ++current;
+}
+function shared_warn(msg, err) {
+  if (typeof console !== 'undefined') {
+    console.warn(`[intlify] ` + msg);
+    /* istanbul ignore if */
+    if (err) {
+      console.warn(err.stack);
+    }
+  }
+}
+const hasWarned = {};
+function warnOnce(msg) {
+  if (!hasWarned[msg]) {
+    hasWarned[msg] = true;
+    shared_warn(msg);
+  }
+}
+
+/**
+ * Event emitter, forked from the below:
+ * - original repository url: https://github.com/developit/mitt
+ * - code url: https://github.com/developit/mitt/blob/master/src/index.ts
+ * - author: Jason Miller (https://github.com/developit)
+ * - license: MIT
+ */
+/**
+ * Create a event emitter
+ *
+ * @returns An event emitter
+ */
+function createEmitter() {
+  const events = new Map();
+  const emitter = {
+    events,
+    on(event, handler) {
+      const handlers = events.get(event);
+      const added = handlers && handlers.push(handler);
+      if (!added) {
+        events.set(event, [handler]);
+      }
+    },
+    off(event, handler) {
+      const handlers = events.get(event);
+      if (handlers) {
+        handlers.splice(handlers.indexOf(handler) >>> 0, 1);
+      }
+    },
+    emit(event, payload) {
+      (events.get(event) || []).slice().map(handler => handler(payload));
+      (events.get('*') || []).slice().map(handler => handler(event, payload));
+    }
+  };
+  return emitter;
+}
+const isNotObjectOrIsArray = val => !shared_isObject(val) || shared_isArray(val);
+// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types
+function deepCopy(src, des) {
+  // src and des should both be objects, and none of them can be a array
+  if (isNotObjectOrIsArray(src) || isNotObjectOrIsArray(des)) {
+    throw new Error('Invalid value');
+  }
+  const stack = [{
+    src,
+    des
+  }];
+  while (stack.length) {
+    const {
+      src,
+      des
+    } = stack.pop();
+    Object.keys(src).forEach(key => {
+      if (isNotObjectOrIsArray(src[key]) || isNotObjectOrIsArray(des[key])) {
+        // replace with src[key] when:
+        // src[key] or des[key] is not an object, or
+        // src[key] or des[key] is an array
+        des[key] = src[key];
+      } else {
+        // src[key] and des[key] are both objects, merge them
+        stack.push({
+          src: src[key],
+          des: des[key]
+        });
+      }
+    });
+  }
+}
+
+;// CONCATENATED MODULE: ./node_modules/@intlify/message-compiler/dist/message-compiler.esm-browser.js
+
+/*!
+  * message-compiler v9.9.1
+  * (c) 2024 kazuya kawaguchi
+  * Released under the MIT License.
+  */
+const LOCATION_STUB = {
+  start: {
+    line: 1,
+    column: 1,
+    offset: 0
+  },
+  end: {
+    line: 1,
+    column: 1,
+    offset: 0
+  }
+};
+function createPosition(line, column, offset) {
+  return {
+    line,
+    column,
+    offset
+  };
+}
+function createLocation(start, end, source) {
+  const loc = {
+    start,
+    end
+  };
+  if (source != null) {
+    loc.source = source;
+  }
+  return loc;
+}
+
+/**
+ * Original Utilities
+ * written by kazuya kawaguchi
+ */
+const message_compiler_esm_browser_RE_ARGS = /\{([0-9a-zA-Z]+)\}/g;
+/* eslint-disable */
+function message_compiler_esm_browser_format(message, ...args) {
+  if (args.length === 1 && message_compiler_esm_browser_isObject(args[0])) {
+    args = args[0];
+  }
+  if (!args || !args.hasOwnProperty) {
+    args = {};
+  }
+  return message.replace(message_compiler_esm_browser_RE_ARGS, (match, identifier) => {
+    return args.hasOwnProperty(identifier) ? args[identifier] : '';
+  });
+}
+const message_compiler_esm_browser_assign = Object.assign;
+const message_compiler_esm_browser_isString = val => typeof val === 'string';
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const message_compiler_esm_browser_isObject = val => val !== null && typeof val === 'object';
+function message_compiler_esm_browser_join(items, separator = '') {
+  return items.reduce((str, item, index) => index === 0 ? str + item : str + separator + item, '');
+}
+const CompileErrorCodes = {
+  // tokenizer error codes
+  EXPECTED_TOKEN: 1,
+  INVALID_TOKEN_IN_PLACEHOLDER: 2,
+  UNTERMINATED_SINGLE_QUOTE_IN_PLACEHOLDER: 3,
+  UNKNOWN_ESCAPE_SEQUENCE: 4,
+  INVALID_UNICODE_ESCAPE_SEQUENCE: 5,
+  UNBALANCED_CLOSING_BRACE: 6,
+  UNTERMINATED_CLOSING_BRACE: 7,
+  EMPTY_PLACEHOLDER: 8,
+  NOT_ALLOW_NEST_PLACEHOLDER: 9,
+  INVALID_LINKED_FORMAT: 10,
+  // parser error codes
+  MUST_HAVE_MESSAGES_IN_PLURAL: 11,
+  UNEXPECTED_EMPTY_LINKED_MODIFIER: 12,
+  UNEXPECTED_EMPTY_LINKED_KEY: 13,
+  UNEXPECTED_LEXICAL_ANALYSIS: 14,
+  // generator error codes
+  UNHANDLED_CODEGEN_NODE_TYPE: 15,
+  // minifier error codes
+  UNHANDLED_MINIFIER_NODE_TYPE: 16,
+  // Special value for higher-order compilers to pick up the last code
+  // to avoid collision of error codes. This should always be kept as the last
+  // item.
+  __EXTEND_POINT__: 17
+};
+/** @internal */
+const errorMessages = {
+  // tokenizer error messages
+  [CompileErrorCodes.EXPECTED_TOKEN]: `Expected token: '{0}'`,
+  [CompileErrorCodes.INVALID_TOKEN_IN_PLACEHOLDER]: `Invalid token in placeholder: '{0}'`,
+  [CompileErrorCodes.UNTERMINATED_SINGLE_QUOTE_IN_PLACEHOLDER]: `Unterminated single quote in placeholder`,
+  [CompileErrorCodes.UNKNOWN_ESCAPE_SEQUENCE]: `Unknown escape sequence: \\{0}`,
+  [CompileErrorCodes.INVALID_UNICODE_ESCAPE_SEQUENCE]: `Invalid unicode escape sequence: {0}`,
+  [CompileErrorCodes.UNBALANCED_CLOSING_BRACE]: `Unbalanced closing brace`,
+  [CompileErrorCodes.UNTERMINATED_CLOSING_BRACE]: `Unterminated closing brace`,
+  [CompileErrorCodes.EMPTY_PLACEHOLDER]: `Empty placeholder`,
+  [CompileErrorCodes.NOT_ALLOW_NEST_PLACEHOLDER]: `Not allowed nest placeholder`,
+  [CompileErrorCodes.INVALID_LINKED_FORMAT]: `Invalid linked format`,
+  // parser error messages
+  [CompileErrorCodes.MUST_HAVE_MESSAGES_IN_PLURAL]: `Plural must have messages`,
+  [CompileErrorCodes.UNEXPECTED_EMPTY_LINKED_MODIFIER]: `Unexpected empty linked modifier`,
+  [CompileErrorCodes.UNEXPECTED_EMPTY_LINKED_KEY]: `Unexpected empty linked key`,
+  [CompileErrorCodes.UNEXPECTED_LEXICAL_ANALYSIS]: `Unexpected lexical analysis in token: '{0}'`,
+  // generator error messages
+  [CompileErrorCodes.UNHANDLED_CODEGEN_NODE_TYPE]: `unhandled codegen node type: '{0}'`,
+  // minimizer error messages
+  [CompileErrorCodes.UNHANDLED_MINIFIER_NODE_TYPE]: `unhandled mimifier node type: '{0}'`
+};
+function createCompileError(code, loc, options = {}) {
+  const {
+    domain,
+    messages,
+    args
+  } = options;
+  const msg = message_compiler_esm_browser_format((messages || errorMessages)[code] || '', ...(args || []));
+  const error = new SyntaxError(String(msg));
+  error.code = code;
+  if (loc) {
+    error.location = loc;
+  }
+  error.domain = domain;
+  return error;
+}
+/** @internal */
+function defaultOnError(error) {
+  throw error;
+}
+const RE_HTML_TAG = /<\/?[\w\s="/.':;#-\/]+>/;
+const message_compiler_esm_browser_detectHtmlTag = source => RE_HTML_TAG.test(source);
+const CHAR_SP = ' ';
+const CHAR_CR = '\r';
+const CHAR_LF = '\n';
+const CHAR_LS = String.fromCharCode(0x2028);
+const CHAR_PS = String.fromCharCode(0x2029);
+function createScanner(str) {
+  const _buf = str;
+  let _index = 0;
+  let _line = 1;
+  let _column = 1;
+  let _peekOffset = 0;
+  const isCRLF = index => _buf[index] === CHAR_CR && _buf[index + 1] === CHAR_LF;
+  const isLF = index => _buf[index] === CHAR_LF;
+  const isPS = index => _buf[index] === CHAR_PS;
+  const isLS = index => _buf[index] === CHAR_LS;
+  const isLineEnd = index => isCRLF(index) || isLF(index) || isPS(index) || isLS(index);
+  const index = () => _index;
+  const line = () => _line;
+  const column = () => _column;
+  const peekOffset = () => _peekOffset;
+  const charAt = offset => isCRLF(offset) || isPS(offset) || isLS(offset) ? CHAR_LF : _buf[offset];
+  const currentChar = () => charAt(_index);
+  const currentPeek = () => charAt(_index + _peekOffset);
+  function next() {
+    _peekOffset = 0;
+    if (isLineEnd(_index)) {
+      _line++;
+      _column = 0;
+    }
+    if (isCRLF(_index)) {
+      _index++;
+    }
+    _index++;
+    _column++;
+    return _buf[_index];
+  }
+  function peek() {
+    if (isCRLF(_index + _peekOffset)) {
+      _peekOffset++;
+    }
+    _peekOffset++;
+    return _buf[_index + _peekOffset];
+  }
+  function reset() {
+    _index = 0;
+    _line = 1;
+    _column = 1;
+    _peekOffset = 0;
+  }
+  function resetPeek(offset = 0) {
+    _peekOffset = offset;
+  }
+  function skipToPeek() {
+    const target = _index + _peekOffset;
+    // eslint-disable-next-line no-unmodified-loop-condition
+    while (target !== _index) {
+      next();
+    }
+    _peekOffset = 0;
+  }
+  return {
+    index,
+    line,
+    column,
+    peekOffset,
+    charAt,
+    currentChar,
+    currentPeek,
+    next,
+    peek,
+    reset,
+    resetPeek,
+    skipToPeek
+  };
+}
+const EOF = undefined;
+const DOT = '.';
+const LITERAL_DELIMITER = "'";
+const ERROR_DOMAIN$3 = 'tokenizer';
+function createTokenizer(source, options = {}) {
+  const location = options.location !== false;
+  const _scnr = createScanner(source);
+  const currentOffset = () => _scnr.index();
+  const currentPosition = () => createPosition(_scnr.line(), _scnr.column(), _scnr.index());
+  const _initLoc = currentPosition();
+  const _initOffset = currentOffset();
+  const _context = {
+    currentType: 14 /* TokenTypes.EOF */,
+    offset: _initOffset,
+    startLoc: _initLoc,
+    endLoc: _initLoc,
+    lastType: 14 /* TokenTypes.EOF */,
+    lastOffset: _initOffset,
+    lastStartLoc: _initLoc,
+    lastEndLoc: _initLoc,
+    braceNest: 0,
+    inLinked: false,
+    text: ''
+  };
+  const context = () => _context;
+  const {
+    onError
+  } = options;
+  function emitError(code, pos, offset, ...args) {
+    const ctx = context();
+    pos.column += offset;
+    pos.offset += offset;
+    if (onError) {
+      const loc = location ? createLocation(ctx.startLoc, pos) : null;
+      const err = createCompileError(code, loc, {
+        domain: ERROR_DOMAIN$3,
+        args
+      });
+      onError(err);
+    }
+  }
+  function getToken(context, type, value) {
+    context.endLoc = currentPosition();
+    context.currentType = type;
+    const token = {
+      type
+    };
+    if (location) {
+      token.loc = createLocation(context.startLoc, context.endLoc);
+    }
+    if (value != null) {
+      token.value = value;
+    }
+    return token;
+  }
+  const getEndToken = context => getToken(context, 14 /* TokenTypes.EOF */);
+  function eat(scnr, ch) {
+    if (scnr.currentChar() === ch) {
+      scnr.next();
+      return ch;
+    } else {
+      emitError(CompileErrorCodes.EXPECTED_TOKEN, currentPosition(), 0, ch);
+      return '';
+    }
+  }
+  function peekSpaces(scnr) {
+    let buf = '';
+    while (scnr.currentPeek() === CHAR_SP || scnr.currentPeek() === CHAR_LF) {
+      buf += scnr.currentPeek();
+      scnr.peek();
+    }
+    return buf;
+  }
+  function skipSpaces(scnr) {
+    const buf = peekSpaces(scnr);
+    scnr.skipToPeek();
+    return buf;
+  }
+  function isIdentifierStart(ch) {
+    if (ch === EOF) {
+      return false;
+    }
+    const cc = ch.charCodeAt(0);
+    return cc >= 97 && cc <= 122 ||
+    // a-z
+    cc >= 65 && cc <= 90 ||
+    // A-Z
+    cc === 95 // _
+    ;
+  }
+  function isNumberStart(ch) {
+    if (ch === EOF) {
+      return false;
+    }
+    const cc = ch.charCodeAt(0);
+    return cc >= 48 && cc <= 57; // 0-9
+  }
+  function isNamedIdentifierStart(scnr, context) {
+    const {
+      currentType
+    } = context;
+    if (currentType !== 2 /* TokenTypes.BraceLeft */) {
+      return false;
+    }
+    peekSpaces(scnr);
+    const ret = isIdentifierStart(scnr.currentPeek());
+    scnr.resetPeek();
+    return ret;
+  }
+  function isListIdentifierStart(scnr, context) {
+    const {
+      currentType
+    } = context;
+    if (currentType !== 2 /* TokenTypes.BraceLeft */) {
+      return false;
+    }
+    peekSpaces(scnr);
+    const ch = scnr.currentPeek() === '-' ? scnr.peek() : scnr.currentPeek();
+    const ret = isNumberStart(ch);
+    scnr.resetPeek();
+    return ret;
+  }
+  function isLiteralStart(scnr, context) {
+    const {
+      currentType
+    } = context;
+    if (currentType !== 2 /* TokenTypes.BraceLeft */) {
+      return false;
+    }
+    peekSpaces(scnr);
+    const ret = scnr.currentPeek() === LITERAL_DELIMITER;
+    scnr.resetPeek();
+    return ret;
+  }
+  function isLinkedDotStart(scnr, context) {
+    const {
+      currentType
+    } = context;
+    if (currentType !== 8 /* TokenTypes.LinkedAlias */) {
+      return false;
+    }
+    peekSpaces(scnr);
+    const ret = scnr.currentPeek() === "." /* TokenChars.LinkedDot */;
+    scnr.resetPeek();
+    return ret;
+  }
+  function isLinkedModifierStart(scnr, context) {
+    const {
+      currentType
+    } = context;
+    if (currentType !== 9 /* TokenTypes.LinkedDot */) {
+      return false;
+    }
+    peekSpaces(scnr);
+    const ret = isIdentifierStart(scnr.currentPeek());
+    scnr.resetPeek();
+    return ret;
+  }
+  function isLinkedDelimiterStart(scnr, context) {
+    const {
+      currentType
+    } = context;
+    if (!(currentType === 8 /* TokenTypes.LinkedAlias */ || currentType === 12 /* TokenTypes.LinkedModifier */)) {
+      return false;
+    }
+    peekSpaces(scnr);
+    const ret = scnr.currentPeek() === ":" /* TokenChars.LinkedDelimiter */;
+    scnr.resetPeek();
+    return ret;
+  }
+  function isLinkedReferStart(scnr, context) {
+    const {
+      currentType
+    } = context;
+    if (currentType !== 10 /* TokenTypes.LinkedDelimiter */) {
+      return false;
+    }
+    const fn = () => {
+      const ch = scnr.currentPeek();
+      if (ch === "{" /* TokenChars.BraceLeft */) {
+        return isIdentifierStart(scnr.peek());
+      } else if (ch === "@" /* TokenChars.LinkedAlias */ || ch === "%" /* TokenChars.Modulo */ || ch === "|" /* TokenChars.Pipe */ || ch === ":" /* TokenChars.LinkedDelimiter */ || ch === "." /* TokenChars.LinkedDot */ || ch === CHAR_SP || !ch) {
+        return false;
+      } else if (ch === CHAR_LF) {
+        scnr.peek();
+        return fn();
+      } else {
+        // other characters
+        return isIdentifierStart(ch);
+      }
+    };
+    const ret = fn();
+    scnr.resetPeek();
+    return ret;
+  }
+  function isPluralStart(scnr) {
+    peekSpaces(scnr);
+    const ret = scnr.currentPeek() === "|" /* TokenChars.Pipe */;
+    scnr.resetPeek();
+    return ret;
+  }
+  function detectModuloStart(scnr) {
+    const spaces = peekSpaces(scnr);
+    const ret = scnr.currentPeek() === "%" /* TokenChars.Modulo */ && scnr.peek() === "{" /* TokenChars.BraceLeft */;
+    scnr.resetPeek();
+    return {
+      isModulo: ret,
+      hasSpace: spaces.length > 0
+    };
+  }
+  function isTextStart(scnr, reset = true) {
+    const fn = (hasSpace = false, prev = '', detectModulo = false) => {
+      const ch = scnr.currentPeek();
+      if (ch === "{" /* TokenChars.BraceLeft */) {
+        return prev === "%" /* TokenChars.Modulo */ ? false : hasSpace;
+      } else if (ch === "@" /* TokenChars.LinkedAlias */ || !ch) {
+        return prev === "%" /* TokenChars.Modulo */ ? true : hasSpace;
+      } else if (ch === "%" /* TokenChars.Modulo */) {
+        scnr.peek();
+        return fn(hasSpace, "%" /* TokenChars.Modulo */, true);
+      } else if (ch === "|" /* TokenChars.Pipe */) {
+        return prev === "%" /* TokenChars.Modulo */ || detectModulo ? true : !(prev === CHAR_SP || prev === CHAR_LF);
+      } else if (ch === CHAR_SP) {
+        scnr.peek();
+        return fn(true, CHAR_SP, detectModulo);
+      } else if (ch === CHAR_LF) {
+        scnr.peek();
+        return fn(true, CHAR_LF, detectModulo);
+      } else {
+        return true;
+      }
+    };
+    const ret = fn();
+    reset && scnr.resetPeek();
+    return ret;
+  }
+  function takeChar(scnr, fn) {
+    const ch = scnr.currentChar();
+    if (ch === EOF) {
+      return EOF;
+    }
+    if (fn(ch)) {
+      scnr.next();
+      return ch;
+    }
+    return null;
+  }
+  function takeIdentifierChar(scnr) {
+    const closure = ch => {
+      const cc = ch.charCodeAt(0);
+      return cc >= 97 && cc <= 122 ||
+      // a-z
+      cc >= 65 && cc <= 90 ||
+      // A-Z
+      cc >= 48 && cc <= 57 ||
+      // 0-9
+      cc === 95 ||
+      // _
+      cc === 36 // $
+      ;
+    };
+    return takeChar(scnr, closure);
+  }
+  function takeDigit(scnr) {
+    const closure = ch => {
+      const cc = ch.charCodeAt(0);
+      return cc >= 48 && cc <= 57; // 0-9
+    };
+    return takeChar(scnr, closure);
+  }
+  function takeHexDigit(scnr) {
+    const closure = ch => {
+      const cc = ch.charCodeAt(0);
+      return cc >= 48 && cc <= 57 ||
+      // 0-9
+      cc >= 65 && cc <= 70 ||
+      // A-F
+      cc >= 97 && cc <= 102; // a-f
+    };
+    return takeChar(scnr, closure);
+  }
+  function getDigits(scnr) {
+    let ch = '';
+    let num = '';
+    while (ch = takeDigit(scnr)) {
+      num += ch;
+    }
+    return num;
+  }
+  function readModulo(scnr) {
+    skipSpaces(scnr);
+    const ch = scnr.currentChar();
+    if (ch !== "%" /* TokenChars.Modulo */) {
+      emitError(CompileErrorCodes.EXPECTED_TOKEN, currentPosition(), 0, ch);
+    }
+    scnr.next();
+    return "%" /* TokenChars.Modulo */;
+  }
+  function readText(scnr) {
+    let buf = '';
+    while (true) {
+      const ch = scnr.currentChar();
+      if (ch === "{" /* TokenChars.BraceLeft */ || ch === "}" /* TokenChars.BraceRight */ || ch === "@" /* TokenChars.LinkedAlias */ || ch === "|" /* TokenChars.Pipe */ || !ch) {
+        break;
+      } else if (ch === "%" /* TokenChars.Modulo */) {
+        if (isTextStart(scnr)) {
+          buf += ch;
+          scnr.next();
+        } else {
+          break;
+        }
+      } else if (ch === CHAR_SP || ch === CHAR_LF) {
+        if (isTextStart(scnr)) {
+          buf += ch;
+          scnr.next();
+        } else if (isPluralStart(scnr)) {
+          break;
+        } else {
+          buf += ch;
+          scnr.next();
+        }
+      } else {
+        buf += ch;
+        scnr.next();
+      }
+    }
+    return buf;
+  }
+  function readNamedIdentifier(scnr) {
+    skipSpaces(scnr);
+    let ch = '';
+    let name = '';
+    while (ch = takeIdentifierChar(scnr)) {
+      name += ch;
+    }
+    if (scnr.currentChar() === EOF) {
+      emitError(CompileErrorCodes.UNTERMINATED_CLOSING_BRACE, currentPosition(), 0);
+    }
+    return name;
+  }
+  function readListIdentifier(scnr) {
+    skipSpaces(scnr);
+    let value = '';
+    if (scnr.currentChar() === '-') {
+      scnr.next();
+      value += `-${getDigits(scnr)}`;
+    } else {
+      value += getDigits(scnr);
+    }
+    if (scnr.currentChar() === EOF) {
+      emitError(CompileErrorCodes.UNTERMINATED_CLOSING_BRACE, currentPosition(), 0);
+    }
+    return value;
+  }
+  function readLiteral(scnr) {
+    skipSpaces(scnr);
+    eat(scnr, `\'`);
+    let ch = '';
+    let literal = '';
+    const fn = x => x !== LITERAL_DELIMITER && x !== CHAR_LF;
+    while (ch = takeChar(scnr, fn)) {
+      if (ch === '\\') {
+        literal += readEscapeSequence(scnr);
+      } else {
+        literal += ch;
+      }
+    }
+    const current = scnr.currentChar();
+    if (current === CHAR_LF || current === EOF) {
+      emitError(CompileErrorCodes.UNTERMINATED_SINGLE_QUOTE_IN_PLACEHOLDER, currentPosition(), 0);
+      // TODO: Is it correct really?
+      if (current === CHAR_LF) {
+        scnr.next();
+        eat(scnr, `\'`);
+      }
+      return literal;
+    }
+    eat(scnr, `\'`);
+    return literal;
+  }
+  function readEscapeSequence(scnr) {
+    const ch = scnr.currentChar();
+    switch (ch) {
+      case '\\':
+      case `\'`:
+        scnr.next();
+        return `\\${ch}`;
+      case 'u':
+        return readUnicodeEscapeSequence(scnr, ch, 4);
+      case 'U':
+        return readUnicodeEscapeSequence(scnr, ch, 6);
+      default:
+        emitError(CompileErrorCodes.UNKNOWN_ESCAPE_SEQUENCE, currentPosition(), 0, ch);
+        return '';
+    }
+  }
+  function readUnicodeEscapeSequence(scnr, unicode, digits) {
+    eat(scnr, unicode);
+    let sequence = '';
+    for (let i = 0; i < digits; i++) {
+      const ch = takeHexDigit(scnr);
+      if (!ch) {
+        emitError(CompileErrorCodes.INVALID_UNICODE_ESCAPE_SEQUENCE, currentPosition(), 0, `\\${unicode}${sequence}${scnr.currentChar()}`);
+        break;
+      }
+      sequence += ch;
+    }
+    return `\\${unicode}${sequence}`;
+  }
+  function readInvalidIdentifier(scnr) {
+    skipSpaces(scnr);
+    let ch = '';
+    let identifiers = '';
+    const closure = ch => ch !== "{" /* TokenChars.BraceLeft */ && ch !== "}" /* TokenChars.BraceRight */ && ch !== CHAR_SP && ch !== CHAR_LF;
+    while (ch = takeChar(scnr, closure)) {
+      identifiers += ch;
+    }
+    return identifiers;
+  }
+  function readLinkedModifier(scnr) {
+    let ch = '';
+    let name = '';
+    while (ch = takeIdentifierChar(scnr)) {
+      name += ch;
+    }
+    return name;
+  }
+  function readLinkedRefer(scnr) {
+    const fn = (detect = false, buf) => {
+      const ch = scnr.currentChar();
+      if (ch === "{" /* TokenChars.BraceLeft */ || ch === "%" /* TokenChars.Modulo */ || ch === "@" /* TokenChars.LinkedAlias */ || ch === "|" /* TokenChars.Pipe */ || ch === "(" /* TokenChars.ParenLeft */ || ch === ")" /* TokenChars.ParenRight */ || !ch) {
+        return buf;
+      } else if (ch === CHAR_SP) {
+        return buf;
+      } else if (ch === CHAR_LF || ch === DOT) {
+        buf += ch;
+        scnr.next();
+        return fn(detect, buf);
+      } else {
+        buf += ch;
+        scnr.next();
+        return fn(true, buf);
+      }
+    };
+    return fn(false, '');
+  }
+  function readPlural(scnr) {
+    skipSpaces(scnr);
+    const plural = eat(scnr, "|" /* TokenChars.Pipe */);
+    skipSpaces(scnr);
+    return plural;
+  }
+  // TODO: We need refactoring of token parsing ...
+  function readTokenInPlaceholder(scnr, context) {
+    let token = null;
+    const ch = scnr.currentChar();
+    switch (ch) {
+      case "{" /* TokenChars.BraceLeft */:
+        if (context.braceNest >= 1) {
+          emitError(CompileErrorCodes.NOT_ALLOW_NEST_PLACEHOLDER, currentPosition(), 0);
+        }
+        scnr.next();
+        token = getToken(context, 2 /* TokenTypes.BraceLeft */, "{" /* TokenChars.BraceLeft */);
+        skipSpaces(scnr);
+        context.braceNest++;
+        return token;
+      case "}" /* TokenChars.BraceRight */:
+        if (context.braceNest > 0 && context.currentType === 2 /* TokenTypes.BraceLeft */) {
+          emitError(CompileErrorCodes.EMPTY_PLACEHOLDER, currentPosition(), 0);
+        }
+        scnr.next();
+        token = getToken(context, 3 /* TokenTypes.BraceRight */, "}" /* TokenChars.BraceRight */);
+        context.braceNest--;
+        context.braceNest > 0 && skipSpaces(scnr);
+        if (context.inLinked && context.braceNest === 0) {
+          context.inLinked = false;
+        }
+        return token;
+      case "@" /* TokenChars.LinkedAlias */:
+        if (context.braceNest > 0) {
+          emitError(CompileErrorCodes.UNTERMINATED_CLOSING_BRACE, currentPosition(), 0);
+        }
+        token = readTokenInLinked(scnr, context) || getEndToken(context);
+        context.braceNest = 0;
+        return token;
+      default:
+        let validNamedIdentifier = true;
+        let validListIdentifier = true;
+        let validLiteral = true;
+        if (isPluralStart(scnr)) {
+          if (context.braceNest > 0) {
+            emitError(CompileErrorCodes.UNTERMINATED_CLOSING_BRACE, currentPosition(), 0);
+          }
+          token = getToken(context, 1 /* TokenTypes.Pipe */, readPlural(scnr));
+          // reset
+          context.braceNest = 0;
+          context.inLinked = false;
+          return token;
+        }
+        if (context.braceNest > 0 && (context.currentType === 5 /* TokenTypes.Named */ || context.currentType === 6 /* TokenTypes.List */ || context.currentType === 7 /* TokenTypes.Literal */)) {
+          emitError(CompileErrorCodes.UNTERMINATED_CLOSING_BRACE, currentPosition(), 0);
+          context.braceNest = 0;
+          return readToken(scnr, context);
+        }
+        if (validNamedIdentifier = isNamedIdentifierStart(scnr, context)) {
+          token = getToken(context, 5 /* TokenTypes.Named */, readNamedIdentifier(scnr));
+          skipSpaces(scnr);
+          return token;
+        }
+        if (validListIdentifier = isListIdentifierStart(scnr, context)) {
+          token = getToken(context, 6 /* TokenTypes.List */, readListIdentifier(scnr));
+          skipSpaces(scnr);
+          return token;
+        }
+        if (validLiteral = isLiteralStart(scnr, context)) {
+          token = getToken(context, 7 /* TokenTypes.Literal */, readLiteral(scnr));
+          skipSpaces(scnr);
+          return token;
+        }
+        if (!validNamedIdentifier && !validListIdentifier && !validLiteral) {
+          // TODO: we should be re-designed invalid cases, when we will extend message syntax near the future ...
+          token = getToken(context, 13 /* TokenTypes.InvalidPlace */, readInvalidIdentifier(scnr));
+          emitError(CompileErrorCodes.INVALID_TOKEN_IN_PLACEHOLDER, currentPosition(), 0, token.value);
+          skipSpaces(scnr);
+          return token;
+        }
+        break;
+    }
+    return token;
+  }
+  // TODO: We need refactoring of token parsing ...
+  function readTokenInLinked(scnr, context) {
+    const {
+      currentType
+    } = context;
+    let token = null;
+    const ch = scnr.currentChar();
+    if ((currentType === 8 /* TokenTypes.LinkedAlias */ || currentType === 9 /* TokenTypes.LinkedDot */ || currentType === 12 /* TokenTypes.LinkedModifier */ || currentType === 10 /* TokenTypes.LinkedDelimiter */) && (ch === CHAR_LF || ch === CHAR_SP)) {
+      emitError(CompileErrorCodes.INVALID_LINKED_FORMAT, currentPosition(), 0);
+    }
+    switch (ch) {
+      case "@" /* TokenChars.LinkedAlias */:
+        scnr.next();
+        token = getToken(context, 8 /* TokenTypes.LinkedAlias */, "@" /* TokenChars.LinkedAlias */);
+        context.inLinked = true;
+        return token;
+      case "." /* TokenChars.LinkedDot */:
+        skipSpaces(scnr);
+        scnr.next();
+        return getToken(context, 9 /* TokenTypes.LinkedDot */, "." /* TokenChars.LinkedDot */);
+      case ":" /* TokenChars.LinkedDelimiter */:
+        skipSpaces(scnr);
+        scnr.next();
+        return getToken(context, 10 /* TokenTypes.LinkedDelimiter */, ":" /* TokenChars.LinkedDelimiter */);
+      default:
+        if (isPluralStart(scnr)) {
+          token = getToken(context, 1 /* TokenTypes.Pipe */, readPlural(scnr));
+          // reset
+          context.braceNest = 0;
+          context.inLinked = false;
+          return token;
+        }
+        if (isLinkedDotStart(scnr, context) || isLinkedDelimiterStart(scnr, context)) {
+          skipSpaces(scnr);
+          return readTokenInLinked(scnr, context);
+        }
+        if (isLinkedModifierStart(scnr, context)) {
+          skipSpaces(scnr);
+          return getToken(context, 12 /* TokenTypes.LinkedModifier */, readLinkedModifier(scnr));
+        }
+        if (isLinkedReferStart(scnr, context)) {
+          skipSpaces(scnr);
+          if (ch === "{" /* TokenChars.BraceLeft */) {
+            // scan the placeholder
+            return readTokenInPlaceholder(scnr, context) || token;
+          } else {
+            return getToken(context, 11 /* TokenTypes.LinkedKey */, readLinkedRefer(scnr));
+          }
+        }
+        if (currentType === 8 /* TokenTypes.LinkedAlias */) {
+          emitError(CompileErrorCodes.INVALID_LINKED_FORMAT, currentPosition(), 0);
+        }
+        context.braceNest = 0;
+        context.inLinked = false;
+        return readToken(scnr, context);
+    }
+  }
+  // TODO: We need refactoring of token parsing ...
+  function readToken(scnr, context) {
+    let token = {
+      type: 14 /* TokenTypes.EOF */
+    };
+    if (context.braceNest > 0) {
+      return readTokenInPlaceholder(scnr, context) || getEndToken(context);
+    }
+    if (context.inLinked) {
+      return readTokenInLinked(scnr, context) || getEndToken(context);
+    }
+    const ch = scnr.currentChar();
+    switch (ch) {
+      case "{" /* TokenChars.BraceLeft */:
+        return readTokenInPlaceholder(scnr, context) || getEndToken(context);
+      case "}" /* TokenChars.BraceRight */:
+        emitError(CompileErrorCodes.UNBALANCED_CLOSING_BRACE, currentPosition(), 0);
+        scnr.next();
+        return getToken(context, 3 /* TokenTypes.BraceRight */, "}" /* TokenChars.BraceRight */);
+      case "@" /* TokenChars.LinkedAlias */:
+        return readTokenInLinked(scnr, context) || getEndToken(context);
+      default:
+        if (isPluralStart(scnr)) {
+          token = getToken(context, 1 /* TokenTypes.Pipe */, readPlural(scnr));
+          // reset
+          context.braceNest = 0;
+          context.inLinked = false;
+          return token;
+        }
+        const {
+          isModulo,
+          hasSpace
+        } = detectModuloStart(scnr);
+        if (isModulo) {
+          return hasSpace ? getToken(context, 0 /* TokenTypes.Text */, readText(scnr)) : getToken(context, 4 /* TokenTypes.Modulo */, readModulo(scnr));
+        }
+        if (isTextStart(scnr)) {
+          return getToken(context, 0 /* TokenTypes.Text */, readText(scnr));
+        }
+        break;
+    }
+    return token;
+  }
+  function nextToken() {
+    const {
+      currentType,
+      offset,
+      startLoc,
+      endLoc
+    } = _context;
+    _context.lastType = currentType;
+    _context.lastOffset = offset;
+    _context.lastStartLoc = startLoc;
+    _context.lastEndLoc = endLoc;
+    _context.offset = currentOffset();
+    _context.startLoc = currentPosition();
+    if (_scnr.currentChar() === EOF) {
+      return getToken(_context, 14 /* TokenTypes.EOF */);
+    }
+    return readToken(_scnr, _context);
+  }
+  return {
+    nextToken,
+    currentOffset,
+    currentPosition,
+    context
+  };
+}
+const ERROR_DOMAIN$2 = 'parser';
+// Backslash backslash, backslash quote, uHHHH, UHHHHHH.
+const KNOWN_ESCAPES = /(?:\\\\|\\'|\\u([0-9a-fA-F]{4})|\\U([0-9a-fA-F]{6}))/g;
+function fromEscapeSequence(match, codePoint4, codePoint6) {
+  switch (match) {
+    case `\\\\`:
+      return `\\`;
+    case `\\\'`:
+      return `\'`;
+    default:
+      {
+        const codePoint = parseInt(codePoint4 || codePoint6, 16);
+        if (codePoint <= 0xd7ff || codePoint >= 0xe000) {
+          return String.fromCodePoint(codePoint);
+        }
+        // invalid ...
+        // Replace them with U+FFFD REPLACEMENT CHARACTER.
+        return '�';
+      }
+  }
+}
+function createParser(options = {}) {
+  const location = options.location !== false;
+  const {
+    onError
+  } = options;
+  function emitError(tokenzer, code, start, offset, ...args) {
+    const end = tokenzer.currentPosition();
+    end.offset += offset;
+    end.column += offset;
+    if (onError) {
+      const loc = location ? createLocation(start, end) : null;
+      const err = createCompileError(code, loc, {
+        domain: ERROR_DOMAIN$2,
+        args
+      });
+      onError(err);
+    }
+  }
+  function startNode(type, offset, loc) {
+    const node = {
+      type
+    };
+    if (location) {
+      node.start = offset;
+      node.end = offset;
+      node.loc = {
+        start: loc,
+        end: loc
+      };
+    }
+    return node;
+  }
+  function endNode(node, offset, pos, type) {
+    if (type) {
+      node.type = type;
+    }
+    if (location) {
+      node.end = offset;
+      if (node.loc) {
+        node.loc.end = pos;
+      }
+    }
+  }
+  function parseText(tokenizer, value) {
+    const context = tokenizer.context();
+    const node = startNode(3 /* NodeTypes.Text */, context.offset, context.startLoc);
+    node.value = value;
+    endNode(node, tokenizer.currentOffset(), tokenizer.currentPosition());
+    return node;
+  }
+  function parseList(tokenizer, index) {
+    const context = tokenizer.context();
+    const {
+      lastOffset: offset,
+      lastStartLoc: loc
+    } = context; // get brace left loc
+    const node = startNode(5 /* NodeTypes.List */, offset, loc);
+    node.index = parseInt(index, 10);
+    tokenizer.nextToken(); // skip brach right
+    endNode(node, tokenizer.currentOffset(), tokenizer.currentPosition());
+    return node;
+  }
+  function parseNamed(tokenizer, key) {
+    const context = tokenizer.context();
+    const {
+      lastOffset: offset,
+      lastStartLoc: loc
+    } = context; // get brace left loc
+    const node = startNode(4 /* NodeTypes.Named */, offset, loc);
+    node.key = key;
+    tokenizer.nextToken(); // skip brach right
+    endNode(node, tokenizer.currentOffset(), tokenizer.currentPosition());
+    return node;
+  }
+  function parseLiteral(tokenizer, value) {
+    const context = tokenizer.context();
+    const {
+      lastOffset: offset,
+      lastStartLoc: loc
+    } = context; // get brace left loc
+    const node = startNode(9 /* NodeTypes.Literal */, offset, loc);
+    node.value = value.replace(KNOWN_ESCAPES, fromEscapeSequence);
+    tokenizer.nextToken(); // skip brach right
+    endNode(node, tokenizer.currentOffset(), tokenizer.currentPosition());
+    return node;
+  }
+  function parseLinkedModifier(tokenizer) {
+    const token = tokenizer.nextToken();
+    const context = tokenizer.context();
+    const {
+      lastOffset: offset,
+      lastStartLoc: loc
+    } = context; // get linked dot loc
+    const node = startNode(8 /* NodeTypes.LinkedModifier */, offset, loc);
+    if (token.type !== 12 /* TokenTypes.LinkedModifier */) {
+      // empty modifier
+      emitError(tokenizer, CompileErrorCodes.UNEXPECTED_EMPTY_LINKED_MODIFIER, context.lastStartLoc, 0);
+      node.value = '';
+      endNode(node, offset, loc);
+      return {
+        nextConsumeToken: token,
+        node
+      };
+    }
+    // check token
+    if (token.value == null) {
+      emitError(tokenizer, CompileErrorCodes.UNEXPECTED_LEXICAL_ANALYSIS, context.lastStartLoc, 0, getTokenCaption(token));
+    }
+    node.value = token.value || '';
+    endNode(node, tokenizer.currentOffset(), tokenizer.currentPosition());
+    return {
+      node
+    };
+  }
+  function parseLinkedKey(tokenizer, value) {
+    const context = tokenizer.context();
+    const node = startNode(7 /* NodeTypes.LinkedKey */, context.offset, context.startLoc);
+    node.value = value;
+    endNode(node, tokenizer.currentOffset(), tokenizer.currentPosition());
+    return node;
+  }
+  function parseLinked(tokenizer) {
+    const context = tokenizer.context();
+    const linkedNode = startNode(6 /* NodeTypes.Linked */, context.offset, context.startLoc);
+    let token = tokenizer.nextToken();
+    if (token.type === 9 /* TokenTypes.LinkedDot */) {
+      const parsed = parseLinkedModifier(tokenizer);
+      linkedNode.modifier = parsed.node;
+      token = parsed.nextConsumeToken || tokenizer.nextToken();
+    }
+    // asset check token
+    if (token.type !== 10 /* TokenTypes.LinkedDelimiter */) {
+      emitError(tokenizer, CompileErrorCodes.UNEXPECTED_LEXICAL_ANALYSIS, context.lastStartLoc, 0, getTokenCaption(token));
+    }
+    token = tokenizer.nextToken();
+    // skip brace left
+    if (token.type === 2 /* TokenTypes.BraceLeft */) {
+      token = tokenizer.nextToken();
+    }
+    switch (token.type) {
+      case 11 /* TokenTypes.LinkedKey */:
+        if (token.value == null) {
+          emitError(tokenizer, CompileErrorCodes.UNEXPECTED_LEXICAL_ANALYSIS, context.lastStartLoc, 0, getTokenCaption(token));
+        }
+        linkedNode.key = parseLinkedKey(tokenizer, token.value || '');
+        break;
+      case 5 /* TokenTypes.Named */:
+        if (token.value == null) {
+          emitError(tokenizer, CompileErrorCodes.UNEXPECTED_LEXICAL_ANALYSIS, context.lastStartLoc, 0, getTokenCaption(token));
+        }
+        linkedNode.key = parseNamed(tokenizer, token.value || '');
+        break;
+      case 6 /* TokenTypes.List */:
+        if (token.value == null) {
+          emitError(tokenizer, CompileErrorCodes.UNEXPECTED_LEXICAL_ANALYSIS, context.lastStartLoc, 0, getTokenCaption(token));
+        }
+        linkedNode.key = parseList(tokenizer, token.value || '');
+        break;
+      case 7 /* TokenTypes.Literal */:
+        if (token.value == null) {
+          emitError(tokenizer, CompileErrorCodes.UNEXPECTED_LEXICAL_ANALYSIS, context.lastStartLoc, 0, getTokenCaption(token));
+        }
+        linkedNode.key = parseLiteral(tokenizer, token.value || '');
+        break;
+      default:
+        // empty key
+        emitError(tokenizer, CompileErrorCodes.UNEXPECTED_EMPTY_LINKED_KEY, context.lastStartLoc, 0);
+        const nextContext = tokenizer.context();
+        const emptyLinkedKeyNode = startNode(7 /* NodeTypes.LinkedKey */, nextContext.offset, nextContext.startLoc);
+        emptyLinkedKeyNode.value = '';
+        endNode(emptyLinkedKeyNode, nextContext.offset, nextContext.startLoc);
+        linkedNode.key = emptyLinkedKeyNode;
+        endNode(linkedNode, nextContext.offset, nextContext.startLoc);
+        return {
+          nextConsumeToken: token,
+          node: linkedNode
+        };
+    }
+    endNode(linkedNode, tokenizer.currentOffset(), tokenizer.currentPosition());
+    return {
+      node: linkedNode
+    };
+  }
+  function parseMessage(tokenizer) {
+    const context = tokenizer.context();
+    const startOffset = context.currentType === 1 /* TokenTypes.Pipe */ ? tokenizer.currentOffset() : context.offset;
+    const startLoc = context.currentType === 1 /* TokenTypes.Pipe */ ? context.endLoc : context.startLoc;
+    const node = startNode(2 /* NodeTypes.Message */, startOffset, startLoc);
+    node.items = [];
+    let nextToken = null;
+    do {
+      const token = nextToken || tokenizer.nextToken();
+      nextToken = null;
+      switch (token.type) {
+        case 0 /* TokenTypes.Text */:
+          if (token.value == null) {
+            emitError(tokenizer, CompileErrorCodes.UNEXPECTED_LEXICAL_ANALYSIS, context.lastStartLoc, 0, getTokenCaption(token));
+          }
+          node.items.push(parseText(tokenizer, token.value || ''));
+          break;
+        case 6 /* TokenTypes.List */:
+          if (token.value == null) {
+            emitError(tokenizer, CompileErrorCodes.UNEXPECTED_LEXICAL_ANALYSIS, context.lastStartLoc, 0, getTokenCaption(token));
+          }
+          node.items.push(parseList(tokenizer, token.value || ''));
+          break;
+        case 5 /* TokenTypes.Named */:
+          if (token.value == null) {
+            emitError(tokenizer, CompileErrorCodes.UNEXPECTED_LEXICAL_ANALYSIS, context.lastStartLoc, 0, getTokenCaption(token));
+          }
+          node.items.push(parseNamed(tokenizer, token.value || ''));
+          break;
+        case 7 /* TokenTypes.Literal */:
+          if (token.value == null) {
+            emitError(tokenizer, CompileErrorCodes.UNEXPECTED_LEXICAL_ANALYSIS, context.lastStartLoc, 0, getTokenCaption(token));
+          }
+          node.items.push(parseLiteral(tokenizer, token.value || ''));
+          break;
+        case 8 /* TokenTypes.LinkedAlias */:
+          const parsed = parseLinked(tokenizer);
+          node.items.push(parsed.node);
+          nextToken = parsed.nextConsumeToken || null;
+          break;
+      }
+    } while (context.currentType !== 14 /* TokenTypes.EOF */ && context.currentType !== 1 /* TokenTypes.Pipe */);
+    // adjust message node loc
+    const endOffset = context.currentType === 1 /* TokenTypes.Pipe */ ? context.lastOffset : tokenizer.currentOffset();
+    const endLoc = context.currentType === 1 /* TokenTypes.Pipe */ ? context.lastEndLoc : tokenizer.currentPosition();
+    endNode(node, endOffset, endLoc);
+    return node;
+  }
+  function parsePlural(tokenizer, offset, loc, msgNode) {
+    const context = tokenizer.context();
+    let hasEmptyMessage = msgNode.items.length === 0;
+    const node = startNode(1 /* NodeTypes.Plural */, offset, loc);
+    node.cases = [];
+    node.cases.push(msgNode);
+    do {
+      const msg = parseMessage(tokenizer);
+      if (!hasEmptyMessage) {
+        hasEmptyMessage = msg.items.length === 0;
+      }
+      node.cases.push(msg);
+    } while (context.currentType !== 14 /* TokenTypes.EOF */);
+    if (hasEmptyMessage) {
+      emitError(tokenizer, CompileErrorCodes.MUST_HAVE_MESSAGES_IN_PLURAL, loc, 0);
+    }
+    endNode(node, tokenizer.currentOffset(), tokenizer.currentPosition());
+    return node;
+  }
+  function parseResource(tokenizer) {
+    const context = tokenizer.context();
+    const {
+      offset,
+      startLoc
+    } = context;
+    const msgNode = parseMessage(tokenizer);
+    if (context.currentType === 14 /* TokenTypes.EOF */) {
+      return msgNode;
+    } else {
+      return parsePlural(tokenizer, offset, startLoc, msgNode);
+    }
+  }
+  function parse(source) {
+    const tokenizer = createTokenizer(source, message_compiler_esm_browser_assign({}, options));
+    const context = tokenizer.context();
+    const node = startNode(0 /* NodeTypes.Resource */, context.offset, context.startLoc);
+    if (location && node.loc) {
+      node.loc.source = source;
+    }
+    node.body = parseResource(tokenizer);
+    if (options.onCacheKey) {
+      node.cacheKey = options.onCacheKey(source);
+    }
+    // assert whether achieved to EOF
+    if (context.currentType !== 14 /* TokenTypes.EOF */) {
+      emitError(tokenizer, CompileErrorCodes.UNEXPECTED_LEXICAL_ANALYSIS, context.lastStartLoc, 0, source[context.offset] || '');
+    }
+    endNode(node, tokenizer.currentOffset(), tokenizer.currentPosition());
+    return node;
+  }
+  return {
+    parse
+  };
+}
+function getTokenCaption(token) {
+  if (token.type === 14 /* TokenTypes.EOF */) {
+    return 'EOF';
+  }
+  const name = (token.value || '').replace(/\r?\n/gu, '\\n');
+  return name.length > 10 ? name.slice(0, 9) + '…' : name;
+}
+function createTransformer(ast, options = {} // eslint-disable-line
+) {
+  const _context = {
+    ast,
+    helpers: new Set()
+  };
+  const context = () => _context;
+  const helper = name => {
+    _context.helpers.add(name);
+    return name;
+  };
+  return {
+    context,
+    helper
+  };
+}
+function traverseNodes(nodes, transformer) {
+  for (let i = 0; i < nodes.length; i++) {
+    traverseNode(nodes[i], transformer);
+  }
+}
+function traverseNode(node, transformer) {
+  // TODO: if we need pre-hook of transform, should be implemented to here
+  switch (node.type) {
+    case 1 /* NodeTypes.Plural */:
+      traverseNodes(node.cases, transformer);
+      transformer.helper("plural" /* HelperNameMap.PLURAL */);
+      break;
+    case 2 /* NodeTypes.Message */:
+      traverseNodes(node.items, transformer);
+      break;
+    case 6 /* NodeTypes.Linked */:
+      const linked = node;
+      traverseNode(linked.key, transformer);
+      transformer.helper("linked" /* HelperNameMap.LINKED */);
+      transformer.helper("type" /* HelperNameMap.TYPE */);
+      break;
+    case 5 /* NodeTypes.List */:
+      transformer.helper("interpolate" /* HelperNameMap.INTERPOLATE */);
+      transformer.helper("list" /* HelperNameMap.LIST */);
+      break;
+    case 4 /* NodeTypes.Named */:
+      transformer.helper("interpolate" /* HelperNameMap.INTERPOLATE */);
+      transformer.helper("named" /* HelperNameMap.NAMED */);
+      break;
+  }
+  // TODO: if we need post-hook of transform, should be implemented to here
+}
+// transform AST
+function transform(ast, options = {} // eslint-disable-line
+) {
+  const transformer = createTransformer(ast);
+  transformer.helper("normalize" /* HelperNameMap.NORMALIZE */);
+  // traverse
+  ast.body && traverseNode(ast.body, transformer);
+  // set meta information
+  const context = transformer.context();
+  ast.helpers = Array.from(context.helpers);
+}
+function optimize(ast) {
+  const body = ast.body;
+  if (body.type === 2 /* NodeTypes.Message */) {
+    optimizeMessageNode(body);
+  } else {
+    body.cases.forEach(c => optimizeMessageNode(c));
+  }
+  return ast;
+}
+function optimizeMessageNode(message) {
+  if (message.items.length === 1) {
+    const item = message.items[0];
+    if (item.type === 3 /* NodeTypes.Text */ || item.type === 9 /* NodeTypes.Literal */) {
+      message.static = item.value;
+      delete item.value; // optimization for size
+    }
+  } else {
+    const values = [];
+    for (let i = 0; i < message.items.length; i++) {
+      const item = message.items[i];
+      if (!(item.type === 3 /* NodeTypes.Text */ || item.type === 9 /* NodeTypes.Literal */)) {
+        break;
+      }
+      if (item.value == null) {
+        break;
+      }
+      values.push(item.value);
+    }
+    if (values.length === message.items.length) {
+      message.static = message_compiler_esm_browser_join(values);
+      for (let i = 0; i < message.items.length; i++) {
+        const item = message.items[i];
+        if (item.type === 3 /* NodeTypes.Text */ || item.type === 9 /* NodeTypes.Literal */) {
+          delete item.value; // optimization for size
+        }
+      }
+    }
+  }
+}
+const ERROR_DOMAIN$1 = 'minifier';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+function minify(node) {
+  node.t = node.type;
+  switch (node.type) {
+    case 0 /* NodeTypes.Resource */:
+      const resource = node;
+      minify(resource.body);
+      resource.b = resource.body;
+      delete resource.body;
+      break;
+    case 1 /* NodeTypes.Plural */:
+      const plural = node;
+      const cases = plural.cases;
+      for (let i = 0; i < cases.length; i++) {
+        minify(cases[i]);
+      }
+      plural.c = cases;
+      delete plural.cases;
+      break;
+    case 2 /* NodeTypes.Message */:
+      const message = node;
+      const items = message.items;
+      for (let i = 0; i < items.length; i++) {
+        minify(items[i]);
+      }
+      message.i = items;
+      delete message.items;
+      if (message.static) {
+        message.s = message.static;
+        delete message.static;
+      }
+      break;
+    case 3 /* NodeTypes.Text */:
+    case 9 /* NodeTypes.Literal */:
+    case 8 /* NodeTypes.LinkedModifier */:
+    case 7 /* NodeTypes.LinkedKey */:
+      const valueNode = node;
+      if (valueNode.value) {
+        valueNode.v = valueNode.value;
+        delete valueNode.value;
+      }
+      break;
+    case 6 /* NodeTypes.Linked */:
+      const linked = node;
+      minify(linked.key);
+      linked.k = linked.key;
+      delete linked.key;
+      if (linked.modifier) {
+        minify(linked.modifier);
+        linked.m = linked.modifier;
+        delete linked.modifier;
+      }
+      break;
+    case 5 /* NodeTypes.List */:
+      const list = node;
+      list.i = list.index;
+      delete list.index;
+      break;
+    case 4 /* NodeTypes.Named */:
+      const named = node;
+      named.k = named.key;
+      delete named.key;
+      break;
+    default:
+      {
+        throw createCompileError(CompileErrorCodes.UNHANDLED_MINIFIER_NODE_TYPE, null, {
+          domain: ERROR_DOMAIN$1,
+          args: [node.type]
+        });
+      }
+  }
+  delete node.type;
+}
+/* eslint-enable @typescript-eslint/no-explicit-any */
+
+const ERROR_DOMAIN = 'parser';
+function createCodeGenerator(ast, options) {
+  const {
+    sourceMap,
+    filename,
+    breakLineCode,
+    needIndent: _needIndent
+  } = options;
+  const location = options.location !== false;
+  const _context = {
+    filename,
+    code: '',
+    column: 1,
+    line: 1,
+    offset: 0,
+    map: undefined,
+    breakLineCode,
+    needIndent: _needIndent,
+    indentLevel: 0
+  };
+  if (location && ast.loc) {
+    _context.source = ast.loc.source;
+  }
+  const context = () => _context;
+  function push(code, node) {
+    _context.code += code;
+  }
+  function _newline(n, withBreakLine = true) {
+    const _breakLineCode = withBreakLine ? breakLineCode : '';
+    push(_needIndent ? _breakLineCode + `  `.repeat(n) : _breakLineCode);
+  }
+  function indent(withNewLine = true) {
+    const level = ++_context.indentLevel;
+    withNewLine && _newline(level);
+  }
+  function deindent(withNewLine = true) {
+    const level = --_context.indentLevel;
+    withNewLine && _newline(level);
+  }
+  function newline() {
+    _newline(_context.indentLevel);
+  }
+  const helper = key => `_${key}`;
+  const needIndent = () => _context.needIndent;
+  return {
+    context,
+    push,
+    indent,
+    deindent,
+    newline,
+    helper,
+    needIndent
+  };
+}
+function generateLinkedNode(generator, node) {
+  const {
+    helper
+  } = generator;
+  generator.push(`${helper("linked" /* HelperNameMap.LINKED */)}(`);
+  generateNode(generator, node.key);
+  if (node.modifier) {
+    generator.push(`, `);
+    generateNode(generator, node.modifier);
+    generator.push(`, _type`);
+  } else {
+    generator.push(`, undefined, _type`);
+  }
+  generator.push(`)`);
+}
+function generateMessageNode(generator, node) {
+  const {
+    helper,
+    needIndent
+  } = generator;
+  generator.push(`${helper("normalize" /* HelperNameMap.NORMALIZE */)}([`);
+  generator.indent(needIndent());
+  const length = node.items.length;
+  for (let i = 0; i < length; i++) {
+    generateNode(generator, node.items[i]);
+    if (i === length - 1) {
+      break;
+    }
+    generator.push(', ');
+  }
+  generator.deindent(needIndent());
+  generator.push('])');
+}
+function generatePluralNode(generator, node) {
+  const {
+    helper,
+    needIndent
+  } = generator;
+  if (node.cases.length > 1) {
+    generator.push(`${helper("plural" /* HelperNameMap.PLURAL */)}([`);
+    generator.indent(needIndent());
+    const length = node.cases.length;
+    for (let i = 0; i < length; i++) {
+      generateNode(generator, node.cases[i]);
+      if (i === length - 1) {
+        break;
+      }
+      generator.push(', ');
+    }
+    generator.deindent(needIndent());
+    generator.push(`])`);
+  }
+}
+function generateResource(generator, node) {
+  if (node.body) {
+    generateNode(generator, node.body);
+  } else {
+    generator.push('null');
+  }
+}
+function generateNode(generator, node) {
+  const {
+    helper
+  } = generator;
+  switch (node.type) {
+    case 0 /* NodeTypes.Resource */:
+      generateResource(generator, node);
+      break;
+    case 1 /* NodeTypes.Plural */:
+      generatePluralNode(generator, node);
+      break;
+    case 2 /* NodeTypes.Message */:
+      generateMessageNode(generator, node);
+      break;
+    case 6 /* NodeTypes.Linked */:
+      generateLinkedNode(generator, node);
+      break;
+    case 8 /* NodeTypes.LinkedModifier */:
+      generator.push(JSON.stringify(node.value), node);
+      break;
+    case 7 /* NodeTypes.LinkedKey */:
+      generator.push(JSON.stringify(node.value), node);
+      break;
+    case 5 /* NodeTypes.List */:
+      generator.push(`${helper("interpolate" /* HelperNameMap.INTERPOLATE */)}(${helper("list" /* HelperNameMap.LIST */)}(${node.index}))`, node);
+      break;
+    case 4 /* NodeTypes.Named */:
+      generator.push(`${helper("interpolate" /* HelperNameMap.INTERPOLATE */)}(${helper("named" /* HelperNameMap.NAMED */)}(${JSON.stringify(node.key)}))`, node);
+      break;
+    case 9 /* NodeTypes.Literal */:
+      generator.push(JSON.stringify(node.value), node);
+      break;
+    case 3 /* NodeTypes.Text */:
+      generator.push(JSON.stringify(node.value), node);
+      break;
+    default:
+      {
+        throw createCompileError(CompileErrorCodes.UNHANDLED_CODEGEN_NODE_TYPE, null, {
+          domain: ERROR_DOMAIN,
+          args: [node.type]
+        });
+      }
+  }
+}
+// generate code from AST
+const generate = (ast, options = {} // eslint-disable-line
+) => {
+  const mode = message_compiler_esm_browser_isString(options.mode) ? options.mode : 'normal';
+  const filename = message_compiler_esm_browser_isString(options.filename) ? options.filename : 'message.intl';
+  const sourceMap = !!options.sourceMap;
+  // prettier-ignore
+  const breakLineCode = options.breakLineCode != null ? options.breakLineCode : mode === 'arrow' ? ';' : '\n';
+  const needIndent = options.needIndent ? options.needIndent : mode !== 'arrow';
+  const helpers = ast.helpers || [];
+  const generator = createCodeGenerator(ast, {
+    mode,
+    filename,
+    sourceMap,
+    breakLineCode,
+    needIndent
+  });
+  generator.push(mode === 'normal' ? `function __msg__ (ctx) {` : `(ctx) => {`);
+  generator.indent(needIndent);
+  if (helpers.length > 0) {
+    generator.push(`const { ${message_compiler_esm_browser_join(helpers.map(s => `${s}: _${s}`), ', ')} } = ctx`);
+    generator.newline();
+  }
+  generator.push(`return `);
+  generateNode(generator, ast);
+  generator.deindent(needIndent);
+  generator.push(`}`);
+  delete ast.helpers;
+  const {
+    code,
+    map
+  } = generator.context();
+  return {
+    ast,
+    code,
+    map: map ? map.toJSON() : undefined // eslint-disable-line @typescript-eslint/no-explicit-any
+  };
+};
+function baseCompile(source, options = {}) {
+  const assignedOptions = message_compiler_esm_browser_assign({}, options);
+  const jit = !!assignedOptions.jit;
+  const enalbeMinify = !!assignedOptions.minify;
+  const enambeOptimize = assignedOptions.optimize == null ? true : assignedOptions.optimize;
+  // parse source codes
+  const parser = createParser(assignedOptions);
+  const ast = parser.parse(source);
+  if (!jit) {
+    // transform ASTs
+    transform(ast, assignedOptions);
+    // generate javascript codes
+    return generate(ast, assignedOptions);
+  } else {
+    // optimize ASTs
+    enambeOptimize && optimize(ast);
+    // minimize ASTs
+    enalbeMinify && minify(ast);
+    // In JIT mode, no ast transform, no code generation.
+    return {
+      ast,
+      code: ''
+    };
+  }
+}
+
+;// CONCATENATED MODULE: ./node_modules/@intlify/core-base/dist/core-base.mjs
+
+/*!
+  * core-base v9.9.1
+  * (c) 2024 kazuya kawaguchi
+  * Released under the MIT License.
+  */
+
+
+
+
+/**
+ * This is only called in esm-bundler builds.
+ * istanbul-ignore-next
+ */
+function initFeatureFlags() {
+  if (false) {}
+  if (typeof __INTLIFY_JIT_COMPILATION__ !== 'boolean') {
+    getGlobalThis().__INTLIFY_JIT_COMPILATION__ = false;
+  }
+  if (typeof __INTLIFY_DROP_MESSAGE_COMPILER__ !== 'boolean') {
+    getGlobalThis().__INTLIFY_DROP_MESSAGE_COMPILER__ = false;
+  }
+}
+const pathStateMachine = [];
+pathStateMachine[0 /* States.BEFORE_PATH */] = {
+  ["w" /* PathCharTypes.WORKSPACE */]: [0 /* States.BEFORE_PATH */],
+  ["i" /* PathCharTypes.IDENT */]: [3 /* States.IN_IDENT */, 0 /* Actions.APPEND */],
+  ["[" /* PathCharTypes.LEFT_BRACKET */]: [4 /* States.IN_SUB_PATH */],
+  ["o" /* PathCharTypes.END_OF_FAIL */]: [7 /* States.AFTER_PATH */]
+};
+pathStateMachine[1 /* States.IN_PATH */] = {
+  ["w" /* PathCharTypes.WORKSPACE */]: [1 /* States.IN_PATH */],
+  ["." /* PathCharTypes.DOT */]: [2 /* States.BEFORE_IDENT */],
+  ["[" /* PathCharTypes.LEFT_BRACKET */]: [4 /* States.IN_SUB_PATH */],
+  ["o" /* PathCharTypes.END_OF_FAIL */]: [7 /* States.AFTER_PATH */]
+};
+pathStateMachine[2 /* States.BEFORE_IDENT */] = {
+  ["w" /* PathCharTypes.WORKSPACE */]: [2 /* States.BEFORE_IDENT */],
+  ["i" /* PathCharTypes.IDENT */]: [3 /* States.IN_IDENT */, 0 /* Actions.APPEND */],
+  ["0" /* PathCharTypes.ZERO */]: [3 /* States.IN_IDENT */, 0 /* Actions.APPEND */]
+};
+pathStateMachine[3 /* States.IN_IDENT */] = {
+  ["i" /* PathCharTypes.IDENT */]: [3 /* States.IN_IDENT */, 0 /* Actions.APPEND */],
+  ["0" /* PathCharTypes.ZERO */]: [3 /* States.IN_IDENT */, 0 /* Actions.APPEND */],
+  ["w" /* PathCharTypes.WORKSPACE */]: [1 /* States.IN_PATH */, 1 /* Actions.PUSH */],
+  ["." /* PathCharTypes.DOT */]: [2 /* States.BEFORE_IDENT */, 1 /* Actions.PUSH */],
+  ["[" /* PathCharTypes.LEFT_BRACKET */]: [4 /* States.IN_SUB_PATH */, 1 /* Actions.PUSH */],
+  ["o" /* PathCharTypes.END_OF_FAIL */]: [7 /* States.AFTER_PATH */, 1 /* Actions.PUSH */]
+};
+pathStateMachine[4 /* States.IN_SUB_PATH */] = {
+  ["'" /* PathCharTypes.SINGLE_QUOTE */]: [5 /* States.IN_SINGLE_QUOTE */, 0 /* Actions.APPEND */],
+  ["\"" /* PathCharTypes.DOUBLE_QUOTE */]: [6 /* States.IN_DOUBLE_QUOTE */, 0 /* Actions.APPEND */],
+  ["[" /* PathCharTypes.LEFT_BRACKET */]: [4 /* States.IN_SUB_PATH */, 2 /* Actions.INC_SUB_PATH_DEPTH */],
+  ["]" /* PathCharTypes.RIGHT_BRACKET */]: [1 /* States.IN_PATH */, 3 /* Actions.PUSH_SUB_PATH */],
+  ["o" /* PathCharTypes.END_OF_FAIL */]: 8 /* States.ERROR */,
+  ["l" /* PathCharTypes.ELSE */]: [4 /* States.IN_SUB_PATH */, 0 /* Actions.APPEND */]
+};
+pathStateMachine[5 /* States.IN_SINGLE_QUOTE */] = {
+  ["'" /* PathCharTypes.SINGLE_QUOTE */]: [4 /* States.IN_SUB_PATH */, 0 /* Actions.APPEND */],
+  ["o" /* PathCharTypes.END_OF_FAIL */]: 8 /* States.ERROR */,
+  ["l" /* PathCharTypes.ELSE */]: [5 /* States.IN_SINGLE_QUOTE */, 0 /* Actions.APPEND */]
+};
+pathStateMachine[6 /* States.IN_DOUBLE_QUOTE */] = {
+  ["\"" /* PathCharTypes.DOUBLE_QUOTE */]: [4 /* States.IN_SUB_PATH */, 0 /* Actions.APPEND */],
+  ["o" /* PathCharTypes.END_OF_FAIL */]: 8 /* States.ERROR */,
+  ["l" /* PathCharTypes.ELSE */]: [6 /* States.IN_DOUBLE_QUOTE */, 0 /* Actions.APPEND */]
+};
+/**
+ * Check if an expression is a literal value.
+ */
+const literalValueRE = /^\s?(?:true|false|-?[\d.]+|'[^']*'|"[^"]*")\s?$/;
+function isLiteral(exp) {
+  return literalValueRE.test(exp);
+}
+/**
+ * Strip quotes from a string
+ */
+function stripQuotes(str) {
+  const a = str.charCodeAt(0);
+  const b = str.charCodeAt(str.length - 1);
+  return a === b && (a === 0x22 || a === 0x27) ? str.slice(1, -1) : str;
+}
+/**
+ * Determine the type of a character in a keypath.
+ */
+function getPathCharType(ch) {
+  if (ch === undefined || ch === null) {
+    return "o" /* PathCharTypes.END_OF_FAIL */;
+  }
+  const code = ch.charCodeAt(0);
+  switch (code) {
+    case 0x5b: // [
+    case 0x5d: // ]
+    case 0x2e: // .
+    case 0x22: // "
+    case 0x27:
+      // '
+      return ch;
+    case 0x5f: // _
+    case 0x24: // $
+    case 0x2d:
+      // -
+      return "i" /* PathCharTypes.IDENT */;
+    case 0x09: // Tab (HT)
+    case 0x0a: // Newline (LF)
+    case 0x0d: // Return (CR)
+    case 0xa0: // No-break space (NBSP)
+    case 0xfeff: // Byte Order Mark (BOM)
+    case 0x2028: // Line Separator (LS)
+    case 0x2029:
+      // Paragraph Separator (PS)
+      return "w" /* PathCharTypes.WORKSPACE */;
+  }
+  return "i" /* PathCharTypes.IDENT */;
+}
+/**
+ * Format a subPath, return its plain form if it is
+ * a literal string or number. Otherwise prepend the
+ * dynamic indicator (*).
+ */
+function formatSubPath(path) {
+  const trimmed = path.trim();
+  // invalid leading 0
+  if (path.charAt(0) === '0' && isNaN(parseInt(path))) {
+    return false;
+  }
+  return isLiteral(trimmed) ? stripQuotes(trimmed) : "*" /* PathCharTypes.ASTARISK */ + trimmed;
+}
+/**
+ * Parse a string path into an array of segments
+ */
+function parse(path) {
+  const keys = [];
+  let index = -1;
+  let mode = 0 /* States.BEFORE_PATH */;
+  let subPathDepth = 0;
+  let c;
+  let key; // eslint-disable-line
+  let newChar;
+  let type;
+  let transition;
+  let action;
+  let typeMap;
+  const actions = [];
+  actions[0 /* Actions.APPEND */] = () => {
+    if (key === undefined) {
+      key = newChar;
+    } else {
+      key += newChar;
+    }
+  };
+  actions[1 /* Actions.PUSH */] = () => {
+    if (key !== undefined) {
+      keys.push(key);
+      key = undefined;
+    }
+  };
+  actions[2 /* Actions.INC_SUB_PATH_DEPTH */] = () => {
+    actions[0 /* Actions.APPEND */]();
+    subPathDepth++;
+  };
+  actions[3 /* Actions.PUSH_SUB_PATH */] = () => {
+    if (subPathDepth > 0) {
+      subPathDepth--;
+      mode = 4 /* States.IN_SUB_PATH */;
+      actions[0 /* Actions.APPEND */]();
+    } else {
+      subPathDepth = 0;
+      if (key === undefined) {
+        return false;
+      }
+      key = formatSubPath(key);
+      if (key === false) {
+        return false;
+      } else {
+        actions[1 /* Actions.PUSH */]();
+      }
+    }
+  };
+  function maybeUnescapeQuote() {
+    const nextChar = path[index + 1];
+    if (mode === 5 /* States.IN_SINGLE_QUOTE */ && nextChar === "'" /* PathCharTypes.SINGLE_QUOTE */ || mode === 6 /* States.IN_DOUBLE_QUOTE */ && nextChar === "\"" /* PathCharTypes.DOUBLE_QUOTE */) {
+      index++;
+      newChar = '\\' + nextChar;
+      actions[0 /* Actions.APPEND */]();
+      return true;
+    }
+  }
+  while (mode !== null) {
+    index++;
+    c = path[index];
+    if (c === '\\' && maybeUnescapeQuote()) {
+      continue;
+    }
+    type = getPathCharType(c);
+    typeMap = pathStateMachine[mode];
+    transition = typeMap[type] || typeMap["l" /* PathCharTypes.ELSE */] || 8 /* States.ERROR */;
+    // check parse error
+    if (transition === 8 /* States.ERROR */) {
+      return;
+    }
+    mode = transition[0];
+    if (transition[1] !== undefined) {
+      action = actions[transition[1]];
+      if (action) {
+        newChar = c;
+        if (action() === false) {
+          return;
+        }
+      }
+    }
+    // check parse finish
+    if (mode === 7 /* States.AFTER_PATH */) {
+      return keys;
+    }
+  }
+}
+// path token cache
+const cache = new Map();
+/**
+ * key-value message resolver
+ *
+ * @remarks
+ * Resolves messages with the key-value structure. Note that messages with a hierarchical structure such as objects cannot be resolved
+ *
+ * @param obj - A target object to be resolved with path
+ * @param path - A {@link Path | path} to resolve the value of message
+ *
+ * @returns A resolved {@link PathValue | path value}
+ *
+ * @VueI18nGeneral
+ */
+function resolveWithKeyValue(obj, path) {
+  return shared_isObject(obj) ? obj[path] : null;
+}
+/**
+ * message resolver
+ *
+ * @remarks
+ * Resolves messages. messages with a hierarchical structure such as objects can be resolved. This resolver is used in VueI18n as default.
+ *
+ * @param obj - A target object to be resolved with path
+ * @param path - A {@link Path | path} to resolve the value of message
+ *
+ * @returns A resolved {@link PathValue | path value}
+ *
+ * @VueI18nGeneral
+ */
+function resolveValue(obj, path) {
+  // check object
+  if (!shared_isObject(obj)) {
+    return null;
+  }
+  // parse path
+  let hit = cache.get(path);
+  if (!hit) {
+    hit = parse(path);
+    if (hit) {
+      cache.set(path, hit);
+    }
+  }
+  // check hit
+  if (!hit) {
+    return null;
+  }
+  // resolve path value
+  const len = hit.length;
+  let last = obj;
+  let i = 0;
+  while (i < len) {
+    const val = last[hit[i]];
+    if (val === undefined) {
+      return null;
+    }
+    if (shared_isFunction(last)) {
+      return null;
+    }
+    last = val;
+    i++;
+  }
+  return last;
+}
+const DEFAULT_MODIFIER = str => str;
+const DEFAULT_MESSAGE = ctx => ''; // eslint-disable-line
+const DEFAULT_MESSAGE_DATA_TYPE = 'text';
+const DEFAULT_NORMALIZE = values => values.length === 0 ? '' : join(values);
+const DEFAULT_INTERPOLATE = toDisplayString;
+function pluralDefault(choice, choicesLength) {
+  choice = Math.abs(choice);
+  if (choicesLength === 2) {
+    // prettier-ignore
+    return choice ? choice > 1 ? 1 : 0 : 1;
+  }
+  return choice ? Math.min(choice, 2) : 0;
+}
+function getPluralIndex(options) {
+  // prettier-ignore
+  const index = shared_isNumber(options.pluralIndex) ? options.pluralIndex : -1;
+  // prettier-ignore
+  return options.named && (shared_isNumber(options.named.count) || shared_isNumber(options.named.n)) ? shared_isNumber(options.named.count) ? options.named.count : shared_isNumber(options.named.n) ? options.named.n : index : index;
+}
+function normalizeNamed(pluralIndex, props) {
+  if (!props.count) {
+    props.count = pluralIndex;
+  }
+  if (!props.n) {
+    props.n = pluralIndex;
+  }
+}
+function createMessageContext(options = {}) {
+  const locale = options.locale;
+  const pluralIndex = getPluralIndex(options);
+  const pluralRule = shared_isObject(options.pluralRules) && shared_isString(locale) && shared_isFunction(options.pluralRules[locale]) ? options.pluralRules[locale] : pluralDefault;
+  const orgPluralRule = shared_isObject(options.pluralRules) && shared_isString(locale) && shared_isFunction(options.pluralRules[locale]) ? pluralDefault : undefined;
+  const plural = messages => {
+    return messages[pluralRule(pluralIndex, messages.length, orgPluralRule)];
+  };
+  const _list = options.list || [];
+  const list = index => _list[index];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const _named = options.named || {};
+  shared_isNumber(options.pluralIndex) && normalizeNamed(pluralIndex, _named);
+  const named = key => _named[key];
+  function message(key) {
+    // prettier-ignore
+    const msg = shared_isFunction(options.messages) ? options.messages(key) : shared_isObject(options.messages) ? options.messages[key] : false;
+    return !msg ? options.parent ? options.parent.message(key) // resolve from parent messages
+    : DEFAULT_MESSAGE : msg;
+  }
+  const _modifier = name => options.modifiers ? options.modifiers[name] : DEFAULT_MODIFIER;
+  const normalize = shared_isPlainObject(options.processor) && shared_isFunction(options.processor.normalize) ? options.processor.normalize : DEFAULT_NORMALIZE;
+  const interpolate = shared_isPlainObject(options.processor) && shared_isFunction(options.processor.interpolate) ? options.processor.interpolate : DEFAULT_INTERPOLATE;
+  const type = shared_isPlainObject(options.processor) && shared_isString(options.processor.type) ? options.processor.type : DEFAULT_MESSAGE_DATA_TYPE;
+  const linked = (key, ...args) => {
+    const [arg1, arg2] = args;
+    let type = 'text';
+    let modifier = '';
+    if (args.length === 1) {
+      if (shared_isObject(arg1)) {
+        modifier = arg1.modifier || modifier;
+        type = arg1.type || type;
+      } else if (shared_isString(arg1)) {
+        modifier = arg1 || modifier;
+      }
+    } else if (args.length === 2) {
+      if (shared_isString(arg1)) {
+        modifier = arg1 || modifier;
+      }
+      if (shared_isString(arg2)) {
+        type = arg2 || type;
+      }
+    }
+    const ret = message(key)(ctx);
+    const msg =
+    // The message in vnode resolved with linked are returned as an array by processor.nomalize
+    type === 'vnode' && shared_isArray(ret) && modifier ? ret[0] : ret;
+    return modifier ? _modifier(modifier)(msg, type) : msg;
+  };
+  const ctx = {
+    ["list" /* HelperNameMap.LIST */]: list,
+    ["named" /* HelperNameMap.NAMED */]: named,
+    ["plural" /* HelperNameMap.PLURAL */]: plural,
+    ["linked" /* HelperNameMap.LINKED */]: linked,
+    ["message" /* HelperNameMap.MESSAGE */]: message,
+    ["type" /* HelperNameMap.TYPE */]: type,
+    ["interpolate" /* HelperNameMap.INTERPOLATE */]: interpolate,
+    ["normalize" /* HelperNameMap.NORMALIZE */]: normalize,
+    ["values" /* HelperNameMap.VALUES */]: shared_assign({}, _list, _named)
+  };
+  return ctx;
+}
+let devtools = null;
+function setDevToolsHook(hook) {
+  devtools = hook;
+}
+function getDevToolsHook() {
+  return devtools;
+}
+function initI18nDevTools(i18n, version, meta) {
+  // TODO: queue if devtools is undefined
+  devtools && devtools.emit("i18n:init" /* IntlifyDevToolsHooks.I18nInit */, {
+    timestamp: Date.now(),
+    i18n,
+    version,
+    meta
+  });
+}
+const translateDevTools = /* #__PURE__*/(/* unused pure expression or super */ null && (createDevToolsHook("function:translate" /* IntlifyDevToolsHooks.FunctionTranslate */)));
+function createDevToolsHook(hook) {
+  return payloads => devtools && devtools.emit(hook, payloads);
+}
+const CoreWarnCodes = {
+  NOT_FOUND_KEY: 1,
+  FALLBACK_TO_TRANSLATE: 2,
+  CANNOT_FORMAT_NUMBER: 3,
+  FALLBACK_TO_NUMBER_FORMAT: 4,
+  CANNOT_FORMAT_DATE: 5,
+  FALLBACK_TO_DATE_FORMAT: 6,
+  EXPERIMENTAL_CUSTOM_MESSAGE_COMPILER: 7,
+  __EXTEND_POINT__: 8
+};
+/** @internal */
+const warnMessages = {
+  [CoreWarnCodes.NOT_FOUND_KEY]: `Not found '{key}' key in '{locale}' locale messages.`,
+  [CoreWarnCodes.FALLBACK_TO_TRANSLATE]: `Fall back to translate '{key}' key with '{target}' locale.`,
+  [CoreWarnCodes.CANNOT_FORMAT_NUMBER]: `Cannot format a number value due to not supported Intl.NumberFormat.`,
+  [CoreWarnCodes.FALLBACK_TO_NUMBER_FORMAT]: `Fall back to number format '{key}' key with '{target}' locale.`,
+  [CoreWarnCodes.CANNOT_FORMAT_DATE]: `Cannot format a date value due to not supported Intl.DateTimeFormat.`,
+  [CoreWarnCodes.FALLBACK_TO_DATE_FORMAT]: `Fall back to datetime format '{key}' key with '{target}' locale.`,
+  [CoreWarnCodes.EXPERIMENTAL_CUSTOM_MESSAGE_COMPILER]: `This project is using Custom Message Compiler, which is an experimental feature. It may receive breaking changes or be removed in the future.`
+};
+function getWarnMessage(code, ...args) {
+  return format$1(warnMessages[code], ...args);
+}
+const code = CompileErrorCodes.__EXTEND_POINT__;
+const inc = incrementer(code);
+const CoreErrorCodes = {
+  INVALID_ARGUMENT: code,
+  INVALID_DATE_ARGUMENT: inc(),
+  INVALID_ISO_DATE_ARGUMENT: inc(),
+  NOT_SUPPORT_NON_STRING_MESSAGE: inc(),
+  NOT_SUPPORT_LOCALE_PROMISE_VALUE: inc(),
+  NOT_SUPPORT_LOCALE_ASYNC_FUNCTION: inc(),
+  NOT_SUPPORT_LOCALE_TYPE: inc(),
+  __EXTEND_POINT__: inc() // 25
+};
+function createCoreError(code) {
+  return createCompileError(code, null,  false ? 0 : undefined);
+}
+/** @internal */
+const core_base_errorMessages = {
+  [CoreErrorCodes.INVALID_ARGUMENT]: 'Invalid arguments',
+  [CoreErrorCodes.INVALID_DATE_ARGUMENT]: 'The date provided is an invalid Date object.' + 'Make sure your Date represents a valid date.',
+  [CoreErrorCodes.INVALID_ISO_DATE_ARGUMENT]: 'The argument provided is not a valid ISO date string',
+  [CoreErrorCodes.NOT_SUPPORT_NON_STRING_MESSAGE]: 'Not support non-string message',
+  [CoreErrorCodes.NOT_SUPPORT_LOCALE_PROMISE_VALUE]: 'cannot support promise value',
+  [CoreErrorCodes.NOT_SUPPORT_LOCALE_ASYNC_FUNCTION]: 'cannot support async function',
+  [CoreErrorCodes.NOT_SUPPORT_LOCALE_TYPE]: 'cannot support locale type'
+};
+
+/** @internal */
+function getLocale(context, options) {
+  return options.locale != null ? resolveLocale(options.locale) : resolveLocale(context.locale);
+}
+let _resolveLocale;
+/** @internal */
+function resolveLocale(locale) {
+  if (shared_isString(locale)) {
+    return locale;
+  } else {
+    if (shared_isFunction(locale)) {
+      if (locale.resolvedOnce && _resolveLocale != null) {
+        return _resolveLocale;
+      } else if (locale.constructor.name === 'Function') {
+        const resolve = locale();
+        if (isPromise(resolve)) {
+          throw createCoreError(CoreErrorCodes.NOT_SUPPORT_LOCALE_PROMISE_VALUE);
+        }
+        return _resolveLocale = resolve;
+      } else {
+        throw createCoreError(CoreErrorCodes.NOT_SUPPORT_LOCALE_ASYNC_FUNCTION);
+      }
+    } else {
+      throw createCoreError(CoreErrorCodes.NOT_SUPPORT_LOCALE_TYPE);
+    }
+  }
+}
+/**
+ * Fallback with simple implemenation
+ *
+ * @remarks
+ * A fallback locale function implemented with a simple fallback algorithm.
+ *
+ * Basically, it returns the value as specified in the `fallbackLocale` props, and is processed with the fallback inside intlify.
+ *
+ * @param ctx - A {@link CoreContext | context}
+ * @param fallback - A {@link FallbackLocale | fallback locale}
+ * @param start - A starting {@link Locale | locale}
+ *
+ * @returns Fallback locales
+ *
+ * @VueI18nGeneral
+ */
+function fallbackWithSimple(ctx, fallback, start // eslint-disable-line @typescript-eslint/no-unused-vars
+) {
+  // prettier-ignore
+  return [...new Set([start, ...(shared_isArray(fallback) ? fallback : shared_isObject(fallback) ? Object.keys(fallback) : shared_isString(fallback) ? [fallback] : [start])])];
+}
+/**
+ * Fallback with locale chain
+ *
+ * @remarks
+ * A fallback locale function implemented with a fallback chain algorithm. It's used in VueI18n as default.
+ *
+ * @param ctx - A {@link CoreContext | context}
+ * @param fallback - A {@link FallbackLocale | fallback locale}
+ * @param start - A starting {@link Locale | locale}
+ *
+ * @returns Fallback locales
+ *
+ * @VueI18nSee [Fallbacking](../guide/essentials/fallback)
+ *
+ * @VueI18nGeneral
+ */
+function fallbackWithLocaleChain(ctx, fallback, start) {
+  const startLocale = shared_isString(start) ? start : core_base_DEFAULT_LOCALE;
+  const context = ctx;
+  if (!context.__localeChainCache) {
+    context.__localeChainCache = new Map();
+  }
+  let chain = context.__localeChainCache.get(startLocale);
+  if (!chain) {
+    chain = [];
+    // first block defined by start
+    let block = [start];
+    // while any intervening block found
+    while (shared_isArray(block)) {
+      block = appendBlockToChain(chain, block, fallback);
+    }
+    // prettier-ignore
+    // last block defined by default
+    const defaults = shared_isArray(fallback) || !shared_isPlainObject(fallback) ? fallback : fallback['default'] ? fallback['default'] : null;
+    // convert defaults to array
+    block = shared_isString(defaults) ? [defaults] : defaults;
+    if (shared_isArray(block)) {
+      appendBlockToChain(chain, block, false);
+    }
+    context.__localeChainCache.set(startLocale, chain);
+  }
+  return chain;
+}
+function appendBlockToChain(chain, block, blocks) {
+  let follow = true;
+  for (let i = 0; i < block.length && shared_isBoolean(follow); i++) {
+    const locale = block[i];
+    if (shared_isString(locale)) {
+      follow = appendLocaleToChain(chain, block[i], blocks);
+    }
+  }
+  return follow;
+}
+function appendLocaleToChain(chain, locale, blocks) {
+  let follow;
+  const tokens = locale.split('-');
+  do {
+    const target = tokens.join('-');
+    follow = appendItemToChain(chain, target, blocks);
+    tokens.splice(-1, 1);
+  } while (tokens.length && follow === true);
+  return follow;
+}
+function appendItemToChain(chain, target, blocks) {
+  let follow = false;
+  if (!chain.includes(target)) {
+    follow = true;
+    if (target) {
+      follow = target[target.length - 1] !== '!';
+      const locale = target.replace(/!/g, '');
+      chain.push(locale);
+      if ((shared_isArray(blocks) || shared_isPlainObject(blocks)) && blocks[locale] // eslint-disable-line @typescript-eslint/no-explicit-any
+      ) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        follow = blocks[locale];
+      }
+    }
+  }
+  return follow;
+}
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/**
+ * Intlify core-base version
+ * @internal
+ */
+const VERSION = '9.9.1';
+const NOT_REOSLVED = -1;
+const core_base_DEFAULT_LOCALE = 'en-US';
+const MISSING_RESOLVE_VALUE = '';
+const capitalize = str => `${str.charAt(0).toLocaleUpperCase()}${str.substr(1)}`;
+function getDefaultLinkedModifiers() {
+  return {
+    upper: (val, type) => {
+      // prettier-ignore
+      return type === 'text' && shared_isString(val) ? val.toUpperCase() : type === 'vnode' && shared_isObject(val) && '__v_isVNode' in val ? val.children.toUpperCase() : val;
+    },
+    lower: (val, type) => {
+      // prettier-ignore
+      return type === 'text' && shared_isString(val) ? val.toLowerCase() : type === 'vnode' && shared_isObject(val) && '__v_isVNode' in val ? val.children.toLowerCase() : val;
+    },
+    capitalize: (val, type) => {
+      // prettier-ignore
+      return type === 'text' && shared_isString(val) ? capitalize(val) : type === 'vnode' && shared_isObject(val) && '__v_isVNode' in val ? capitalize(val.children) : val;
+    }
+  };
+}
+let _compiler;
+function registerMessageCompiler(compiler) {
+  _compiler = compiler;
+}
+let _resolver;
+/**
+ * Register the message resolver
+ *
+ * @param resolver - A {@link MessageResolver} function
+ *
+ * @VueI18nGeneral
+ */
+function registerMessageResolver(resolver) {
+  _resolver = resolver;
+}
+let _fallbacker;
+/**
+ * Register the locale fallbacker
+ *
+ * @param fallbacker - A {@link LocaleFallbacker} function
+ *
+ * @VueI18nGeneral
+ */
+function registerLocaleFallbacker(fallbacker) {
+  _fallbacker = fallbacker;
+}
+// Additional Meta for Intlify DevTools
+let _additionalMeta = null;
+/* #__NO_SIDE_EFFECTS__ */
+const setAdditionalMeta = meta => {
+  _additionalMeta = meta;
+};
+/* #__NO_SIDE_EFFECTS__ */
+const getAdditionalMeta = () => _additionalMeta;
+let _fallbackContext = null;
+const setFallbackContext = context => {
+  _fallbackContext = context;
+};
+const getFallbackContext = () => _fallbackContext;
+// ID for CoreContext
+let _cid = 0;
+function createCoreContext(options = {}) {
+  // setup options
+  const onWarn = shared_isFunction(options.onWarn) ? options.onWarn : shared_warn;
+  const version = shared_isString(options.version) ? options.version : VERSION;
+  const locale = shared_isString(options.locale) || shared_isFunction(options.locale) ? options.locale : core_base_DEFAULT_LOCALE;
+  const _locale = shared_isFunction(locale) ? core_base_DEFAULT_LOCALE : locale;
+  const fallbackLocale = shared_isArray(options.fallbackLocale) || shared_isPlainObject(options.fallbackLocale) || shared_isString(options.fallbackLocale) || options.fallbackLocale === false ? options.fallbackLocale : _locale;
+  const messages = shared_isPlainObject(options.messages) ? options.messages : {
+    [_locale]: {}
+  };
+  const datetimeFormats = shared_isPlainObject(options.datetimeFormats) ? options.datetimeFormats : {
+    [_locale]: {}
+  };
+  const numberFormats = shared_isPlainObject(options.numberFormats) ? options.numberFormats : {
+    [_locale]: {}
+  };
+  const modifiers = shared_assign({}, options.modifiers || {}, getDefaultLinkedModifiers());
+  const pluralRules = options.pluralRules || {};
+  const missing = shared_isFunction(options.missing) ? options.missing : null;
+  const missingWarn = shared_isBoolean(options.missingWarn) || shared_isRegExp(options.missingWarn) ? options.missingWarn : true;
+  const fallbackWarn = shared_isBoolean(options.fallbackWarn) || shared_isRegExp(options.fallbackWarn) ? options.fallbackWarn : true;
+  const fallbackFormat = !!options.fallbackFormat;
+  const unresolving = !!options.unresolving;
+  const postTranslation = shared_isFunction(options.postTranslation) ? options.postTranslation : null;
+  const processor = shared_isPlainObject(options.processor) ? options.processor : null;
+  const warnHtmlMessage = shared_isBoolean(options.warnHtmlMessage) ? options.warnHtmlMessage : true;
+  const escapeParameter = !!options.escapeParameter;
+  const messageCompiler = shared_isFunction(options.messageCompiler) ? options.messageCompiler : _compiler;
+  if (false) {}
+  const messageResolver = shared_isFunction(options.messageResolver) ? options.messageResolver : _resolver || resolveWithKeyValue;
+  const localeFallbacker = shared_isFunction(options.localeFallbacker) ? options.localeFallbacker : _fallbacker || fallbackWithSimple;
+  const fallbackContext = shared_isObject(options.fallbackContext) ? options.fallbackContext : undefined;
+  // setup internal options
+  const internalOptions = options;
+  const __datetimeFormatters = shared_isObject(internalOptions.__datetimeFormatters) ? internalOptions.__datetimeFormatters : new Map();
+  const __numberFormatters = shared_isObject(internalOptions.__numberFormatters) ? internalOptions.__numberFormatters : new Map();
+  const __meta = shared_isObject(internalOptions.__meta) ? internalOptions.__meta : {};
+  _cid++;
+  const context = {
+    version,
+    cid: _cid,
+    locale,
+    fallbackLocale,
+    messages,
+    modifiers,
+    pluralRules,
+    missing,
+    missingWarn,
+    fallbackWarn,
+    fallbackFormat,
+    unresolving,
+    postTranslation,
+    processor,
+    warnHtmlMessage,
+    escapeParameter,
+    messageCompiler,
+    messageResolver,
+    localeFallbacker,
+    fallbackContext,
+    onWarn,
+    __meta
+  };
+  {
+    context.datetimeFormats = datetimeFormats;
+    context.numberFormats = numberFormats;
+    context.__datetimeFormatters = __datetimeFormatters;
+    context.__numberFormatters = __numberFormatters;
+  }
+  // for vue-devtools timeline event
+  if (false) {}
+  // NOTE: experimental !!
+  if (false) {}
+  return context;
+}
+/** @internal */
+function isTranslateFallbackWarn(fallback, key) {
+  return fallback instanceof RegExp ? fallback.test(key) : fallback;
+}
+/** @internal */
+function isTranslateMissingWarn(missing, key) {
+  return missing instanceof RegExp ? missing.test(key) : missing;
+}
+/** @internal */
+function handleMissing(context, key, locale, missingWarn, type) {
+  const {
+    missing,
+    onWarn
+  } = context;
+  // for vue-devtools timeline event
+  if (false) {}
+  if (missing !== null) {
+    const ret = missing(context, locale, key, type);
+    return shared_isString(ret) ? ret : key;
+  } else {
+    if (false) {}
+    return key;
+  }
+}
+/** @internal */
+function updateFallbackLocale(ctx, locale, fallback) {
+  const context = ctx;
+  context.__localeChainCache = new Map();
+  ctx.localeFallbacker(ctx, fallback, locale);
+}
+/* eslint-enable @typescript-eslint/no-explicit-any */
+
+function core_base_format(ast) {
+  const msg = ctx => formatParts(ctx, ast);
+  return msg;
+}
+function formatParts(ctx, ast) {
+  const body = ast.b || ast.body;
+  if ((body.t || body.type) === 1 /* NodeTypes.Plural */) {
+    const plural = body;
+    const cases = plural.c || plural.cases;
+    return ctx.plural(cases.reduce((messages, c) => [...messages, formatMessageParts(ctx, c)], []));
+  } else {
+    return formatMessageParts(ctx, body);
+  }
+}
+function formatMessageParts(ctx, node) {
+  const _static = node.s || node.static;
+  if (_static) {
+    return ctx.type === 'text' ? _static : ctx.normalize([_static]);
+  } else {
+    const messages = (node.i || node.items).reduce((acm, c) => [...acm, formatMessagePart(ctx, c)], []);
+    return ctx.normalize(messages);
+  }
+}
+function formatMessagePart(ctx, node) {
+  const type = node.t || node.type;
+  switch (type) {
+    case 3 /* NodeTypes.Text */:
+      const text = node;
+      return text.v || text.value;
+    case 9 /* NodeTypes.Literal */:
+      const literal = node;
+      return literal.v || literal.value;
+    case 4 /* NodeTypes.Named */:
+      const named = node;
+      return ctx.interpolate(ctx.named(named.k || named.key));
+    case 5 /* NodeTypes.List */:
+      const list = node;
+      return ctx.interpolate(ctx.list(list.i != null ? list.i : list.index));
+    case 6 /* NodeTypes.Linked */:
+      const linked = node;
+      const modifier = linked.m || linked.modifier;
+      return ctx.linked(formatMessagePart(ctx, linked.k || linked.key), modifier ? formatMessagePart(ctx, modifier) : undefined, ctx.type);
+    case 7 /* NodeTypes.LinkedKey */:
+      const linkedKey = node;
+      return linkedKey.v || linkedKey.value;
+    case 8 /* NodeTypes.LinkedModifier */:
+      const linkedModifier = node;
+      return linkedModifier.v || linkedModifier.value;
+    default:
+      throw new Error(`unhandled node type on format message part: ${type}`);
+  }
+}
+const WARN_MESSAGE = (/* unused pure expression or super */ null && (`Detected HTML in '{source}' message. Recommend not using HTML messages to avoid XSS.`));
+function checkHtmlMessage(source, warnHtmlMessage) {
+  if (warnHtmlMessage && detectHtmlTag(source)) {
+    warn(format$1(WARN_MESSAGE, {
+      source
+    }));
+  }
+}
+const defaultOnCacheKey = message => message;
+let compileCache = Object.create(null);
+function clearCompileCache() {
+  compileCache = Object.create(null);
+}
+const core_base_isMessageAST = val => shared_isObject(val) && (val.t === 0 || val.type === 0) && ('b' in val || 'body' in val);
+function core_base_baseCompile(message, options = {}) {
+  // error detecting on compile
+  let detectError = false;
+  const onError = options.onError || defaultOnError;
+  options.onError = err => {
+    detectError = true;
+    onError(err);
+  };
+  // compile with mesasge-compiler
+  return {
+    ...baseCompile(message, options),
+    detectError
+  };
+}
+/* #__NO_SIDE_EFFECTS__ */
+const compileToFunction = (message, context) => {
+  if (!shared_isString(message)) {
+    throw createCoreError(CoreErrorCodes.NOT_SUPPORT_NON_STRING_MESSAGE);
+  }
+  {
+    // check HTML message
+    const warnHtmlMessage = shared_isBoolean(context.warnHtmlMessage) ? context.warnHtmlMessage : true;
+     false && 0;
+    // check caches
+    const onCacheKey = context.onCacheKey || defaultOnCacheKey;
+    const cacheKey = onCacheKey(message);
+    const cached = compileCache[cacheKey];
+    if (cached) {
+      return cached;
+    }
+    // compile
+    const {
+      code,
+      detectError
+    } = core_base_baseCompile(message, context);
+    // evaluate function
+    const msg = new Function(`return ${code}`)();
+    // if occurred compile error, don't cache
+    return !detectError ? compileCache[cacheKey] = msg : msg;
+  }
+};
+function compile(message, context) {
+  if (__INTLIFY_JIT_COMPILATION__ && !__INTLIFY_DROP_MESSAGE_COMPILER__ && shared_isString(message)) {
+    // check HTML message
+    const warnHtmlMessage = shared_isBoolean(context.warnHtmlMessage) ? context.warnHtmlMessage : true;
+     false && 0;
+    // check caches
+    const onCacheKey = context.onCacheKey || defaultOnCacheKey;
+    const cacheKey = onCacheKey(message);
+    const cached = compileCache[cacheKey];
+    if (cached) {
+      return cached;
+    }
+    // compile with JIT mode
+    const {
+      ast,
+      detectError
+    } = core_base_baseCompile(message, {
+      ...context,
+      location: "production" !== 'production',
+      jit: true
+    });
+    // compose message function from AST
+    const msg = core_base_format(ast);
+    // if occurred compile error, don't cache
+    return !detectError ? compileCache[cacheKey] = msg : msg;
+  } else {
+    if (false) {}
+    // AST case (passed from bundler)
+    const cacheKey = message.cacheKey;
+    if (cacheKey) {
+      const cached = compileCache[cacheKey];
+      if (cached) {
+        return cached;
+      }
+      // compose message function from message (AST)
+      return compileCache[cacheKey] = core_base_format(message);
+    } else {
+      return core_base_format(message);
+    }
+  }
+}
+const NOOP_MESSAGE_FUNCTION = () => '';
+const isMessageFunction = val => shared_isFunction(val);
+// implementation of `translate` function
+function translate(context, ...args) {
+  const {
+    fallbackFormat,
+    postTranslation,
+    unresolving,
+    messageCompiler,
+    fallbackLocale,
+    messages
+  } = context;
+  const [key, options] = parseTranslateArgs(...args);
+  const missingWarn = shared_isBoolean(options.missingWarn) ? options.missingWarn : context.missingWarn;
+  const fallbackWarn = shared_isBoolean(options.fallbackWarn) ? options.fallbackWarn : context.fallbackWarn;
+  const escapeParameter = shared_isBoolean(options.escapeParameter) ? options.escapeParameter : context.escapeParameter;
+  const resolvedMessage = !!options.resolvedMessage;
+  // prettier-ignore
+  const defaultMsgOrKey = shared_isString(options.default) || shared_isBoolean(options.default) // default by function option
+  ? !shared_isBoolean(options.default) ? options.default : !messageCompiler ? () => key : key : fallbackFormat // default by `fallbackFormat` option
+  ? !messageCompiler ? () => key : key : '';
+  const enableDefaultMsg = fallbackFormat || defaultMsgOrKey !== '';
+  const locale = getLocale(context, options);
+  // escape params
+  escapeParameter && escapeParams(options);
+  // resolve message format
+  // eslint-disable-next-line prefer-const
+  let [formatScope, targetLocale, message] = !resolvedMessage ? resolveMessageFormat(context, key, locale, fallbackLocale, fallbackWarn, missingWarn) : [key, locale, messages[locale] || {}];
+  // NOTE:
+  //  Fix to work around `ssrTransfrom` bug in Vite.
+  //  https://github.com/vitejs/vite/issues/4306
+  //  To get around this, use temporary variables.
+  //  https://github.com/nuxt/framework/issues/1461#issuecomment-954606243
+  let format = formatScope;
+  // if you use default message, set it as message format!
+  let cacheBaseKey = key;
+  if (!resolvedMessage && !(shared_isString(format) || core_base_isMessageAST(format) || isMessageFunction(format))) {
+    if (enableDefaultMsg) {
+      format = defaultMsgOrKey;
+      cacheBaseKey = format;
+    }
+  }
+  // checking message format and target locale
+  if (!resolvedMessage && (!(shared_isString(format) || core_base_isMessageAST(format) || isMessageFunction(format)) || !shared_isString(targetLocale))) {
+    return unresolving ? NOT_REOSLVED : key;
+  }
+  // TODO: refactor
+  if (false) {}
+  // setup compile error detecting
+  let occurred = false;
+  const onError = () => {
+    occurred = true;
+  };
+  // compile message format
+  const msg = !isMessageFunction(format) ? compileMessageFormat(context, key, targetLocale, format, cacheBaseKey, onError) : format;
+  // if occurred compile error, return the message format
+  if (occurred) {
+    return format;
+  }
+  // evaluate message with context
+  const ctxOptions = getMessageContextOptions(context, targetLocale, message, options);
+  const msgContext = createMessageContext(ctxOptions);
+  const messaged = evaluateMessage(context, msg, msgContext);
+  // if use post translation option, proceed it with handler
+  const ret = postTranslation ? postTranslation(messaged, key) : messaged;
+  // NOTE: experimental !!
+  if (false) {}
+  return ret;
+}
+function escapeParams(options) {
+  if (shared_isArray(options.list)) {
+    options.list = options.list.map(item => shared_isString(item) ? escapeHtml(item) : item);
+  } else if (shared_isObject(options.named)) {
+    Object.keys(options.named).forEach(key => {
+      if (shared_isString(options.named[key])) {
+        options.named[key] = escapeHtml(options.named[key]);
+      }
+    });
+  }
+}
+function resolveMessageFormat(context, key, locale, fallbackLocale, fallbackWarn, missingWarn) {
+  const {
+    messages,
+    onWarn,
+    messageResolver: resolveValue,
+    localeFallbacker
+  } = context;
+  const locales = localeFallbacker(context, fallbackLocale, locale); // eslint-disable-line @typescript-eslint/no-explicit-any
+  let message = {};
+  let targetLocale;
+  let format = null;
+  let from = locale;
+  let to = null;
+  const type = 'translate';
+  for (let i = 0; i < locales.length; i++) {
+    targetLocale = to = locales[i];
+    if (false) {}
+    // for vue-devtools timeline event
+    if (false) {}
+    message = messages[targetLocale] || {};
+    // for vue-devtools timeline event
+    let start = null;
+    let startTag;
+    let endTag;
+    if (false) {}
+    if ((format = resolveValue(message, key)) === null) {
+      // if null, resolve with object key path
+      format = message[key]; // eslint-disable-line @typescript-eslint/no-explicit-any
+    }
+    // for vue-devtools timeline event
+    if (false) {}
+    if (shared_isString(format) || core_base_isMessageAST(format) || isMessageFunction(format)) {
+      break;
+    }
+    const missingRet = handleMissing(context,
+    // eslint-disable-line @typescript-eslint/no-explicit-any
+    key, targetLocale, missingWarn, type);
+    if (missingRet !== key) {
+      format = missingRet;
+    }
+    from = to;
+  }
+  return [format, targetLocale, message];
+}
+function compileMessageFormat(context, key, targetLocale, format, cacheBaseKey, onError) {
+  const {
+    messageCompiler,
+    warnHtmlMessage
+  } = context;
+  if (isMessageFunction(format)) {
+    const msg = format;
+    msg.locale = msg.locale || targetLocale;
+    msg.key = msg.key || key;
+    return msg;
+  }
+  if (messageCompiler == null) {
+    const msg = () => format;
+    msg.locale = targetLocale;
+    msg.key = key;
+    return msg;
+  }
+  // for vue-devtools timeline event
+  let start = null;
+  let startTag;
+  let endTag;
+  if (false) {}
+  const msg = messageCompiler(format, getCompileContext(context, targetLocale, cacheBaseKey, format, warnHtmlMessage, onError));
+  // for vue-devtools timeline event
+  if (false) {}
+  msg.locale = targetLocale;
+  msg.key = key;
+  msg.source = format;
+  return msg;
+}
+function evaluateMessage(context, msg, msgCtx) {
+  // for vue-devtools timeline event
+  let start = null;
+  let startTag;
+  let endTag;
+  if (false) {}
+  const messaged = msg(msgCtx);
+  // for vue-devtools timeline event
+  if (false) {}
+  return messaged;
+}
+/** @internal */
+function parseTranslateArgs(...args) {
+  const [arg1, arg2, arg3] = args;
+  const options = {};
+  if (!shared_isString(arg1) && !shared_isNumber(arg1) && !isMessageFunction(arg1) && !core_base_isMessageAST(arg1)) {
+    throw createCoreError(CoreErrorCodes.INVALID_ARGUMENT);
+  }
+  // prettier-ignore
+  const key = shared_isNumber(arg1) ? String(arg1) : isMessageFunction(arg1) ? arg1 : arg1;
+  if (shared_isNumber(arg2)) {
+    options.plural = arg2;
+  } else if (shared_isString(arg2)) {
+    options.default = arg2;
+  } else if (shared_isPlainObject(arg2) && !isEmptyObject(arg2)) {
+    options.named = arg2;
+  } else if (shared_isArray(arg2)) {
+    options.list = arg2;
+  }
+  if (shared_isNumber(arg3)) {
+    options.plural = arg3;
+  } else if (shared_isString(arg3)) {
+    options.default = arg3;
+  } else if (shared_isPlainObject(arg3)) {
+    shared_assign(options, arg3);
+  }
+  return [key, options];
+}
+function getCompileContext(context, locale, key, source, warnHtmlMessage, onError) {
+  return {
+    locale,
+    key,
+    warnHtmlMessage,
+    onError: err => {
+      onError && onError(err);
+      if (false) {} else {
+        throw err;
+      }
+    },
+    onCacheKey: source => generateFormatCacheKey(locale, key, source)
+  };
+}
+function getSourceForCodeFrame(source) {
+  if (isString(source)) {
+    return source;
+  } else {
+    if (source.loc && source.loc.source) {
+      return source.loc.source;
+    }
+  }
+}
+function getMessageContextOptions(context, locale, message, options) {
+  const {
+    modifiers,
+    pluralRules,
+    messageResolver: resolveValue,
+    fallbackLocale,
+    fallbackWarn,
+    missingWarn,
+    fallbackContext
+  } = context;
+  const resolveMessage = key => {
+    let val = resolveValue(message, key);
+    // fallback to root context
+    if (val == null && fallbackContext) {
+      const [,, message] = resolveMessageFormat(fallbackContext, key, locale, fallbackLocale, fallbackWarn, missingWarn);
+      val = resolveValue(message, key);
+    }
+    if (shared_isString(val) || core_base_isMessageAST(val)) {
+      let occurred = false;
+      const onError = () => {
+        occurred = true;
+      };
+      const msg = compileMessageFormat(context, key, locale, val, key, onError);
+      return !occurred ? msg : NOOP_MESSAGE_FUNCTION;
+    } else if (isMessageFunction(val)) {
+      return val;
+    } else {
+      // TODO: should be implemented warning message
+      return NOOP_MESSAGE_FUNCTION;
+    }
+  };
+  const ctxOptions = {
+    locale,
+    modifiers,
+    pluralRules,
+    messages: resolveMessage
+  };
+  if (context.processor) {
+    ctxOptions.processor = context.processor;
+  }
+  if (options.list) {
+    ctxOptions.list = options.list;
+  }
+  if (options.named) {
+    ctxOptions.named = options.named;
+  }
+  if (shared_isNumber(options.plural)) {
+    ctxOptions.pluralIndex = options.plural;
+  }
+  return ctxOptions;
+}
+const intlDefined = typeof Intl !== 'undefined';
+const Availabilities = {
+  dateTimeFormat: intlDefined && typeof Intl.DateTimeFormat !== 'undefined',
+  numberFormat: intlDefined && typeof Intl.NumberFormat !== 'undefined'
+};
+
+// implementation of `datetime` function
+function datetime(context, ...args) {
+  const {
+    datetimeFormats,
+    unresolving,
+    fallbackLocale,
+    onWarn,
+    localeFallbacker
+  } = context;
+  const {
+    __datetimeFormatters
+  } = context;
+  if (false) {}
+  const [key, value, options, overrides] = parseDateTimeArgs(...args);
+  const missingWarn = shared_isBoolean(options.missingWarn) ? options.missingWarn : context.missingWarn;
+  const fallbackWarn = shared_isBoolean(options.fallbackWarn) ? options.fallbackWarn : context.fallbackWarn;
+  const part = !!options.part;
+  const locale = getLocale(context, options);
+  const locales = localeFallbacker(context,
+  // eslint-disable-line @typescript-eslint/no-explicit-any
+  fallbackLocale, locale);
+  if (!shared_isString(key) || key === '') {
+    return new Intl.DateTimeFormat(locale, overrides).format(value);
+  }
+  // resolve format
+  let datetimeFormat = {};
+  let targetLocale;
+  let format = null;
+  let from = locale;
+  let to = null;
+  const type = 'datetime format';
+  for (let i = 0; i < locales.length; i++) {
+    targetLocale = to = locales[i];
+    if (false) {}
+    // for vue-devtools timeline event
+    if (false) {}
+    datetimeFormat = datetimeFormats[targetLocale] || {};
+    format = datetimeFormat[key];
+    if (shared_isPlainObject(format)) break;
+    handleMissing(context, key, targetLocale, missingWarn, type); // eslint-disable-line @typescript-eslint/no-explicit-any
+    from = to;
+  }
+  // checking format and target locale
+  if (!shared_isPlainObject(format) || !shared_isString(targetLocale)) {
+    return unresolving ? NOT_REOSLVED : key;
+  }
+  let id = `${targetLocale}__${key}`;
+  if (!isEmptyObject(overrides)) {
+    id = `${id}__${JSON.stringify(overrides)}`;
+  }
+  let formatter = __datetimeFormatters.get(id);
+  if (!formatter) {
+    formatter = new Intl.DateTimeFormat(targetLocale, shared_assign({}, format, overrides));
+    __datetimeFormatters.set(id, formatter);
+  }
+  return !part ? formatter.format(value) : formatter.formatToParts(value);
+}
+/** @internal */
+const DATETIME_FORMAT_OPTIONS_KEYS = ['localeMatcher', 'weekday', 'era', 'year', 'month', 'day', 'hour', 'minute', 'second', 'timeZoneName', 'formatMatcher', 'hour12', 'timeZone', 'dateStyle', 'timeStyle', 'calendar', 'dayPeriod', 'numberingSystem', 'hourCycle', 'fractionalSecondDigits'];
+/** @internal */
+function parseDateTimeArgs(...args) {
+  const [arg1, arg2, arg3, arg4] = args;
+  const options = {};
+  let overrides = {};
+  let value;
+  if (shared_isString(arg1)) {
+    // Only allow ISO strings - other date formats are often supported,
+    // but may cause different results in different browsers.
+    const matches = arg1.match(/(\d{4}-\d{2}-\d{2})(T|\s)?(.*)/);
+    if (!matches) {
+      throw createCoreError(CoreErrorCodes.INVALID_ISO_DATE_ARGUMENT);
+    }
+    // Some browsers can not parse the iso datetime separated by space,
+    // this is a compromise solution by replace the 'T'/' ' with 'T'
+    const dateTime = matches[3] ? matches[3].trim().startsWith('T') ? `${matches[1].trim()}${matches[3].trim()}` : `${matches[1].trim()}T${matches[3].trim()}` : matches[1].trim();
+    value = new Date(dateTime);
+    try {
+      // This will fail if the date is not valid
+      value.toISOString();
+    } catch (e) {
+      throw createCoreError(CoreErrorCodes.INVALID_ISO_DATE_ARGUMENT);
+    }
+  } else if (isDate(arg1)) {
+    if (isNaN(arg1.getTime())) {
+      throw createCoreError(CoreErrorCodes.INVALID_DATE_ARGUMENT);
+    }
+    value = arg1;
+  } else if (shared_isNumber(arg1)) {
+    value = arg1;
+  } else {
+    throw createCoreError(CoreErrorCodes.INVALID_ARGUMENT);
+  }
+  if (shared_isString(arg2)) {
+    options.key = arg2;
+  } else if (shared_isPlainObject(arg2)) {
+    Object.keys(arg2).forEach(key => {
+      if (DATETIME_FORMAT_OPTIONS_KEYS.includes(key)) {
+        overrides[key] = arg2[key];
+      } else {
+        options[key] = arg2[key];
+      }
+    });
+  }
+  if (shared_isString(arg3)) {
+    options.locale = arg3;
+  } else if (shared_isPlainObject(arg3)) {
+    overrides = arg3;
+  }
+  if (shared_isPlainObject(arg4)) {
+    overrides = arg4;
+  }
+  return [options.key || '', value, options, overrides];
+}
+/** @internal */
+function clearDateTimeFormat(ctx, locale, format) {
+  const context = ctx;
+  for (const key in format) {
+    const id = `${locale}__${key}`;
+    if (!context.__datetimeFormatters.has(id)) {
+      continue;
+    }
+    context.__datetimeFormatters.delete(id);
+  }
+}
+
+// implementation of `number` function
+function number(context, ...args) {
+  const {
+    numberFormats,
+    unresolving,
+    fallbackLocale,
+    onWarn,
+    localeFallbacker
+  } = context;
+  const {
+    __numberFormatters
+  } = context;
+  if (false) {}
+  const [key, value, options, overrides] = parseNumberArgs(...args);
+  const missingWarn = shared_isBoolean(options.missingWarn) ? options.missingWarn : context.missingWarn;
+  const fallbackWarn = shared_isBoolean(options.fallbackWarn) ? options.fallbackWarn : context.fallbackWarn;
+  const part = !!options.part;
+  const locale = getLocale(context, options);
+  const locales = localeFallbacker(context,
+  // eslint-disable-line @typescript-eslint/no-explicit-any
+  fallbackLocale, locale);
+  if (!shared_isString(key) || key === '') {
+    return new Intl.NumberFormat(locale, overrides).format(value);
+  }
+  // resolve format
+  let numberFormat = {};
+  let targetLocale;
+  let format = null;
+  let from = locale;
+  let to = null;
+  const type = 'number format';
+  for (let i = 0; i < locales.length; i++) {
+    targetLocale = to = locales[i];
+    if (false) {}
+    // for vue-devtools timeline event
+    if (false) {}
+    numberFormat = numberFormats[targetLocale] || {};
+    format = numberFormat[key];
+    if (shared_isPlainObject(format)) break;
+    handleMissing(context, key, targetLocale, missingWarn, type); // eslint-disable-line @typescript-eslint/no-explicit-any
+    from = to;
+  }
+  // checking format and target locale
+  if (!shared_isPlainObject(format) || !shared_isString(targetLocale)) {
+    return unresolving ? NOT_REOSLVED : key;
+  }
+  let id = `${targetLocale}__${key}`;
+  if (!isEmptyObject(overrides)) {
+    id = `${id}__${JSON.stringify(overrides)}`;
+  }
+  let formatter = __numberFormatters.get(id);
+  if (!formatter) {
+    formatter = new Intl.NumberFormat(targetLocale, shared_assign({}, format, overrides));
+    __numberFormatters.set(id, formatter);
+  }
+  return !part ? formatter.format(value) : formatter.formatToParts(value);
+}
+/** @internal */
+const NUMBER_FORMAT_OPTIONS_KEYS = ['localeMatcher', 'style', 'currency', 'currencyDisplay', 'currencySign', 'useGrouping', 'minimumIntegerDigits', 'minimumFractionDigits', 'maximumFractionDigits', 'minimumSignificantDigits', 'maximumSignificantDigits', 'compactDisplay', 'notation', 'signDisplay', 'unit', 'unitDisplay', 'roundingMode', 'roundingPriority', 'roundingIncrement', 'trailingZeroDisplay'];
+/** @internal */
+function parseNumberArgs(...args) {
+  const [arg1, arg2, arg3, arg4] = args;
+  const options = {};
+  let overrides = {};
+  if (!shared_isNumber(arg1)) {
+    throw createCoreError(CoreErrorCodes.INVALID_ARGUMENT);
+  }
+  const value = arg1;
+  if (shared_isString(arg2)) {
+    options.key = arg2;
+  } else if (shared_isPlainObject(arg2)) {
+    Object.keys(arg2).forEach(key => {
+      if (NUMBER_FORMAT_OPTIONS_KEYS.includes(key)) {
+        overrides[key] = arg2[key];
+      } else {
+        options[key] = arg2[key];
+      }
+    });
+  }
+  if (shared_isString(arg3)) {
+    options.locale = arg3;
+  } else if (shared_isPlainObject(arg3)) {
+    overrides = arg3;
+  }
+  if (shared_isPlainObject(arg4)) {
+    overrides = arg4;
+  }
+  return [options.key || '', value, options, overrides];
+}
+/** @internal */
+function clearNumberFormat(ctx, locale, format) {
+  const context = ctx;
+  for (const key in format) {
+    const id = `${locale}__${key}`;
+    if (!context.__numberFormatters.has(id)) {
+      continue;
+    }
+    context.__numberFormatters.delete(id);
+  }
+}
+{
+  initFeatureFlags();
+}
+
+;// CONCATENATED MODULE: ./node_modules/vue-i18n/dist/vue-i18n.mjs
+
+/*!
+  * vue-i18n v9.9.1
+  * (c) 2024 kazuya kawaguchi
+  * Released under the MIT License.
+  */
+
+
+
+
+
+/**
+ * Vue I18n Version
+ *
+ * @remarks
+ * Semver format. Same format as the package.json `version` field.
+ *
+ * @VueI18nGeneral
+ */
+const vue_i18n_VERSION = '9.9.1';
+/**
+ * This is only called in esm-bundler builds.
+ * istanbul-ignore-next
+ */
+function vue_i18n_initFeatureFlags() {
+  if (false) {}
+  if (false) {}
+  if (typeof __INTLIFY_JIT_COMPILATION__ !== 'boolean') {
+    getGlobalThis().__INTLIFY_JIT_COMPILATION__ = false;
+  }
+  if (typeof __INTLIFY_DROP_MESSAGE_COMPILER__ !== 'boolean') {
+    getGlobalThis().__INTLIFY_DROP_MESSAGE_COMPILER__ = false;
+  }
+  if (false) {}
+}
+const code$1 = CoreWarnCodes.__EXTEND_POINT__;
+const inc$1 = incrementer(code$1);
+const I18nWarnCodes = {
+  FALLBACK_TO_ROOT: code$1,
+  NOT_SUPPORTED_PRESERVE: inc$1(),
+  NOT_SUPPORTED_FORMATTER: inc$1(),
+  NOT_SUPPORTED_PRESERVE_DIRECTIVE: inc$1(),
+  NOT_SUPPORTED_GET_CHOICE_INDEX: inc$1(),
+  COMPONENT_NAME_LEGACY_COMPATIBLE: inc$1(),
+  NOT_FOUND_PARENT_SCOPE: inc$1(),
+  IGNORE_OBJ_FLATTEN: inc$1(),
+  NOTICE_DROP_ALLOW_COMPOSITION: inc$1() // 17
+};
+const vue_i18n_warnMessages = {
+  [I18nWarnCodes.FALLBACK_TO_ROOT]: `Fall back to {type} '{key}' with root locale.`,
+  [I18nWarnCodes.NOT_SUPPORTED_PRESERVE]: `Not supported 'preserve'.`,
+  [I18nWarnCodes.NOT_SUPPORTED_FORMATTER]: `Not supported 'formatter'.`,
+  [I18nWarnCodes.NOT_SUPPORTED_PRESERVE_DIRECTIVE]: `Not supported 'preserveDirectiveContent'.`,
+  [I18nWarnCodes.NOT_SUPPORTED_GET_CHOICE_INDEX]: `Not supported 'getChoiceIndex'.`,
+  [I18nWarnCodes.COMPONENT_NAME_LEGACY_COMPATIBLE]: `Component name legacy compatible: '{name}' -> 'i18n'`,
+  [I18nWarnCodes.NOT_FOUND_PARENT_SCOPE]: `Not found parent scope. use the global scope.`,
+  [I18nWarnCodes.IGNORE_OBJ_FLATTEN]: `Ignore object flatten: '{key}' key has an string value`,
+  [I18nWarnCodes.NOTICE_DROP_ALLOW_COMPOSITION]: `'allowComposition' option will be dropped in the next major version. For more information, please see 👉 https://tinyurl.com/2p97mcze`
+};
+function vue_i18n_getWarnMessage(code, ...args) {
+  return format(vue_i18n_warnMessages[code], ...args);
+}
+const vue_i18n_code = CoreErrorCodes.__EXTEND_POINT__;
+const vue_i18n_inc = incrementer(vue_i18n_code);
+const I18nErrorCodes = {
+  // composer module errors
+  UNEXPECTED_RETURN_TYPE: vue_i18n_code,
+  // legacy module errors
+  INVALID_ARGUMENT: vue_i18n_inc(),
+  // i18n module errors
+  MUST_BE_CALL_SETUP_TOP: vue_i18n_inc(),
+  NOT_INSTALLED: vue_i18n_inc(),
+  NOT_AVAILABLE_IN_LEGACY_MODE: vue_i18n_inc(),
+  // directive module errors
+  REQUIRED_VALUE: vue_i18n_inc(),
+  INVALID_VALUE: vue_i18n_inc(),
+  // vue-devtools errors
+  CANNOT_SETUP_VUE_DEVTOOLS_PLUGIN: vue_i18n_inc(),
+  NOT_INSTALLED_WITH_PROVIDE: vue_i18n_inc(),
+  // unexpected error
+  UNEXPECTED_ERROR: vue_i18n_inc(),
+  // not compatible legacy vue-i18n constructor
+  NOT_COMPATIBLE_LEGACY_VUE_I18N: vue_i18n_inc(),
+  // bridge support vue 2.x only
+  BRIDGE_SUPPORT_VUE_2_ONLY: vue_i18n_inc(),
+  // need to define `i18n` option in `allowComposition: true` and `useScope: 'local' at `useI18n``
+  MUST_DEFINE_I18N_OPTION_IN_ALLOW_COMPOSITION: vue_i18n_inc(),
+  // Not available Compostion API in Legacy API mode. Please make sure that the legacy API mode is working properly
+  NOT_AVAILABLE_COMPOSITION_IN_LEGACY: vue_i18n_inc(),
+  // for enhancement
+  __EXTEND_POINT__: vue_i18n_inc() // 40
+};
+function createI18nError(code, ...args) {
+  return createCompileError(code, null,  false ? 0 : undefined);
+}
+const vue_i18n_errorMessages = {
+  [I18nErrorCodes.UNEXPECTED_RETURN_TYPE]: 'Unexpected return type in composer',
+  [I18nErrorCodes.INVALID_ARGUMENT]: 'Invalid argument',
+  [I18nErrorCodes.MUST_BE_CALL_SETUP_TOP]: 'Must be called at the top of a `setup` function',
+  [I18nErrorCodes.NOT_INSTALLED]: 'Need to install with `app.use` function',
+  [I18nErrorCodes.UNEXPECTED_ERROR]: 'Unexpected error',
+  [I18nErrorCodes.NOT_AVAILABLE_IN_LEGACY_MODE]: 'Not available in legacy mode',
+  [I18nErrorCodes.REQUIRED_VALUE]: `Required in value: {0}`,
+  [I18nErrorCodes.INVALID_VALUE]: `Invalid value`,
+  [I18nErrorCodes.CANNOT_SETUP_VUE_DEVTOOLS_PLUGIN]: `Cannot setup vue-devtools plugin`,
+  [I18nErrorCodes.NOT_INSTALLED_WITH_PROVIDE]: 'Need to install with `provide` function',
+  [I18nErrorCodes.NOT_COMPATIBLE_LEGACY_VUE_I18N]: 'Not compatible legacy VueI18n.',
+  [I18nErrorCodes.BRIDGE_SUPPORT_VUE_2_ONLY]: 'vue-i18n-bridge support Vue 2.x only',
+  [I18nErrorCodes.MUST_DEFINE_I18N_OPTION_IN_ALLOW_COMPOSITION]: 'Must define ‘i18n’ option or custom block in Composition API with using local scope in Legacy API mode',
+  [I18nErrorCodes.NOT_AVAILABLE_COMPOSITION_IN_LEGACY]: 'Not available Compostion API in Legacy API mode. Please make sure that the legacy API mode is working properly'
+};
+const TranslateVNodeSymbol = /* #__PURE__*/shared_makeSymbol('__translateVNode');
+const DatetimePartsSymbol = /* #__PURE__*/shared_makeSymbol('__datetimeParts');
+const NumberPartsSymbol = /* #__PURE__*/shared_makeSymbol('__numberParts');
+const EnableEmitter = /* #__PURE__*/(/* unused pure expression or super */ null && (makeSymbol('__enableEmitter')));
+const DisableEmitter = /* #__PURE__*/(/* unused pure expression or super */ null && (makeSymbol('__disableEmitter')));
+const SetPluralRulesSymbol = shared_makeSymbol('__setPluralRules');
+shared_makeSymbol('__intlifyMeta');
+const InejctWithOptionSymbol = /* #__PURE__*/shared_makeSymbol('__injectWithOption');
+const DisposeSymbol = /* #__PURE__*/shared_makeSymbol('__dispose');
+const __VUE_I18N_BRIDGE__ = '__VUE_I18N_BRIDGE__';
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/**
+ * Transform flat json in obj to normal json in obj
+ */
+function handleFlatJson(obj) {
+  // check obj
+  if (!shared_isObject(obj)) {
+    return obj;
+  }
+  for (const key in obj) {
+    // check key
+    if (!hasOwn(obj, key)) {
+      continue;
+    }
+    // handle for normal json
+    if (!key.includes('.')) {
+      // recursive process value if value is also a object
+      if (shared_isObject(obj[key])) {
+        handleFlatJson(obj[key]);
+      }
+    }
+    // handle for flat json, transform to normal json
+    else {
+      // go to the last object
+      const subKeys = key.split('.');
+      const lastIndex = subKeys.length - 1;
+      let currentObj = obj;
+      let hasStringValue = false;
+      for (let i = 0; i < lastIndex; i++) {
+        if (!(subKeys[i] in currentObj)) {
+          currentObj[subKeys[i]] = {};
+        }
+        if (!shared_isObject(currentObj[subKeys[i]])) {
+           false && 0;
+          hasStringValue = true;
+          break;
+        }
+        currentObj = currentObj[subKeys[i]];
+      }
+      // update last object value, delete old property
+      if (!hasStringValue) {
+        currentObj[subKeys[lastIndex]] = obj[key];
+        delete obj[key];
+      }
+      // recursive process value if value is also a object
+      if (shared_isObject(currentObj[subKeys[lastIndex]])) {
+        handleFlatJson(currentObj[subKeys[lastIndex]]);
+      }
+    }
+  }
+  return obj;
+}
+function getLocaleMessages(locale, options) {
+  const {
+    messages,
+    __i18n,
+    messageResolver,
+    flatJson
+  } = options;
+  // prettier-ignore
+  const ret = shared_isPlainObject(messages) ? messages : shared_isArray(__i18n) ? {} : {
+    [locale]: {}
+  };
+  // merge locale messages of i18n custom block
+  if (shared_isArray(__i18n)) {
+    __i18n.forEach(custom => {
+      if ('locale' in custom && 'resource' in custom) {
+        const {
+          locale,
+          resource
+        } = custom;
+        if (locale) {
+          ret[locale] = ret[locale] || {};
+          deepCopy(resource, ret[locale]);
+        } else {
+          deepCopy(resource, ret);
+        }
+      } else {
+        shared_isString(custom) && deepCopy(JSON.parse(custom), ret);
+      }
+    });
+  }
+  // handle messages for flat json
+  if (messageResolver == null && flatJson) {
+    for (const key in ret) {
+      if (hasOwn(ret, key)) {
+        handleFlatJson(ret[key]);
+      }
+    }
+  }
+  return ret;
+}
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function getComponentOptions(instance) {
+  return instance.type;
+}
+function adjustI18nResources(gl, options, componentOptions // eslint-disable-line @typescript-eslint/no-explicit-any
+) {
+  let messages = shared_isObject(options.messages) ? options.messages : {};
+  if ('__i18nGlobal' in componentOptions) {
+    messages = getLocaleMessages(gl.locale.value, {
+      messages,
+      __i18n: componentOptions.__i18nGlobal
+    });
+  }
+  // merge locale messages
+  const locales = Object.keys(messages);
+  if (locales.length) {
+    locales.forEach(locale => {
+      gl.mergeLocaleMessage(locale, messages[locale]);
+    });
+  }
+  {
+    // merge datetime formats
+    if (shared_isObject(options.datetimeFormats)) {
+      const locales = Object.keys(options.datetimeFormats);
+      if (locales.length) {
+        locales.forEach(locale => {
+          gl.mergeDateTimeFormat(locale, options.datetimeFormats[locale]);
+        });
+      }
+    }
+    // merge number formats
+    if (shared_isObject(options.numberFormats)) {
+      const locales = Object.keys(options.numberFormats);
+      if (locales.length) {
+        locales.forEach(locale => {
+          gl.mergeNumberFormat(locale, options.numberFormats[locale]);
+        });
+      }
+    }
+  }
+}
+function createTextNode(key) {
+  return (0,runtime_core_esm_bundler/* createVNode */.K2)(runtime_core_esm_bundler/* Text */.a, null, key, 0);
+}
+/* eslint-enable @typescript-eslint/no-explicit-any */
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+// extend VNode interface
+const DEVTOOLS_META = '__INTLIFY_META__';
+const NOOP_RETURN_ARRAY = () => [];
+const NOOP_RETURN_FALSE = () => false;
+let composerID = 0;
+function defineCoreMissingHandler(missing) {
+  return (ctx, locale, key, type) => {
+    return missing(locale, key, (0,runtime_core_esm_bundler/* getCurrentInstance */._S)() || undefined, type);
+  };
+}
+// for Intlify DevTools
+/* #__NO_SIDE_EFFECTS__ */
+const getMetaInfo = () => {
+  const instance = getCurrentInstance();
+  let meta = null; // eslint-disable-line @typescript-eslint/no-explicit-any
+  return instance && (meta = getComponentOptions(instance)[DEVTOOLS_META]) ? {
+    [DEVTOOLS_META]: meta
+  } // eslint-disable-line @typescript-eslint/no-explicit-any
+  : null;
+};
+/**
+ * Create composer interface factory
+ *
+ * @internal
+ */
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+function createComposer(options = {}, VueI18nLegacy) {
+  const {
+    __root,
+    __injectWithOption
+  } = options;
+  const _isGlobal = __root === undefined;
+  const flatJson = options.flatJson;
+  const _ref = inBrowser ? reactivity_esm_bundler/* ref */.IL : reactivity_esm_bundler/* shallowRef */.kl;
+  let _inheritLocale = shared_isBoolean(options.inheritLocale) ? options.inheritLocale : true;
+  const _locale = _ref(
+  // prettier-ignore
+  __root && _inheritLocale ? __root.locale.value : shared_isString(options.locale) ? options.locale : core_base_DEFAULT_LOCALE);
+  const _fallbackLocale = _ref(
+  // prettier-ignore
+  __root && _inheritLocale ? __root.fallbackLocale.value : shared_isString(options.fallbackLocale) || shared_isArray(options.fallbackLocale) || shared_isPlainObject(options.fallbackLocale) || options.fallbackLocale === false ? options.fallbackLocale : _locale.value);
+  const _messages = _ref(getLocaleMessages(_locale.value, options));
+  // prettier-ignore
+  const _datetimeFormats = _ref(shared_isPlainObject(options.datetimeFormats) ? options.datetimeFormats : {
+    [_locale.value]: {}
+  });
+  // prettier-ignore
+  const _numberFormats = _ref(shared_isPlainObject(options.numberFormats) ? options.numberFormats : {
+    [_locale.value]: {}
+  });
+  // warning suppress options
+  // prettier-ignore
+  let _missingWarn = __root ? __root.missingWarn : shared_isBoolean(options.missingWarn) || shared_isRegExp(options.missingWarn) ? options.missingWarn : true;
+  // prettier-ignore
+  let _fallbackWarn = __root ? __root.fallbackWarn : shared_isBoolean(options.fallbackWarn) || shared_isRegExp(options.fallbackWarn) ? options.fallbackWarn : true;
+  // prettier-ignore
+  let _fallbackRoot = __root ? __root.fallbackRoot : shared_isBoolean(options.fallbackRoot) ? options.fallbackRoot : true;
+  // configure fall back to root
+  let _fallbackFormat = !!options.fallbackFormat;
+  // runtime missing
+  let _missing = shared_isFunction(options.missing) ? options.missing : null;
+  let _runtimeMissing = shared_isFunction(options.missing) ? defineCoreMissingHandler(options.missing) : null;
+  // postTranslation handler
+  let _postTranslation = shared_isFunction(options.postTranslation) ? options.postTranslation : null;
+  // prettier-ignore
+  let _warnHtmlMessage = __root ? __root.warnHtmlMessage : shared_isBoolean(options.warnHtmlMessage) ? options.warnHtmlMessage : true;
+  let _escapeParameter = !!options.escapeParameter;
+  // custom linked modifiers
+  // prettier-ignore
+  const _modifiers = __root ? __root.modifiers : shared_isPlainObject(options.modifiers) ? options.modifiers : {};
+  // pluralRules
+  let _pluralRules = options.pluralRules || __root && __root.pluralRules;
+  // runtime context
+  // eslint-disable-next-line prefer-const
+  let _context;
+  const getCoreContext = () => {
+    _isGlobal && setFallbackContext(null);
+    const ctxOptions = {
+      version: vue_i18n_VERSION,
+      locale: _locale.value,
+      fallbackLocale: _fallbackLocale.value,
+      messages: _messages.value,
+      modifiers: _modifiers,
+      pluralRules: _pluralRules,
+      missing: _runtimeMissing === null ? undefined : _runtimeMissing,
+      missingWarn: _missingWarn,
+      fallbackWarn: _fallbackWarn,
+      fallbackFormat: _fallbackFormat,
+      unresolving: true,
+      postTranslation: _postTranslation === null ? undefined : _postTranslation,
+      warnHtmlMessage: _warnHtmlMessage,
+      escapeParameter: _escapeParameter,
+      messageResolver: options.messageResolver,
+      messageCompiler: options.messageCompiler,
+      __meta: {
+        framework: 'vue'
+      }
+    };
+    {
+      ctxOptions.datetimeFormats = _datetimeFormats.value;
+      ctxOptions.numberFormats = _numberFormats.value;
+      ctxOptions.__datetimeFormatters = shared_isPlainObject(_context) ? _context.__datetimeFormatters : undefined;
+      ctxOptions.__numberFormatters = shared_isPlainObject(_context) ? _context.__numberFormatters : undefined;
+    }
+    if (false) {}
+    const ctx = createCoreContext(ctxOptions);
+    _isGlobal && setFallbackContext(ctx);
+    return ctx;
+  };
+  _context = getCoreContext();
+  updateFallbackLocale(_context, _locale.value, _fallbackLocale.value);
+  // track reactivity
+  function trackReactivityValues() {
+    return [_locale.value, _fallbackLocale.value, _messages.value, _datetimeFormats.value, _numberFormats.value];
+  }
+  // locale
+  const locale = (0,runtime_core_esm_bundler/* computed */.S6)({
+    get: () => _locale.value,
+    set: val => {
+      _locale.value = val;
+      _context.locale = _locale.value;
+    }
+  });
+  // fallbackLocale
+  const fallbackLocale = (0,runtime_core_esm_bundler/* computed */.S6)({
+    get: () => _fallbackLocale.value,
+    set: val => {
+      _fallbackLocale.value = val;
+      _context.fallbackLocale = _fallbackLocale.value;
+      updateFallbackLocale(_context, _locale.value, val);
+    }
+  });
+  // messages
+  const messages = (0,runtime_core_esm_bundler/* computed */.S6)(() => _messages.value);
+  // datetimeFormats
+  const datetimeFormats = /* #__PURE__*/(0,runtime_core_esm_bundler/* computed */.S6)(() => _datetimeFormats.value);
+  // numberFormats
+  const numberFormats = /* #__PURE__*/(0,runtime_core_esm_bundler/* computed */.S6)(() => _numberFormats.value);
+  // getPostTranslationHandler
+  function getPostTranslationHandler() {
+    return shared_isFunction(_postTranslation) ? _postTranslation : null;
+  }
+  // setPostTranslationHandler
+  function setPostTranslationHandler(handler) {
+    _postTranslation = handler;
+    _context.postTranslation = handler;
+  }
+  // getMissingHandler
+  function getMissingHandler() {
+    return _missing;
+  }
+  // setMissingHandler
+  function setMissingHandler(handler) {
+    if (handler !== null) {
+      _runtimeMissing = defineCoreMissingHandler(handler);
+    }
+    _missing = handler;
+    _context.missing = _runtimeMissing;
+  }
+  function isResolvedTranslateMessage(type, arg // eslint-disable-line @typescript-eslint/no-explicit-any
+  ) {
+    return type !== 'translate' || !arg.resolvedMessage;
+  }
+  const wrapWithDeps = (fn, argumentParser, warnType, fallbackSuccess, fallbackFail, successCondition) => {
+    trackReactivityValues(); // track reactive dependency
+    // NOTE: experimental !!
+    let ret;
+    try {
+      if (false) {}
+      if (!_isGlobal) {
+        _context.fallbackContext = __root ? getFallbackContext() : undefined;
+      }
+      ret = fn(_context);
+    } finally {
+      if (false) {}
+      if (!_isGlobal) {
+        _context.fallbackContext = undefined;
+      }
+    }
+    if (warnType !== 'translate exists' &&
+    // for not `te` (e.g `t`)
+    shared_isNumber(ret) && ret === NOT_REOSLVED || warnType === 'translate exists' && !ret // for `te`
+    ) {
+      const [key, arg2] = argumentParser();
+      if (false) {}
+      return __root && _fallbackRoot ? fallbackSuccess(__root) : fallbackFail(key);
+    } else if (successCondition(ret)) {
+      return ret;
+    } else {
+      /* istanbul ignore next */
+      throw createI18nError(I18nErrorCodes.UNEXPECTED_RETURN_TYPE);
+    }
+  };
+  // t
+  function t(...args) {
+    return wrapWithDeps(context => Reflect.apply(translate, null, [context, ...args]), () => parseTranslateArgs(...args), 'translate', root => Reflect.apply(root.t, root, [...args]), key => key, val => shared_isString(val));
+  }
+  // rt
+  function rt(...args) {
+    const [arg1, arg2, arg3] = args;
+    if (arg3 && !shared_isObject(arg3)) {
+      throw createI18nError(I18nErrorCodes.INVALID_ARGUMENT);
+    }
+    return t(...[arg1, arg2, shared_assign({
+      resolvedMessage: true
+    }, arg3 || {})]);
+  }
+  // d
+  function d(...args) {
+    return wrapWithDeps(context => Reflect.apply(datetime, null, [context, ...args]), () => parseDateTimeArgs(...args), 'datetime format', root => Reflect.apply(root.d, root, [...args]), () => MISSING_RESOLVE_VALUE, val => shared_isString(val));
+  }
+  // n
+  function n(...args) {
+    return wrapWithDeps(context => Reflect.apply(number, null, [context, ...args]), () => parseNumberArgs(...args), 'number format', root => Reflect.apply(root.n, root, [...args]), () => MISSING_RESOLVE_VALUE, val => shared_isString(val));
+  }
+  // for custom processor
+  function normalize(values) {
+    return values.map(val => shared_isString(val) || shared_isNumber(val) || shared_isBoolean(val) ? createTextNode(String(val)) : val);
+  }
+  const interpolate = val => val;
+  const processor = {
+    normalize,
+    interpolate,
+    type: 'vnode'
+  };
+  // translateVNode, using for `i18n-t` component
+  function translateVNode(...args) {
+    return wrapWithDeps(context => {
+      let ret;
+      const _context = context;
+      try {
+        _context.processor = processor;
+        ret = Reflect.apply(translate, null, [_context, ...args]);
+      } finally {
+        _context.processor = null;
+      }
+      return ret;
+    }, () => parseTranslateArgs(...args), 'translate',
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    root => root[TranslateVNodeSymbol](...args), key => [createTextNode(key)], val => shared_isArray(val));
+  }
+  // numberParts, using for `i18n-n` component
+  function numberParts(...args) {
+    return wrapWithDeps(context => Reflect.apply(number, null, [context, ...args]), () => parseNumberArgs(...args), 'number format',
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    root => root[NumberPartsSymbol](...args), NOOP_RETURN_ARRAY, val => shared_isString(val) || shared_isArray(val));
+  }
+  // datetimeParts, using for `i18n-d` component
+  function datetimeParts(...args) {
+    return wrapWithDeps(context => Reflect.apply(datetime, null, [context, ...args]), () => parseDateTimeArgs(...args), 'datetime format',
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    root => root[DatetimePartsSymbol](...args), NOOP_RETURN_ARRAY, val => shared_isString(val) || shared_isArray(val));
+  }
+  function setPluralRules(rules) {
+    _pluralRules = rules;
+    _context.pluralRules = _pluralRules;
+  }
+  // te
+  function te(key, locale) {
+    return wrapWithDeps(() => {
+      if (!key) {
+        return false;
+      }
+      const targetLocale = shared_isString(locale) ? locale : _locale.value;
+      const message = getLocaleMessage(targetLocale);
+      const resolved = _context.messageResolver(message, key);
+      return core_base_isMessageAST(resolved) || isMessageFunction(resolved) || shared_isString(resolved);
+    }, () => [key], 'translate exists', root => {
+      return Reflect.apply(root.te, root, [key, locale]);
+    }, NOOP_RETURN_FALSE, val => shared_isBoolean(val));
+  }
+  function resolveMessages(key) {
+    let messages = null;
+    const locales = fallbackWithLocaleChain(_context, _fallbackLocale.value, _locale.value);
+    for (let i = 0; i < locales.length; i++) {
+      const targetLocaleMessages = _messages.value[locales[i]] || {};
+      const messageValue = _context.messageResolver(targetLocaleMessages, key);
+      if (messageValue != null) {
+        messages = messageValue;
+        break;
+      }
+    }
+    return messages;
+  }
+  // tm
+  function tm(key) {
+    const messages = resolveMessages(key);
+    // prettier-ignore
+    return messages != null ? messages : __root ? __root.tm(key) || {} : {};
+  }
+  // getLocaleMessage
+  function getLocaleMessage(locale) {
+    return _messages.value[locale] || {};
+  }
+  // setLocaleMessage
+  function setLocaleMessage(locale, message) {
+    if (flatJson) {
+      const _message = {
+        [locale]: message
+      };
+      for (const key in _message) {
+        if (hasOwn(_message, key)) {
+          handleFlatJson(_message[key]);
+        }
+      }
+      message = _message[locale];
+    }
+    _messages.value[locale] = message;
+    _context.messages = _messages.value;
+  }
+  // mergeLocaleMessage
+  function mergeLocaleMessage(locale, message) {
+    _messages.value[locale] = _messages.value[locale] || {};
+    const _message = {
+      [locale]: message
+    };
+    if (flatJson) {
+      for (const key in _message) {
+        if (hasOwn(_message, key)) {
+          handleFlatJson(_message[key]);
+        }
+      }
+    }
+    message = _message[locale];
+    deepCopy(message, _messages.value[locale]);
+    _context.messages = _messages.value;
+  }
+  // getDateTimeFormat
+  function getDateTimeFormat(locale) {
+    return _datetimeFormats.value[locale] || {};
+  }
+  // setDateTimeFormat
+  function setDateTimeFormat(locale, format) {
+    _datetimeFormats.value[locale] = format;
+    _context.datetimeFormats = _datetimeFormats.value;
+    clearDateTimeFormat(_context, locale, format);
+  }
+  // mergeDateTimeFormat
+  function mergeDateTimeFormat(locale, format) {
+    _datetimeFormats.value[locale] = shared_assign(_datetimeFormats.value[locale] || {}, format);
+    _context.datetimeFormats = _datetimeFormats.value;
+    clearDateTimeFormat(_context, locale, format);
+  }
+  // getNumberFormat
+  function getNumberFormat(locale) {
+    return _numberFormats.value[locale] || {};
+  }
+  // setNumberFormat
+  function setNumberFormat(locale, format) {
+    _numberFormats.value[locale] = format;
+    _context.numberFormats = _numberFormats.value;
+    clearNumberFormat(_context, locale, format);
+  }
+  // mergeNumberFormat
+  function mergeNumberFormat(locale, format) {
+    _numberFormats.value[locale] = shared_assign(_numberFormats.value[locale] || {}, format);
+    _context.numberFormats = _numberFormats.value;
+    clearNumberFormat(_context, locale, format);
+  }
+  // for debug
+  composerID++;
+  // watch root locale & fallbackLocale
+  if (__root && inBrowser) {
+    (0,runtime_core_esm_bundler/* watch */.Kg)(__root.locale, val => {
+      if (_inheritLocale) {
+        _locale.value = val;
+        _context.locale = val;
+        updateFallbackLocale(_context, _locale.value, _fallbackLocale.value);
+      }
+    });
+    (0,runtime_core_esm_bundler/* watch */.Kg)(__root.fallbackLocale, val => {
+      if (_inheritLocale) {
+        _fallbackLocale.value = val;
+        _context.fallbackLocale = val;
+        updateFallbackLocale(_context, _locale.value, _fallbackLocale.value);
+      }
+    });
+  }
+  // define basic composition API!
+  const composer = {
+    id: composerID,
+    locale,
+    fallbackLocale,
+    get inheritLocale() {
+      return _inheritLocale;
+    },
+    set inheritLocale(val) {
+      _inheritLocale = val;
+      if (val && __root) {
+        _locale.value = __root.locale.value;
+        _fallbackLocale.value = __root.fallbackLocale.value;
+        updateFallbackLocale(_context, _locale.value, _fallbackLocale.value);
+      }
+    },
+    get availableLocales() {
+      return Object.keys(_messages.value).sort();
+    },
+    messages,
+    get modifiers() {
+      return _modifiers;
+    },
+    get pluralRules() {
+      return _pluralRules || {};
+    },
+    get isGlobal() {
+      return _isGlobal;
+    },
+    get missingWarn() {
+      return _missingWarn;
+    },
+    set missingWarn(val) {
+      _missingWarn = val;
+      _context.missingWarn = _missingWarn;
+    },
+    get fallbackWarn() {
+      return _fallbackWarn;
+    },
+    set fallbackWarn(val) {
+      _fallbackWarn = val;
+      _context.fallbackWarn = _fallbackWarn;
+    },
+    get fallbackRoot() {
+      return _fallbackRoot;
+    },
+    set fallbackRoot(val) {
+      _fallbackRoot = val;
+    },
+    get fallbackFormat() {
+      return _fallbackFormat;
+    },
+    set fallbackFormat(val) {
+      _fallbackFormat = val;
+      _context.fallbackFormat = _fallbackFormat;
+    },
+    get warnHtmlMessage() {
+      return _warnHtmlMessage;
+    },
+    set warnHtmlMessage(val) {
+      _warnHtmlMessage = val;
+      _context.warnHtmlMessage = val;
+    },
+    get escapeParameter() {
+      return _escapeParameter;
+    },
+    set escapeParameter(val) {
+      _escapeParameter = val;
+      _context.escapeParameter = val;
+    },
+    t,
+    getLocaleMessage,
+    setLocaleMessage,
+    mergeLocaleMessage,
+    getPostTranslationHandler,
+    setPostTranslationHandler,
+    getMissingHandler,
+    setMissingHandler,
+    [SetPluralRulesSymbol]: setPluralRules
+  };
+  {
+    composer.datetimeFormats = datetimeFormats;
+    composer.numberFormats = numberFormats;
+    composer.rt = rt;
+    composer.te = te;
+    composer.tm = tm;
+    composer.d = d;
+    composer.n = n;
+    composer.getDateTimeFormat = getDateTimeFormat;
+    composer.setDateTimeFormat = setDateTimeFormat;
+    composer.mergeDateTimeFormat = mergeDateTimeFormat;
+    composer.getNumberFormat = getNumberFormat;
+    composer.setNumberFormat = setNumberFormat;
+    composer.mergeNumberFormat = mergeNumberFormat;
+    composer[InejctWithOptionSymbol] = __injectWithOption;
+    composer[TranslateVNodeSymbol] = translateVNode;
+    composer[DatetimePartsSymbol] = datetimeParts;
+    composer[NumberPartsSymbol] = numberParts;
+  }
+  // for vue-devtools timeline event
+  if (false) {}
+  return composer;
+}
+/* eslint-enable @typescript-eslint/no-explicit-any */
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/**
+ * Convert to I18n Composer Options from VueI18n Options
+ *
+ * @internal
+ */
+function convertComposerOptions(options) {
+  const locale = isString(options.locale) ? options.locale : DEFAULT_LOCALE;
+  const fallbackLocale = isString(options.fallbackLocale) || isArray(options.fallbackLocale) || isPlainObject(options.fallbackLocale) || options.fallbackLocale === false ? options.fallbackLocale : locale;
+  const missing = isFunction(options.missing) ? options.missing : undefined;
+  const missingWarn = isBoolean(options.silentTranslationWarn) || isRegExp(options.silentTranslationWarn) ? !options.silentTranslationWarn : true;
+  const fallbackWarn = isBoolean(options.silentFallbackWarn) || isRegExp(options.silentFallbackWarn) ? !options.silentFallbackWarn : true;
+  const fallbackRoot = isBoolean(options.fallbackRoot) ? options.fallbackRoot : true;
+  const fallbackFormat = !!options.formatFallbackMessages;
+  const modifiers = isPlainObject(options.modifiers) ? options.modifiers : {};
+  const pluralizationRules = options.pluralizationRules;
+  const postTranslation = isFunction(options.postTranslation) ? options.postTranslation : undefined;
+  const warnHtmlMessage = isString(options.warnHtmlInMessage) ? options.warnHtmlInMessage !== 'off' : true;
+  const escapeParameter = !!options.escapeParameterHtml;
+  const inheritLocale = isBoolean(options.sync) ? options.sync : true;
+  if (false) {}
+  if (false) {}
+  let messages = options.messages;
+  if (isPlainObject(options.sharedMessages)) {
+    const sharedMessages = options.sharedMessages;
+    const locales = Object.keys(sharedMessages);
+    messages = locales.reduce((messages, locale) => {
+      const message = messages[locale] || (messages[locale] = {});
+      assign(message, sharedMessages[locale]);
+      return messages;
+    }, messages || {});
+  }
+  const {
+    __i18n,
+    __root,
+    __injectWithOption
+  } = options;
+  const datetimeFormats = options.datetimeFormats;
+  const numberFormats = options.numberFormats;
+  const flatJson = options.flatJson;
+  return {
+    locale,
+    fallbackLocale,
+    messages,
+    flatJson,
+    datetimeFormats,
+    numberFormats,
+    missing,
+    missingWarn,
+    fallbackWarn,
+    fallbackRoot,
+    fallbackFormat,
+    modifiers,
+    pluralRules: pluralizationRules,
+    postTranslation,
+    warnHtmlMessage,
+    escapeParameter,
+    messageResolver: options.messageResolver,
+    inheritLocale,
+    __i18n,
+    __root,
+    __injectWithOption
+  };
+}
+/**
+ * create VueI18n interface factory
+ *
+ * @internal
+ */
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+function createVueI18n(options = {}, VueI18nLegacy) {
+  {
+    const composer = createComposer(convertComposerOptions(options));
+    const {
+      __extender
+    } = options;
+    // defines VueI18n
+    const vueI18n = {
+      // id
+      id: composer.id,
+      // locale
+      get locale() {
+        return composer.locale.value;
+      },
+      set locale(val) {
+        composer.locale.value = val;
+      },
+      // fallbackLocale
+      get fallbackLocale() {
+        return composer.fallbackLocale.value;
+      },
+      set fallbackLocale(val) {
+        composer.fallbackLocale.value = val;
+      },
+      // messages
+      get messages() {
+        return composer.messages.value;
+      },
+      // datetimeFormats
+      get datetimeFormats() {
+        return composer.datetimeFormats.value;
+      },
+      // numberFormats
+      get numberFormats() {
+        return composer.numberFormats.value;
+      },
+      // availableLocales
+      get availableLocales() {
+        return composer.availableLocales;
+      },
+      // formatter
+      get formatter() {
+         false && 0;
+        // dummy
+        return {
+          interpolate() {
+            return [];
+          }
+        };
+      },
+      set formatter(val) {
+         false && 0;
+      },
+      // missing
+      get missing() {
+        return composer.getMissingHandler();
+      },
+      set missing(handler) {
+        composer.setMissingHandler(handler);
+      },
+      // silentTranslationWarn
+      get silentTranslationWarn() {
+        return isBoolean(composer.missingWarn) ? !composer.missingWarn : composer.missingWarn;
+      },
+      set silentTranslationWarn(val) {
+        composer.missingWarn = isBoolean(val) ? !val : val;
+      },
+      // silentFallbackWarn
+      get silentFallbackWarn() {
+        return isBoolean(composer.fallbackWarn) ? !composer.fallbackWarn : composer.fallbackWarn;
+      },
+      set silentFallbackWarn(val) {
+        composer.fallbackWarn = isBoolean(val) ? !val : val;
+      },
+      // modifiers
+      get modifiers() {
+        return composer.modifiers;
+      },
+      // formatFallbackMessages
+      get formatFallbackMessages() {
+        return composer.fallbackFormat;
+      },
+      set formatFallbackMessages(val) {
+        composer.fallbackFormat = val;
+      },
+      // postTranslation
+      get postTranslation() {
+        return composer.getPostTranslationHandler();
+      },
+      set postTranslation(handler) {
+        composer.setPostTranslationHandler(handler);
+      },
+      // sync
+      get sync() {
+        return composer.inheritLocale;
+      },
+      set sync(val) {
+        composer.inheritLocale = val;
+      },
+      // warnInHtmlMessage
+      get warnHtmlInMessage() {
+        return composer.warnHtmlMessage ? 'warn' : 'off';
+      },
+      set warnHtmlInMessage(val) {
+        composer.warnHtmlMessage = val !== 'off';
+      },
+      // escapeParameterHtml
+      get escapeParameterHtml() {
+        return composer.escapeParameter;
+      },
+      set escapeParameterHtml(val) {
+        composer.escapeParameter = val;
+      },
+      // preserveDirectiveContent
+      get preserveDirectiveContent() {
+         false && 0;
+        return true;
+      },
+      set preserveDirectiveContent(val) {
+         false && 0;
+      },
+      // pluralizationRules
+      get pluralizationRules() {
+        return composer.pluralRules || {};
+      },
+      // for internal
+      __composer: composer,
+      // t
+      t(...args) {
+        const [arg1, arg2, arg3] = args;
+        const options = {};
+        let list = null;
+        let named = null;
+        if (!isString(arg1)) {
+          throw createI18nError(I18nErrorCodes.INVALID_ARGUMENT);
+        }
+        const key = arg1;
+        if (isString(arg2)) {
+          options.locale = arg2;
+        } else if (isArray(arg2)) {
+          list = arg2;
+        } else if (isPlainObject(arg2)) {
+          named = arg2;
+        }
+        if (isArray(arg3)) {
+          list = arg3;
+        } else if (isPlainObject(arg3)) {
+          named = arg3;
+        }
+        // return composer.t(key, (list || named || {}) as any, options)
+        return Reflect.apply(composer.t, composer, [key, list || named || {}, options]);
+      },
+      rt(...args) {
+        return Reflect.apply(composer.rt, composer, [...args]);
+      },
+      // tc
+      tc(...args) {
+        const [arg1, arg2, arg3] = args;
+        const options = {
+          plural: 1
+        };
+        let list = null;
+        let named = null;
+        if (!isString(arg1)) {
+          throw createI18nError(I18nErrorCodes.INVALID_ARGUMENT);
+        }
+        const key = arg1;
+        if (isString(arg2)) {
+          options.locale = arg2;
+        } else if (isNumber(arg2)) {
+          options.plural = arg2;
+        } else if (isArray(arg2)) {
+          list = arg2;
+        } else if (isPlainObject(arg2)) {
+          named = arg2;
+        }
+        if (isString(arg3)) {
+          options.locale = arg3;
+        } else if (isArray(arg3)) {
+          list = arg3;
+        } else if (isPlainObject(arg3)) {
+          named = arg3;
+        }
+        // return composer.t(key, (list || named || {}) as any, options)
+        return Reflect.apply(composer.t, composer, [key, list || named || {}, options]);
+      },
+      // te
+      te(key, locale) {
+        return composer.te(key, locale);
+      },
+      // tm
+      tm(key) {
+        return composer.tm(key);
+      },
+      // getLocaleMessage
+      getLocaleMessage(locale) {
+        return composer.getLocaleMessage(locale);
+      },
+      // setLocaleMessage
+      setLocaleMessage(locale, message) {
+        composer.setLocaleMessage(locale, message);
+      },
+      // mergeLocaleMessage
+      mergeLocaleMessage(locale, message) {
+        composer.mergeLocaleMessage(locale, message);
+      },
+      // d
+      d(...args) {
+        return Reflect.apply(composer.d, composer, [...args]);
+      },
+      // getDateTimeFormat
+      getDateTimeFormat(locale) {
+        return composer.getDateTimeFormat(locale);
+      },
+      // setDateTimeFormat
+      setDateTimeFormat(locale, format) {
+        composer.setDateTimeFormat(locale, format);
+      },
+      // mergeDateTimeFormat
+      mergeDateTimeFormat(locale, format) {
+        composer.mergeDateTimeFormat(locale, format);
+      },
+      // n
+      n(...args) {
+        return Reflect.apply(composer.n, composer, [...args]);
+      },
+      // getNumberFormat
+      getNumberFormat(locale) {
+        return composer.getNumberFormat(locale);
+      },
+      // setNumberFormat
+      setNumberFormat(locale, format) {
+        composer.setNumberFormat(locale, format);
+      },
+      // mergeNumberFormat
+      mergeNumberFormat(locale, format) {
+        composer.mergeNumberFormat(locale, format);
+      },
+      // getChoiceIndex
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      getChoiceIndex(choice, choicesLength) {
+         false && 0;
+        return -1;
+      }
+    };
+    vueI18n.__extender = __extender;
+    // for vue-devtools timeline event
+    if (false) {}
+    return vueI18n;
+  }
+}
+/* eslint-enable @typescript-eslint/no-explicit-any */
+
+const baseFormatProps = {
+  tag: {
+    type: [String, Object]
+  },
+  locale: {
+    type: String
+  },
+  scope: {
+    type: String,
+    // NOTE: avoid https://github.com/microsoft/rushstack/issues/1050
+    validator: (val /* ComponentI18nScope */) => val === 'parent' || val === 'global',
+    default: 'parent' /* ComponentI18nScope */
+  },
+  i18n: {
+    type: Object
+  }
+};
+function getInterpolateArg(
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+{
+  slots
+},
+// SetupContext,
+keys) {
+  if (keys.length === 1 && keys[0] === 'default') {
+    // default slot with list
+    const ret = slots.default ? slots.default() : [];
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return ret.reduce((slot, current) => {
+      return [...slot,
+      // prettier-ignore
+      ...(current.type === runtime_core_esm_bundler/* Fragment */.ae ? current.children : [current])];
+    }, []);
+  } else {
+    // named slots
+    return keys.reduce((arg, key) => {
+      const slot = slots[key];
+      if (slot) {
+        arg[key] = slot();
+      }
+      return arg;
+    }, {});
+  }
+}
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function getFragmentableTag(tag) {
+  return runtime_core_esm_bundler/* Fragment */.ae;
+}
+const TranslationImpl = /*#__PURE__*/(0,runtime_core_esm_bundler/* defineComponent */._M)({
+  /* eslint-disable */
+  name: 'i18n-t',
+  props: shared_assign({
+    keypath: {
+      type: String,
+      required: true
+    },
+    plural: {
+      type: [Number, String],
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      validator: val => shared_isNumber(val) || !isNaN(val)
+    }
+  }, baseFormatProps),
+  /* eslint-enable */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  setup(props, context) {
+    const {
+      slots,
+      attrs
+    } = context;
+    // NOTE: avoid https://github.com/microsoft/rushstack/issues/1050
+    const i18n = props.i18n || useI18n({
+      useScope: props.scope,
+      __useComponent: true
+    });
+    return () => {
+      const keys = Object.keys(slots).filter(key => key !== '_');
+      const options = {};
+      if (props.locale) {
+        options.locale = props.locale;
+      }
+      if (props.plural !== undefined) {
+        options.plural = shared_isString(props.plural) ? +props.plural : props.plural;
+      }
+      const arg = getInterpolateArg(context, keys);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const children = i18n[TranslateVNodeSymbol](props.keypath, arg, options);
+      const assignedAttrs = shared_assign({}, attrs);
+      const tag = shared_isString(props.tag) || shared_isObject(props.tag) ? props.tag : getFragmentableTag();
+      return (0,runtime_core_esm_bundler.h)(tag, assignedAttrs, children);
+    };
+  }
+});
+/**
+ * export the public type for h/tsx inference
+ * also to avoid inline import() in generated d.ts files
+ */
+/**
+ * Translation Component
+ *
+ * @remarks
+ * See the following items for property about details
+ *
+ * @VueI18nSee [TranslationProps](component#translationprops)
+ * @VueI18nSee [BaseFormatProps](component#baseformatprops)
+ * @VueI18nSee [Component Interpolation](../guide/advanced/component)
+ *
+ * @example
+ * ```html
+ * <div id="app">
+ *   <!-- ... -->
+ *   <i18n keypath="term" tag="label" for="tos">
+ *     <a :href="url" target="_blank">{{ $t('tos') }}</a>
+ *   </i18n>
+ *   <!-- ... -->
+ * </div>
+ * ```
+ * ```js
+ * import { createApp } from 'vue'
+ * import { createI18n } from 'vue-i18n'
+ *
+ * const messages = {
+ *   en: {
+ *     tos: 'Term of Service',
+ *     term: 'I accept xxx {0}.'
+ *   },
+ *   ja: {
+ *     tos: '利用規約',
+ *     term: '私は xxx の{0}に同意します。'
+ *   }
+ * }
+ *
+ * const i18n = createI18n({
+ *   locale: 'en',
+ *   messages
+ * })
+ *
+ * const app = createApp({
+ *   data: {
+ *     url: '/term'
+ *   }
+ * }).use(i18n).mount('#app')
+ * ```
+ *
+ * @VueI18nComponent
+ */
+const Translation = TranslationImpl;
+const I18nT = (/* unused pure expression or super */ null && (Translation));
+function isVNode(target) {
+  return shared_isArray(target) && !shared_isString(target[0]);
+}
+function renderFormatter(props, context, slotKeys, partFormatter) {
+  const {
+    slots,
+    attrs
+  } = context;
+  return () => {
+    const options = {
+      part: true
+    };
+    let overrides = {};
+    if (props.locale) {
+      options.locale = props.locale;
+    }
+    if (shared_isString(props.format)) {
+      options.key = props.format;
+    } else if (shared_isObject(props.format)) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      if (shared_isString(props.format.key)) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        options.key = props.format.key;
+      }
+      // Filter out number format options only
+      overrides = Object.keys(props.format).reduce((options, prop) => {
+        return slotKeys.includes(prop) ? shared_assign({}, options, {
+          [prop]: props.format[prop]
+        }) // eslint-disable-line @typescript-eslint/no-explicit-any
+        : options;
+      }, {});
+    }
+    const parts = partFormatter(...[props.value, options, overrides]);
+    let children = [options.key];
+    if (shared_isArray(parts)) {
+      children = parts.map((part, index) => {
+        const slot = slots[part.type];
+        const node = slot ? slot({
+          [part.type]: part.value,
+          index,
+          parts
+        }) : [part.value];
+        if (isVNode(node)) {
+          node[0].key = `${part.type}-${index}`;
+        }
+        return node;
+      });
+    } else if (shared_isString(parts)) {
+      children = [parts];
+    }
+    const assignedAttrs = shared_assign({}, attrs);
+    const tag = shared_isString(props.tag) || shared_isObject(props.tag) ? props.tag : getFragmentableTag();
+    return (0,runtime_core_esm_bundler.h)(tag, assignedAttrs, children);
+  };
+}
+const NumberFormatImpl = /*#__PURE__*/(0,runtime_core_esm_bundler/* defineComponent */._M)({
+  /* eslint-disable */
+  name: 'i18n-n',
+  props: shared_assign({
+    value: {
+      type: Number,
+      required: true
+    },
+    format: {
+      type: [String, Object]
+    }
+  }, baseFormatProps),
+  /* eslint-enable */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  setup(props, context) {
+    const i18n = props.i18n || useI18n({
+      useScope: 'parent',
+      __useComponent: true
+    });
+    return renderFormatter(props, context, NUMBER_FORMAT_OPTIONS_KEYS, (...args) =>
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    i18n[NumberPartsSymbol](...args));
+  }
+});
+/**
+ * export the public type for h/tsx inference
+ * also to avoid inline import() in generated d.ts files
+ */
+/**
+ * Number Format Component
+ *
+ * @remarks
+ * See the following items for property about details
+ *
+ * @VueI18nSee [FormattableProps](component#formattableprops)
+ * @VueI18nSee [BaseFormatProps](component#baseformatprops)
+ * @VueI18nSee [Custom Formatting](../guide/essentials/number#custom-formatting)
+ *
+ * @VueI18nDanger
+ * Not supported IE, due to no support `Intl.NumberFormat#formatToParts` in [IE](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/formatToParts)
+ *
+ * If you want to use it, you need to use [polyfill](https://github.com/formatjs/formatjs/tree/main/packages/intl-numberformat)
+ *
+ * @VueI18nComponent
+ */
+const NumberFormat = NumberFormatImpl;
+const I18nN = (/* unused pure expression or super */ null && (NumberFormat));
+const DatetimeFormatImpl = /* #__PURE__*/(0,runtime_core_esm_bundler/* defineComponent */._M)({
+  /* eslint-disable */
+  name: 'i18n-d',
+  props: shared_assign({
+    value: {
+      type: [Number, Date],
+      required: true
+    },
+    format: {
+      type: [String, Object]
+    }
+  }, baseFormatProps),
+  /* eslint-enable */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  setup(props, context) {
+    const i18n = props.i18n || useI18n({
+      useScope: 'parent',
+      __useComponent: true
+    });
+    return renderFormatter(props, context, DATETIME_FORMAT_OPTIONS_KEYS, (...args) =>
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    i18n[DatetimePartsSymbol](...args));
+  }
+});
+/**
+ * Datetime Format Component
+ *
+ * @remarks
+ * See the following items for property about details
+ *
+ * @VueI18nSee [FormattableProps](component#formattableprops)
+ * @VueI18nSee [BaseFormatProps](component#baseformatprops)
+ * @VueI18nSee [Custom Formatting](../guide/essentials/datetime#custom-formatting)
+ *
+ * @VueI18nDanger
+ * Not supported IE, due to no support `Intl.DateTimeFormat#formatToParts` in [IE](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/formatToParts)
+ *
+ * If you want to use it, you need to use [polyfill](https://github.com/formatjs/formatjs/tree/main/packages/intl-datetimeformat)
+ *
+ * @VueI18nComponent
+ */
+const DatetimeFormat = DatetimeFormatImpl;
+const I18nD = (/* unused pure expression or super */ null && (DatetimeFormat));
+function getComposer$2(i18n, instance) {
+  const i18nInternal = i18n;
+  if (i18n.mode === 'composition') {
+    return i18nInternal.__getInstance(instance) || i18n.global;
+  } else {
+    const vueI18n = i18nInternal.__getInstance(instance);
+    return vueI18n != null ? vueI18n.__composer : i18n.global.__composer;
+  }
+}
+function vTDirective(i18n) {
+  const _process = binding => {
+    const {
+      instance,
+      modifiers,
+      value
+    } = binding;
+    /* istanbul ignore if */
+    if (!instance || !instance.$) {
+      throw createI18nError(I18nErrorCodes.UNEXPECTED_ERROR);
+    }
+    const composer = getComposer$2(i18n, instance.$);
+    if (false) {}
+    const parsedValue = parseValue(value);
+    return [Reflect.apply(composer.t, composer, [...makeParams(parsedValue)]), composer];
+  };
+  const register = (el, binding) => {
+    const [textContent, composer] = _process(binding);
+    if (inBrowser && i18n.global === composer) {
+      // global scope only
+      el.__i18nWatcher = (0,runtime_core_esm_bundler/* watch */.Kg)(composer.locale, () => {
+        binding.instance && binding.instance.$forceUpdate();
+      });
+    }
+    el.__composer = composer;
+    el.textContent = textContent;
+  };
+  const unregister = el => {
+    if (inBrowser && el.__i18nWatcher) {
+      el.__i18nWatcher();
+      el.__i18nWatcher = undefined;
+      delete el.__i18nWatcher;
+    }
+    if (el.__composer) {
+      el.__composer = undefined;
+      delete el.__composer;
+    }
+  };
+  const update = (el, {
+    value
+  }) => {
+    if (el.__composer) {
+      const composer = el.__composer;
+      const parsedValue = parseValue(value);
+      el.textContent = Reflect.apply(composer.t, composer, [...makeParams(parsedValue)]);
+    }
+  };
+  const getSSRProps = binding => {
+    const [textContent] = _process(binding);
+    return {
+      textContent
+    };
+  };
+  return {
+    created: register,
+    unmounted: unregister,
+    beforeUpdate: update,
+    getSSRProps
+  };
+}
+function parseValue(value) {
+  if (shared_isString(value)) {
+    return {
+      path: value
+    };
+  } else if (shared_isPlainObject(value)) {
+    if (!('path' in value)) {
+      throw createI18nError(I18nErrorCodes.REQUIRED_VALUE, 'path');
+    }
+    return value;
+  } else {
+    throw createI18nError(I18nErrorCodes.INVALID_VALUE);
+  }
+}
+function makeParams(value) {
+  const {
+    path,
+    locale,
+    args,
+    choice,
+    plural
+  } = value;
+  const options = {};
+  const named = args || {};
+  if (shared_isString(locale)) {
+    options.locale = locale;
+  }
+  if (shared_isNumber(choice)) {
+    options.plural = choice;
+  }
+  if (shared_isNumber(plural)) {
+    options.plural = plural;
+  }
+  return [path, named, options];
+}
+function apply(app, i18n, ...options) {
+  const pluginOptions = shared_isPlainObject(options[0]) ? options[0] : {};
+  const useI18nComponentName = !!pluginOptions.useI18nComponentName;
+  const globalInstall = shared_isBoolean(pluginOptions.globalInstall) ? pluginOptions.globalInstall : true;
+  if (false) {}
+  if (globalInstall) {
+    [!useI18nComponentName ? Translation.name : 'i18n', 'I18nT'].forEach(name => app.component(name, Translation));
+    [NumberFormat.name, 'I18nN'].forEach(name => app.component(name, NumberFormat));
+    [DatetimeFormat.name, 'I18nD'].forEach(name => app.component(name, DatetimeFormat));
+  }
+  // install directive
+  {
+    app.directive('t', vTDirective(i18n));
+  }
+}
+const VueDevToolsLabels = {
+  ["vue-devtools-plugin-vue-i18n" /* VueDevToolsIDs.PLUGIN */]: 'Vue I18n devtools',
+  ["vue-i18n-resource-inspector" /* VueDevToolsIDs.CUSTOM_INSPECTOR */]: 'I18n Resources',
+  ["vue-i18n-timeline" /* VueDevToolsIDs.TIMELINE */]: 'Vue I18n'
+};
+const VueDevToolsPlaceholders = {
+  ["vue-i18n-resource-inspector" /* VueDevToolsIDs.CUSTOM_INSPECTOR */]: 'Search for scopes ...'
+};
+const VueDevToolsTimelineColors = {
+  ["vue-i18n-timeline" /* VueDevToolsIDs.TIMELINE */]: 0xffcd19
+};
+const VUE_I18N_COMPONENT_TYPES = 'vue-i18n: composer properties';
+let devtoolsApi;
+async function enableDevTools(app, i18n) {
+  return new Promise((resolve, reject) => {
+    try {
+      setupDevtoolsPlugin({
+        id: "vue-devtools-plugin-vue-i18n" /* VueDevToolsIDs.PLUGIN */,
+        label: VueDevToolsLabels["vue-devtools-plugin-vue-i18n" /* VueDevToolsIDs.PLUGIN */],
+        packageName: 'vue-i18n',
+        homepage: 'https://vue-i18n.intlify.dev',
+        logo: 'https://vue-i18n.intlify.dev/vue-i18n-devtools-logo.png',
+        componentStateTypes: [VUE_I18N_COMPONENT_TYPES],
+        app: app // eslint-disable-line @typescript-eslint/no-explicit-any
+      }, api => {
+        devtoolsApi = api;
+        api.on.visitComponentTree(({
+          componentInstance,
+          treeNode
+        }) => {
+          updateComponentTreeTags(componentInstance, treeNode, i18n);
+        });
+        api.on.inspectComponent(({
+          componentInstance,
+          instanceData
+        }) => {
+          if (componentInstance.vnode.el && componentInstance.vnode.el.__VUE_I18N__ && instanceData) {
+            if (i18n.mode === 'legacy') {
+              // ignore global scope on legacy mode
+              if (componentInstance.vnode.el.__VUE_I18N__ !== i18n.global.__composer) {
+                inspectComposer(instanceData, componentInstance.vnode.el.__VUE_I18N__);
+              }
+            } else {
+              inspectComposer(instanceData, componentInstance.vnode.el.__VUE_I18N__);
+            }
+          }
+        });
+        api.addInspector({
+          id: "vue-i18n-resource-inspector" /* VueDevToolsIDs.CUSTOM_INSPECTOR */,
+          label: VueDevToolsLabels["vue-i18n-resource-inspector" /* VueDevToolsIDs.CUSTOM_INSPECTOR */],
+          icon: 'language',
+          treeFilterPlaceholder: VueDevToolsPlaceholders["vue-i18n-resource-inspector" /* VueDevToolsIDs.CUSTOM_INSPECTOR */]
+        });
+        api.on.getInspectorTree(payload => {
+          if (payload.app === app && payload.inspectorId === "vue-i18n-resource-inspector" /* VueDevToolsIDs.CUSTOM_INSPECTOR */) {
+            registerScope(payload, i18n);
+          }
+        });
+        const roots = new Map();
+        api.on.getInspectorState(async payload => {
+          if (payload.app === app && payload.inspectorId === "vue-i18n-resource-inspector" /* VueDevToolsIDs.CUSTOM_INSPECTOR */) {
+            api.unhighlightElement();
+            inspectScope(payload, i18n);
+            if (payload.nodeId === 'global') {
+              if (!roots.has(payload.app)) {
+                const [root] = await api.getComponentInstances(payload.app);
+                roots.set(payload.app, root);
+              }
+              api.highlightElement(roots.get(payload.app));
+            } else {
+              const instance = getComponentInstance(payload.nodeId, i18n);
+              instance && api.highlightElement(instance);
+            }
+          }
+        });
+        api.on.editInspectorState(payload => {
+          if (payload.app === app && payload.inspectorId === "vue-i18n-resource-inspector" /* VueDevToolsIDs.CUSTOM_INSPECTOR */) {
+            editScope(payload, i18n);
+          }
+        });
+        api.addTimelineLayer({
+          id: "vue-i18n-timeline" /* VueDevToolsIDs.TIMELINE */,
+          label: VueDevToolsLabels["vue-i18n-timeline" /* VueDevToolsIDs.TIMELINE */],
+          color: VueDevToolsTimelineColors["vue-i18n-timeline" /* VueDevToolsIDs.TIMELINE */]
+        });
+        resolve(true);
+      });
+    } catch (e) {
+      console.error(e);
+      reject(false);
+    }
+  });
+}
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function getI18nScopeLable(instance) {
+  return instance.type.name || instance.type.displayName || instance.type.__file || 'Anonymous';
+}
+function updateComponentTreeTags(instance,
+// eslint-disable-line @typescript-eslint/no-explicit-any
+treeNode, i18n) {
+  // prettier-ignore
+  const global = i18n.mode === 'composition' ? i18n.global : i18n.global.__composer;
+  if (instance && instance.vnode.el && instance.vnode.el.__VUE_I18N__) {
+    // add custom tags local scope only
+    if (instance.vnode.el.__VUE_I18N__ !== global) {
+      const tag = {
+        label: `i18n (${getI18nScopeLable(instance)} Scope)`,
+        textColor: 0x000000,
+        backgroundColor: 0xffcd19
+      };
+      treeNode.tags.push(tag);
+    }
+  }
+}
+function inspectComposer(instanceData, composer) {
+  const type = VUE_I18N_COMPONENT_TYPES;
+  instanceData.state.push({
+    type,
+    key: 'locale',
+    editable: true,
+    value: composer.locale.value
+  });
+  instanceData.state.push({
+    type,
+    key: 'availableLocales',
+    editable: false,
+    value: composer.availableLocales
+  });
+  instanceData.state.push({
+    type,
+    key: 'fallbackLocale',
+    editable: true,
+    value: composer.fallbackLocale.value
+  });
+  instanceData.state.push({
+    type,
+    key: 'inheritLocale',
+    editable: true,
+    value: composer.inheritLocale
+  });
+  instanceData.state.push({
+    type,
+    key: 'messages',
+    editable: false,
+    value: getLocaleMessageValue(composer.messages.value)
+  });
+  {
+    instanceData.state.push({
+      type,
+      key: 'datetimeFormats',
+      editable: false,
+      value: composer.datetimeFormats.value
+    });
+    instanceData.state.push({
+      type,
+      key: 'numberFormats',
+      editable: false,
+      value: composer.numberFormats.value
+    });
+  }
+}
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function getLocaleMessageValue(messages) {
+  const value = {};
+  Object.keys(messages).forEach(key => {
+    const v = messages[key];
+    if (isFunction(v) && 'source' in v) {
+      value[key] = getMessageFunctionDetails(v);
+    } else if (isMessageAST(v) && v.loc && v.loc.source) {
+      value[key] = v.loc.source;
+    } else if (isObject(v)) {
+      value[key] = getLocaleMessageValue(v);
+    } else {
+      value[key] = v;
+    }
+  });
+  return value;
+}
+const ESC = {
+  '<': '&lt;',
+  '>': '&gt;',
+  '"': '&quot;',
+  '&': '&amp;'
+};
+function vue_i18n_escape(s) {
+  return s.replace(/[<>"&]/g, escapeChar);
+}
+function escapeChar(a) {
+  return ESC[a] || a;
+}
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function getMessageFunctionDetails(func) {
+  const argString = func.source ? `("${vue_i18n_escape(func.source)}")` : `(?)`;
+  return {
+    _custom: {
+      type: 'function',
+      display: `<span>ƒ</span> ${argString}`
+    }
+  };
+}
+function registerScope(payload, i18n) {
+  payload.rootNodes.push({
+    id: 'global',
+    label: 'Global Scope'
+  });
+  // prettier-ignore
+  const global = i18n.mode === 'composition' ? i18n.global : i18n.global.__composer;
+  for (const [keyInstance, instance] of i18n.__instances) {
+    // prettier-ignore
+    const composer = i18n.mode === 'composition' ? instance : instance.__composer;
+    if (global === composer) {
+      continue;
+    }
+    payload.rootNodes.push({
+      id: composer.id.toString(),
+      label: `${getI18nScopeLable(keyInstance)} Scope`
+    });
+  }
+}
+function getComponentInstance(nodeId, i18n) {
+  let instance = null;
+  if (nodeId !== 'global') {
+    for (const [component, composer] of i18n.__instances.entries()) {
+      if (composer.id.toString() === nodeId) {
+        instance = component;
+        break;
+      }
+    }
+  }
+  return instance;
+}
+function getComposer$1(nodeId, i18n) {
+  if (nodeId === 'global') {
+    return i18n.mode === 'composition' ? i18n.global : i18n.global.__composer;
+  } else {
+    const instance = Array.from(i18n.__instances.values()).find(item => item.id.toString() === nodeId);
+    if (instance) {
+      return i18n.mode === 'composition' ? instance : instance.__composer;
+    } else {
+      return null;
+    }
+  }
+}
+function inspectScope(payload, i18n
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+) {
+  const composer = getComposer$1(payload.nodeId, i18n);
+  if (composer) {
+    // TODO:
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    payload.state = makeScopeInspectState(composer);
+  }
+  return null;
+}
+function makeScopeInspectState(composer) {
+  const state = {};
+  const localeType = 'Locale related info';
+  const localeStates = [{
+    type: localeType,
+    key: 'locale',
+    editable: true,
+    value: composer.locale.value
+  }, {
+    type: localeType,
+    key: 'fallbackLocale',
+    editable: true,
+    value: composer.fallbackLocale.value
+  }, {
+    type: localeType,
+    key: 'availableLocales',
+    editable: false,
+    value: composer.availableLocales
+  }, {
+    type: localeType,
+    key: 'inheritLocale',
+    editable: true,
+    value: composer.inheritLocale
+  }];
+  state[localeType] = localeStates;
+  const localeMessagesType = 'Locale messages info';
+  const localeMessagesStates = [{
+    type: localeMessagesType,
+    key: 'messages',
+    editable: false,
+    value: getLocaleMessageValue(composer.messages.value)
+  }];
+  state[localeMessagesType] = localeMessagesStates;
+  {
+    const datetimeFormatsType = 'Datetime formats info';
+    const datetimeFormatsStates = [{
+      type: datetimeFormatsType,
+      key: 'datetimeFormats',
+      editable: false,
+      value: composer.datetimeFormats.value
+    }];
+    state[datetimeFormatsType] = datetimeFormatsStates;
+    const numberFormatsType = 'Datetime formats info';
+    const numberFormatsStates = [{
+      type: numberFormatsType,
+      key: 'numberFormats',
+      editable: false,
+      value: composer.numberFormats.value
+    }];
+    state[numberFormatsType] = numberFormatsStates;
+  }
+  return state;
+}
+function addTimelineEvent(event, payload) {
+  if (devtoolsApi) {
+    let groupId;
+    if (payload && 'groupId' in payload) {
+      groupId = payload.groupId;
+      delete payload.groupId;
+    }
+    devtoolsApi.addTimelineEvent({
+      layerId: "vue-i18n-timeline" /* VueDevToolsIDs.TIMELINE */,
+      event: {
+        title: event,
+        groupId,
+        time: Date.now(),
+        meta: {},
+        data: payload || {},
+        logType: event === "compile-error" /* VueDevToolsTimelineEvents.COMPILE_ERROR */ ? 'error' : event === "fallback" /* VueDevToolsTimelineEvents.FALBACK */ || event === "missing" /* VueDevToolsTimelineEvents.MISSING */ ? 'warning' : 'default'
+      }
+    });
+  }
+}
+function editScope(payload, i18n) {
+  const composer = getComposer$1(payload.nodeId, i18n);
+  if (composer) {
+    const [field] = payload.path;
+    if (field === 'locale' && isString(payload.state.value)) {
+      composer.locale.value = payload.state.value;
+    } else if (field === 'fallbackLocale' && (isString(payload.state.value) || isArray(payload.state.value) || isObject(payload.state.value))) {
+      composer.fallbackLocale.value = payload.state.value;
+    } else if (field === 'inheritLocale' && isBoolean(payload.state.value)) {
+      composer.inheritLocale = payload.state.value;
+    }
+  }
+}
+
+/**
+ * Supports compatibility for legacy vue-i18n APIs
+ * This mixin is used when we use vue-i18n@v9.x or later
+ */
+function defineMixin(vuei18n, composer, i18n) {
+  return {
+    beforeCreate() {
+      const instance = getCurrentInstance();
+      /* istanbul ignore if */
+      if (!instance) {
+        throw createI18nError(I18nErrorCodes.UNEXPECTED_ERROR);
+      }
+      const options = this.$options;
+      if (options.i18n) {
+        const optionsI18n = options.i18n;
+        if (options.__i18n) {
+          optionsI18n.__i18n = options.__i18n;
+        }
+        optionsI18n.__root = composer;
+        if (this === this.$root) {
+          // merge option and gttach global
+          this.$i18n = mergeToGlobal(vuei18n, optionsI18n);
+        } else {
+          optionsI18n.__injectWithOption = true;
+          optionsI18n.__extender = i18n.__vueI18nExtend;
+          // atttach local VueI18n instance
+          this.$i18n = createVueI18n(optionsI18n);
+          // extend VueI18n instance
+          const _vueI18n = this.$i18n;
+          if (_vueI18n.__extender) {
+            _vueI18n.__disposer = _vueI18n.__extender(this.$i18n);
+          }
+        }
+      } else if (options.__i18n) {
+        if (this === this.$root) {
+          // merge option and gttach global
+          this.$i18n = mergeToGlobal(vuei18n, options);
+        } else {
+          // atttach local VueI18n instance
+          this.$i18n = createVueI18n({
+            __i18n: options.__i18n,
+            __injectWithOption: true,
+            __extender: i18n.__vueI18nExtend,
+            __root: composer
+          });
+          // extend VueI18n instance
+          const _vueI18n = this.$i18n;
+          if (_vueI18n.__extender) {
+            _vueI18n.__disposer = _vueI18n.__extender(this.$i18n);
+          }
+        }
+      } else {
+        // attach global VueI18n instance
+        this.$i18n = vuei18n;
+      }
+      if (options.__i18nGlobal) {
+        adjustI18nResources(composer, options, options);
+      }
+      // defines vue-i18n legacy APIs
+      this.$t = (...args) => this.$i18n.t(...args);
+      this.$rt = (...args) => this.$i18n.rt(...args);
+      this.$tc = (...args) => this.$i18n.tc(...args);
+      this.$te = (key, locale) => this.$i18n.te(key, locale);
+      this.$d = (...args) => this.$i18n.d(...args);
+      this.$n = (...args) => this.$i18n.n(...args);
+      this.$tm = key => this.$i18n.tm(key);
+      i18n.__setInstance(instance, this.$i18n);
+    },
+    mounted() {
+      /* istanbul ignore if */
+      if (false) {}
+    },
+    unmounted() {
+      const instance = getCurrentInstance();
+      /* istanbul ignore if */
+      if (!instance) {
+        throw createI18nError(I18nErrorCodes.UNEXPECTED_ERROR);
+      }
+      const _vueI18n = this.$i18n;
+      /* istanbul ignore if */
+      if (false) {}
+      delete this.$t;
+      delete this.$rt;
+      delete this.$tc;
+      delete this.$te;
+      delete this.$d;
+      delete this.$n;
+      delete this.$tm;
+      if (_vueI18n.__disposer) {
+        _vueI18n.__disposer();
+        delete _vueI18n.__disposer;
+        delete _vueI18n.__extender;
+      }
+      i18n.__deleteInstance(instance);
+      delete this.$i18n;
+    }
+  };
+}
+function mergeToGlobal(g, options) {
+  g.locale = options.locale || g.locale;
+  g.fallbackLocale = options.fallbackLocale || g.fallbackLocale;
+  g.missing = options.missing || g.missing;
+  g.silentTranslationWarn = options.silentTranslationWarn || g.silentFallbackWarn;
+  g.silentFallbackWarn = options.silentFallbackWarn || g.silentFallbackWarn;
+  g.formatFallbackMessages = options.formatFallbackMessages || g.formatFallbackMessages;
+  g.postTranslation = options.postTranslation || g.postTranslation;
+  g.warnHtmlInMessage = options.warnHtmlInMessage || g.warnHtmlInMessage;
+  g.escapeParameterHtml = options.escapeParameterHtml || g.escapeParameterHtml;
+  g.sync = options.sync || g.sync;
+  g.__composer[SetPluralRulesSymbol](options.pluralizationRules || g.pluralizationRules);
+  const messages = getLocaleMessages(g.locale, {
+    messages: options.messages,
+    __i18n: options.__i18n
+  });
+  Object.keys(messages).forEach(locale => g.mergeLocaleMessage(locale, messages[locale]));
+  if (options.datetimeFormats) {
+    Object.keys(options.datetimeFormats).forEach(locale => g.mergeDateTimeFormat(locale, options.datetimeFormats[locale]));
+  }
+  if (options.numberFormats) {
+    Object.keys(options.numberFormats).forEach(locale => g.mergeNumberFormat(locale, options.numberFormats[locale]));
+  }
+  return g;
+}
+
+/**
+ * Injection key for {@link useI18n}
+ *
+ * @remarks
+ * The global injection key for I18n instances with `useI18n`. this injection key is used in Web Components.
+ * Specify the i18n instance created by {@link createI18n} together with `provide` function.
+ *
+ * @VueI18nGeneral
+ */
+const I18nInjectionKey = /* #__PURE__*/shared_makeSymbol('global-vue-i18n');
+// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types
+function createI18n(options = {}, VueI18nLegacy) {
+  // prettier-ignore
+  const __legacyMode =  false ? 0 : false;
+  // prettier-ignore
+  const __globalInjection = shared_isBoolean(options.globalInjection) ? options.globalInjection : true;
+  // prettier-ignore
+  const __allowComposition =  false ? 0 : true;
+  const __instances = new Map();
+  const [globalScope, __global] = createGlobal(options, __legacyMode);
+  const symbol = /* #__PURE__*/shared_makeSymbol( false ? 0 : '');
+  if (false) {}
+  function __getInstance(component) {
+    return __instances.get(component) || null;
+  }
+  function __setInstance(component, instance) {
+    __instances.set(component, instance);
+  }
+  function __deleteInstance(component) {
+    __instances.delete(component);
+  }
+  {
+    const i18n = {
+      // mode
+      get mode() {
+        return  false ? 0 : 'composition';
+      },
+      // allowComposition
+      get allowComposition() {
+        return __allowComposition;
+      },
+      // install plugin
+      async install(app, ...options) {
+        if (false) {}
+        // setup global provider
+        app.__VUE_I18N_SYMBOL__ = symbol;
+        app.provide(app.__VUE_I18N_SYMBOL__, i18n);
+        // set composer & vuei18n extend hook options from plugin options
+        if (shared_isPlainObject(options[0])) {
+          const opts = options[0];
+          i18n.__composerExtend = opts.__composerExtend;
+          i18n.__vueI18nExtend = opts.__vueI18nExtend;
+        }
+        // global method and properties injection for Composition API
+        let globalReleaseHandler = null;
+        if (!__legacyMode && __globalInjection) {
+          globalReleaseHandler = injectGlobalFields(app, i18n.global);
+        }
+        // install built-in components and directive
+        if (true) {
+          apply(app, i18n, ...options);
+        }
+        // setup mixin for Legacy API
+        if (false) {}
+        // release global scope
+        const unmountApp = app.unmount;
+        app.unmount = () => {
+          globalReleaseHandler && globalReleaseHandler();
+          i18n.dispose();
+          unmountApp();
+        };
+        // setup vue-devtools plugin
+        if (false) {}
+      },
+      // global accessor
+      get global() {
+        return __global;
+      },
+      dispose() {
+        globalScope.stop();
+      },
+      // @internal
+      __instances,
+      // @internal
+      __getInstance,
+      // @internal
+      __setInstance,
+      // @internal
+      __deleteInstance
+    };
+    return i18n;
+  }
+}
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+function useI18n(options = {}) {
+  const instance = (0,runtime_core_esm_bundler/* getCurrentInstance */._S)();
+  if (instance == null) {
+    throw createI18nError(I18nErrorCodes.MUST_BE_CALL_SETUP_TOP);
+  }
+  if (!instance.isCE && instance.appContext.app != null && !instance.appContext.app.__VUE_I18N_SYMBOL__) {
+    throw createI18nError(I18nErrorCodes.NOT_INSTALLED);
+  }
+  const i18n = getI18nInstance(instance);
+  const gl = getGlobalComposer(i18n);
+  const componentOptions = getComponentOptions(instance);
+  const scope = getScope(options, componentOptions);
+  if (false) {}
+  if (scope === 'global') {
+    adjustI18nResources(gl, options, componentOptions);
+    return gl;
+  }
+  if (scope === 'parent') {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let composer = getComposer(i18n, instance, options.__useComponent);
+    if (composer == null) {
+      if (false) {}
+      composer = gl;
+    }
+    return composer;
+  }
+  const i18nInternal = i18n;
+  let composer = i18nInternal.__getInstance(instance);
+  if (composer == null) {
+    const composerOptions = shared_assign({}, options);
+    if ('__i18n' in componentOptions) {
+      composerOptions.__i18n = componentOptions.__i18n;
+    }
+    if (gl) {
+      composerOptions.__root = gl;
+    }
+    composer = createComposer(composerOptions);
+    if (i18nInternal.__composerExtend) {
+      composer[DisposeSymbol] = i18nInternal.__composerExtend(composer);
+    }
+    setupLifeCycle(i18nInternal, instance, composer);
+    i18nInternal.__setInstance(instance, composer);
+  }
+  return composer;
+}
+/**
+ * Cast to VueI18n legacy compatible type
+ *
+ * @remarks
+ * This API is provided only with [vue-i18n-bridge](https://vue-i18n.intlify.dev/guide/migration/ways.html#what-is-vue-i18n-bridge).
+ *
+ * The purpose of this function is to convert an {@link I18n} instance created with {@link createI18n | createI18n(legacy: true)} into a `vue-i18n@v8.x` compatible instance of `new VueI18n` in a TypeScript environment.
+ *
+ * @param i18n - An instance of {@link I18n}
+ * @returns A i18n instance which is casted to {@link VueI18n} type
+ *
+ * @VueI18nTip
+ * :new: provided by **vue-i18n-bridge only**
+ *
+ * @VueI18nGeneral
+ */
+/* #__NO_SIDE_EFFECTS__ */
+const castToVueI18n = (i18n
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+) => {
+  if (!(__VUE_I18N_BRIDGE__ in i18n)) {
+    throw createI18nError(I18nErrorCodes.NOT_COMPATIBLE_LEGACY_VUE_I18N);
+  }
+  return i18n;
+};
+function createGlobal(options, legacyMode, VueI18nLegacy // eslint-disable-line @typescript-eslint/no-explicit-any
+) {
+  const scope = (0,reactivity_esm_bundler/* effectScope */.Ul)();
+  {
+    const obj =  false ? 0 : scope.run(() => createComposer(options));
+    if (obj == null) {
+      throw createI18nError(I18nErrorCodes.UNEXPECTED_ERROR);
+    }
+    return [scope, obj];
+  }
+}
+function getI18nInstance(instance) {
+  {
+    const i18n = (0,runtime_core_esm_bundler/* inject */.uU)(!instance.isCE ? instance.appContext.app.__VUE_I18N_SYMBOL__ : I18nInjectionKey);
+    /* istanbul ignore if */
+    if (!i18n) {
+      throw createI18nError(!instance.isCE ? I18nErrorCodes.UNEXPECTED_ERROR : I18nErrorCodes.NOT_INSTALLED_WITH_PROVIDE);
+    }
+    return i18n;
+  }
+}
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function getScope(options, componentOptions) {
+  // prettier-ignore
+  return isEmptyObject(options) ? '__i18n' in componentOptions ? 'local' : 'global' : !options.useScope ? 'local' : options.useScope;
+}
+function getGlobalComposer(i18n) {
+  // prettier-ignore
+  return i18n.mode === 'composition' ? i18n.global : i18n.global.__composer;
+}
+function getComposer(i18n, target, useComponent = false) {
+  let composer = null;
+  const root = target.root;
+  let current = getParentComponentInstance(target, useComponent);
+  while (current != null) {
+    const i18nInternal = i18n;
+    if (i18n.mode === 'composition') {
+      composer = i18nInternal.__getInstance(current);
+    } else {
+      if (false) {}
+    }
+    if (composer != null) {
+      break;
+    }
+    if (root === current) {
+      break;
+    }
+    current = current.parent;
+  }
+  return composer;
+}
+function getParentComponentInstance(target, useComponent = false) {
+  if (target == null) {
+    return null;
+  }
+  {
+    // if `useComponent: true` will be specified, we get lexical scope owner instance for use-case slots
+    return !useComponent ? target.parent : target.vnode.ctx || target.parent; // eslint-disable-line @typescript-eslint/no-explicit-any
+  }
+}
+function setupLifeCycle(i18n, target, composer) {
+  let emitter = null;
+  {
+    (0,runtime_core_esm_bundler/* onMounted */.u2)(() => {
+      // inject composer instance to DOM for intlify-devtools
+      if (false) {}
+    }, target);
+    (0,runtime_core_esm_bundler/* onUnmounted */.wx)(() => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const _composer = composer;
+      // remove composer instance from DOM for intlify-devtools
+      if (false) {}
+      i18n.__deleteInstance(target);
+      // dispose extended resources
+      const dispose = _composer[DisposeSymbol];
+      if (dispose) {
+        dispose();
+        delete _composer[DisposeSymbol];
+      }
+    }, target);
+  }
+}
+function useI18nForLegacy(instance, scope, root, options = {} // eslint-disable-line @typescript-eslint/no-explicit-any
+) {
+  const isLocalScope = scope === 'local';
+  const _composer = shallowRef(null);
+  if (isLocalScope && instance.proxy && !(instance.proxy.$options.i18n || instance.proxy.$options.__i18n)) {
+    throw createI18nError(I18nErrorCodes.MUST_DEFINE_I18N_OPTION_IN_ALLOW_COMPOSITION);
+  }
+  const _inheritLocale = isBoolean(options.inheritLocale) ? options.inheritLocale : !isString(options.locale);
+  const _locale = ref(
+  // prettier-ignore
+  !isLocalScope || _inheritLocale ? root.locale.value : isString(options.locale) ? options.locale : DEFAULT_LOCALE);
+  const _fallbackLocale = ref(
+  // prettier-ignore
+  !isLocalScope || _inheritLocale ? root.fallbackLocale.value : isString(options.fallbackLocale) || isArray(options.fallbackLocale) || isPlainObject(options.fallbackLocale) || options.fallbackLocale === false ? options.fallbackLocale : _locale.value);
+  const _messages = ref(getLocaleMessages(_locale.value, options));
+  // prettier-ignore
+  const _datetimeFormats = ref(isPlainObject(options.datetimeFormats) ? options.datetimeFormats : {
+    [_locale.value]: {}
+  });
+  // prettier-ignore
+  const _numberFormats = ref(isPlainObject(options.numberFormats) ? options.numberFormats : {
+    [_locale.value]: {}
+  });
+  // prettier-ignore
+  const _missingWarn = isLocalScope ? root.missingWarn : isBoolean(options.missingWarn) || isRegExp(options.missingWarn) ? options.missingWarn : true;
+  // prettier-ignore
+  const _fallbackWarn = isLocalScope ? root.fallbackWarn : isBoolean(options.fallbackWarn) || isRegExp(options.fallbackWarn) ? options.fallbackWarn : true;
+  // prettier-ignore
+  const _fallbackRoot = isLocalScope ? root.fallbackRoot : isBoolean(options.fallbackRoot) ? options.fallbackRoot : true;
+  // configure fall back to root
+  const _fallbackFormat = !!options.fallbackFormat;
+  // runtime missing
+  const _missing = isFunction(options.missing) ? options.missing : null;
+  // postTranslation handler
+  const _postTranslation = isFunction(options.postTranslation) ? options.postTranslation : null;
+  // prettier-ignore
+  const _warnHtmlMessage = isLocalScope ? root.warnHtmlMessage : isBoolean(options.warnHtmlMessage) ? options.warnHtmlMessage : true;
+  const _escapeParameter = !!options.escapeParameter;
+  // prettier-ignore
+  const _modifiers = isLocalScope ? root.modifiers : isPlainObject(options.modifiers) ? options.modifiers : {};
+  // pluralRules
+  const _pluralRules = options.pluralRules || isLocalScope && root.pluralRules;
+  // track reactivity
+  function trackReactivityValues() {
+    return [_locale.value, _fallbackLocale.value, _messages.value, _datetimeFormats.value, _numberFormats.value];
+  }
+  // locale
+  const locale = computed({
+    get: () => {
+      return _composer.value ? _composer.value.locale.value : _locale.value;
+    },
+    set: val => {
+      if (_composer.value) {
+        _composer.value.locale.value = val;
+      }
+      _locale.value = val;
+    }
+  });
+  // fallbackLocale
+  const fallbackLocale = computed({
+    get: () => {
+      return _composer.value ? _composer.value.fallbackLocale.value : _fallbackLocale.value;
+    },
+    set: val => {
+      if (_composer.value) {
+        _composer.value.fallbackLocale.value = val;
+      }
+      _fallbackLocale.value = val;
+    }
+  });
+  // messages
+  const messages = computed(() => {
+    if (_composer.value) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      return _composer.value.messages.value;
+    } else {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      return _messages.value;
+    }
+  });
+  const datetimeFormats = computed(() => _datetimeFormats.value);
+  const numberFormats = computed(() => _numberFormats.value);
+  function getPostTranslationHandler() {
+    return _composer.value ? _composer.value.getPostTranslationHandler() : _postTranslation;
+  }
+  function setPostTranslationHandler(handler) {
+    if (_composer.value) {
+      _composer.value.setPostTranslationHandler(handler);
+    }
+  }
+  function getMissingHandler() {
+    return _composer.value ? _composer.value.getMissingHandler() : _missing;
+  }
+  function setMissingHandler(handler) {
+    if (_composer.value) {
+      _composer.value.setMissingHandler(handler);
+    }
+  }
+  function warpWithDeps(fn) {
+    trackReactivityValues();
+    return fn();
+  }
+  function t(...args) {
+    return _composer.value ? warpWithDeps(() => Reflect.apply(_composer.value.t, null, [...args])) : warpWithDeps(() => '');
+  }
+  function rt(...args) {
+    return _composer.value ? Reflect.apply(_composer.value.rt, null, [...args]) : '';
+  }
+  function d(...args) {
+    return _composer.value ? warpWithDeps(() => Reflect.apply(_composer.value.d, null, [...args])) : warpWithDeps(() => '');
+  }
+  function n(...args) {
+    return _composer.value ? warpWithDeps(() => Reflect.apply(_composer.value.n, null, [...args])) : warpWithDeps(() => '');
+  }
+  function tm(key) {
+    return _composer.value ? _composer.value.tm(key) : {};
+  }
+  function te(key, locale) {
+    return _composer.value ? _composer.value.te(key, locale) : false;
+  }
+  function getLocaleMessage(locale) {
+    return _composer.value ? _composer.value.getLocaleMessage(locale) : {};
+  }
+  function setLocaleMessage(locale, message) {
+    if (_composer.value) {
+      _composer.value.setLocaleMessage(locale, message);
+      _messages.value[locale] = message;
+    }
+  }
+  function mergeLocaleMessage(locale, message) {
+    if (_composer.value) {
+      _composer.value.mergeLocaleMessage(locale, message);
+    }
+  }
+  function getDateTimeFormat(locale) {
+    return _composer.value ? _composer.value.getDateTimeFormat(locale) : {};
+  }
+  function setDateTimeFormat(locale, format) {
+    if (_composer.value) {
+      _composer.value.setDateTimeFormat(locale, format);
+      _datetimeFormats.value[locale] = format;
+    }
+  }
+  function mergeDateTimeFormat(locale, format) {
+    if (_composer.value) {
+      _composer.value.mergeDateTimeFormat(locale, format);
+    }
+  }
+  function getNumberFormat(locale) {
+    return _composer.value ? _composer.value.getNumberFormat(locale) : {};
+  }
+  function setNumberFormat(locale, format) {
+    if (_composer.value) {
+      _composer.value.setNumberFormat(locale, format);
+      _numberFormats.value[locale] = format;
+    }
+  }
+  function mergeNumberFormat(locale, format) {
+    if (_composer.value) {
+      _composer.value.mergeNumberFormat(locale, format);
+    }
+  }
+  const wrapper = {
+    get id() {
+      return _composer.value ? _composer.value.id : -1;
+    },
+    locale,
+    fallbackLocale,
+    messages,
+    datetimeFormats,
+    numberFormats,
+    get inheritLocale() {
+      return _composer.value ? _composer.value.inheritLocale : _inheritLocale;
+    },
+    set inheritLocale(val) {
+      if (_composer.value) {
+        _composer.value.inheritLocale = val;
+      }
+    },
+    get availableLocales() {
+      return _composer.value ? _composer.value.availableLocales : Object.keys(_messages.value);
+    },
+    get modifiers() {
+      return _composer.value ? _composer.value.modifiers : _modifiers;
+    },
+    get pluralRules() {
+      return _composer.value ? _composer.value.pluralRules : _pluralRules;
+    },
+    get isGlobal() {
+      return _composer.value ? _composer.value.isGlobal : false;
+    },
+    get missingWarn() {
+      return _composer.value ? _composer.value.missingWarn : _missingWarn;
+    },
+    set missingWarn(val) {
+      if (_composer.value) {
+        _composer.value.missingWarn = val;
+      }
+    },
+    get fallbackWarn() {
+      return _composer.value ? _composer.value.fallbackWarn : _fallbackWarn;
+    },
+    set fallbackWarn(val) {
+      if (_composer.value) {
+        _composer.value.missingWarn = val;
+      }
+    },
+    get fallbackRoot() {
+      return _composer.value ? _composer.value.fallbackRoot : _fallbackRoot;
+    },
+    set fallbackRoot(val) {
+      if (_composer.value) {
+        _composer.value.fallbackRoot = val;
+      }
+    },
+    get fallbackFormat() {
+      return _composer.value ? _composer.value.fallbackFormat : _fallbackFormat;
+    },
+    set fallbackFormat(val) {
+      if (_composer.value) {
+        _composer.value.fallbackFormat = val;
+      }
+    },
+    get warnHtmlMessage() {
+      return _composer.value ? _composer.value.warnHtmlMessage : _warnHtmlMessage;
+    },
+    set warnHtmlMessage(val) {
+      if (_composer.value) {
+        _composer.value.warnHtmlMessage = val;
+      }
+    },
+    get escapeParameter() {
+      return _composer.value ? _composer.value.escapeParameter : _escapeParameter;
+    },
+    set escapeParameter(val) {
+      if (_composer.value) {
+        _composer.value.escapeParameter = val;
+      }
+    },
+    t,
+    getPostTranslationHandler,
+    setPostTranslationHandler,
+    getMissingHandler,
+    setMissingHandler,
+    rt,
+    d,
+    n,
+    tm,
+    te,
+    getLocaleMessage,
+    setLocaleMessage,
+    mergeLocaleMessage,
+    getDateTimeFormat,
+    setDateTimeFormat,
+    mergeDateTimeFormat,
+    getNumberFormat,
+    setNumberFormat,
+    mergeNumberFormat
+  };
+  function sync(composer) {
+    composer.locale.value = _locale.value;
+    composer.fallbackLocale.value = _fallbackLocale.value;
+    Object.keys(_messages.value).forEach(locale => {
+      composer.mergeLocaleMessage(locale, _messages.value[locale]);
+    });
+    Object.keys(_datetimeFormats.value).forEach(locale => {
+      composer.mergeDateTimeFormat(locale, _datetimeFormats.value[locale]);
+    });
+    Object.keys(_numberFormats.value).forEach(locale => {
+      composer.mergeNumberFormat(locale, _numberFormats.value[locale]);
+    });
+    composer.escapeParameter = _escapeParameter;
+    composer.fallbackFormat = _fallbackFormat;
+    composer.fallbackRoot = _fallbackRoot;
+    composer.fallbackWarn = _fallbackWarn;
+    composer.missingWarn = _missingWarn;
+    composer.warnHtmlMessage = _warnHtmlMessage;
+  }
+  onBeforeMount(() => {
+    if (instance.proxy == null || instance.proxy.$i18n == null) {
+      throw createI18nError(I18nErrorCodes.NOT_AVAILABLE_COMPOSITION_IN_LEGACY);
+    }
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const composer = _composer.value = instance.proxy.$i18n.__composer;
+    if (scope === 'global') {
+      _locale.value = composer.locale.value;
+      _fallbackLocale.value = composer.fallbackLocale.value;
+      _messages.value = composer.messages.value;
+      _datetimeFormats.value = composer.datetimeFormats.value;
+      _numberFormats.value = composer.numberFormats.value;
+    } else if (isLocalScope) {
+      sync(composer);
+    }
+  });
+  return wrapper;
+}
+const globalExportProps = ['locale', 'fallbackLocale', 'availableLocales'];
+const globalExportMethods = ['t', 'rt', 'd', 'n', 'tm', 'te'];
+function injectGlobalFields(app, composer) {
+  const i18n = Object.create(null);
+  globalExportProps.forEach(prop => {
+    const desc = Object.getOwnPropertyDescriptor(composer, prop);
+    if (!desc) {
+      throw createI18nError(I18nErrorCodes.UNEXPECTED_ERROR);
+    }
+    const wrap = (0,reactivity_esm_bundler/* isRef */.Ir)(desc.value) // check computed props
+    ? {
+      get() {
+        return desc.value.value;
+      },
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      set(val) {
+        desc.value.value = val;
+      }
+    } : {
+      get() {
+        return desc.get && desc.get();
+      }
+    };
+    Object.defineProperty(i18n, prop, wrap);
+  });
+  app.config.globalProperties.$i18n = i18n;
+  globalExportMethods.forEach(method => {
+    const desc = Object.getOwnPropertyDescriptor(composer, method);
+    if (!desc || !desc.value) {
+      throw createI18nError(I18nErrorCodes.UNEXPECTED_ERROR);
+    }
+    Object.defineProperty(app.config.globalProperties, `$${method}`, desc);
+  });
+  const dispose = () => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    delete app.config.globalProperties.$i18n;
+    globalExportMethods.forEach(method => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      delete app.config.globalProperties[`$${method}`];
+    });
+  };
+  return dispose;
+}
+{
+  vue_i18n_initFeatureFlags();
+}
+// register message compiler at vue-i18n
+if (__INTLIFY_JIT_COMPILATION__) {
+  registerMessageCompiler(compile);
+} else {
+  registerMessageCompiler(compileToFunction);
+}
+// register message resolver at vue-i18n
+registerMessageResolver(resolveValue);
+// register fallback locale at vue-i18n
+registerLocaleFallbacker(fallbackWithLocaleChain);
+// NOTE: experimental !!
+if (false) {}
+if (false) {}
+
+;// CONCATENATED MODULE: ./node_modules/@vue/devtools-api/lib/esm/env.js
+function getDevtoolsGlobalHook() {
+  return getTarget().__VUE_DEVTOOLS_GLOBAL_HOOK__;
+}
+function getTarget() {
+  // @ts-ignore
+  return typeof navigator !== 'undefined' && typeof window !== 'undefined' ? window : typeof __webpack_require__.g !== 'undefined' ? __webpack_require__.g : {};
+}
+const isProxyAvailable = typeof Proxy === 'function';
+;// CONCATENATED MODULE: ./node_modules/@vue/devtools-api/lib/esm/const.js
+const HOOK_SETUP = 'devtools-plugin:setup';
+const HOOK_PLUGIN_SETTINGS_SET = 'plugin:settings:set';
+;// CONCATENATED MODULE: ./node_modules/@vue/devtools-api/lib/esm/time.js
+let supported;
+let perf;
+function isPerformanceSupported() {
+  var _a;
+  if (supported !== undefined) {
+    return supported;
+  }
+  if (typeof window !== 'undefined' && window.performance) {
+    supported = true;
+    perf = window.performance;
+  } else if (typeof __webpack_require__.g !== 'undefined' && ((_a = __webpack_require__.g.perf_hooks) === null || _a === void 0 ? void 0 : _a.performance)) {
+    supported = true;
+    perf = __webpack_require__.g.perf_hooks.performance;
+  } else {
+    supported = false;
+  }
+  return supported;
+}
+function now() {
+  return isPerformanceSupported() ? perf.now() : Date.now();
+}
+;// CONCATENATED MODULE: ./node_modules/@vue/devtools-api/lib/esm/proxy.js
+
+
+
+class ApiProxy {
+  constructor(plugin, hook) {
+    this.target = null;
+    this.targetQueue = [];
+    this.onQueue = [];
+    this.plugin = plugin;
+    this.hook = hook;
+    const defaultSettings = {};
+    if (plugin.settings) {
+      for (const id in plugin.settings) {
+        const item = plugin.settings[id];
+        defaultSettings[id] = item.defaultValue;
+      }
+    }
+    const localSettingsSaveId = `__vue-devtools-plugin-settings__${plugin.id}`;
+    let currentSettings = Object.assign({}, defaultSettings);
+    try {
+      const raw = localStorage.getItem(localSettingsSaveId);
+      const data = JSON.parse(raw);
+      Object.assign(currentSettings, data);
+    } catch (e) {
+      // noop
+    }
+    this.fallbacks = {
+      getSettings() {
+        return currentSettings;
+      },
+      setSettings(value) {
+        try {
+          localStorage.setItem(localSettingsSaveId, JSON.stringify(value));
+        } catch (e) {
+          // noop
+        }
+        currentSettings = value;
+      },
+      now() {
+        return now();
+      }
+    };
+    if (hook) {
+      hook.on(HOOK_PLUGIN_SETTINGS_SET, (pluginId, value) => {
+        if (pluginId === this.plugin.id) {
+          this.fallbacks.setSettings(value);
+        }
+      });
+    }
+    this.proxiedOn = new Proxy({}, {
+      get: (_target, prop) => {
+        if (this.target) {
+          return this.target.on[prop];
+        } else {
+          return (...args) => {
+            this.onQueue.push({
+              method: prop,
+              args
+            });
+          };
+        }
+      }
+    });
+    this.proxiedTarget = new Proxy({}, {
+      get: (_target, prop) => {
+        if (this.target) {
+          return this.target[prop];
+        } else if (prop === 'on') {
+          return this.proxiedOn;
+        } else if (Object.keys(this.fallbacks).includes(prop)) {
+          return (...args) => {
+            this.targetQueue.push({
+              method: prop,
+              args,
+              resolve: () => {}
+            });
+            return this.fallbacks[prop](...args);
+          };
+        } else {
+          return (...args) => {
+            return new Promise(resolve => {
+              this.targetQueue.push({
+                method: prop,
+                args,
+                resolve
+              });
+            });
+          };
+        }
+      }
+    });
+  }
+  async setRealTarget(target) {
+    this.target = target;
+    for (const item of this.onQueue) {
+      this.target.on[item.method](...item.args);
+    }
+    for (const item of this.targetQueue) {
+      item.resolve(await this.target[item.method](...item.args));
+    }
+  }
+}
+;// CONCATENATED MODULE: ./node_modules/@vue/devtools-api/lib/esm/index.js
+
+
+
+
+
+
+
+function esm_setupDevtoolsPlugin(pluginDescriptor, setupFn) {
+  const descriptor = pluginDescriptor;
+  const target = getTarget();
+  const hook = getDevtoolsGlobalHook();
+  const enableProxy = isProxyAvailable && descriptor.enableEarlyProxy;
+  if (hook && (target.__VUE_DEVTOOLS_PLUGIN_API_AVAILABLE__ || !enableProxy)) {
+    hook.emit(HOOK_SETUP, pluginDescriptor, setupFn);
+  } else {
+    const proxy = enableProxy ? new ApiProxy(descriptor, hook) : null;
+    const list = target.__VUE_DEVTOOLS_PLUGINS__ = target.__VUE_DEVTOOLS_PLUGINS__ || [];
+    list.push({
+      pluginDescriptor: descriptor,
+      setupFn,
+      proxy
+    });
+    if (proxy) setupFn(proxy.proxiedTarget);
+  }
+}
+;// CONCATENATED MODULE: ./node_modules/vuex/dist/vuex.esm-bundler.js
+
+/*!
+ * vuex v4.1.0
+ * (c) 2022 Evan You
+ * @license MIT
+ */
+
+
+var storeKey = 'store';
+function useStore(key) {
+  if (key === void 0) key = null;
+  return (0,runtime_core_esm_bundler/* inject */.uU)(key !== null ? key : storeKey);
+}
+
+/**
+ * Get the first item that pass the test
+ * by second argument function
+ *
+ * @param {Array} list
+ * @param {Function} f
+ * @return {*}
+ */
+function find(list, f) {
+  return list.filter(f)[0];
+}
+
+/**
+ * Deep copy the given object considering circular structure.
+ * This function caches all nested objects and its copies.
+ * If it detects circular structure, use cached copy to avoid infinite loop.
+ *
+ * @param {*} obj
+ * @param {Array<Object>} cache
+ * @return {*}
+ */
+function vuex_esm_bundler_deepCopy(obj, cache) {
+  if (cache === void 0) cache = [];
+
+  // just return if obj is immutable value
+  if (obj === null || typeof obj !== 'object') {
+    return obj;
+  }
+
+  // if obj is hit, it is in circular structure
+  var hit = find(cache, function (c) {
+    return c.original === obj;
+  });
+  if (hit) {
+    return hit.copy;
+  }
+  var copy = Array.isArray(obj) ? [] : {};
+  // put the copy into cache at first
+  // because we want to refer it in recursive deepCopy
+  cache.push({
+    original: obj,
+    copy: copy
+  });
+  Object.keys(obj).forEach(function (key) {
+    copy[key] = vuex_esm_bundler_deepCopy(obj[key], cache);
+  });
+  return copy;
+}
+
+/**
+ * forEach for object
+ */
+function forEachValue(obj, fn) {
+  Object.keys(obj).forEach(function (key) {
+    return fn(obj[key], key);
+  });
+}
+function vuex_esm_bundler_isObject(obj) {
+  return obj !== null && typeof obj === 'object';
+}
+function vuex_esm_bundler_isPromise(val) {
+  return val && typeof val.then === 'function';
+}
+function assert(condition, msg) {
+  if (!condition) {
+    throw new Error("[vuex] " + msg);
+  }
+}
+function partial(fn, arg) {
+  return function () {
+    return fn(arg);
+  };
+}
+function genericSubscribe(fn, subs, options) {
+  if (subs.indexOf(fn) < 0) {
+    options && options.prepend ? subs.unshift(fn) : subs.push(fn);
+  }
+  return function () {
+    var i = subs.indexOf(fn);
+    if (i > -1) {
+      subs.splice(i, 1);
+    }
+  };
+}
+function resetStore(store, hot) {
+  store._actions = Object.create(null);
+  store._mutations = Object.create(null);
+  store._wrappedGetters = Object.create(null);
+  store._modulesNamespaceMap = Object.create(null);
+  var state = store.state;
+  // init all modules
+  installModule(store, state, [], store._modules.root, true);
+  // reset state
+  resetStoreState(store, state, hot);
+}
+function resetStoreState(store, state, hot) {
+  var oldState = store._state;
+  var oldScope = store._scope;
+
+  // bind store public getters
+  store.getters = {};
+  // reset local getters cache
+  store._makeLocalGettersCache = Object.create(null);
+  var wrappedGetters = store._wrappedGetters;
+  var computedObj = {};
+  var computedCache = {};
+
+  // create a new effect scope and create computed object inside it to avoid
+  // getters (computed) getting destroyed on component unmount.
+  var scope = (0,reactivity_esm_bundler/* effectScope */.Ul)(true);
+  scope.run(function () {
+    forEachValue(wrappedGetters, function (fn, key) {
+      // use computed to leverage its lazy-caching mechanism
+      // direct inline function use will lead to closure preserving oldState.
+      // using partial to return function with only arguments preserved in closure environment.
+      computedObj[key] = partial(fn, store);
+      computedCache[key] = (0,runtime_core_esm_bundler/* computed */.S6)(function () {
+        return computedObj[key]();
+      });
+      Object.defineProperty(store.getters, key, {
+        get: function () {
+          return computedCache[key].value;
+        },
+        enumerable: true // for local getters
+      });
+    });
+  });
+  store._state = (0,reactivity_esm_bundler/* reactive */.cB)({
+    data: state
+  });
+
+  // register the newly created effect scope to the store so that we can
+  // dispose the effects when this method runs again in the future.
+  store._scope = scope;
+
+  // enable strict mode for new state
+  if (store.strict) {
+    enableStrictMode(store);
+  }
+  if (oldState) {
+    if (hot) {
+      // dispatch changes in all subscribed watchers
+      // to force getter re-evaluation for hot reloading.
+      store._withCommit(function () {
+        oldState.data = null;
+      });
+    }
+  }
+
+  // dispose previously registered effect scope if there is one.
+  if (oldScope) {
+    oldScope.stop();
+  }
+}
+function installModule(store, rootState, path, module, hot) {
+  var isRoot = !path.length;
+  var namespace = store._modules.getNamespace(path);
+
+  // register in namespace map
+  if (module.namespaced) {
+    if (store._modulesNamespaceMap[namespace] && "production" !== 'production') {}
+    store._modulesNamespaceMap[namespace] = module;
+  }
+
+  // set state
+  if (!isRoot && !hot) {
+    var parentState = getNestedState(rootState, path.slice(0, -1));
+    var moduleName = path[path.length - 1];
+    store._withCommit(function () {
+      if (false) {}
+      parentState[moduleName] = module.state;
+    });
+  }
+  var local = module.context = makeLocalContext(store, namespace, path);
+  module.forEachMutation(function (mutation, key) {
+    var namespacedType = namespace + key;
+    registerMutation(store, namespacedType, mutation, local);
+  });
+  module.forEachAction(function (action, key) {
+    var type = action.root ? key : namespace + key;
+    var handler = action.handler || action;
+    registerAction(store, type, handler, local);
+  });
+  module.forEachGetter(function (getter, key) {
+    var namespacedType = namespace + key;
+    registerGetter(store, namespacedType, getter, local);
+  });
+  module.forEachChild(function (child, key) {
+    installModule(store, rootState, path.concat(key), child, hot);
+  });
+}
+
+/**
+ * make localized dispatch, commit, getters and state
+ * if there is no namespace, just use root ones
+ */
+function makeLocalContext(store, namespace, path) {
+  var noNamespace = namespace === '';
+  var local = {
+    dispatch: noNamespace ? store.dispatch : function (_type, _payload, _options) {
+      var args = unifyObjectStyle(_type, _payload, _options);
+      var payload = args.payload;
+      var options = args.options;
+      var type = args.type;
+      if (!options || !options.root) {
+        type = namespace + type;
+        if (false) {}
+      }
+      return store.dispatch(type, payload);
+    },
+    commit: noNamespace ? store.commit : function (_type, _payload, _options) {
+      var args = unifyObjectStyle(_type, _payload, _options);
+      var payload = args.payload;
+      var options = args.options;
+      var type = args.type;
+      if (!options || !options.root) {
+        type = namespace + type;
+        if (false) {}
+      }
+      store.commit(type, payload, options);
+    }
+  };
+
+  // getters and state object must be gotten lazily
+  // because they will be changed by state update
+  Object.defineProperties(local, {
+    getters: {
+      get: noNamespace ? function () {
+        return store.getters;
+      } : function () {
+        return makeLocalGetters(store, namespace);
+      }
+    },
+    state: {
+      get: function () {
+        return getNestedState(store.state, path);
+      }
+    }
+  });
+  return local;
+}
+function makeLocalGetters(store, namespace) {
+  if (!store._makeLocalGettersCache[namespace]) {
+    var gettersProxy = {};
+    var splitPos = namespace.length;
+    Object.keys(store.getters).forEach(function (type) {
+      // skip if the target getter is not match this namespace
+      if (type.slice(0, splitPos) !== namespace) {
+        return;
+      }
+
+      // extract local getter type
+      var localType = type.slice(splitPos);
+
+      // Add a port to the getters proxy.
+      // Define as getter property because
+      // we do not want to evaluate the getters in this time.
+      Object.defineProperty(gettersProxy, localType, {
+        get: function () {
+          return store.getters[type];
+        },
+        enumerable: true
+      });
+    });
+    store._makeLocalGettersCache[namespace] = gettersProxy;
+  }
+  return store._makeLocalGettersCache[namespace];
+}
+function registerMutation(store, type, handler, local) {
+  var entry = store._mutations[type] || (store._mutations[type] = []);
+  entry.push(function wrappedMutationHandler(payload) {
+    handler.call(store, local.state, payload);
+  });
+}
+function registerAction(store, type, handler, local) {
+  var entry = store._actions[type] || (store._actions[type] = []);
+  entry.push(function wrappedActionHandler(payload) {
+    var res = handler.call(store, {
+      dispatch: local.dispatch,
+      commit: local.commit,
+      getters: local.getters,
+      state: local.state,
+      rootGetters: store.getters,
+      rootState: store.state
+    }, payload);
+    if (!vuex_esm_bundler_isPromise(res)) {
+      res = Promise.resolve(res);
+    }
+    if (store._devtoolHook) {
+      return res.catch(function (err) {
+        store._devtoolHook.emit('vuex:error', err);
+        throw err;
+      });
+    } else {
+      return res;
+    }
+  });
+}
+function registerGetter(store, type, rawGetter, local) {
+  if (store._wrappedGetters[type]) {
+    if (false) {}
+    return;
+  }
+  store._wrappedGetters[type] = function wrappedGetter(store) {
+    return rawGetter(local.state,
+    // local state
+    local.getters,
+    // local getters
+    store.state,
+    // root state
+    store.getters // root getters
+    );
+  };
+}
+function enableStrictMode(store) {
+  (0,runtime_core_esm_bundler/* watch */.Kg)(function () {
+    return store._state.data;
+  }, function () {
+    if (false) {}
+  }, {
+    deep: true,
+    flush: 'sync'
+  });
+}
+function getNestedState(state, path) {
+  return path.reduce(function (state, key) {
+    return state[key];
+  }, state);
+}
+function unifyObjectStyle(type, payload, options) {
+  if (vuex_esm_bundler_isObject(type) && type.type) {
+    options = payload;
+    payload = type;
+    type = type.type;
+  }
+  if (false) {}
+  return {
+    type: type,
+    payload: payload,
+    options: options
+  };
+}
+var LABEL_VUEX_BINDINGS = 'vuex bindings';
+var MUTATIONS_LAYER_ID = 'vuex:mutations';
+var ACTIONS_LAYER_ID = 'vuex:actions';
+var INSPECTOR_ID = 'vuex';
+var actionId = 0;
+function addDevtools(app, store) {
+  esm_setupDevtoolsPlugin({
+    id: 'org.vuejs.vuex',
+    app: app,
+    label: 'Vuex',
+    homepage: 'https://next.vuex.vuejs.org/',
+    logo: 'https://vuejs.org/images/icons/favicon-96x96.png',
+    packageName: 'vuex',
+    componentStateTypes: [LABEL_VUEX_BINDINGS]
+  }, function (api) {
+    api.addTimelineLayer({
+      id: MUTATIONS_LAYER_ID,
+      label: 'Vuex Mutations',
+      color: COLOR_LIME_500
+    });
+    api.addTimelineLayer({
+      id: ACTIONS_LAYER_ID,
+      label: 'Vuex Actions',
+      color: COLOR_LIME_500
+    });
+    api.addInspector({
+      id: INSPECTOR_ID,
+      label: 'Vuex',
+      icon: 'storage',
+      treeFilterPlaceholder: 'Filter stores...'
+    });
+    api.on.getInspectorTree(function (payload) {
+      if (payload.app === app && payload.inspectorId === INSPECTOR_ID) {
+        if (payload.filter) {
+          var nodes = [];
+          flattenStoreForInspectorTree(nodes, store._modules.root, payload.filter, '');
+          payload.rootNodes = nodes;
+        } else {
+          payload.rootNodes = [formatStoreForInspectorTree(store._modules.root, '')];
+        }
+      }
+    });
+    api.on.getInspectorState(function (payload) {
+      if (payload.app === app && payload.inspectorId === INSPECTOR_ID) {
+        var modulePath = payload.nodeId;
+        makeLocalGetters(store, modulePath);
+        payload.state = formatStoreForInspectorState(getStoreModule(store._modules, modulePath), modulePath === 'root' ? store.getters : store._makeLocalGettersCache, modulePath);
+      }
+    });
+    api.on.editInspectorState(function (payload) {
+      if (payload.app === app && payload.inspectorId === INSPECTOR_ID) {
+        var modulePath = payload.nodeId;
+        var path = payload.path;
+        if (modulePath !== 'root') {
+          path = modulePath.split('/').filter(Boolean).concat(path);
+        }
+        store._withCommit(function () {
+          payload.set(store._state.data, path, payload.state.value);
+        });
+      }
+    });
+    store.subscribe(function (mutation, state) {
+      var data = {};
+      if (mutation.payload) {
+        data.payload = mutation.payload;
+      }
+      data.state = state;
+      api.notifyComponentUpdate();
+      api.sendInspectorTree(INSPECTOR_ID);
+      api.sendInspectorState(INSPECTOR_ID);
+      api.addTimelineEvent({
+        layerId: MUTATIONS_LAYER_ID,
+        event: {
+          time: Date.now(),
+          title: mutation.type,
+          data: data
+        }
+      });
+    });
+    store.subscribeAction({
+      before: function (action, state) {
+        var data = {};
+        if (action.payload) {
+          data.payload = action.payload;
+        }
+        action._id = actionId++;
+        action._time = Date.now();
+        data.state = state;
+        api.addTimelineEvent({
+          layerId: ACTIONS_LAYER_ID,
+          event: {
+            time: action._time,
+            title: action.type,
+            groupId: action._id,
+            subtitle: 'start',
+            data: data
+          }
+        });
+      },
+      after: function (action, state) {
+        var data = {};
+        var duration = Date.now() - action._time;
+        data.duration = {
+          _custom: {
+            type: 'duration',
+            display: duration + "ms",
+            tooltip: 'Action duration',
+            value: duration
+          }
+        };
+        if (action.payload) {
+          data.payload = action.payload;
+        }
+        data.state = state;
+        api.addTimelineEvent({
+          layerId: ACTIONS_LAYER_ID,
+          event: {
+            time: Date.now(),
+            title: action.type,
+            groupId: action._id,
+            subtitle: 'end',
+            data: data
+          }
+        });
+      }
+    });
+  });
+}
+
+// extracted from tailwind palette
+var COLOR_LIME_500 = 0x84cc16;
+var COLOR_DARK = 0x666666;
+var COLOR_WHITE = 0xffffff;
+var TAG_NAMESPACED = {
+  label: 'namespaced',
+  textColor: COLOR_WHITE,
+  backgroundColor: COLOR_DARK
+};
+
+/**
+ * @param {string} path
+ */
+function extractNameFromPath(path) {
+  return path && path !== 'root' ? path.split('/').slice(-2, -1)[0] : 'Root';
+}
+
+/**
+ * @param {*} module
+ * @return {import('@vue/devtools-api').CustomInspectorNode}
+ */
+function formatStoreForInspectorTree(module, path) {
+  return {
+    id: path || 'root',
+    // all modules end with a `/`, we want the last segment only
+    // cart/ -> cart
+    // nested/cart/ -> cart
+    label: extractNameFromPath(path),
+    tags: module.namespaced ? [TAG_NAMESPACED] : [],
+    children: Object.keys(module._children).map(function (moduleName) {
+      return formatStoreForInspectorTree(module._children[moduleName], path + moduleName + '/');
+    })
+  };
+}
+
+/**
+ * @param {import('@vue/devtools-api').CustomInspectorNode[]} result
+ * @param {*} module
+ * @param {string} filter
+ * @param {string} path
+ */
+function flattenStoreForInspectorTree(result, module, filter, path) {
+  if (path.includes(filter)) {
+    result.push({
+      id: path || 'root',
+      label: path.endsWith('/') ? path.slice(0, path.length - 1) : path || 'Root',
+      tags: module.namespaced ? [TAG_NAMESPACED] : []
+    });
+  }
+  Object.keys(module._children).forEach(function (moduleName) {
+    flattenStoreForInspectorTree(result, module._children[moduleName], filter, path + moduleName + '/');
+  });
+}
+
+/**
+ * @param {*} module
+ * @return {import('@vue/devtools-api').CustomInspectorState}
+ */
+function formatStoreForInspectorState(module, getters, path) {
+  getters = path === 'root' ? getters : getters[path];
+  var gettersKeys = Object.keys(getters);
+  var storeState = {
+    state: Object.keys(module.state).map(function (key) {
+      return {
+        key: key,
+        editable: true,
+        value: module.state[key]
+      };
+    })
+  };
+  if (gettersKeys.length) {
+    var tree = transformPathsToObjectTree(getters);
+    storeState.getters = Object.keys(tree).map(function (key) {
+      return {
+        key: key.endsWith('/') ? extractNameFromPath(key) : key,
+        editable: false,
+        value: canThrow(function () {
+          return tree[key];
+        })
+      };
+    });
+  }
+  return storeState;
+}
+function transformPathsToObjectTree(getters) {
+  var result = {};
+  Object.keys(getters).forEach(function (key) {
+    var path = key.split('/');
+    if (path.length > 1) {
+      var target = result;
+      var leafKey = path.pop();
+      path.forEach(function (p) {
+        if (!target[p]) {
+          target[p] = {
+            _custom: {
+              value: {},
+              display: p,
+              tooltip: 'Module',
+              abstract: true
+            }
+          };
+        }
+        target = target[p]._custom.value;
+      });
+      target[leafKey] = canThrow(function () {
+        return getters[key];
+      });
+    } else {
+      result[key] = canThrow(function () {
+        return getters[key];
+      });
+    }
+  });
+  return result;
+}
+function getStoreModule(moduleMap, path) {
+  var names = path.split('/').filter(function (n) {
+    return n;
+  });
+  return names.reduce(function (module, moduleName, i) {
+    var child = module[moduleName];
+    if (!child) {
+      throw new Error("Missing module \"" + moduleName + "\" for path \"" + path + "\".");
+    }
+    return i === names.length - 1 ? child : child._children;
+  }, path === 'root' ? moduleMap : moduleMap.root._children);
+}
+function canThrow(cb) {
+  try {
+    return cb();
+  } catch (e) {
+    return e;
+  }
+}
+
+// Base data struct for store's module, package with some attribute and method
+var Module = function Module(rawModule, runtime) {
+  this.runtime = runtime;
+  // Store some children item
+  this._children = Object.create(null);
+  // Store the origin module object which passed by programmer
+  this._rawModule = rawModule;
+  var rawState = rawModule.state;
+
+  // Store the origin module's state
+  this.state = (typeof rawState === 'function' ? rawState() : rawState) || {};
+};
+var prototypeAccessors$1 = {
+  namespaced: {
+    configurable: true
+  }
+};
+prototypeAccessors$1.namespaced.get = function () {
+  return !!this._rawModule.namespaced;
+};
+Module.prototype.addChild = function addChild(key, module) {
+  this._children[key] = module;
+};
+Module.prototype.removeChild = function removeChild(key) {
+  delete this._children[key];
+};
+Module.prototype.getChild = function getChild(key) {
+  return this._children[key];
+};
+Module.prototype.hasChild = function hasChild(key) {
+  return key in this._children;
+};
+Module.prototype.update = function update(rawModule) {
+  this._rawModule.namespaced = rawModule.namespaced;
+  if (rawModule.actions) {
+    this._rawModule.actions = rawModule.actions;
+  }
+  if (rawModule.mutations) {
+    this._rawModule.mutations = rawModule.mutations;
+  }
+  if (rawModule.getters) {
+    this._rawModule.getters = rawModule.getters;
+  }
+};
+Module.prototype.forEachChild = function forEachChild(fn) {
+  forEachValue(this._children, fn);
+};
+Module.prototype.forEachGetter = function forEachGetter(fn) {
+  if (this._rawModule.getters) {
+    forEachValue(this._rawModule.getters, fn);
+  }
+};
+Module.prototype.forEachAction = function forEachAction(fn) {
+  if (this._rawModule.actions) {
+    forEachValue(this._rawModule.actions, fn);
+  }
+};
+Module.prototype.forEachMutation = function forEachMutation(fn) {
+  if (this._rawModule.mutations) {
+    forEachValue(this._rawModule.mutations, fn);
+  }
+};
+Object.defineProperties(Module.prototype, prototypeAccessors$1);
+var ModuleCollection = function ModuleCollection(rawRootModule) {
+  // register root module (Vuex.Store options)
+  this.register([], rawRootModule, false);
+};
+ModuleCollection.prototype.get = function get(path) {
+  return path.reduce(function (module, key) {
+    return module.getChild(key);
+  }, this.root);
+};
+ModuleCollection.prototype.getNamespace = function getNamespace(path) {
+  var module = this.root;
+  return path.reduce(function (namespace, key) {
+    module = module.getChild(key);
+    return namespace + (module.namespaced ? key + '/' : '');
+  }, '');
+};
+ModuleCollection.prototype.update = function update$1(rawRootModule) {
+  update([], this.root, rawRootModule);
+};
+ModuleCollection.prototype.register = function register(path, rawModule, runtime) {
+  var this$1$1 = this;
+  if (runtime === void 0) runtime = true;
+  if (false) {}
+  var newModule = new Module(rawModule, runtime);
+  if (path.length === 0) {
+    this.root = newModule;
+  } else {
+    var parent = this.get(path.slice(0, -1));
+    parent.addChild(path[path.length - 1], newModule);
+  }
+
+  // register nested modules
+  if (rawModule.modules) {
+    forEachValue(rawModule.modules, function (rawChildModule, key) {
+      this$1$1.register(path.concat(key), rawChildModule, runtime);
+    });
+  }
+};
+ModuleCollection.prototype.unregister = function unregister(path) {
+  var parent = this.get(path.slice(0, -1));
+  var key = path[path.length - 1];
+  var child = parent.getChild(key);
+  if (!child) {
+    if (false) {}
+    return;
+  }
+  if (!child.runtime) {
+    return;
+  }
+  parent.removeChild(key);
+};
+ModuleCollection.prototype.isRegistered = function isRegistered(path) {
+  var parent = this.get(path.slice(0, -1));
+  var key = path[path.length - 1];
+  if (parent) {
+    return parent.hasChild(key);
+  }
+  return false;
+};
+function update(path, targetModule, newModule) {
+  if (false) {}
+
+  // update target module
+  targetModule.update(newModule);
+
+  // update nested modules
+  if (newModule.modules) {
+    for (var key in newModule.modules) {
+      if (!targetModule.getChild(key)) {
+        if (false) {}
+        return;
+      }
+      update(path.concat(key), targetModule.getChild(key), newModule.modules[key]);
+    }
+  }
+}
+var functionAssert = {
+  assert: function (value) {
+    return typeof value === 'function';
+  },
+  expected: 'function'
+};
+var objectAssert = {
+  assert: function (value) {
+    return typeof value === 'function' || typeof value === 'object' && typeof value.handler === 'function';
+  },
+  expected: 'function or object with "handler" function'
+};
+var assertTypes = {
+  getters: functionAssert,
+  mutations: functionAssert,
+  actions: objectAssert
+};
+function assertRawModule(path, rawModule) {
+  Object.keys(assertTypes).forEach(function (key) {
+    if (!rawModule[key]) {
+      return;
+    }
+    var assertOptions = assertTypes[key];
+    forEachValue(rawModule[key], function (value, type) {
+      assert(assertOptions.assert(value), makeAssertionMessage(path, key, type, value, assertOptions.expected));
+    });
+  });
+}
+function makeAssertionMessage(path, key, type, value, expected) {
+  var buf = key + " should be " + expected + " but \"" + key + "." + type + "\"";
+  if (path.length > 0) {
+    buf += " in module \"" + path.join('.') + "\"";
+  }
+  buf += " is " + JSON.stringify(value) + ".";
+  return buf;
+}
+function createStore(options) {
+  return new Store(options);
+}
+var Store = function Store(options) {
+  var this$1$1 = this;
+  if (options === void 0) options = {};
+  if (false) {}
+  var plugins = options.plugins;
+  if (plugins === void 0) plugins = [];
+  var strict = options.strict;
+  if (strict === void 0) strict = false;
+  var devtools = options.devtools;
+
+  // store internal state
+  this._committing = false;
+  this._actions = Object.create(null);
+  this._actionSubscribers = [];
+  this._mutations = Object.create(null);
+  this._wrappedGetters = Object.create(null);
+  this._modules = new ModuleCollection(options);
+  this._modulesNamespaceMap = Object.create(null);
+  this._subscribers = [];
+  this._makeLocalGettersCache = Object.create(null);
+
+  // EffectScope instance. when registering new getters, we wrap them inside
+  // EffectScope so that getters (computed) would not be destroyed on
+  // component unmount.
+  this._scope = null;
+  this._devtools = devtools;
+
+  // bind commit and dispatch to self
+  var store = this;
+  var ref = this;
+  var dispatch = ref.dispatch;
+  var commit = ref.commit;
+  this.dispatch = function boundDispatch(type, payload) {
+    return dispatch.call(store, type, payload);
+  };
+  this.commit = function boundCommit(type, payload, options) {
+    return commit.call(store, type, payload, options);
+  };
+
+  // strict mode
+  this.strict = strict;
+  var state = this._modules.root.state;
+
+  // init root module.
+  // this also recursively registers all sub-modules
+  // and collects all module getters inside this._wrappedGetters
+  installModule(this, state, [], this._modules.root);
+
+  // initialize the store state, which is responsible for the reactivity
+  // (also registers _wrappedGetters as computed properties)
+  resetStoreState(this, state);
+
+  // apply plugins
+  plugins.forEach(function (plugin) {
+    return plugin(this$1$1);
+  });
+};
+var prototypeAccessors = {
+  state: {
+    configurable: true
+  }
+};
+Store.prototype.install = function install(app, injectKey) {
+  app.provide(injectKey || storeKey, this);
+  app.config.globalProperties.$store = this;
+  var useDevtools = this._devtools !== undefined ? this._devtools :  false || false;
+  if (useDevtools) {
+    addDevtools(app, this);
+  }
+};
+prototypeAccessors.state.get = function () {
+  return this._state.data;
+};
+prototypeAccessors.state.set = function (v) {
+  if (false) {}
+};
+Store.prototype.commit = function commit(_type, _payload, _options) {
+  var this$1$1 = this;
+
+  // check object-style commit
+  var ref = unifyObjectStyle(_type, _payload, _options);
+  var type = ref.type;
+  var payload = ref.payload;
+  var options = ref.options;
+  var mutation = {
+    type: type,
+    payload: payload
+  };
+  var entry = this._mutations[type];
+  if (!entry) {
+    if (false) {}
+    return;
+  }
+  this._withCommit(function () {
+    entry.forEach(function commitIterator(handler) {
+      handler(payload);
+    });
+  });
+  this._subscribers.slice() // shallow copy to prevent iterator invalidation if subscriber synchronously calls unsubscribe
+  .forEach(function (sub) {
+    return sub(mutation, this$1$1.state);
+  });
+  if (false) {}
+};
+Store.prototype.dispatch = function dispatch(_type, _payload) {
+  var this$1$1 = this;
+
+  // check object-style dispatch
+  var ref = unifyObjectStyle(_type, _payload);
+  var type = ref.type;
+  var payload = ref.payload;
+  var action = {
+    type: type,
+    payload: payload
+  };
+  var entry = this._actions[type];
+  if (!entry) {
+    if (false) {}
+    return;
+  }
+  try {
+    this._actionSubscribers.slice() // shallow copy to prevent iterator invalidation if subscriber synchronously calls unsubscribe
+    .filter(function (sub) {
+      return sub.before;
+    }).forEach(function (sub) {
+      return sub.before(action, this$1$1.state);
+    });
+  } catch (e) {
+    if (false) {}
+  }
+  var result = entry.length > 1 ? Promise.all(entry.map(function (handler) {
+    return handler(payload);
+  })) : entry[0](payload);
+  return new Promise(function (resolve, reject) {
+    result.then(function (res) {
+      try {
+        this$1$1._actionSubscribers.filter(function (sub) {
+          return sub.after;
+        }).forEach(function (sub) {
+          return sub.after(action, this$1$1.state);
+        });
+      } catch (e) {
+        if (false) {}
+      }
+      resolve(res);
+    }, function (error) {
+      try {
+        this$1$1._actionSubscribers.filter(function (sub) {
+          return sub.error;
+        }).forEach(function (sub) {
+          return sub.error(action, this$1$1.state, error);
+        });
+      } catch (e) {
+        if (false) {}
+      }
+      reject(error);
+    });
+  });
+};
+Store.prototype.subscribe = function subscribe(fn, options) {
+  return genericSubscribe(fn, this._subscribers, options);
+};
+Store.prototype.subscribeAction = function subscribeAction(fn, options) {
+  var subs = typeof fn === 'function' ? {
+    before: fn
+  } : fn;
+  return genericSubscribe(subs, this._actionSubscribers, options);
+};
+Store.prototype.watch = function watch$1(getter, cb, options) {
+  var this$1$1 = this;
+  if (false) {}
+  return (0,runtime_core_esm_bundler/* watch */.Kg)(function () {
+    return getter(this$1$1.state, this$1$1.getters);
+  }, cb, Object.assign({}, options));
+};
+Store.prototype.replaceState = function replaceState(state) {
+  var this$1$1 = this;
+  this._withCommit(function () {
+    this$1$1._state.data = state;
+  });
+};
+Store.prototype.registerModule = function registerModule(path, rawModule, options) {
+  if (options === void 0) options = {};
+  if (typeof path === 'string') {
+    path = [path];
+  }
+  if (false) {}
+  this._modules.register(path, rawModule);
+  installModule(this, this.state, path, this._modules.get(path), options.preserveState);
+  // reset store to update getters...
+  resetStoreState(this, this.state);
+};
+Store.prototype.unregisterModule = function unregisterModule(path) {
+  var this$1$1 = this;
+  if (typeof path === 'string') {
+    path = [path];
+  }
+  if (false) {}
+  this._modules.unregister(path);
+  this._withCommit(function () {
+    var parentState = getNestedState(this$1$1.state, path.slice(0, -1));
+    delete parentState[path[path.length - 1]];
+  });
+  resetStore(this);
+};
+Store.prototype.hasModule = function hasModule(path) {
+  if (typeof path === 'string') {
+    path = [path];
+  }
+  if (false) {}
+  return this._modules.isRegistered(path);
+};
+Store.prototype.hotUpdate = function hotUpdate(newOptions) {
+  this._modules.update(newOptions);
+  resetStore(this, true);
+};
+Store.prototype._withCommit = function _withCommit(fn) {
+  var committing = this._committing;
+  this._committing = true;
+  fn();
+  this._committing = committing;
+};
+Object.defineProperties(Store.prototype, prototypeAccessors);
+
+/**
+ * Reduce the code which written in Vue.js for getting the state.
+ * @param {String} [namespace] - Module's namespace
+ * @param {Object|Array} states # Object's item can be a function which accept state and getters for param, you can do something for state and getters in it.
+ * @param {Object}
+ */
+var mapState = normalizeNamespace(function (namespace, states) {
+  var res = {};
+  if (false) {}
+  normalizeMap(states).forEach(function (ref) {
+    var key = ref.key;
+    var val = ref.val;
+    res[key] = function mappedState() {
+      var state = this.$store.state;
+      var getters = this.$store.getters;
+      if (namespace) {
+        var module = getModuleByNamespace(this.$store, 'mapState', namespace);
+        if (!module) {
+          return;
+        }
+        state = module.context.state;
+        getters = module.context.getters;
+      }
+      return typeof val === 'function' ? val.call(this, state, getters) : state[val];
+    };
+    // mark vuex getter for devtools
+    res[key].vuex = true;
+  });
+  return res;
+});
+
+/**
+ * Reduce the code which written in Vue.js for committing the mutation
+ * @param {String} [namespace] - Module's namespace
+ * @param {Object|Array} mutations # Object's item can be a function which accept `commit` function as the first param, it can accept another params. You can commit mutation and do any other things in this function. specially, You need to pass anthor params from the mapped function.
+ * @return {Object}
+ */
+var mapMutations = normalizeNamespace(function (namespace, mutations) {
+  var res = {};
+  if (false) {}
+  normalizeMap(mutations).forEach(function (ref) {
+    var key = ref.key;
+    var val = ref.val;
+    res[key] = function mappedMutation() {
+      var args = [],
+        len = arguments.length;
+      while (len--) args[len] = arguments[len];
+
+      // Get the commit method from store
+      var commit = this.$store.commit;
+      if (namespace) {
+        var module = getModuleByNamespace(this.$store, 'mapMutations', namespace);
+        if (!module) {
+          return;
+        }
+        commit = module.context.commit;
+      }
+      return typeof val === 'function' ? val.apply(this, [commit].concat(args)) : commit.apply(this.$store, [val].concat(args));
+    };
+  });
+  return res;
+});
+
+/**
+ * Reduce the code which written in Vue.js for getting the getters
+ * @param {String} [namespace] - Module's namespace
+ * @param {Object|Array} getters
+ * @return {Object}
+ */
+var mapGetters = normalizeNamespace(function (namespace, getters) {
+  var res = {};
+  if (false) {}
+  normalizeMap(getters).forEach(function (ref) {
+    var key = ref.key;
+    var val = ref.val;
+
+    // The namespace has been mutated by normalizeNamespace
+    val = namespace + val;
+    res[key] = function mappedGetter() {
+      if (namespace && !getModuleByNamespace(this.$store, 'mapGetters', namespace)) {
+        return;
+      }
+      if (false) {}
+      return this.$store.getters[val];
+    };
+    // mark vuex getter for devtools
+    res[key].vuex = true;
+  });
+  return res;
+});
+
+/**
+ * Reduce the code which written in Vue.js for dispatch the action
+ * @param {String} [namespace] - Module's namespace
+ * @param {Object|Array} actions # Object's item can be a function which accept `dispatch` function as the first param, it can accept anthor params. You can dispatch action and do any other things in this function. specially, You need to pass anthor params from the mapped function.
+ * @return {Object}
+ */
+var mapActions = normalizeNamespace(function (namespace, actions) {
+  var res = {};
+  if (false) {}
+  normalizeMap(actions).forEach(function (ref) {
+    var key = ref.key;
+    var val = ref.val;
+    res[key] = function mappedAction() {
+      var args = [],
+        len = arguments.length;
+      while (len--) args[len] = arguments[len];
+
+      // get dispatch function from store
+      var dispatch = this.$store.dispatch;
+      if (namespace) {
+        var module = getModuleByNamespace(this.$store, 'mapActions', namespace);
+        if (!module) {
+          return;
+        }
+        dispatch = module.context.dispatch;
+      }
+      return typeof val === 'function' ? val.apply(this, [dispatch].concat(args)) : dispatch.apply(this.$store, [val].concat(args));
+    };
+  });
+  return res;
+});
+
+/**
+ * Rebinding namespace param for mapXXX function in special scoped, and return them by simple object
+ * @param {String} namespace
+ * @return {Object}
+ */
+var createNamespacedHelpers = function (namespace) {
+  return {
+    mapState: mapState.bind(null, namespace),
+    mapGetters: mapGetters.bind(null, namespace),
+    mapMutations: mapMutations.bind(null, namespace),
+    mapActions: mapActions.bind(null, namespace)
+  };
+};
+
+/**
+ * Normalize the map
+ * normalizeMap([1, 2, 3]) => [ { key: 1, val: 1 }, { key: 2, val: 2 }, { key: 3, val: 3 } ]
+ * normalizeMap({a: 1, b: 2, c: 3}) => [ { key: 'a', val: 1 }, { key: 'b', val: 2 }, { key: 'c', val: 3 } ]
+ * @param {Array|Object} map
+ * @return {Object}
+ */
+function normalizeMap(map) {
+  if (!isValidMap(map)) {
+    return [];
+  }
+  return Array.isArray(map) ? map.map(function (key) {
+    return {
+      key: key,
+      val: key
+    };
+  }) : Object.keys(map).map(function (key) {
+    return {
+      key: key,
+      val: map[key]
+    };
+  });
+}
+
+/**
+ * Validate whether given map is valid or not
+ * @param {*} map
+ * @return {Boolean}
+ */
+function isValidMap(map) {
+  return Array.isArray(map) || vuex_esm_bundler_isObject(map);
+}
+
+/**
+ * Return a function expect two param contains namespace and map. it will normalize the namespace and then the param's function will handle the new namespace and the map.
+ * @param {Function} fn
+ * @return {Function}
+ */
+function normalizeNamespace(fn) {
+  return function (namespace, map) {
+    if (typeof namespace !== 'string') {
+      map = namespace;
+      namespace = '';
+    } else if (namespace.charAt(namespace.length - 1) !== '/') {
+      namespace += '/';
+    }
+    return fn(namespace, map);
+  };
+}
+
+/**
+ * Search a special module from store by namespace. if module not exist, print error message.
+ * @param {Object} store
+ * @param {String} helper
+ * @param {String} namespace
+ * @return {Object}
+ */
+function getModuleByNamespace(store, helper, namespace) {
+  var module = store._modulesNamespaceMap[namespace];
+  if (false) {}
+  return module;
+}
+
+// Credits: borrowed code from fcomb/redux-logger
+
+function createLogger(ref) {
+  if (ref === void 0) ref = {};
+  var collapsed = ref.collapsed;
+  if (collapsed === void 0) collapsed = true;
+  var filter = ref.filter;
+  if (filter === void 0) filter = function (mutation, stateBefore, stateAfter) {
+    return true;
+  };
+  var transformer = ref.transformer;
+  if (transformer === void 0) transformer = function (state) {
+    return state;
+  };
+  var mutationTransformer = ref.mutationTransformer;
+  if (mutationTransformer === void 0) mutationTransformer = function (mut) {
+    return mut;
+  };
+  var actionFilter = ref.actionFilter;
+  if (actionFilter === void 0) actionFilter = function (action, state) {
+    return true;
+  };
+  var actionTransformer = ref.actionTransformer;
+  if (actionTransformer === void 0) actionTransformer = function (act) {
+    return act;
+  };
+  var logMutations = ref.logMutations;
+  if (logMutations === void 0) logMutations = true;
+  var logActions = ref.logActions;
+  if (logActions === void 0) logActions = true;
+  var logger = ref.logger;
+  if (logger === void 0) logger = console;
+  return function (store) {
+    var prevState = vuex_esm_bundler_deepCopy(store.state);
+    if (typeof logger === 'undefined') {
+      return;
+    }
+    if (logMutations) {
+      store.subscribe(function (mutation, state) {
+        var nextState = vuex_esm_bundler_deepCopy(state);
+        if (filter(mutation, prevState, nextState)) {
+          var formattedTime = getFormattedTime();
+          var formattedMutation = mutationTransformer(mutation);
+          var message = "mutation " + mutation.type + formattedTime;
+          startMessage(logger, message, collapsed);
+          logger.log('%c prev state', 'color: #9E9E9E; font-weight: bold', transformer(prevState));
+          logger.log('%c mutation', 'color: #03A9F4; font-weight: bold', formattedMutation);
+          logger.log('%c next state', 'color: #4CAF50; font-weight: bold', transformer(nextState));
+          endMessage(logger);
+        }
+        prevState = nextState;
+      });
+    }
+    if (logActions) {
+      store.subscribeAction(function (action, state) {
+        if (actionFilter(action, state)) {
+          var formattedTime = getFormattedTime();
+          var formattedAction = actionTransformer(action);
+          var message = "action " + action.type + formattedTime;
+          startMessage(logger, message, collapsed);
+          logger.log('%c action', 'color: #03A9F4; font-weight: bold', formattedAction);
+          endMessage(logger);
+        }
+      });
+    }
+  };
+}
+function startMessage(logger, message, collapsed) {
+  var startMessage = collapsed ? logger.groupCollapsed : logger.group;
+
+  // render
+  try {
+    startMessage.call(logger, message);
+  } catch (e) {
+    logger.log(message);
+  }
+}
+function endMessage(logger) {
+  try {
+    logger.groupEnd();
+  } catch (e) {
+    logger.log('—— log end ——');
+  }
+}
+function getFormattedTime() {
+  var time = new Date();
+  return " @ " + pad(time.getHours(), 2) + ":" + pad(time.getMinutes(), 2) + ":" + pad(time.getSeconds(), 2) + "." + pad(time.getMilliseconds(), 3);
+}
+function repeat(str, times) {
+  return new Array(times + 1).join(str);
+}
+function pad(num, maxLength) {
+  return repeat('0', maxLength - num.toString().length) + num;
+}
+var index = {
+  version: '4.1.0',
+  Store: Store,
+  storeKey: storeKey,
+  createStore: createStore,
+  useStore: useStore,
+  mapState: mapState,
+  mapMutations: mapMutations,
+  mapGetters: mapGetters,
+  mapActions: mapActions,
+  createNamespacedHelpers: createNamespacedHelpers,
+  createLogger: createLogger
+};
+/* harmony default export */ var vuex_esm_bundler = ((/* unused pure expression or super */ null && (index)));
+
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/typeof.js
+function _typeof(o) {
+  "@babel/helpers - typeof";
+
+  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
+    return typeof o;
+  } : function (o) {
+    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+  }, _typeof(o);
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/toPrimitive.js
+
+function toPrimitive(t, r) {
+  if ("object" != _typeof(t) || !t) return t;
+  var e = t[Symbol.toPrimitive];
+  if (void 0 !== e) {
+    var i = e.call(t, r || "default");
+    if ("object" != _typeof(i)) return i;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return ("string" === r ? String : Number)(t);
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/toPropertyKey.js
+
+
+function toPropertyKey(t) {
+  var i = toPrimitive(t, "string");
+  return "symbol" == _typeof(i) ? i : String(i);
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/defineProperty.js
+
+function _defineProperty(obj, key, value) {
+  key = toPropertyKey(key);
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+  return obj;
+}
+// EXTERNAL MODULE: ./node_modules/eventemitter3/index.js
+var eventemitter3 = __webpack_require__(7728);
+var eventemitter3_default = /*#__PURE__*/__webpack_require__.n(eventemitter3);
+;// CONCATENATED MODULE: ./src/lang/ru.ts
+/* harmony default export */ var ru = ({
+  BLE: {
+    title: "Bluetooth",
+    btn: {
+      connect: "Подключиться",
+      disconnect: "Отключиться"
+    },
+    dialog: {
+      noConnected: "Вы не подключены ни к одному устройству Bluetooth.",
+      connected: "Вы подключены к устройству Bluetooth PJCAN."
+    },
+    notify: {
+      noConnected: "Нет подключения устройству Bluetooth.",
+      connected: "PJCAN подключен",
+      disconnected: "PJCAN отключен",
+      lostConnected: "Потеряно подключение с устройством Bluetooth PJCAN. Пытаюсь восстановить связь...",
+      noData: "Нет данных для отправки"
+    },
+    server: {
+      deviceSelected: "Выбрано {n} Bluetooth устройство.",
+      deviceDisconnected: "Устройство Bluetooth {n} отключено.",
+      GATTConnect: "Подключение к GATT серверу ...",
+      getService: "GATT сервер подключен, читаю сервис ...",
+      getCharacteristic: "Сервис получен, читаю характеристику ...",
+      characteristicDone: "Характеристика получена.",
+      startNotifications: "Запуск уведомлений ...",
+      notificationsDone: "Уведомления запущены.",
+      reconnect: "Повторная попытка через {n} сек... (осталось {c} попыток)",
+      reconnectRestored: "Соединение с устройством Bluetooth PJCAN восстановлено.",
+      connectionLost: "Связь с устройством Bluetooth PJCAN потеряна.",
+      receive: "Входящие данные: ID {n}",
+      send: "Исходящие данные: ID {n}",
+      versionProtocol: "Версия протокола: {mj}.{mn}.{bl}.{rv}"
+    }
+  },
+  update: {
+    title: "Обновление PJCAN",
+    warning: "Внимание!",
+    btn: {
+      update: "Обновить",
+      later: "Позже"
+    },
+    dialog: {
+      updateTo: "Обновить прошивку PJCAN до версии {version} ?",
+      browserOutdated: "Версия вашего браузера устарела.\n" + "Обновите его и откройте web-приложение заново."
+    },
+    process: {
+      preparation: "Подготовка к загрузке ...",
+      upload: "Загрузка прошивки",
+      update: "Обновление прошивки ...",
+      timeLeft: "Оставшееся время"
+    },
+    notify: {
+      newVersion: "Доступно обновление {version}",
+      completed: "Прошивка успешно завершена",
+      warning: "Прошивка завершена не удачно. Выключите и включите устройство, и попробуйте обновить еще раз",
+      error: "Ошибка обновления прошивки",
+      errorDownload: "Ошибка загрузки прошивки с сервера. Возможно отсутствует подключение к сети интернет",
+      errorUpload: "Ошибка загрузки прошивки на устройство PJCAN. Возможно отсутствует подключение по Bluetooth",
+      errorWaitUpdate: "Истекло время ожидания устройства PJCAN. Выключите и включите устройство, и попробуйте обновить еще раз"
+    }
+  },
+  error: {
+    title: "Что смотришь,\nпиши PJ82",
+    version: "Ошибка запроса версии устройства. Переподключите устройство PJCAN"
+  },
+  rules: {
+    required: "Обязательное поле",
+    counter: "Максимум {n} символов | Максимум {n} символ | Максимум {n} символа | Максимум {n} символов",
+    english: "Ввод только английских символов и цифр"
+  },
+  menu: {
+    onboard: "Бортовой компьютер",
+    onboardButtons: "Кнопки БК",
+    test: "Тестирование",
+    language: {
+      russian: "Russian language",
+      english: "English language"
+    },
+    settings: {
+      buttonsSW1: "Кнопки руля",
+      buttonsSW3: "Кнопки SW3",
+      options: "Параметры"
+    },
+    update: "Обновить до {version}",
+    about: "О программе"
+  },
+  activation: {
+    success: "Устройство успешно активировано! Устройство перезагружается ...",
+    error: "Устройство не активировано. Обратитесь к разработчику."
+  },
+  about: {
+    title: "О программе",
+    version: "Версия web-приложения",
+    versionFirmware: "Версия прошивки PJCAN",
+    carSupport: "Поддержка автомобиля",
+    author: "Автор",
+    sha: "Хеш устройства"
+  },
+  deviceInfo: {
+    title: "Техническая информация",
+    // chipCores: "Количество ядер",
+    // chipModel: "Модель чипа",
+    // chipRevision: "Номер ревизии чипа",
+    cpuFreqMHz: "Частота ЦП, МГц",
+    // cycleCount: "Количество циклов",
+    efuseMac: "MAC-адрес",
+    // flashChipMode: "Режим флеш-памяти",
+    // flashChipSize: "Размер флеш-памяти, байт",
+    // flashChipSpeed: "Частота флеш-памяти",
+    // heapSize: "Размер кучи в памяти",
+    // freeHeap: "Свободной кучи в памяти",
+    // maxAllocHeap: "Размер самого большого блока кучи",
+    // minFreeHeap: "Наименьший уровень свободной кучи",
+    // psramSize: "Размер SPI RAM",
+    // freePsram: "Свободной SPI RAM",
+    // maxAllocPsram: "Размер самого большого блока SPI RAM",
+    // minFreePsram: "Наименьший уровень свободной SPI RAM",
+    freeSketchSpace: "Свободное место для прошивки",
+    sdkVersion: "Версия SDK",
+    sketchMD5: "MD5 прошивки",
+    sketchSize: "Размер прошивки",
+    temperatureChip: "Температура чипа",
+    sha: "SHA",
+    hardware: "Версия платы"
+  },
+  deviceReset: {
+    title: "Сброс конфигурации устройства",
+    config: "Сбросить значения конфигурации по умолчанию",
+    view: "Сбросить значения конфигурации отображения по умолчанию"
+  },
+  btn: {
+    apply: "Применить",
+    cancel: "Отмена",
+    close: "Закрыть",
+    deviceInfo: "Об устройстве",
+    deviceReset: "Сбросить конфигурацию",
+    reset: "Сбросить",
+    ok: "OK"
+  },
+  onboard: {
+    title: "Бортовой компьютер",
+    viewSetting: {
+      enabled: {
+        title: "Отображать информацию",
+        description: "Статус отображения информации на информационном экране"
+      },
+      type: {
+        title: "Стиль отображения информации",
+        description: "Отображать статичный текст, мигающий или в стиле бегущий строки",
+        items: ["Обычный текст", "Мигание текста", "Бегущая строка"]
+      },
+      time: {
+        title: "Время отображения, сек.",
+        description: "Показывать на информационном экране указанное количество секунд"
+      },
+      delay: {
+        title: "Время паузы отображения, сек.",
+        description: "Пауза отображения информации указанное количество секунд"
+      }
+    },
+    info: {
+      title: "Информация",
+      acc: {
+        title: "ACC",
+        description: "Питание автомобиля"
+      },
+      worktime: {
+        title: "Время работы",
+        description: "Время работы устройства с момента включения",
+        menu: "LCD: Время работы"
+      },
+      voltmeter: {
+        title: "Напряжение",
+        description: "Напряжение бортовой сети в вольтах",
+        menu: "LCD: Напряжение"
+      },
+      temperature: {
+        title: "Температура воздуха",
+        description: "Показания внешней температуры автомобиля",
+        menu: "LCD: Температура воздуха"
+      },
+      handbrake: {
+        title: "Ручной тормоз",
+        description: "Положение ручного тормоза",
+        menu: "LCD: Ручной тормоз"
+      },
+      reverse: {
+        title: "Задний ход",
+        description: "Ручка КПП в положении R",
+        menu: "LCD: Задний ход"
+      },
+      safetyBelt: {
+        title: "Ремень безопасности",
+        description: "Ремень безопасности водителя и пассажира",
+        menu: "LCD: Ремень безопасности"
+      },
+      signal: {
+        title: "Сигнал поворота",
+        description: "Сигнал поворота и аварийной остановки",
+        menu: "LCD: Сигнал поворота"
+      }
+    },
+    engine: {
+      title: "Двигатель",
+      enabled: {
+        title: "Работа ДВС",
+        description: "Текущее состояние ДВС",
+        menu: "LCD: Работа ДВС"
+      },
+      RPM: {
+        title: "RPM двигателя",
+        description: "Текущее количество полных оборотов коленчатого вала двигателя в минуту",
+        menu: "LCD: RPM двигателя"
+      },
+      countRPM: {
+        title: "Счетчик RPM, тыс.",
+        description: "Общее количество полных оборотов коленчатого вала двигателя в тысячах",
+        menu: "LCD: Счетчик RPM"
+      },
+      load: {
+        title: "Нагрузка на ДВС",
+        description: "Нагрузка чего-то на что-то, хз как рассчитывается",
+        menu: "LCD: Нагрузка на ДВС"
+      },
+      worktime: {
+        title: "Моточасы",
+        description: "Общее время работы двигателя",
+        menu: "LCD: Моточасы"
+      },
+      throttle: {
+        title: "Положение дрос. заслонки",
+        description: "Относительное положение дроссельной заслонки",
+        menu: "LCD: Положение дроссельной заслонки"
+      },
+      coolant: {
+        title: "Температура антифриза",
+        description: "Температура охлаждающей жидкости",
+        menu: "LCD: Температура антифриза"
+      },
+      settings: {
+        title: "Настройки статистики ДВС",
+        menu: "Настройки статистики",
+        showDays: {
+          title: "Показывать дни в статистике",
+          titleShort: "Показывать дни",
+          description: "Отображать моточасы на информационном экране в формате d.hh:mm:ss"
+        },
+        worktime: {
+          title: "Время работы, мин.",
+          description: "Общее время работы двигателя"
+        },
+        countRPM: {
+          title: "Счетчик RPM, тыс.",
+          description: "Общее количество полных оборотов коленчатого вала двигателя в тысячах"
+        }
+      }
+    },
+    fuel: {
+      title: "Топливо",
+      current: {
+        title: "Расход топлива",
+        description: "Значение БК, л/100 км",
+        menu: "LCD: Расход топлива"
+      },
+      avg: {
+        title: "Средний расход",
+        description: "Значение БК, л/100 км",
+        menu: "LCD: Средний расход"
+      },
+      settings: {
+        title: "Настройки расхода",
+        menu: "Настройки расхода",
+        ratio: {
+          title: "Коэффициент расхода топлива",
+          description: "Для корректировки расхода ГБО или др. вида топлива"
+        }
+      }
+    },
+    movement: {
+      title: "Спидометр",
+      speed: {
+        title: "Скорость автомобиля",
+        description: "Значение БК, км/ч",
+        menu: "LCD: Скорость автомобиля"
+      },
+      speedAVG: {
+        title: "Средняя скорость",
+        description: "Значение БК, км/ч",
+        menu: "LCD: Средняя скорость"
+      },
+      restWay: {
+        title: "Остаток пути, км",
+        description: "Значение БК в км",
+        menu: "LCD: Остаток пути"
+      }
+    },
+    doors: {
+      title: "Двери",
+      menu: "LCD: Двери",
+      doorFL: {
+        title: "Передняя левая",
+        description: "Текущее состояние передней левой двери"
+      },
+      doorFR: {
+        title: "Передняя правая",
+        description: "Текущее состояние передней правой двери"
+      },
+      doorBL: {
+        title: "Задняя левая",
+        description: "Текущее состояние задней левой двери"
+      },
+      doorBR: {
+        title: "Задняя правая",
+        description: "Текущее состояние задней правой двери"
+      },
+      trunk: {
+        title: "Багажник",
+        description: "Текущее состояние багажника"
+      },
+      settings: {
+        title: "Конфигурация дверей",
+        frontReverse: {
+          title: "Поменять передние двери",
+          description: "Поменять местами передние двери"
+        },
+        backReverse: {
+          title: "Поменять задние двери",
+          description: "Поменять местами задние двери"
+        },
+        frontBackReverse: {
+          title: "Поменять передние с задними дверьми",
+          description: "Поменять местами левые и правые двери"
+        }
+      }
+    },
+    volume: {
+      title: "Звук",
+      menu: "LCD: Звук",
+      mute: {
+        title: "Выключить звук",
+        description: "Временное выключение звука без изменения текущего уровня"
+      },
+      level: {
+        title: "Уровень звука",
+        description: "Текущее значение уровня звука"
+      }
+    },
+    climate: {
+      title: "Климат-контроль",
+      menu: "LCD: Климат-контроль",
+      enabled: {
+        title: "Статус работы",
+        description: "Статус работы блока климат-контроля"
+      },
+      autoMode: {
+        title: "Auto",
+        description: "Автоматический режим работы блока климата"
+      },
+      ac: {
+        title: "AC",
+        description: "Работа кондиционера"
+      },
+      temperature: {
+        title: "Температура",
+        description: "Установленное значение температуры блока климат-контроля"
+      },
+      air: {
+        title: "Вентиляция салона",
+        description: "Циркуляция воздуха внутри салона"
+      },
+      blow: {
+        title: "Воздушный поток",
+        description: "Направление воздушного потока"
+      }
+    },
+    bose: {
+      title: "Bose",
+      menu: "LCD: Bose",
+      enabled: {
+        title: "Включение Bose",
+        description: "Включение/выключение усилителя звука Bose"
+      },
+      audioPLT: {
+        title: "Audio PLT",
+        description: "Представляет собой систему подавления шумов, которая непрерывно регулирует звучание для компенсации фонового шума и скорости автомобиля"
+      },
+      radioFM: {
+        title: "Radio FM",
+        description: "Включение/выключение радио FM"
+      },
+      wow: {
+        title: "Wow",
+        description: "Звуковой сигнал при изменении параметров"
+      },
+      balance: {
+        title: "Balance",
+        description: "Смещение звукового баланса вправо или влево"
+      },
+      bass: {
+        title: "Bass",
+        description: "Усиление низких частот"
+      },
+      fade: {
+        title: "Fade",
+        description: "Смещение звукового баланса вперед или назад"
+      },
+      treble: {
+        title: "Treble",
+        description: "Усиление высоких частот"
+      },
+      centerPoint: {
+        title: "CenterPoint",
+        description: "Технология CenterPoint преобразует стерео-сигналы в многоканальное аудио и одновременно создает более широкую/объемную звуковую область"
+      },
+      volumeConfig: {
+        title: "Настройка запуска",
+        start: {
+          title: "Изменять уровень звука",
+          description: "Устанавливать указанный ниже уровень звука при включении адаптера PJCAN"
+        },
+        level: {
+          title: "Уровень звука",
+          description: "Уровень звука устанавливаемый при включении адаптера PJCAN"
+        }
+      }
+    }
+  },
+  buttons: {
+    title: "Настройки кнопок",
+    extendedMode: "Режим Mode",
+    hintMode: " (режим Mode)",
+    mode: "Кнопка MODE",
+    setUp: "Кнопка SET UP",
+    setDown: "Кнопка SET DOWN",
+    volUp: "Кнопка VOL +",
+    volDown: "Кнопка VOL -",
+    volMute: "Кнопка VOL MUTE",
+    extended: {
+      title: "Расширенный режим",
+      description: "Поддержка двойного, тройного нажатия и удержания кнопки"
+    },
+    resistance: {
+      title: "Сопротивление кнопки",
+      description: "Интервал сопротивления кнопки",
+      cur: {
+        title: "Текущее сопротивление",
+        description: "Значение сопротивления нажатой кнопки. Изменить нельзя"
+      },
+      min: {
+        title: "Минимальное сопротивление",
+        description: "Укажите минимальное значение кнопки, но не допускайте пересечение значений с другими кнопками"
+      },
+      max: {
+        title: "Максимальное сопротивление",
+        description: "Укажите максимальное значение кнопки, но не допускайте пересечение значений с другими кнопками"
+      }
+    },
+    pressSingle: {
+      title: "Кнопка нажата 1 раз",
+      description: "Функция, которая выполняется при нажатии кнопки"
+    },
+    pressDual: {
+      title: "Кнопка нажата 2 раза",
+      description: "Функция, которая выполняется при нажатии кнопки 2 раза"
+    },
+    pressTriple: {
+      title: "Кнопка нажата 3 раза",
+      description: "Функция, которая выполняется при нажатии кнопки 3 раза"
+    },
+    pressHold: {
+      title: "Удержание кнопки",
+      description: "Функция, которая выполняется при нажатии и удержании кнопки 3 и более секунд.",
+      time: {
+        title: "Время удержания кнопки",
+        description: "Время удержания кнопки, сек."
+      }
+    },
+    functions: {
+      0: "Нет действия",
+      1: "Перейти в режим Mode",
+      2: "Выход из режима Mode",
+      3: "Нажатие кнопки MODE",
+      4: "Нажатие кнопки SET UP",
+      5: "Нажатие кнопки SET DOWN",
+      6: "Нажатие кнопки уровень звука +",
+      7: "Нажатие кнопки уровень звука -",
+      8: "Нажатие кнопки отк. звука",
+      9: "Удержание кнопки CLOCK",
+      10: "Нажатие кнопки CLOCK",
+      11: "Нажатие кнопки CLOCK H",
+      12: "Нажатие кнопки CLOCK M",
+      13: "Нажатие кнопки CLOCK 24/12",
+      14: "Удержание кнопки INFO",
+      15: "Нажатие кнопки INFO",
+      16: "Показать значения ДВС",
+      17: "Показать значения расхода",
+      18: "Показать значения движения",
+      19: "Показать значения температуры",
+      20: "Голосовое управление",
+      21: "Радио",
+      22: "Камера",
+      23: "Радио: поиск",
+      24: "Эквалайзер",
+      25: "Вкл/выкл дисплея",
+      26: "Телефон"
+    },
+    definition: {
+      title: "Обнаружено нажатие кнопки",
+      type: {
+        title: "Тип кнопки",
+        description: "Выберите тип кнопки для дальнейшего ее использования"
+      }
+    },
+    adding: "Создание кнопки",
+    edit: "Редактирование кнопки",
+    name: "Наименование кнопки"
+  },
+  onboardButtons: {
+    title: "Кнопки БК",
+    buttons: {
+      modeClock: "Mode CLOCK",
+      modeInfo: "Mode INFO",
+      clock: "CLOCK",
+      info: "INFO",
+      clockH: "H",
+      clockM: "M",
+      clockRM: "RM",
+      clock24: "24/12"
+    }
+  },
+  test: {
+    title: "Тестирование",
+    description: 'Введите текст (только латинские символы и цифры), выберите стиль и выравнивание, укажите время отображения и нажмите "Показать"',
+    text: {
+      title: "Текст",
+      description: "Текст отображаемый на информационном экране"
+    },
+    btnShow: "Показать"
+  },
+  options: {
+    title: "Параметры",
+    lcd: {
+      title: "LCD",
+      enabled: {
+        title: "LCD",
+        description: "Включить/выключить вывод информации на информационный экран"
+      },
+      logo: {
+        title: "Логотип",
+        description: "Тест отображаемый в момент отсутствия данных для вывода на LCD. Максимум 12 символов"
+      },
+      hello: {
+        title: "Текст приветствия",
+        description: "Тест отображаемый при включении ACC. Максимум 32 символов",
+        menu: "LCD: Текст приветствия"
+      }
+    },
+    teyes: {
+      title: "ГУ",
+      protocol: {
+        title: "Протокол UART",
+        description: "Протокол UART для связи PJCAN с ГУ",
+        list: {
+          1: "Raise HM_ND00 2017.12.11 (19200)",
+          2: "Raise HM_ND01 2019.06.21 (38400)",
+          3: "SimpleSoft MZ_SS_07A (38400)",
+          4: "SimpleSoft RP5_MZ_002 (38400)"
+        }
+      },
+      reverseUart: {
+        title: "Поменять контакты UART",
+        description: "Поменять контакты UART местами, если нет связи PJCAN с ГУ"
+      },
+      lcdShow: {
+        title: "Показывать информацию ГУ",
+        description: "Показывать текст ГУ на информационном экране (БК) вместо логотипа",
+        menu: "LCD: Показывать текст ГУ"
+      },
+      sendButton: {
+        title: "Кнопки руля",
+        description: "Поддержка управления ГУ кнопками на руле"
+      },
+      sendClimate: {
+        title: "Показать климат на ГУ",
+        description: "Показать панель климата на ГУ (если протокол поддерживает данный функционал)"
+      },
+      sendDoors: {
+        title: "Показать статус дверей на ГУ",
+        description: "Показать статус дверей автомобиля на ГУ (если протокол поддерживает данный функционал)"
+      },
+      parseVolume: {
+        title: "Управлять уровнем звука на ГУ",
+        description: "Рекомендуется выключить этот параметр, для прямого управления звуком усилителя Bose"
+      },
+      receiveText: {
+        title: "Принимать информацию ГУ",
+        description: "Принимать входящие значения ГУ: название радиостанций и др."
+      },
+      receiveClock: {
+        title: "Время ГУ",
+        description: "Принимать входящее значение времени от ГУ (если протокол поддерживает данный функционал)"
+      },
+      receiveButtons: {
+        title: "Кнопки ГУ",
+        description: "Поддержка кнопок ГУ: CLOCK, HOUR, MIN (если протокол поддерживает данный функционал)"
+      }
+    },
+    datetime: {
+      title: "Дата и время",
+      description: "Для отображения даты и времени на экране БК необходимо каждый раз при включении зажигания автомобиля запускать web-приложение для синхронизации данных с адаптером PJCAN.",
+      menu: "LCD: Параметры отображения",
+      date: {
+        title: "Показать дату",
+        description: "Отображать на экране БК текущую дату"
+      },
+      time: {
+        title: "Показать время",
+        description: "Отображать на экране БК текущее время"
+      },
+      dayWeek: {
+        title: "Показать день недели",
+        description: "Отображать на экране БК текущий день недели"
+      },
+      dateAndDayWeek: {
+        title: "Показать дату и день недели",
+        description: "Отображать на экране БК текущую дату и день недели"
+      },
+      timeAndDayWeek: {
+        title: "Показать время и день недели",
+        description: "Отображать на экране БК текущее время и день недели"
+      },
+      fullDatetime: {
+        title: "Показать полную дату и время",
+        description: "Отображать на экране БК в полном формате текущую дату и время"
+      }
+    },
+    onboard: {
+      title: "Бортовой компьютер",
+      description: 'Список карточек отображаемых на экране "Бортовой компьютер". Порядок меняется путем перетаскивания блока вверх/вниз. Так же можно включить/выключить отображения на странице',
+      reset: {
+        menu: "Упорядочить по умолчанию"
+      }
+    }
+  },
+  scanner: {
+    dialog: {
+      title: "Сканирование can-шины",
+      text: "Начать сканирование can-шины?\n" + "Значения сканирования будут автоматически отправлены PJ82."
+    },
+    btn: {
+      start: "Начать",
+      next: "Далее",
+      finish: "Финиш"
+    },
+    step: {
+      0: {
+        title: "Сканирование значений двигателя",
+        text: 'Запустите двигатель автомобиля и нажмите кнопку "Далее"'
+      },
+      1: {
+        title: "Сканирование значений дверей",
+        text: "1. Откройте водительскую дверь и закройте ее;\n" + "2. Откройте пассажирскую дверь за водителем и закройте ее;\n" + "3. Откройте багажник и закройте его;\n" + "4. Откройте пассажирскую дверь сзади справа и закройте ее;\n" + "5. Откройте пассажирскую дверь спереди справа и закройте ее.\n" + "\n" + 'Вернитесь в салон и нажмите кнопку "Далее"'
+      },
+      2: {
+        title: "Сканирование значений сигналов",
+        text: "1. Пристегните ремень безопасности водителя;\n" + "2. Пристегните ремень безопасности переднего пассажира;\n" + "3. Пристегните ремни безопасности задних пассажиров;\n" + "4. Включите сигнал левого поворота, затем правого, выключите;\n" + "5. Включите сигнал аварийной остановки, выключите его.\n" + "\n" + 'Нажмите кнопку "Далее"'
+      },
+      3: {
+        title: "Сканирование значений климата",
+        text: "1. Включите/выключите AUTO;\n" + "2. Включите/выключите AC;\n" + "3. Измените направление воздушного потока;\n" + "4. Изменить скорость воздушного потока.\n" + "\n" + 'Нажмите кнопку "Далее"'
+      },
+      4: {
+        title: "Сканирование значений движения",
+        text: "1. Снимите автомобиль с ручного тормоза;\n" + "2. Включите заднюю передачу и немного сдайте назад;\n" + "3. Включите режим драйва АКПП или переключите передачу МКПП и начните движение вперед.\n" + "\n" + 'После завершения движения автомобиля заглушите двигатель и нажмите кнопку "Финиш"'
+      }
+    },
+    notify: {
+      errorStart: "Сканирование не запущено.\n" + "Проверьте подключение к устройству PJCAN.",
+      errorSend: "Ошибка отправки пакета данных сканирования.",
+      warningSend: "Нет данных сканирования для отправки."
+    },
+    upload: {
+      title: "Загрузка на сервер",
+      text: "Загрузка отсканированных значений на сервер.",
+      leftToLoad: "Нет пакетов для загрузки | Осталось загрузить {n} пакет | Осталось загрузить {n} пакета | Осталось загрузить {n} пакетов"
+    }
+  },
+  choosingCarModel: {
+    title: "Выбор модели автомобиля",
+    label: "Модель автомобиля",
+    description: "Возможность изменить модель автомобиля поддерживаемое адаптером PJCAN",
+    carModels: {
+      0: "Mazda",
+      1: "Mazda 3 BK",
+      2: "Mazda 3 BL (не поддерживается)",
+      3: "Mazda 6 GG",
+      4: "Mazda 6 GH (не поддерживается)",
+      5: "Mazda CX-7",
+      6: "Mazda CX-7 rest",
+      7: "Mazda CX-9",
+      8: "Mazda CX-9 rest"
+    }
+  },
+  help: {
+    buttons: {
+      notify: "Внимание! В этом разделе меню кнопки руля работают в режиме программирования"
+    },
+    onboard: {
+      notify: "Свайп влево/вправо позволяет листать блоки с информацией",
+      noModelSelected: "Внимание! Не выбрана модель автомобиля. Перейдите в меню - О программе - Поддержка автомобиля"
+    }
+  }
+});
+;// CONCATENATED MODULE: ./src/lang/en.ts
+/* harmony default export */ var en = ({
+  BLE: {
+    title: "Bluetooth",
+    btn: {
+      connect: "Connect",
+      disconnect: "Disconnect"
+    },
+    dialog: {
+      noConnected: "You are not connected to any Bluetooth device.",
+      connected: "You are connected to a PJCAN Bluetooth device."
+    },
+    notify: {
+      noConnected: "No connection to Bluetooth device.",
+      connected: "PJCAN connected",
+      disconnected: "PJCAN disabled",
+      lostConnected: "Lost connection with PJCAN Bluetooth device. Trying to reconnect...",
+      noData: "No data to send"
+    },
+    server: {
+      deviceSelected: "{n} bluetooth device selected.",
+      deviceDisconnected: "Bluetooth device {n} is disconnected.",
+      GATTConnect: "Connecting to GATT server...",
+      getService: "GATT server connected, reading service...",
+      getCharacteristic: "Service received, read the characteristic ...",
+      characteristicDone: "Characteristic received.",
+      startNotifications: "Launching notifications...",
+      notificationsDone: "Notifications started.",
+      reconnect: "Retrying in {n} seconds... ({c} attempts remaining)",
+      reconnectRestored: "The connection to the PJCAN Bluetooth device has been re-established.",
+      connectionLost: "Communication with the PJCAN Bluetooth device has been lost.",
+      receive: "Receive data: ID {n}",
+      send: "Sending data: ID {n}",
+      versionProtocol: "Protocol version: {mj}.{mn}.{bl}.{rv}"
+    }
+  },
+  update: {
+    title: "Update PJCAN",
+    warning: "Attention!",
+    btn: {
+      update: "Update",
+      later: "Later"
+    },
+    dialog: {
+      updateTo: "Update PJCAN firmware to version {version} ?",
+      browserOutdated: "Your browser version is outdated.\n" + "Update it and open the web application again."
+    },
+    process: {
+      preparation: "Preparing to upload...",
+      upload: "Uploading Firmware",
+      update: "Firmware update...",
+      timeLeft: "Time left"
+    },
+    notify: {
+      newVersion: "Update available {version}",
+      completed: "Firmware completed successfully",
+      warning: "The firmware was not completed successfully. Turn your device off and on and try updating again",
+      error: "Firmware update error",
+      errorDownload: "Error downloading firmware from the server. You may not be connected to the Internet",
+      errorUpload: "Error uploading firmware to PJCAN device. Possibly no Bluetooth connection",
+      errorWaitUpdate: "The PJCAN device timed out. Turn your device off and on and try updating again"
+    }
+  },
+  error: {
+    title: "What are you watching,\nwrite PJ82",
+    version: "Error requesting the device version. Reconnect the PJCAN device"
+  },
+  rules: {
+    required: "Required",
+    counter: "Max {n} characters | Max {n} character | Max {n} characters | Max {n} characters",
+    english: "Invalid English"
+  },
+  menu: {
+    onboard: "On-board",
+    onboardButtons: "On-board computer buttons",
+    test: "Testing",
+    language: {
+      russian: "Русский язык",
+      english: "Английский язык"
+    },
+    settings: {
+      buttonsSW1: "Steering wheel buttons",
+      buttonsSW3: "SW3 buttons",
+      options: "Options"
+    },
+    update: "Upgrade to {version}",
+    about: "About"
+  },
+  activation: {
+    success: "Device successfully activated! The device is rebooting...",
+    error: "The device is not activated. Contact the developer."
+  },
+  about: {
+    title: "About",
+    version: "Web application version",
+    versionFirmware: "PJCAN firmware version",
+    carSupport: "Car support",
+    author: "Author",
+    sha: "Device hash"
+  },
+  deviceInfo: {
+    title: "Technical information",
+    cpuFreqMHz: "CPU freq MHz",
+    efuseMac: "Efuse MAC",
+    freeSketchSpace: "Free sketch space",
+    sdkVersion: "SDK version",
+    sketchMD5: "Sketch MD5",
+    sketchSize: "Sketch size",
+    temperatureChip: "Temperature chip",
+    sha: "SHA",
+    hardware: "Board version"
+  },
+  deviceReset: {
+    title: "Reset device configuration",
+    config: "Reset configuration defaults",
+    view: "Reset default display configuration values"
+  },
+  btn: {
+    apply: "Apply",
+    cancel: "Cancel",
+    close: "Close",
+    deviceInfo: "About device",
+    deviceReset: "Reset configuration",
+    reset: "Reset",
+    ok: "OK"
+  },
+  onboard: {
+    title: "On-board",
+    viewSetting: {
+      enabled: {
+        title: "Display information",
+        description: "Status display information on the information screen"
+      },
+      type: {
+        title: "Information display style",
+        description: "Display static text, blinking or in a ticker style",
+        items: ["Plain text", "Flashing text", "Ticker"]
+      },
+      time: {
+        title: "Display time, sec.",
+        description: "Show the specified number of seconds on the information screen"
+      },
+      delay: {
+        title: "Display pause time, sec.",
+        description: "Pause the information display for the specified number of seconds"
+      }
+    },
+    info: {
+      title: "Information",
+      acc: {
+        title: "ACC",
+        description: "Car power"
+      },
+      worktime: {
+        title: "Worktime",
+        description: "Operating time of the device from the moment of switching on",
+        menu: "LCD: Worktime"
+      },
+      voltmeter: {
+        title: "Voltage",
+        description: "On-board mains voltage in volts",
+        menu: "LCD: Voltage"
+      },
+      temperature: {
+        title: "Air temperature",
+        description: "Reading the outside temperature of the car",
+        menu: "LCD: Air temperature"
+      },
+      handbrake: {
+        title: "Hand brake",
+        description: "Handbrake position",
+        menu: "LCD: Hand brake"
+      },
+      reverse: {
+        title: "Reverse",
+        description: "Gear knob in R",
+        menu: "LCD: Reverse"
+      },
+      safetyBelt: {
+        title: "Safety belt",
+        description: "Seat belt driver and passenger",
+        menu: "LCD: Safety belt"
+      },
+      signal: {
+        title: "Turn signal",
+        description: "Turn signal and emergency stop",
+        menu: "LCD: Turn signal"
+      }
+    },
+    engine: {
+      title: "Engine",
+      enabled: {
+        title: "Engine operation",
+        description: "The current state of the internal combustion engine",
+        menu: "LCD: Engine operation"
+      },
+      RPM: {
+        title: "Engine RPM",
+        description: "Current number of complete engine revolutions per minute",
+        menu: "LCD: Engine RPM"
+      },
+      countRPM: {
+        title: "RPM counter, thous.",
+        description: "The total number of complete revolutions of the engine crankshaft in thousands",
+        menu: "LCD: RPM counter"
+      },
+      load: {
+        title: "Engine load",
+        description: "The load of something on something, I don’t know how it is calculated",
+        menu: "LCD: Engine load"
+      },
+      worktime: {
+        title: "Hours",
+        description: "Total engine running time",
+        menu: "LCD: Hours"
+      },
+      throttle: {
+        title: "Throttle position",
+        description: "Relative throttle position",
+        menu: "LCD: Throttle position"
+      },
+      coolant: {
+        title: "Coolant temperature",
+        description: "Coolant temperature",
+        menu: "LCD: Coolant temperature"
+      },
+      settings: {
+        title: "Settings of engine statistics",
+        menu: "Statistics settings",
+        showDays: {
+          title: "Show days in statistics",
+          description: "Display the mothers on the information screen in d.hh:mm:ss"
+        },
+        worktime: {
+          title: "Opening time, min.",
+          description: "Total engine operating time"
+        },
+        countRPM: {
+          title: "RPM counter, thous.",
+          description: "The total number of full speed of the crankshaft of the engine in thousands"
+        }
+      }
+    },
+    fuel: {
+      title: "Fuel",
+      current: {
+        title: "Fuel consumption",
+        description: "The value of the on-board, l/100 km",
+        menu: "LCD: Fuel consumption"
+      },
+      avg: {
+        title: "Average consumption",
+        description: "The value of the on-board, l/100 km",
+        menu: "LCD: Average consumption"
+      },
+      settings: {
+        title: "Fuel consumption settings",
+        menu: "Consumption settings",
+        ratio: {
+          title: "Fuel consumption coefficient",
+          description: "To configure the gas flow rate or other type of fuel"
+        }
+      }
+    },
+    movement: {
+      title: "Speedometer",
+      speed: {
+        title: "Car speed",
+        description: "On-board value, km/h",
+        menu: "LCD: Car speed"
+      },
+      speedAVG: {
+        title: "Average speed",
+        description: "On-board value, km/h",
+        menu: "LCD: Average speed"
+      },
+      restWay: {
+        title: "The rest of the way, km",
+        description: "On-board value, km",
+        menu: "LCD: Rest of the way"
+      }
+    },
+    doors: {
+      title: "Doors",
+      menu: "LCD: Doors",
+      doorFL: {
+        title: "Front left",
+        description: "Current state of front left door"
+      },
+      doorFR: {
+        title: "Front right",
+        description: "Current state of front right door"
+      },
+      doorBL: {
+        title: "Rear left",
+        description: "The current state of the rear left door"
+      },
+      doorBR: {
+        title: "Rear right",
+        description: "The current state of the rear right door"
+      },
+      trunk: {
+        title: "Trunk",
+        description: "The current state of the trunk"
+      },
+      settings: {
+        title: "Door configuration",
+        frontReverse: {
+          title: "Change the front doors",
+          description: "Swap the front doors"
+        },
+        backReverse: {
+          title: "Change the rear doors",
+          description: "Swap the rear doors"
+        },
+        frontBackReverse: {
+          title: "Swap the front with the rear doors",
+          description: "Swap the left and right doors"
+        }
+      }
+    },
+    volume: {
+      title: "Volume",
+      menu: "LCD: Volume",
+      mute: {
+        title: "Turn on volume",
+        description: "Temporarily turn on/off the sound without changing the current level"
+      },
+      level: {
+        title: "Volume level",
+        description: "Current sound level value"
+      }
+    },
+    climate: {
+      title: "Climate control",
+      menu: "LCD: Climate control",
+      enabled: {
+        title: "Work status",
+        description: "Operation status of the climate control unit"
+      },
+      autoMode: {
+        title: "Auto",
+        description: "Automatic mode of operation of the climate unit"
+      },
+      ac: {
+        title: "AC",
+        description: "Air conditioner operation"
+      },
+      temperature: {
+        title: "Temperature",
+        description: "Climate unit temperature setpoint"
+      },
+      air: {
+        title: "Cabin ventilation",
+        description: "Air circulation inside the cabin"
+      },
+      blow: {
+        title: "Air flow",
+        description: "Airflow direction"
+      }
+    },
+    bose: {
+      title: "Bose",
+      menu: "LCD: Bose",
+      enabled: {
+        title: "Enabling Bose",
+        description: "Turning on/off the Bose sound amplifier"
+      },
+      audioPLT: {
+        title: "Audio PLT",
+        description: "It is a noise suppression system that continuously adjusts the sound to compensate for background noise and vehicle speed"
+      },
+      radioFM: {
+        title: "Radio FM",
+        description: "Turning on/off the FM radio"
+      },
+      wow: {
+        title: "Wow",
+        description: "Sound signal when changing parameters"
+      },
+      balance: {
+        title: "Balance",
+        description: "Shifting the sound balance to the right or left"
+      },
+      bass: {
+        title: "Bass",
+        description: "Amplification of low frequencies"
+      },
+      fade: {
+        title: "Fade",
+        description: "Shifting the sound balance forward or backward"
+      },
+      treble: {
+        title: "Treble",
+        description: "Amplification of high frequencies"
+      },
+      centerPoint: {
+        title: "CenterPoint",
+        description: "CenterPoint technology converts stereo signals into multi-channel audio and simultaneously creates a wider/surround sound area"
+      },
+      volumeConfig: {
+        title: "Setting up the startup",
+        start: {
+          title: "Change the sound level",
+          description: "Set the sound level specified below when turning on the PJCAN adapter"
+        },
+        level: {
+          title: "Sound level",
+          description: "The sound level set when the PJCAN adapter is turned on"
+        }
+      }
+    }
+  },
+  buttons: {
+    title: "Button settings",
+    extendedMode: "Advanced mode",
+    hintMode: " (advanced mode)",
+    mode: "MODE button",
+    seekUp: "SET UP button",
+    seekDown: "SET DOWN button",
+    volUp: "VOL + button",
+    volDown: "VOL - button",
+    volMute: "VOL MUTE button",
+    extended: {
+      title: "Extended mode",
+      description: "Support for double, triple button pressing and holding"
+    },
+    resistance: {
+      title: "Button resistance",
+      description: "The resistance interval of the button in units",
+      cur: {
+        title: "Current resistance",
+        description: "The value of the resistance of the pressed button. You can't change it"
+      },
+      min: {
+        title: "Minimum resistance",
+        description: "Specify the minimum value of the button, but do not allow the values to overlap with other buttons"
+      },
+      max: {
+        title: "Maximum resistance",
+        description: "Specify the maximum value of the button, but do not allow the values to overlap with other buttons"
+      }
+    },
+    pressSingle: {
+      title: "Button pressed 1 time",
+      description: "The function that is executed when the button is pressed"
+    },
+    pressDual: {
+      title: "Button pressed 2 times",
+      description: "Function that is executed when the button is pressed 2 times"
+    },
+    pressTriple: {
+      title: "Button pressed 3 times",
+      description: "Function that is executed when the button is pressed 3 times"
+    },
+    pressHold: {
+      title: "Button hold",
+      description: "A function that is performed when the button is pressed and held for 3 or more seconds.",
+      time: {
+        title: "Button holding time",
+        description: "Button holding time, sec."
+      }
+    },
+    functions: {
+      0: "No action",
+      1: "Switch to the Mode",
+      2: "Exiting the Mode",
+      3: "Pressing the MODE button",
+      4: "Pressing the SET UP button",
+      5: "Pressing the SET DOWN button",
+      6: "Pressing the sound level + button",
+      7: "Pressing the sound level - button",
+      8: "Pressing the mute sound button",
+      9: "Holding the CLOCK button",
+      10: "Pressing the CLOCK button",
+      11: "Pressing the CLOCK H button",
+      12: "Pressing the CLOCK M button",
+      13: "Pressing the CLOCK 24/12 button",
+      14: "Holding the INFO button",
+      15: "Pressing the INFO button",
+      16: "Show the values of the engine",
+      17: "Show flow values",
+      18: "Show movement values",
+      19: "Show temperature values",
+      20: "Voice control",
+      21: "Radio",
+      22: "Camera",
+      23: "Radio: search",
+      24: "Equalizer",
+      25: "Turning off the display",
+      26: "Phone"
+    },
+    definition: {
+      title: "Button press detected",
+      type: {
+        title: "Button type",
+        description: "Select the button type for further use"
+      }
+    },
+    adding: "Adding a button",
+    edit: "Editing a button",
+    name: "Name of the button"
+  },
+  onboardButtons: {
+    title: "On-board buttons",
+    buttons: {
+      modeClock: "Mode CLOCK",
+      modeInfo: "Mode INFO",
+      clock: "CLOCK",
+      info: "INFO",
+      clockH: "H",
+      clockM: "M",
+      clockRM: "RM",
+      clock24: "24/12"
+    }
+  },
+  test: {
+    title: "Testing",
+    description: 'Enter the text (only Latin symbols and numbers), select style and leveling, indicate the display time and click "Show"',
+    text: {
+      title: "Text",
+      description: "The text displayed on the information screen"
+    },
+    btnShow: "Show"
+  },
+  options: {
+    title: "Options",
+    lcd: {
+      title: "LCD",
+      enabled: {
+        title: "LCD",
+        description: "Turn on/off the output of the information on the information screen"
+      },
+      logo: {
+        title: "Logo",
+        description: "The test displayed at the time of the absence of data for output to LCD. Maximum 12 characters"
+      },
+      hello: {
+        title: "Hello",
+        description: "Displayed test when switched by ACC. Maximum 32 characters",
+        menu: "LCD: Hello"
+      }
+    },
+    teyes: {
+      title: "Teyes",
+      protocol: {
+        title: "UART Protocol",
+        description: "UART protocol for PJCAN communication with Teyes",
+        list: {
+          1: "Raise HM_ND00 2017.12.11 (19200)",
+          2: "Raise HM_ND01 2019.06.21 (38400)",
+          3: "SimpleSoft MZ_SS_07A (38400)",
+          4: "SimpleSoft RP5_MZ_002 (38400)"
+        }
+      },
+      reverseUart: {
+        title: "Change UART contacts",
+        description: "Enable if there is no PJCAN connection with multimedia"
+      },
+      lcdShow: {
+        title: "Show the text Teyes",
+        description: "Show the text of the Teyes on the information screen instead of the logo",
+        menu: "LCD: Show the text Teyes"
+      },
+      sendButton: {
+        title: "Steering wheel buttons",
+        description: "Control of Teyes by buttons on the steering wheel"
+      },
+      sendClimate: {
+        title: "Show climate on Teyes",
+        description: "Show climate control values on Teyes (if the protocol supports this functionality)"
+      },
+      sendDoors: {
+        title: "Show the status of doors on Teyes",
+        description: "Show the status of the car doors on Teyes (if the protocol supports this functionality)"
+      },
+      parseVolume: {
+        title: "Control the sound level on Teyes",
+        description: "It is recommended to turn off this parameter to directly control the sound of the Bose amplifier"
+      },
+      receiveText: {
+        title: "Accept Teyes information",
+        description: "Accept incoming Teyes values: name of radio stations, etc."
+      },
+      receiveClock: {
+        title: "Teyes time",
+        description: "Accept incoming time value from Teyes (if the protocol supports this functionality)"
+      },
+      receiveButtons: {
+        title: "Teyes Buttons",
+        description: "Support for Teyes buttons: CLOCK, HOUR, MIN (if the protocol supports this functionality)"
+      }
+    },
+    datetime: {
+      title: "Date and time",
+      description: "To display the date and time on the LCD screen, it is necessary to launch a web application to synchronize data with the PJCAN adapter every time the car ignition is turned on.",
+      menu: "LCD: Display options",
+      date: {
+        title: "Show date",
+        description: "Display the current date on the LCD screen"
+      },
+      time: {
+        title: "Show time",
+        description: "Display the current time on the LCD screen"
+      },
+      dayWeek: {
+        title: "Show day of week",
+        description: "Display the current day of the week on the LCD screen"
+      },
+      dateAndDayWeek: {
+        title: "Show date and day of week",
+        description: "Display the current date and day of the week on the LCD screen"
+      },
+      timeAndDayWeek: {
+        title: "Show time and day of week",
+        description: "Display the current time and day of the week on the LCD screen"
+      },
+      fullDatetime: {
+        title: "Show full date and time",
+        description: "Display the current date and time on the LCD screen in full format"
+      }
+    },
+    onboard: {
+      title: "On-board",
+      description: "A list of cards displayed on the On-Board Computer screen. The order is changed by dragging the block up/down. You can also enable/disable the display on the page",
+      reset: {
+        menu: "Arrange by default"
+      }
+    }
+  },
+  scanner: {
+    dialog: {
+      title: "Scanning canbus",
+      text: "Start scanning can-shines?\n" + "Scanning values will be automatically sent PJ82."
+    },
+    btn: {
+      start: "Begin",
+      next: "Next",
+      finish: "Finish"
+    },
+    step: {
+      0: {
+        title: "Scanning of engine values",
+        text: 'Run the car engine and press the "Next" button'
+      },
+      1: {
+        title: "Scanning doors",
+        text: "1. Open the driver's door and close it;\n" + "2. Open the passenger door behind the driver and close it;\n" + "3. Open the trunk and close it;\n" + "4. Open the passenger door behind on the right and close it;\n" + "5. Open the passenger door in front on the right and close it.\n" + "\n" + 'Return to the salon and click the "Next" button'
+      },
+      2: {
+        title: "Scanning of signal values",
+        text: "1. Fasten the driver safety belt;\n" + "2. Fasten the front passenger safety belt;\n" + "3. Fasten the seat belts of the rear passengers;\n" + "4. Turn on the left turn signal, then the right, turn off;\n" + "5. Turn on the emergency stop signal, turn it off.\n" + "\n" + 'Click "Next"'
+      },
+      3: {
+        title: "Scanning of climate values",
+        text: "1. Turn on/off Auto;\n" + "2. Turn on/off the AC;\n" + "3. Change the direction of the air flow;\n" + "4. Change the speed of the air flow.\n" + "\n" + 'Click "Next"'
+      },
+      4: {
+        title: "Scanning of movement values",
+        text: "1. Remove the car from the hand brake;\n" + "2. Turn on the rear gear and hand back a little;\n" + "3. Turn on the automatic transmission mode or switch the PMPP transmission and start moving forward.\n" + "\n" + 'After completing the movement of the car, drown out the engine and press the "finish" button'
+      }
+    },
+    notify: {
+      errorStart: "Scanning is not running.\n" + "Check the connection to the PJCAN device.",
+      errorSend: "Error sending scan data packet.",
+      warningSend: "There is no scan data to send."
+    },
+    upload: {
+      title: "Uploading to the server",
+      text: "Uploading scanned values to the server.",
+      leftToLoad: "No packages to download | Left to download {n} package | Left to download {n} package | There are {n} packages left to download"
+    }
+  },
+  choosingCarModel: {
+    title: "Choosing a car model",
+    label: "Car model",
+    description: "The ability to change the car model supported by the PJCAN adapter",
+    carModels: {
+      0: "Mazda",
+      1: "Mazda 3 BK",
+      2: "Mazda 3 BL (not supported)",
+      3: "Mazda 6 GG",
+      4: "Mazda 6 GH (not supported)",
+      5: "Mazda CX-7",
+      6: "Mazda CX-7 rest",
+      7: "Mazda CX-9",
+      8: "Mazda CX-9 rest"
+    }
+  },
+  help: {
+    buttons: {
+      notify: "Warning! In this section of the menu, the steering wheel buttons operate in programming mode"
+    },
+    onboard: {
+      notify: "Swipe left/right allows you to scroll through the blocks with information",
+      noModelSelected: "Warning! The car model is not selected. Go to the menu - About the program - Car support"
+    }
+  }
+});
+// EXTERNAL MODULE: ./node_modules/moment/moment.js
+var moment = __webpack_require__(4648);
+var moment_default = /*#__PURE__*/__webpack_require__.n(moment);
+;// CONCATENATED MODULE: ./src/lang/index.ts
+// noinspection JSUnresolvedVariable,JSValidateTypes,JSUnresolvedFunction,DuplicatedCode
+
+
+
+
+const defaultLocale = "ru";
+const messages = {
+  ru: ru,
+  en: en
+};
+/** Список доступных языков */
+const getLanguageList = () => Object.keys(messages);
+const getLanguage = () => {
+  // @ts-ignore
+  const language = (navigator.language || navigator.browserLanguage).toLowerCase();
+  const locale = getLanguageList().find(x => language.indexOf(x) > -1) ?? defaultLocale;
+  moment_default().locale(locale);
+  return locale;
+};
+const i18n = createI18n({
+  locale: getLanguage(),
+  fallbackLocale: "en",
+  messages,
+  warnHtmlMessage: false,
+  pluralizationRules: {
+    ru: (choice, choicesLength) => {
+      if (choice === 0) return 0;
+      const teen = choice > 10 && choice < 20;
+      const endsWithOne = choice % 10 === 1;
+      return choicesLength < 4 ? !teen && endsWithOne ? 1 : 2 : !teen && endsWithOne ? 1 : !teen && choice % 10 >= 2 && choice % 10 <= 4 ? 2 : choicesLength < 4 ? 2 : 3;
+    },
+    en: (choice, choicesLength) => {
+      if (choice === 0) return 0;
+      const teen = choice > 10 && choice < 20;
+      const endsWithOne = choice % 10 === 1;
+      return choicesLength < 4 ? !teen && endsWithOne ? 1 : 2 : !teen && endsWithOne ? 1 : !teen && choice % 10 >= 2 && choice % 10 <= 4 ? 2 : choicesLength < 4 ? 2 : 3;
+    }
+  }
+});
+const t = i18n.global.t;
+/* harmony default export */ var lang = (i18n);
+
+;// CONCATENATED MODULE: ./src/components/bluetooth/TConnectedStatus.ts
+/* eslint-disable */
+var TConnectedStatus;
+(function (TConnectedStatus) {
+  TConnectedStatus[TConnectedStatus["NO_CONNECT"] = 0] = "NO_CONNECT";
+  TConnectedStatus[TConnectedStatus["CONNECT"] = 1] = "CONNECT";
+  TConnectedStatus[TConnectedStatus["WAIT_CONNECT"] = 2] = "WAIT_CONNECT";
+  TConnectedStatus[TConnectedStatus["DISCONNECT"] = 3] = "DISCONNECT";
+})(TConnectedStatus || (TConnectedStatus = {}));
+;// CONCATENATED MODULE: ./src/components/bluetooth/Bluetooth.ts
+
+/* eslint-disable no-undef */
+
+
+
+const BLUETOOTH_SERVICE_UUID = "cc9e7b30-9834-488f-b762-aa62f5022dd4";
+const BLUETOOTH_CHARACTERISTIC_UUID = "cc9e7b31-9834-488f-b762-aa62f5022dd4";
+const BLUETOOTH_SIZE_MAX = 512;
+const BLUETOOTH_EVENT_CONNECTED = "Connected"; // Событие подключения
+const BLUETOOTH_EVENT_RECEIVE = "Receive"; // Событие входящих данных
+const BLUETOOTH_EVENT_SEND = "Send"; // Событие исходящих данных
+const dev = "production" === "development";
+/** Bluetooth */
+class Bluetooth extends (eventemitter3_default()) {
+  constructor(counterReSendMax = 6) {
+    super();
+    /** Объект устройства */
+    _defineProperty(this, "_device", void 0);
+    /** Характеристика устройства */
+    _defineProperty(this, "_characteristic", void 0);
+    /** Счетчик повторной отправки */
+    _defineProperty(this, "_counterReSend", 0);
+    /** Максимальное значение счетчика повторной отправки */
+    _defineProperty(this, "counterReSendMax", void 0);
+    this.clear();
+    this.counterReSendMax = counterReSendMax;
+  }
+  /** Очистка переменных */
+  clear() {
+    this._device = undefined;
+    this._characteristic = undefined;
+  }
+  /** Статус подключения */
+  get connected() {
+    return !!this._device?.gatt?.connected;
+  }
+  /** Запустить выбор Bluetooth устройства и подключиться к выбранному */
+  connect() {
+    if (!navigator.bluetooth) {
+      this.emit(BLUETOOTH_EVENT_CONNECTED, TConnectedStatus.NO_CONNECT);
+      return Promise.resolve();
+    }
+    return this._device ? Promise.resolve() : this.requestBluetoothDevice().then(device => this.reconnect(device)).catch(e => {
+      this.emit(BLUETOOTH_EVENT_CONNECTED, TConnectedStatus.NO_CONNECT);
+      console.log(e);
+    });
+  }
+  /**
+   * Переподключение к устройству
+   * @param {BluetoothDevice} device Объект устройства
+   */
+  reconnect(device) {
+    return this.connectDeviceAndCharacteristic(device)?.then(characteristic => this.delayPromise(250, characteristic)).then(characteristic => this.startNotifications(characteristic));
+  }
+  /** Отключение от Bluetooth устройства */
+  disconnect() {
+    if (this._device) {
+      const device = this._device;
+      this.clear();
+      device.gatt?.disconnect();
+      if (dev) console.log(t("BLE.server.deviceDisconnected", {
+        n: device.name
+      }));
+      this.emit(BLUETOOTH_EVENT_CONNECTED, TConnectedStatus.DISCONNECT);
+    }
+  }
+  /** Запрос выбора Bluetooth устройства */
+  requestBluetoothDevice() {
+    return navigator.bluetooth.requestDevice({
+      filters: [{
+        services: [BLUETOOTH_SERVICE_UUID]
+      }]
+    }).then(device => {
+      if (dev) console.log(t("BLE.server.deviceSelected", {
+        n: device.name
+      }));
+      // device.removeEventListener("gattserverdisconnected", null);
+      device.addEventListener("gattserverdisconnected", () => this.handleDisconnection());
+      this._device = device;
+      return device;
+    });
+  }
+  /** Подключение к определенному устройству, получение сервиса и характеристики */
+  connectDeviceAndCharacteristic(device) {
+    if (device.gatt?.connected && !!this._characteristic) return Promise.resolve(this._characteristic);
+    if (dev) console.log(t("BLE.server.GATTConnect"));
+    return device.gatt?.connect().then(server => {
+      if (dev) console.log(t("BLE.server.getService"));
+      return server.getPrimaryService(BLUETOOTH_SERVICE_UUID);
+    }).then(service => {
+      if (dev) console.log(t("BLE.server.getCharacteristic"));
+      return service.getCharacteristic(BLUETOOTH_CHARACTERISTIC_UUID);
+    }).then(characteristic => {
+      if (dev) console.log(t("BLE.server.characteristicDone"));
+      // characteristic.removeEventListener("characteristicvaluechanged", null);
+      characteristic.addEventListener("characteristicvaluechanged", ev => this.handleCharacteristicValueChanged(ev));
+      // запускает процесс чтения данных
+      characteristic?.readValue();
+      this._characteristic = characteristic;
+      return characteristic;
+    });
+  }
+  /** Включение получения уведомлений об изменении характеристики */
+  startNotifications(characteristic) {
+    if (dev) console.log(t("BLE.server.startNotifications"));
+    return characteristic?.startNotifications().then(() => {
+      if (dev) console.log(t("BLE.server.notificationsDone"));
+      this.emit(BLUETOOTH_EVENT_CONNECTED, TConnectedStatus.CONNECT);
+    });
+  }
+  /**
+   * Переподключение к Bluetooth устройству
+   * @param {number} max Максимальное кол. попыток подключения
+   * @param {number} delay Таймаут подключения, сек.
+   * @param {() => any} toTry Метод проверки подключения
+   * @param {(server: BluetoothRemoteGATTServer) => void} success Метод вызываемый при успешном подключении
+   * @param {() => void} fail Метод вызываемый при невозможности подключиться
+   */
+  exponentialBackoff(max, delay, toTry, success, fail) {
+    toTry().then(server => success(server)).catch(() => {
+      if (max === 0) return fail();
+      if (dev) console.log(t("BLE.server.reconnect", {
+        n: delay,
+        c: max
+      }));
+      setTimeout(() => {
+        this.exponentialBackoff(--max, delay * 2, toTry, success, fail);
+      }, delay * 1000);
+    });
+  }
+  /** Событие отключения от устройства Bluetooth */
+  handleDisconnection() {
+    if (!this._device) return;
+    // попытка подключиться повторно
+    this.exponentialBackoff(3, 2, () => {
+      this.emit(BLUETOOTH_EVENT_CONNECTED, TConnectedStatus.WAIT_CONNECT);
+      if (this._device) return this.reconnect(this._device);
+    }, () => {
+      if (dev) console.log(t("BLE.server.reconnectRestored"));
+      // this.emit(BLUETOOTH_EVENT_CONNECTED, TConnectedStatus.CONNECT);
+    }, () => {
+      if (dev) console.log(t("BLE.server.connectionLost"));
+      this.emit(BLUETOOTH_EVENT_CONNECTED, TConnectedStatus.NO_CONNECT);
+      this.clear();
+    });
+  }
+  /** Событие входящих данных */
+  handleCharacteristicValueChanged(ev) {
+    const {
+      value
+    } = ev.target;
+    if (value?.byteLength > 0) {
+      if (dev) console.log(t("BLE.server.receive", {
+        n: "0x" + value.getUint8(0).toString(16)
+      }), value);
+      this.emit(BLUETOOTH_EVENT_RECEIVE, value);
+    }
+  }
+  /**
+   * Отправить данные
+   * @param data Отправляемые данные
+   */
+  send(data) {
+    if (!this.connected) {
+      // this.emit(BLUETOOTH_EVENT_CONNECTED, TConnectedStatus.NO_CONNECT);
+      return Promise.reject("No connection");
+    }
+    if (!data) {
+      this.emit(BLUETOOTH_EVENT_SEND);
+      return Promise.reject("No data available");
+    }
+    if (dev) console.log(t("BLE.server.send", {
+      n: "0x" + data.getUint8(0).toString(16)
+    }), data);
+    return this._characteristic?.writeValue(data).then(() => {
+      this._counterReSend = 0;
+    }).catch(() => {
+      return Promise.resolve().then(() => this.delayPromise(50)).then(() => {
+        this._counterReSend++;
+        return this._counterReSend < this.counterReSendMax ? this.send(data) : Promise.reject("The counter has reached its maximum value");
+      });
+    }) ?? Promise.reject("No characteristic");
+  }
+  /**
+   * Таймаут Promise
+   * @param {number} timeout Время паузы, мс
+   * @param {T} arg Передаваемые аргументы
+   */
+  delayPromise(timeout, arg) {
+    return new Promise(resolve => {
+      setTimeout(resolve, timeout, arg);
+    });
+  }
+}
+// EXTERNAL MODULE: ./node_modules/bitset/bitset.js
+var bitset = __webpack_require__(8592);
+var bitset_default = /*#__PURE__*/__webpack_require__.n(bitset);
+;// CONCATENATED MODULE: ./src/components/bluetooth/TTypeValue.ts
+/* eslint-disable */
+/** Типы данных */
+var TTypeValue;
+(function (TTypeValue) {
+  TTypeValue[TTypeValue["TYPE_BIT"] = 0] = "TYPE_BIT";
+  TTypeValue[TTypeValue["TYPE_UINT8"] = 1] = "TYPE_UINT8";
+  TTypeValue[TTypeValue["TYPE_INT8"] = 2] = "TYPE_INT8";
+  TTypeValue[TTypeValue["TYPE_UINT16"] = 3] = "TYPE_UINT16";
+  TTypeValue[TTypeValue["TYPE_INT16"] = 4] = "TYPE_INT16";
+  TTypeValue[TTypeValue["TYPE_UINT32"] = 5] = "TYPE_UINT32";
+  TTypeValue[TTypeValue["TYPE_INT32"] = 6] = "TYPE_INT32";
+  TTypeValue[TTypeValue["TYPE_FLOAT32"] = 7] = "TYPE_FLOAT32";
+  TTypeValue[TTypeValue["TYPE_UINT64"] = 8] = "TYPE_UINT64";
+  TTypeValue[TTypeValue["TYPE_INT64"] = 9] = "TYPE_INT64";
+  TTypeValue[TTypeValue["TYPE_FLOAT64"] = 10] = "TYPE_FLOAT64";
+  TTypeValue[TTypeValue["TYPE_CHAR"] = 11] = "TYPE_CHAR";
+  TTypeValue[TTypeValue["TYPE_STRUCT"] = 12] = "TYPE_STRUCT";
+})(TTypeValue || (TTypeValue = {}));
+;// CONCATENATED MODULE: ./src/components/bluetooth/BluetoothStruct.ts
+
+
+
+
+/** Парсинг структуры данных С++ */
+class BluetoothStruct {
+  static bit() {
+    return [TTypeValue.TYPE_BIT];
+  }
+  static uint8(length = 0) {
+    return [TTypeValue.TYPE_UINT8, length];
+  }
+  static int8(length = 0) {
+    return [TTypeValue.TYPE_INT8, length];
+  }
+  static uint16(length = 0) {
+    return [TTypeValue.TYPE_UINT16, length];
+  }
+  static int16(length = 0) {
+    return [TTypeValue.TYPE_INT16, length];
+  }
+  static uint32(length = 0) {
+    return [TTypeValue.TYPE_UINT32, length];
+  }
+  static int32(length = 0) {
+    return [TTypeValue.TYPE_INT32, length];
+  }
+  static float32(length = 0) {
+    return [TTypeValue.TYPE_FLOAT32, length];
+  }
+  static uint64(length = 0) {
+    return [TTypeValue.TYPE_UINT64, length];
+  }
+  static int64(length = 0) {
+    return [TTypeValue.TYPE_INT64, length];
+  }
+  static float64(length = 0) {
+    return [TTypeValue.TYPE_FLOAT64, length];
+  }
+  static char(length) {
+    return [TTypeValue.TYPE_CHAR, length];
+  }
+  static struct(data, length = 0) {
+    return [TTypeValue.TYPE_STRUCT, data, length];
+  }
+  constructor(data) {
+    /** Прямой порядок байтов */
+    _defineProperty(this, "littleEndian", true);
+    /** Смещение */
+    _defineProperty(this, "offset", 0);
+    /** Буфер данных */
+    _defineProperty(this, "buffer", null);
+    /** Смещение бит */
+    _defineProperty(this, "bit_offset", 0);
+    /** Буфер бит данных */
+    _defineProperty(this, "bit_buffer", null);
+    /** Структура данных */
+    _defineProperty(this, "structData", void 0);
+    this.structData = data;
+  }
+  /** Очистить буфер */
+  free() {
+    this.offset = 0;
+    this.buffer = null;
+    this.bit_offset = 0;
+    this.bit_buffer = null;
+  }
+  /** Очистить буфер бит */
+  freeBitBuffer() {
+    this.bit_offset = 0;
+    this.bit_buffer = null;
+    this.offset++;
+  }
+  /** Чтение бита */
+  getBit() {
+    let result = false;
+    if (this.buffer) {
+      if (!this.bit_buffer) this.bit_buffer = new (bitset_default())(this.buffer.getUint8(this.offset));
+      result = this.bit_buffer.get(this.bit_offset++) === 1;
+      if (this.bit_offset > 7) this.freeBitBuffer();
+    }
+    return result;
+  }
+  /**
+   * Запись бита
+   * @param val Значение
+   */
+  setBit(val) {
+    if (this.buffer) {
+      if (!this.bit_buffer) this.bit_buffer = new (bitset_default())(this.buffer.getUint8(this.offset));
+      // @ts-ignore
+      this.buffer.setUint8(this.offset, this.bit_buffer.set(this.bit_offset++, val ? 1 : 0).data[0]);
+      if (this.bit_offset > 7) this.freeBitBuffer();
+    }
+  }
+  /**
+   * Чтение Int8
+   * @param u      UInt8
+   * @param length Количество значений массива
+   */
+  getInt8(u, length) {
+    const result = [];
+    if (this.buffer) {
+      for (let i = 0; i < length; i++) {
+        result.push(u ? this.buffer.getUint8(this.offset++) : this.buffer.getInt8(this.offset++));
+      }
+    }
+    return result;
+  }
+  /**
+   * Запись Int8
+   * @param u      UInt8
+   * @param val    Массив значений
+   * @param length Количество значений массива
+   */
+  setInt8(u, val, length) {
+    if (this.buffer) {
+      for (let i = 0; i < length; i++) {
+        if (u) this.buffer.setUint8(this.offset++, val[i]);else this.buffer.setInt8(this.offset++, val[i]);
+      }
+    }
+  }
+  /**
+   * Чтение Int16
+   * @param u      UInt16
+   * @param length Количество значений массива
+   */
+  getInt16(u, length) {
+    const result = [];
+    if (this.buffer) {
+      for (let i = 0; i < length; i++) {
+        result.push(u ? this.buffer.getUint16(this.offset, this.littleEndian) : this.buffer.getInt16(this.offset, this.littleEndian));
+        this.offset += 2;
+      }
+    }
+    return result;
+  }
+  /**
+   * Запись Int16
+   * @param u      UInt16
+   * @param val    Значение
+   * @param length Количество значений массива
+   */
+  setInt16(u, val, length) {
+    if (this.buffer) {
+      for (let i = 0; i < length; i++) {
+        if (u) this.buffer.setUint16(this.offset, val[i], this.littleEndian);else this.buffer.setInt16(this.offset, val[i], this.littleEndian);
+        this.offset += 2;
+      }
+    }
+  }
+  /**
+   * Чтение        Int32
+   * @param u      UInt32
+   * @param length Количество значений массива
+   */
+  getInt32(u, length) {
+    const result = [];
+    if (this.buffer) {
+      for (let i = 0; i < length; i++) {
+        result.push(u ? this.buffer.getUint32(this.offset, this.littleEndian) : this.buffer.getInt32(this.offset, this.littleEndian));
+        this.offset += 4;
+      }
+    }
+    return result;
+  }
+  /**
+   * Запись Int32
+   * @param u      UInt32
+   * @param val    Значение
+   * @param length Количество значений массива
+   */
+  setInt32(u, val, length) {
+    if (this.buffer) {
+      for (let i = 0; i < length; i++) {
+        if (u) this.buffer.setUint32(this.offset, val[i], this.littleEndian);else this.buffer.setInt32(this.offset, val[i], this.littleEndian);
+        this.offset += 4;
+      }
+    }
+  }
+  /**
+   * Чтение        Float32
+   * @param length Количество значений массива
+   */
+  getFloat32(length) {
+    const result = [];
+    if (this.buffer) {
+      for (let i = 0; i < length; i++) {
+        result.push(this.buffer.getFloat32(this.offset, this.littleEndian));
+        this.offset += 4;
+      }
+    }
+    return result;
+  }
+  /**
+   * Запись Float32
+   * @param val    Значение
+   * @param length Количество значений массива
+   */
+  setFloat32(val, length) {
+    if (this.buffer) {
+      for (let i = 0; i < length; i++) {
+        this.buffer.setFloat32(this.offset, val[i], this.littleEndian);
+        this.offset += 4;
+      }
+    }
+  }
+  /**
+   * Чтение Int64
+   * @param u      UInt64
+   * @param length Количество значений массива
+   */
+  getInt64(u, length) {
+    const result = [];
+    if (this.buffer) {
+      for (let i = 0; i < length; i++) {
+        result.push(u ? this.buffer.getBigUint64(this.offset, this.littleEndian) : this.buffer.getBigInt64(this.offset, this.littleEndian));
+        this.offset += 8;
+      }
+    }
+    return result;
+  }
+  /**
+   * Запись Int64
+   * @param u      UInt64
+   * @param val    Значение
+   * @param length Количество значений массива
+   */
+  setInt64(u, val, length) {
+    if (this.buffer) {
+      for (let i = 0; i < length; i++) {
+        if (u) this.buffer.setBigUint64(this.offset, val[i], this.littleEndian);else this.buffer.setBigInt64(this.offset, val[i], this.littleEndian);
+        this.offset += 8;
+      }
+    }
+  }
+  /**
+   * Чтение        Float64
+   * @param length Количество значений массива
+   */
+  getFloat64(length) {
+    const result = [];
+    if (this.buffer) {
+      for (let i = 0; i < length; i++) {
+        result.push(this.buffer.getFloat64(this.offset, this.littleEndian));
+        this.offset += 8;
+      }
+    }
+    return result;
+  }
+  /**
+   * Запись Float64
+   * @param val    Значение
+   * @param length Количество значений массива
+   */
+  setFloat64(val, length) {
+    if (this.buffer) {
+      for (let i = 0; i < length; i++) {
+        this.buffer.setFloat64(this.offset, val[i], this.littleEndian);
+        this.offset += 8;
+      }
+    }
+  }
+  /**
+   * Чтение строки
+   * @param length Длина строки
+   */
+  getChars(length) {
+    let result = "";
+    if (this.buffer) {
+      for (let i = 0; i < length; i++) {
+        const byte = this.buffer.getUint8(this.offset++);
+        if (byte > 19 && byte < 127) result += String.fromCharCode(byte);
+      }
+    }
+    return result;
+  }
+  /**
+   * Запись строки
+   * @param str    Строка
+   * @param length Длина копирования
+   */
+  setChars(str, length) {
+    if (this.buffer) {
+      // noinspection SpellCheckingInspection
+      const lenstr = str.length;
+      for (let i = 0; i < length; i++) this.buffer.setInt8(this.offset++, i < lenstr ? str.charCodeAt(i) : 0);
+    }
+  }
+  /**
+   * Декодировать значения
+   * @param buffer Буфер данных
+   * @param data   Структура для данных
+   * @param offset Начало смещения
+   */
+  decode(buffer, data, offset = 0) {
+    this.buffer = buffer;
+    this.offset = offset;
+    for (const [key, value] of Object.entries(this.structData)) {
+      if (value[0] !== TTypeValue.TYPE_BIT) {
+        if (this.bit_offset > 0) this.freeBitBuffer();
+        switch (value[0]) {
+          case TTypeValue.TYPE_UINT8:
+            if (value[1] > 0) data[key] = this.getInt8(true, value[1]);else data[key] = this.getInt8(true, 1)[0];
+            break;
+          case TTypeValue.TYPE_INT8:
+            if (value[1] > 0) data[key] = this.getInt8(false, value[1]);else data[key] = this.getInt8(false, 1)[0];
+            break;
+          case TTypeValue.TYPE_UINT16:
+            if (value[1] > 0) data[key] = this.getInt16(true, value[1]);else data[key] = this.getInt16(true, 1)[0];
+            break;
+          case TTypeValue.TYPE_INT16:
+            if (value[1] > 0) data[key] = this.getInt16(false, value[1]);else data[key] = this.getInt16(false, 1)[0];
+            break;
+          case TTypeValue.TYPE_UINT32:
+            if (value[1] > 0) data[key] = this.getInt32(true, value[1]);else data[key] = this.getInt32(true, 1)[0];
+            break;
+          case TTypeValue.TYPE_INT32:
+            if (value[1] > 0) data[key] = this.getInt32(false, value[1]);else data[key] = this.getInt32(false, 1)[0];
+            break;
+          case TTypeValue.TYPE_FLOAT32:
+            if (value[1] > 0) data[key] = this.getFloat32(value[1]);else data[key] = this.getFloat32(1)[0];
+            break;
+          case TTypeValue.TYPE_UINT64:
+            if (value[1] > 0) data[key] = this.getInt64(true, value[1]);else data[key] = this.getInt64(true, 1)[0];
+            break;
+          case TTypeValue.TYPE_INT64:
+            if (value[1] > 0) data[key] = this.getInt64(false, value[1]);else data[key] = this.getInt64(false, 1)[0];
+            break;
+          case TTypeValue.TYPE_FLOAT64:
+            if (value[1] > 0) data[key] = this.getFloat64(value[1]);else data[key] = this.getFloat64(1)[0];
+            break;
+          case TTypeValue.TYPE_CHAR:
+            data[key] = this.getChars(value[1]);
+            break;
+          case TTypeValue.TYPE_STRUCT:
+            if (value[2] > 0) {
+              for (let i = 0; i < value[2]; i++) {
+                this.offset = new BluetoothStruct(value[1]).decode(buffer, data[key][i], this.offset);
+              }
+            } else {
+              this.offset = new BluetoothStruct(value[1]).decode(buffer, data[key], this.offset);
+            }
+            break;
+        }
+      } else {
+        data[key] = this.getBit();
+      }
+    }
+    if (this.bit_offset > 0) this.freeBitBuffer();
+    return this.offset;
+  }
+  /**
+   * Кодировать значения
+   * @param buffer Буфер данных
+   * @param data   Структура для данных
+   * @param offset Начало смещения
+   */
+  encode(buffer, data, offset = 0) {
+    this.buffer = buffer;
+    this.offset = offset;
+    for (const [key, value] of Object.entries(this.structData)) {
+      if (data[key] !== undefined) {
+        if (value[0] !== TTypeValue.TYPE_BIT) {
+          if (this.bit_offset > 0) this.freeBitBuffer();
+          switch (value[0]) {
+            case TTypeValue.TYPE_UINT8:
+              if (value[1] > 0) this.setInt8(true, data[key], value[1]);else this.setInt8(true, [data[key]], 1);
+              break;
+            case TTypeValue.TYPE_INT8:
+              if (value[1] > 0) this.setInt8(false, data[key], value[1]);else this.setInt8(false, [data[key]], 1);
+              break;
+            case TTypeValue.TYPE_UINT16:
+              if (value[1] > 0) this.setInt16(true, data[key], value[1]);else this.setInt16(true, [data[key]], 1);
+              break;
+            case TTypeValue.TYPE_INT16:
+              if (value[1] > 0) this.setInt16(false, data[key], value[1]);else this.setInt16(false, [data[key]], 1);
+              break;
+            case TTypeValue.TYPE_UINT32:
+              if (value[1] > 0) this.setInt32(true, data[key], value[1]);else this.setInt32(true, [data[key]], 1);
+              break;
+            case TTypeValue.TYPE_INT32:
+              if (value[1] > 0) this.setInt32(false, data[key], value[1]);else this.setInt32(false, [data[key]], 1);
+              break;
+            case TTypeValue.TYPE_FLOAT32:
+              if (value[1] > 0) this.setFloat32(data[key], value[1]);else this.setFloat32([data[key]], 1);
+              break;
+            case TTypeValue.TYPE_UINT64:
+              if (value[1] > 0) this.setInt64(true, data[key], value[1]);else this.setInt64(true, [data[key]], 1);
+              break;
+            case TTypeValue.TYPE_INT64:
+              if (value[1] > 0) this.setInt64(false, data[key], value[1]);else this.setInt64(false, [data[key]], 1);
+              break;
+            case TTypeValue.TYPE_FLOAT64:
+              if (value[1] > 0) this.setFloat64(data[key], value[1]);else this.setFloat64([data[key]], 1);
+              break;
+            case TTypeValue.TYPE_CHAR:
+              this.setChars(data[key], value[1]);
+              break;
+            case TTypeValue.TYPE_STRUCT:
+              if (value[2] > 0) {
+                for (let i = 0; i < value[2]; i++) {
+                  this.offset = new BluetoothStruct(value[1]).encode(buffer, data[key][i], this.offset);
+                }
+              } else this.offset = new BluetoothStruct(value[1]).encode(buffer, data[key], this.offset);
+          }
+        } else this.setBit(data[key]);
+      }
+    }
+    if (this.bit_offset > 0) this.freeBitBuffer();
+    return this.offset;
+  }
+}
+;// CONCATENATED MODULE: ./src/components/bluetooth/index.ts
+
+
+
+
+
+;// CONCATENATED MODULE: ./src/models/pjcan/base/BaseModel.ts
+
+const API_CANBUS_EVENT = "Canbus";
+/** Базовая модель */
+class BaseModel {
+  constructor(exec, highPriority = false) {
+    _defineProperty(this, "exec", void 0);
+    _defineProperty(this, "highPriority", void 0);
+    _defineProperty(this, "skipActivationCheck", false);
+    _defineProperty(this, "id", 0);
+    _defineProperty(this, "isData", false);
+    this.exec = exec;
+    this.highPriority = highPriority;
+  }
+  /**
+   * Запись данных
+   * @param {any} th Объект модели
+   * @param {number} exec Команда API
+   * @param {number} size Размер данных
+   * @param {IBluetoothStruct} struct Структура данных
+   * @param {DataView} buf Буфер данных
+   * @protected
+   */
+  _set(th, exec, size, struct, buf) {
+    const id = buf.getUint8(0);
+    const sizeData = buf.byteLength >= 3 ? buf.getUint16(1, true) : 0;
+    const result = id === exec && sizeData === size;
+    if (result) {
+      try {
+        struct.decode(buf, th, 3);
+        this.isData = true;
+      } catch (e) {
+        console.log(e);
+      }
+    }
+    return result;
+  }
+  /**
+   * Чтение данных
+   * @param {any} th Объект модели
+   * @param {number} exec Команда API
+   * @param {number} size Длина данных
+   * @param {IBluetoothStruct} struct Структура данных
+   */
+  _get(th, exec, size = 0, struct) {
+    const buf = new DataView(new ArrayBuffer(size + 3));
+    buf.setUint8(0, exec);
+    buf.setUint16(1, size, true);
+    if (size > 0) {
+      try {
+        struct?.encode(buf, th, 3);
+      } catch (e) {
+        console.log(e);
+        buf.setUint16(1, 0, true);
+      }
+    }
+    return buf;
+  }
+}
+;// CONCATENATED MODULE: ./src/models/pjcan/mazda/TCarModel.ts
+/* eslint-disable no-unused-vars */
+var TCarModel;
+(function (TCarModel) {
+  TCarModel[TCarModel["CAR_MODEL_UNKNOWN"] = 0] = "CAR_MODEL_UNKNOWN";
+  TCarModel[TCarModel["CAR_MODEL_MAZDA_3_BK"] = 1] = "CAR_MODEL_MAZDA_3_BK";
+  TCarModel[TCarModel["CAR_MODEL_MAZDA_3_BL"] = 2] = "CAR_MODEL_MAZDA_3_BL";
+  TCarModel[TCarModel["CAR_MODEL_MAZDA_6_GG"] = 3] = "CAR_MODEL_MAZDA_6_GG";
+  TCarModel[TCarModel["CAR_MODEL_MAZDA_6_GH"] = 4] = "CAR_MODEL_MAZDA_6_GH";
+  TCarModel[TCarModel["CAR_MODEL_MAZDA_CX7"] = 5] = "CAR_MODEL_MAZDA_CX7";
+  TCarModel[TCarModel["CAR_MODEL_MAZDA_CX7_REST"] = 6] = "CAR_MODEL_MAZDA_CX7_REST";
+  TCarModel[TCarModel["CAR_MODEL_MAZDA_CX9"] = 7] = "CAR_MODEL_MAZDA_CX9";
+  TCarModel[TCarModel["CAR_MODEL_MAZDA_CX9_REST"] = 8] = "CAR_MODEL_MAZDA_CX9_REST";
+})(TCarModel || (TCarModel = {}));
+;// CONCATENATED MODULE: ./src/models/pjcan/mazda/MazdaConfig.ts
+
+
+
+
+const API_MAZDA_CONFIG_EXEC = 0x40;
+const API_MAZDA_CONFIG_EVENT = "MazdaConfig";
+const API_MAZDA_VIEW_EXEC = 0x43;
+const API_MAZDA_VIEW_EVENT = "MazdaView";
+/** Модель параметров автомобиля */
+class MazdaConfig extends BaseModel {
+  constructor(data) {
+    super(API_MAZDA_CONFIG_EXEC);
+    _defineProperty(this, "lcd", false);
+    _defineProperty(this, "carModel", TCarModel.CAR_MODEL_UNKNOWN);
+    _defineProperty(this, "logo", "");
+    _defineProperty(this, "hello", "");
+    this.skipActivationCheck = true;
+    if (data) this.set(data);
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    return this._set(this, this.exec, MazdaConfig.size, new BluetoothStruct(MazdaConfig.struct), buf);
+  }
+  /**
+   * Чтение данных
+   * @param {boolean} request Только запрос
+   */
+  get(request) {
+    return request ? this._get(this, this.exec) : this._get(this, this.exec, MazdaConfig.size, new BluetoothStruct(MazdaConfig.struct));
+  }
+}
+_defineProperty(MazdaConfig, "struct", {
+  lcd: BluetoothStruct.bit(),
+  carModel: BluetoothStruct.uint8(),
+  logo: BluetoothStruct.char(12),
+  hello: BluetoothStruct.char(32)
+});
+_defineProperty(MazdaConfig, "size", 46);
+;// CONCATENATED MODULE: ./src/models/pjcan/mazda/TMazdaButton.ts
+/* eslint-disable no-unused-vars */
+var TMazdaButton;
+(function (TMazdaButton) {
+  TMazdaButton[TMazdaButton["MAZDA_BUTTON_NONE"] = 0] = "MAZDA_BUTTON_NONE";
+  TMazdaButton[TMazdaButton["MAZDA_BUTTON_CLOCK"] = 1] = "MAZDA_BUTTON_CLOCK";
+  TMazdaButton[TMazdaButton["MAZDA_BUTTON_INFO"] = 2] = "MAZDA_BUTTON_INFO";
+  TMazdaButton[TMazdaButton["MAZDA_BUTTON_CLOCK_H"] = 3] = "MAZDA_BUTTON_CLOCK_H";
+  TMazdaButton[TMazdaButton["MAZDA_BUTTON_CLOCK_M"] = 4] = "MAZDA_BUTTON_CLOCK_M";
+  TMazdaButton[TMazdaButton["MAZDA_BUTTON_CLOCK_RM"] = 5] = "MAZDA_BUTTON_CLOCK_RM";
+  TMazdaButton[TMazdaButton["MAZDA_BUTTON_CLOCK_24"] = 6] = "MAZDA_BUTTON_CLOCK_24";
+})(TMazdaButton || (TMazdaButton = {}));
+;// CONCATENATED MODULE: ./src/models/pjcan/mazda/MazdaAction.ts
+
+
+
+
+const API_MAZDA_ACTION_EXEC = 0x42;
+const API_MAZDA_ACTION_EVENT = "MazdaAction";
+/** Модель действий устройства */
+class MazdaAction extends BaseModel {
+  constructor() {
+    super(API_MAZDA_ACTION_EXEC);
+    _defineProperty(this, "btnPress", false);
+    _defineProperty(this, "btnSimulation", false);
+    _defineProperty(this, "btnType", TMazdaButton.MAZDA_BUTTON_NONE);
+    _defineProperty(this, "timePress", 0);
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    return false;
+  }
+  /** Чтение данных */
+  get() {
+    return this._get(this, this.exec, MazdaAction.size, new BluetoothStruct(MazdaAction.struct));
+  }
+}
+_defineProperty(MazdaAction, "struct", {
+  btnPress: BluetoothStruct.bit(),
+  btnSimulation: BluetoothStruct.bit(),
+  btnType: BluetoothStruct.uint8(),
+  timePress: BluetoothStruct.uint16()
+});
+_defineProperty(MazdaAction, "size", 4);
+;// CONCATENATED MODULE: ./src/models/pjcan/mazda/index.ts
+
+
+
+
+
+;// CONCATENATED MODULE: ./src/store/modules/app/onboard-card-list-default.ts
+
+/* harmony default export */ var onboard_card_list_default = ([{
+  name: "info",
+  enabled: true,
+  car: [TCarModel.CAR_MODEL_MAZDA_3_BK, TCarModel.CAR_MODEL_MAZDA_3_BL, TCarModel.CAR_MODEL_MAZDA_6_GG, TCarModel.CAR_MODEL_MAZDA_6_GH, TCarModel.CAR_MODEL_MAZDA_CX7, TCarModel.CAR_MODEL_MAZDA_CX7_REST, TCarModel.CAR_MODEL_MAZDA_CX9, TCarModel.CAR_MODEL_MAZDA_CX9_REST]
+}, {
+  name: "bose",
+  enabled: true,
+  car: [TCarModel.CAR_MODEL_MAZDA_CX7, TCarModel.CAR_MODEL_MAZDA_CX7_REST, TCarModel.CAR_MODEL_MAZDA_CX9]
+}, {
+  name: "engine",
+  enabled: true,
+  car: [TCarModel.CAR_MODEL_MAZDA_3_BK, TCarModel.CAR_MODEL_MAZDA_CX7, TCarModel.CAR_MODEL_MAZDA_CX7_REST, TCarModel.CAR_MODEL_MAZDA_CX9, TCarModel.CAR_MODEL_MAZDA_CX9_REST]
+}, {
+  name: "fuel",
+  enabled: true,
+  car: [TCarModel.CAR_MODEL_MAZDA_3_BK, TCarModel.CAR_MODEL_MAZDA_CX7, TCarModel.CAR_MODEL_MAZDA_CX7_REST, TCarModel.CAR_MODEL_MAZDA_CX9, TCarModel.CAR_MODEL_MAZDA_CX9_REST]
+}, {
+  name: "movement",
+  enabled: true,
+  car: [TCarModel.CAR_MODEL_MAZDA_3_BK, TCarModel.CAR_MODEL_MAZDA_CX7, TCarModel.CAR_MODEL_MAZDA_CX7_REST, TCarModel.CAR_MODEL_MAZDA_CX9, TCarModel.CAR_MODEL_MAZDA_CX9_REST]
+}, {
+  name: "doors",
+  enabled: true,
+  car: [TCarModel.CAR_MODEL_MAZDA_3_BK]
+}, {
+  name: "climate",
+  enabled: true,
+  car: [TCarModel.CAR_MODEL_MAZDA_3_BK, TCarModel.CAR_MODEL_MAZDA_6_GG, TCarModel.CAR_MODEL_MAZDA_CX7, TCarModel.CAR_MODEL_MAZDA_CX7_REST, TCarModel.CAR_MODEL_MAZDA_CX9, TCarModel.CAR_MODEL_MAZDA_CX9_REST]
+}]);
+;// CONCATENATED MODULE: ./src/store/modules/app/buttons-default.ts
+
+/* harmony default export */ var buttons_default = ([{
+  id: 1,
+  title: t("buttons.mode"),
+  icon: "mdi-menu"
+}, {
+  id: 2,
+  title: t("buttons.setUp"),
+  icon: "mdi-play"
+}, {
+  id: 3,
+  title: t("buttons.setDown"),
+  icon: "mdi-play"
+}, {
+  id: 4,
+  title: t("buttons.volUp"),
+  icon: "mdi-volume-plus"
+}, {
+  id: 5,
+  title: t("buttons.volDown"),
+  icon: "mdi-volume-minus"
+}, {
+  id: 6,
+  title: t("buttons.volMute"),
+  icon: "mdi-volume-mute"
+}]);
+;// CONCATENATED MODULE: ./src/store/modules/app/state.ts
+
+
+const state = {
+  messages: [],
+  visibleMessage: false,
+  mazda: null,
+  onboardCardList: onboard_card_list_default,
+  sw1: buttons_default,
+  notify: false
+};
+/* harmony default export */ var app_state = (state);
+;// CONCATENATED MODULE: ./src/store/modules/app/getters.ts
+/**
+ * Сообщение из очереди сообщений
+ * @param {any} state
+ */
+const message = state => state.messages?.[0];
+/**
+ * Отображение диалога сообщения
+ * @param {any} state
+ */
+const visibleMessage = state => state.visibleMessage;
+/**
+ * Список карточек бортового компьютера
+ * @param {any} state
+ */
+const onboardCardList = state => state.onboardCardList;
+/**
+ * Список кнопок SW1
+ * @param {any} state
+ */
+const sw1 = state => state.sw1;
+/**
+ * Уведомления
+ * @param {any} state
+ */
+const notify = state => state.notify;
+;// CONCATENATED MODULE: ./src/utils/debounce.ts
+/** Создать debounce */
+const createDebounce = () => {
+  let timeout;
+  return (fn, delay) => {
+    clearTimeout(timeout);
+    if (delay > 0) timeout = setTimeout(() => fn(), delay);
+  };
+};
+
+;// CONCATENATED MODULE: ./src/store/modules/app/mutations.ts
+
+
+
+const debounce = createDebounce();
+/**
+ * Записать новое сообщение
+ * @param state
+ * @param {IMessage} msg Сообщение
+ */
+const setMessage = (state, msg) => {
+  state.messages.push(msg);
+  state.visibleMessage = true;
+};
+const setVisibleMessage = (state, value) => {
+  state.visibleMessage = value;
+  if (!value) {
+    debounce(() => src_store.commit("app/freeMessage"), 400);
+  }
+};
+/**
+ * Удалить первое сообщение из очереди сообщений
+ * @param state
+ */
+const freeMessage = state => {
+  if (state.messages?.[0]) {
+    state.messages.splice(0, 1);
+  }
+};
+/**
+ * Очистить очередь сообщений
+ * @param state
+ */
+const clearMessages = state => {
+  debounce(() => {}, 0);
+  state.messages = [];
+};
+/**
+ * Изменить список карточек бортового компьютера
+ * @param {any} state
+ * @param {IOnboardCard[]} value Новый список
+ */
+const setOnboardCardList = (state, value) => {
+  state.onboardCardList = [...value].map(x => ({
+    ...x
+  }));
+};
+/**
+ * Записать список кнопок SW1
+ * @param {any} state
+ * @param {IButtonCard[]} value Новый список
+ */
+const setSW1 = (state, value) => {
+  state.sw1 = [...value].map(x => ({
+    id: x.id,
+    title: x.title,
+    icon: x.icon
+  }));
+};
+/**
+ * Записать уведомление
+ * @param {any} state
+ * @param {boolean} value Значение
+ */
+const setNotify = (state, value) => {
+  state.notify = value;
+};
+;// CONCATENATED MODULE: ./src/store/modules/app/actions.ts
+
+
+/**
+ * Чтение списка onboardCardList из local storage
+ * @param {any} commit
+ */
+const readOnboardCardList = ({
+  commit
+}) => {
+  const res = window.localStorage.getItem("OnboardCardList");
+  if (res?.length) {
+    try {
+      const onboardCardList = JSON.parse(res);
+      if (Array.isArray(onboardCardList)) {
+        commit("setOnboardCardList", onboardCardList);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }
+};
+/**
+ * Запись списка onboardCardList в local storage
+ * @param {any} commit
+ */
+const writeOnboardCardList = ({
+  getters
+}) => {
+  const res = JSON.stringify(getters.onboardCardList);
+  window.localStorage.setItem("OnboardCardList", res);
+};
+/**
+ * Сбросить значения списка onboardCardList по умолчанию
+ * @param {any} commit
+ * @param {any} dispatch
+ */
+const resetOnboardCardList = ({
+  commit,
+  dispatch
+}) => {
+  commit("setOnboardCardList", onboard_card_list_default);
+  dispatch("writeOnboardCardList");
+};
+/**
+ * Чтение списка кнопок SW1 из local storage
+ * @param {any} commit
+ */
+const readSW1 = ({
+  commit
+}) => {
+  const res = window.localStorage.getItem("ListButtonsSW1");
+  if (res?.length) {
+    try {
+      const list = JSON.parse(res);
+      if (Array.isArray(list)) {
+        commit("setSW1", list);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }
+};
+/**
+ * Запись списка кнопок SW1 в local storage
+ * @param {any} commit
+ */
+const writeSW1 = ({
+  getters
+}) => {
+  const res = JSON.stringify(getters.sw1);
+  window.localStorage.setItem("ListButtonsSW1", res);
+};
+/**
+ * Сбросить значения списка кнопок SW1 по умолчанию
+ * @param {any} commit
+ * @param {any} dispatch
+ */
+const resetSW1 = ({
+  commit,
+  dispatch
+}) => {
+  commit("setSW1", buttons_default);
+  dispatch("writeSW1");
+};
+;// CONCATENATED MODULE: ./src/store/modules/app/index.ts
+
+
+
+
+/* harmony default export */ var app = ({
+  namespaced: true,
+  state: app_state,
+  getters: getters_namespaceObject,
+  mutations: mutations_namespaceObject,
+  actions: actions_namespaceObject
+});
+;// CONCATENATED MODULE: ./src/models/pjcan/device/DeviceConfig.ts
+
+
+
+const API_DEVICE_CONFIG_EXEC = 0x02;
+const API_DEVICE_CONFIG_EVENT = "DeviceConfig";
+const API_DEVICE_VIEW_WORKTIME_EXEC = 0x0a;
+const API_DEVICE_VIEW_WORKTIME_EVENT = "DeviceWorktime";
+const API_DEVICE_VIEW_VOLTMETER_EXEC = 0x0b;
+const API_DEVICE_VIEW_VOLTMETER_EVENT = "DeviceVoltmeter";
+/** Модель параметров устройства */
+class DeviceConfig extends BaseModel {
+  constructor(data) {
+    super(API_DEVICE_CONFIG_EXEC);
+    _defineProperty(this, "serial", "");
+    this.skipActivationCheck = true;
+    if (data) this.set(data);
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    return this._set(this, this.exec, DeviceConfig.size, new BluetoothStruct(DeviceConfig.struct), buf);
+  }
+  /**
+   * Чтение данных
+   * @param {boolean} request Только запрос
+   */
+  get(request) {
+    return request ? this._get(this, this.exec) : this._get(this, this.exec, DeviceConfig.size, new BluetoothStruct(DeviceConfig.struct));
+  }
+}
+_defineProperty(DeviceConfig, "struct", {
+  serial: BluetoothStruct.char(64)
+});
+_defineProperty(DeviceConfig, "size", 64);
+;// CONCATENATED MODULE: ./src/models/pjcan/device/DeviceInfo.ts
+
+
+
+const API_DEVICE_INFO_EXEC = 0x01;
+const API_DEVICE_INFO_EVENT = "DeviceInfo";
+/** Модель характеристик устройства */
+class DeviceInfo extends BaseModel {
+  constructor(data) {
+    super(API_DEVICE_INFO_EXEC);
+    _defineProperty(this, "chipCores", 0);
+    _defineProperty(this, "chipModel", "");
+    _defineProperty(this, "chipRevision", 0);
+    _defineProperty(this, "cpuFreqMHz", 0);
+    _defineProperty(this, "cycleCount", 0);
+    _defineProperty(this, "efuseMac", BigInt(0));
+    _defineProperty(this, "flashChipMode", 0);
+    _defineProperty(this, "flashChipSize", 0);
+    _defineProperty(this, "flashChipSpeed", 0);
+    _defineProperty(this, "freeHeap", 0);
+    _defineProperty(this, "freePsram", 0);
+    _defineProperty(this, "freeSketchSpace", 0);
+    _defineProperty(this, "heapSize", 0);
+    _defineProperty(this, "maxAllocHeap", 0);
+    _defineProperty(this, "maxAllocPsram", 0);
+    _defineProperty(this, "minFreeHeap", 0);
+    _defineProperty(this, "minFreePsram", 0);
+    _defineProperty(this, "psramSize", 0);
+    _defineProperty(this, "sdkVersion", "");
+    _defineProperty(this, "sketchMD5", "");
+    _defineProperty(this, "sketchSize", 0);
+    _defineProperty(this, "temperatureChip", 0);
+    _defineProperty(this, "sha", [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+    _defineProperty(this, "hardware", "");
+    this.skipActivationCheck = true;
+    if (data) this.set(data);
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    return this._set(this, this.exec, DeviceInfo.size, new BluetoothStruct(DeviceInfo.struct), buf);
+  }
+  /** Чтение данных */
+  get() {
+    return this._get(this, this.exec);
+  }
+}
+_defineProperty(DeviceInfo, "struct", {
+  chipCores: BluetoothStruct.uint8(),
+  chipModel: BluetoothStruct.char(16),
+  chipRevision: BluetoothStruct.uint8(),
+  cpuFreqMHz: BluetoothStruct.uint32(),
+  cycleCount: BluetoothStruct.uint32(),
+  efuseMac: BluetoothStruct.uint64(),
+  flashChipMode: BluetoothStruct.uint8(),
+  flashChipSize: BluetoothStruct.uint32(),
+  flashChipSpeed: BluetoothStruct.uint32(),
+  freeHeap: BluetoothStruct.uint32(),
+  freePsram: BluetoothStruct.uint32(),
+  freeSketchSpace: BluetoothStruct.uint32(),
+  heapSize: BluetoothStruct.uint32(),
+  maxAllocHeap: BluetoothStruct.uint32(),
+  maxAllocPsram: BluetoothStruct.uint32(),
+  minFreeHeap: BluetoothStruct.uint32(),
+  minFreePsram: BluetoothStruct.uint32(),
+  psramSize: BluetoothStruct.uint32(),
+  sdkVersion: BluetoothStruct.char(8),
+  sketchMD5: BluetoothStruct.char(16),
+  sketchSize: BluetoothStruct.uint32(),
+  temperatureChip: BluetoothStruct.uint32(),
+  sha: BluetoothStruct.uint8(32),
+  hardware: BluetoothStruct.char(32)
+});
+_defineProperty(DeviceInfo, "size", 175);
+;// CONCATENATED MODULE: ./src/models/pjcan/device/DeviceValue.ts
+
+var _DeviceValue;
+
+
+const API_DEVICE_VALUE_EXEC = 0x03;
+const API_DEVICE_VALUE_EVENT = "DeviceValue";
+/** Модель значений устройства */
+class DeviceValue extends BaseModel {
+  constructor(data) {
+    super(API_DEVICE_VALUE_EXEC);
+    _defineProperty(this, "activation", false);
+    _defineProperty(this, "state_led_work", false);
+    _defineProperty(this, "state_reverse", false);
+    _defineProperty(this, "state_r_position", false);
+    _defineProperty(this, "state_amp_illum", false);
+    _defineProperty(this, "hardware", {
+      major: 0,
+      minor: 0,
+      build: 0,
+      revision: 0
+    });
+    _defineProperty(this, "led", 0);
+    _defineProperty(this, "voltmeter", 0);
+    _defineProperty(this, "worktime", 0);
+    this.skipActivationCheck = true;
+    if (data) this.set(data);
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    return this._set(this, this.exec, DeviceValue.size, new BluetoothStruct(DeviceValue.struct), buf);
+  }
+  /** Чтение данных */
+  get() {
+    return this._get(this, this.exec);
+  }
+}
+_DeviceValue = DeviceValue;
+_defineProperty(DeviceValue, "structHardware", {
+  major: BluetoothStruct.uint8(),
+  minor: BluetoothStruct.uint8(),
+  build: BluetoothStruct.uint8(),
+  revision: BluetoothStruct.uint8()
+});
+_defineProperty(DeviceValue, "struct", {
+  activation: BluetoothStruct.bit(),
+  state_led_work: BluetoothStruct.bit(),
+  state_reverse: BluetoothStruct.bit(),
+  state_r_position: BluetoothStruct.bit(),
+  state_amp_illum: BluetoothStruct.bit(),
+  hardware: BluetoothStruct.struct(_DeviceValue.structHardware),
+  led: BluetoothStruct.uint8(),
+  voltmeter: BluetoothStruct.uint16(),
+  worktime: BluetoothStruct.uint32()
+});
+_defineProperty(DeviceValue, "size", 12);
+;// CONCATENATED MODULE: ./src/models/pjcan/device/DeviceAction.ts
+
+
+
+const API_DEVICE_ACTION_EXEC = 0x04;
+const API_DEVICE_ACTION_EVENT = "DeviceAction";
+/** Модель действий устройства */
+class DeviceAction extends BaseModel {
+  constructor() {
+    super(API_DEVICE_ACTION_EXEC);
+    _defineProperty(this, "reboot", false);
+    _defineProperty(this, "resetConfig", false);
+    _defineProperty(this, "resetView", false);
+    _defineProperty(this, "save", false);
+    _defineProperty(this, "format", false);
+    this.skipActivationCheck = true;
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    return false;
+  }
+  /** Чтение данных */
+  get() {
+    return this._get(this, this.exec, DeviceAction.size, new BluetoothStruct(DeviceAction.struct));
+  }
+}
+_defineProperty(DeviceAction, "struct", {
+  reboot: BluetoothStruct.bit(),
+  resetConfig: BluetoothStruct.bit(),
+  resetView: BluetoothStruct.bit(),
+  save: BluetoothStruct.bit(),
+  format: BluetoothStruct.bit()
+});
+_defineProperty(DeviceAction, "size", 1);
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.typed-array.to-reversed.js
+var es_typed_array_to_reversed = __webpack_require__(2912);
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.typed-array.to-sorted.js
+var es_typed_array_to_sorted = __webpack_require__(9904);
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.typed-array.with.js
+var es_typed_array_with = __webpack_require__(6096);
+;// CONCATENATED MODULE: ./src/models/pjcan/device/EDeviceUpdateError.ts
+var EDeviceUpdateError;
+(function (EDeviceUpdateError) {
+  EDeviceUpdateError[EDeviceUpdateError["UPD_OK"] = 0] = "UPD_OK";
+  EDeviceUpdateError[EDeviceUpdateError["UPD_ERROR_NODATA"] = 1] = "UPD_ERROR_NODATA";
+  EDeviceUpdateError[EDeviceUpdateError["UPD_ERROR_NODATA_BEGIN"] = 2] = "UPD_ERROR_NODATA_BEGIN";
+  EDeviceUpdateError[EDeviceUpdateError["UPD_ERROR_BEGIN"] = 3] = "UPD_ERROR_BEGIN";
+  EDeviceUpdateError[EDeviceUpdateError["UPD_ERROR_WRITE"] = 4] = "UPD_ERROR_WRITE";
+  EDeviceUpdateError[EDeviceUpdateError["UPD_ERROR_END"] = 5] = "UPD_ERROR_END";
+  EDeviceUpdateError[EDeviceUpdateError["UPD_ERROR_NOT_FOUND_IV"] = 6] = "UPD_ERROR_NOT_FOUND_IV";
+  EDeviceUpdateError[EDeviceUpdateError["UPD_ERROR_SETKEY"] = 7] = "UPD_ERROR_SETKEY";
+  EDeviceUpdateError[EDeviceUpdateError["UPD_ERROR_DECRYPT"] = 8] = "UPD_ERROR_DECRYPT";
+  EDeviceUpdateError[EDeviceUpdateError["UPD_ERROR_TIMEOUT"] = 9] = "UPD_ERROR_TIMEOUT"; // Остановка обновления по таймауту
+})(EDeviceUpdateError || (EDeviceUpdateError = {}));
+;// CONCATENATED MODULE: ./src/models/pjcan/device/DeviceUpdate.ts
+
+
+
+
+
+
+
+const API_DEVICE_UPDATE_EXEC = 0x05;
+const API_DEVICE_UPDATE_EVENT = "DeviceUpdate";
+const API_DEVICE_UPDATE_EVENT_ERROR = "DeviceUpdateError";
+/** Модель обновления прошивки */
+class DeviceUpdate extends (eventemitter3_default()) {
+  get uploading() {
+    return this.offset > 0 ? this.offset / this.total : 0;
+  }
+  constructor(data) {
+    super();
+    _defineProperty(this, "firmwareUrl", "");
+    _defineProperty(this, "firmwareData", new Uint8Array(0));
+    _defineProperty(this, "offset", 0);
+    _defineProperty(this, "error", EDeviceUpdateError.UPD_OK);
+    _defineProperty(this, "encrypt", false);
+    _defineProperty(this, "iv", false);
+    _defineProperty(this, "ivData", new Uint8Array(0));
+    _defineProperty(this, "begin", false);
+    _defineProperty(this, "end", false);
+    _defineProperty(this, "abort", false);
+    _defineProperty(this, "total", 0);
+    _defineProperty(this, "size", 0);
+    _defineProperty(this, "highPriority", true);
+    if (data) this.set(data);
+  }
+  /** Очистить данные */
+  clear() {
+    this.firmwareData = new Uint8Array(0);
+    this.offset = 0;
+    this.error = 0;
+    this.begin = false;
+    this.end = false;
+    this.abort = false;
+    this.encrypt = false;
+    this.total = 0;
+    this.size = 0;
+  }
+  /**
+   * Записать значение IV
+   * @param res
+   */
+  setIV(res) {
+    this.iv = !!res && res?.length % 2 === 0 && /^[a-f\d]+$/i.test(res);
+    if (this.iv) {
+      this.ivData = new Uint8Array(res.length / 2);
+      let pos = 0;
+      for (let i = 0; i < res.length; i += 2) {
+        this.ivData[pos] = parseInt(res.substring(i, i + 2), 16);
+        pos++;
+      }
+    }
+    return this.iv;
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    const id = buf.getUint8(0);
+    const sizeData = buf.byteLength >= 3 ? buf.getUint16(1, true) : 0;
+    const result = id === API_DEVICE_UPDATE_EXEC && sizeData === 1;
+    if (result) {
+      this.error = buf.getUint8(3);
+      this.emit(API_DEVICE_UPDATE_EVENT, this.error);
+    }
+  }
+  /** Чтение данных */
+  get() {
+    const buf = new DataView(new ArrayBuffer(DeviceUpdate.size + 3));
+    buf.setUint8(0, API_DEVICE_UPDATE_EXEC);
+    buf.setUint16(1, DeviceUpdate.size, true);
+    try {
+      this.begin = !this.begin && this.offset === 0;
+      if (this.begin && this.encrypt && this.iv) {
+        this.size = this.ivData.length;
+        for (let i = 0; i < this.size; i++) {
+          buf.setUint8(10 + i, this.ivData[i]);
+        }
+      } else {
+        this.size = this.total - this.offset;
+        if (this.size > 496) this.size = 496;else if (this.size < 0) this.size = 0;
+        for (let i = 0; i < this.size; i++) {
+          buf.setUint8(10 + i, this.firmwareData[this.offset]);
+          this.offset++;
+        }
+      }
+      this.end = this.offset >= this.total;
+      new BluetoothStruct(DeviceUpdate.struct)?.encode(buf, this, 3);
+    } catch (e) {
+      console.log(e);
+      buf.setUint16(1, 0, true);
+    }
+    return buf;
+  }
+}
+_defineProperty(DeviceUpdate, "struct", {
+  begin: BluetoothStruct.bit(),
+  end: BluetoothStruct.bit(),
+  abort: BluetoothStruct.bit(),
+  encrypt: BluetoothStruct.bit(),
+  iv: BluetoothStruct.bit(),
+  total: BluetoothStruct.uint32(),
+  size: BluetoothStruct.uint16()
+});
+_defineProperty(DeviceUpdate, "size", 503);
+;// CONCATENATED MODULE: ./src/models/pjcan/device/DeviceScannerAction.ts
+
+
+
+const API_DEVICE_SCANNER_CONFIG_EXEC = 0x07;
+const API_DEVICE_SCANNER_CONFIG_EVENT = "DeviceScannerAction";
+class DeviceScannerAction extends BaseModel {
+  constructor(data) {
+    super(API_DEVICE_SCANNER_CONFIG_EXEC, true);
+    _defineProperty(this, "enabled", false);
+    _defineProperty(this, "shutdown", 5);
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    return false;
+  }
+  /** Чтение данных */
+  get() {
+    return this._get(this, this.exec, DeviceScannerAction.size, new BluetoothStruct(DeviceScannerAction.struct));
+  }
+}
+_defineProperty(DeviceScannerAction, "struct", {
+  enabled: BluetoothStruct.bit(),
+  shutdown: BluetoothStruct.uint8()
+});
+_defineProperty(DeviceScannerAction, "size", 2);
+;// CONCATENATED MODULE: ./src/models/pjcan/device/DeviceScannerValue.ts
+
+
+
+
+const API_DEVICE_SCANNER_VALUE_EXEC = 0x06;
+const API_DEVICE_SCANNER_VALUE_EVENT = "DeviceScannerValue";
+class DeviceScannerValue extends BaseModel {
+  constructor(data) {
+    super(API_DEVICE_SCANNER_VALUE_EXEC, true);
+    _defineProperty(this, "count", 0);
+    _defineProperty(this, "frames", []);
+    for (let i = 0; i < 16; i++) {
+      this.frames.push({
+        receive: false,
+        send: false,
+        id: 0,
+        data: [0, 0, 0, 0, 0, 0, 0, 0],
+        length: 0,
+        timestamp: BigInt(0)
+      });
+    }
+    if (data) this.set(data);
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    return this._set(this, this.exec, DeviceScannerValue.size, new BluetoothStruct(DeviceScannerValue.struct), buf);
+  }
+  /** Чтение данных */
+  get() {
+    const buf = new DataView(new ArrayBuffer(3));
+    buf.setUint8(0, this.exec);
+    buf.setUint16(1, 0, true);
+    return buf;
+  }
+}
+_defineProperty(DeviceScannerValue, "struct", {
+  count: BluetoothStruct.uint8(),
+  frames: BluetoothStruct.struct({
+    id: BluetoothStruct.uint32(),
+    data: BluetoothStruct.uint8(8),
+    length: BluetoothStruct.uint8(),
+    timestamp: BluetoothStruct.uint64()
+  }, 16)
+});
+_defineProperty(DeviceScannerValue, "size", 337);
+;// CONCATENATED MODULE: ./src/models/pjcan/device/index.ts
+
+
+
+
+
+
+
+
+;// CONCATENATED MODULE: ./src/models/pjcan/teyes/TProtocol.ts
+/* eslint-disable */
+var TProtocol;
+(function (TProtocol) {
+  TProtocol[TProtocol["PROTOCOL_PJCAN"] = 0] = "PROTOCOL_PJCAN";
+  TProtocol[TProtocol["PROTOCOL_RAISE_HM_ND00"] = 1] = "PROTOCOL_RAISE_HM_ND00";
+  TProtocol[TProtocol["PROTOCOL_RAISE_HM_ND01"] = 2] = "PROTOCOL_RAISE_HM_ND01";
+  TProtocol[TProtocol["PROTOCOL_SIMPLE_SOFT_MZ_SS_07A"] = 3] = "PROTOCOL_SIMPLE_SOFT_MZ_SS_07A";
+  TProtocol[TProtocol["PROTOCOL_SIMPLE_SOFT_RP5_MZ_002"] = 4] = "PROTOCOL_SIMPLE_SOFT_RP5_MZ_002";
+})(TProtocol || (TProtocol = {}));
+;// CONCATENATED MODULE: ./src/models/pjcan/teyes/TeyesConfig.ts
+
+
+
+
+const API_TEYES_CONFIG_EXEC = 0x50;
+const API_TEYES_CONFIG_EVENT = "TeyesConfig";
+/** Модель параметров Teyes */
+class TeyesConfig extends BaseModel {
+  constructor(data) {
+    super(API_TEYES_CONFIG_EXEC);
+    _defineProperty(this, "receiveClock", false);
+    _defineProperty(this, "receiveButtons", false);
+    _defineProperty(this, "receiveText", false);
+    _defineProperty(this, "sendButton", false);
+    _defineProperty(this, "sendClimate", false);
+    _defineProperty(this, "sendDoors", false);
+    _defineProperty(this, "parseVolume", false);
+    _defineProperty(this, "lcdShow", false);
+    _defineProperty(this, "reverseUart", false);
+    _defineProperty(this, "protocol", TProtocol.PROTOCOL_RAISE_HM_ND01);
+    if (data) this.set(data);
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    return this._set(this, this.exec, TeyesConfig.size, new BluetoothStruct(TeyesConfig.struct), buf);
+  }
+  /**
+   * Чтение данных
+   * @param {boolean} request Только запрос
+   */
+  get(request) {
+    return request ? this._get(this, this.exec) : this._get(this, this.exec, TeyesConfig.size, new BluetoothStruct(TeyesConfig.struct));
+  }
+}
+_defineProperty(TeyesConfig, "struct", {
+  receiveClock: BluetoothStruct.bit(),
+  receiveButtons: BluetoothStruct.bit(),
+  receiveText: BluetoothStruct.bit(),
+  sendButton: BluetoothStruct.bit(),
+  sendClimate: BluetoothStruct.bit(),
+  sendDoors: BluetoothStruct.bit(),
+  parseVolume: BluetoothStruct.bit(),
+  lcdShow: BluetoothStruct.bit(),
+  reverseUart: BluetoothStruct.bit(),
+  protocol: BluetoothStruct.uint8()
+});
+_defineProperty(TeyesConfig, "size", 3);
+;// CONCATENATED MODULE: ./src/models/pjcan/teyes/TeyesText.ts
+
+
+
+const API_TEYES_TEXT_EXEC = 0x51;
+const API_TEYES_TEXT_EVENT = "TeyesText";
+const API_TEYES_TEXT_VIEW_EXEC = 0x53;
+const API_TEYES_TEXT_VIEW_EVENT = "TeyesTextView";
+/** Модель значения текста Teyes */
+class TeyesText extends BaseModel {
+  constructor(data) {
+    super(API_TEYES_TEXT_EXEC);
+    _defineProperty(this, "text", "");
+    if (data) this.set(data);
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    return this._set(this, this.exec, TeyesText.size, new BluetoothStruct(TeyesText.struct), buf);
+  }
+  /**
+   * Чтение данных
+   * @param {boolean} request Только запрос
+   */
+  get(request) {
+    return request ? this._get(this, this.exec) : this._get(this, this.exec, TeyesText.size, new BluetoothStruct(TeyesText.struct));
+  }
+}
+_defineProperty(TeyesText, "struct", {
+  text: BluetoothStruct.char(12)
+});
+_defineProperty(TeyesText, "size", 12);
+;// CONCATENATED MODULE: ./src/models/pjcan/teyes/index.ts
+
+
+
+
+;// CONCATENATED MODULE: ./src/models/pjcan/buttons/ButtonsConfig.ts
+
+
+
+
+const API_BUTTONS_SW1_CONFIG_EXEC = 0x30;
+const API_BUTTONS_SW1_CONFIG_EVENT = "ButtonsSW1Config";
+const API_BUTTONS_SW3_CONFIG_EXEC = 0x3a;
+const API_BUTTONS_SW3_CONFIG_EVENT = "ButtonsSW3Config";
+/** Модель конфигурации кнопок */
+class ButtonsConfig extends BaseModel {
+  constructor(exec = API_BUTTONS_SW1_CONFIG_EXEC, data) {
+    super(exec);
+    _defineProperty(this, "enabled", false);
+    _defineProperty(this, "programming", false);
+    _defineProperty(this, "items", []);
+    for (let i = 0; i < 7; i++) {
+      const item = {
+        extended: false,
+        hold: 0,
+        resistanceMin: 0,
+        resistanceMax: 0,
+        exec: new Array(5),
+        execMode: new Array(5)
+      };
+      this.items.push(item);
+    }
+    if (data) this.set(data);
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    return this._set(this, this.exec, ButtonsConfig.size, new BluetoothStruct(ButtonsConfig.struct), buf);
+  }
+  /**
+   * Чтение данных
+   * @param {boolean} request Только запрос
+   */
+  get(request) {
+    return request ? this._get(this, this.exec) : this._get(this, this.exec, ButtonsConfig.size, new BluetoothStruct(ButtonsConfig.struct));
+  }
+  /**
+   * Запись параметров кнопки
+   * @param {IButtonConfigItem} value Новое значение
+   */
+  setItem(value) {
+    const index = this.items.findIndex(x => x.id === value.id);
+    if (index < 0) return false;
+    const item = this.items[index];
+    item.extended = value.extended;
+    item.id = value.id;
+    item.hold = value.hold;
+    item.resistanceMin = value.resistanceMin;
+    item.resistanceMax = value.resistanceMax;
+    item.exec = [...value.exec];
+    item.execMode = [...value.execMode];
+    return true;
+  }
+}
+_defineProperty(ButtonsConfig, "struct", {
+  enabled: BluetoothStruct.bit(),
+  programming: BluetoothStruct.bit(),
+  items: BluetoothStruct.struct({
+    extended: BluetoothStruct.bit(),
+    id: BluetoothStruct.uint8(),
+    hold: BluetoothStruct.uint8(),
+    resistanceMin: BluetoothStruct.uint16(),
+    resistanceMax: BluetoothStruct.uint16(),
+    exec: BluetoothStruct.uint8(5),
+    execMode: BluetoothStruct.uint8(5)
+  }, 7)
+});
+_defineProperty(ButtonsConfig, "size", 120);
+;// CONCATENATED MODULE: ./src/models/pjcan/buttons/TButtonType.ts
+/* eslint-disable */
+var TButtonType;
+(function (TButtonType) {
+  TButtonType[TButtonType["PRESS_RELEASE"] = 0] = "PRESS_RELEASE";
+  TButtonType[TButtonType["PRESS_SINGLE"] = 1] = "PRESS_SINGLE";
+  TButtonType[TButtonType["PRESS_DUAL"] = 2] = "PRESS_DUAL";
+  TButtonType[TButtonType["PRESS_TRIPLE"] = 3] = "PRESS_TRIPLE";
+  TButtonType[TButtonType["PRESS_HOLD"] = 4] = "PRESS_HOLD";
+})(TButtonType || (TButtonType = {}));
+;// CONCATENATED MODULE: ./src/models/pjcan/buttons/TButtonExec.ts
+/* eslint-disable */
+/** Список ID функций кнопки */
+var TButtonExec;
+(function (TButtonExec) {
+  TButtonExec[TButtonExec["BUTTON_EXEC_NONE"] = 0] = "BUTTON_EXEC_NONE";
+  TButtonExec[TButtonExec["BUTTON_EXEC_ENTERING_MODE"] = 1] = "BUTTON_EXEC_ENTERING_MODE";
+  TButtonExec[TButtonExec["BUTTON_EXEC_EXITING_MODE"] = 2] = "BUTTON_EXEC_EXITING_MODE";
+  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_MODE"] = 3] = "BUTTON_EXEC_PRESS_MODE";
+  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_SET_UP"] = 4] = "BUTTON_EXEC_PRESS_SET_UP";
+  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_SET_DOWN"] = 5] = "BUTTON_EXEC_PRESS_SET_DOWN";
+  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_VOLUME_UP"] = 6] = "BUTTON_EXEC_PRESS_VOLUME_UP";
+  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_VOLUME_DOWN"] = 7] = "BUTTON_EXEC_PRESS_VOLUME_DOWN";
+  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_MUTE"] = 8] = "BUTTON_EXEC_PRESS_MUTE";
+  TButtonExec[TButtonExec["BUTTON_EXEC_HOLD_CLOCK"] = 9] = "BUTTON_EXEC_HOLD_CLOCK";
+  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_CLOCK"] = 10] = "BUTTON_EXEC_PRESS_CLOCK";
+  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_CLOCK_H"] = 11] = "BUTTON_EXEC_PRESS_CLOCK_H";
+  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_CLOCK_M"] = 12] = "BUTTON_EXEC_PRESS_CLOCK_M";
+  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_CLOCK_24"] = 13] = "BUTTON_EXEC_PRESS_CLOCK_24";
+  TButtonExec[TButtonExec["BUTTON_EXEC_HOLD_INFO"] = 14] = "BUTTON_EXEC_HOLD_INFO";
+  TButtonExec[TButtonExec["BUTTON_EXEC_PRESS_INFO"] = 15] = "BUTTON_EXEC_PRESS_INFO";
+  TButtonExec[TButtonExec["BUTTON_EXEC_VIEW_ENGINE"] = 16] = "BUTTON_EXEC_VIEW_ENGINE";
+  TButtonExec[TButtonExec["BUTTON_EXEC_VIEW_FUEL"] = 17] = "BUTTON_EXEC_VIEW_FUEL";
+  TButtonExec[TButtonExec["BUTTON_EXEC_VIEW_MOVEMENT"] = 18] = "BUTTON_EXEC_VIEW_MOVEMENT";
+  TButtonExec[TButtonExec["BUTTON_EXEC_VIEW_TEMPERATURE"] = 19] = "BUTTON_EXEC_VIEW_TEMPERATURE";
+  TButtonExec[TButtonExec["BUTTON_EXEC_TEYES_VOICE"] = 20] = "BUTTON_EXEC_TEYES_VOICE";
+  TButtonExec[TButtonExec["BUTTON_EXEC_TEYES_RADIO"] = 21] = "BUTTON_EXEC_TEYES_RADIO";
+  TButtonExec[TButtonExec["BUTTON_EXEC_TEYES_CAMERA"] = 22] = "BUTTON_EXEC_TEYES_CAMERA";
+  TButtonExec[TButtonExec["BUTTON_EXEC_TEYES_RADIO_SEARCH"] = 23] = "BUTTON_EXEC_TEYES_RADIO_SEARCH";
+  TButtonExec[TButtonExec["BUTTON_EXEC_TEYES_EQUALIZER"] = 24] = "BUTTON_EXEC_TEYES_EQUALIZER";
+  TButtonExec[TButtonExec["BUTTON_EXEC_TEYES_DISPLAY_ON_OFF"] = 25] = "BUTTON_EXEC_TEYES_DISPLAY_ON_OFF";
+  TButtonExec[TButtonExec["BUTTON_EXEC_TEYES_PHONE"] = 26] = "BUTTON_EXEC_TEYES_PHONE"; // телефон ГУ
+})(TButtonExec || (TButtonExec = {}));
+;// CONCATENATED MODULE: ./src/models/pjcan/buttons/ButtonValue.ts
+
+
+
+
+
+const API_BUTTON_SW1_VALUE_EXEC = 0x31;
+const API_BUTTON_SW1_VALUE_EVENT = "ButtonSW1Value";
+const API_BUTTON_SW3_VALUE_EXEC = 0x3b;
+const API_BUTTON_SW3_VALUE_EVENT = "ButtonSW3Value";
+/** Модель значений кнопок */
+class ButtonValue extends BaseModel {
+  constructor(exec = API_BUTTON_SW1_VALUE_EXEC, data) {
+    super(exec);
+    _defineProperty(this, "layered", false);
+    _defineProperty(this, "id", 0);
+    _defineProperty(this, "btnExec", TButtonExec.BUTTON_EXEC_NONE);
+    _defineProperty(this, "btnExecMode", TButtonExec.BUTTON_EXEC_NONE);
+    _defineProperty(this, "count", 0);
+    _defineProperty(this, "type", TButtonType.PRESS_RELEASE);
+    _defineProperty(this, "resistance", 0);
+    if (data) this.set(data);
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    return this._set(this, this.exec, ButtonValue.size, new BluetoothStruct(ButtonValue.struct), buf);
+  }
+  /** Чтение данных */
+  get() {
+    return this._get(this, this.exec);
+  }
+}
+_defineProperty(ButtonValue, "struct", {
+  layered: BluetoothStruct.bit(),
+  id: BluetoothStruct.uint8(),
+  btnExec: BluetoothStruct.uint8(),
+  btnExecMode: BluetoothStruct.uint8(),
+  count: BluetoothStruct.uint8(),
+  type: BluetoothStruct.uint8(),
+  resistance: BluetoothStruct.uint16()
+});
+_defineProperty(ButtonValue, "size", 8);
+;// CONCATENATED MODULE: ./src/models/pjcan/buttons/ButtonsAction.ts
+
+
+
+const API_BUTTONS_SW1_ACTION_EXEC = 0x32;
+const API_BUTTONS_SW1_ACTION_EVENT = "ButtonsSW1Action";
+const API_BUTTONS_SW3_ACTION_EXEC = 0x3c;
+const API_BUTTONS_SW3_ACTION_EVENT = "ButtonsSW3Action";
+/** Модель конфигурации кнопок */
+class ButtonsAction extends BaseModel {
+  constructor(exec = API_BUTTONS_SW1_ACTION_EXEC) {
+    super(exec);
+    _defineProperty(this, "empty", false);
+    _defineProperty(this, "defaultMazda3", false);
+    _defineProperty(this, "defaultMazdaCX7", false);
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    return false;
+  }
+  /** Чтение данных */
+  get() {
+    return this._get(this, this.exec, ButtonsAction.size, new BluetoothStruct(ButtonsAction.struct));
+  }
+}
+_defineProperty(ButtonsAction, "struct", {
+  empty: BluetoothStruct.bit(),
+  defaultMazda3: BluetoothStruct.bit(),
+  defaultMazdaCX7: BluetoothStruct.bit()
+});
+_defineProperty(ButtonsAction, "size", 1);
+;// CONCATENATED MODULE: ./src/models/pjcan/buttons/TButtonItem.ts
+/* eslint-disable */
+/** Список ID кнопки */
+var TButtonItem;
+(function (TButtonItem) {
+  TButtonItem[TButtonItem["BUTTON_MODE"] = 0] = "BUTTON_MODE";
+  TButtonItem[TButtonItem["BUTTON_SET_UP"] = 1] = "BUTTON_SET_UP";
+  TButtonItem[TButtonItem["BUTTON_SET_DOWN"] = 2] = "BUTTON_SET_DOWN";
+  TButtonItem[TButtonItem["BUTTON_VOL_UP"] = 3] = "BUTTON_VOL_UP";
+  TButtonItem[TButtonItem["BUTTON_VOL_DOWN"] = 4] = "BUTTON_VOL_DOWN";
+  TButtonItem[TButtonItem["BUTTON_VOL_MUTE"] = 5] = "BUTTON_VOL_MUTE"; // кнопка выкл. звука
+})(TButtonItem || (TButtonItem = {}));
+;// CONCATENATED MODULE: ./src/models/pjcan/buttons/TButtonPress.ts
+/* eslint-disable */
+/** Список ID действий кнопки */
+var TButtonPress;
+(function (TButtonPress) {
+  TButtonPress[TButtonPress["RELEASE"] = 0] = "RELEASE";
+  TButtonPress[TButtonPress["PRESS_SINGLE"] = 1] = "PRESS_SINGLE";
+  TButtonPress[TButtonPress["PRESS_DUAL"] = 2] = "PRESS_DUAL";
+  TButtonPress[TButtonPress["PRESS_TRIPLE"] = 3] = "PRESS_TRIPLE";
+  TButtonPress[TButtonPress["PRESS_HOLD"] = 4] = "PRESS_HOLD";
+})(TButtonPress || (TButtonPress = {}));
+;// CONCATENATED MODULE: ./src/models/pjcan/buttons/index.ts
+
+
+
+
+
+
+
+
+;// CONCATENATED MODULE: ./src/models/pjcan/bose/TCenterPoint.ts
+/* eslint-disable */
+var TCenterPoint;
+(function (TCenterPoint) {
+  TCenterPoint[TCenterPoint["CENTERPOINT_OFF"] = 0] = "CENTERPOINT_OFF";
+  TCenterPoint[TCenterPoint["CENTERPOINT_MIN"] = 1] = "CENTERPOINT_MIN";
+  TCenterPoint[TCenterPoint["CENTERPOINT_LOW"] = 2] = "CENTERPOINT_LOW";
+  TCenterPoint[TCenterPoint["CENTERPOINT_MID"] = 3] = "CENTERPOINT_MID";
+  TCenterPoint[TCenterPoint["CENTERPOINT_HI"] = 4] = "CENTERPOINT_HI";
+  TCenterPoint[TCenterPoint["CENTERPOINT_MAX"] = 5] = "CENTERPOINT_MAX";
+})(TCenterPoint || (TCenterPoint = {}));
+;// CONCATENATED MODULE: ./src/models/pjcan/bose/BoseConfig.ts
+
+
+
+
+const API_BOSE_CONFIG_EXEC = 0x60;
+const API_BOSE_CONFIG_EVENT = "BoseConfig";
+const API_BOSE_VIEW_EXEC = 0x63;
+const API_BOSE_VIEW_EVENT = "BoseView";
+/** Модель параметров Bose */
+class BoseConfig extends BaseModel {
+  constructor(data) {
+    super(API_BOSE_CONFIG_EXEC);
+    _defineProperty(this, "on", false);
+    _defineProperty(this, "audioPlt", false);
+    _defineProperty(this, "radioFM", false);
+    _defineProperty(this, "wow", false);
+    _defineProperty(this, "press", false);
+    _defineProperty(this, "balance", 0);
+    _defineProperty(this, "bass", 0);
+    _defineProperty(this, "fade", 0);
+    _defineProperty(this, "treble", 0);
+    _defineProperty(this, "centerPoint", TCenterPoint.CENTERPOINT_OFF);
+    if (data) this.set(data);
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    return this._set(this, this.exec, BoseConfig.size, new BluetoothStruct(BoseConfig.struct), buf);
+  }
+  /**
+   * Чтение данных
+   * @param {boolean} request Только запрос
+   */
+  get(request) {
+    return request ? this._get(this, this.exec) : this._get(this, this.exec, BoseConfig.size, new BluetoothStruct(BoseConfig.struct));
+  }
+}
+_defineProperty(BoseConfig, "struct", {
+  on: BluetoothStruct.bit(),
+  audioPlt: BluetoothStruct.bit(),
+  radioFM: BluetoothStruct.bit(),
+  wow: BluetoothStruct.bit(),
+  press: BluetoothStruct.bit(),
+  balance: BluetoothStruct.int8(),
+  bass: BluetoothStruct.int8(),
+  fade: BluetoothStruct.int8(),
+  treble: BluetoothStruct.int8(),
+  centerPoint: BluetoothStruct.uint8()
+});
+_defineProperty(BoseConfig, "size", 6);
+;// CONCATENATED MODULE: ./src/models/pjcan/bose/index.ts
+
+
+
+;// CONCATENATED MODULE: ./src/models/pjcan/doors/DoorsConfig.ts
+
+
+
+const API_DOORS_CONFIG_EXEC = 0x80;
+const API_DOORS_CONFIG_EVENT = "DoorsConfig";
+const API_DOORS_VIEW_EXEC = 0x83;
+const API_DOORS_VIEW_EVENT = "DoorsView";
+class DoorsConfig extends BaseModel {
+  constructor(data) {
+    super(API_DOORS_CONFIG_EXEC);
+    _defineProperty(this, "frontReverse", false);
+    _defineProperty(this, "backReverse", false);
+    _defineProperty(this, "frontBackReverse", false);
+    if (data) this.set(data);
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    return this._set(this, this.exec, DoorsConfig.size, new BluetoothStruct(DoorsConfig.struct), buf);
+  }
+  /**
+   * Чтение данных
+   * @param {boolean} request Только запрос
+   */
+  get(request) {
+    return request ? this._get(this, this.exec) : this._get(this, this.exec, DoorsConfig.size, new BluetoothStruct(DoorsConfig.struct));
+  }
+}
+_defineProperty(DoorsConfig, "struct", {
+  frontReverse: BluetoothStruct.bit(),
+  backReverse: BluetoothStruct.bit(),
+  frontBackReverse: BluetoothStruct.bit()
+});
+_defineProperty(DoorsConfig, "size", 1);
+;// CONCATENATED MODULE: ./src/models/pjcan/doors/DoorsValue.ts
+
+
+
+const API_DOORS_VALUE_EXEC = 0x81;
+const API_DOORS_VALUE_EVENT = "DoorsValue";
+const DoorsValue_API_DOORS_VIEW_EXEC = 0x83;
+const DoorsValue_API_DOORS_VIEW_EVENT = "DoorsView";
+/** Модель значений дверей */
+class DoorsValue extends BaseModel {
+  constructor(data) {
+    super(API_DOORS_VALUE_EXEC);
+    _defineProperty(this, "frontLeft", false);
+    _defineProperty(this, "frontRight", false);
+    _defineProperty(this, "backLeft", false);
+    _defineProperty(this, "backRight", false);
+    _defineProperty(this, "trunk", false);
+    _defineProperty(this, "bonnet", false);
+    if (data) this.set(data);
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    return this._set(this, this.exec, DoorsValue.size, new BluetoothStruct(DoorsValue.struct), buf);
+  }
+  /** Чтение данных */
+  get() {
+    return this._get(this, this.exec);
+  }
+}
+_defineProperty(DoorsValue, "struct", {
+  frontLeft: BluetoothStruct.bit(),
+  frontRight: BluetoothStruct.bit(),
+  backLeft: BluetoothStruct.bit(),
+  backRight: BluetoothStruct.bit(),
+  trunk: BluetoothStruct.bit(),
+  bonnet: BluetoothStruct.bit()
+});
+_defineProperty(DoorsValue, "size", 1);
+;// CONCATENATED MODULE: ./src/models/pjcan/doors/index.ts
+
+
+
+;// CONCATENATED MODULE: ./src/models/pjcan/engine/EngineConfig.ts
+
+
+
+const API_ENGINE_CONFIG_EXEC = 0x90;
+const API_ENGINE_CONFIG_EVENT = "EngineConfig";
+/** Модель конфигурации ДВС */
+class EngineConfig extends BaseModel {
+  constructor(data) {
+    super(API_ENGINE_CONFIG_EXEC);
+    _defineProperty(this, "showDays", false);
+    _defineProperty(this, "totalWorktime", BigInt(0));
+    _defineProperty(this, "totalCountRPM", BigInt(0));
+    if (data) this.set(data);
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    return this._set(this, this.exec, EngineConfig.size, new BluetoothStruct(EngineConfig.struct), buf);
+  }
+  /**
+   * Чтение данных
+   * @param {boolean} request Только запрос
+   */
+  get(request) {
+    return request ? this._get(this, this.exec) : this._get(this, this.exec, EngineConfig.size, new BluetoothStruct(EngineConfig.struct));
+  }
+}
+_defineProperty(EngineConfig, "struct", {
+  showDays: BluetoothStruct.bit(),
+  totalWorktime: BluetoothStruct.uint64(),
+  totalCountRPM: BluetoothStruct.uint64()
+});
+_defineProperty(EngineConfig, "size", 17);
+;// CONCATENATED MODULE: ./src/models/pjcan/engine/EngineValue.ts
+
+
+
+const API_ENGINE_VALUE_EXEC = 0x91;
+const API_ENGINE_VALUE_EVENT = "EngineValue";
+/** Модель значений ДВС */
+class EngineValue extends BaseModel {
+  constructor(data) {
+    super(API_ENGINE_VALUE_EXEC);
+    _defineProperty(this, "on", false);
+    _defineProperty(this, "coolant", 0);
+    _defineProperty(this, "rpm", 0);
+    _defineProperty(this, "worktime", 0);
+    _defineProperty(this, "countRPM", 0);
+    _defineProperty(this, "load", 0);
+    _defineProperty(this, "throttle", 0);
+    _defineProperty(this, "viewDays", 0);
+    _defineProperty(this, "viewHours", 0);
+    _defineProperty(this, "viewMinutes", 0);
+    _defineProperty(this, "viewSeconds", 0);
+    _defineProperty(this, "viewCountRPM", 0);
+    if (data) this.set(data);
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    return this._set(this, this.exec, EngineValue.size, new BluetoothStruct(EngineValue.struct), buf);
+  }
+  /** Чтение данных */
+  get() {
+    return this._get(this, this.exec);
+  }
+}
+_defineProperty(EngineValue, "struct", {
+  on: BluetoothStruct.bit(),
+  coolant: BluetoothStruct.int8(),
+  rpm: BluetoothStruct.uint16(),
+  worktime: BluetoothStruct.uint32(),
+  countRPM: BluetoothStruct.uint32(),
+  load: BluetoothStruct.uint16(),
+  throttle: BluetoothStruct.uint16(),
+  viewDays: BluetoothStruct.uint16(),
+  viewHours: BluetoothStruct.uint8(),
+  viewMinutes: BluetoothStruct.uint8(),
+  viewSeconds: BluetoothStruct.uint8(),
+  viewCountRPM: BluetoothStruct.uint32()
+});
+_defineProperty(EngineValue, "size", 25);
+;// CONCATENATED MODULE: ./src/models/pjcan/view/TViewType.ts
+/* eslint-disable */
+/** Тип отображения текста */
+var TViewType;
+(function (TViewType) {
+  TViewType[TViewType["VIEW_TEXT_SIMPLE"] = 0] = "VIEW_TEXT_SIMPLE";
+  TViewType[TViewType["VIEW_TEXT_FLICKERING"] = 1] = "VIEW_TEXT_FLICKERING";
+  TViewType[TViewType["VIEW_TEXT_TICKER"] = 2] = "VIEW_TEXT_TICKER"; // бегущая строка
+})(TViewType || (TViewType = {}));
+;// CONCATENATED MODULE: ./src/models/pjcan/view/ViewConfig.ts
+
+
+
+
+/** Модель параметров отображения */
+class ViewConfig extends BaseModel {
+  constructor(exec = 0, data) {
+    super(exec);
+    _defineProperty(this, "enabled", false);
+    _defineProperty(this, "type", TViewType.VIEW_TEXT_SIMPLE);
+    _defineProperty(this, "time", 0);
+    _defineProperty(this, "delay", 0);
+    if (data) this.set(data);
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    return this._set(this, this.exec, ViewConfig.size, new BluetoothStruct(ViewConfig.struct), buf);
+  }
+  /**
+   * Чтение данных
+   * @param {boolean} request Только запрос
+   */
+  get(request) {
+    return request ? this._get(this, this.exec) : this._get(this, this.exec, ViewConfig.size, new BluetoothStruct(ViewConfig.struct));
+  }
+}
+_defineProperty(ViewConfig, "struct", {
+  enabled: BluetoothStruct.bit(),
+  type: BluetoothStruct.uint8(),
+  time: BluetoothStruct.uint8(),
+  delay: BluetoothStruct.uint8()
+});
+_defineProperty(ViewConfig, "size", 4);
+;// CONCATENATED MODULE: ./src/models/pjcan/view/index.ts
+
+
+
+;// CONCATENATED MODULE: ./src/models/pjcan/engine/EngineViews.ts
+
+
+
+
+const API_ENGINE_VIEW_EXEC = 0x93;
+const API_ENGINE_VIEW_EVENT = "EngineView";
+const API_ENGINE_VIEW_ENABLED_EXEC = 0x94;
+const API_ENGINE_VIEW_ENABLED_EVENT = "EngineViewEnabled";
+const API_ENGINE_VIEW_TOTAL_WORKTIME_EXEC = 0x95;
+const API_ENGINE_VIEW_TOTAL_WORKTIME_EVENT = "EngineViewTotalWorktime";
+const API_ENGINE_VIEW_TOTAL_COUNT_RPM_EXEC = 0x96;
+const API_ENGINE_VIEW_TOTAL_COUNT_RPM_EVENT = "EngineViewTotalCountRPM";
+const API_ENGINE_VIEW_COOLANT_EXEC = 0x97;
+const API_ENGINE_VIEW_COOLANT_EVENT = "EngineViewCoolant";
+const API_ENGINE_VIEW_RPM_EXEC = 0x98;
+const API_ENGINE_VIEW_RPM_EVENT = "EngineViewRPM";
+const API_ENGINE_VIEW_LOAD_EXEC = 0x99;
+const API_ENGINE_VIEW_LOAD_EVENT = "EngineViewLoad";
+const API_ENGINE_VIEW_THROTTLE_EXEC = 0x9a;
+const API_ENGINE_VIEW_THROTTLE_EVENT = "EngineViewThrottle";
+/** Модель параметров отображения данных ДВС */
+class EngineViews extends BaseModel {
+  constructor(data) {
+    super(API_ENGINE_VIEW_EXEC);
+    _defineProperty(this, "enabled", new ViewConfig(API_ENGINE_VIEW_ENABLED_EXEC));
+    _defineProperty(this, "totalWorktime", new ViewConfig(API_ENGINE_VIEW_TOTAL_WORKTIME_EXEC));
+    _defineProperty(this, "totalCountRPM", new ViewConfig(API_ENGINE_VIEW_TOTAL_COUNT_RPM_EXEC));
+    _defineProperty(this, "coolant", new ViewConfig(API_ENGINE_VIEW_COOLANT_EXEC));
+    _defineProperty(this, "rpm", new ViewConfig(API_ENGINE_VIEW_RPM_EXEC));
+    _defineProperty(this, "load", new ViewConfig(API_ENGINE_VIEW_LOAD_EXEC));
+    _defineProperty(this, "throttle", new ViewConfig(API_ENGINE_VIEW_THROTTLE_EXEC));
+    if (data) this.set(data);
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    const result = this._set(this, this.exec, EngineViews.size, new BluetoothStruct(EngineViews.struct), buf);
+    if (result) {
+      this.enabled.isData = true;
+      this.totalWorktime.isData = true;
+      this.totalCountRPM.isData = true;
+      this.coolant.isData = true;
+      this.rpm.isData = true;
+      this.load.isData = true;
+      this.throttle.isData = true;
+    }
+    return result;
+  }
+  /** Чтение данных */
+  get() {
+    return this._get(this, this.exec);
+  }
+}
+_defineProperty(EngineViews, "struct", {
+  enabled: BluetoothStruct.struct(ViewConfig.struct),
+  totalWorktime: BluetoothStruct.struct(ViewConfig.struct),
+  totalCountRPM: BluetoothStruct.struct(ViewConfig.struct),
+  coolant: BluetoothStruct.struct(ViewConfig.struct),
+  rpm: BluetoothStruct.struct(ViewConfig.struct),
+  load: BluetoothStruct.struct(ViewConfig.struct),
+  throttle: BluetoothStruct.struct(ViewConfig.struct)
+});
+_defineProperty(EngineViews, "size", 28);
+;// CONCATENATED MODULE: ./src/models/pjcan/engine/index.ts
+
+
+
+
+;// CONCATENATED MODULE: ./src/models/pjcan/fuel/FuelConfig.ts
+
+
+
+const API_FUEL_CONFIG_EXEC = 0xa0;
+const API_FUEL_CONFIG_EVENT = "FuelConfig";
+/** Модель конфигурации расхода топлива */
+class FuelConfig extends BaseModel {
+  constructor(data) {
+    super(API_FUEL_CONFIG_EXEC);
+    _defineProperty(this, "ratio", 0);
+    if (data) this.set(data);
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    return this._set(this, this.exec, FuelConfig.size, new BluetoothStruct(FuelConfig.struct), buf);
+  }
+  /**
+   * Чтение данных
+   * @param {boolean} request Только запрос
+   */
+  get(request) {
+    return request ? this._get(this, this.exec) : this._get(this, this.exec, FuelConfig.size, new BluetoothStruct(FuelConfig.struct));
+  }
+}
+_defineProperty(FuelConfig, "struct", {
+  ratio: BluetoothStruct.uint16()
+});
+_defineProperty(FuelConfig, "size", 2);
+;// CONCATENATED MODULE: ./src/models/pjcan/fuel/FuelValue.ts
+
+
+
+const API_FUEL_VALUE_EXEC = 0xa1;
+const API_FUEL_VALUE_EVENT = "FuelValue";
+/** Модель значений расхода топлива */
+class FuelValue extends BaseModel {
+  constructor(data) {
+    super(API_FUEL_VALUE_EXEC);
+    _defineProperty(this, "current", 0);
+    _defineProperty(this, "avg", 0);
+    if (data) this.set(data);
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    return this._set(this, this.exec, FuelValue.size, new BluetoothStruct(FuelValue.struct), buf);
+  }
+  /** Чтение данных */
+  get() {
+    return this._get(this, this.exec);
+  }
+}
+_defineProperty(FuelValue, "struct", {
+  current: BluetoothStruct.uint16(),
+  avg: BluetoothStruct.uint16()
+});
+_defineProperty(FuelValue, "size", 4);
+;// CONCATENATED MODULE: ./src/models/pjcan/fuel/FuelViews.ts
+
+
+
+
+const API_FUEL_VIEW_EXEC = 0xa3;
+const API_FUEL_VIEW_EVENT = "FuelView";
+const API_FUEL_VIEW_CURRENT_EXEC = 0xa4;
+const API_FUEL_VIEW_CURRENT_EVENT = "FuelViewCurrent";
+const API_FUEL_VIEW_AVG_EXEC = 0xa5;
+const API_FUEL_VIEW_AVG_EVENT = "FuelViewAVG";
+/** Модель параметров отображения данных расхода топлива */
+class FuelViews extends BaseModel {
+  constructor(data) {
+    super(API_FUEL_VIEW_EXEC);
+    _defineProperty(this, "current", new ViewConfig(API_FUEL_VIEW_CURRENT_EXEC));
+    _defineProperty(this, "avg", new ViewConfig(API_FUEL_VIEW_AVG_EXEC));
+    if (data) this.set(data);
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    const result = this._set(this, this.exec, FuelViews.size, new BluetoothStruct(FuelViews.struct), buf);
+    if (result) {
+      this.current.isData = true;
+      this.avg.isData = true;
+    }
+    return result;
+  }
+  /** Чтение данных */
+  get() {
+    return this._get(this, this.exec);
+  }
+}
+_defineProperty(FuelViews, "struct", {
+  current: BluetoothStruct.struct(ViewConfig.struct),
+  avg: BluetoothStruct.struct(ViewConfig.struct)
+});
+_defineProperty(FuelViews, "size", 8);
+;// CONCATENATED MODULE: ./src/models/pjcan/fuel/index.ts
+
+
+
+
+;// CONCATENATED MODULE: ./src/models/pjcan/volume/VolumeConfig.ts
+
+
+
+const API_VOLUME_CONFIG_EXEC = 0xe0;
+const API_VOLUME_CONFIG_EVENT = "VolumeConfig";
+const API_VOLUME_VIEW_EXEC = 0xe3;
+const API_VOLUME_VIEW_EVENT = "VolumeView";
+/** Модель конфигурации уровня звука */
+class VolumeConfig extends BaseModel {
+  constructor(data) {
+    super(API_VOLUME_CONFIG_EXEC, true);
+    _defineProperty(this, "mute", false);
+    _defineProperty(this, "muteBose", false);
+    _defineProperty(this, "start", false);
+    _defineProperty(this, "startBose", false);
+    _defineProperty(this, "volume", 0);
+    _defineProperty(this, "volumeBose", 0);
+    _defineProperty(this, "startLevel", 0);
+    _defineProperty(this, "startLevelBose", 0);
+    if (data) this.set(data);
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    return this._set(this, this.exec, VolumeConfig.size, new BluetoothStruct(VolumeConfig.struct), buf);
+  }
+  /**
+   * Чтение данных
+   * @param {boolean} request Только запрос
+   */
+  get(request) {
+    return request ? this._get(this, this.exec) : this._get(this, this.exec, VolumeConfig.size, new BluetoothStruct(VolumeConfig.struct));
+  }
+}
+_defineProperty(VolumeConfig, "struct", {
+  mute: BluetoothStruct.bit(),
+  muteBose: BluetoothStruct.bit(),
+  start: BluetoothStruct.bit(),
+  startBose: BluetoothStruct.bit(),
+  volume: BluetoothStruct.uint8(),
+  volumeBose: BluetoothStruct.uint8(),
+  startLevel: BluetoothStruct.uint8(),
+  startLevelBose: BluetoothStruct.uint8()
+});
+_defineProperty(VolumeConfig, "size", 5);
+;// CONCATENATED MODULE: ./src/models/pjcan/volume/index.ts
+
+
+;// CONCATENATED MODULE: ./src/models/pjcan/version/Version.ts
+
+
+
+const API_VERSION_EXEC = 0x00;
+const API_VERSION_EVENT = "Version";
+const API_NEW_VERSION_EVENT = "NewVersion";
+/** Модель версии */
+class Version extends BaseModel {
+  /** Наличие версии */
+  get is() {
+    return this.major > 0;
+  }
+  /** Строковое представление */
+  get toString() {
+    return `${this.major}.${this.minor}.${this.build}.${this.revision}`;
+  }
+  constructor(data) {
+    super(API_VERSION_EXEC, true);
+    _defineProperty(this, "major", 0);
+    _defineProperty(this, "minor", 0);
+    _defineProperty(this, "build", 0);
+    _defineProperty(this, "revision", 0);
+    this.skipActivationCheck = true;
+    if (data) this.set(data);
+  }
+  /**
+   * Сравнение версий
+   * @param {IVersion} ver Объект версии
+   * @param {number} len Длина сравниваемой версии (от 1 до 4)
+   */
+  compare(ver, len) {
+    const verA = [this.major, this.minor, this.build, this.revision];
+    const verB = [ver.major, ver.minor, ver.build, ver.revision];
+    if (len < 1) len = 1;else if (len > 4) len = 4;
+    for (let i = 0; i < len; i++) {
+      if (verB[i] > verA[i]) return 1;else if (verB[i] < verA[i]) return -1;
+    }
+    return 0;
+  }
+  compareString(ver) {
+    if (ver?.length > 0) {
+      const verA = [this.major, this.minor, this.build, this.revision];
+      const verB = ver.split(".")?.map(x => parseInt(x));
+      if (verB?.length > 0) {
+        let len = verB.length;
+        if (len > 4) len = 4;
+        for (let i = 0; i < len; i++) {
+          if (verB[i] > verA[i]) return 1;else if (verB[i] < verA[i]) return -1;
+        }
+      }
+    }
+    return 0;
+  }
+  /** Очистить значения версии */
+  clear() {
+    this.major = 0;
+    this.minor = 0;
+    this.build = 0;
+    this.revision = 0;
+  }
+  /**
+   * Запись версии
+   * @param {IVersion} ver Версия
+   */
+  setVersion(ver) {
+    if (this.is || !ver.is) return false;
+    this.major = ver.major;
+    this.minor = ver.minor;
+    this.build = ver.build;
+    this.revision = ver.revision;
+    return true;
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    return this._set(this, this.exec, Version.size, new BluetoothStruct(Version.struct), buf);
+  }
+  /** Чтение данных */
+  get() {
+    return this._get(this, this.exec);
+  }
+}
+_defineProperty(Version, "struct", {
+  major: BluetoothStruct.uint8(),
+  minor: BluetoothStruct.uint8(),
+  build: BluetoothStruct.uint8(),
+  revision: BluetoothStruct.uint8()
+});
+_defineProperty(Version, "size", 4);
+;// CONCATENATED MODULE: ./src/models/pjcan/version/index.ts
+
+
+;// CONCATENATED MODULE: ./src/models/pjcan/datetime/DatetimeConfig.ts
+
+
+
+const API_DATETIME_CONFIG_EXEC = 0x4a;
+const API_DATETIME_CONFIG_EVENT = "DatetimeConfig";
+const API_DATETIME_VIEW_EXEC = 0x4d;
+const API_DATETIME_VIEW_EVENT = "DatetimeView";
+/** Модель значения часов */
+class DatetimeConfig extends BaseModel {
+  constructor(data) {
+    super(API_DATETIME_CONFIG_EXEC);
+    _defineProperty(this, "showDate", false);
+    _defineProperty(this, "showTime", false);
+    _defineProperty(this, "showDayWeek", false);
+    _defineProperty(this, "showDateAndDayWeek", false);
+    _defineProperty(this, "showTimeAndDayWeek", false);
+    _defineProperty(this, "showFullDatetime", false);
+    _defineProperty(this, "timezone", 0);
+    _defineProperty(this, "unixtime", 0);
+    if (data) this.set(data);
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    return this._set(this, this.exec, DatetimeConfig.size, new BluetoothStruct(DatetimeConfig.struct), buf);
+  }
+  /**
+   * Чтение данных
+   * @param {boolean} request Только запрос
+   */
+  get(request) {
+    return request ? this._get(this, this.exec) : this._get(this, this.exec, DatetimeConfig.size, new BluetoothStruct(DatetimeConfig.struct));
+  }
+  /** Обновить текущее время */
+  updateUnixtime() {
+    const now = new Date();
+    this.unixtime = Math.round(now.getTime() / 1000);
+    this.timezone = now.getTimezoneOffset() / 60;
+  }
+}
+_defineProperty(DatetimeConfig, "struct", {
+  showDate: BluetoothStruct.bit(),
+  showTime: BluetoothStruct.bit(),
+  showDayWeek: BluetoothStruct.bit(),
+  showDateAndDayWeek: BluetoothStruct.bit(),
+  showTimeAndDayWeek: BluetoothStruct.bit(),
+  showFullDatetime: BluetoothStruct.bit(),
+  timezone: BluetoothStruct.int8(),
+  unixtime: BluetoothStruct.uint32()
+});
+_defineProperty(DatetimeConfig, "size", 6);
+;// CONCATENATED MODULE: ./src/models/pjcan/datetime/index.ts
+
+
+;// CONCATENATED MODULE: ./src/store/modules/config/state.ts
+
+
+
+
+
+
+
+
+
+
+
+const state_state = {
+  version: new Version(),
+  info: new DeviceInfo(),
+  mazda: new MazdaConfig(),
+  teyes: new TeyesConfig(),
+  sw1: new ButtonsConfig(),
+  bose: new BoseConfig(),
+  doors: new DoorsConfig(),
+  engine: new EngineConfig(),
+  fuel: new FuelConfig(),
+  volume: new VolumeConfig(),
+  datetime: new DatetimeConfig()
+};
+/* harmony default export */ var config_state = (state_state);
+;// CONCATENATED MODULE: ./src/store/modules/config/getters.ts
+
+/**
+ * Версия прошивки
+ * @param {any} state
+ */
+const version = state => state.version;
+/**
+ * Информация об устройстве
+ * @param {any} state
+ */
+const info = state => state.info;
+/**
+ * Конфигурация автомобиля
+ * @param {any} state
+ */
+const mazda = state => state.mazda;
+/**
+ * Модель автомобиля
+ * @param {any} state
+ */
+const carModel = state => state.mazda.isData ? state.mazda.carModel : TCarModel.CAR_MODEL_UNKNOWN;
+/**
+ * Конфигурация Teyes
+ * @param {any} state
+ */
+const teyes = state => state.teyes;
+/**
+ * Конфигурация кнопок sw1
+ * @param {any} state
+ */
+const getters_sw1 = state => state.sw1;
+/**
+ * Конфигурация Bose
+ * @param {any} state
+ */
+const bose = state => state.bose;
+/**
+ * Конфигурация дверей
+ * @param {any} state
+ */
+const doors = state => state.doors;
+/**
+ * Конфигурация ДВС
+ * @param {any} state
+ */
+const engine = state => state.engine;
+/**
+ * Конфигурация расхода
+ * @param {any} state
+ */
+const fuel = state => state.fuel;
+/**
+ * Конфигурация уровня звука
+ * @param {any} state
+ */
+const volume = state => state.volume;
+/**
+ * Конфигурация даты и времени
+ * @param {any} state
+ */
+const getters_datetime = state => state.datetime;
 ;// CONCATENATED MODULE: ./node_modules/axios/lib/helpers/bind.js
 
 
@@ -17870,57 +18174,6 @@ const toMac = value => {
   return result;
 };
 
-;// CONCATENATED MODULE: ./src/models/pjcan/datetime/DatetimeConfig.ts
-
-
-
-const API_DATETIME_CONFIG_EXEC = 0x4a;
-const API_DATETIME_CONFIG_EVENT = "DatetimeConfig";
-const API_DATETIME_VIEW_EXEC = 0x4d;
-const API_DATETIME_VIEW_EVENT = "DatetimeView";
-/** Модель значения часов */
-class DatetimeConfig extends BaseModel {
-  constructor(data) {
-    super(API_DATETIME_CONFIG_EXEC);
-    _defineProperty(this, "showDate", false);
-    _defineProperty(this, "showTime", false);
-    _defineProperty(this, "showDayWeek", false);
-    _defineProperty(this, "showDateAndDayWeek", false);
-    _defineProperty(this, "showTimeAndDayWeek", false);
-    _defineProperty(this, "showFullDatetime", false);
-    _defineProperty(this, "timezone", 0);
-    _defineProperty(this, "unixtime", BigInt(0));
-    if (data) this.set(data);
-  }
-  /**
-   * Запись данных
-   * @param {DataView} buf Буфер данных
-   */
-  set(buf) {
-    return this._set(this, this.exec, DatetimeConfig.size, new BluetoothStruct(DatetimeConfig.struct), buf);
-  }
-  /**
-   * Чтение данных
-   * @param {boolean} request Только запрос
-   */
-  get(request) {
-    return request ? this._get(this, this.exec) : this._get(this, this.exec, DatetimeConfig.size, new BluetoothStruct(DatetimeConfig.struct));
-  }
-}
-_defineProperty(DatetimeConfig, "struct", {
-  showDate: BluetoothStruct.bit(),
-  showTime: BluetoothStruct.bit(),
-  showDayWeek: BluetoothStruct.bit(),
-  showDateAndDayWeek: BluetoothStruct.bit(),
-  showTimeAndDayWeek: BluetoothStruct.bit(),
-  showFullDatetime: BluetoothStruct.bit(),
-  timezone: BluetoothStruct.uint8(),
-  unixtime: BluetoothStruct.uint64()
-});
-_defineProperty(DatetimeConfig, "size", 10);
-;// CONCATENATED MODULE: ./src/models/pjcan/datetime/index.ts
-
-
 ;// CONCATENATED MODULE: ./src/models/pjcan/climate/ClimateValue.ts
 
 
@@ -17983,50 +18236,6 @@ _defineProperty(ClimateValue, "struct", {
 });
 _defineProperty(ClimateValue, "size", 5);
 ;// CONCATENATED MODULE: ./src/models/pjcan/climate/index.ts
-
-
-;// CONCATENATED MODULE: ./src/models/pjcan/doors/DoorsValue.ts
-
-
-
-const API_DOORS_VALUE_EXEC = 0x81;
-const API_DOORS_VALUE_EVENT = "DoorsValue";
-const API_DOORS_VIEW_EXEC = 0x83;
-const API_DOORS_VIEW_EVENT = "DoorsView";
-/** Модель значений дверей */
-class DoorsValue extends BaseModel {
-  constructor(data) {
-    super(API_DOORS_VALUE_EXEC);
-    _defineProperty(this, "frontLeft", false);
-    _defineProperty(this, "frontRight", false);
-    _defineProperty(this, "backLeft", false);
-    _defineProperty(this, "backRight", false);
-    _defineProperty(this, "trunk", false);
-    _defineProperty(this, "bonnet", false);
-    if (data) this.set(data);
-  }
-  /**
-   * Запись данных
-   * @param {DataView} buf Буфер данных
-   */
-  set(buf) {
-    return this._set(this, this.exec, DoorsValue.size, new BluetoothStruct(DoorsValue.struct), buf);
-  }
-  /** Чтение данных */
-  get() {
-    return this._get(this, this.exec);
-  }
-}
-_defineProperty(DoorsValue, "struct", {
-  frontLeft: BluetoothStruct.bit(),
-  frontRight: BluetoothStruct.bit(),
-  backLeft: BluetoothStruct.bit(),
-  backRight: BluetoothStruct.bit(),
-  trunk: BluetoothStruct.bit(),
-  bonnet: BluetoothStruct.bit()
-});
-_defineProperty(DoorsValue, "size", 1);
-;// CONCATENATED MODULE: ./src/models/pjcan/doors/index.ts
 
 
 ;// CONCATENATED MODULE: ./src/models/pjcan/movement/MovementValue.ts
@@ -18321,6 +18530,7 @@ class ChoiceValue extends BaseModel {
 
 
 
+
 const canbus_dev = "production" === "development";
 class Canbus extends (eventemitter3_default()) {
   constructor() {
@@ -18527,6 +18737,7 @@ class Canbus extends (eventemitter3_default()) {
       case API_DEVICE_UPDATE_EXEC:
         // Обновление прошивки
         this.update.set(data);
+        if (this.update.offset < this.update.total) this.updateUpload();
         this.emit(API_DEVICE_UPDATE_EVENT, this.update);
         break;
       case API_DEVICE_SCANNER_VALUE_EXEC:
@@ -18604,6 +18815,9 @@ class Canbus extends (eventemitter3_default()) {
       case API_CLIMATE_VIEW_EXEC:
         // Параметры отображения климат-контроля
         this.emit(API_CLIMATE_VIEW_EVENT, data);
+        break;
+      case API_DOORS_CONFIG_EXEC:
+        this.emit(API_DOORS_CONFIG_EVENT, data);
         break;
       case API_DOORS_VALUE_EXEC:
         // Значения дверей
@@ -18726,7 +18940,7 @@ class Canbus extends (eventemitter3_default()) {
         this.update.firmwareData = new Uint8Array(res);
         this.update.total = res.byteLength;
         this.update.offset = 0;
-        this.update.error = 0;
+        this.update.error = EDeviceUpdateError.UPD_OK;
         this.update.encrypt = this.update.iv;
         setTimeout(() => this.updateUpload(), 1000);
       }
@@ -18736,7 +18950,11 @@ class Canbus extends (eventemitter3_default()) {
   async updateUpload() {
     if (this.bluetooth.connected && this.update.error === 0 && this.update.offset <= this.update.total) {
       this.queueDisabled = true;
-      await this.bluetooth.send(this.update.get());
+      try {
+        await this.bluetooth.send(this.update.get());
+      } catch (e) {
+        console.log(e);
+      }
     } else if (this.update.error !== 0) {
       this.queueDisabled = false;
     }
@@ -19180,6 +19398,31 @@ const setBoseCenterPoint = (state, value) => {
   }
 };
 /**
+ * Изменить конфигурацию дверей
+ * @param {any} state
+ * @param {DataView} data Данные
+ */
+const setDoors = (state, data) => {
+  state.doors.set(data);
+};
+/**
+ * Doors: FrontReverse, BackReverse, FrontBackReverse
+ * @param {any} state
+ * @param {any} value Значение
+ */
+const setDoorsConfig = (state, {
+  frontReverse,
+  backReverse,
+  frontBackReverse
+}) => {
+  if (state.doors.isData) {
+    state.doors.frontReverse = frontReverse;
+    state.doors.backReverse = backReverse;
+    state.doors.frontBackReverse = frontBackReverse;
+    api_canbus.query(state.doors);
+  }
+};
+/**
  * Изменить конфигурацию ДВС
  * @param {any} state
  * @param {DataView} data Данные
@@ -19268,6 +19511,88 @@ const setVolumeStartBose = (state, {
     api_canbus.query(state.volume);
   }
 };
+/**
+ * Изменить конфигурацию даты и времени
+ * @param {any} state
+ * @param {DataView} data Данные
+ */
+const setDatetime = (state, data) => {
+  state.datetime.set(data);
+};
+/**
+ * Синхронизация даты и времени
+ * @param {any} state
+ */
+const synchDatetime = state => {
+  state.datetime.updateUnixtime();
+  api_canbus.query(state.datetime);
+};
+/**
+ * Datetime: ShowDate
+ * @param {any} state
+ * @param {boolean} value Значение
+ */
+const setDatetimeShowDate = (state, value) => {
+  if (state.datetime.isData) {
+    state.datetime.showDate = value;
+    synchDatetime(state);
+  }
+};
+/**
+ * Datetime: ShowTime
+ * @param {any} state
+ * @param {boolean} value Значение
+ */
+const setDatetimeShowTime = (state, value) => {
+  if (state.datetime.isData) {
+    state.datetime.showTime = value;
+    synchDatetime(state);
+  }
+};
+/**
+ * Datetime: ShowDayWeek
+ * @param {any} state
+ * @param {boolean} value Значение
+ */
+const setDatetimeShowDayWeek = (state, value) => {
+  if (state.datetime.isData) {
+    state.datetime.showDayWeek = value;
+    synchDatetime(state);
+  }
+};
+/**
+ * Datetime: ShowDateAndDayWeek
+ * @param {any} state
+ * @param {boolean} value Значение
+ */
+const setDatetimeShowDateAndDayWeek = (state, value) => {
+  if (state.datetime.isData) {
+    state.datetime.showDateAndDayWeek = value;
+    synchDatetime(state);
+  }
+};
+/**
+ * Datetime: ShowTimeAndDayWeek
+ * @param {any} state
+ * @param {boolean} value Значение
+ */
+const setDatetimeShowTimeAndDayWeek = (state, value) => {
+  if (state.datetime.isData) {
+    state.datetime.showTimeAndDayWeek = value;
+    synchDatetime(state);
+  }
+};
+/**
+ * Datetime: ShowFullDatetime
+ * @param {any} state
+ * @param {boolean} value Значение
+ */
+const setDatetimeShowFullDatetime = (state, value) => {
+  if (state.datetime.isData) {
+    state.datetime.showFullDatetime = value;
+    synchDatetime(state);
+  }
+};
 ;// CONCATENATED MODULE: ./src/store/modules/config/actions.ts
 
 let loop;
@@ -19299,7 +19624,42 @@ const infoUpdateLoop = ({
   mutations: config_mutations_namespaceObject,
   actions: config_actions_namespaceObject
 });
+;// CONCATENATED MODULE: ./src/models/pjcan/test/TestValue.ts
+
+
+
+const API_TEST_VALUE_EXEC = 0xf0;
+const API_TEST_VALUE_EVENT = "TestValue";
+const API_TEST_VIEW_EXEC = 0xf3;
+const API_TEST_VIEW_EVENT = "TestView";
+/** Модель значений тестирования */
+class TestValue extends BaseModel {
+  constructor(data) {
+    super(API_TEST_VALUE_EXEC);
+    _defineProperty(this, "text", " -- TEST -- ");
+    if (data) this.set(data);
+  }
+  /**
+   * Запись данных
+   * @param {DataView} buf Буфер данных
+   */
+  set(buf) {
+    return this._set(this, this.exec, TestValue.size, new BluetoothStruct(TestValue.struct), buf);
+  }
+  /** Чтение данных */
+  get() {
+    return this._get(this, this.exec, TestValue.size, new BluetoothStruct(TestValue.struct));
+  }
+}
+_defineProperty(TestValue, "struct", {
+  text: BluetoothStruct.char(32)
+});
+_defineProperty(TestValue, "size", 32);
+;// CONCATENATED MODULE: ./src/models/pjcan/test/index.ts
+
+
 ;// CONCATENATED MODULE: ./src/store/modules/value/state.ts
+
 
 
 
@@ -19321,7 +19681,8 @@ const value_state_state = {
   temperature: new TemperatureValue(),
   scanner: new DeviceScannerValue(),
   scannerBuffer: [],
-  scannerBufferReadNumber: 30
+  scannerBufferReadNumber: 30,
+  test: new TestValue()
 };
 /* harmony default export */ var value_state = (value_state_state);
 ;// CONCATENATED MODULE: ./src/store/modules/value/getters.ts
@@ -19344,7 +19705,7 @@ const device = state => state.device;
  * Значения дверей
  * @param {any} state
  */
-const doors = state => state.doors;
+const getters_doors = state => state.doors;
 /**
  * Значения ДВС
  * @param {any} state
@@ -19385,7 +19746,13 @@ const scannerBuffer = state => state.scannerBuffer;
  * @param {any} state
  */
 const scannerBufferRead = state => state.scannerBuffer.splice(0, state.scannerBufferReadNumber);
+/**
+ * Значение теста
+ * @param {any} state
+ */
+const test = state => state.test;
 ;// CONCATENATED MODULE: ./src/store/modules/value/mutations.ts
+
 
 
 
@@ -19418,7 +19785,7 @@ const setDevice = (state, data) => {
  * @param {any} state
  * @param {DataView} data Данные
  */
-const setDoors = (state, data) => {
+const mutations_setDoors = (state, data) => {
   state.doors.set(data);
 };
 /**
@@ -19508,6 +19875,15 @@ const setScannerBufferTitle = (state, value) => {
     hexData: ""
   });
 };
+/**
+ * Записать значения теста
+ * @param {any} state
+ * @param {string} value Тест
+ */
+const setTestText = (state, value) => {
+  state.test.text = value;
+  api_canbus.query(state.test);
+};
 ;// CONCATENATED MODULE: ./src/store/modules/value/index.ts
 
 
@@ -19534,6 +19910,7 @@ const setScannerBufferTitle = (state, value) => {
 
 
 
+
 const view_state_state = {
   worktime: new ViewConfig(API_DEVICE_VIEW_WORKTIME_EXEC),
   voltmeter: new ViewConfig(API_DEVICE_VIEW_VOLTMETER_EXEC),
@@ -19547,7 +19924,8 @@ const view_state_state = {
   movement: new MovementViews(),
   sensors: new SensorsViews(),
   temperature: new ViewConfig(API_TEMPERATURE_VIEW_EXEC),
-  volume: new ViewConfig(API_VOLUME_VIEW_EXEC)
+  volume: new ViewConfig(API_VOLUME_VIEW_EXEC),
+  datetime: new ViewConfig(API_DATETIME_VIEW_EXEC)
 };
 /* harmony default export */ var view_state = (view_state_state);
 ;// CONCATENATED MODULE: ./src/store/modules/view/getters.ts
@@ -19585,7 +19963,7 @@ const getters_climate = state => state.climate;
  * Значения отображения дверей
  * @param {any} state
  */
-const getters_doors = state => state.doors;
+const view_getters_doors = state => state.doors;
 /**
  * Значения отображения ДВС
  * @param {any} state
@@ -19616,6 +19994,11 @@ const getters_temperature = state => state.temperature;
  * @param {any} state
  */
 const getters_volume = state => state.volume;
+/**
+ * Значения отображения даты и времени
+ * @param {any} state
+ */
+const view_getters_datetime = state => state.datetime;
 ;// CONCATENATED MODULE: ./src/store/modules/view/mutations.ts
 
 
@@ -19691,7 +20074,7 @@ const mutations_setClimate = (state, data) => {
  * @param {any} state
  * @param {DataView} data Данные
  */
-const mutations_setDoors = (state, data) => {
+const view_mutations_setDoors = (state, data) => {
   state.doors.set(data);
 };
 /**
@@ -19741,6 +20124,14 @@ const mutations_setTemperature = (state, data) => {
  */
 const mutations_setVolume = (state, data) => {
   state.volume.set(data);
+};
+/**
+ * Записать значения отображения даты и времени
+ * @param {any} state
+ * @param {DataView} data Данные
+ */
+const mutations_setDatetime = (state, data) => {
+  state.datetime.set(data);
 };
 ;// CONCATENATED MODULE: ./src/store/modules/view/index.ts
 
@@ -25620,9 +26011,9 @@ const VMain = genericComponent()({
     return {};
   }
 });
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=template&id=a5fefa58&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=template&id=6b14791c&scoped=true&ts=true
 
-const _withScopeId = n => ((0,runtime_core_esm_bundler/* pushScopeId */.ED)("data-v-a5fefa58"), n = n(), (0,runtime_core_esm_bundler/* popScopeId */.ii)(), n);
+const _withScopeId = n => ((0,runtime_core_esm_bundler/* pushScopeId */.ED)("data-v-6b14791c"), n = n(), (0,runtime_core_esm_bundler/* popScopeId */.ii)(), n);
 const _hoisted_1 = {
   class: "text-h4"
 };
@@ -25632,7 +26023,7 @@ const _hoisted_2 = /*#__PURE__*/_withScopeId(() => /*#__PURE__*/(0,runtime_core_
 const _hoisted_3 = /*#__PURE__*/_withScopeId(() => /*#__PURE__*/(0,runtime_core_esm_bundler/* createElementVNode */.QD)("div", {
   class: "base-layout__bg"
 }, null, -1));
-function BaseLayoutvue_type_template_id_a5fefa58_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function BaseLayoutvue_type_template_id_6b14791c_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                                           
                                                             
   const _component_icon_custom = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("icon-custom");
@@ -25642,7 +26033,6 @@ function BaseLayoutvue_type_template_id_a5fefa58_scoped_true_ts_true_render(_ctx
   const _component_menu_dots = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("menu-dots");
   const _component_about_dialog = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("about-dialog");
   const _component_onboard_buttons_dialog = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("onboard-buttons-dialog");
-  const _component_test_dialog = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("test-dialog");
                                                               
   const _component_router_view = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("router-view");
   const _component_message_dialog = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("message-dialog");
@@ -25689,9 +26079,6 @@ function BaseLayoutvue_type_template_id_a5fefa58_scoped_true_ts_true_render(_ctx
       }, null, 8, ["modelValue"]), (0,runtime_core_esm_bundler/* createVNode */.K2)(_component_onboard_buttons_dialog, {
         modelValue: $setup.visibleOnboardButtons,
         "onUpdate:modelValue": _cache[3] || (_cache[3] = $event => $setup.visibleOnboardButtons = $event)
-      }, null, 8, ["modelValue"]), (0,runtime_core_esm_bundler/* createVNode */.K2)(_component_test_dialog, {
-        modelValue: $setup.visibleTest,
-        "onUpdate:modelValue": _cache[4] || (_cache[4] = $event => $setup.visibleTest = $event)
       }, null, 8, ["modelValue"])]),
       _: 1
     }), (0,runtime_core_esm_bundler/* createVNode */.K2)(VMain, null, {
@@ -25704,7 +26091,7 @@ function BaseLayoutvue_type_template_id_a5fefa58_scoped_true_ts_true_render(_ctx
       }, [(0,runtime_core_esm_bundler/* createVNode */.K2)(_component_router_view)], 4), $setup.message ? ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(_component_message_dialog, {
         key: 0,
         modelValue: $setup.visibleMessage,
-        "onUpdate:modelValue": _cache[5] || (_cache[5] = $event => $setup.visibleMessage = $event),
+        "onUpdate:modelValue": _cache[4] || (_cache[4] = $event => $setup.visibleMessage = $event),
         title: $setup.message.title,
         icon: $setup.message?.icon,
         text: $setup.message.text,
@@ -25726,7 +26113,7 @@ function BaseLayoutvue_type_template_id_a5fefa58_scoped_true_ts_true_render(_ctx
 
 
 
-;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=template&id=a5fefa58&scoped=true&ts=true
+;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=template&id=6b14791c&scoped=true&ts=true
 
 ;// CONCATENATED MODULE: ./node_modules/vue-router/dist/vue-router.mjs
 
@@ -28941,9 +29328,9 @@ function vue_router_useRoute() {
   return inject(routeLocationKey);
 }
 
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/index.vue?vue&type=template&id=4686eee3&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/index.vue?vue&type=template&id=f2a414e8&scoped=true&ts=true
 
-function onboardvue_type_template_id_4686eee3_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function onboardvue_type_template_id_f2a414e8_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_flicking = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("flicking");
   return (0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(_component_flicking, {
     ref: "flicking",
@@ -50576,11 +50963,13 @@ class RemainingTime {
   set offset(val) {
     const now = Date.now();
     const value = Math.floor((this._total - val) / (val - this._offset) * (now - this._now));
-    this._index++;
-    if (this._index > this._countValues) this._index = 0;
-    if (this._values.length <= this._index) this._values.push(value);else this._values[this._index] = value;
-    this._offset = val;
-    this._now = now;
+    if (value !== Infinity) {
+      this._index++;
+      if (this._index > this._countValues) this._index = 0;
+      if (this._values.length <= this._index) this._values.push(value);else this._values[this._index] = value;
+      this._offset = val;
+      this._now = now;
+    }
   }
   /** Последнее значение */
   get value() {
@@ -51420,7 +51809,8 @@ function IconCustomvue_type_template_id_746945aa_ts_true_render(_ctx, _cache, $p
   "volume-l": '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 20.68 19.57"><defs><style>.cls-1,.cls-2{fill:{primary};}.cls-2{font-size:14px;font-family:"Roboto", MyriadPro-Regular, Myriad Pro;}</style></defs><path class="cls-1" d="M22.68,15V9h-4l-5-5V20l5-5Z" transform="translate(-3 -2.22)"/><text class="cls-2" transform="translate(0 15.07)">L</text></svg>',
   "volume-fade-f": '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 20.68 19.57"><defs><style>.cls-1,.cls-2{fill:{primary};}.cls-2{font-size:14px;font-family:"Roboto", MyriadPro-Regular, Myriad Pro;}</style></defs><path class="cls-1" d="M2,9v6H6l5,5V4L6,9Z" transform="translate(-2 -2.22)"/><text class="cls-2" transform="translate(11 15.07)">F</text></svg>',
   "volume-fade-r": '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 20.68 19.57"><defs><style>.cls-1,.cls-2{fill:{primary};}.cls-2{font-size:14px;font-family:"Roboto", MyriadPro-Regular, Myriad Pro;}</style></defs><path class="cls-1" d="M22.68,15V9h-4l-5-5V20l5-5Z" transform="translate(-3 -2.22)"/><text class="cls-2" transform="translate(0 15.07)">R</text></svg>',
-  "volume-setting": '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 97.51 97.52"><g id="uuid-ed5e966f-00a1-478d-a6b3-f625b0ad64c0"><path d="m97.51,48.76c0-11.51-4.09-22.67-11.52-31.46.63-1.05.97-2.25.97-3.48,0-3.73-3.04-6.77-6.78-6.77-1.47,0-2.89.48-4.06,1.36C68.02,2.91,58.57,0,48.76,0s-19.69,3.03-27.9,8.79c-1.24-1.12-2.83-1.74-4.52-1.74-3.74,0-6.77,3.04-6.77,6.77,0,1.5.5,2.94,1.41,4.13C3.89,26.62,0,37.54,0,48.76c0,11.74,4.23,23.05,11.91,31.92-1.48,1.28-2.35,3.15-2.35,5.12,0,3.73,3.04,6.77,6.77,6.77,2.29,0,4.41-1.15,5.66-3.05,7.95,5.24,17.2,8,26.76,8s18.27-2.62,26.08-7.57c1.28,1.65,3.23,2.62,5.34,2.62,3.74,0,6.78-3.04,6.78-6.77,0-1.7-.65-3.34-1.8-4.59,7.98-8.94,12.36-20.44,12.36-32.45Zm-16.33-38.15c1.24,0,2.25,1.01,2.25,2.25s-1.01,2.25-2.25,2.25-2.25-1.01-2.25-2.25,1.01-2.25,2.25-2.25Zm-65.3,0c1.24,0,2.25,1.01,2.25,2.25s-1.01,2.25-2.25,2.25-2.25-1.01-2.25-2.25,1.01-2.25,2.25-2.25Zm-.32,78.54c-1.24,0-2.25-1.01-2.25-2.25s1.01-2.25,2.25-2.25,2.25,1.01,2.25,2.25-1.01,2.25-2.25,2.25Zm65.3,0c-1.24,0-2.25-1.01-2.25-2.25s1.01-2.25,2.25-2.25,2.25,1.01,2.25,2.25-1.01,2.25-2.25,2.25Zm-32.11,1.29c-23.02,0-41.69-18.67-41.69-41.69S25.73,7.07,48.76,7.07s41.69,18.66,41.69,41.69-18.67,41.69-41.69,41.69ZM11.33,44h-1.5c-.38,0-.69.35-.69.77v3.83c0,.42.31.77.69.77h1.5c.38,0,.69-.34.69-.77v-3.83c0-.42-.31-.77-.69-.77ZM50.43,9.17h-3.83c-.42,0-.77.31-.77.69v1.5c0,.38.35.69.77.69h3.83c.42,0,.77-.31.77-.69v-1.5c0-.38-.35-.69-.77-.69Zm0,76.29h-3.83c-.42,0-.77.32-.77.69v1.5c0,.38.35.69.77.69h3.83c.42,0,.77-.31.77-.69v-1.5c0-.38-.35-.69-.77-.69ZM20.58,24.61c.27.27.73.25,1.03-.05l2.54-2.53s0,0,0-.01l.16-.16c.3-.3.32-.76.06-1.03l-1.06-1.06c-.27-.27-.73-.25-1.03.05l-2.53,2.54-.17.17c-.3.3-.32.76-.05,1.03l1.06,1.06Zm55.88,48.29c-.27-.27-.73-.24-1.03.05l-2.53,2.54-.17.17c-.3.3-.32.76-.06,1.03l1.06,1.06c.27.27.73.25,1.03-.05l2.53-2.53s0,0,0,0l.17-.16c.3-.3.32-.76.05-1.03l-1.05-1.06Zm-52.31,2.6s0,0,0,0l-2.54-2.54c-.3-.3-.77-.32-1.03-.05l-1.06,1.06c-.27.27-.25.73.05,1.03l2.54,2.54.17.17c.3.3.77.32,1.03.05l1.06-1.06c.26-.27.24-.73-.06-1.03l-.16-.16Zm48.74-53.49h0s2.54,2.54,2.54,2.54c.3.3.77.32,1.03.05l1.05-1.06c.27-.26.25-.73-.05-1.03l-.17-.17s0,0,0,0l-2.53-2.54c-.3-.3-.77-.32-1.03-.05l-1.06,1.06c-.27.27-.24.73.05,1.03l.17.17Zm14.73,21.98h-1.5c-.38,0-.69.35-.69.77v3.83c0,.42.31.77.69.77h1.5c.37,0,.69-.34.69-.77v-3.83c0-.42-.31-.77-.69-.77Z" style="fill:{secondary}; fill-rule:evenodd;"/></g><g id="uuid-4f4fd268-9ac0-44e5-bdcc-a6fc12268a61"><path d="m78.74,44.38c-.33-2.27-.93-4.51-1.77-6.67-.31-.8-1.44-1.16-2.27-.94-2.68.72-5.48-.22-7.14-2.39-1.69-2.22-1.81-5.31-.3-7.68.47-.74.29-1.73-.41-2.26-1.84-1.38-3.82-2.54-5.89-3.45-.81-.36-1.77-.02-2.18.78-1.23,2.4-4.17,3.96-6.86,3.6-2.8-.39-5.08-2.52-5.66-5.3-.18-.88-1.01-1.46-1.9-1.33-1.62.24-3.21.61-4.76,1.1-.62.2-1.23.41-1.83.64-.55.22-.93.7-1.03,1.25-.05.27-.05.54.03.82.82,2.69-.11,5.63-2.33,7.32-2.13,1.62-5.43,1.74-7.69.29-.74-.48-1.73-.3-2.26.41-1.38,1.85-2.56,3.85-3.48,5.95-.21.48-.18,1.01.05,1.45.16.3.4.56.72.73,2.53,1.3,3.98,4.06,3.6,6.87-.36,2.68-2.45,4.9-5.31,5.67-.94.22-1.43,1.02-1.31,1.89.21,1.44.53,2.86.95,4.26.24.81.52,1.61.83,2.4.31.8,1.47,1.15,2.31.93,2.53-.75,5.4.18,7.1,2.4.45.59.79,1.25,1.01,1.94.62,1.89.4,4.01-.71,5.75-.47.74-.29,1.73.41,2.25.38.28.76.55,1.15.82,1.5,1.02,3.09,1.9,4.73,2.63.82.36,1.77.02,2.18-.77.6-1.17,1.61-2.14,2.79-2.79,1.25-.68,2.69-1,4.06-.81,2.81.38,5.08,2.51,5.66,5.3.13.64.62,1.12,1.21,1.28.22.06.45.08.68.04.09-.01.18-.03.27-.04,1.06-.17,2.12-.39,3.16-.66.83-.22,1.65-.48,2.46-.77.24-.09.47-.17.71-.26.82-.32,1.26-1.22,1-2.07-.83-2.69.11-5.63,2.33-7.32,2.14-1.63,5.44-1.74,7.69-.29.75.48,1.72.3,2.26-.41,1.38-1.84,2.55-3.85,3.48-5.95.36-.82.02-1.77-.77-2.18-2.53-1.3-3.98-4.06-3.6-6.87.36-2.64,2.34-4.88,4.92-5.58l.36-.09c.86-.16,1.46-1.01,1.33-1.9Zm-13.18,9.16l-3.98-2.3-5.39-3.12c.2-1.41.11-2.85-.27-4.26-.74-2.77-2.51-5.08-4.99-6.51-1.11-.64-2.31-1.07-3.53-1.28-1.51-.26-3.07-.2-4.59.21-.71.19-1.39.45-2.05.78-.2.1-.39.2-.58.32-.36.21-.59.62-.59,1.03,0,.43.23.8.62,1.03,0,0,4.63,2.7,6.18,3.6.16.09.24.4.26.51v.08c.04.16.44,3.13.41,3.72-.02.03-.04.06-.06.1-.02.04-.04.07-.06.1-.57.37-2.14,1.05-3.47,1.53h0s-.06.02-.06.02c-.01,0-.03.01-.06.02-.15.04-.38.06-.62-.09-.83-.48-6.05-3.48-6.05-3.48-.4-.23-.74-.21-.95-.15-.5.13-.85.62-.85,1.17,0,3.83,2.05,7.4,5.36,9.32,2.48,1.43,5.36,1.81,8.13,1.07,1.41-.38,2.7-1.03,3.82-1.9l9.41,5.44v.1c-2.16,2.35-4.99,4.14-8.3,5.02-9.32,2.5-18.9-3.04-21.4-12.37-1.54-5.75-.03-11.59,3.54-15.82,2.22-2.63,5.23-4.63,8.81-5.59.24-.07.49-.12.73-.18,1.14-.25,2.29-.39,3.42-.41,1.2-.03,2.38.07,3.53.28,3.89.72,7.43,2.75,10.03,5.73,1.69,1.94,2.98,4.29,3.69,6.95.85,3.17.77,6.36-.07,9.3Z" style="fill:{primary}; fill-rule:evenodd;"/></g></svg>'
+  "volume-setting": '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 97.51 97.52"><g id="uuid-ed5e966f-00a1-478d-a6b3-f625b0ad64c0"><path d="m97.51,48.76c0-11.51-4.09-22.67-11.52-31.46.63-1.05.97-2.25.97-3.48,0-3.73-3.04-6.77-6.78-6.77-1.47,0-2.89.48-4.06,1.36C68.02,2.91,58.57,0,48.76,0s-19.69,3.03-27.9,8.79c-1.24-1.12-2.83-1.74-4.52-1.74-3.74,0-6.77,3.04-6.77,6.77,0,1.5.5,2.94,1.41,4.13C3.89,26.62,0,37.54,0,48.76c0,11.74,4.23,23.05,11.91,31.92-1.48,1.28-2.35,3.15-2.35,5.12,0,3.73,3.04,6.77,6.77,6.77,2.29,0,4.41-1.15,5.66-3.05,7.95,5.24,17.2,8,26.76,8s18.27-2.62,26.08-7.57c1.28,1.65,3.23,2.62,5.34,2.62,3.74,0,6.78-3.04,6.78-6.77,0-1.7-.65-3.34-1.8-4.59,7.98-8.94,12.36-20.44,12.36-32.45Zm-16.33-38.15c1.24,0,2.25,1.01,2.25,2.25s-1.01,2.25-2.25,2.25-2.25-1.01-2.25-2.25,1.01-2.25,2.25-2.25Zm-65.3,0c1.24,0,2.25,1.01,2.25,2.25s-1.01,2.25-2.25,2.25-2.25-1.01-2.25-2.25,1.01-2.25,2.25-2.25Zm-.32,78.54c-1.24,0-2.25-1.01-2.25-2.25s1.01-2.25,2.25-2.25,2.25,1.01,2.25,2.25-1.01,2.25-2.25,2.25Zm65.3,0c-1.24,0-2.25-1.01-2.25-2.25s1.01-2.25,2.25-2.25,2.25,1.01,2.25,2.25-1.01,2.25-2.25,2.25Zm-32.11,1.29c-23.02,0-41.69-18.67-41.69-41.69S25.73,7.07,48.76,7.07s41.69,18.66,41.69,41.69-18.67,41.69-41.69,41.69ZM11.33,44h-1.5c-.38,0-.69.35-.69.77v3.83c0,.42.31.77.69.77h1.5c.38,0,.69-.34.69-.77v-3.83c0-.42-.31-.77-.69-.77ZM50.43,9.17h-3.83c-.42,0-.77.31-.77.69v1.5c0,.38.35.69.77.69h3.83c.42,0,.77-.31.77-.69v-1.5c0-.38-.35-.69-.77-.69Zm0,76.29h-3.83c-.42,0-.77.32-.77.69v1.5c0,.38.35.69.77.69h3.83c.42,0,.77-.31.77-.69v-1.5c0-.38-.35-.69-.77-.69ZM20.58,24.61c.27.27.73.25,1.03-.05l2.54-2.53s0,0,0-.01l.16-.16c.3-.3.32-.76.06-1.03l-1.06-1.06c-.27-.27-.73-.25-1.03.05l-2.53,2.54-.17.17c-.3.3-.32.76-.05,1.03l1.06,1.06Zm55.88,48.29c-.27-.27-.73-.24-1.03.05l-2.53,2.54-.17.17c-.3.3-.32.76-.06,1.03l1.06,1.06c.27.27.73.25,1.03-.05l2.53-2.53s0,0,0,0l.17-.16c.3-.3.32-.76.05-1.03l-1.05-1.06Zm-52.31,2.6s0,0,0,0l-2.54-2.54c-.3-.3-.77-.32-1.03-.05l-1.06,1.06c-.27.27-.25.73.05,1.03l2.54,2.54.17.17c.3.3.77.32,1.03.05l1.06-1.06c.26-.27.24-.73-.06-1.03l-.16-.16Zm48.74-53.49h0s2.54,2.54,2.54,2.54c.3.3.77.32,1.03.05l1.05-1.06c.27-.26.25-.73-.05-1.03l-.17-.17s0,0,0,0l-2.53-2.54c-.3-.3-.77-.32-1.03-.05l-1.06,1.06c-.27.27-.24.73.05,1.03l.17.17Zm14.73,21.98h-1.5c-.38,0-.69.35-.69.77v3.83c0,.42.31.77.69.77h1.5c.37,0,.69-.34.69-.77v-3.83c0-.42-.31-.77-.69-.77Z" style="fill:{secondary}; fill-rule:evenodd;"/></g><g id="uuid-4f4fd268-9ac0-44e5-bdcc-a6fc12268a61"><path d="m78.74,44.38c-.33-2.27-.93-4.51-1.77-6.67-.31-.8-1.44-1.16-2.27-.94-2.68.72-5.48-.22-7.14-2.39-1.69-2.22-1.81-5.31-.3-7.68.47-.74.29-1.73-.41-2.26-1.84-1.38-3.82-2.54-5.89-3.45-.81-.36-1.77-.02-2.18.78-1.23,2.4-4.17,3.96-6.86,3.6-2.8-.39-5.08-2.52-5.66-5.3-.18-.88-1.01-1.46-1.9-1.33-1.62.24-3.21.61-4.76,1.1-.62.2-1.23.41-1.83.64-.55.22-.93.7-1.03,1.25-.05.27-.05.54.03.82.82,2.69-.11,5.63-2.33,7.32-2.13,1.62-5.43,1.74-7.69.29-.74-.48-1.73-.3-2.26.41-1.38,1.85-2.56,3.85-3.48,5.95-.21.48-.18,1.01.05,1.45.16.3.4.56.72.73,2.53,1.3,3.98,4.06,3.6,6.87-.36,2.68-2.45,4.9-5.31,5.67-.94.22-1.43,1.02-1.31,1.89.21,1.44.53,2.86.95,4.26.24.81.52,1.61.83,2.4.31.8,1.47,1.15,2.31.93,2.53-.75,5.4.18,7.1,2.4.45.59.79,1.25,1.01,1.94.62,1.89.4,4.01-.71,5.75-.47.74-.29,1.73.41,2.25.38.28.76.55,1.15.82,1.5,1.02,3.09,1.9,4.73,2.63.82.36,1.77.02,2.18-.77.6-1.17,1.61-2.14,2.79-2.79,1.25-.68,2.69-1,4.06-.81,2.81.38,5.08,2.51,5.66,5.3.13.64.62,1.12,1.21,1.28.22.06.45.08.68.04.09-.01.18-.03.27-.04,1.06-.17,2.12-.39,3.16-.66.83-.22,1.65-.48,2.46-.77.24-.09.47-.17.71-.26.82-.32,1.26-1.22,1-2.07-.83-2.69.11-5.63,2.33-7.32,2.14-1.63,5.44-1.74,7.69-.29.75.48,1.72.3,2.26-.41,1.38-1.84,2.55-3.85,3.48-5.95.36-.82.02-1.77-.77-2.18-2.53-1.3-3.98-4.06-3.6-6.87.36-2.64,2.34-4.88,4.92-5.58l.36-.09c.86-.16,1.46-1.01,1.33-1.9Zm-13.18,9.16l-3.98-2.3-5.39-3.12c.2-1.41.11-2.85-.27-4.26-.74-2.77-2.51-5.08-4.99-6.51-1.11-.64-2.31-1.07-3.53-1.28-1.51-.26-3.07-.2-4.59.21-.71.19-1.39.45-2.05.78-.2.1-.39.2-.58.32-.36.21-.59.62-.59,1.03,0,.43.23.8.62,1.03,0,0,4.63,2.7,6.18,3.6.16.09.24.4.26.51v.08c.04.16.44,3.13.41,3.72-.02.03-.04.06-.06.1-.02.04-.04.07-.06.1-.57.37-2.14,1.05-3.47,1.53h0s-.06.02-.06.02c-.01,0-.03.01-.06.02-.15.04-.38.06-.62-.09-.83-.48-6.05-3.48-6.05-3.48-.4-.23-.74-.21-.95-.15-.5.13-.85.62-.85,1.17,0,3.83,2.05,7.4,5.36,9.32,2.48,1.43,5.36,1.81,8.13,1.07,1.41-.38,2.7-1.03,3.82-1.9l9.41,5.44v.1c-2.16,2.35-4.99,4.14-8.3,5.02-9.32,2.5-18.9-3.04-21.4-12.37-1.54-5.75-.03-11.59,3.54-15.82,2.22-2.63,5.23-4.63,8.81-5.59.24-.07.49-.12.73-.18,1.14-.25,2.29-.39,3.42-.41,1.2-.03,2.38.07,3.53.28,3.89.72,7.43,2.75,10.03,5.73,1.69,1.94,2.98,4.29,3.69,6.95.85,3.17.77,6.36-.07,9.3Z" style="fill:{primary}; fill-rule:evenodd;"/></g></svg>',
+  "door": '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 97.52 91.97"><g id="uuid-bb2e7cca-78f0-4a3f-b687-8d8251cce61f"><path d="m93.14,40.64s-7.47-8.08-17.32-16.57C62.61,12.67,46.01,0,46.01,0H0l.45,7.41,5.61,33.68.45,50.88h86.86s4.21-13.56,4.15-26.19c-.06-12.85-4.38-25.15-4.38-25.15Zm-53.86,8.96h-10.33c-.63,0-1.14.62-1.14,1.39s.51,1.39,1.14,1.39h10.3c-.12.73-.74,1.28-1.5,1.28h-15.35c-.84,0-1.53-.68-1.53-1.53v-2.56c0-.84.68-1.53,1.53-1.53h15.35c.84,0,1.53.68,1.53,1.53v.02Zm26.7-15.07c-1.44,2.36-.44,6.12-.44,6.12l-51.62.67L6.51,5.61l38.38-.22,26.26,26.04s-3.8.84-5.17,3.09Zm-41.67,14.85c-.83,0-1.51.68-1.51,1.51s.68,1.51,1.51,1.51,1.51-.68,1.51-1.51-.68-1.51-1.51-1.51Z" style="fill:{primary}; fill-rule:evenodd;"/></g></svg>'
 });
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/common/icon-custom/IconCustom.vue?vue&type=script&lang=ts
 
@@ -55060,14 +55450,15 @@ function MovementCardvue_type_template_id_9483216a_ts_true_render(_ctx, _cache, 
 const MovementCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(MovementCardvue_type_script_lang_ts, [['render',MovementCardvue_type_template_id_9483216a_ts_true_render]])
 
 /* harmony default export */ var MovementCard = (MovementCard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/DoorsCard.vue?vue&type=template&id=fc88c604&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/DoorsCard.vue?vue&type=template&id=2b511d66&ts=true
 
-function DoorsCardvue_type_template_id_fc88c604_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function DoorsCardvue_type_template_id_2b511d66_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_switch_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("switch-card-item");
                                                       
                                                       
   const _component_card = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("card");
   const _component_view_setting_dialog = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("view-setting-dialog");
+  const _component_doors_config_dialog = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("doors-config-dialog");
   return (0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)(runtime_core_esm_bundler/* Fragment */.ae, null, [(0,runtime_core_esm_bundler/* createVNode */.K2)(_component_card, {
     class: "doors-card",
     title: _ctx.$t('onboard.doors.title'),
@@ -55151,14 +55542,208 @@ function DoorsCardvue_type_template_id_fc88c604_ts_true_render(_ctx, _cache, $pr
     view: $setup.menuSelected.view,
     disabled: $setup.menuSelected.disabled,
     "onClick:apply": $setup.onViewApply
-  }, null, 8, ["modelValue", "title", "view", "disabled", "onClick:apply"])], 64);
+  }, null, 8, ["modelValue", "title", "view", "disabled", "onClick:apply"]), (0,runtime_core_esm_bundler/* createVNode */.K2)(_component_doors_config_dialog, {
+    modelValue: $setup.doorsConfigVisible,
+    "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => $setup.doorsConfigVisible = $event),
+    "front-reverse": $setup.doorsConfig.frontReverse,
+    "back-reverse": $setup.doorsConfig.backReverse,
+    "front-back-reverse": $setup.doorsConfig.frontBackReverse,
+    "onClick:apply": $setup.onConfigApply
+  }, null, 8, ["modelValue", "front-reverse", "back-reverse", "front-back-reverse", "onClick:apply"])], 64);
 }
 
 /* Vuetify */
 
 
 
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/DoorsConfigDialog.vue?vue&type=template&id=6d456e71&ts=true
+
+const DoorsConfigDialogvue_type_template_id_6d456e71_ts_true_hoisted_1 = {
+  key: 1
+};
+const DoorsConfigDialogvue_type_template_id_6d456e71_ts_true_hoisted_2 = {
+  key: 1
+};
+const DoorsConfigDialogvue_type_template_id_6d456e71_ts_true_hoisted_3 = {
+  key: 1
+};
+function DoorsConfigDialogvue_type_template_id_6d456e71_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+  const _component_switch_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("switch-card-item");
+                                                      
+                                                      
+                                                        
+                                                      
+  const _component_dialog_template = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("dialog-template");
+  return (0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(_component_dialog_template, {
+    "content-class": "doors-config",
+    modelValue: $setup.visible,
+    "onUpdate:modelValue": _cache[4] || (_cache[4] = $event => $setup.visible = $event),
+    title: _ctx.$t('onboard.doors.settings.title'),
+    icon: "door",
+    width: "500px",
+    text: "",
+    actions: ""
+  }, {
+    body: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(VRow, {
+      class: "pb-2"
+    }, {
+      default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(VCol, {
+        cols: "12",
+        class: "pt-0 pb-0"
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(_component_switch_card_item, {
+          modelValue: $setup.configFrontReverse,
+          "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => $setup.configFrontReverse = $event),
+          title: _ctx.$t('onboard.doors.settings.frontReverse.title'),
+          description: _ctx.$t('onboard.doors.settings.frontReverse.description')
+        }, null, 8, ["modelValue", "title", "description"])]),
+        _: 1
+      }), (0,runtime_core_esm_bundler/* createVNode */.K2)(VCol, {
+        cols: "12",
+        class: "pb-0"
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(_component_switch_card_item, {
+          modelValue: $setup.configBackReverse,
+          "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => $setup.configBackReverse = $event),
+          title: _ctx.$t('onboard.doors.settings.backReverse.title'),
+          description: _ctx.$t('onboard.doors.settings.backReverse.description')
+        }, null, 8, ["modelValue", "title", "description"])]),
+        _: 1
+      }), (0,runtime_core_esm_bundler/* createVNode */.K2)(VCol, {
+        cols: "12",
+        class: "pb-0"
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(_component_switch_card_item, {
+          modelValue: $setup.configFrontBackReverse,
+          "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => $setup.configFrontBackReverse = $event),
+          title: _ctx.$t('onboard.doors.settings.frontBackReverse.title'),
+          description: _ctx.$t('onboard.doors.settings.frontBackReverse.description')
+        }, null, 8, ["modelValue", "title", "description"])]),
+        _: 1
+      })]),
+      _: 1
+    })]),
+    btns: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(VBtn, {
+      color: "secondary",
+      onClick: $setup.onResetClick
+    }, {
+      default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [_ctx.$vuetify.display.xs ? ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(VIcon, {
+        key: 0
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.mY)("mdi-restart")]),
+        _: 1
+      })) : ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)("span", DoorsConfigDialogvue_type_template_id_6d456e71_ts_true_hoisted_1, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("btn.reset")), 1))]),
+      _: 1
+    }, 8, ["onClick"]), (0,runtime_core_esm_bundler/* createVNode */.K2)(VBtn, {
+      color: "primary",
+      onClick: $setup.onApplyClick
+    }, {
+      default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [_ctx.$vuetify.display.xs ? ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(VIcon, {
+        key: 0
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.mY)("mdi-check")]),
+        _: 1
+      })) : ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)("span", DoorsConfigDialogvue_type_template_id_6d456e71_ts_true_hoisted_2, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("btn.apply")), 1))]),
+      _: 1
+    }, 8, ["onClick"]), (0,runtime_core_esm_bundler/* createVNode */.K2)(VBtn, {
+      color: "primary",
+      onClick: _cache[3] || (_cache[3] = $event => $setup.visible = false)
+    }, {
+      default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [_ctx.$vuetify.display.xs ? ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(VIcon, {
+        key: 0
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.mY)("mdi-close")]),
+        _: 1
+      })) : ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)("span", DoorsConfigDialogvue_type_template_id_6d456e71_ts_true_hoisted_3, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("btn.cancel")), 1))]),
+      _: 1
+    })]),
+    _: 1
+  }, 8, ["modelValue", "title"]);
+}
+
+/* Vuetify */
+
+
+
+
+
+;// CONCATENATED MODULE: ./src/views/onboard/components/DoorsConfigDialog.vue?vue&type=template&id=6d456e71&ts=true
+
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/DoorsConfigDialog.vue?vue&type=script&lang=ts
+
+
+
+/* harmony default export */ var DoorsConfigDialogvue_type_script_lang_ts = ({
+  name: "DoorsConfigDialog",
+  components: {
+    DialogTemplate: DialogTemplate,
+    SwitchCardItem: SwitchCardItem
+  },
+  props: {
+    /** Отображение диалога */
+    modelValue: {
+      type: Boolean,
+      default: false
+    },
+    /** Состояние: Поменять местами передние двери */
+    frontReverse: Boolean,
+    /** Состояние: Поменять местами задние двери */
+    backReverse: Boolean,
+    /** Состояние: Поменять местами передние и задние двери */
+    frontBackReverse: Boolean
+  },
+  emits: ["update:modelValue", "click:apply"],
+  setup(props, context) {
+    const {
+      modelValue,
+      frontReverse,
+      backReverse,
+      frontBackReverse
+    } = (0,reactivity_esm_bundler/* toRefs */.kx)(props);
+    const visible = (0,runtime_core_esm_bundler/* computed */.S6)({
+      get: () => modelValue.value,
+      set: val => context.emit("update:modelValue", val)
+    });
+    const configFrontReverse = (0,reactivity_esm_bundler/* ref */.IL)(false);
+    const configBackReverse = (0,reactivity_esm_bundler/* ref */.IL)(false);
+    const configFrontBackReverse = (0,reactivity_esm_bundler/* ref */.IL)(false);
+    (0,runtime_core_esm_bundler/* watch */.Kg)(visible, val => {
+      if (val) onResetClick();
+    });
+    /** Сбросить */
+    const onResetClick = () => {
+      configFrontReverse.value = frontReverse.value;
+      configBackReverse.value = backReverse.value;
+      configFrontBackReverse.value = frontBackReverse.value;
+    };
+    /** Применить изменения и закрыть диалог */
+    const onApplyClick = () => {
+      visible.value = false;
+      context.emit("click:apply", configFrontReverse.value, configBackReverse.value, configFrontBackReverse.value);
+    };
+    return {
+      visible,
+      configFrontReverse,
+      configBackReverse,
+      configFrontBackReverse,
+      onResetClick,
+      onApplyClick
+    };
+  }
+});
+;// CONCATENATED MODULE: ./src/views/onboard/components/DoorsConfigDialog.vue?vue&type=script&lang=ts
+ 
+;// CONCATENATED MODULE: ./src/views/onboard/components/DoorsConfigDialog.vue
+
+
+
+
+;
+const DoorsConfigDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(DoorsConfigDialogvue_type_script_lang_ts, [['render',DoorsConfigDialogvue_type_template_id_6d456e71_ts_true_render]])
+
+/* harmony default export */ var DoorsConfigDialog = (DoorsConfigDialog_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/DoorsCard.vue?vue&type=script&lang=ts
+
 
 
 
@@ -55168,6 +55753,7 @@ function DoorsCardvue_type_template_id_fc88c604_ts_true_render(_ctx, _cache, $pr
 /* harmony default export */ var DoorsCardvue_type_script_lang_ts = ({
   name: "DoorsCard",
   components: {
+    DoorsConfigDialog: DoorsConfigDialog,
     Card: Card,
     SwitchCardItem: SwitchCardItem,
     ViewSettingDialog: ViewSettingDialog
@@ -55183,7 +55769,11 @@ function DoorsCardvue_type_template_id_fc88c604_ts_true_render(_ctx, _cache, $pr
     const doorBL = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["value/doors"].backLeft);
     const doorBR = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["value/doors"].backRight);
     const trunk = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["value/doors"].trunk);
+    const doorsConfigVisible = (0,reactivity_esm_bundler/* ref */.IL)(false);
+    const doorsConfig = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["config/doors"]);
     const menu = (0,runtime_core_esm_bundler/* computed */.S6)(() => [{
+      title: t("onboard.doors.settings.title")
+    }, {
       title: t("onboard.doors.menu"),
       view: src_store.getters["view/doors"],
       disabled: !doorsViewLoaded.value
@@ -55195,8 +55785,23 @@ function DoorsCardvue_type_template_id_fc88c604_ts_true_render(_ctx, _cache, $pr
      * @param {IMenuItem} item Элемент меню
      */
     const onMenuClick = item => {
-      menuVisible.value = true;
-      menuSelected.value = item;
+      if (item.view) {
+        menuVisible.value = true;
+        menuSelected.value = item;
+      } else doorsConfigVisible.value = true;
+    };
+    /**
+     * Применить конфигурацию
+     * @param {boolean} frontReverse Поменять местами передние двери
+     * @param {boolean} backReverse Поменять местами задние двери
+     * @param {boolean} frontBackReverse Поменять местами передние с задними дверьми
+     */
+    const onConfigApply = (frontReverse, backReverse, frontBackReverse) => {
+      src_store.commit("config/setDoorsConfig", {
+        frontReverse,
+        backReverse,
+        frontBackReverse
+      });
     };
     /**
      * Применить параметры отображения на информационном экране
@@ -55213,10 +55818,13 @@ function DoorsCardvue_type_template_id_fc88c604_ts_true_render(_ctx, _cache, $pr
       doorBL,
       doorBR,
       trunk,
+      doorsConfigVisible,
+      doorsConfig,
       menu,
       menuVisible,
       menuSelected,
       onMenuClick,
+      onConfigApply,
       onViewApply
     };
   }
@@ -55229,7 +55837,7 @@ function DoorsCardvue_type_template_id_fc88c604_ts_true_render(_ctx, _cache, $pr
 
 
 ;
-const DoorsCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(DoorsCardvue_type_script_lang_ts, [['render',DoorsCardvue_type_template_id_fc88c604_ts_true_render]])
+const DoorsCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(DoorsCardvue_type_script_lang_ts, [['render',DoorsCardvue_type_template_id_2b511d66_ts_true_render]])
 
 /* harmony default export */ var DoorsCard = (DoorsCard_exports_);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/ClimateCard.vue?vue&type=template&id=05320176&ts=true
@@ -55450,9 +56058,9 @@ function ClimateCardvue_type_template_id_05320176_ts_true_render(_ctx, _cache, $
 const ClimateCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(ClimateCardvue_type_script_lang_ts, [['render',ClimateCardvue_type_template_id_05320176_ts_true_render]])
 
 /* harmony default export */ var ClimateCard = (ClimateCard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/BoseCard.vue?vue&type=template&id=2db77f9f&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/BoseCard.vue?vue&type=template&id=64d5de1c&ts=true
 
-function BoseCardvue_type_template_id_2db77f9f_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function BoseCardvue_type_template_id_64d5de1c_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_icon_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("icon-card-item");
                                                       
   const _component_slider_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("slider-card-item");
@@ -55630,8 +56238,8 @@ function BoseCardvue_type_template_id_2db77f9f_ts_true_render(_ctx, _cache, $pro
   }, null, 8, ["modelValue", "title", "view", "disabled", "onClick:apply"]), (0,runtime_core_esm_bundler/* createVNode */.K2)(_component_bose_start_dialog, {
     modelValue: $setup.startConfigVisible,
     "onUpdate:modelValue": _cache[11] || (_cache[11] = $event => $setup.startConfigVisible = $event),
-    enabled: $setup.startEnabled,
-    level: $setup.startLevel,
+    enabled: $setup.startConfig.startBose,
+    level: $setup.startConfig.startLevelBose,
     "onClick:apply": $setup.onStartApply
   }, null, 8, ["modelValue", "enabled", "level", "onClick:apply"])], 64);
 }
@@ -56935,8 +57543,7 @@ const BoseStartDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Bo
       set: val => src_store.commit("config/setVolumeValueBose", val)
     });
     const startConfigVisible = (0,reactivity_esm_bundler/* ref */.IL)(false);
-    const startEnabled = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["config/volume"].startBose);
-    const startLevel = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["config/volume"].startLevelBose);
+    const startConfig = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["config/volume"]);
     const menu = (0,runtime_core_esm_bundler/* computed */.S6)(() => [{
       id: 0,
       title: t("onboard.bose.volumeConfig.title")
@@ -56993,8 +57600,7 @@ const BoseStartDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Bo
       mute,
       volume,
       startConfigVisible,
-      startEnabled,
-      startLevel,
+      startConfig,
       menu,
       menuVisible,
       menuSelected,
@@ -57012,10 +57618,12 @@ const BoseStartDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Bo
 
 
 ;
-const BoseCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(BoseCardvue_type_script_lang_ts, [['render',BoseCardvue_type_template_id_2db77f9f_ts_true_render]])
+const BoseCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(BoseCardvue_type_script_lang_ts, [['render',BoseCardvue_type_template_id_64d5de1c_ts_true_render]])
 
 /* harmony default export */ var BoseCard = (BoseCard_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/index.vue?vue&type=script&lang=ts
+
+
 
 
 
@@ -57053,6 +57661,9 @@ const BoseCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(BoseCardv
     const {
       name: display
     } = useDisplay();
+    const {
+      t
+    } = useI18n();
     const flicking = (0,reactivity_esm_bundler/* ref */.IL)(null);
     (0,runtime_core_esm_bundler/* provide */.Zl)("flicking", flicking);
     src_store.dispatch("app/readOnboardCardList");
@@ -57087,11 +57698,19 @@ const BoseCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(BoseCardv
       });
       return result;
     });
+    const notify = () => {
+      if (!src_store.getters["app/notify"]) {
+        setTimeout(() => toast_default.info(t("help.onboard.notify")), 5000);
+        src_store.commit("app/setNotify", true);
+      }
+    };
     (0,runtime_core_esm_bundler/* watch */.Kg)(listExec, val => {
       api_canbus.loop(val);
+      if (val?.length > 0) notify();
     });
     (0,runtime_core_esm_bundler/* onMounted */.u2)(() => {
       api_canbus.loop(listExec.value);
+      if (listExec.value?.length > 0) notify();
     });
     (0,runtime_core_esm_bundler/* onUnmounted */.wx)(() => {
       api_canbus.loopFree();
@@ -57105,10 +57724,10 @@ const BoseCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(BoseCardv
 });
 ;// CONCATENATED MODULE: ./src/views/onboard/index.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/index.vue?vue&type=style&index=0&id=4686eee3&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/index.vue?vue&type=style&index=0&id=f2a414e8&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/views/onboard/index.vue?vue&type=style&index=0&id=4686eee3&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/views/onboard/index.vue?vue&type=style&index=0&id=f2a414e8&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/views/onboard/index.vue
 
@@ -57118,12 +57737,12 @@ const BoseCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(BoseCardv
 ;
 
 
-const onboard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(onboardvue_type_script_lang_ts, [['render',onboardvue_type_template_id_4686eee3_scoped_true_ts_true_render],['__scopeId',"data-v-4686eee3"]])
+const onboard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(onboardvue_type_script_lang_ts, [['render',onboardvue_type_template_id_f2a414e8_scoped_true_ts_true_render],['__scopeId',"data-v-f2a414e8"]])
 
 /* harmony default export */ var onboard = (onboard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/index.vue?vue&type=template&id=4a520ec8&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/index.vue?vue&type=template&id=1c73dfce&scoped=true&ts=true
 
-function buttonsvue_type_template_id_4a520ec8_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function buttonsvue_type_template_id_1c73dfce_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_settings_card = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("settings-card");
   const _component_flicking = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("flicking");
   const _component_button_definition_dialog = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("button-definition-dialog");
@@ -57994,6 +58613,8 @@ const ButtonEditDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(B
 
 
 
+
+
 /* harmony default export */ var buttonsvue_type_script_lang_ts = ({
   name: "Buttons",
   components: {
@@ -58006,6 +58627,9 @@ const ButtonEditDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(B
     const {
       name: display
     } = useDisplay();
+    const {
+      t
+    } = useI18n();
     const flicking = (0,reactivity_esm_bundler/* ref */.IL)(null);
     (0,runtime_core_esm_bundler/* provide */.Zl)("flicking", flicking);
     const __type = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_router.currentRoute.value.query?.type);
@@ -58128,6 +58752,9 @@ const ButtonEditDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(B
       if (key) {
         api_canbus.addListener(API_BUTTON_SW1_VALUE_EVENT, onButtonsValueReceive);
         src_store.commit(key.setProgramming, true);
+        setTimeout(() => toast_default.warning(t("help.buttons.notify"), {
+          autoClose: false
+        }), 1000);
       }
     };
     const onEnd = () => {
@@ -58146,6 +58773,7 @@ const ButtonEditDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(B
     });
     (0,runtime_core_esm_bundler/* onUnmounted */.wx)(() => {
       onEnd();
+      toast_default.clearAll();
     });
     return {
       flicking,
@@ -58167,10 +58795,10 @@ const ButtonEditDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(B
 });
 ;// CONCATENATED MODULE: ./src/views/buttons/index.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/index.vue?vue&type=style&index=0&id=4a520ec8&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/index.vue?vue&type=style&index=0&id=1c73dfce&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/views/buttons/index.vue?vue&type=style&index=0&id=4a520ec8&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/views/buttons/index.vue?vue&type=style&index=0&id=1c73dfce&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/views/buttons/index.vue
 
@@ -58180,12 +58808,12 @@ const ButtonEditDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(B
 ;
 
 
-const buttons_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(buttonsvue_type_script_lang_ts, [['render',buttonsvue_type_template_id_4a520ec8_scoped_true_ts_true_render],['__scopeId',"data-v-4a520ec8"]])
+const buttons_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(buttonsvue_type_script_lang_ts, [['render',buttonsvue_type_template_id_1c73dfce_scoped_true_ts_true_render],['__scopeId',"data-v-1c73dfce"]])
 
 /* harmony default export */ var buttons = (buttons_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/index.vue?vue&type=template&id=531f47d5&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/index.vue?vue&type=template&id=1a90dfba&scoped=true&ts=true
 
-function optionsvue_type_template_id_531f47d5_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function optionsvue_type_template_id_1a90dfba_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_flicking = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("flicking");
   return (0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(_component_flicking, {
     ref: "flicking",
@@ -58699,6 +59327,230 @@ function TeyesCardvue_type_template_id_515faca8_ts_true_render(_ctx, _cache, $pr
 const TeyesCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(TeyesCardvue_type_script_lang_ts, [['render',TeyesCardvue_type_template_id_515faca8_ts_true_render]])
 
 /* harmony default export */ var TeyesCard = (TeyesCard_exports_);
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/components/DateTimeCard.vue?vue&type=template&id=2b7ec13f&scoped=true&ts=true
+
+function DateTimeCardvue_type_template_id_2b7ec13f_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+  const _component_switch_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("switch-card-item");
+                                                      
+                                                      
+  const _component_card = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("card");
+  const _component_view_setting_dialog = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("view-setting-dialog");
+  return (0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)(runtime_core_esm_bundler/* Fragment */.ae, null, [(0,runtime_core_esm_bundler/* createVNode */.K2)(_component_card, {
+    class: "datetime-card",
+    title: _ctx.$t('options.datetime.title'),
+    menu: $setup.menu,
+    "onClick:menu": $setup.onMenuClick
+  }, {
+    body: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(VRow, null, {
+      default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(VCol, {
+        cols: "12",
+        class: "pt-0 pb-0"
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(_component_switch_card_item, {
+          modelValue: $setup.showDate,
+          "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => $setup.showDate = $event),
+          title: _ctx.$t('options.datetime.date.title'),
+          description: _ctx.$t('options.datetime.date.description'),
+          color: "success",
+          nodata: !$setup.configLoaded,
+          disabled: !$setup.configLoaded
+        }, null, 8, ["modelValue", "title", "description", "nodata", "disabled"])]),
+        _: 1
+      }), (0,runtime_core_esm_bundler/* createVNode */.K2)(VCol, {
+        cols: "12",
+        class: "pt-0 pb-0"
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(_component_switch_card_item, {
+          modelValue: $setup.showTime,
+          "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => $setup.showTime = $event),
+          title: _ctx.$t('options.datetime.time.title'),
+          description: _ctx.$t('options.datetime.time.description'),
+          color: "success",
+          nodata: !$setup.configLoaded,
+          disabled: !$setup.configLoaded
+        }, null, 8, ["modelValue", "title", "description", "nodata", "disabled"])]),
+        _: 1
+      }), (0,runtime_core_esm_bundler/* createVNode */.K2)(VCol, {
+        cols: "12",
+        class: "pt-0 pb-0"
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(_component_switch_card_item, {
+          modelValue: $setup.showDayWeek,
+          "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => $setup.showDayWeek = $event),
+          title: _ctx.$t('options.datetime.dayWeek.title'),
+          description: _ctx.$t('options.datetime.dayWeek.description'),
+          color: "success",
+          nodata: !$setup.configLoaded,
+          disabled: !$setup.configLoaded
+        }, null, 8, ["modelValue", "title", "description", "nodata", "disabled"])]),
+        _: 1
+      }), (0,runtime_core_esm_bundler/* createVNode */.K2)(VCol, {
+        cols: "12",
+        class: "pt-0 pb-0"
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(_component_switch_card_item, {
+          modelValue: $setup.showDateAndDayWeek,
+          "onUpdate:modelValue": _cache[3] || (_cache[3] = $event => $setup.showDateAndDayWeek = $event),
+          title: _ctx.$t('options.datetime.dateAndDayWeek.title'),
+          description: _ctx.$t('options.datetime.dateAndDayWeek.description'),
+          color: "success",
+          nodata: !$setup.configLoaded,
+          disabled: !$setup.configLoaded
+        }, null, 8, ["modelValue", "title", "description", "nodata", "disabled"])]),
+        _: 1
+      }), (0,runtime_core_esm_bundler/* createVNode */.K2)(VCol, {
+        cols: "12",
+        class: "pt-0 pb-0"
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(_component_switch_card_item, {
+          modelValue: $setup.showTimeAndDayWeek,
+          "onUpdate:modelValue": _cache[4] || (_cache[4] = $event => $setup.showTimeAndDayWeek = $event),
+          title: _ctx.$t('options.datetime.timeAndDayWeek.title'),
+          description: _ctx.$t('options.datetime.timeAndDayWeek.description'),
+          color: "success",
+          nodata: !$setup.configLoaded,
+          disabled: !$setup.configLoaded
+        }, null, 8, ["modelValue", "title", "description", "nodata", "disabled"])]),
+        _: 1
+      }), (0,runtime_core_esm_bundler/* createVNode */.K2)(VCol, {
+        cols: "12",
+        class: "pt-0 pb-0"
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(_component_switch_card_item, {
+          modelValue: $setup.showFullDatetime,
+          "onUpdate:modelValue": _cache[5] || (_cache[5] = $event => $setup.showFullDatetime = $event),
+          title: _ctx.$t('options.datetime.fullDatetime.title'),
+          description: _ctx.$t('options.datetime.fullDatetime.description'),
+          color: "success",
+          nodata: !$setup.configLoaded,
+          disabled: !$setup.configLoaded
+        }, null, 8, ["modelValue", "title", "description", "nodata", "disabled"])]),
+        _: 1
+      }), (0,runtime_core_esm_bundler/* createVNode */.K2)(VCol, {
+        cols: "12",
+        class: "pt-5 datetime-card__description"
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createElementVNode */.QD)("span", null, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("options.datetime.description")), 1)]),
+        _: 1
+      })]),
+      _: 1
+    })]),
+    _: 1
+  }, 8, ["title", "menu", "onClick:menu"]), (0,runtime_core_esm_bundler/* createVNode */.K2)(_component_view_setting_dialog, {
+    modelValue: $setup.menuVisible,
+    "onUpdate:modelValue": _cache[6] || (_cache[6] = $event => $setup.menuVisible = $event),
+    title: $setup.menuSelected.title,
+    view: $setup.menuSelected.view,
+    disabled: $setup.menuSelected.disabled,
+    "onClick:apply": $setup.onViewApply
+  }, null, 8, ["modelValue", "title", "view", "disabled", "onClick:apply"])], 64);
+}
+
+/* Vuetify */
+
+
+
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/components/DateTimeCard.vue?vue&type=script&lang=ts
+
+
+
+
+
+
+/* harmony default export */ var DateTimeCardvue_type_script_lang_ts = ({
+  name: "DatetimeCard",
+  components: {
+    Card: Card,
+    SwitchCardItem: SwitchCardItem,
+    ViewSettingDialog: ViewSettingDialog
+  },
+  setup() {
+    const {
+      t
+    } = useI18n();
+    const configLoaded = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["config/datetime"].isData);
+    const viewLoaded = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["view/datetime"].isData);
+    const showDate = (0,runtime_core_esm_bundler/* computed */.S6)({
+      get: () => src_store.getters["config/datetime"].showDate,
+      set: val => src_store.commit("config/setDatetimeShowDate", val)
+    });
+    const showTime = (0,runtime_core_esm_bundler/* computed */.S6)({
+      get: () => src_store.getters["config/datetime"].showTime,
+      set: val => src_store.commit("config/setDatetimeShowTime", val)
+    });
+    const showDayWeek = (0,runtime_core_esm_bundler/* computed */.S6)({
+      get: () => src_store.getters["config/datetime"].showDayWeek,
+      set: val => src_store.commit("config/setDatetimeShowDayWeek", val)
+    });
+    const showDateAndDayWeek = (0,runtime_core_esm_bundler/* computed */.S6)({
+      get: () => src_store.getters["config/datetime"].showDateAndDayWeek,
+      set: val => src_store.commit("config/setDatetimeShowDateAndDayWeek", val)
+    });
+    const showTimeAndDayWeek = (0,runtime_core_esm_bundler/* computed */.S6)({
+      get: () => src_store.getters["config/datetime"].showTimeAndDayWeek,
+      set: val => src_store.commit("config/setDatetimeShowTimeAndDayWeek", val)
+    });
+    const showFullDatetime = (0,runtime_core_esm_bundler/* computed */.S6)({
+      get: () => src_store.getters["config/datetime"].showFullDatetime,
+      set: val => src_store.commit("config/setDatetimeShowFullDatetime", val)
+    });
+    const menu = (0,runtime_core_esm_bundler/* computed */.S6)(() => [{
+      title: t("options.datetime.menu"),
+      view: src_store.getters["view/datetime"],
+      disabled: !viewLoaded.value
+    }]);
+    const menuVisible = (0,reactivity_esm_bundler/* ref */.IL)(false);
+    const menuSelected = (0,reactivity_esm_bundler/* ref */.IL)({});
+    /**
+     * Выбор пункта меню отображения на информационном экране
+     * @param {IMenuItem} item Элемент меню
+     */
+    const onMenuClick = item => {
+      menuVisible.value = true;
+      menuSelected.value = item;
+    };
+    /**
+     * Применить параметры отображения на информационном экране
+     * @param {any} value Новые параметры отображения
+     */
+    const onViewApply = value => {
+      src_store.commit("view/setView", value);
+    };
+    return {
+      configLoaded,
+      viewLoaded,
+      showDate,
+      showTime,
+      showDayWeek,
+      showDateAndDayWeek,
+      showTimeAndDayWeek,
+      showFullDatetime,
+      menu,
+      menuVisible,
+      menuSelected,
+      onMenuClick,
+      onViewApply
+    };
+  }
+});
+;// CONCATENATED MODULE: ./src/views/options/components/DateTimeCard.vue?vue&type=script&lang=ts
+ 
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/components/DateTimeCard.vue?vue&type=style&index=0&id=2b7ec13f&lang=scss&scoped=true
+// extracted by mini-css-extract-plugin
+
+;// CONCATENATED MODULE: ./src/views/options/components/DateTimeCard.vue?vue&type=style&index=0&id=2b7ec13f&lang=scss&scoped=true
+
+;// CONCATENATED MODULE: ./src/views/options/components/DateTimeCard.vue
+
+
+
+
+;
+
+
+const DateTimeCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(DateTimeCardvue_type_script_lang_ts, [['render',DateTimeCardvue_type_template_id_2b7ec13f_scoped_true_ts_true_render],['__scopeId',"data-v-2b7ec13f"]])
+
+/* harmony default export */ var DateTimeCard = (DateTimeCard_exports_);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/components/OnboardCard.vue?vue&type=template&id=18aac5dd&scoped=true&ts=true
 
 const OnboardCardvue_type_template_id_18aac5dd_scoped_true_ts_true_withScopeId = n => (_pushScopeId("data-v-18aac5dd"), n = n(), _popScopeId(), n);
@@ -58887,12 +59739,14 @@ const OnboardCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Onboar
 
 
 
+
 /* harmony default export */ var optionsvue_type_script_lang_ts = ({
   name: "setting",
   components: {
     Flicking: flicking_esm_Flicking,
     LcdCard: LcdCard,
     TeyesCard: TeyesCard,
+    DatetimeCard: DateTimeCard,
     OnboardCard: OnboardCard
   },
   setup() {
@@ -58901,7 +59755,7 @@ const OnboardCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Onboar
     } = useDisplay();
     const flicking = (0,reactivity_esm_bundler/* ref */.IL)(null);
     (0,runtime_core_esm_bundler/* provide */.Zl)("flicking", flicking);
-    const cards = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["config/carModel"] !== TCarModel.CAR_MODEL_MAZDA_CX9_REST ? ["lcd", "teyes", "onboard"] : ["teyes", "onboard"]);
+    const cards = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["config/carModel"] !== TCarModel.CAR_MODEL_MAZDA_CX9_REST ? ["lcd", "teyes", "datetime", "onboard"] : ["teyes", "datetime", "onboard"]);
     return {
       flicking,
       cards,
@@ -58911,10 +59765,10 @@ const OnboardCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Onboar
 });
 ;// CONCATENATED MODULE: ./src/views/options/index.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/index.vue?vue&type=style&index=0&id=531f47d5&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/index.vue?vue&type=style&index=0&id=1a90dfba&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/views/options/index.vue?vue&type=style&index=0&id=531f47d5&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/views/options/index.vue?vue&type=style&index=0&id=1a90dfba&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/views/options/index.vue
 
@@ -58924,7 +59778,7 @@ const OnboardCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Onboar
 ;
 
 
-const options_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(optionsvue_type_script_lang_ts, [['render',optionsvue_type_template_id_531f47d5_scoped_true_ts_true_render],['__scopeId',"data-v-531f47d5"]])
+const options_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(optionsvue_type_script_lang_ts, [['render',optionsvue_type_template_id_1a90dfba_scoped_true_ts_true_render],['__scopeId',"data-v-1a90dfba"]])
 
 /* harmony default export */ var options = (options_exports_);
 ;// CONCATENATED MODULE: ./src/router/index.ts
@@ -59200,13 +60054,13 @@ function BluetoothBtnvue_type_template_id_0b2ecac6_scoped_true_ts_true_render(_c
 const BluetoothBtn_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(BluetoothBtnvue_type_script_lang_ts, [['render',BluetoothBtnvue_type_template_id_0b2ecac6_scoped_true_ts_true_render],['__scopeId',"data-v-0b2ecac6"]])
 
 /* harmony default export */ var BluetoothBtn = (BluetoothBtn_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/UpdateFirmwareDialog.vue?vue&type=template&id=6612d504&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/UpdateFirmwareDialog.vue?vue&type=template&id=2dcc1423&ts=true
 
-const UpdateFirmwareDialogvue_type_template_id_6612d504_ts_true_hoisted_1 = {
+const UpdateFirmwareDialogvue_type_template_id_2dcc1423_ts_true_hoisted_1 = {
   key: 0,
   class: "pb-3 d-flex justify-space-between"
 };
-function UpdateFirmwareDialogvue_type_template_id_6612d504_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function UpdateFirmwareDialogvue_type_template_id_2dcc1423_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                       
   const _component_dialog_template = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("dialog-template");
                                                                               
@@ -59247,7 +60101,7 @@ function UpdateFirmwareDialogvue_type_template_id_6612d504_ts_true_render(_ctx, 
       class: (0,shared_esm_bundler/* normalizeClass */.WN)(["d-flex justify-space-between", {
         'pb-3': $setup.progress === 0 || !$setup.timeLeft?.length
       }])
-    }, [(0,runtime_core_esm_bundler/* createElementVNode */.QD)("span", null, (0,shared_esm_bundler/* toDisplayString */.WA)($setup.message), 1), (0,runtime_core_esm_bundler/* createElementVNode */.QD)("span", null, (0,shared_esm_bundler/* toDisplayString */.WA)($setup.uploading), 1)], 2), $setup.progress > 0 && $setup.timeLeft?.length ? ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)("div", UpdateFirmwareDialogvue_type_template_id_6612d504_ts_true_hoisted_1, [(0,runtime_core_esm_bundler/* createElementVNode */.QD)("span", null, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("update.process.timeLeft")), 1), (0,runtime_core_esm_bundler/* createElementVNode */.QD)("span", null, (0,shared_esm_bundler/* toDisplayString */.WA)($setup.timeLeft), 1)])) : (0,runtime_core_esm_bundler/* createCommentVNode */.g1)("", true), (0,runtime_core_esm_bundler/* createVNode */.K2)(VProgressLinear, {
+    }, [(0,runtime_core_esm_bundler/* createElementVNode */.QD)("span", null, (0,shared_esm_bundler/* toDisplayString */.WA)($setup.message), 1), (0,runtime_core_esm_bundler/* createElementVNode */.QD)("span", null, (0,shared_esm_bundler/* toDisplayString */.WA)($setup.uploading), 1)], 2), $setup.progress > 0 && $setup.timeLeft?.length ? ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)("div", UpdateFirmwareDialogvue_type_template_id_2dcc1423_ts_true_hoisted_1, [(0,runtime_core_esm_bundler/* createElementVNode */.QD)("span", null, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("update.process.timeLeft")), 1), (0,runtime_core_esm_bundler/* createElementVNode */.QD)("span", null, (0,shared_esm_bundler/* toDisplayString */.WA)($setup.timeLeft), 1)])) : (0,runtime_core_esm_bundler/* createCommentVNode */.g1)("", true), (0,runtime_core_esm_bundler/* createVNode */.K2)(VProgressLinear, {
       "model-value": $setup.progress,
       color: "primary",
       height: "10",
@@ -59264,7 +60118,7 @@ function UpdateFirmwareDialogvue_type_template_id_6612d504_ts_true_render(_ctx, 
 
 
 
-;// CONCATENATED MODULE: ./src/components/dialogs/UpdateFirmwareDialog.vue?vue&type=template&id=6612d504&ts=true
+;// CONCATENATED MODULE: ./src/components/dialogs/UpdateFirmwareDialog.vue?vue&type=template&id=2dcc1423&ts=true
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/UpdateFirmwareDialog.vue?vue&type=script&lang=ts
 
@@ -59308,23 +60162,17 @@ function UpdateFirmwareDialogvue_type_template_id_6612d504_ts_true_render(_ctx, 
     const progress = (0,reactivity_esm_bundler/* ref */.IL)(0);
     const uploading = (0,reactivity_esm_bundler/* ref */.IL)("");
     const timeLeft = (0,reactivity_esm_bundler/* ref */.IL)("");
-    /** Отменить обновление */
-    const onCancel = () => {
-      visibleUpdate.value = false;
-      visibleProcess.value = false;
-      api_canbus.removeListener(API_DEVICE_UPDATE_EVENT_ERROR, onErrorUpdate);
-      api_canbus.update.clear();
-    };
-    /** Завершение прошивки */
-    const onCompletingFirmware = () => {
-      if (api_canbus.update.total > 0) {
-        if (api_canbus.version.is) {
-          api_canbus.checkVersion().then(() => toast_default.error(t("update.notify.warning"))).catch(() => toast_default.success(t("update.notify.completed")));
-          setTimeout(() => src_router.go(0), 5000);
-          onCancel();
-        } else api_canbus.bluetooth.disconnect();
+    (0,runtime_core_esm_bundler/* watch */.Kg)(modelValue, val => {
+      if (val) {
+        visibleProcess.value = false;
+        version.value = "";
+        message.value = "";
+        progress.value = 0;
+        uploading.value = "";
+        timeLeft.value = "";
       }
-    };
+    });
+    let remainingTime;
     /** Событие запуска прошивки */
     const onUpdateStart = () => {
       message.value = t("update.process.preparation");
@@ -59332,21 +60180,18 @@ function UpdateFirmwareDialogvue_type_template_id_6612d504_ts_true_render(_ctx, 
       progress.value = 0;
       visibleUpdate.value = false;
       visibleProcess.value = true;
-      api_canbus.addListener(API_DEVICE_UPDATE_EVENT_ERROR, onErrorUpdate);
       api_canbus.updateStart();
     };
-    let remainingTime;
     /**
      * Событие загрузки прошивки на устройство PJCAN
      * @param {number} error Код ошибки
      */
-    const onUpdate = error => {
+    const onUpdateStatus = error => {
       if (error === 0) {
         if (api_canbus.update.offset < api_canbus.update.total) {
           message.value = t("update.process.upload");
           progress.value = api_canbus.update.uploading * 100;
           uploading.value = progress.value.toFixed(2) + "%";
-          api_canbus.updateUpload();
           // подсчет оставшегося времени
           if (!remainingTime) {
             remainingTime = new RemainingTime(api_canbus.update.total);
@@ -59362,9 +60207,23 @@ function UpdateFirmwareDialogvue_type_template_id_6612d504_ts_true_render(_ctx, 
           timeLeft.value = "";
           api_canbus.version.clear();
         }
-      } else {
-        onErrorUpdate(t("update.notify.error"));
+      } else onErrorUpdate(t("update.notify.error"));
+    };
+    /** Завершение прошивки */
+    const onCompletingFirmware = () => {
+      if (api_canbus.update.total > 0) {
+        if (api_canbus.version.is) {
+          api_canbus.checkVersion().then(() => toast_default.error(t("update.notify.warning"))).catch(() => toast_default.success(t("update.notify.completed")));
+          setTimeout(() => src_router.go(0), 5000);
+          onCancel();
+        } else api_canbus.bluetooth.disconnect();
       }
+    };
+    /** Отменить обновление */
+    const onCancel = () => {
+      visibleUpdate.value = false;
+      visibleProcess.value = false;
+      api_canbus.update.clear();
     };
     /** Ошибка обновления */
     const onErrorUpdate = msg => {
@@ -59373,11 +60232,12 @@ function UpdateFirmwareDialogvue_type_template_id_6612d504_ts_true_render(_ctx, 
     };
     (0,runtime_core_esm_bundler/* onMounted */.u2)(() => {
       api_canbus.addListener(API_VERSION_EVENT, onCompletingFirmware);
-      api_canbus.update.addListener(API_DEVICE_UPDATE_EVENT, onUpdate);
+      api_canbus.update.addListener(API_DEVICE_UPDATE_EVENT, onUpdateStatus);
+      api_canbus.addListener(API_DEVICE_UPDATE_EVENT_ERROR, onErrorUpdate);
     });
     (0,runtime_core_esm_bundler/* onUnmounted */.wx)(() => {
       api_canbus.removeListener(API_VERSION_EVENT, onCompletingFirmware);
-      api_canbus.update.removeListener(API_DEVICE_UPDATE_EVENT, onUpdate);
+      api_canbus.update.removeListener(API_DEVICE_UPDATE_EVENT, onUpdateStatus);
       api_canbus.removeListener(API_DEVICE_UPDATE_EVENT_ERROR, onErrorUpdate);
     });
     return {
@@ -59401,12 +60261,12 @@ function UpdateFirmwareDialogvue_type_template_id_6612d504_ts_true_render(_ctx, 
 
 
 ;
-const UpdateFirmwareDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(UpdateFirmwareDialogvue_type_script_lang_ts, [['render',UpdateFirmwareDialogvue_type_template_id_6612d504_ts_true_render]])
+const UpdateFirmwareDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(UpdateFirmwareDialogvue_type_script_lang_ts, [['render',UpdateFirmwareDialogvue_type_template_id_2dcc1423_ts_true_render]])
 
 /* harmony default export */ var UpdateFirmwareDialog = (UpdateFirmwareDialog_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/AboutDialog.vue?vue&type=template&id=fbb04e36&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/AboutDialog.vue?vue&type=template&id=7b4ac44c&scoped=true&ts=true
 
-function AboutDialogvue_type_template_id_fbb04e36_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function AboutDialogvue_type_template_id_7b4ac44c_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                                     
                                                       
                                                       
@@ -59481,9 +60341,9 @@ function AboutDialogvue_type_template_id_fbb04e36_scoped_true_ts_true_render(_ct
 
 
 
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/DeviceInfoDialog.vue?vue&type=template&id=7c81fc83&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/DeviceInfoDialog.vue?vue&type=template&id=25dc4600&ts=true
 
-function DeviceInfoDialogvue_type_template_id_7c81fc83_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function DeviceInfoDialogvue_type_template_id_25dc4600_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                                     
                                                       
                                                       
@@ -59491,10 +60351,11 @@ function DeviceInfoDialogvue_type_template_id_7c81fc83_ts_true_render(_ctx, _cac
   const _component_dialog_template = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("dialog-template");
   const _component_device_reset_dialog = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("device-reset-dialog");
   const _component_scanner = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("scanner");
+  const _component_test_dialog = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("test-dialog");
   return (0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)(runtime_core_esm_bundler/* Fragment */.ae, null, [(0,runtime_core_esm_bundler/* createVNode */.K2)(_component_dialog_template, {
     "content-class": "device-info",
     modelValue: $setup.visible,
-    "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => $setup.visible = $event),
+    "onUpdate:modelValue": _cache[3] || (_cache[3] = $event => $setup.visible = $event),
     title: _ctx.$t('deviceInfo.title'),
     icon: "on-board",
     width: "400px",
@@ -59523,7 +60384,13 @@ function DeviceInfoDialogvue_type_template_id_7c81fc83_ts_true_render(_ctx, _cac
       }), 128))]),
       _: 1
     })]),
-    btns: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(VBtn, {
+    btns: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [$setup.showButtonTest ? ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(VBtn, {
+      key: 0,
+      color: "secondary",
+      icon: "mdi-ab-testing",
+      disabled: !$setup.isLoadedValue,
+      onClick: _cache[0] || (_cache[0] = $event => $setup.visibleTest = true)
+    }, null, 8, ["disabled"])) : (0,runtime_core_esm_bundler/* createCommentVNode */.g1)("", true), (0,runtime_core_esm_bundler/* createVNode */.K2)(VBtn, {
       color: "secondary",
       icon: "mdi-magnify-scan",
       disabled: !$setup.isLoadedValue,
@@ -59532,11 +60399,11 @@ function DeviceInfoDialogvue_type_template_id_7c81fc83_ts_true_render(_ctx, _cac
       color: "secondary",
       icon: "mdi-restart",
       disabled: !$setup.isLoadedValue,
-      onClick: $setup.onResetClick
-    }, null, 8, ["disabled", "onClick"]), (0,runtime_core_esm_bundler/* createVNode */.K2)(VBtn, {
+      onClick: _cache[1] || (_cache[1] = $event => $setup.visibleReset = true)
+    }, null, 8, ["disabled"]), (0,runtime_core_esm_bundler/* createVNode */.K2)(VBtn, {
       color: "primary",
       "prepend-icon": "mdi-close",
-      onClick: _cache[0] || (_cache[0] = $event => $setup.visible = false)
+      onClick: _cache[2] || (_cache[2] = $event => $setup.visible = false)
     }, {
       default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.mY)((0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("btn.close")), 1)]),
       _: 1
@@ -59544,10 +60411,13 @@ function DeviceInfoDialogvue_type_template_id_7c81fc83_ts_true_render(_ctx, _cac
     _: 1
   }, 8, ["modelValue", "title"]), (0,runtime_core_esm_bundler/* createVNode */.K2)(_component_device_reset_dialog, {
     modelValue: $setup.visibleReset,
-    "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => $setup.visibleReset = $event)
+    "onUpdate:modelValue": _cache[4] || (_cache[4] = $event => $setup.visibleReset = $event)
   }, null, 8, ["modelValue"]), (0,runtime_core_esm_bundler/* createVNode */.K2)(_component_scanner, {
     modelValue: $setup.startedScanner,
-    "onUpdate:modelValue": _cache[3] || (_cache[3] = $event => $setup.startedScanner = $event)
+    "onUpdate:modelValue": _cache[5] || (_cache[5] = $event => $setup.startedScanner = $event)
+  }, null, 8, ["modelValue"]), (0,runtime_core_esm_bundler/* createVNode */.K2)(_component_test_dialog, {
+    modelValue: $setup.visibleTest,
+    "onUpdate:modelValue": _cache[6] || (_cache[6] = $event => $setup.visibleTest = $event)
   }, null, 8, ["modelValue"])], 64);
 }
 
@@ -59635,9 +60505,9 @@ const VCheckbox = genericComponent()({
     return {};
   }
 });
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/DeviceResetDialog.vue?vue&type=template&id=1ad62abf&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/DeviceResetDialog.vue?vue&type=template&id=520db326&ts=true
 
-function DeviceResetDialogvue_type_template_id_1ad62abf_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function DeviceResetDialogvue_type_template_id_520db326_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                                 
                                                       
                                                       
@@ -59714,7 +60584,10 @@ function DeviceResetDialogvue_type_template_id_1ad62abf_ts_true_render(_ctx, _ca
     DialogTemplate: DialogTemplate
   },
   props: {
-    modelValue: Boolean
+    modelValue: {
+      type: Boolean,
+      required: true
+    }
   },
   emits: ["update:modelValue"],
   setup(props, context) {
@@ -59727,14 +60600,16 @@ function DeviceResetDialogvue_type_template_id_1ad62abf_ts_true_render(_ctx, _ca
     });
     const resetConfig = (0,reactivity_esm_bundler/* ref */.IL)(false);
     const resetView = (0,reactivity_esm_bundler/* ref */.IL)(false);
-    /** Применить */
-    const onApply = () => {
-      api_canbus.rebootDevice(true, resetConfig.value, resetView.value);
-      visible.value = false;
-      setTimeout(() => {
+    (0,runtime_core_esm_bundler/* watch */.Kg)(modelValue, val => {
+      if (val) {
         resetConfig.value = false;
         resetView.value = false;
-      }, 500);
+      }
+    });
+    /** Применить */
+    const onApply = () => {
+      api_canbus.rebootDevice(!resetConfig.value && !resetView.value, resetConfig.value, resetView.value);
+      visible.value = false;
     };
     return {
       visible,
@@ -59752,7 +60627,7 @@ function DeviceResetDialogvue_type_template_id_1ad62abf_ts_true_render(_ctx, _ca
 
 
 ;
-const DeviceResetDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(DeviceResetDialogvue_type_script_lang_ts, [['render',DeviceResetDialogvue_type_template_id_1ad62abf_ts_true_render]])
+const DeviceResetDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(DeviceResetDialogvue_type_script_lang_ts, [['render',DeviceResetDialogvue_type_template_id_520db326_ts_true_render]])
 
 /* harmony default export */ var DeviceResetDialog = (DeviceResetDialog_exports_);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Scanner.vue?vue&type=template&id=2f9d613d&ts=true
@@ -59931,7 +60806,206 @@ const setScanCan = data => {
 const Scanner_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Scannervue_type_script_lang_ts, [['render',Scannervue_type_template_id_2f9d613d_ts_true_render]])
 
 /* harmony default export */ var Scanner = (Scanner_exports_);
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/TestDialog.vue?vue&type=template&id=3112a5c2&scoped=true&ts=true
+
+function TestDialogvue_type_template_id_3112a5c2_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+                                                                    
+                                                      
+                                                            
+  const _component_number_field = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("number-field");
+                                                      
+                                                      
+  const _component_dialog_template = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("dialog-template");
+  return (0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(_component_dialog_template, {
+    "content-class": "test",
+    modelValue: $setup.visible,
+    "onUpdate:modelValue": _cache[4] || (_cache[4] = $event => $setup.visible = $event),
+    title: _ctx.$t('test.title'),
+    info: _ctx.$t('test.description'),
+    icon: "steering-wheel",
+    width: "600px",
+    text: "",
+    actions: ""
+  }, {
+    body: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(VRow, {
+      class: "pb-2"
+    }, {
+      default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(VCol, {
+        cols: "12",
+        class: "pb-1"
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(VTextField, {
+          class: "test__text",
+          modelValue: $setup.text,
+          "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => $setup.text = $event),
+          label: _ctx.$t('test.text.title'),
+          hint: _ctx.$t('test.text.description'),
+          variant: "underlined",
+          density: "compact",
+          rules: [$setup.rules.required, $setup.rules.counter, $setup.rules.english],
+          "persistent-hint": "",
+          dense: ""
+        }, null, 8, ["modelValue", "label", "hint", "rules"])]),
+        _: 1
+      }), (0,runtime_core_esm_bundler/* createVNode */.K2)(VCol, {
+        cols: "12",
+        class: "pb-1"
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(VSelect, {
+          modelValue: $setup.style,
+          "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => $setup.style = $event),
+          label: _ctx.$t('onboard.viewSetting.type.title'),
+          items: $setup.styleList,
+          hint: _ctx.$t('onboard.viewSetting.type.description'),
+          variant: "underlined",
+          "item-title": "label",
+          "item-value": "value",
+          "persistent-hint": ""
+        }, null, 8, ["modelValue", "label", "items", "hint"])]),
+        _: 1
+      }), (0,runtime_core_esm_bundler/* createVNode */.K2)(VCol, {
+        cols: "12"
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(_component_number_field, {
+          modelValue: $setup.time,
+          "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => $setup.time = $event),
+          label: _ctx.$t('onboard.viewSetting.time.title'),
+          hint: _ctx.$t('onboard.viewSetting.time.description'),
+          max: 60,
+          min: 1
+        }, null, 8, ["modelValue", "label", "hint"])]),
+        _: 1
+      })]),
+      _: 1
+    })]),
+    btns: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(VBtn, {
+      color: "primary",
+      onClick: $setup.onShowClick
+    }, {
+      default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.mY)((0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("test.btnShow")), 1)]),
+      _: 1
+    }, 8, ["onClick"]), (0,runtime_core_esm_bundler/* createVNode */.K2)(VBtn, {
+      color: "primary",
+      "prepend-icon": "mdi-close",
+      onClick: _cache[3] || (_cache[3] = $event => $setup.visible = false)
+    }, {
+      default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.mY)((0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("btn.close")), 1)]),
+      _: 1
+    })]),
+    _: 1
+  }, 8, ["modelValue", "title", "info"]);
+}
+
+/* Vuetify */
+
+
+
+
+
+
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/TestDialog.vue?vue&type=script&lang=ts
+
+
+
+
+
+
+
+
+/* harmony default export */ var TestDialogvue_type_script_lang_ts = ({
+  name: "TestDialog",
+  components: {
+    DialogTemplate: DialogTemplate,
+    InputCardItem: InputCardItem,
+    NumberField: NumberField
+  },
+  props: {
+    modelValue: {
+      type: Boolean,
+      required: true
+    }
+  },
+  emits: ["update:modelValue"],
+  setup(props, {
+    emit
+  }) {
+    const {
+      modelValue
+    } = (0,reactivity_esm_bundler/* toRefs */.kx)(props);
+    const {
+      tm,
+      t
+    } = useI18n();
+    const visible = (0,runtime_core_esm_bundler/* computed */.S6)({
+      get: () => modelValue.value,
+      set: val => emit("update:modelValue", val)
+    });
+    const rules = (0,runtime_core_esm_bundler/* computed */.S6)(() => ({
+      required: value => !!value || t("rules.required"),
+      // @ts-ignore
+      counter: value => value.length <= 32 || t("rules.counter", 32, {
+        n: 32
+      }),
+      english: value => /^[^а-яА-Я]+$/.test(value) || t("rules.english")
+    }));
+    const text = (0,reactivity_esm_bundler/* ref */.IL)("");
+    const style = (0,reactivity_esm_bundler/* ref */.IL)(TViewType.VIEW_TEXT_SIMPLE);
+    const time = (0,reactivity_esm_bundler/* ref */.IL)(0);
+    const styleList = (0,runtime_core_esm_bundler/* computed */.S6)(() => tm("onboard.viewSetting.type.items")?.map((x, i) => ({
+      label: x,
+      value: i
+    })));
+    (0,runtime_core_esm_bundler/* watch */.Kg)(modelValue, val => {
+      if (val) {
+        text.value = src_store.getters["value/test"].text;
+        style.value = TViewType.VIEW_TEXT_TICKER;
+        time.value = 6;
+      }
+    });
+    /** Кнопка: "Показать" */
+    const onShowClick = () => {
+      visible.value = false;
+      src_store.commit("view/setView", {
+        exec: API_TEST_VIEW_EXEC,
+        enabled: true,
+        type: style.value,
+        time: time.value,
+        delay: 2
+      });
+      src_store.commit("value/setTestText", text.value);
+    };
+    return {
+      visible,
+      text,
+      rules,
+      style,
+      styleList,
+      time,
+      onShowClick
+    };
+  }
+});
+;// CONCATENATED MODULE: ./src/components/dialogs/TestDialog.vue?vue&type=script&lang=ts
+ 
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/TestDialog.vue?vue&type=style&index=0&id=3112a5c2&lang=scss&scoped=true
+// extracted by mini-css-extract-plugin
+
+;// CONCATENATED MODULE: ./src/components/dialogs/TestDialog.vue?vue&type=style&index=0&id=3112a5c2&lang=scss&scoped=true
+
+;// CONCATENATED MODULE: ./src/components/dialogs/TestDialog.vue
+
+
+
+
+;
+
+
+const TestDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(TestDialogvue_type_script_lang_ts, [['render',TestDialogvue_type_template_id_3112a5c2_scoped_true_ts_true_render],['__scopeId',"data-v-3112a5c2"]])
+
+/* harmony default export */ var TestDialog = (TestDialog_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/DeviceInfoDialog.vue?vue&type=script&lang=ts
+
+
 
 
 
@@ -59942,6 +61016,7 @@ const Scanner_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Scannervue
 /* harmony default export */ var DeviceInfoDialogvue_type_script_lang_ts = ({
   name: "DeviceInfoDialog",
   components: {
+    TestDialog: TestDialog,
     Scanner: Scanner,
     DialogTemplate: DialogTemplate,
     DeviceResetDialog: DeviceResetDialog
@@ -59967,6 +61042,8 @@ const Scanner_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Scannervue
     const isLoadedValue = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["config/info"].isData);
     const visibleReset = (0,reactivity_esm_bundler/* ref */.IL)(false);
     const startedScanner = (0,reactivity_esm_bundler/* ref */.IL)(false);
+    const visibleTest = (0,reactivity_esm_bundler/* ref */.IL)(false);
+    const showButtonTest = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["config/carModel"] !== TCarModel.CAR_MODEL_MAZDA_CX9_REST);
     const modelDeviceInfo = (0,runtime_core_esm_bundler/* computed */.S6)(() => {
       const info = src_store.getters["config/info"];
       return {
@@ -59981,11 +61058,6 @@ const Scanner_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Scannervue
     (0,runtime_core_esm_bundler/* watch */.Kg)(modelValue, val => {
       src_store.dispatch("config/infoUpdateLoop", val);
     });
-    /** Показать диалог сброса настроек */
-    const onResetClick = () => {
-      visible.value = false;
-      visibleReset.value = true;
-    };
     /** Показать диалог запроса на сканирование can-шины */
     const onScanClick = () => {
       src_store.commit("app/setMessage", {
@@ -60010,7 +61082,8 @@ const Scanner_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Scannervue
       modelDeviceInfo,
       visibleReset,
       startedScanner,
-      onResetClick,
+      visibleTest,
+      showButtonTest,
       onScanClick
     };
   }
@@ -60023,12 +61096,12 @@ const Scanner_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Scannervue
 
 
 ;
-const DeviceInfoDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(DeviceInfoDialogvue_type_script_lang_ts, [['render',DeviceInfoDialogvue_type_template_id_7c81fc83_ts_true_render]])
+const DeviceInfoDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(DeviceInfoDialogvue_type_script_lang_ts, [['render',DeviceInfoDialogvue_type_template_id_25dc4600_ts_true_render]])
 
 /* harmony default export */ var DeviceInfoDialog = (DeviceInfoDialog_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/ChoosingCarModelDialog.vue?vue&type=template&id=0041262b&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/ChoosingCarModelDialog.vue?vue&type=template&id=069aa406&ts=true
 
-function ChoosingCarModelDialogvue_type_template_id_0041262b_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function ChoosingCarModelDialogvue_type_template_id_069aa406_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                             
                                                       
                                                       
@@ -60100,7 +61173,10 @@ function ChoosingCarModelDialogvue_type_template_id_0041262b_ts_true_render(_ctx
     DialogTemplate: DialogTemplate
   },
   props: {
-    modelValue: Boolean,
+    modelValue: {
+      type: Boolean,
+      required: true
+    },
     carModel: Number
   },
   emits: ["update:modelValue", "click:apply"],
@@ -60147,7 +61223,7 @@ function ChoosingCarModelDialogvue_type_template_id_0041262b_ts_true_render(_ctx
 
 
 ;
-const ChoosingCarModelDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(ChoosingCarModelDialogvue_type_script_lang_ts, [['render',ChoosingCarModelDialogvue_type_template_id_0041262b_ts_true_render]])
+const ChoosingCarModelDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(ChoosingCarModelDialogvue_type_script_lang_ts, [['render',ChoosingCarModelDialogvue_type_template_id_069aa406_ts_true_render]])
 
 /* harmony default export */ var ChoosingCarModelDialog = (ChoosingCarModelDialog_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/AboutDialog.vue?vue&type=script&lang=ts
@@ -60221,7 +61297,7 @@ const pkg = __webpack_require__(6604);
      */
     const onCarModelApplyClick = id => {
       visibleCarModel.value = false;
-      if (src_store.getters["config/mazda"].carModel !== id) {
+      if (src_store.getters["config/carModel"] !== id) {
         src_store.commit("config/setMazdaCarModel", id);
       }
     };
@@ -60239,10 +61315,10 @@ const pkg = __webpack_require__(6604);
 });
 ;// CONCATENATED MODULE: ./src/components/dialogs/AboutDialog.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/AboutDialog.vue?vue&type=style&index=0&id=fbb04e36&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/AboutDialog.vue?vue&type=style&index=0&id=7b4ac44c&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/dialogs/AboutDialog.vue?vue&type=style&index=0&id=fbb04e36&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/components/dialogs/AboutDialog.vue?vue&type=style&index=0&id=7b4ac44c&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/components/dialogs/AboutDialog.vue
 
@@ -60252,12 +61328,12 @@ const pkg = __webpack_require__(6604);
 ;
 
 
-const AboutDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(AboutDialogvue_type_script_lang_ts, [['render',AboutDialogvue_type_template_id_fbb04e36_scoped_true_ts_true_render],['__scopeId',"data-v-fbb04e36"]])
+const AboutDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(AboutDialogvue_type_script_lang_ts, [['render',AboutDialogvue_type_template_id_7b4ac44c_scoped_true_ts_true_render],['__scopeId',"data-v-7b4ac44c"]])
 
 /* harmony default export */ var AboutDialog = (AboutDialog_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=template&id=540deef6&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=template&id=1ad43e50&scoped=true&ts=true
 
-function OnboardButtonsDialogvue_type_template_id_540deef6_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function OnboardButtonsDialogvue_type_template_id_1ad43e50_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                       
                                                                   
                                                       
@@ -60449,7 +61525,10 @@ function OnboardButtonsDialogvue_type_template_id_540deef6_scoped_true_ts_true_r
     DialogTemplate: DialogTemplate
   },
   props: {
-    modelValue: Boolean
+    modelValue: {
+      type: Boolean,
+      required: true
+    }
   },
   emits: ["update:modelValue"],
   setup(props, {
@@ -60467,6 +61546,12 @@ function OnboardButtonsDialogvue_type_template_id_540deef6_scoped_true_ts_true_r
       // @ts-ignore
       return "ontouchstart" in window || navigator?.maxTouchPoints > 0 || navigator?.msMaxTouchPoints > 0;
     };
+    /**
+     * Отправить нажатие
+     * @param {TMazdaButton} btn Кнопка
+     * @param {boolean} press Нажата
+     * @param {number} timeout Время удержания
+     */
     const send = (btn, press, timeout) => {
       const action = new MazdaAction();
       action.btnType = btn;
@@ -60476,6 +61561,12 @@ function OnboardButtonsDialogvue_type_template_id_540deef6_scoped_true_ts_true_r
       navigator.vibrate(30);
     };
     const timeouts = [{}, {}, {}, {}, {}, {}, {}];
+    /**
+     * Нажать
+     * @param {TMazdaButton} btn Кнопка
+     * @param {number} timeout Время удержания
+     * @param {boolean} reSend Повторно отправить
+     */
     const press = (btn, timeout, reSend) => {
       const item = timeouts[btn];
       if (!item.press) {
@@ -60490,6 +61581,10 @@ function OnboardButtonsDialogvue_type_template_id_540deef6_scoped_true_ts_true_r
         }
       }
     };
+    /**
+     * Отпустить
+     * @param {TMazdaButton} btn Кнопка
+     */
     const release = btn => {
       const item = timeouts[btn];
       if (item.press) {
@@ -60546,10 +61641,10 @@ function OnboardButtonsDialogvue_type_template_id_540deef6_scoped_true_ts_true_r
 });
 ;// CONCATENATED MODULE: ./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=style&index=0&id=540deef6&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=style&index=0&id=1ad43e50&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=style&index=0&id=540deef6&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=style&index=0&id=1ad43e50&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/components/dialogs/OnboardButtonsDialog.vue
 
@@ -60559,230 +61654,9 @@ function OnboardButtonsDialogvue_type_template_id_540deef6_scoped_true_ts_true_r
 ;
 
 
-const OnboardButtonsDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(OnboardButtonsDialogvue_type_script_lang_ts, [['render',OnboardButtonsDialogvue_type_template_id_540deef6_scoped_true_ts_true_render],['__scopeId',"data-v-540deef6"]])
+const OnboardButtonsDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(OnboardButtonsDialogvue_type_script_lang_ts, [['render',OnboardButtonsDialogvue_type_template_id_1ad43e50_scoped_true_ts_true_render],['__scopeId',"data-v-1ad43e50"]])
 
 /* harmony default export */ var OnboardButtonsDialog = (OnboardButtonsDialog_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/TestDialog.vue?vue&type=template&id=77da9986&scoped=true&ts=true
-
-function TestDialogvue_type_template_id_77da9986_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
-                                                                    
-                                                      
-                                                            
-  const _component_number_field = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("number-field");
-                                                      
-                                                      
-  const _component_dialog_template = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("dialog-template");
-  return (0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(_component_dialog_template, {
-    "content-class": "test",
-    modelValue: $setup.visible,
-    "onUpdate:modelValue": _cache[4] || (_cache[4] = $event => $setup.visible = $event),
-    title: _ctx.$t('test.title'),
-    info: _ctx.$t('test.description'),
-    icon: "steering-wheel",
-    width: "600px",
-    text: "",
-    actions: ""
-  }, {
-    body: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(VRow, {
-      class: "pb-2"
-    }, {
-      default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(VCol, {
-        cols: "12",
-        class: "pb-1"
-      }, {
-        default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(VTextField, {
-          class: "test__text",
-          modelValue: $setup.text,
-          "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => $setup.text = $event),
-          label: _ctx.$t('test.text.title'),
-          hint: _ctx.$t('test.text.description'),
-          variant: "underlined",
-          density: "compact",
-          rules: [$setup.rules.required, $setup.rules.counter, $setup.rules.english],
-          "persistent-hint": "",
-          dense: ""
-        }, null, 8, ["modelValue", "label", "hint", "rules"])]),
-        _: 1
-      }), (0,runtime_core_esm_bundler/* createVNode */.K2)(VCol, {
-        cols: "12",
-        class: "pb-1"
-      }, {
-        default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(VSelect, {
-          modelValue: $setup.style,
-          "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => $setup.style = $event),
-          label: _ctx.$t('onboard.viewSetting.type.title'),
-          items: $setup.styleList,
-          hint: _ctx.$t('onboard.viewSetting.type.description'),
-          variant: "underlined",
-          "item-title": "label",
-          "item-value": "value",
-          "persistent-hint": ""
-        }, null, 8, ["modelValue", "label", "items", "hint"])]),
-        _: 1
-      }), (0,runtime_core_esm_bundler/* createVNode */.K2)(VCol, {
-        cols: "12"
-      }, {
-        default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(_component_number_field, {
-          modelValue: $setup.time,
-          "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => $setup.time = $event),
-          label: _ctx.$t('onboard.viewSetting.time.title'),
-          hint: _ctx.$t('onboard.viewSetting.time.description'),
-          max: 60,
-          min: 1
-        }, null, 8, ["modelValue", "label", "hint"])]),
-        _: 1
-      })]),
-      _: 1
-    })]),
-    btns: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(VBtn, {
-      color: "primary",
-      onClick: $setup.onShowClick
-    }, {
-      default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.mY)((0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("test.btnShow")), 1)]),
-      _: 1
-    }, 8, ["onClick"]), (0,runtime_core_esm_bundler/* createVNode */.K2)(VBtn, {
-      color: "primary",
-      "prepend-icon": "mdi-close",
-      onClick: _cache[3] || (_cache[3] = $event => $setup.visible = false)
-    }, {
-      default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.mY)((0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("btn.close")), 1)]),
-      _: 1
-    })]),
-    _: 1
-  }, 8, ["modelValue", "title", "info"]);
-}
-
-/* Vuetify */
-
-
-
-
-
-
-;// CONCATENATED MODULE: ./src/models/pjcan/test/TestValue.ts
-
-
-
-const API_TEST_VALUE_EXEC = 0xf0;
-const API_TEST_VALUE_EVENT = "TestValue";
-const API_TEST_VIEW_EXEC = 0xf3;
-const API_TEST_VIEW_EVENT = "TestView";
-/** Модель значений тестирования */
-class TestValue extends BaseModel {
-  constructor(data) {
-    super(API_TEST_VALUE_EXEC);
-    _defineProperty(this, "text", "");
-    if (data) this.set(data);
-  }
-  /**
-   * Запись данных
-   * @param {DataView} buf Буфер данных
-   */
-  set(buf) {
-    return this._set(this, this.exec, TestValue.size, new BluetoothStruct(TestValue.struct), buf);
-  }
-  /** Чтение данных */
-  get() {
-    return this._get(this, this.exec, TestValue.size, new BluetoothStruct(TestValue.struct));
-  }
-}
-_defineProperty(TestValue, "struct", {
-  text: BluetoothStruct.char(32)
-});
-_defineProperty(TestValue, "size", 32);
-;// CONCATENATED MODULE: ./src/models/pjcan/test/index.ts
-
-
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/TestDialog.vue?vue&type=script&lang=ts
-
-
-
-
-
-
-
-
-/* harmony default export */ var TestDialogvue_type_script_lang_ts = ({
-  name: "TestDialog",
-  components: {
-    DialogTemplate: DialogTemplate,
-    InputCardItem: InputCardItem,
-    NumberField: NumberField
-  },
-  props: {
-    modelValue: Boolean
-  },
-  emits: ["update:modelValue"],
-  setup(props, {
-    emit
-  }) {
-    const {
-      modelValue
-    } = (0,reactivity_esm_bundler/* toRefs */.kx)(props);
-    const {
-      tm,
-      t
-    } = useI18n();
-    const visible = (0,runtime_core_esm_bundler/* computed */.S6)({
-      get: () => modelValue.value,
-      set: val => emit("update:modelValue", val)
-    });
-    const rules = (0,runtime_core_esm_bundler/* computed */.S6)(() => ({
-      required: value => !!value || t("rules.required"),
-      // @ts-ignore
-      counter: value => value.length <= 32 || t("rules.counter", 32, {
-        n: 32
-      }),
-      english: value => /^[^а-яА-Я]+$/.test(value) || t("rules.english")
-    }));
-    const text = (0,reactivity_esm_bundler/* ref */.IL)(" -- TEST -- ");
-    const style = (0,reactivity_esm_bundler/* ref */.IL)(2);
-    const time = (0,reactivity_esm_bundler/* ref */.IL)(6);
-    const styleList = (0,runtime_core_esm_bundler/* computed */.S6)(() => tm("onboard.viewSetting.type.items")?.map((x, i) => ({
-      label: x,
-      value: i
-    })));
-    /** Кнопка: "Показать" */
-    const onShowClick = () => {
-      const testView = new ViewConfig(API_TEST_VIEW_EXEC);
-      testView.enabled = true;
-      testView.type = style.value;
-      testView.time = time.value;
-      api_canbus.query(testView);
-      const test = new TestValue();
-      test.text = text.value;
-      api_canbus.query(test);
-      visible.value = false;
-    };
-    return {
-      visible,
-      text,
-      rules,
-      style,
-      styleList,
-      time,
-      onShowClick
-    };
-  }
-});
-;// CONCATENATED MODULE: ./src/components/dialogs/TestDialog.vue?vue&type=script&lang=ts
- 
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/TestDialog.vue?vue&type=style&index=0&id=77da9986&lang=scss&scoped=true
-// extracted by mini-css-extract-plugin
-
-;// CONCATENATED MODULE: ./src/components/dialogs/TestDialog.vue?vue&type=style&index=0&id=77da9986&lang=scss&scoped=true
-
-;// CONCATENATED MODULE: ./src/components/dialogs/TestDialog.vue
-
-
-
-
-;
-
-
-const TestDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(TestDialogvue_type_script_lang_ts, [['render',TestDialogvue_type_template_id_77da9986_scoped_true_ts_true_render],['__scopeId',"data-v-77da9986"]])
-
-/* harmony default export */ var TestDialog = (TestDialog_exports_);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/MessageDialog.vue?vue&type=template&id=050de974&ts=true
 
 function MessageDialogvue_type_template_id_050de974_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -60889,8 +61763,6 @@ const MessageDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Mess
 
 
 
-
-
 /* harmony default export */ var BaseLayoutvue_type_script_lang_ts = ({
   name: "BaseLayout",
   components: {
@@ -60899,7 +61771,6 @@ const MessageDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Mess
     MenuDots: MenuDots,
     AboutDialog: AboutDialog,
     OnboardButtonsDialog: OnboardButtonsDialog,
-    TestDialog: TestDialog,
     MessageDialog: MessageDialog,
     IconCustom: IconCustom
   },
@@ -60910,7 +61781,6 @@ const MessageDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Mess
     } = useI18n();
     const visibleAbout = (0,reactivity_esm_bundler/* ref */.IL)(false);
     const visibleOnboardButtons = (0,reactivity_esm_bundler/* ref */.IL)(false);
-    const visibleTest = (0,reactivity_esm_bundler/* ref */.IL)(false);
     const visibleUpdate = (0,reactivity_esm_bundler/* ref */.IL)(false);
     const pageWidth = (0,reactivity_esm_bundler/* ref */.IL)(0);
     const pageHeight = (0,reactivity_esm_bundler/* ref */.IL)(0);
@@ -60932,18 +61802,18 @@ const MessageDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Mess
       }, {
         id: 40,
         title: t("menu.onboardButtons")
-      }, {
+      }, {}, {
         id: 60,
         title: t("menu.settings.options"),
         disabled: name === "Options"
-      }, {}, {
+      }, {
         id: 10,
         title: t("menu.settings.buttonsSW1"),
         disabled: name === "Buttons" && query?.type === "sw1"
-      }, {}, {
+      }, {
         id: 20,
         title: t("menu.language." + (locale.value !== "ru" ? "russian" : "english"))
-      });
+      }, {});
       if (typeof newVersionFirmware.value === "string") {
         result.push({
           id: 70,
@@ -60952,13 +61822,7 @@ const MessageDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Mess
           })
         });
       }
-      if (src_store.getters["config/carModel"] !== TCarModel.CAR_MODEL_MAZDA_CX9_REST) {
-        result.push({
-          id: 50,
-          title: t("menu.test")
-        });
-      }
-      result.push({}, {
+      result.push({
         id: 30,
         title: t("menu.about")
       });
@@ -60989,9 +61853,6 @@ const MessageDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Mess
           break;
         case 40:
           visibleOnboardButtons.value = true;
-          break;
-        case 50:
-          visibleTest.value = true;
           break;
         case 60:
           src_router.push({
@@ -61053,7 +61914,6 @@ const MessageDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Mess
       newVersionFirmware,
       visibleAbout,
       visibleOnboardButtons,
-      visibleTest,
       visibleUpdate,
       pageWidth,
       pageHeight,
@@ -61066,10 +61926,10 @@ const MessageDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Mess
 });
 ;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=style&index=0&id=a5fefa58&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=style&index=0&id=6b14791c&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=style&index=0&id=a5fefa58&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=style&index=0&id=6b14791c&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue
 
@@ -61079,10 +61939,13 @@ const MessageDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Mess
 ;
 
 
-const BaseLayout_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(BaseLayoutvue_type_script_lang_ts, [['render',BaseLayoutvue_type_template_id_a5fefa58_scoped_true_ts_true_render],['__scopeId',"data-v-a5fefa58"]])
+const BaseLayout_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(BaseLayoutvue_type_script_lang_ts, [['render',BaseLayoutvue_type_template_id_6b14791c_scoped_true_ts_true_render],['__scopeId',"data-v-6b14791c"]])
 
 /* harmony default export */ var BaseLayout = (BaseLayout_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=script&lang=ts
+
+
+
 
 
 
@@ -61109,16 +61972,32 @@ const BaseLayout_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(BaseLay
     BaseLayout: BaseLayout
   },
   setup() {
+    const {
+      t
+    } = useI18n();
     // записываем входящую конфигурацию в store
     api_canbus.addListener(API_VERSION_EVENT, data => src_store.commit("config/setVersion", data));
     api_canbus.addListener(API_DEVICE_INFO_EVENT, data => src_store.commit("config/setInfo", data));
-    api_canbus.addListener(API_MAZDA_CONFIG_EVENT, data => src_store.commit("config/setMazda", data));
+    api_canbus.addListener(API_MAZDA_CONFIG_EVENT, data => {
+      src_store.commit("config/setMazda", data);
+      if (src_store.getters["config/carModel"] === TCarModel.CAR_MODEL_UNKNOWN) {
+        toast_default.warning(t("help.onboard.noModelSelected"), {
+          autoClose: false
+        });
+      }
+    });
     api_canbus.addListener(API_TEYES_CONFIG_EVENT, data => src_store.commit("config/setTeyes", data));
     api_canbus.addListener(API_BUTTONS_SW1_CONFIG_EVENT, data => src_store.commit("config/setSW1", data));
     api_canbus.addListener(API_BOSE_CONFIG_EVENT, data => src_store.commit("config/setBose", data));
+    api_canbus.addListener(API_DOORS_CONFIG_EVENT, data => src_store.commit("config/setDoors", data));
     api_canbus.addListener(API_ENGINE_CONFIG_EVENT, data => src_store.commit("config/setEngine", data));
     api_canbus.addListener(API_FUEL_CONFIG_EVENT, data => src_store.commit("config/setFuel", data));
     api_canbus.addListener(API_VOLUME_CONFIG_EVENT, data => src_store.commit("config/setVolume", data));
+    api_canbus.addListener(API_DATETIME_CONFIG_EVENT, data => {
+      src_store.commit("config/setDatetime", data);
+      // синхронизация времени
+      if (src_store.getters["config/datetime"].unixtime === 0) src_store.commit("config/synchDatetime");
+    });
     // записываем входящие значения в store
     api_canbus.addListener(API_BUTTON_SW1_VALUE_EVENT, data => src_store.commit("value/setSW1", data));
     api_canbus.addListener(API_CLIMATE_VALUE_EVENT, data => src_store.commit("value/setClimate", data));
@@ -61144,15 +62023,18 @@ const BaseLayout_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(BaseLay
     api_canbus.addListener(API_SENSORS_VIEW_EVENT, data => src_store.commit("view/setSensors", data));
     api_canbus.addListener(API_TEMPERATURE_VIEW_EVENT, data => src_store.commit("view/setTemperature", data));
     api_canbus.addListener(API_VOLUME_VIEW_EVENT, data => src_store.commit("view/setVolume", data));
+    api_canbus.addListener(API_DATETIME_VIEW_EVENT, data => src_store.commit("view/setDatetime", data));
     const onBegin = status => {
       if (status) {
         const choice = new ChoiceValue();
         choice.listID.push(API_MAZDA_CONFIG_EXEC);
         choice.listID.push(API_TEYES_CONFIG_EXEC);
+        choice.listID.push(API_DOORS_CONFIG_EXEC);
         choice.listID.push(API_ENGINE_CONFIG_EXEC);
         choice.listID.push(API_FUEL_CONFIG_EXEC);
         choice.listID.push(API_VOLUME_CONFIG_EXEC);
         choice.listID.push(API_BOSE_CONFIG_EXEC);
+        choice.listID.push(API_DATETIME_CONFIG_EXEC);
         api_canbus.query(choice, true);
         api_canbus.query(src_store.getters["config/sw1"], true);
         choice.listID = [];
@@ -61169,6 +62051,7 @@ const BaseLayout_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(BaseLay
         choice.listID.push(API_SENSORS_VIEW_EXEC);
         choice.listID.push(API_TEMPERATURE_VIEW_EXEC);
         choice.listID.push(API_VOLUME_VIEW_EXEC);
+        choice.listID.push(API_DATETIME_VIEW_EXEC);
         api_canbus.query(choice, true);
       }
     };
@@ -87994,7 +88877,7 @@ if (true) {
 
 /***/ }),
 
-/***/ 6596:
+/***/ 8976:
 /***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -114851,13 +115734,13 @@ if (DESCRIPTORS && !('size' in URLSearchParamsPrototype)) {
 /***/ (function(module) {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"name":"pjcan","version":"1.0.0","private":true,"description":"CanBus project for Mazda 3","author":"PJ82. Spiridonov Vladislav","scripts":{"serve":"vue-cli-service serve","build":"vue-cli-service build","build test":"vue-cli-service build --mode test"},"dependencies":{"@egjs/vue3-flicking":"^4.10.2","@mdi/font":"7.0.96","axios":"^1.1.3","bitset":"^5.1.1","core-js":"^3.26.0","eventemitter3":"^4.0.7","moment":"^2.29.4","register-service-worker":"^1.7.2","roboto-fontface":"*","screenfull":"^6.0.2","vue":"^3.2.41","vue-i18n":"^9.2.2","vue-router":"^4.1.6","vue3-toastify":"^0.0.3","vuedraggable":"^4.1.0","vuetify":"^3.1.5","vuex":"^4.1.0","webfontloader":"^1.6.28"},"devDependencies":{"@types/node":"^12.0.2","@types/webfontloader":"^1.6.29","@typescript-eslint/eslint-plugin":"^5.42.0","@typescript-eslint/parser":"^5.42.0","@vue/cli-plugin-babel":"~5.0.8","@vue/cli-plugin-eslint":"~5.0.8","@vue/cli-plugin-pwa":"~5.0.8","@vue/cli-plugin-router":"~5.0.8","@vue/cli-plugin-typescript":"~5.0.8","@vue/cli-plugin-vuex":"~5.0.8","@vue/cli-service":"~5.0.8","@vue/eslint-config-typescript":"^11.0.2","@vueuse/core":"^9.4.0","eslint":"^8.26.0","eslint-config-prettier":"^8.5.0","eslint-plugin-prettier":"^4.2.1","eslint-plugin-vue":"^9.7.0","prettier":"^2.7.1","sass":"^1.56.0","sass-loader":"^13.1.0","script-ext-html-webpack-plugin":"^2.1.5","typescript":"~4.8.4","vue-cli-plugin-vuetify":"~2.5.8","webpack-plugin-vuetify":"^2.0.0"},"eslintConfig":{"root":true,"env":{"node":true},"extends":["plugin:vue/vue3-essential","eslint:recommended","@vue/typescript/recommended","plugin:prettier/recommended"],"parserOptions":{"ecmaVersion":2020},"rules":{}},"browserslist":["> 1%","last 2 versions","not dead","not ie 11"],"productName":"PJCan App"}');
+module.exports = /*#__PURE__*/JSON.parse('{"name":"pjcan","version":"1.1.0","private":true,"description":"CanBus project for Mazda 3","author":"PJ82. Spiridonov Vladislav","scripts":{"serve":"vue-cli-service serve","build":"vue-cli-service build","build test":"vue-cli-service build --mode test"},"dependencies":{"@egjs/vue3-flicking":"^4.10.2","@mdi/font":"7.0.96","axios":"^1.1.3","bitset":"^5.1.1","core-js":"^3.26.0","eventemitter3":"^4.0.7","moment":"^2.29.4","register-service-worker":"^1.7.2","roboto-fontface":"*","screenfull":"^6.0.2","vue":"^3.2.41","vue-i18n":"^9.2.2","vue-router":"^4.1.6","vue3-toastify":"^0.0.3","vuedraggable":"^4.1.0","vuetify":"^3.1.5","vuex":"^4.1.0","webfontloader":"^1.6.28"},"devDependencies":{"@types/node":"^12.0.2","@types/webfontloader":"^1.6.29","@typescript-eslint/eslint-plugin":"^5.42.0","@typescript-eslint/parser":"^5.42.0","@vue/cli-plugin-babel":"~5.0.8","@vue/cli-plugin-eslint":"~5.0.8","@vue/cli-plugin-pwa":"~5.0.8","@vue/cli-plugin-router":"~5.0.8","@vue/cli-plugin-typescript":"~5.0.8","@vue/cli-plugin-vuex":"~5.0.8","@vue/cli-service":"~5.0.8","@vue/eslint-config-typescript":"^11.0.2","@vueuse/core":"^9.4.0","eslint":"^8.26.0","eslint-config-prettier":"^8.5.0","eslint-plugin-prettier":"^4.2.1","eslint-plugin-vue":"^9.7.0","prettier":"^2.7.1","sass":"^1.56.0","sass-loader":"^13.1.0","script-ext-html-webpack-plugin":"^2.1.5","typescript":"~4.8.4","vue-cli-plugin-vuetify":"~2.5.8","webpack-plugin-vuetify":"^2.0.0"},"eslintConfig":{"root":true,"env":{"node":true},"extends":["plugin:vue/vue3-essential","eslint:recommended","@vue/typescript/recommended","plugin:prettier/recommended"],"parserOptions":{"ecmaVersion":2020},"rules":{}},"browserslist":["> 1%","last 2 versions","not dead","not ie 11"],"productName":"PJCan App"}');
 
 /***/ })
 
 },
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
-/******/ var __webpack_exports__ = (__webpack_exec__(8976));
+/******/ var __webpack_exports__ = (__webpack_exec__(984));
 /******/ }
 ]);

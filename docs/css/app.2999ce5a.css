@@ -4892,12 +4892,13 @@ textarea.v-field__input::placeholder {
 }
 .slider-card-item__description[data-v-3d48ad1c]{font-size:.875rem;line-height:.875rem;font-weight:300;opacity:var(--v-medium-emphasis-opacity)}.slider-card-item__disabled[data-v-3d48ad1c]{opacity:.35}
 .select-card-item__disabled[data-v-20c266ba]{opacity:.35}.select-card-item[data-v-20c266ba] .v-input__control{height:32px}.select-card-item[data-v-20c266ba] .v-field__input{padding-top:0 !important}.select-card-item[data-v-20c266ba] .v-field__append-inner{padding-top:0 !important}
-.onboard[data-v-4686eee3]{height:100%}
+.onboard[data-v-f2a414e8]{height:100%}
 .settings-card__mode-title[data-v-1fe52604]{text-transform:uppercase}
 .button-definition-dialog[data-v-268d9a5a]{max-width:400px}
-.listSW1[data-v-4a520ec8]{height:100%}.listSW1[data-v-4a520ec8] .settings-card-1 .mdi-play{transform:rotate(-90deg)}.listSW1[data-v-4a520ec8] .settings-card-2 .mdi-play{transform:rotate(90deg)}
+.listSW1[data-v-1c73dfce]{height:100%}.listSW1[data-v-1c73dfce] .settings-card-1 .mdi-play{transform:rotate(-90deg)}.listSW1[data-v-1c73dfce] .settings-card-2 .mdi-play{transform:rotate(90deg)}
+.datetime-card__description[data-v-2b7ec13f]{font-weight:300;font-size:.875rem;line-height:1rem !important;opacity:var(--v-disabled-opacity)}
 .onboard-card__item[data-v-18aac5dd]{box-shadow:none;background:#0b677b;border-radius:6px}.onboard-card__item--disabled[data-v-18aac5dd]{background:#676b6d !important}.onboard-card__description[data-v-18aac5dd]{font-weight:300;font-size:.875rem;line-height:1rem !important;opacity:var(--v-disabled-opacity)}
-.setting[data-v-531f47d5]{height:100%}
+.setting[data-v-1a90dfba]{height:100%}
 .bluetooth-btn[data-v-0b2ecac6] .mdi-bluetooth-off{color:#ef5350}
 .v-checkbox.v-input {
   flex: 0 1 auto;
@@ -4905,10 +4906,10 @@ textarea.v-field__input::placeholder {
 .v-checkbox .v-selection-control {
   min-height: var(--v-input-control-height);
 }
-.about__text-field[data-v-fbb04e36] .v-input__append{padding-top:25px}
-.onboard-buttons__btns-mode[data-v-540deef6]{width:100%}.onboard-buttons__btns-mode[data-v-540deef6] .v-btn{width:50%}.onboard-buttons__btns-main[data-v-540deef6]{width:100%;height:64px}.onboard-buttons__btns-main[data-v-540deef6] .v-btn{width:50%}.onboard-buttons__btns-main[data-v-540deef6] .v-btn__content{font-size:2rem;line-height:2.25rem}.onboard-buttons__btns-added[data-v-540deef6]{width:100%}.onboard-buttons__btns-added[data-v-540deef6] .v-btn{width:25%}.onboard-buttons__btns-mode[data-v-540deef6],.onboard-buttons__btns-main[data-v-540deef6],.onboard-buttons__btns-added[data-v-540deef6]{box-shadow:0 3px 1px -2px var(--v-shadow-key-umbra-opacity, rgba(0, 0, 0, 0.2)),0px 2px 2px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.14)),0px 1px 5px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.12))}
-.test__text[data-v-77da9986]{width:100%}.test__text[data-v-77da9986] .v-text-field__suffix{font-family:"Jura","Roboto",sans-serif !important}
-.base-layout__bg[data-v-a5fefa58]{position:fixed;top:0;left:0;width:100%;height:100%;background:center url(/pjcan-test/img/tire-track.7207681b.svg);opacity:10%;z-index:0}.base-layout__main[data-v-a5fefa58]{position:fixed;top:50px;left:0;padding:16px}.base-layout__onboard-buttons[data-v-a5fefa58]{font-size:1.25rem !important;line-height:1.5rem !important}
+.test__text[data-v-3112a5c2]{width:100%}.test__text[data-v-3112a5c2] .v-text-field__suffix{font-family:"Jura","Roboto",sans-serif !important}
+.about__text-field[data-v-7b4ac44c] .v-input__append{padding-top:25px}
+.onboard-buttons__btns-mode[data-v-1ad43e50]{width:100%}.onboard-buttons__btns-mode[data-v-1ad43e50] .v-btn{width:50%}.onboard-buttons__btns-main[data-v-1ad43e50]{width:100%;height:64px}.onboard-buttons__btns-main[data-v-1ad43e50] .v-btn{width:50%}.onboard-buttons__btns-main[data-v-1ad43e50] .v-btn__content{font-size:2rem;line-height:2.25rem}.onboard-buttons__btns-added[data-v-1ad43e50]{width:100%}.onboard-buttons__btns-added[data-v-1ad43e50] .v-btn{width:25%}.onboard-buttons__btns-mode[data-v-1ad43e50],.onboard-buttons__btns-main[data-v-1ad43e50],.onboard-buttons__btns-added[data-v-1ad43e50]{box-shadow:0 3px 1px -2px var(--v-shadow-key-umbra-opacity, rgba(0, 0, 0, 0.2)),0px 2px 2px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.14)),0px 1px 5px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.12))}
+.base-layout__bg[data-v-6b14791c]{position:fixed;top:0;left:0;width:100%;height:100%;background:center url(/pjcan-test/img/tire-track.7207681b.svg);opacity:10%;z-index:0}.base-layout__main[data-v-6b14791c]{position:fixed;top:50px;left:0;padding:16px}.base-layout__onboard-buttons[data-v-6b14791c]{font-size:1.25rem !important;line-height:1.5rem !important}
 /* MaterialDesignIcons.com */
 @font-face {
   font-family: "Material Design Icons";

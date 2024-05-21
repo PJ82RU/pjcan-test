@@ -1,5 +1,5 @@
 {
-	"current": [ 4, 0, 3, 136 ],
-	"iv": "634ab608a5ce7e677e6ce9c4ebbe2717",
-	"url": "/firmware/firmware.bin.enc"
+	"current": [ 4, 1, 0, 3 ],
+	"iv": "acd07b8d5151e7fbeafe30aaf3728e04",
+	"url": "/firmware/firmware.bin.acd07b8d5151e7fbeafe30aaf3728e04"
 }
