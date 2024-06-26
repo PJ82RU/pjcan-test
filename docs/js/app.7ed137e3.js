@@ -302,7 +302,7 @@ webpackContext.id = 2348;
 
 /***/ }),
 
-/***/ 984:
+/***/ 84:
 /***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -311,6 +311,7 @@ webpackContext.id = 2348;
 var getters_namespaceObject = {};
 __webpack_require__.r(getters_namespaceObject);
 __webpack_require__.d(getters_namespaceObject, {
+  language: function() { return language; },
   message: function() { return message; },
   notify: function() { return notify; },
   onboardCardList: function() { return onboardCardList; },
@@ -324,6 +325,7 @@ __webpack_require__.r(mutations_namespaceObject);
 __webpack_require__.d(mutations_namespaceObject, {
   clearMessages: function() { return clearMessages; },
   freeMessage: function() { return freeMessage; },
+  setLanguage: function() { return setLanguage; },
   setMessage: function() { return setMessage; },
   setNotify: function() { return setNotify; },
   setOnboardCardList: function() { return setOnboardCardList; },
@@ -335,10 +337,12 @@ __webpack_require__.d(mutations_namespaceObject, {
 var actions_namespaceObject = {};
 __webpack_require__.r(actions_namespaceObject);
 __webpack_require__.d(actions_namespaceObject, {
+  readLanguage: function() { return readLanguage; },
   readOnboardCardList: function() { return readOnboardCardList; },
   readSW1: function() { return readSW1; },
   resetOnboardCardList: function() { return resetOnboardCardList; },
   resetSW1: function() { return resetSW1; },
+  writeLanguage: function() { return writeLanguage; },
   writeOnboardCardList: function() { return writeOnboardCardList; },
   writeSW1: function() { return writeSW1; }
 });
@@ -691,7 +695,7 @@ __webpack_require__.d(directives_namespaceObject, {
 var runtime_dom_esm_bundler = __webpack_require__(7764);
 // EXTERNAL MODULE: ./node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js
 var runtime_core_esm_bundler = __webpack_require__(4108);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=template&id=24a28132&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=template&id=230d973f&ts=true
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_base_layout = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("base-layout");
@@ -9452,6 +9456,9 @@ registerLocaleFallbacker(fallbackWithLocaleChain);
 if (false) {}
 if (false) {}
 
+// EXTERNAL MODULE: ./node_modules/moment/moment.js
+var moment = __webpack_require__(4648);
+var moment_default = /*#__PURE__*/__webpack_require__.n(moment);
 ;// CONCATENATED MODULE: ./node_modules/@vue/devtools-api/lib/esm/env.js
 function getDevtoolsGlobalHook() {
   return getTarget().__VUE_DEVTOOLS_GLOBAL_HOOK__;
@@ -11071,10 +11078,7 @@ var eventemitter3_default = /*#__PURE__*/__webpack_require__.n(eventemitter3);
     onboard: "Бортовой компьютер",
     onboardButtons: "Кнопки БК",
     test: "Тестирование",
-    language: {
-      russian: "Russian language",
-      english: "English language"
-    },
+    language: "Выбор языка",
     settings: {
       buttonsSW1: "Кнопки руля",
       buttonsSW3: "Кнопки SW3",
@@ -11173,7 +11177,12 @@ var eventemitter3_default = /*#__PURE__*/__webpack_require__.n(eventemitter3);
         description: "Напряжение бортовой сети в вольтах",
         menu: "LCD: Напряжение"
       },
-      temperature: {
+      temperatureIn: {
+        title: "Температура воздуха",
+        description: "Показания температуры в салоне автомобиля",
+        menu: "LCD: Температура воздуха"
+      },
+      temperatureOut: {
         title: "Температура воздуха",
         description: "Показания внешней температуры автомобиля",
         menu: "LCD: Температура воздуха"
@@ -11691,7 +11700,7 @@ var eventemitter3_default = /*#__PURE__*/__webpack_require__.n(eventemitter3);
     carModels: {
       0: "Mazda",
       1: "Mazda 3 BK",
-      2: "Mazda 3 BL (не поддерживается)",
+      2: "Mazda 3 BL (тестируется)",
       3: "Mazda 6 GG",
       4: "Mazda 6 GH (не поддерживается)",
       5: "Mazda CX-7",
@@ -11708,6 +11717,11 @@ var eventemitter3_default = /*#__PURE__*/__webpack_require__.n(eventemitter3);
       notify: "Свайп влево/вправо позволяет листать блоки с информацией",
       noModelSelected: "Внимание! Не выбрана модель автомобиля. Перейдите в меню - О программе - Поддержка автомобиля"
     }
+  },
+  language: {
+    title: "Выбор языка",
+    label: "Язык интерфейса",
+    description: "Выберите подходящий вам язык интерфейса"
   }
 });
 ;// CONCATENATED MODULE: ./src/lang/en.ts
@@ -11786,10 +11800,7 @@ var eventemitter3_default = /*#__PURE__*/__webpack_require__.n(eventemitter3);
     onboard: "On-board",
     onboardButtons: "On-board computer buttons",
     test: "Testing",
-    language: {
-      russian: "Русский язык",
-      english: "Английский язык"
-    },
+    language: "Language",
     settings: {
       buttonsSW1: "Steering wheel buttons",
       buttonsSW3: "SW3 buttons",
@@ -11873,7 +11884,12 @@ var eventemitter3_default = /*#__PURE__*/__webpack_require__.n(eventemitter3);
         description: "On-board mains voltage in volts",
         menu: "LCD: Voltage"
       },
-      temperature: {
+      temperatureIn: {
+        title: "Air temperature",
+        description: "Temperature readings in the car interior",
+        menu: "LCD: Air temperature"
+      },
+      temperatureOut: {
         title: "Air temperature",
         description: "Reading the outside temperature of the car",
         menu: "LCD: Air temperature"
@@ -12390,7 +12406,7 @@ var eventemitter3_default = /*#__PURE__*/__webpack_require__.n(eventemitter3);
     carModels: {
       0: "Mazda",
       1: "Mazda 3 BK",
-      2: "Mazda 3 BL (not supported)",
+      2: "Mazda 3 BL (tested)",
       3: "Mazda 6 GG",
       4: "Mazda 6 GH (not supported)",
       5: "Mazda CX-7",
@@ -12407,11 +12423,13 @@ var eventemitter3_default = /*#__PURE__*/__webpack_require__.n(eventemitter3);
       notify: "Swipe left/right allows you to scroll through the blocks with information",
       noModelSelected: "Warning! The car model is not selected. Go to the menu - About the program - Car support"
     }
+  },
+  language: {
+    title: "Language",
+    label: "Interface language",
+    description: "Choose the interface language that suits you"
   }
 });
-// EXTERNAL MODULE: ./node_modules/moment/moment.js
-var moment = __webpack_require__(4648);
-var moment_default = /*#__PURE__*/__webpack_require__.n(moment);
 ;// CONCATENATED MODULE: ./src/lang/index.ts
 // noinspection JSUnresolvedVariable,JSValidateTypes,JSUnresolvedFunction,DuplicatedCode
 
@@ -13282,15 +13300,15 @@ _defineProperty(MazdaAction, "size", 4);
 }, {
   name: "engine",
   enabled: true,
-  car: [TCarModel.CAR_MODEL_MAZDA_3_BK, TCarModel.CAR_MODEL_MAZDA_CX7, TCarModel.CAR_MODEL_MAZDA_CX7_REST, TCarModel.CAR_MODEL_MAZDA_CX9, TCarModel.CAR_MODEL_MAZDA_CX9_REST]
+  car: [TCarModel.CAR_MODEL_MAZDA_3_BK, TCarModel.CAR_MODEL_MAZDA_3_BL, TCarModel.CAR_MODEL_MAZDA_CX7, TCarModel.CAR_MODEL_MAZDA_CX7_REST]
 }, {
   name: "fuel",
   enabled: true,
-  car: [TCarModel.CAR_MODEL_MAZDA_3_BK, TCarModel.CAR_MODEL_MAZDA_CX7, TCarModel.CAR_MODEL_MAZDA_CX7_REST, TCarModel.CAR_MODEL_MAZDA_CX9, TCarModel.CAR_MODEL_MAZDA_CX9_REST]
+  car: [TCarModel.CAR_MODEL_MAZDA_3_BK, TCarModel.CAR_MODEL_MAZDA_3_BL, TCarModel.CAR_MODEL_MAZDA_CX7, TCarModel.CAR_MODEL_MAZDA_CX7_REST, TCarModel.CAR_MODEL_MAZDA_CX9, TCarModel.CAR_MODEL_MAZDA_CX9_REST]
 }, {
   name: "movement",
   enabled: true,
-  car: [TCarModel.CAR_MODEL_MAZDA_3_BK, TCarModel.CAR_MODEL_MAZDA_CX7, TCarModel.CAR_MODEL_MAZDA_CX7_REST, TCarModel.CAR_MODEL_MAZDA_CX9, TCarModel.CAR_MODEL_MAZDA_CX9_REST]
+  car: [TCarModel.CAR_MODEL_MAZDA_3_BK, TCarModel.CAR_MODEL_MAZDA_3_BL, TCarModel.CAR_MODEL_MAZDA_CX7, TCarModel.CAR_MODEL_MAZDA_CX7_REST, TCarModel.CAR_MODEL_MAZDA_CX9, TCarModel.CAR_MODEL_MAZDA_CX9_REST]
 }, {
   name: "doors",
   enabled: true,
@@ -13298,7 +13316,7 @@ _defineProperty(MazdaAction, "size", 4);
 }, {
   name: "climate",
   enabled: true,
-  car: [TCarModel.CAR_MODEL_MAZDA_3_BK, TCarModel.CAR_MODEL_MAZDA_6_GG, TCarModel.CAR_MODEL_MAZDA_CX7, TCarModel.CAR_MODEL_MAZDA_CX7_REST, TCarModel.CAR_MODEL_MAZDA_CX9, TCarModel.CAR_MODEL_MAZDA_CX9_REST]
+  car: [TCarModel.CAR_MODEL_MAZDA_3_BK, TCarModel.CAR_MODEL_MAZDA_3_BL, TCarModel.CAR_MODEL_MAZDA_6_GG, TCarModel.CAR_MODEL_MAZDA_CX7, TCarModel.CAR_MODEL_MAZDA_CX7_REST]
 }]);
 ;// CONCATENATED MODULE: ./src/store/modules/app/buttons-default.ts
 
@@ -13336,7 +13354,8 @@ const state = {
   mazda: null,
   onboardCardList: onboard_card_list_default,
   sw1: buttons_default,
-  notify: false
+  notify: false,
+  language: "ru"
 };
 /* harmony default export */ var app_state = (state);
 ;// CONCATENATED MODULE: ./src/store/modules/app/getters.ts
@@ -13365,6 +13384,11 @@ const sw1 = state => state.sw1;
  * @param {any} state
  */
 const notify = state => state.notify;
+/**
+ * Язык интерфейса
+ * @param state
+ */
+const language = state => state.language;
 ;// CONCATENATED MODULE: ./src/utils/debounce.ts
 /** Создать debounce */
 const createDebounce = () => {
@@ -13441,6 +13465,14 @@ const setSW1 = (state, value) => {
  */
 const setNotify = (state, value) => {
   state.notify = value;
+};
+/**
+ * Записать значение языка интерфейса
+ * @param {any} state
+ * @param {boolean} value Значение
+ */
+const setLanguage = (state, value) => {
+  state.language = value;
 };
 ;// CONCATENATED MODULE: ./src/store/modules/app/actions.ts
 
@@ -13526,6 +13558,33 @@ const resetSW1 = ({
 }) => {
   commit("setSW1", buttons_default);
   dispatch("writeSW1");
+};
+/**
+ * Чтение языка из local storage
+ * @param {any} commit
+ */
+const readLanguage = ({
+  commit
+}) => {
+  const res = window.localStorage.getItem("Language");
+  if (res?.length) {
+    try {
+      const language = JSON.parse(res);
+      commit("setLanguage", language);
+    } catch (e) {
+      console.log(e);
+    }
+  }
+};
+/**
+ * Запись языка в local storage
+ * @param {any} commit
+ */
+const writeLanguage = ({
+  getters
+}) => {
+  const res = JSON.stringify(getters.language);
+  window.localStorage.setItem("Language", res);
 };
 ;// CONCATENATED MODULE: ./src/store/modules/app/index.ts
 
@@ -18169,7 +18228,8 @@ const arrayToHex = value => {
  */
 const toMac = value => {
   let result = "";
-  const mac = toHex(value);
+  let mac = toHex(value);
+  if (mac.length < 12) mac = "0".repeat(12 - mac.length) + mac;
   for (let i = mac.length - 2; i >= 0; i -= 2) result += mac[i] + mac[i + 1] + (i > 0 ? ":" : "");
   return result;
 };
@@ -19091,6 +19151,7 @@ const setMazdaCarModel = (state, value) => {
   if (state.mazda.isData) {
     state.mazda.carModel = value;
     api_canbus.query(state.mazda);
+    api_canbus.query(state.sw1, true);
   }
 };
 /**
@@ -26011,9 +26072,9 @@ const VMain = genericComponent()({
     return {};
   }
 });
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=template&id=6b14791c&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=template&id=0a96dfe8&scoped=true&ts=true
 
-const _withScopeId = n => ((0,runtime_core_esm_bundler/* pushScopeId */.ED)("data-v-6b14791c"), n = n(), (0,runtime_core_esm_bundler/* popScopeId */.ii)(), n);
+const _withScopeId = n => ((0,runtime_core_esm_bundler/* pushScopeId */.ED)("data-v-0a96dfe8"), n = n(), (0,runtime_core_esm_bundler/* popScopeId */.ii)(), n);
 const _hoisted_1 = {
   class: "text-h4"
 };
@@ -26023,7 +26084,7 @@ const _hoisted_2 = /*#__PURE__*/_withScopeId(() => /*#__PURE__*/(0,runtime_core_
 const _hoisted_3 = /*#__PURE__*/_withScopeId(() => /*#__PURE__*/(0,runtime_core_esm_bundler/* createElementVNode */.QD)("div", {
   class: "base-layout__bg"
 }, null, -1));
-function BaseLayoutvue_type_template_id_6b14791c_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function BaseLayoutvue_type_template_id_0a96dfe8_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                                           
                                                             
   const _component_icon_custom = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("icon-custom");
@@ -26033,6 +26094,7 @@ function BaseLayoutvue_type_template_id_6b14791c_scoped_true_ts_true_render(_ctx
   const _component_menu_dots = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("menu-dots");
   const _component_about_dialog = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("about-dialog");
   const _component_onboard_buttons_dialog = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("onboard-buttons-dialog");
+  const _component_locale_dialog = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("locale-dialog");
                                                               
   const _component_router_view = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("router-view");
   const _component_message_dialog = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("message-dialog");
@@ -26079,6 +26141,9 @@ function BaseLayoutvue_type_template_id_6b14791c_scoped_true_ts_true_render(_ctx
       }, null, 8, ["modelValue"]), (0,runtime_core_esm_bundler/* createVNode */.K2)(_component_onboard_buttons_dialog, {
         modelValue: $setup.visibleOnboardButtons,
         "onUpdate:modelValue": _cache[3] || (_cache[3] = $event => $setup.visibleOnboardButtons = $event)
+      }, null, 8, ["modelValue"]), (0,runtime_core_esm_bundler/* createVNode */.K2)(_component_locale_dialog, {
+        modelValue: $setup.visibleLocale,
+        "onUpdate:modelValue": _cache[4] || (_cache[4] = $event => $setup.visibleLocale = $event)
       }, null, 8, ["modelValue"])]),
       _: 1
     }), (0,runtime_core_esm_bundler/* createVNode */.K2)(VMain, null, {
@@ -26091,7 +26156,7 @@ function BaseLayoutvue_type_template_id_6b14791c_scoped_true_ts_true_render(_ctx
       }, [(0,runtime_core_esm_bundler/* createVNode */.K2)(_component_router_view)], 4), $setup.message ? ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(_component_message_dialog, {
         key: 0,
         modelValue: $setup.visibleMessage,
-        "onUpdate:modelValue": _cache[4] || (_cache[4] = $event => $setup.visibleMessage = $event),
+        "onUpdate:modelValue": _cache[5] || (_cache[5] = $event => $setup.visibleMessage = $event),
         title: $setup.message.title,
         icon: $setup.message?.icon,
         text: $setup.message.text,
@@ -26113,7 +26178,7 @@ function BaseLayoutvue_type_template_id_6b14791c_scoped_true_ts_true_render(_ctx
 
 
 
-;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=template&id=6b14791c&scoped=true&ts=true
+;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=template&id=0a96dfe8&scoped=true&ts=true
 
 ;// CONCATENATED MODULE: ./node_modules/vue-router/dist/vue-router.mjs
 
@@ -45754,9 +45819,9 @@ const VCol = genericComponent()({
     }, slots.default?.());
   }
 });
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/InfoCard.vue?vue&type=template&id=65c688f6&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/InfoCard.vue?vue&type=template&id=2ebc727e&ts=true
 
-function InfoCardvue_type_template_id_65c688f6_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function InfoCardvue_type_template_id_2ebc727e_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_icon_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("icon-card-item");
                                                       
   const _component_input_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("input-card-item");
@@ -45767,7 +45832,7 @@ function InfoCardvue_type_template_id_65c688f6_ts_true_render(_ctx, _cache, $pro
   return (0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)(runtime_core_esm_bundler/* Fragment */.ae, null, [(0,runtime_core_esm_bundler/* createVNode */.K2)(_component_card, {
     class: "info-card",
     title: _ctx.$t('onboard.info.title'),
-    menu: $setup.menu,
+    menu: $setup.carModel !== $options.TCarModel.CAR_MODEL_MAZDA_CX9_REST ? $setup.menu : undefined,
     "onClick:menu": $setup.onMenuClick
   }, {
     body: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(VRow, null, {
@@ -45811,22 +45876,36 @@ function InfoCardvue_type_template_id_65c688f6_ts_true_render(_ctx, _cache, $pro
           disabled: !$setup.voltmeterViewLoaded
         }, null, 8, ["value", "title", "description", "nodata", "disabled"])]),
         _: 1
-      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.g1)("", true), $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BK ? ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(VCol, {
+      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.g1)("", true), $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BL ? ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(VCol, {
         key: 1,
         cols: "12",
         class: "pt-0 pb-0"
       }, {
         default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(_component_input_card_item, {
-          value: $setup.temperature,
-          title: _ctx.$t('onboard.info.temperature.title'),
-          description: _ctx.$t('onboard.info.temperature.description'),
+          value: $setup.temperatureIn,
+          title: _ctx.$t('onboard.info.temperatureIn.title'),
+          description: _ctx.$t('onboard.info.temperatureIn.description'),
           type: "temperature",
-          nodata: !$setup.temperatureValueLoaded,
+          nodata: !$setup.temperatureValueLoaded || $setup.temperatureIn === 0,
           disabled: !$setup.temperatureViewLoaded
         }, null, 8, ["value", "title", "description", "nodata", "disabled"])]),
         _: 1
       })) : (0,runtime_core_esm_bundler/* createCommentVNode */.g1)("", true), $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BK ? ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(VCol, {
         key: 2,
+        cols: "12",
+        class: "pt-0 pb-0"
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(_component_input_card_item, {
+          value: $setup.temperatureOut,
+          title: _ctx.$t('onboard.info.temperatureOut.title'),
+          description: _ctx.$t('onboard.info.temperatureOut.description'),
+          type: "temperature",
+          nodata: !$setup.temperatureValueLoaded || $setup.temperatureOut === 0,
+          disabled: !$setup.temperatureViewLoaded
+        }, null, 8, ["value", "title", "description", "nodata", "disabled"])]),
+        _: 1
+      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.g1)("", true), $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BK ? ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(VCol, {
+        key: 3,
         cols: "12",
         class: "pt-0 pb-0"
       }, {
@@ -45839,8 +45918,8 @@ function InfoCardvue_type_template_id_65c688f6_ts_true_render(_ctx, _cache, $pro
           disabled: !$setup.sensorViewLoaded
         }, null, 8, ["model-value", "title", "description", "nodata", "disabled"])]),
         _: 1
-      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.g1)("", true), $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BK ? ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(VCol, {
-        key: 3,
+      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.g1)("", true), $setup.isReverse ? ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(VCol, {
+        key: 4,
         cols: "12",
         class: "pt-0 pb-0"
       }, {
@@ -45854,7 +45933,7 @@ function InfoCardvue_type_template_id_65c688f6_ts_true_render(_ctx, _cache, $pro
         }, null, 8, ["model-value", "title", "description", "nodata", "disabled"])]),
         _: 1
       })) : (0,runtime_core_esm_bundler/* createCommentVNode */.g1)("", true), $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BK ? ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(VCol, {
-        key: 4,
+        key: 5,
         cols: "12",
         class: "pt-0 pb-0"
       }, {
@@ -45874,7 +45953,7 @@ function InfoCardvue_type_template_id_65c688f6_ts_true_render(_ctx, _cache, $pro
         }, null, 8, ["model-value", "title", "description", "colorsTrue", "colorsFalse", "nodata", "disabled"])]),
         _: 1
       })) : (0,runtime_core_esm_bundler/* createCommentVNode */.g1)("", true), $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BK ? ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(VCol, {
-        key: 5,
+        key: 6,
         cols: "12",
         class: "pt-0 pb-0"
       }, {
@@ -51810,7 +51889,8 @@ function IconCustomvue_type_template_id_746945aa_ts_true_render(_ctx, _cache, $p
   "volume-fade-f": '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 20.68 19.57"><defs><style>.cls-1,.cls-2{fill:{primary};}.cls-2{font-size:14px;font-family:"Roboto", MyriadPro-Regular, Myriad Pro;}</style></defs><path class="cls-1" d="M2,9v6H6l5,5V4L6,9Z" transform="translate(-2 -2.22)"/><text class="cls-2" transform="translate(11 15.07)">F</text></svg>',
   "volume-fade-r": '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 20.68 19.57"><defs><style>.cls-1,.cls-2{fill:{primary};}.cls-2{font-size:14px;font-family:"Roboto", MyriadPro-Regular, Myriad Pro;}</style></defs><path class="cls-1" d="M22.68,15V9h-4l-5-5V20l5-5Z" transform="translate(-3 -2.22)"/><text class="cls-2" transform="translate(0 15.07)">R</text></svg>',
   "volume-setting": '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 97.51 97.52"><g id="uuid-ed5e966f-00a1-478d-a6b3-f625b0ad64c0"><path d="m97.51,48.76c0-11.51-4.09-22.67-11.52-31.46.63-1.05.97-2.25.97-3.48,0-3.73-3.04-6.77-6.78-6.77-1.47,0-2.89.48-4.06,1.36C68.02,2.91,58.57,0,48.76,0s-19.69,3.03-27.9,8.79c-1.24-1.12-2.83-1.74-4.52-1.74-3.74,0-6.77,3.04-6.77,6.77,0,1.5.5,2.94,1.41,4.13C3.89,26.62,0,37.54,0,48.76c0,11.74,4.23,23.05,11.91,31.92-1.48,1.28-2.35,3.15-2.35,5.12,0,3.73,3.04,6.77,6.77,6.77,2.29,0,4.41-1.15,5.66-3.05,7.95,5.24,17.2,8,26.76,8s18.27-2.62,26.08-7.57c1.28,1.65,3.23,2.62,5.34,2.62,3.74,0,6.78-3.04,6.78-6.77,0-1.7-.65-3.34-1.8-4.59,7.98-8.94,12.36-20.44,12.36-32.45Zm-16.33-38.15c1.24,0,2.25,1.01,2.25,2.25s-1.01,2.25-2.25,2.25-2.25-1.01-2.25-2.25,1.01-2.25,2.25-2.25Zm-65.3,0c1.24,0,2.25,1.01,2.25,2.25s-1.01,2.25-2.25,2.25-2.25-1.01-2.25-2.25,1.01-2.25,2.25-2.25Zm-.32,78.54c-1.24,0-2.25-1.01-2.25-2.25s1.01-2.25,2.25-2.25,2.25,1.01,2.25,2.25-1.01,2.25-2.25,2.25Zm65.3,0c-1.24,0-2.25-1.01-2.25-2.25s1.01-2.25,2.25-2.25,2.25,1.01,2.25,2.25-1.01,2.25-2.25,2.25Zm-32.11,1.29c-23.02,0-41.69-18.67-41.69-41.69S25.73,7.07,48.76,7.07s41.69,18.66,41.69,41.69-18.67,41.69-41.69,41.69ZM11.33,44h-1.5c-.38,0-.69.35-.69.77v3.83c0,.42.31.77.69.77h1.5c.38,0,.69-.34.69-.77v-3.83c0-.42-.31-.77-.69-.77ZM50.43,9.17h-3.83c-.42,0-.77.31-.77.69v1.5c0,.38.35.69.77.69h3.83c.42,0,.77-.31.77-.69v-1.5c0-.38-.35-.69-.77-.69Zm0,76.29h-3.83c-.42,0-.77.32-.77.69v1.5c0,.38.35.69.77.69h3.83c.42,0,.77-.31.77-.69v-1.5c0-.38-.35-.69-.77-.69ZM20.58,24.61c.27.27.73.25,1.03-.05l2.54-2.53s0,0,0-.01l.16-.16c.3-.3.32-.76.06-1.03l-1.06-1.06c-.27-.27-.73-.25-1.03.05l-2.53,2.54-.17.17c-.3.3-.32.76-.05,1.03l1.06,1.06Zm55.88,48.29c-.27-.27-.73-.24-1.03.05l-2.53,2.54-.17.17c-.3.3-.32.76-.06,1.03l1.06,1.06c.27.27.73.25,1.03-.05l2.53-2.53s0,0,0,0l.17-.16c.3-.3.32-.76.05-1.03l-1.05-1.06Zm-52.31,2.6s0,0,0,0l-2.54-2.54c-.3-.3-.77-.32-1.03-.05l-1.06,1.06c-.27.27-.25.73.05,1.03l2.54,2.54.17.17c.3.3.77.32,1.03.05l1.06-1.06c.26-.27.24-.73-.06-1.03l-.16-.16Zm48.74-53.49h0s2.54,2.54,2.54,2.54c.3.3.77.32,1.03.05l1.05-1.06c.27-.26.25-.73-.05-1.03l-.17-.17s0,0,0,0l-2.53-2.54c-.3-.3-.77-.32-1.03-.05l-1.06,1.06c-.27.27-.24.73.05,1.03l.17.17Zm14.73,21.98h-1.5c-.38,0-.69.35-.69.77v3.83c0,.42.31.77.69.77h1.5c.37,0,.69-.34.69-.77v-3.83c0-.42-.31-.77-.69-.77Z" style="fill:{secondary}; fill-rule:evenodd;"/></g><g id="uuid-4f4fd268-9ac0-44e5-bdcc-a6fc12268a61"><path d="m78.74,44.38c-.33-2.27-.93-4.51-1.77-6.67-.31-.8-1.44-1.16-2.27-.94-2.68.72-5.48-.22-7.14-2.39-1.69-2.22-1.81-5.31-.3-7.68.47-.74.29-1.73-.41-2.26-1.84-1.38-3.82-2.54-5.89-3.45-.81-.36-1.77-.02-2.18.78-1.23,2.4-4.17,3.96-6.86,3.6-2.8-.39-5.08-2.52-5.66-5.3-.18-.88-1.01-1.46-1.9-1.33-1.62.24-3.21.61-4.76,1.1-.62.2-1.23.41-1.83.64-.55.22-.93.7-1.03,1.25-.05.27-.05.54.03.82.82,2.69-.11,5.63-2.33,7.32-2.13,1.62-5.43,1.74-7.69.29-.74-.48-1.73-.3-2.26.41-1.38,1.85-2.56,3.85-3.48,5.95-.21.48-.18,1.01.05,1.45.16.3.4.56.72.73,2.53,1.3,3.98,4.06,3.6,6.87-.36,2.68-2.45,4.9-5.31,5.67-.94.22-1.43,1.02-1.31,1.89.21,1.44.53,2.86.95,4.26.24.81.52,1.61.83,2.4.31.8,1.47,1.15,2.31.93,2.53-.75,5.4.18,7.1,2.4.45.59.79,1.25,1.01,1.94.62,1.89.4,4.01-.71,5.75-.47.74-.29,1.73.41,2.25.38.28.76.55,1.15.82,1.5,1.02,3.09,1.9,4.73,2.63.82.36,1.77.02,2.18-.77.6-1.17,1.61-2.14,2.79-2.79,1.25-.68,2.69-1,4.06-.81,2.81.38,5.08,2.51,5.66,5.3.13.64.62,1.12,1.21,1.28.22.06.45.08.68.04.09-.01.18-.03.27-.04,1.06-.17,2.12-.39,3.16-.66.83-.22,1.65-.48,2.46-.77.24-.09.47-.17.71-.26.82-.32,1.26-1.22,1-2.07-.83-2.69.11-5.63,2.33-7.32,2.14-1.63,5.44-1.74,7.69-.29.75.48,1.72.3,2.26-.41,1.38-1.84,2.55-3.85,3.48-5.95.36-.82.02-1.77-.77-2.18-2.53-1.3-3.98-4.06-3.6-6.87.36-2.64,2.34-4.88,4.92-5.58l.36-.09c.86-.16,1.46-1.01,1.33-1.9Zm-13.18,9.16l-3.98-2.3-5.39-3.12c.2-1.41.11-2.85-.27-4.26-.74-2.77-2.51-5.08-4.99-6.51-1.11-.64-2.31-1.07-3.53-1.28-1.51-.26-3.07-.2-4.59.21-.71.19-1.39.45-2.05.78-.2.1-.39.2-.58.32-.36.21-.59.62-.59,1.03,0,.43.23.8.62,1.03,0,0,4.63,2.7,6.18,3.6.16.09.24.4.26.51v.08c.04.16.44,3.13.41,3.72-.02.03-.04.06-.06.1-.02.04-.04.07-.06.1-.57.37-2.14,1.05-3.47,1.53h0s-.06.02-.06.02c-.01,0-.03.01-.06.02-.15.04-.38.06-.62-.09-.83-.48-6.05-3.48-6.05-3.48-.4-.23-.74-.21-.95-.15-.5.13-.85.62-.85,1.17,0,3.83,2.05,7.4,5.36,9.32,2.48,1.43,5.36,1.81,8.13,1.07,1.41-.38,2.7-1.03,3.82-1.9l9.41,5.44v.1c-2.16,2.35-4.99,4.14-8.3,5.02-9.32,2.5-18.9-3.04-21.4-12.37-1.54-5.75-.03-11.59,3.54-15.82,2.22-2.63,5.23-4.63,8.81-5.59.24-.07.49-.12.73-.18,1.14-.25,2.29-.39,3.42-.41,1.2-.03,2.38.07,3.53.28,3.89.72,7.43,2.75,10.03,5.73,1.69,1.94,2.98,4.29,3.69,6.95.85,3.17.77,6.36-.07,9.3Z" style="fill:{primary}; fill-rule:evenodd;"/></g></svg>',
-  "door": '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 97.52 91.97"><g id="uuid-bb2e7cca-78f0-4a3f-b687-8d8251cce61f"><path d="m93.14,40.64s-7.47-8.08-17.32-16.57C62.61,12.67,46.01,0,46.01,0H0l.45,7.41,5.61,33.68.45,50.88h86.86s4.21-13.56,4.15-26.19c-.06-12.85-4.38-25.15-4.38-25.15Zm-53.86,8.96h-10.33c-.63,0-1.14.62-1.14,1.39s.51,1.39,1.14,1.39h10.3c-.12.73-.74,1.28-1.5,1.28h-15.35c-.84,0-1.53-.68-1.53-1.53v-2.56c0-.84.68-1.53,1.53-1.53h15.35c.84,0,1.53.68,1.53,1.53v.02Zm26.7-15.07c-1.44,2.36-.44,6.12-.44,6.12l-51.62.67L6.51,5.61l38.38-.22,26.26,26.04s-3.8.84-5.17,3.09Zm-41.67,14.85c-.83,0-1.51.68-1.51,1.51s.68,1.51,1.51,1.51,1.51-.68,1.51-1.51-.68-1.51-1.51-1.51Z" style="fill:{primary}; fill-rule:evenodd;"/></g></svg>'
+  "door": '<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 97.52 91.97"><g id="uuid-bb2e7cca-78f0-4a3f-b687-8d8251cce61f"><path d="m93.14,40.64s-7.47-8.08-17.32-16.57C62.61,12.67,46.01,0,46.01,0H0l.45,7.41,5.61,33.68.45,50.88h86.86s4.21-13.56,4.15-26.19c-.06-12.85-4.38-25.15-4.38-25.15Zm-53.86,8.96h-10.33c-.63,0-1.14.62-1.14,1.39s.51,1.39,1.14,1.39h10.3c-.12.73-.74,1.28-1.5,1.28h-15.35c-.84,0-1.53-.68-1.53-1.53v-2.56c0-.84.68-1.53,1.53-1.53h15.35c.84,0,1.53.68,1.53,1.53v.02Zm26.7-15.07c-1.44,2.36-.44,6.12-.44,6.12l-51.62.67L6.51,5.61l38.38-.22,26.26,26.04s-3.8.84-5.17,3.09Zm-41.67,14.85c-.83,0-1.51.68-1.51,1.51s.68,1.51,1.51,1.51,1.51-.68,1.51-1.51-.68-1.51-1.51-1.51Z" style="fill:{primary}; fill-rule:evenodd;"/></g></svg>',
+  "service": '<svg id="a" xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 439.84 500"><g id="b"><path d="m133.44,107.06c-21.41-.88-40.35-11.14-51.71-29.82-2.38,11.94-11.59,55.6-23.02,109.49,18.81,37.29,65.68,32.62,67.92,32.79,4.75.37,7.05,4.17,7.23,8.33.33,7.88-13.54,6.84-9.32,6.61-10.99.62-27.58.86-59.95-16.83-4.2-2.29-7.18-6.27-10.31-10.05-2.7,12.7-5.48,25.79-8.3,39.01,4.86,6.59,17.23,20.2,39.43,25.23,20.52,4.65,42.04,3.51,64.01-1.78,17.72-4.26,35.51-9.98,53.63-15.36,4.71-1.4,9.18-2.31,12.46-7.57,6.02-9.65,12.52-19.2,19.17-28.85,1.67-2.42,4.21-5.23,6.64-6.15,22.44-8.49,45.43-17.33,68.95-28.43,3.76-1.78,4.7-.41,5.74,1.83,2.95,6.34,5.8,12.8,8.67,19.3,1.61,3.65,3.2,7.34,4.77,10.99-1.21,1.03-1.66,1.58-2.14,1.8-23.1,10.09-45.63,18.78-67.76,26.52-4.17,1.46-7.47,3.16-9.95,7.7-14.81,27.2-14.44,20.44-6.99,33.59.75,1.32,3.23,2.51,4.69,2.06,11.52-3.48,23.08-7.58,34.79-11.64,11.69-4.06,23.5-8.19,36.64-13.13-8.31,15.77-14.96,26.01-27.27,42.53-9.99,13.39-26.08,15.55-24.54,15.08-17.37,5.28-34.52,10.26-51.48,15.06-3.14.89-5.05.22-6.38-3.01-3.78-9.16-7.91-18.1-12.18-26.88-.71-1.47-2.94-3.11-4.35-2.83-5.96,1.18-11.85,3.11-17.74,4.59-19.45,4.88-38.43,11.06-57.67,13.85-35.83,5.2-60.97-1.58-82.2-22.59-3.02,14.16-5.99,28.09-8.85,41.5,16.85,20.68,60.43,19.98,68,20.62,5.21.44,8.48,3.82,8.08,8.7-.32,4-3.23,6.31-8.85,6.31-40.55-.02-63.76-13.75-70.84-18.72C11.4,408.76,2.59,449.9.39,460.08c-1.05,4.84,0,8.39,3.07,12.06,18.7,26.3,54.78,25.58,54.78,25.58l290.68,2.28s7.23.14,8.85-9.29c3.86-16.9,82.07-382.43,82.07-382.43,0,0-179.8,3.96-306.4-1.23Z" style="fill:{secondary};"/></g><g id="c"><path d="m304.27,28.79c-3.44-2.55-5.21-4.86-3.92-9.38,1.75-6.16,4.3-19.41,4.3-19.41,0,0-99.07,28.37-205.7,58.03-3.62,1.01-4.55,5.17-3.92,8.55,1.83,9.92,9.62,12.35,19.38,9.67,46.97-12.89,197.61-52.92,165.9-43.4,6.47-1.94,16.6,3.88,19.01,10.6-35.4,9.42-106.11,28.25-106.11,28.25,0,0,46.74-6.77,119.25-18.6,1.57-.26,3.65-.51,4.78.26,8.23,5.65,16.27,11.57,24.38,17.4-.01.8-.03,1.6-.04,2.41-44.69,4.52-134.08,16.66-134.08,16.66,0,0,138.96-5.79,144.61-5.89,3.63-.06,8.4-.17,10.73,1.9,8.59,7.62,18.28,4.27,28.54,4.95-46.78-33.6-61.78-43.26-87.1-61.99Z" style="fill:{primary};"/></g></svg>'
 });
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/common/icon-custom/IconCustom.vue?vue&type=script&lang=ts
 
@@ -54263,6 +54343,7 @@ const ViewSettingDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(
 
 
 
+
 /* harmony default export */ var InfoCardvue_type_script_lang_ts = ({
   name: "InfoCard",
   computed: {
@@ -54292,10 +54373,15 @@ const ViewSettingDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(
       const hardware = src_store.getters["value/device"].hardware;
       return hardware.major === 4 && hardware.minor >= 1 || hardware.major > 4;
     });
+    const isReverse = (0,runtime_core_esm_bundler/* computed */.S6)(() => {
+      const carModel = src_store.getters["config/carModel"];
+      return carModel === TCarModel.CAR_MODEL_MAZDA_3_BK || carModel === TCarModel.CAR_MODEL_MAZDA_3_BL || carModel === TCarModel.CAR_MODEL_MAZDA_CX7 || carModel === TCarModel.CAR_MODEL_MAZDA_CX7_REST || carModel === TCarModel.CAR_MODEL_MAZDA_CX9 || carModel === TCarModel.CAR_MODEL_MAZDA_CX9_REST;
+    });
     const acc = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["value/sensors"].acc);
     const worktime = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["value/device"].worktime);
     const voltmeter = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["value/device"].voltmeter / 100);
-    const temperature = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["value/temperature"].out / 10);
+    const temperatureIn = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["value/temperature"].in / 10);
+    const temperatureOut = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["value/temperature"].out / 10);
     const handbrake = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["value/sensors"].handbrake);
     const reverse = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["value/sensors"].reverse);
     const seatbeltDriver = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["value/sensors"].seatbeltDriver);
@@ -54303,35 +54389,52 @@ const ViewSettingDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(
     const signalLeft = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["value/sensors"].turnSignalLeft);
     const signalRight = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["value/sensors"].turnSignalRight);
     const carModel = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["config/carModel"]);
-    const menu = (0,runtime_core_esm_bundler/* computed */.S6)(() => carModel.value === TCarModel.CAR_MODEL_MAZDA_3_BK ? [{
-      title: t("onboard.info.worktime.menu"),
-      view: src_store.getters["view/worktime"],
-      disabled: !worktimeViewLoaded.value
-    }, {
-      title: t("onboard.info.voltmeter.menu"),
-      view: src_store.getters["view/voltmeter"],
-      disabled: !voltmeterViewLoaded.value
-    }, {
-      title: t("onboard.info.temperature.menu"),
-      view: src_store.getters["view/temperature"],
-      disabled: !temperatureViewLoaded.value
-    }, {
-      title: t("onboard.info.handbrake.menu"),
-      view: src_store.getters["view/sensors"].handbrake,
-      disabled: !sensorViewLoaded.value
-    }, {
-      title: t("onboard.info.reverse.menu"),
-      view: src_store.getters["view/sensors"].reverse,
-      disabled: !sensorViewLoaded.value
-    }, {
-      title: t("onboard.info.safetyBelt.menu"),
-      view: src_store.getters["view/sensors"].seatbelt,
-      disabled: !sensorViewLoaded.value
-    }, {
-      title: t("onboard.info.signal.menu"),
-      view: src_store.getters["view/sensors"].turnSignal,
-      disabled: !sensorViewLoaded.value
-    }] : []);
+    const menu = (0,runtime_core_esm_bundler/* computed */.S6)(() => {
+      const result = [{
+        title: t("onboard.info.worktime.menu"),
+        view: src_store.getters["view/worktime"],
+        disabled: !worktimeViewLoaded.value
+      }];
+      if (isVoltmeter.value) {
+        result.push({
+          title: t("onboard.info.voltmeter.menu"),
+          view: src_store.getters["view/voltmeter"],
+          disabled: !voltmeterViewLoaded.value
+        });
+      }
+      if (carModel.value === TCarModel.CAR_MODEL_MAZDA_3_BK) {
+        result.push({
+          title: t("onboard.info.temperatureOut.menu"),
+          view: src_store.getters["view/temperature"],
+          disabled: !temperatureViewLoaded.value
+        });
+        result.push({
+          title: t("onboard.info.handbrake.menu"),
+          view: src_store.getters["view/sensors"].handbrake,
+          disabled: !sensorViewLoaded.value
+        });
+      }
+      if (isReverse.value) {
+        result.push({
+          title: t("onboard.info.reverse.menu"),
+          view: src_store.getters["view/sensors"].reverse,
+          disabled: !sensorViewLoaded.value
+        });
+      }
+      if (carModel.value === TCarModel.CAR_MODEL_MAZDA_3_BK) {
+        result.push({
+          title: t("onboard.info.safetyBelt.menu"),
+          view: src_store.getters["view/sensors"].seatbelt,
+          disabled: !sensorViewLoaded.value
+        });
+        result.push({
+          title: t("onboard.info.signal.menu"),
+          view: src_store.getters["view/sensors"].turnSignal,
+          disabled: !sensorViewLoaded.value
+        });
+      }
+      return result;
+    });
     const menuVisible = (0,reactivity_esm_bundler/* ref */.IL)(false);
     const menuSelected = (0,reactivity_esm_bundler/* ref */.IL)({});
     /**
@@ -54358,10 +54461,12 @@ const ViewSettingDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(
       sensorViewLoaded,
       temperatureViewLoaded,
       isVoltmeter,
+      isReverse,
       acc,
       worktime,
       voltmeter,
-      temperature,
+      temperatureIn,
+      temperatureOut,
       handbrake,
       reverse,
       seatbeltDriver,
@@ -54385,7 +54490,7 @@ const ViewSettingDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(
 
 
 ;
-const InfoCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(InfoCardvue_type_script_lang_ts, [['render',InfoCardvue_type_template_id_65c688f6_ts_true_render]])
+const InfoCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(InfoCardvue_type_script_lang_ts, [['render',InfoCardvue_type_template_id_2ebc727e_ts_true_render]])
 
 /* harmony default export */ var InfoCard = (InfoCard_exports_);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/EngineCard.vue?vue&type=template&id=a45bc802&ts=true
@@ -55288,9 +55393,9 @@ const FuelConfigDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(F
 const FuelCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(FuelCardvue_type_script_lang_ts, [['render',FuelCardvue_type_template_id_93d84b7e_ts_true_render]])
 
 /* harmony default export */ var FuelCard = (FuelCard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/MovementCard.vue?vue&type=template&id=9483216a&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/MovementCard.vue?vue&type=template&id=a9fd4f6e&ts=true
 
-function MovementCardvue_type_template_id_9483216a_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function MovementCardvue_type_template_id_a9fd4f6e_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_input_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("input-card-item");
                                                       
                                                       
@@ -55386,7 +55491,7 @@ function MovementCardvue_type_template_id_9483216a_ts_true_render(_ctx, _cache, 
     const movementViewLoaded = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["view/movement"].isData);
     const speed = (0,runtime_core_esm_bundler/* computed */.S6)(() => (src_store.getters["value/movement"].speed / 100).toFixed(2));
     const speedAVG = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["value/movement"].speedAVG.toFixed(0));
-    const restWay = (0,runtime_core_esm_bundler/* computed */.S6)(() => (src_store.getters["value/movement"].restWay / 100).toFixed(2));
+    const restWay = (0,runtime_core_esm_bundler/* computed */.S6)(() => (src_store.getters["value/movement"].restWay / 100).toFixed(0));
     const isSpeed = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["value/movement"].speed > 0);
     const isSpeedAVG = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["value/movement"].speedAVG > 0);
     const isRestWay = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["value/movement"].restWay > 0);
@@ -55447,7 +55552,7 @@ function MovementCardvue_type_template_id_9483216a_ts_true_render(_ctx, _cache, 
 
 
 ;
-const MovementCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(MovementCardvue_type_script_lang_ts, [['render',MovementCardvue_type_template_id_9483216a_ts_true_render]])
+const MovementCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(MovementCardvue_type_script_lang_ts, [['render',MovementCardvue_type_template_id_a9fd4f6e_ts_true_render]])
 
 /* harmony default export */ var MovementCard = (MovementCard_exports_);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/DoorsCard.vue?vue&type=template&id=2b511d66&ts=true
@@ -57740,9 +57845,9 @@ const BoseCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(BoseCardv
 const onboard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(onboardvue_type_script_lang_ts, [['render',onboardvue_type_template_id_f2a414e8_scoped_true_ts_true_render],['__scopeId',"data-v-f2a414e8"]])
 
 /* harmony default export */ var onboard = (onboard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/index.vue?vue&type=template&id=1c73dfce&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/index.vue?vue&type=template&id=d21e585a&scoped=true&ts=true
 
-function buttonsvue_type_template_id_1c73dfce_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function buttonsvue_type_template_id_d21e585a_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_settings_card = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("settings-card");
   const _component_flicking = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("flicking");
   const _component_button_definition_dialog = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("button-definition-dialog");
@@ -58678,7 +58783,7 @@ const ButtonEditDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(B
       }
       return key;
     };
-    loadButtons(__type.value);
+    // loadButtons(__type.value);
     /** Сохранить список кнопок */
     const saveButtons = () => {
       if (keys.value) {
@@ -58735,6 +58840,10 @@ const ButtonEditDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(B
       selectedItem.value = item;
       addDialog.value = true;
     };
+    /** Событие входящей конфигурации */
+    const onButtonsConfigReceive = () => {
+      if (keys.value) loadButtons(__type.value);
+    };
     /** Событие нажатия кнопки */
     const onButtonsValueReceive = () => {
       if (keys.value) {
@@ -58750,6 +58859,7 @@ const ButtonEditDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(B
     const onBegin = type => {
       const key = loadButtons(type);
       if (key) {
+        api_canbus.addListener(API_BUTTONS_SW1_CONFIG_EVENT, onButtonsConfigReceive);
         api_canbus.addListener(API_BUTTON_SW1_VALUE_EVENT, onButtonsValueReceive);
         src_store.commit(key.setProgramming, true);
         setTimeout(() => toast_default.warning(t("help.buttons.notify"), {
@@ -58758,6 +58868,7 @@ const ButtonEditDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(B
       }
     };
     const onEnd = () => {
+      api_canbus.removeListener(API_BUTTONS_SW1_CONFIG_EVENT, onButtonsConfigReceive);
       api_canbus.removeListener(API_BUTTON_SW1_VALUE_EVENT, onButtonsValueReceive);
       src_store.commit("config/setSW1Programming", false);
     };
@@ -58795,10 +58906,10 @@ const ButtonEditDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(B
 });
 ;// CONCATENATED MODULE: ./src/views/buttons/index.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/index.vue?vue&type=style&index=0&id=1c73dfce&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/index.vue?vue&type=style&index=0&id=d21e585a&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/views/buttons/index.vue?vue&type=style&index=0&id=1c73dfce&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/views/buttons/index.vue?vue&type=style&index=0&id=d21e585a&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/views/buttons/index.vue
 
@@ -58808,7 +58919,7 @@ const ButtonEditDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(B
 ;
 
 
-const buttons_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(buttonsvue_type_script_lang_ts, [['render',buttonsvue_type_template_id_1c73dfce_scoped_true_ts_true_render],['__scopeId',"data-v-1c73dfce"]])
+const buttons_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(buttonsvue_type_script_lang_ts, [['render',buttonsvue_type_template_id_d21e585a_scoped_true_ts_true_render],['__scopeId',"data-v-d21e585a"]])
 
 /* harmony default export */ var buttons = (buttons_exports_);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/index.vue?vue&type=template&id=1a90dfba&scoped=true&ts=true
@@ -59027,9 +59138,9 @@ function LcdCardvue_type_template_id_cb991088_ts_true_render(_ctx, _cache, $prop
 const LcdCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(LcdCardvue_type_script_lang_ts, [['render',LcdCardvue_type_template_id_cb991088_ts_true_render]])
 
 /* harmony default export */ var LcdCard = (LcdCard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/components/TeyesCard.vue?vue&type=template&id=515faca8&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/components/TeyesCard.vue?vue&type=template&id=050acd0a&ts=true
 
-function TeyesCardvue_type_template_id_515faca8_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function TeyesCardvue_type_template_id_050acd0a_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                             
                                                       
   const _component_switch_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("switch-card-item");
@@ -59039,7 +59150,7 @@ function TeyesCardvue_type_template_id_515faca8_ts_true_render(_ctx, _cache, $pr
   return (0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)(runtime_core_esm_bundler/* Fragment */.ae, null, [(0,runtime_core_esm_bundler/* createVNode */.K2)(_component_card, {
     class: "teyes-card",
     title: _ctx.$t('options.teyes.title'),
-    menu: $setup.menu,
+    menu: $setup.carModel !== $options.TCarModel.CAR_MODEL_MAZDA_CX9_REST ? $setup.menu : undefined,
     "onClick:menu": $setup.onMenuClick
   }, {
     body: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(VRow, null, {
@@ -59324,12 +59435,12 @@ function TeyesCardvue_type_template_id_515faca8_ts_true_render(_ctx, _cache, $pr
 
 
 ;
-const TeyesCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(TeyesCardvue_type_script_lang_ts, [['render',TeyesCardvue_type_template_id_515faca8_ts_true_render]])
+const TeyesCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(TeyesCardvue_type_script_lang_ts, [['render',TeyesCardvue_type_template_id_050acd0a_ts_true_render]])
 
 /* harmony default export */ var TeyesCard = (TeyesCard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/components/DateTimeCard.vue?vue&type=template&id=2b7ec13f&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/components/DateTimeCard.vue?vue&type=template&id=7d7fa9df&scoped=true&ts=true
 
-function DateTimeCardvue_type_template_id_2b7ec13f_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function DateTimeCardvue_type_template_id_7d7fa9df_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_switch_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("switch-card-item");
                                                       
                                                       
@@ -59338,7 +59449,7 @@ function DateTimeCardvue_type_template_id_2b7ec13f_scoped_true_ts_true_render(_c
   return (0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)(runtime_core_esm_bundler/* Fragment */.ae, null, [(0,runtime_core_esm_bundler/* createVNode */.K2)(_component_card, {
     class: "datetime-card",
     title: _ctx.$t('options.datetime.title'),
-    menu: $setup.menu,
+    menu: $setup.carModel !== $options.TCarModel.CAR_MODEL_MAZDA_CX9_REST ? $setup.menu : undefined,
     "onClick:menu": $setup.onMenuClick
   }, {
     body: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(VRow, null, {
@@ -59457,8 +59568,14 @@ function DateTimeCardvue_type_template_id_2b7ec13f_scoped_true_ts_true_render(_c
 
 
 
+
 /* harmony default export */ var DateTimeCardvue_type_script_lang_ts = ({
   name: "DatetimeCard",
+  computed: {
+    TCarModel() {
+      return TCarModel;
+    }
+  },
   components: {
     Card: Card,
     SwitchCardItem: SwitchCardItem,
@@ -59494,6 +59611,7 @@ function DateTimeCardvue_type_template_id_2b7ec13f_scoped_true_ts_true_render(_c
       get: () => src_store.getters["config/datetime"].showFullDatetime,
       set: val => src_store.commit("config/setDatetimeShowFullDatetime", val)
     });
+    const carModel = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["config/carModel"]);
     const menu = (0,runtime_core_esm_bundler/* computed */.S6)(() => [{
       title: t("options.datetime.menu"),
       view: src_store.getters["view/datetime"],
@@ -59525,6 +59643,7 @@ function DateTimeCardvue_type_template_id_2b7ec13f_scoped_true_ts_true_render(_c
       showDateAndDayWeek,
       showTimeAndDayWeek,
       showFullDatetime,
+      carModel,
       menu,
       menuVisible,
       menuSelected,
@@ -59535,10 +59654,10 @@ function DateTimeCardvue_type_template_id_2b7ec13f_scoped_true_ts_true_render(_c
 });
 ;// CONCATENATED MODULE: ./src/views/options/components/DateTimeCard.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/components/DateTimeCard.vue?vue&type=style&index=0&id=2b7ec13f&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/components/DateTimeCard.vue?vue&type=style&index=0&id=7d7fa9df&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/views/options/components/DateTimeCard.vue?vue&type=style&index=0&id=2b7ec13f&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/views/options/components/DateTimeCard.vue?vue&type=style&index=0&id=7d7fa9df&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/views/options/components/DateTimeCard.vue
 
@@ -59548,7 +59667,7 @@ function DateTimeCardvue_type_template_id_2b7ec13f_scoped_true_ts_true_render(_c
 ;
 
 
-const DateTimeCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(DateTimeCardvue_type_script_lang_ts, [['render',DateTimeCardvue_type_template_id_2b7ec13f_scoped_true_ts_true_render],['__scopeId',"data-v-2b7ec13f"]])
+const DateTimeCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(DateTimeCardvue_type_script_lang_ts, [['render',DateTimeCardvue_type_template_id_7d7fa9df_scoped_true_ts_true_render],['__scopeId',"data-v-7d7fa9df"]])
 
 /* harmony default export */ var DateTimeCard = (DateTimeCard_exports_);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/components/OnboardCard.vue?vue&type=template&id=18aac5dd&scoped=true&ts=true
@@ -60341,9 +60460,9 @@ function AboutDialogvue_type_template_id_7b4ac44c_scoped_true_ts_true_render(_ct
 
 
 
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/DeviceInfoDialog.vue?vue&type=template&id=25dc4600&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/DeviceInfoDialog.vue?vue&type=template&id=6e0f05eb&ts=true
 
-function DeviceInfoDialogvue_type_template_id_25dc4600_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function DeviceInfoDialogvue_type_template_id_6e0f05eb_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                                     
                                                       
                                                       
@@ -61049,7 +61168,7 @@ const TestDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(TestDia
       return {
         hardware: info.hardware,
         temperatureChip: (info.temperatureChip / 100).toFixed(2) + "°C",
-        sdkVersion: info.sdkVersion,
+        sdkVersion: info.sdkVersion.replaceAll("-", ""),
         efuseMac: toMac(info.efuseMac),
         sha: arrayToHex(info.sha)
       };
@@ -61096,7 +61215,7 @@ const TestDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(TestDia
 
 
 ;
-const DeviceInfoDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(DeviceInfoDialogvue_type_script_lang_ts, [['render',DeviceInfoDialogvue_type_template_id_25dc4600_ts_true_render]])
+const DeviceInfoDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(DeviceInfoDialogvue_type_script_lang_ts, [['render',DeviceInfoDialogvue_type_template_id_6e0f05eb_ts_true_render]])
 
 /* harmony default export */ var DeviceInfoDialog = (DeviceInfoDialog_exports_);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/ChoosingCarModelDialog.vue?vue&type=template&id=069aa406&ts=true
@@ -61745,6 +61864,137 @@ function MessageDialogvue_type_template_id_050de974_ts_true_render(_ctx, _cache,
 const MessageDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(MessageDialogvue_type_script_lang_ts, [['render',MessageDialogvue_type_template_id_050de974_ts_true_render]])
 
 /* harmony default export */ var MessageDialog = (MessageDialog_exports_);
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/LocaleDialog.vue?vue&type=template&id=2028a80e&ts=true
+
+function LocaleDialogvue_type_template_id_2028a80e_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+                                                            
+                                                      
+                                                      
+                                                      
+  const _component_dialog_template = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("dialog-template");
+  return (0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(_component_dialog_template, {
+    "content-class": "locale",
+    modelValue: $setup.visible,
+    "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => $setup.visible = $event),
+    title: _ctx.$t('language.title'),
+    icon: "service",
+    width: "480px",
+    text: "",
+    actions: ""
+  }, {
+    body: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(VRow, {
+      class: "pb-2"
+    }, {
+      default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(VCol, {
+        cols: "12"
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(VSelect, {
+          modelValue: $setup.language,
+          "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => $setup.language = $event),
+          label: _ctx.$t('language.label'),
+          items: $setup.locales,
+          hint: _ctx.$t('language.description'),
+          variant: "underlined",
+          "item-title": "label",
+          "item-value": "value",
+          "persistent-hint": ""
+        }, null, 8, ["modelValue", "label", "items", "hint"])]),
+        _: 1
+      })]),
+      _: 1
+    })]),
+    btns: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(VBtn, {
+      color: "primary",
+      onClick: $setup.onApplyClick
+    }, {
+      default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.mY)((0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("btn.apply")), 1)]),
+      _: 1
+    }, 8, ["onClick"]), (0,runtime_core_esm_bundler/* createVNode */.K2)(VBtn, {
+      color: "primary",
+      "prepend-icon": "mdi-close",
+      onClick: _cache[1] || (_cache[1] = $event => $setup.visible = false)
+    }, {
+      default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.mY)((0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("btn.close")), 1)]),
+      _: 1
+    })]),
+    _: 1
+  }, 8, ["modelValue", "title"]);
+}
+
+/* Vuetify */
+
+
+
+
+
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/LocaleDialog.vue?vue&type=script&lang=ts
+
+
+
+
+
+/* harmony default export */ var LocaleDialogvue_type_script_lang_ts = ({
+  name: "LocaleDialog",
+  components: {
+    DialogTemplate: DialogTemplate
+  },
+  props: {
+    modelValue: {
+      type: Boolean,
+      required: true
+    }
+  },
+  emits: ["update:modelValue"],
+  setup(props, {
+    emit
+  }) {
+    const {
+      locale
+    } = useI18n();
+    const {
+      modelValue
+    } = (0,reactivity_esm_bundler/* toRefs */.kx)(props);
+    const visible = (0,runtime_core_esm_bundler/* computed */.S6)({
+      get: () => modelValue.value,
+      set: val => emit("update:modelValue", val)
+    });
+    const locales = (0,runtime_core_esm_bundler/* computed */.S6)(() => [{
+      label: "Русский",
+      value: "ru"
+    }, {
+      label: "English",
+      value: "en"
+    }]);
+    const language = (0,runtime_core_esm_bundler/* computed */.S6)({
+      get: () => src_store.getters["app/language"],
+      set: val => src_store.commit("app/setLanguage", val)
+    });
+    /** Применить язык интерфейса */
+    const onApplyClick = () => {
+      locale.value = language.value;
+      moment_default().locale(language.value);
+      src_store.dispatch("app/writeLanguage");
+      visible.value = false;
+    };
+    return {
+      visible,
+      locales,
+      language,
+      onApplyClick
+    };
+  }
+});
+;// CONCATENATED MODULE: ./src/components/dialogs/LocaleDialog.vue?vue&type=script&lang=ts
+ 
+;// CONCATENATED MODULE: ./src/components/dialogs/LocaleDialog.vue
+
+
+
+
+;
+const LocaleDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(LocaleDialogvue_type_script_lang_ts, [['render',LocaleDialogvue_type_template_id_2028a80e_ts_true_render]])
+
+/* harmony default export */ var LocaleDialog = (LocaleDialog_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=script&lang=ts
 
 
@@ -61772,16 +62022,17 @@ const MessageDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Mess
     AboutDialog: AboutDialog,
     OnboardButtonsDialog: OnboardButtonsDialog,
     MessageDialog: MessageDialog,
-    IconCustom: IconCustom
+    IconCustom: IconCustom,
+    LocaleDialog: LocaleDialog
   },
   setup() {
     const {
-      t,
-      locale
+      t
     } = useI18n();
     const visibleAbout = (0,reactivity_esm_bundler/* ref */.IL)(false);
     const visibleOnboardButtons = (0,reactivity_esm_bundler/* ref */.IL)(false);
     const visibleUpdate = (0,reactivity_esm_bundler/* ref */.IL)(false);
+    const visibleLocale = (0,reactivity_esm_bundler/* ref */.IL)(false);
     const pageWidth = (0,reactivity_esm_bundler/* ref */.IL)(0);
     const pageHeight = (0,reactivity_esm_bundler/* ref */.IL)(0);
     const title = (0,runtime_core_esm_bundler/* computed */.S6)(() => {
@@ -61812,7 +62063,7 @@ const MessageDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Mess
         disabled: name === "Buttons" && query?.type === "sw1"
       }, {
         id: 20,
-        title: t("menu.language." + (locale.value !== "ru" ? "russian" : "english"))
+        title: t("menu.language")
       }, {});
       if (typeof newVersionFirmware.value === "string") {
         result.push({
@@ -61845,8 +62096,7 @@ const MessageDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Mess
           });
           break;
         case 20:
-          locale.value = locale.value !== "ru" ? "ru" : "en";
-          moment_default().locale(locale.value);
+          visibleLocale.value = true;
           break;
         case 30:
           visibleAbout.value = true;
@@ -61915,6 +62165,7 @@ const MessageDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Mess
       visibleAbout,
       visibleOnboardButtons,
       visibleUpdate,
+      visibleLocale,
       pageWidth,
       pageHeight,
       visibleMessage,
@@ -61926,10 +62177,10 @@ const MessageDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Mess
 });
 ;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=style&index=0&id=6b14791c&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=style&index=0&id=0a96dfe8&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=style&index=0&id=6b14791c&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=style&index=0&id=0a96dfe8&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue
 
@@ -61939,10 +62190,11 @@ const MessageDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Mess
 ;
 
 
-const BaseLayout_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(BaseLayoutvue_type_script_lang_ts, [['render',BaseLayoutvue_type_template_id_6b14791c_scoped_true_ts_true_render],['__scopeId',"data-v-6b14791c"]])
+const BaseLayout_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(BaseLayoutvue_type_script_lang_ts, [['render',BaseLayoutvue_type_template_id_0a96dfe8_scoped_true_ts_true_render],['__scopeId',"data-v-0a96dfe8"]])
 
 /* harmony default export */ var BaseLayout = (BaseLayout_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=script&lang=ts
+
 
 
 
@@ -61973,8 +62225,13 @@ const BaseLayout_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(BaseLay
   },
   setup() {
     const {
-      t
+      t,
+      locale
     } = useI18n();
+    // загружаем и применяем язык интерфейса
+    src_store.dispatch("app/readLanguage");
+    locale.value = src_store.getters["app/language"];
+    moment_default().locale(locale.value);
     // записываем входящую конфигурацию в store
     api_canbus.addListener(API_VERSION_EVENT, data => src_store.commit("config/setVersion", data));
     api_canbus.addListener(API_DEVICE_INFO_EVENT, data => src_store.commit("config/setInfo", data));
@@ -115741,6 +115998,6 @@ module.exports = /*#__PURE__*/JSON.parse('{"name":"pjcan","version":"1.1.0","pri
 },
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
-/******/ var __webpack_exports__ = (__webpack_exec__(984));
+/******/ var __webpack_exports__ = (__webpack_exec__(84));
 /******/ }
 ]);
