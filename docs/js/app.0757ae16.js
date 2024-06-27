@@ -302,7 +302,7 @@ webpackContext.id = 2348;
 
 /***/ }),
 
-/***/ 84:
+/***/ 8592:
 /***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11571,7 +11571,7 @@ var eventemitter3_default = /*#__PURE__*/__webpack_require__.n(eventemitter3);
         list: {
           1: "Raise HM_ND00 2017.12.11 (19200)",
           2: "Raise HM_ND01 2019.06.21 (38400)",
-          3: "SimpleSoft MZ_SS_07A (38400)",
+          3: "SimpleSoft MZ_SS_07A (19200)",
           4: "SimpleSoft RP5_MZ_002 (38400)"
         }
       },
@@ -12277,7 +12277,7 @@ var eventemitter3_default = /*#__PURE__*/__webpack_require__.n(eventemitter3);
         list: {
           1: "Raise HM_ND00 2017.12.11 (19200)",
           2: "Raise HM_ND01 2019.06.21 (38400)",
-          3: "SimpleSoft MZ_SS_07A (38400)",
+          3: "SimpleSoft MZ_SS_07A (19200)",
           4: "SimpleSoft RP5_MZ_002 (38400)"
         }
       },
@@ -12678,7 +12678,7 @@ class Bluetooth extends (eventemitter3_default()) {
   }
 }
 // EXTERNAL MODULE: ./node_modules/bitset/bitset.js
-var bitset = __webpack_require__(8592);
+var bitset = __webpack_require__(1448);
 var bitset_default = /*#__PURE__*/__webpack_require__.n(bitset);
 ;// CONCATENATED MODULE: ./src/components/bluetooth/TTypeValue.ts
 /* eslint-disable */
@@ -55393,9 +55393,9 @@ const FuelConfigDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(F
 const FuelCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(FuelCardvue_type_script_lang_ts, [['render',FuelCardvue_type_template_id_93d84b7e_ts_true_render]])
 
 /* harmony default export */ var FuelCard = (FuelCard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/MovementCard.vue?vue&type=template&id=a9fd4f6e&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/MovementCard.vue?vue&type=template&id=699d7dc4&ts=true
 
-function MovementCardvue_type_template_id_a9fd4f6e_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function MovementCardvue_type_template_id_699d7dc4_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_input_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("input-card-item");
                                                       
                                                       
@@ -55492,7 +55492,7 @@ function MovementCardvue_type_template_id_a9fd4f6e_ts_true_render(_ctx, _cache, 
     const speed = (0,runtime_core_esm_bundler/* computed */.S6)(() => (src_store.getters["value/movement"].speed / 100).toFixed(2));
     const speedAVG = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["value/movement"].speedAVG.toFixed(0));
     const restWay = (0,runtime_core_esm_bundler/* computed */.S6)(() => (src_store.getters["value/movement"].restWay / 100).toFixed(0));
-    const isSpeed = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["value/movement"].speed > 0);
+    const isSpeed = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["value/engine"].on);
     const isSpeedAVG = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["value/movement"].speedAVG > 0);
     const isRestWay = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["value/movement"].restWay > 0);
     const carModel = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["config/carModel"]);
@@ -55552,7 +55552,7 @@ function MovementCardvue_type_template_id_a9fd4f6e_ts_true_render(_ctx, _cache, 
 
 
 ;
-const MovementCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(MovementCardvue_type_script_lang_ts, [['render',MovementCardvue_type_template_id_a9fd4f6e_ts_true_render]])
+const MovementCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(MovementCardvue_type_script_lang_ts, [['render',MovementCardvue_type_template_id_699d7dc4_ts_true_render]])
 
 /* harmony default export */ var MovementCard = (MovementCard_exports_);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/DoorsCard.vue?vue&type=template&id=2b511d66&ts=true
@@ -58311,9 +58311,9 @@ function SettingsCardvue_type_template_id_1fe52604_scoped_true_ts_true_render(_c
 const SettingsCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(SettingsCardvue_type_script_lang_ts, [['render',SettingsCardvue_type_template_id_1fe52604_scoped_true_ts_true_render],['__scopeId',"data-v-1fe52604"]])
 
 /* harmony default export */ var SettingsCard = (SettingsCard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/components/ButtonDefinitionDialog.vue?vue&type=template&id=268d9a5a&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/components/ButtonDefinitionDialog.vue?vue&type=template&id=ac5b1bd4&scoped=true&ts=true
 
-function ButtonDefinitionDialogvue_type_template_id_268d9a5a_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function ButtonDefinitionDialogvue_type_template_id_ac5b1bd4_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_number_field = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("number-field");
                                                       
                                                             
@@ -58439,7 +58439,8 @@ function ButtonDefinitionDialogvue_type_template_id_268d9a5a_scoped_true_ts_true
     const {
       modelValue,
       types,
-      valueId
+      valueId,
+      valueResistance
     } = (0,reactivity_esm_bundler/* toRefs */.kx)(props);
     const visible = (0,runtime_core_esm_bundler/* computed */.S6)({
       get: () => modelValue.value,
@@ -58449,12 +58450,15 @@ function ButtonDefinitionDialogvue_type_template_id_268d9a5a_scoped_true_ts_true
     const resistanceMin = (0,reactivity_esm_bundler/* ref */.IL)(0);
     const resistanceMax = (0,reactivity_esm_bundler/* ref */.IL)(0);
     const disabled = (0,runtime_core_esm_bundler/* computed */.S6)(() => id.value === undefined);
-    (0,runtime_core_esm_bundler/* watch */.Kg)(modelValue, () => {
+    /** Обновление данных */
+    const updateData = () => {
       id.value = valueId.value;
       const selectedType = types.value?.find(x => x.id === id.value);
       resistanceMin.value = selectedType?.config?.resistanceMin ?? 0;
       resistanceMax.value = selectedType?.config?.resistanceMax ?? 0;
-    });
+    };
+    (0,runtime_core_esm_bundler/* watch */.Kg)(modelValue, () => updateData());
+    (0,runtime_core_esm_bundler/* watch */.Kg)(valueResistance, () => updateData());
     /** Применить */
     const onApplyClick = () => {
       visible.value = false;
@@ -58473,10 +58477,10 @@ function ButtonDefinitionDialogvue_type_template_id_268d9a5a_scoped_true_ts_true
 });
 ;// CONCATENATED MODULE: ./src/views/buttons/components/ButtonDefinitionDialog.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/components/ButtonDefinitionDialog.vue?vue&type=style&index=0&id=268d9a5a&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/components/ButtonDefinitionDialog.vue?vue&type=style&index=0&id=ac5b1bd4&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/views/buttons/components/ButtonDefinitionDialog.vue?vue&type=style&index=0&id=268d9a5a&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/views/buttons/components/ButtonDefinitionDialog.vue?vue&type=style&index=0&id=ac5b1bd4&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/views/buttons/components/ButtonDefinitionDialog.vue
 
@@ -58486,7 +58490,7 @@ function ButtonDefinitionDialogvue_type_template_id_268d9a5a_scoped_true_ts_true
 ;
 
 
-const ButtonDefinitionDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(ButtonDefinitionDialogvue_type_script_lang_ts, [['render',ButtonDefinitionDialogvue_type_template_id_268d9a5a_scoped_true_ts_true_render],['__scopeId',"data-v-268d9a5a"]])
+const ButtonDefinitionDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(ButtonDefinitionDialogvue_type_script_lang_ts, [['render',ButtonDefinitionDialogvue_type_template_id_ac5b1bd4_scoped_true_ts_true_render],['__scopeId',"data-v-ac5b1bd4"]])
 
 /* harmony default export */ var ButtonDefinitionDialog = (ButtonDefinitionDialog_exports_);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/components/ButtonEditDialog.vue?vue&type=template&id=5d8a23c3&ts=true
@@ -61450,9 +61454,9 @@ const pkg = __webpack_require__(6604);
 const AboutDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(AboutDialogvue_type_script_lang_ts, [['render',AboutDialogvue_type_template_id_7b4ac44c_scoped_true_ts_true_render],['__scopeId',"data-v-7b4ac44c"]])
 
 /* harmony default export */ var AboutDialog = (AboutDialog_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=template&id=1ad43e50&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=template&id=f54d1368&scoped=true&ts=true
 
-function OnboardButtonsDialogvue_type_template_id_1ad43e50_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function OnboardButtonsDialogvue_type_template_id_f54d1368_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                       
                                                                   
                                                       
@@ -61543,7 +61547,7 @@ function OnboardButtonsDialogvue_type_template_id_1ad43e50_scoped_true_ts_true_r
           _: 1
         })]),
         _: 1
-      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.g1)("", true), $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BK || $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_CX7_REST || $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_CX9_REST ? ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(VCol, {
+      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.g1)("", true), $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BK || $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BL || $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_CX7_REST || $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_CX9_REST ? ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(VCol, {
         key: 2,
         cols: "12",
         class: "d-flex justify-center"
@@ -61760,10 +61764,10 @@ function OnboardButtonsDialogvue_type_template_id_1ad43e50_scoped_true_ts_true_r
 });
 ;// CONCATENATED MODULE: ./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=style&index=0&id=1ad43e50&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=style&index=0&id=f54d1368&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=style&index=0&id=1ad43e50&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=style&index=0&id=f54d1368&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/components/dialogs/OnboardButtonsDialog.vue
 
@@ -61773,7 +61777,7 @@ function OnboardButtonsDialogvue_type_template_id_1ad43e50_scoped_true_ts_true_r
 ;
 
 
-const OnboardButtonsDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(OnboardButtonsDialogvue_type_script_lang_ts, [['render',OnboardButtonsDialogvue_type_template_id_1ad43e50_scoped_true_ts_true_render],['__scopeId',"data-v-1ad43e50"]])
+const OnboardButtonsDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(OnboardButtonsDialogvue_type_script_lang_ts, [['render',OnboardButtonsDialogvue_type_template_id_f54d1368_scoped_true_ts_true_render],['__scopeId',"data-v-f54d1368"]])
 
 /* harmony default export */ var OnboardButtonsDialog = (OnboardButtonsDialog_exports_);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/MessageDialog.vue?vue&type=template&id=050de974&ts=true
@@ -86069,7 +86073,7 @@ const stringifySymbol = (v, i = "") => {
 
 /***/ }),
 
-/***/ 8592:
+/***/ 1448:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;__webpack_require__(3248);
@@ -115998,6 +116002,6 @@ module.exports = /*#__PURE__*/JSON.parse('{"name":"pjcan","version":"1.1.0","pri
 },
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
-/******/ var __webpack_exports__ = (__webpack_exec__(84));
+/******/ var __webpack_exports__ = (__webpack_exec__(8592));
 /******/ }
 ]);
