@@ -302,7 +302,7 @@ webpackContext.id = 2348;
 
 /***/ }),
 
-/***/ 8592:
+/***/ 5888:
 /***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11174,7 +11174,7 @@ var eventemitter3_default = /*#__PURE__*/__webpack_require__.n(eventemitter3);
       },
       voltmeter: {
         title: "Напряжение",
-        description: "Напряжение бортовой сети в вольтах",
+        description: "Напряжение бортовой сети в вольтах (среднее значение за 10 сек.)",
         menu: "LCD: Напряжение"
       },
       temperatureIn: {
@@ -11485,8 +11485,8 @@ var eventemitter3_default = /*#__PURE__*/__webpack_require__.n(eventemitter3);
     },
     functions: {
       0: "Нет действия",
-      1: "Перейти в режим Mode",
-      2: "Выход из режима Mode",
+      1: "Перейти в режим Fn",
+      2: "Выход из режима Fn",
       3: "Нажатие кнопки MODE",
       4: "Нажатие кнопки SET UP",
       5: "Нажатие кнопки SET DOWN",
@@ -11881,7 +11881,7 @@ var eventemitter3_default = /*#__PURE__*/__webpack_require__.n(eventemitter3);
       },
       voltmeter: {
         title: "Voltage",
-        description: "On-board mains voltage in volts",
+        description: "On-board mains voltage in volts (the average value for 10 sec.)",
         menu: "LCD: Voltage"
       },
       temperatureIn: {
@@ -12191,8 +12191,8 @@ var eventemitter3_default = /*#__PURE__*/__webpack_require__.n(eventemitter3);
     },
     functions: {
       0: "No action",
-      1: "Switch to the Mode",
-      2: "Exiting the Mode",
+      1: "Switch to the Fn",
+      2: "Exiting the Fn",
       3: "Pressing the MODE button",
       4: "Pressing the SET UP button",
       5: "Pressing the SET DOWN button",
@@ -12678,7 +12678,7 @@ class Bluetooth extends (eventemitter3_default()) {
   }
 }
 // EXTERNAL MODULE: ./node_modules/bitset/bitset.js
-var bitset = __webpack_require__(1448);
+var bitset = __webpack_require__(8592);
 var bitset_default = /*#__PURE__*/__webpack_require__.n(bitset);
 ;// CONCATENATED MODULE: ./src/components/bluetooth/TTypeValue.ts
 /* eslint-disable */
@@ -13312,7 +13312,7 @@ _defineProperty(MazdaAction, "size", 4);
 }, {
   name: "doors",
   enabled: true,
-  car: [TCarModel.CAR_MODEL_MAZDA_3_BK]
+  car: [TCarModel.CAR_MODEL_MAZDA_3_BK, TCarModel.CAR_MODEL_MAZDA_3_BL]
 }, {
   name: "climate",
   enabled: true,
@@ -45819,9 +45819,9 @@ const VCol = genericComponent()({
     }, slots.default?.());
   }
 });
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/InfoCard.vue?vue&type=template&id=2ebc727e&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/InfoCard.vue?vue&type=template&id=7dbce139&ts=true
 
-function InfoCardvue_type_template_id_2ebc727e_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function InfoCardvue_type_template_id_7dbce139_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_icon_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("icon-card-item");
                                                       
   const _component_input_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("input-card-item");
@@ -45904,7 +45904,7 @@ function InfoCardvue_type_template_id_2ebc727e_ts_true_render(_ctx, _cache, $pro
           disabled: !$setup.temperatureViewLoaded
         }, null, 8, ["value", "title", "description", "nodata", "disabled"])]),
         _: 1
-      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.g1)("", true), $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BK ? ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(VCol, {
+      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.g1)("", true), $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BK || $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BL ? ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(VCol, {
         key: 3,
         cols: "12",
         class: "pt-0 pb-0"
@@ -54402,12 +54402,21 @@ const ViewSettingDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(
           disabled: !voltmeterViewLoaded.value
         });
       }
+      if (carModel.value === TCarModel.CAR_MODEL_MAZDA_3_BL) {
+        result.push({
+          title: t("onboard.info.temperatureIn.menu"),
+          view: src_store.getters["view/temperature"],
+          disabled: !temperatureViewLoaded.value
+        });
+      }
       if (carModel.value === TCarModel.CAR_MODEL_MAZDA_3_BK) {
         result.push({
           title: t("onboard.info.temperatureOut.menu"),
           view: src_store.getters["view/temperature"],
           disabled: !temperatureViewLoaded.value
         });
+      }
+      if (carModel.value === TCarModel.CAR_MODEL_MAZDA_3_BK || carModel.value === TCarModel.CAR_MODEL_MAZDA_3_BL) {
         result.push({
           title: t("onboard.info.handbrake.menu"),
           view: src_store.getters["view/sensors"].handbrake,
@@ -54490,7 +54499,7 @@ const ViewSettingDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(
 
 
 ;
-const InfoCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(InfoCardvue_type_script_lang_ts, [['render',InfoCardvue_type_template_id_2ebc727e_ts_true_render]])
+const InfoCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(InfoCardvue_type_script_lang_ts, [['render',InfoCardvue_type_template_id_7dbce139_ts_true_render]])
 
 /* harmony default export */ var InfoCard = (InfoCard_exports_);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/EngineCard.vue?vue&type=template&id=a45bc802&ts=true
@@ -57894,13 +57903,13 @@ function buttonsvue_type_template_id_d21e585a_scoped_true_ts_true_render(_ctx, _
     "onClick:apply": $setup.onButtonAddApply
   }, null, 8, ["modelValue", "name", "press", "value-resistance", "resistance-min", "resistance-max", "onClick:apply"])], 64);
 }
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/components/SettingsCard.vue?vue&type=template&id=1fe52604&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/components/SettingsCard.vue?vue&type=template&id=fabd0d36&scoped=true&ts=true
 
-const SettingsCardvue_type_template_id_1fe52604_scoped_true_ts_true_withScopeId = n => (_pushScopeId("data-v-1fe52604"), n = n(), _popScopeId(), n);
-const SettingsCardvue_type_template_id_1fe52604_scoped_true_ts_true_hoisted_1 = {
+const SettingsCardvue_type_template_id_fabd0d36_scoped_true_ts_true_withScopeId = n => (_pushScopeId("data-v-fabd0d36"), n = n(), _popScopeId(), n);
+const SettingsCardvue_type_template_id_fabd0d36_scoped_true_ts_true_hoisted_1 = {
   class: "settings-card__mode-title"
 };
-function SettingsCardvue_type_template_id_1fe52604_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function SettingsCardvue_type_template_id_fabd0d36_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_input_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("input-card-item");
                                                       
                                                             
@@ -57933,7 +57942,7 @@ function SettingsCardvue_type_template_id_1fe52604_scoped_true_ts_true_render(_c
           modelValue: $setup.pressSingle,
           "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => $setup.pressSingle = $event),
           label: _ctx.$t('buttons.pressSingle.title'),
-          items: $setup.functionsList,
+          items: $setup.functionsListWithoutMode,
           hint: _ctx.$t('buttons.pressSingle.description'),
           variant: "underlined",
           "item-title": "label",
@@ -58025,7 +58034,7 @@ function SettingsCardvue_type_template_id_1fe52604_scoped_true_ts_true_render(_c
         cols: "12",
         class: "pt-6"
       }, {
-        default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createElementVNode */.QD)("span", SettingsCardvue_type_template_id_1fe52604_scoped_true_ts_true_hoisted_1, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("buttons.extendedMode")), 1)]),
+        default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createElementVNode */.QD)("span", SettingsCardvue_type_template_id_fabd0d36_scoped_true_ts_true_hoisted_1, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("buttons.extendedMode")), 1)]),
         _: 1
       }), (0,runtime_core_esm_bundler/* createVNode */.K2)(VCol, {
         cols: "12",
@@ -58107,7 +58116,7 @@ function SettingsCardvue_type_template_id_1fe52604_scoped_true_ts_true_render(_c
 
 
 
-;// CONCATENATED MODULE: ./src/views/buttons/components/SettingsCard.vue?vue&type=template&id=1fe52604&scoped=true&ts=true
+;// CONCATENATED MODULE: ./src/views/buttons/components/SettingsCard.vue?vue&type=template&id=fabd0d36&scoped=true&ts=true
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/components/SettingsCard.vue?vue&type=script&lang=ts
 
@@ -58266,6 +58275,18 @@ function SettingsCardvue_type_template_id_1fe52604_scoped_true_ts_true_render(_c
         }
       }
     });
+    /** Список функций без режима Mode */
+    const functionsListWithoutMode = (0,runtime_core_esm_bundler/* computed */.S6)(() => {
+      const list = tm("buttons.functions");
+      const result = [];
+      for (const key in list) {
+        if (key !== "1" && key !== "2") result.push({
+          label: list[key],
+          value: Number(key)
+        });
+      }
+      return result;
+    });
     /** Список функций */
     const functionsList = (0,runtime_core_esm_bundler/* computed */.S6)(() => {
       const list = tm("buttons.functions");
@@ -58277,6 +58298,7 @@ function SettingsCardvue_type_template_id_1fe52604_scoped_true_ts_true_render(_c
       return result;
     });
     return {
+      functionsListWithoutMode,
       functionsList,
       extended,
       hold,
@@ -58295,10 +58317,10 @@ function SettingsCardvue_type_template_id_1fe52604_scoped_true_ts_true_render(_c
 });
 ;// CONCATENATED MODULE: ./src/views/buttons/components/SettingsCard.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/components/SettingsCard.vue?vue&type=style&index=0&id=1fe52604&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/components/SettingsCard.vue?vue&type=style&index=0&id=fabd0d36&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/views/buttons/components/SettingsCard.vue?vue&type=style&index=0&id=1fe52604&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/views/buttons/components/SettingsCard.vue?vue&type=style&index=0&id=fabd0d36&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/views/buttons/components/SettingsCard.vue
 
@@ -58308,7 +58330,7 @@ function SettingsCardvue_type_template_id_1fe52604_scoped_true_ts_true_render(_c
 ;
 
 
-const SettingsCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(SettingsCardvue_type_script_lang_ts, [['render',SettingsCardvue_type_template_id_1fe52604_scoped_true_ts_true_render],['__scopeId',"data-v-1fe52604"]])
+const SettingsCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(SettingsCardvue_type_script_lang_ts, [['render',SettingsCardvue_type_template_id_fabd0d36_scoped_true_ts_true_render],['__scopeId',"data-v-fabd0d36"]])
 
 /* harmony default export */ var SettingsCard = (SettingsCard_exports_);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/components/ButtonDefinitionDialog.vue?vue&type=template&id=ac5b1bd4&scoped=true&ts=true
@@ -86073,7 +86095,7 @@ const stringifySymbol = (v, i = "") => {
 
 /***/ }),
 
-/***/ 1448:
+/***/ 8592:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;__webpack_require__(3248);
@@ -116002,6 +116024,6 @@ module.exports = /*#__PURE__*/JSON.parse('{"name":"pjcan","version":"1.1.0","pri
 },
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
-/******/ var __webpack_exports__ = (__webpack_exec__(8592));
+/******/ var __webpack_exports__ = (__webpack_exec__(5888));
 /******/ }
 ]);
