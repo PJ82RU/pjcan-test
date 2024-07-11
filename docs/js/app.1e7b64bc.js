@@ -302,7 +302,7 @@ webpackContext.id = 2348;
 
 /***/ }),
 
-/***/ 5888:
+/***/ 9912:
 /***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11435,8 +11435,8 @@ var eventemitter3_default = /*#__PURE__*/__webpack_require__.n(eventemitter3);
   },
   buttons: {
     title: "Настройки кнопок",
-    extendedMode: "Режим Mode",
-    hintMode: " (режим Mode)",
+    extendedMode: "Режим Fn",
+    hintMode: " (режим Fn)",
     mode: "Кнопка MODE",
     setUp: "Кнопка SET UP",
     setDown: "Кнопка SET DOWN",
@@ -12141,8 +12141,8 @@ var eventemitter3_default = /*#__PURE__*/__webpack_require__.n(eventemitter3);
   },
   buttons: {
     title: "Button settings",
-    extendedMode: "Advanced mode",
-    hintMode: " (advanced mode)",
+    extendedMode: "Advanced Fn",
+    hintMode: " (advanced Fn)",
     mode: "MODE button",
     seekUp: "SET UP button",
     seekDown: "SET DOWN button",
@@ -54719,18 +54719,18 @@ function ProgressCardItemvue_type_template_id_7e2d50a4_scoped_true_ts_true_rende
 const ProgressCardItem_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(ProgressCardItemvue_type_script_lang_ts, [['render',ProgressCardItemvue_type_template_id_7e2d50a4_scoped_true_ts_true_render],['__scopeId',"data-v-7e2d50a4"]])
 
 /* harmony default export */ var ProgressCardItem = (ProgressCardItem_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/EngineConfigDialog.vue?vue&type=template&id=308b5d9e&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/EngineConfigDialog.vue?vue&type=template&id=27b06bd7&ts=true
 
-const EngineConfigDialogvue_type_template_id_308b5d9e_ts_true_hoisted_1 = {
+const EngineConfigDialogvue_type_template_id_27b06bd7_ts_true_hoisted_1 = {
   key: 1
 };
-const EngineConfigDialogvue_type_template_id_308b5d9e_ts_true_hoisted_2 = {
+const EngineConfigDialogvue_type_template_id_27b06bd7_ts_true_hoisted_2 = {
   key: 1
 };
-const EngineConfigDialogvue_type_template_id_308b5d9e_ts_true_hoisted_3 = {
+const EngineConfigDialogvue_type_template_id_27b06bd7_ts_true_hoisted_3 = {
   key: 1
 };
-function EngineConfigDialogvue_type_template_id_308b5d9e_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function EngineConfigDialogvue_type_template_id_27b06bd7_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_switch_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("switch-card-item");
                                                       
   const _component_number_field = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("number-field");
@@ -54801,7 +54801,7 @@ function EngineConfigDialogvue_type_template_id_308b5d9e_ts_true_render(_ctx, _c
       }, {
         default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.mY)("mdi-restart")]),
         _: 1
-      })) : ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)("span", EngineConfigDialogvue_type_template_id_308b5d9e_ts_true_hoisted_1, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("btn.reset")), 1))]),
+      })) : ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)("span", EngineConfigDialogvue_type_template_id_27b06bd7_ts_true_hoisted_1, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("btn.reset")), 1))]),
       _: 1
     }, 8, ["onClick"]), (0,runtime_core_esm_bundler/* createVNode */.K2)(VBtn, {
       color: "primary",
@@ -54812,7 +54812,7 @@ function EngineConfigDialogvue_type_template_id_308b5d9e_ts_true_render(_ctx, _c
       }, {
         default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.mY)("mdi-check")]),
         _: 1
-      })) : ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)("span", EngineConfigDialogvue_type_template_id_308b5d9e_ts_true_hoisted_2, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("btn.apply")), 1))]),
+      })) : ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)("span", EngineConfigDialogvue_type_template_id_27b06bd7_ts_true_hoisted_2, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("btn.apply")), 1))]),
       _: 1
     }, 8, ["onClick"]), (0,runtime_core_esm_bundler/* createVNode */.K2)(VBtn, {
       color: "primary",
@@ -54823,7 +54823,7 @@ function EngineConfigDialogvue_type_template_id_308b5d9e_ts_true_render(_ctx, _c
       }, {
         default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.mY)("mdi-close")]),
         _: 1
-      })) : ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)("span", EngineConfigDialogvue_type_template_id_308b5d9e_ts_true_hoisted_3, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("btn.cancel")), 1))]),
+      })) : ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)("span", EngineConfigDialogvue_type_template_id_27b06bd7_ts_true_hoisted_3, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("btn.cancel")), 1))]),
       _: 1
     })]),
     _: 1
@@ -54836,7 +54836,7 @@ function EngineConfigDialogvue_type_template_id_308b5d9e_ts_true_render(_ctx, _c
 
 
 
-;// CONCATENATED MODULE: ./src/views/onboard/components/EngineConfigDialog.vue?vue&type=template&id=308b5d9e&ts=true
+;// CONCATENATED MODULE: ./src/views/onboard/components/EngineConfigDialog.vue?vue&type=template&id=27b06bd7&ts=true
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/EngineConfigDialog.vue?vue&type=script&lang=ts
 
@@ -54877,7 +54877,7 @@ function EngineConfigDialogvue_type_template_id_308b5d9e_ts_true_render(_ctx, _c
       get: () => modelValue.value,
       set: val => context.emit("update:modelValue", val)
     });
-    const configShowDays = (0,reactivity_esm_bundler/* ref */.IL)(true);
+    const configShowDays = (0,reactivity_esm_bundler/* ref */.IL)(false);
     const configTotalWorktime = (0,reactivity_esm_bundler/* ref */.IL)(0);
     const configTotalCountRPM = (0,reactivity_esm_bundler/* ref */.IL)(0);
     (0,runtime_core_esm_bundler/* watch */.Kg)(visible, val => {
@@ -54889,7 +54889,7 @@ function EngineConfigDialogvue_type_template_id_308b5d9e_ts_true_render(_ctx, _c
     });
     /** Сбросить */
     const onResetClick = () => {
-      configShowDays.value = true;
+      configShowDays.value = false;
       configTotalWorktime.value = 0;
       configTotalCountRPM.value = 0;
     };
@@ -54920,7 +54920,7 @@ function EngineConfigDialogvue_type_template_id_308b5d9e_ts_true_render(_ctx, _c
 
 
 ;
-const EngineConfigDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(EngineConfigDialogvue_type_script_lang_ts, [['render',EngineConfigDialogvue_type_template_id_308b5d9e_ts_true_render]])
+const EngineConfigDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(EngineConfigDialogvue_type_script_lang_ts, [['render',EngineConfigDialogvue_type_template_id_27b06bd7_ts_true_render]])
 
 /* harmony default export */ var EngineConfigDialog = (EngineConfigDialog_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/EngineCard.vue?vue&type=script&lang=ts
@@ -116024,6 +116024,6 @@ module.exports = /*#__PURE__*/JSON.parse('{"name":"pjcan","version":"1.1.0","pri
 },
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
-/******/ var __webpack_exports__ = (__webpack_exec__(5888));
+/******/ var __webpack_exports__ = (__webpack_exec__(9912));
 /******/ }
 ]);
