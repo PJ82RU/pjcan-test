@@ -302,7 +302,7 @@ webpackContext.id = 2348;
 
 /***/ }),
 
-/***/ 2784:
+/***/ 2640:
 /***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -45819,9 +45819,9 @@ const VCol = genericComponent()({
     }, slots.default?.());
   }
 });
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/InfoCard.vue?vue&type=template&id=7da09e32&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/InfoCard.vue?vue&type=template&id=9e7e5260&ts=true
 
-function InfoCardvue_type_template_id_7da09e32_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function InfoCardvue_type_template_id_9e7e5260_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_icon_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("icon-card-item");
                                                       
   const _component_input_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("input-card-item");
@@ -45876,7 +45876,7 @@ function InfoCardvue_type_template_id_7da09e32_ts_true_render(_ctx, _cache, $pro
           disabled: !$setup.voltmeterViewLoaded
         }, null, 8, ["value", "title", "description", "nodata", "disabled"])]),
         _: 1
-      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.g1)("", true), $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BK ? ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(VCol, {
+      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.g1)("", true), $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BK || $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BL ? ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(VCol, {
         key: 1,
         cols: "12",
         class: "pt-0 pb-0"
@@ -54485,7 +54485,7 @@ const ViewSettingDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(
 
 
 ;
-const InfoCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(InfoCardvue_type_script_lang_ts, [['render',InfoCardvue_type_template_id_7da09e32_ts_true_render]])
+const InfoCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(InfoCardvue_type_script_lang_ts, [['render',InfoCardvue_type_template_id_9e7e5260_ts_true_render]])
 
 /* harmony default export */ var InfoCard = (InfoCard_exports_);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/EngineCard.vue?vue&type=template&id=a45bc802&ts=true
@@ -116010,6 +116010,6 @@ module.exports = /*#__PURE__*/JSON.parse('{"name":"pjcan","version":"1.1.0","pri
 },
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
-/******/ var __webpack_exports__ = (__webpack_exec__(2784));
+/******/ var __webpack_exports__ = (__webpack_exec__(2640));
 /******/ }
 ]);
