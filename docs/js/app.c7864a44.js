@@ -302,7 +302,7 @@ webpackContext.id = 2348;
 
 /***/ }),
 
-/***/ 2640:
+/***/ 5320:
 /***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -460,6 +460,7 @@ __webpack_require__.d(value_getters_namespaceObject, {
 var value_mutations_namespaceObject = {};
 __webpack_require__.r(value_mutations_namespaceObject);
 __webpack_require__.d(value_mutations_namespaceObject, {
+  nextScannerBuffer: function() { return nextScannerBuffer; },
   setClimate: function() { return setClimate; },
   setDevice: function() { return setDevice; },
   setDoors: function() { return mutations_setDoors; },
@@ -13124,14 +13125,16 @@ class BluetoothStruct {
 const API_CANBUS_EVENT = "Canbus";
 /** Базовая модель */
 class BaseModel {
-  constructor(exec, highPriority = false) {
+  constructor(exec, highPriority = false, protocol = 41) {
     _defineProperty(this, "exec", void 0);
     _defineProperty(this, "highPriority", void 0);
+    _defineProperty(this, "protocol", void 0);
     _defineProperty(this, "skipActivationCheck", false);
     _defineProperty(this, "id", 0);
     _defineProperty(this, "isData", false);
     this.exec = exec;
     this.highPriority = highPriority;
+    this.protocol = protocol;
   }
   /**
    * Запись данных
@@ -13143,12 +13146,12 @@ class BaseModel {
    * @protected
    */
   _set(th, exec, size, struct, buf) {
+    const offset = this.protocol === 40 ? 1 : 3;
     const id = buf.getUint8(0);
-    const sizeData = buf.byteLength >= 3 ? buf.getUint16(1, true) : 0;
-    const result = id === exec && sizeData === size;
+    const result = this.protocol === 40 ? id === exec : id === exec && (buf.byteLength >= 3 ? buf.getUint16(1, true) : 0) === size;
     if (result) {
       try {
-        struct.decode(buf, th, 3);
+        struct.decode(buf, th, offset);
         this.isData = true;
       } catch (e) {
         console.log(e);
@@ -13164,15 +13167,16 @@ class BaseModel {
    * @param {IBluetoothStruct} struct Структура данных
    */
   _get(th, exec, size = 0, struct) {
-    const buf = new DataView(new ArrayBuffer(size + 3));
+    const offset = this.protocol === 40 ? 1 : 3;
+    const buf = new DataView(new ArrayBuffer(size + offset));
     buf.setUint8(0, exec);
-    buf.setUint16(1, size, true);
+    if (offset === 3) buf.setUint16(1, size, true);
     if (size > 0) {
       try {
-        struct?.encode(buf, th, 3);
+        struct?.encode(buf, th, offset);
       } catch (e) {
         console.log(e);
-        buf.setUint16(1, 0, true);
+        if (offset === 3) buf.setUint16(1, 0, true);
       }
     }
     return buf;
@@ -13836,6 +13840,7 @@ var EDeviceUpdateError;
 
 
 const API_DEVICE_UPDATE_EXEC = 0x05;
+const API40_DEVICE_UPDATE_EXEC = 0x5a;
 const API_DEVICE_UPDATE_EVENT = "DeviceUpdate";
 const API_DEVICE_UPDATE_EVENT_ERROR = "DeviceUpdateError";
 /** Модель обновления прошивки */
@@ -13845,6 +13850,7 @@ class DeviceUpdate extends (eventemitter3_default()) {
   }
   constructor(data) {
     super();
+    _defineProperty(this, "protocol", 41);
     _defineProperty(this, "firmwareUrl", "");
     _defineProperty(this, "firmwareData", new Uint8Array(0));
     _defineProperty(this, "offset", 0);
@@ -13893,39 +13899,40 @@ class DeviceUpdate extends (eventemitter3_default()) {
    * @param {DataView} buf Буфер данных
    */
   set(buf) {
+    const offset = this.protocol === 40 ? 1 : 3;
     const id = buf.getUint8(0);
-    const sizeData = buf.byteLength >= 3 ? buf.getUint16(1, true) : 0;
-    const result = id === API_DEVICE_UPDATE_EXEC && sizeData === 1;
+    const result = this.protocol === 40 ? id === API40_DEVICE_UPDATE_EXEC : id === API_DEVICE_UPDATE_EXEC && (buf.byteLength >= 3 ? buf.getUint16(1, true) : 0) === 1;
     if (result) {
-      this.error = buf.getUint8(3);
+      this.error = buf.getUint8(offset);
       this.emit(API_DEVICE_UPDATE_EVENT, this.error);
     }
   }
   /** Чтение данных */
   get() {
-    const buf = new DataView(new ArrayBuffer(DeviceUpdate.size + 3));
-    buf.setUint8(0, API_DEVICE_UPDATE_EXEC);
-    buf.setUint16(1, DeviceUpdate.size, true);
+    const offset = this.protocol === 40 ? 1 : 3;
+    const buf = new DataView(new ArrayBuffer(DeviceUpdate.size + offset));
+    buf.setUint8(0, this.protocol === 40 ? API40_DEVICE_UPDATE_EXEC : API_DEVICE_UPDATE_EXEC);
+    if (offset === 3) buf.setUint16(1, DeviceUpdate.size, true);
     try {
       this.begin = !this.begin && this.offset === 0;
       if (this.begin && this.encrypt && this.iv) {
         this.size = this.ivData.length;
         for (let i = 0; i < this.size; i++) {
-          buf.setUint8(10 + i, this.ivData[i]);
+          buf.setUint8(7 + offset + i, this.ivData[i]);
         }
       } else {
         this.size = this.total - this.offset;
         if (this.size > 496) this.size = 496;else if (this.size < 0) this.size = 0;
         for (let i = 0; i < this.size; i++) {
-          buf.setUint8(10 + i, this.firmwareData[this.offset]);
+          buf.setUint8(7 + offset + i, this.firmwareData[this.offset]);
           this.offset++;
         }
       }
       this.end = this.offset >= this.total;
-      new BluetoothStruct(DeviceUpdate.struct)?.encode(buf, this, 3);
+      new BluetoothStruct(DeviceUpdate.struct)?.encode(buf, this, offset);
     } catch (e) {
       console.log(e);
-      buf.setUint16(1, 0, true);
+      if (offset === 3) buf.setUint16(1, 0, true);
     }
     return buf;
   }
@@ -13983,7 +13990,7 @@ class DeviceScannerValue extends BaseModel {
     _defineProperty(this, "frames", []);
     for (let i = 0; i < 16; i++) {
       this.frames.push({
-        receive: false,
+        receive: true,
         send: false,
         id: 0,
         data: [0, 0, 0, 0, 0, 0, 0, 0],
@@ -14881,22 +14888,36 @@ _defineProperty(VolumeConfig, "size", 5);
 const API_VERSION_EXEC = 0x00;
 const API_VERSION_EVENT = "Version";
 const API_NEW_VERSION_EVENT = "NewVersion";
+const API40_VERSION_EXEC = 0x06;
+const API40_VERSION_EVENT = "Version40";
 /** Модель версии */
 class Version extends BaseModel {
   /** Наличие версии */
   get is() {
     return this.major > 0;
   }
+  /** Поддерживаемая версия прошивки */
+  get supported() {
+    return this.major === 4 && this.minor === 1;
+  }
   /** Строковое представление */
   get toString() {
     return `${this.major}.${this.minor}.${this.build}.${this.revision}`;
   }
-  constructor(data) {
-    super(API_VERSION_EXEC, true);
-    _defineProperty(this, "major", 0);
-    _defineProperty(this, "minor", 0);
-    _defineProperty(this, "build", 0);
-    _defineProperty(this, "revision", 0);
+  constructor(data, protocol) {
+    if (protocol === 40) {
+      super(API40_VERSION_EXEC, true, 40);
+      _defineProperty(this, "major", 0);
+      _defineProperty(this, "minor", 0);
+      _defineProperty(this, "build", 0);
+      _defineProperty(this, "revision", 0);
+    } else {
+      super(API_VERSION_EXEC, true);
+      _defineProperty(this, "major", 0);
+      _defineProperty(this, "minor", 0);
+      _defineProperty(this, "build", 0);
+      _defineProperty(this, "revision", 0);
+    }
     this.skipActivationCheck = true;
     if (data) this.set(data);
   }
@@ -14955,8 +14976,8 @@ class Version extends BaseModel {
     return this._set(this, this.exec, Version.size, new BluetoothStruct(Version.struct), buf);
   }
   /** Чтение данных */
-  get() {
-    return this._get(this, this.exec);
+  get(request) {
+    return request ? this._get(this, this.exec) : this._get(this, this.exec, Version.size, new BluetoothStruct(Version.struct));
   }
 }
 _defineProperty(Version, "struct", {
@@ -18611,7 +18632,8 @@ class Canbus extends (eventemitter3_default()) {
     _defineProperty(this, "version", new Version());
     /** Статус активации устройства */
     _defineProperty(this, "activation", false);
-    _defineProperty(this, "__onVersion", ev => canbus.onVersion(ev));
+    _defineProperty(this, "__onVersion", ev => canbus.onVersion(ev, false));
+    _defineProperty(this, "__onVersion40", ev => canbus.onVersion(ev, true));
     _defineProperty(this, "__onIsActivation", ev => canbus.onIsActivation(ev));
     _defineProperty(this, "__onActivation", ev => canbus.onActivation(ev));
     _defineProperty(this, "scannerInterval", void 0);
@@ -18688,7 +18710,10 @@ class Canbus extends (eventemitter3_default()) {
       if (!this.version.is) {
         // Запрос версии прошивки
         this.addListener(API_VERSION_EVENT, this.__onVersion);
-        this.query(new Version());
+        this.query(new Version(), true);
+        // Запрос версии прошивки 4.0
+        this.addListener(API40_VERSION_EVENT, this.__onVersion40);
+        this.query(new Version(undefined, 40), true);
         return;
       }
     }
@@ -18697,10 +18722,21 @@ class Canbus extends (eventemitter3_default()) {
   /**
    * Входящее значение версии
    * @param {DataView} data Данные
+   * @param {boolean} oldProtocol Старая версия протокола
    */
-  onVersion(data) {
+  onVersion(data, oldProtocol) {
     this.removeListener(API_VERSION_EVENT, this.__onVersion);
-    this.version.set(data);
+    this.removeListener(API40_VERSION_EVENT, this.__onVersion40);
+    this.queue = [];
+    if (oldProtocol) {
+      const ver40 = new Version(data, 40);
+      this.version.major = ver40.major;
+      this.version.minor = ver40.minor;
+      this.version.build = ver40.build;
+      this.version.revision = ver40.revision;
+      this.update.protocol = 40;
+      this.emit(API_VERSION_EVENT, this.version.get(false));
+    } else this.version.set(data);
     if (this.version.is) {
       const {
         major,
@@ -18715,8 +18751,10 @@ class Canbus extends (eventemitter3_default()) {
         rv: revision
       }));
       // Запрос значения активации устройства
-      this.addListener(API_DEVICE_VALUE_EVENT, this.__onIsActivation);
-      this.query(new DeviceValue());
+      if (!oldProtocol) {
+        this.addListener(API_DEVICE_VALUE_EVENT, this.__onIsActivation);
+        this.query(new DeviceValue());
+      }
       // Проверка наличия новой версии прошивки
       this.checkVersion().then(newVersion => {
         this.emit(API_NEW_VERSION_EVENT, newVersion);
@@ -18782,6 +18820,12 @@ class Canbus extends (eventemitter3_default()) {
           this.emit(API_VERSION_EVENT, data);
           break;
         }
+      case API40_VERSION_EXEC:
+        {
+          // Версия прошивки 4.0
+          this.emit(API40_VERSION_EVENT, data);
+          break;
+        }
       case API_DEVICE_INFO_EXEC:
         // Информация об устройстве
         this.emit(API_DEVICE_INFO_EVENT, data);
@@ -18794,8 +18838,8 @@ class Canbus extends (eventemitter3_default()) {
         // Значения устройства
         this.emit(API_DEVICE_VALUE_EVENT, data);
         break;
-      case API_DEVICE_UPDATE_EXEC:
-        // Обновление прошивки
+      case API_DEVICE_UPDATE_EXEC: // Обновление прошивки
+      case API40_DEVICE_UPDATE_EXEC:
         this.update.set(data);
         if (this.update.offset < this.update.total) this.updateUpload();
         this.emit(API_DEVICE_UPDATE_EVENT, this.update);
@@ -19806,7 +19850,7 @@ const scannerBuffer = state => state.scannerBuffer;
  * Чтение 30-ти элементов буфера сканера
  * @param {any} state
  */
-const scannerBufferRead = state => state.scannerBuffer.splice(0, state.scannerBufferReadNumber);
+const scannerBufferRead = state => state.scannerBuffer.slice(0, state.scannerBufferReadNumber);
 /**
  * Значение теста
  * @param {any} state
@@ -19935,6 +19979,9 @@ const setScannerBufferTitle = (state, value) => {
     hexId: "",
     hexData: ""
   });
+};
+const nextScannerBuffer = (state, readNumber) => {
+  state.scannerBuffer.splice(0, readNumber > 0 ? readNumber : state.scannerBufferReadNumber);
 };
 /**
  * Записать значения теста
@@ -26072,9 +26119,9 @@ const VMain = genericComponent()({
     return {};
   }
 });
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=template&id=0a96dfe8&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=template&id=9bdfd618&scoped=true&ts=true
 
-const _withScopeId = n => ((0,runtime_core_esm_bundler/* pushScopeId */.ED)("data-v-0a96dfe8"), n = n(), (0,runtime_core_esm_bundler/* popScopeId */.ii)(), n);
+const _withScopeId = n => ((0,runtime_core_esm_bundler/* pushScopeId */.ED)("data-v-9bdfd618"), n = n(), (0,runtime_core_esm_bundler/* popScopeId */.ii)(), n);
 const _hoisted_1 = {
   class: "text-h4"
 };
@@ -26084,7 +26131,7 @@ const _hoisted_2 = /*#__PURE__*/_withScopeId(() => /*#__PURE__*/(0,runtime_core_
 const _hoisted_3 = /*#__PURE__*/_withScopeId(() => /*#__PURE__*/(0,runtime_core_esm_bundler/* createElementVNode */.QD)("div", {
   class: "base-layout__bg"
 }, null, -1));
-function BaseLayoutvue_type_template_id_0a96dfe8_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function BaseLayoutvue_type_template_id_9bdfd618_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                                           
                                                             
   const _component_icon_custom = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("icon-custom");
@@ -26178,7 +26225,7 @@ function BaseLayoutvue_type_template_id_0a96dfe8_scoped_true_ts_true_render(_ctx
 
 
 
-;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=template&id=0a96dfe8&scoped=true&ts=true
+;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=template&id=9bdfd618&scoped=true&ts=true
 
 ;// CONCATENATED MODULE: ./node_modules/vue-router/dist/vue-router.mjs
 
@@ -53962,14 +54009,14 @@ const VDialog = genericComponent()({
     return forwardRefs({}, overlay);
   }
 });
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/components/DialogTemplate.vue?vue&type=template&id=693c1722&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/components/DialogTemplate.vue?vue&type=template&id=bb466d3c&scoped=true&ts=true
 
-const DialogTemplatevue_type_template_id_693c1722_scoped_true_ts_true_withScopeId = n => (_pushScopeId("data-v-693c1722"), n = n(), _popScopeId(), n);
-const DialogTemplatevue_type_template_id_693c1722_scoped_true_ts_true_hoisted_1 = {
+const DialogTemplatevue_type_template_id_bb466d3c_scoped_true_ts_true_withScopeId = n => (_pushScopeId("data-v-bb466d3c"), n = n(), _popScopeId(), n);
+const DialogTemplatevue_type_template_id_bb466d3c_scoped_true_ts_true_hoisted_1 = {
   class: "ml-2 text-h4 dialog__title"
 };
-const DialogTemplatevue_type_template_id_693c1722_scoped_true_ts_true_hoisted_2 = ["innerHTML"];
-function DialogTemplatevue_type_template_id_693c1722_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+const DialogTemplatevue_type_template_id_bb466d3c_scoped_true_ts_true_hoisted_2 = ["innerHTML"];
+function DialogTemplatevue_type_template_id_bb466d3c_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_icon_custom = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("icon-custom");
                                                             
                                                                     
@@ -53988,7 +54035,7 @@ function DialogTemplatevue_type_template_id_693c1722_scoped_true_ts_true_render(
     "content-class": $props.contentClass,
     transition: "dialog-bottom-transition",
     width: $setup.widthModel,
-    persistent: !$props.actions
+    persistent: !$props.actions || $props.persistent
   }, {
     default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(VCard, null, {
       default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [$props.title?.length > 0 ? ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(VCardTitle, {
@@ -53998,7 +54045,7 @@ function DialogTemplatevue_type_template_id_693c1722_scoped_true_ts_true_render(
         default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createVNode */.K2)(_component_icon_custom, {
           class: "dialog__icon",
           name: $props.icon
-        }, null, 8, ["name"]), (0,runtime_core_esm_bundler/* createElementVNode */.QD)("span", DialogTemplatevue_type_template_id_693c1722_scoped_true_ts_true_hoisted_1, (0,shared_esm_bundler/* toDisplayString */.WA)($props.title), 1), $props.close ? ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)(runtime_core_esm_bundler/* Fragment */.ae, {
+        }, null, 8, ["name"]), (0,runtime_core_esm_bundler/* createElementVNode */.QD)("span", DialogTemplatevue_type_template_id_bb466d3c_scoped_true_ts_true_hoisted_1, (0,shared_esm_bundler/* toDisplayString */.WA)($props.title), 1), $props.close ? ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)(runtime_core_esm_bundler/* Fragment */.ae, {
           key: 0
         }, [(0,runtime_core_esm_bundler/* createVNode */.K2)(VSpacer), (0,runtime_core_esm_bundler/* createVNode */.K2)(_component_icon_custom, {
           name: "mdi-close"
@@ -54029,7 +54076,7 @@ function DialogTemplatevue_type_template_id_693c1722_scoped_true_ts_true_render(
               class: "mr-1"
             }), (0,runtime_core_esm_bundler/* createElementVNode */.QD)("span", {
               innerHTML: $props.info
-            }, null, 8, DialogTemplatevue_type_template_id_693c1722_scoped_true_ts_true_hoisted_2)]),
+            }, null, 8, DialogTemplatevue_type_template_id_bb466d3c_scoped_true_ts_true_hoisted_2)]),
             _: 1
           })]),
           _: 1
@@ -54062,7 +54109,7 @@ function DialogTemplatevue_type_template_id_693c1722_scoped_true_ts_true_render(
 
 
 
-;// CONCATENATED MODULE: ./src/layout/components/DialogTemplate.vue?vue&type=template&id=693c1722&scoped=true&ts=true
+;// CONCATENATED MODULE: ./src/layout/components/DialogTemplate.vue?vue&type=template&id=bb466d3c&scoped=true&ts=true
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/components/DialogTemplate.vue?vue&type=script&lang=ts
 
@@ -54082,7 +54129,8 @@ function DialogTemplatevue_type_template_id_693c1722_scoped_true_ts_true_render(
     text: Boolean,
     actions: Boolean,
     close: Boolean,
-    width: [String, Number]
+    width: [String, Number],
+    persistent: Boolean
   },
   emits: ["update:modelValue"],
   setup(props, {
@@ -54108,10 +54156,10 @@ function DialogTemplatevue_type_template_id_693c1722_scoped_true_ts_true_render(
 });
 ;// CONCATENATED MODULE: ./src/layout/components/DialogTemplate.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/components/DialogTemplate.vue?vue&type=style&index=0&id=693c1722&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/components/DialogTemplate.vue?vue&type=style&index=0&id=bb466d3c&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/layout/components/DialogTemplate.vue?vue&type=style&index=0&id=693c1722&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/layout/components/DialogTemplate.vue?vue&type=style&index=0&id=bb466d3c&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/layout/components/DialogTemplate.vue
 
@@ -54121,7 +54169,7 @@ function DialogTemplatevue_type_template_id_693c1722_scoped_true_ts_true_render(
 ;
 
 
-const DialogTemplate_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(DialogTemplatevue_type_script_lang_ts, [['render',DialogTemplatevue_type_template_id_693c1722_scoped_true_ts_true_render],['__scopeId',"data-v-693c1722"]])
+const DialogTemplate_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(DialogTemplatevue_type_script_lang_ts, [['render',DialogTemplatevue_type_template_id_bb466d3c_scoped_true_ts_true_render],['__scopeId',"data-v-bb466d3c"]])
 
 /* harmony default export */ var DialogTemplate = (DialogTemplate_exports_);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/common/NumberField.vue?vue&type=template&id=55a45ba2&ts=true
@@ -60185,13 +60233,13 @@ function BluetoothBtnvue_type_template_id_0b2ecac6_scoped_true_ts_true_render(_c
 const BluetoothBtn_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(BluetoothBtnvue_type_script_lang_ts, [['render',BluetoothBtnvue_type_template_id_0b2ecac6_scoped_true_ts_true_render],['__scopeId',"data-v-0b2ecac6"]])
 
 /* harmony default export */ var BluetoothBtn = (BluetoothBtn_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/UpdateFirmwareDialog.vue?vue&type=template&id=2dcc1423&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/UpdateFirmwareDialog.vue?vue&type=template&id=707f6976&ts=true
 
-const UpdateFirmwareDialogvue_type_template_id_2dcc1423_ts_true_hoisted_1 = {
+const UpdateFirmwareDialogvue_type_template_id_707f6976_ts_true_hoisted_1 = {
   key: 0,
   class: "pb-3 d-flex justify-space-between"
 };
-function UpdateFirmwareDialogvue_type_template_id_2dcc1423_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function UpdateFirmwareDialogvue_type_template_id_707f6976_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                       
   const _component_dialog_template = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("dialog-template");
                                                                               
@@ -60201,6 +60249,7 @@ function UpdateFirmwareDialogvue_type_template_id_2dcc1423_ts_true_render(_ctx, 
     icon: "mdi-update",
     title: _ctx.$t('update.title'),
     width: "700",
+    persistent: !$setup.visibleLater,
     text: "",
     actions: ""
   }, {
@@ -60213,15 +60262,16 @@ function UpdateFirmwareDialogvue_type_template_id_2dcc1423_ts_true_render(_ctx, 
     }, {
       default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.mY)((0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("update.btn.update")), 1)]),
       _: 1
-    }, 8, ["onClick"]), (0,runtime_core_esm_bundler/* createVNode */.K2)(VBtn, {
+    }, 8, ["onClick"]), $setup.visibleLater ? ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(VBtn, {
+      key: 0,
       color: "primary",
       onClick: $setup.onCancel
     }, {
       default: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.mY)((0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("update.btn.later")), 1)]),
       _: 1
-    }, 8, ["onClick"])]),
+    }, 8, ["onClick"])) : (0,runtime_core_esm_bundler/* createCommentVNode */.g1)("", true)]),
     _: 1
-  }, 8, ["modelValue", "title"]), (0,runtime_core_esm_bundler/* createVNode */.K2)(_component_dialog_template, {
+  }, 8, ["modelValue", "title", "persistent"]), (0,runtime_core_esm_bundler/* createVNode */.K2)(_component_dialog_template, {
     modelValue: $setup.visibleProcess,
     "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => $setup.visibleProcess = $event),
     icon: "mdi-update",
@@ -60232,7 +60282,7 @@ function UpdateFirmwareDialogvue_type_template_id_2dcc1423_ts_true_render(_ctx, 
       class: (0,shared_esm_bundler/* normalizeClass */.WN)(["d-flex justify-space-between", {
         'pb-3': $setup.progress === 0 || !$setup.timeLeft?.length
       }])
-    }, [(0,runtime_core_esm_bundler/* createElementVNode */.QD)("span", null, (0,shared_esm_bundler/* toDisplayString */.WA)($setup.message), 1), (0,runtime_core_esm_bundler/* createElementVNode */.QD)("span", null, (0,shared_esm_bundler/* toDisplayString */.WA)($setup.uploading), 1)], 2), $setup.progress > 0 && $setup.timeLeft?.length ? ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)("div", UpdateFirmwareDialogvue_type_template_id_2dcc1423_ts_true_hoisted_1, [(0,runtime_core_esm_bundler/* createElementVNode */.QD)("span", null, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("update.process.timeLeft")), 1), (0,runtime_core_esm_bundler/* createElementVNode */.QD)("span", null, (0,shared_esm_bundler/* toDisplayString */.WA)($setup.timeLeft), 1)])) : (0,runtime_core_esm_bundler/* createCommentVNode */.g1)("", true), (0,runtime_core_esm_bundler/* createVNode */.K2)(VProgressLinear, {
+    }, [(0,runtime_core_esm_bundler/* createElementVNode */.QD)("span", null, (0,shared_esm_bundler/* toDisplayString */.WA)($setup.message), 1), (0,runtime_core_esm_bundler/* createElementVNode */.QD)("span", null, (0,shared_esm_bundler/* toDisplayString */.WA)($setup.uploading), 1)], 2), $setup.progress > 0 && $setup.timeLeft?.length ? ((0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createElementBlock */.An)("div", UpdateFirmwareDialogvue_type_template_id_707f6976_ts_true_hoisted_1, [(0,runtime_core_esm_bundler/* createElementVNode */.QD)("span", null, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("update.process.timeLeft")), 1), (0,runtime_core_esm_bundler/* createElementVNode */.QD)("span", null, (0,shared_esm_bundler/* toDisplayString */.WA)($setup.timeLeft), 1)])) : (0,runtime_core_esm_bundler/* createCommentVNode */.g1)("", true), (0,runtime_core_esm_bundler/* createVNode */.K2)(VProgressLinear, {
       "model-value": $setup.progress,
       color: "primary",
       height: "10",
@@ -60249,9 +60299,10 @@ function UpdateFirmwareDialogvue_type_template_id_2dcc1423_ts_true_render(_ctx, 
 
 
 
-;// CONCATENATED MODULE: ./src/components/dialogs/UpdateFirmwareDialog.vue?vue&type=template&id=2dcc1423&ts=true
+;// CONCATENATED MODULE: ./src/components/dialogs/UpdateFirmwareDialog.vue?vue&type=template&id=707f6976&ts=true
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/UpdateFirmwareDialog.vue?vue&type=script&lang=ts
+
 
 
 
@@ -60288,6 +60339,7 @@ function UpdateFirmwareDialogvue_type_template_id_2dcc1423_ts_true_render(_ctx, 
       set: val => emit("update:modelValue", val)
     });
     const visibleProcess = (0,reactivity_esm_bundler/* ref */.IL)(false);
+    const visibleLater = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["config/version"].supported);
     const version = (0,reactivity_esm_bundler/* ref */.IL)("");
     const message = (0,reactivity_esm_bundler/* ref */.IL)("");
     const progress = (0,reactivity_esm_bundler/* ref */.IL)(0);
@@ -60374,6 +60426,7 @@ function UpdateFirmwareDialogvue_type_template_id_2dcc1423_ts_true_render(_ctx, 
     return {
       visibleUpdate,
       visibleProcess,
+      visibleLater,
       version,
       message,
       uploading,
@@ -60392,7 +60445,7 @@ function UpdateFirmwareDialogvue_type_template_id_2dcc1423_ts_true_render(_ctx, 
 
 
 ;
-const UpdateFirmwareDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(UpdateFirmwareDialogvue_type_script_lang_ts, [['render',UpdateFirmwareDialogvue_type_template_id_2dcc1423_ts_true_render]])
+const UpdateFirmwareDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(UpdateFirmwareDialogvue_type_script_lang_ts, [['render',UpdateFirmwareDialogvue_type_template_id_707f6976_ts_true_render]])
 
 /* harmony default export */ var UpdateFirmwareDialog = (UpdateFirmwareDialog_exports_);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/AboutDialog.vue?vue&type=template&id=7b4ac44c&scoped=true&ts=true
@@ -60761,12 +60814,12 @@ function DeviceResetDialogvue_type_template_id_520db326_ts_true_render(_ctx, _ca
 const DeviceResetDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(DeviceResetDialogvue_type_script_lang_ts, [['render',DeviceResetDialogvue_type_template_id_520db326_ts_true_render]])
 
 /* harmony default export */ var DeviceResetDialog = (DeviceResetDialog_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Scanner.vue?vue&type=template&id=2f9d613d&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Scanner.vue?vue&type=template&id=45601db1&ts=true
 
-const Scannervue_type_template_id_2f9d613d_ts_true_hoisted_1 = {
+const Scannervue_type_template_id_45601db1_ts_true_hoisted_1 = {
   class: "mb-2"
 };
-function Scannervue_type_template_id_2f9d613d_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function Scannervue_type_template_id_45601db1_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                                               
   const _component_dialog_template = (0,runtime_core_esm_bundler/* resolveComponent */.E1)("dialog-template");
   return (0,runtime_core_esm_bundler/* openBlock */.Wz)(), (0,runtime_core_esm_bundler/* createBlock */.Az)(_component_dialog_template, {
@@ -60776,7 +60829,7 @@ function Scannervue_type_template_id_2f9d613d_ts_true_render(_ctx, _cache, $prop
     title: _ctx.$t('scanner.upload.title'),
     text: ""
   }, {
-    body: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createElementVNode */.QD)("div", null, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("scanner.upload.text")), 1), (0,runtime_core_esm_bundler/* createElementVNode */.QD)("div", Scannervue_type_template_id_2f9d613d_ts_true_hoisted_1, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("scanner.upload.leftToLoad", {
+    body: (0,runtime_core_esm_bundler/* withCtx */.Ql)(() => [(0,runtime_core_esm_bundler/* createElementVNode */.QD)("div", null, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("scanner.upload.text")), 1), (0,runtime_core_esm_bundler/* createElementVNode */.QD)("div", Scannervue_type_template_id_45601db1_ts_true_hoisted_1, (0,shared_esm_bundler/* toDisplayString */.WA)(_ctx.$t("scanner.upload.leftToLoad", {
       n: $setup.leftUploading
     })), 1), (0,runtime_core_esm_bundler/* createVNode */.K2)(VProgressLinear, {
       color: "primary",
@@ -60793,7 +60846,7 @@ function Scannervue_type_template_id_2f9d613d_ts_true_render(_ctx, _cache, $prop
 
 
 
-;// CONCATENATED MODULE: ./src/components/Scanner.vue?vue&type=template&id=2f9d613d&ts=true
+;// CONCATENATED MODULE: ./src/components/Scanner.vue?vue&type=template&id=45601db1&ts=true
 
 ;// CONCATENATED MODULE: ./src/api/google.ts
 
@@ -60808,6 +60861,8 @@ const setScanCan = data => {
   });
 };
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Scanner.vue?vue&type=script&lang=ts
+
+
 
 
 
@@ -60836,8 +60891,7 @@ const setScanCan = data => {
     const {
       t
     } = useI18n();
-    const scanner = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["value/scanner"]);
-    const efuseMac = (0,runtime_core_esm_bundler/* computed */.S6)(() => src_store.getters["config/info"].efuseMac);
+    const efuseMac = (0,runtime_core_esm_bundler/* computed */.S6)(() => toMac(src_store.getters["config/info"].efuseMac));
     const visibleUploading = (0,reactivity_esm_bundler/* ref */.IL)(false);
     const leftUploading = (0,reactivity_esm_bundler/* ref */.IL)(0);
     const started = (0,runtime_core_esm_bundler/* computed */.S6)({
@@ -60913,12 +60967,13 @@ const setScanCan = data => {
         mac: efuseMac.value,
         rows: src_store.getters["value/scannerBufferRead"]
       }).then(res => {
+        src_store.commit("value/nextScannerBuffer", -1);
         if (res?.success && !scanClose) setTimeout(() => sendScannerBuffer(), 100);else if (res?.error) toast_default.error(res?.message);
       }).catch(() => toast_default.error(t("scanner.notify.errorSend"))).finally(() => {
         scanUploading = false;
       });
     };
-    (0,runtime_core_esm_bundler/* watch */.Kg)(scanner, () => sendScannerBuffer());
+    api_canbus.addListener(API_DEVICE_SCANNER_VALUE_EVENT, () => sendScannerBuffer());
     return {
       visibleUploading,
       started,
@@ -60934,7 +60989,7 @@ const setScanCan = data => {
 
 
 ;
-const Scanner_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Scannervue_type_script_lang_ts, [['render',Scannervue_type_template_id_2f9d613d_ts_true_render]])
+const Scanner_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Scannervue_type_script_lang_ts, [['render',Scannervue_type_template_id_45601db1_ts_true_render]])
 
 /* harmony default export */ var Scanner = (Scanner_exports_);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.js!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/TestDialog.vue?vue&type=template&id=3112a5c2&scoped=true&ts=true
@@ -62150,11 +62205,14 @@ const LocaleDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Local
     /** Доступна новая версия прошивки */
     const onNewVersion = newVersion => {
       newVersionFirmware.value = newVersion.toString;
-      setTimeout(() => {
-        toast_default.warning(t("update.notify.newVersion", {
-          version: newVersionFirmware.value
-        }));
-      }, 5000);
+      const version = src_store.getters["config/version"];
+      if (version.supported) {
+        setTimeout(() => {
+          toast_default.warning(t("update.notify.newVersion", {
+            version: newVersionFirmware.value
+          }));
+        }, 5000);
+      } else visibleUpdate.value = true;
     };
     /** Изменение размеров страницы */
     const windowSize = () => {
@@ -62189,10 +62247,10 @@ const LocaleDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Local
 });
 ;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=style&index=0&id=0a96dfe8&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/layout/BaseLayout.vue?vue&type=style&index=0&id=9bdfd618&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=style&index=0&id=0a96dfe8&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue?vue&type=style&index=0&id=9bdfd618&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/layout/BaseLayout.vue
 
@@ -62202,7 +62260,7 @@ const LocaleDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(Local
 ;
 
 
-const BaseLayout_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(BaseLayoutvue_type_script_lang_ts, [['render',BaseLayoutvue_type_template_id_0a96dfe8_scoped_true_ts_true_render],['__scopeId',"data-v-0a96dfe8"]])
+const BaseLayout_exports_ = /*#__PURE__*/(0,exportHelper/* default */.c)(BaseLayoutvue_type_script_lang_ts, [['render',BaseLayoutvue_type_template_id_9bdfd618_scoped_true_ts_true_render],['__scopeId',"data-v-9bdfd618"]])
 
 /* harmony default export */ var BaseLayout = (BaseLayout_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=script&lang=ts
@@ -116010,6 +116068,6 @@ module.exports = /*#__PURE__*/JSON.parse('{"name":"pjcan","version":"1.1.0","pri
 },
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
-/******/ var __webpack_exports__ = (__webpack_exec__(2640));
+/******/ var __webpack_exports__ = (__webpack_exec__(5320));
 /******/ }
 ]);

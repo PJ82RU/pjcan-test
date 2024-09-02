@@ -3975,7 +3975,7 @@ textarea.v-field__input::placeholder {
   backface-visibility: hidden;
   overflow-y: auto;
 }
-.dialog__title[data-v-693c1722]{width:calc(100% - 32px);overflow:hidden;text-overflow:ellipsis}.dialog__text[data-v-693c1722]{overflow-y:auto;color:#bbb;white-space:pre-line}.dialog__info[data-v-693c1722]{font-weight:300;font-size:1rem;line-height:1.25rem;color:#78909c}.dialog__info[data-v-693c1722] b{color:#0b677b;font-weight:600}.dialog__icon[data-v-693c1722] .v-icon{margin-bottom:4px}.dialog__btns[data-v-693c1722] .v-icon{font-size:2rem !important}
+.dialog__title[data-v-bb466d3c]{width:calc(100% - 32px);overflow:hidden;text-overflow:ellipsis}.dialog__text[data-v-bb466d3c]{overflow-y:auto;color:#bbb;white-space:pre-line}.dialog__info[data-v-bb466d3c]{font-weight:300;font-size:1rem;line-height:1.25rem;color:#78909c}.dialog__info[data-v-bb466d3c] b{color:#0b677b;font-weight:600}.dialog__icon[data-v-bb466d3c] .v-icon{margin-bottom:4px}.dialog__btns[data-v-bb466d3c] .v-icon{font-size:2rem !important}
 .view-setting-dialog[data-v-ea7d8cf6]{max-width:400px}
 .v-select .v-field .v-text-field__prefix,
 .v-select .v-field .v-text-field__suffix,
@@ -4909,7 +4909,7 @@ textarea.v-field__input::placeholder {
 .test__text[data-v-3112a5c2]{width:100%}.test__text[data-v-3112a5c2] .v-text-field__suffix{font-family:"Jura","Roboto",sans-serif !important}
 .about__text-field[data-v-7b4ac44c] .v-input__append{padding-top:25px}
 .onboard-buttons__btns-mode[data-v-f54d1368]{width:100%}.onboard-buttons__btns-mode[data-v-f54d1368] .v-btn{width:50%}.onboard-buttons__btns-main[data-v-f54d1368]{width:100%;height:64px}.onboard-buttons__btns-main[data-v-f54d1368] .v-btn{width:50%}.onboard-buttons__btns-main[data-v-f54d1368] .v-btn__content{font-size:2rem;line-height:2.25rem}.onboard-buttons__btns-added[data-v-f54d1368]{width:100%}.onboard-buttons__btns-added[data-v-f54d1368] .v-btn{width:25%}.onboard-buttons__btns-mode[data-v-f54d1368],.onboard-buttons__btns-main[data-v-f54d1368],.onboard-buttons__btns-added[data-v-f54d1368]{box-shadow:0 3px 1px -2px var(--v-shadow-key-umbra-opacity, rgba(0, 0, 0, 0.2)),0px 2px 2px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.14)),0px 1px 5px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.12))}
-.base-layout__bg[data-v-0a96dfe8]{position:fixed;top:0;left:0;width:100%;height:100%;background:center url(/pjcan-test/img/tire-track.7207681b.svg);opacity:10%;z-index:0}.base-layout__main[data-v-0a96dfe8]{position:fixed;top:50px;left:0;padding:16px}.base-layout__onboard-buttons[data-v-0a96dfe8]{font-size:1.25rem !important;line-height:1.5rem !important}
+.base-layout__bg[data-v-9bdfd618]{position:fixed;top:0;left:0;width:100%;height:100%;background:center url(/pjcan-test/img/tire-track.7207681b.svg);opacity:10%;z-index:0}.base-layout__main[data-v-9bdfd618]{position:fixed;top:50px;left:0;padding:16px}.base-layout__onboard-buttons[data-v-9bdfd618]{font-size:1.25rem !important;line-height:1.5rem !important}
 /* MaterialDesignIcons.com */
 @font-face {
   font-family: "Material Design Icons";
