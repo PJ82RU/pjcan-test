@@ -1033,7 +1033,7 @@ const setScanCan = data => {
 
 /***/ }),
 
-/***/ 7231:
+/***/ 70504:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1045,7 +1045,7 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: ./node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js
 var runtime_core_esm_bundler = __webpack_require__(56768);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=template&id=230d973f&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=template&id=3b15a7fd&ts=true
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_base_layout = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("base-layout");
@@ -1217,6 +1217,7 @@ var datetime = __webpack_require__(9917);
         choice.listID.push(volume/* API_VOLUME_VIEW_EXEC */.Kd);
         choice.listID.push(datetime/* API_DATETIME_VIEW_EXEC */.Bm);
         canbus/* default */.A.query(choice, true);
+        setTimeout(() => canbus/* default */.A.query(choice, true), 1000);
       }
     };
     canbus/* default */.A.addListener(BaseModel/* API_CANBUS_EVENT */.l, onBegin);
