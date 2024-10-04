@@ -610,10 +610,11 @@ class Canbus extends eventemitter3/* default */.A {
         this.addListener(pjcan_device/* API_DEVICE_INFO_EVENT */.Os, this.__onActivation);
         this.query(new pjcan_device/* DeviceInfo */.Vj());
       } else {
-        this.emit(BaseModel/* API_CANBUS_EVENT */.l, this.status);
         this.rollbackVersion().then(rollback => {
           this.emit(pjcan_device/* API_DEVICE_ROLLBACK_EVENT */.GE, rollback);
-        }).catch(() => {});
+        }).catch(() => {}).finally(() => {
+          this.emit(BaseModel/* API_CANBUS_EVENT */.l, this.status);
+        });
       }
     }
   }
@@ -1033,7 +1034,7 @@ const setScanCan = data => {
 
 /***/ }),
 
-/***/ 70504:
+/***/ 5413:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1045,7 +1046,7 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: ./node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js
 var runtime_core_esm_bundler = __webpack_require__(56768);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=template&id=3b15a7fd&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=template&id=74982cf2&ts=true
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_base_layout = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("base-layout");
