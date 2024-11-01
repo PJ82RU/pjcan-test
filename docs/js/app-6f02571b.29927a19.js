@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkpjcan"] = self["webpackChunkpjcan"] || []).push([[834],{
 
-/***/ 36039:
+/***/ 96768:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -1759,9 +1759,9 @@ const DoorsConfigDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(
 const DoorsCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(DoorsCardvue_type_script_lang_ts, [['render',DoorsCardvue_type_template_id_2b511d66_ts_true_render]])
 
 /* harmony default export */ var DoorsCard = (DoorsCard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/ClimateCard.vue?vue&type=template&id=05320176&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/ClimateCard.vue?vue&type=template&id=52fa2169&ts=true
 
-function ClimateCardvue_type_template_id_05320176_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function ClimateCardvue_type_template_id_52fa2169_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_icon_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("icon-card-item");
                                                       
   const _component_switch_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("switch-card-item");
@@ -1901,7 +1901,7 @@ function ClimateCardvue_type_template_id_05320176_ts_true_render(_ctx, _cache, $
     const enabled = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/climate"].on);
     const rotation = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
       const res = store/* default */.A.getters["value/climate"];
-      return res.airRate > 0 && res.airRate < 8 ? 7 - res.airRate : 0;
+      return res.airRate > 0 && res.airRate < 8 ? 1 - res.airRate / 10 : 0;
     });
     const autoMode = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/climate"].automode);
     const ac = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/climate"].ac);
@@ -1974,7 +1974,7 @@ function ClimateCardvue_type_template_id_05320176_ts_true_render(_ctx, _cache, $
 
 
 ;
-const ClimateCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(ClimateCardvue_type_script_lang_ts, [['render',ClimateCardvue_type_template_id_05320176_ts_true_render]])
+const ClimateCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(ClimateCardvue_type_script_lang_ts, [['render',ClimateCardvue_type_template_id_52fa2169_ts_true_render]])
 
 /* harmony default export */ var ClimateCard = (ClimateCard_exports_);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/BoseCard.vue?vue&type=template&id=b50974fc&ts=true

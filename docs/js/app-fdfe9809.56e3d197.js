@@ -4560,7 +4560,7 @@ var vue_i18n = __webpack_require__(85851);
 // EXTERNAL MODULE: ./src/store/index.ts + 20 modules
 var store = __webpack_require__(35679);
 // EXTERNAL MODULE: ./src/router/index.ts + 98 modules
-var router = __webpack_require__(36039);
+var router = __webpack_require__(96768);
 // EXTERNAL MODULE: ./src/api/canbus.ts + 2 modules
 var canbus = __webpack_require__(62774);
 // EXTERNAL MODULE: ./src/layout/components/DialogTemplate.vue + 6 modules
