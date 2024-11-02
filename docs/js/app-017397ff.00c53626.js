@@ -584,14 +584,21 @@ class Canbus extends eventemitter3/* default */.A {
         this.addListener(pjcan_device/* API_DEVICE_VALUE_EVENT */.dX, this.__onIsActivation);
         this.query(new pjcan_device/* DeviceValue */.In());
       }
-      // Проверка наличия новой версии прошивки
-      this.checkVersion().then(newVersion => {
-        this.emit(version/* API_NEW_VERSION_EVENT */.QM, newVersion);
-      }).catch(() => {});
+      // Проверка наличия новой версии прошивки, каждые 5 минут
+      this.checkVersionLoop(60000);
     } else {
       this.emit(BaseModel/* API_CANBUS_EVENT */.l, this.status);
       dist/* toast */.oR.error((0,lang.t)("error.version"));
     }
+  }
+  checkVersionLoop(interval) {
+    const onCheckVersion = () => {
+      this.checkVersion().then(newVersion => {
+        this.emit(version/* API_NEW_VERSION_EVENT */.QM, newVersion);
+      }).catch(() => {});
+    };
+    if (interval >= 5000) setInterval(() => onCheckVersion(), interval);
+    onCheckVersion();
   }
   /**
    * Проверка активации устройства PJCAN

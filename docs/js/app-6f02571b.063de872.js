@@ -6279,6 +6279,7 @@ const service = axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.create({
 // request interceptor
 service.interceptors.request.use(config => {
   config.params = config.params ?? {};
+  config.headers.set("Cache-Control", "no-cache");
   return config;
 }, error => {
   console.log(error);
