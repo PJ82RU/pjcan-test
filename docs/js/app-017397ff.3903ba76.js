@@ -343,7 +343,12 @@ var request = __webpack_require__(4322);
 const getFirmwareVersion = () => {
   return (0,request/* default */.A)({
     url: "/firmware/version.json",
-    method: "GET"
+    method: "GET",
+    headers: {
+      "Cache-Control": "no-cache",
+      "Pragma": "no-cache",
+      "Expires": "0"
+    }
   });
 };
 const getFirmware = url => {
