@@ -467,6 +467,7 @@ class Canbus extends eventemitter3/* default */.A {
     (0,defineProperty/* default */.A)(this, "__onVersion40", ev => canbus.onVersion(ev, true));
     (0,defineProperty/* default */.A)(this, "__onIsActivation", ev => canbus.onIsActivation(ev));
     (0,defineProperty/* default */.A)(this, "__onActivation", ev => canbus.onActivation(ev));
+    (0,defineProperty/* default */.A)(this, "checkVersionInterval", void 0);
     (0,defineProperty/* default */.A)(this, "scannerInterval", void 0);
     (0,defineProperty/* default */.A)(this, "scannerValue", void 0);
     this.bluetooth.addListener(bluetooth/* BLUETOOTH_EVENT_CONNECTED */.Sl, ev => this.onConnected(ev));
@@ -585,20 +586,33 @@ class Canbus extends eventemitter3/* default */.A {
         this.query(new pjcan_device/* DeviceValue */.In());
       }
       // Проверка наличия новой версии прошивки, каждые 5 минут
-      this.checkVersionLoop(60000);
+      this.startCheckVersion(60000);
     } else {
       this.emit(BaseModel/* API_CANBUS_EVENT */.l, this.status);
       dist/* toast */.oR.error((0,lang.t)("error.version"));
     }
   }
-  checkVersionLoop(interval) {
+  /**
+   * Запустить проверку версии прошивки
+   * @param interval Интервал не менее 5000 мс
+   */
+  startCheckVersion(interval) {
     const onCheckVersion = () => {
       this.checkVersion().then(newVersion => {
         this.emit(version/* API_NEW_VERSION_EVENT */.QM, newVersion);
       }).catch(() => {});
     };
-    if (interval >= 5000) setInterval(() => onCheckVersion(), interval);
+    if (interval >= 5000) {
+      this.checkVersionInterval = setInterval(() => onCheckVersion(), interval);
+    }
     onCheckVersion();
+  }
+  /** Остановить проверку версии прошивки */
+  stopCheckVersion() {
+    if (this.checkVersionInterval) {
+      clearInterval(this.checkVersionInterval);
+      this.checkVersionInterval = undefined;
+    }
   }
   /**
    * Проверка активации устройства PJCAN
@@ -877,6 +891,7 @@ class Canbus extends eventemitter3/* default */.A {
   updateStart(rollback = false) {
     getFirmware(!rollback ? this.update.firmware.url : this.update.rollback.url).then(res => {
       if (res?.byteLength > 0) {
+        this.stopCheckVersion();
         this.loopFree();
         this.update.firmwareData = new Uint8Array(res);
         this.update.total = res.byteLength;
