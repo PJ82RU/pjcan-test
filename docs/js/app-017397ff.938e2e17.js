@@ -591,7 +591,7 @@ class Canbus extends eventemitter3/* default */.A {
         this.query(new pjcan_device/* DeviceValue */.In());
       }
       // Проверка наличия новой версии прошивки, каждые 5 минут
-      this.startCheckVersion(60000);
+      this.startCheckVersion(300000, true);
     } else {
       this.emit(BaseModel/* API_CANBUS_EVENT */.l, this.status);
       dist/* toast */.oR.error((0,lang.t)("error.version"));
@@ -599,18 +599,22 @@ class Canbus extends eventemitter3/* default */.A {
   }
   /**
    * Запустить проверку версии прошивки
-   * @param interval Интервал не менее 5000 мс
+   * @param {number} interval Интервал не менее 5000 мс
+   * @param {boolean} force Запустить проверку немедленно
    */
-  startCheckVersion(interval) {
+  startCheckVersion(interval, force = false) {
     const onCheckVersion = () => {
       this.checkVersion().then(newVersion => {
         this.emit(version/* API_NEW_VERSION_EVENT */.QM, newVersion);
+        // Меняем время проверки наличия новой версии прошивки на каждые 15 минут
+        this.startCheckVersion(900000);
       }).catch(() => {});
     };
     if (interval >= 5000) {
+      this.stopCheckVersion();
       this.checkVersionInterval = setInterval(() => onCheckVersion(), interval);
     }
-    onCheckVersion();
+    if (force) onCheckVersion();
   }
   /** Остановить проверку версии прошивки */
   stopCheckVersion() {
