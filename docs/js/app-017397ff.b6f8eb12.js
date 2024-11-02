@@ -357,7 +357,10 @@ const getFirmware = url => {
     method: "GET",
     responseType: "arraybuffer",
     headers: {
-      "Content-Type": "application/gzip"
+      "Content-Type": "application/gzip",
+      "Cache-Control": "no-cache",
+      "Pragma": "no-cache",
+      "Expires": "0"
     }
   });
 };
@@ -366,7 +369,12 @@ const getFirmware = url => {
 const getSerial = sha => {
   return (0,request/* default */.A)({
     url: `/hash/${sha}.json`,
-    method: "GET"
+    method: "GET",
+    headers: {
+      "Cache-Control": "no-cache",
+      "Pragma": "no-cache",
+      "Expires": "0"
+    }
   });
 };
 // EXTERNAL MODULE: ./src/utils/debounce.ts
