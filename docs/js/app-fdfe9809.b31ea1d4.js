@@ -682,7 +682,7 @@ class BluetoothStruct {
 
 /***/ }),
 
-/***/ 92365:
+/***/ 59895:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -697,7 +697,7 @@ var runtime_core_esm_bundler = __webpack_require__(56768);
 var VBtn = __webpack_require__(91696);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VIcon/VIcon.mjs + 1 modules
 var VIcon = __webpack_require__(79669);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/BluetoothBtn.vue?vue&type=template&id=0b2ecac6&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/BluetoothBtn.vue?vue&type=template&id=6fbfe650&scoped=true&ts=true
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
                                                         
@@ -769,8 +769,7 @@ var bluetooth = __webpack_require__(52126);
           title: t(!connected.value ? "BLE.btn.connect" : "BLE.btn.disconnect"),
           on: onDialogClick
         }, {
-          title: t("btn.close"),
-          icon: "mdi-close"
+          title: t("btn.close")
         }],
         width: 700
       });
@@ -824,10 +823,10 @@ var bluetooth = __webpack_require__(52126);
 });
 ;// CONCATENATED MODULE: ./src/components/BluetoothBtn.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/BluetoothBtn.vue?vue&type=style&index=0&id=0b2ecac6&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/BluetoothBtn.vue?vue&type=style&index=0&id=6fbfe650&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/BluetoothBtn.vue?vue&type=style&index=0&id=0b2ecac6&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/components/BluetoothBtn.vue?vue&type=style&index=0&id=6fbfe650&lang=scss&scoped=true
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/dist/exportHelper.js
 var exportHelper = __webpack_require__(71241);
@@ -839,7 +838,7 @@ var exportHelper = __webpack_require__(71241);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(BluetoothBtnvue_type_script_lang_ts, [['render',render],['__scopeId',"data-v-0b2ecac6"]])
+const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(BluetoothBtnvue_type_script_lang_ts, [['render',render],['__scopeId',"data-v-6fbfe650"]])
 
 /* harmony default export */ var BluetoothBtn = (__exports__);
 
@@ -1094,7 +1093,7 @@ const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(MultiRangevue_t
 
 /***/ }),
 
-/***/ 17627:
+/***/ 12586:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -1113,16 +1112,25 @@ var VBtn = __webpack_require__(91696);
 var VRow = __webpack_require__(56756);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VCol.mjs
 var VCol = __webpack_require__(35526);
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VIcon/VIcon.mjs + 1 modules
+var VIcon = __webpack_require__(79669);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSelect/VSelect.mjs + 1 modules
 var VSelect = __webpack_require__(20105);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/ViewSettingDialog.vue?vue&type=template&id=ea7d8cf6&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/ViewSettingDialog.vue?vue&type=template&id=ea20ce22&scoped=true&ts=true
 
+const _hoisted_1 = {
+  key: 1
+};
+const _hoisted_2 = {
+  key: 1
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_switch_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("switch-card-item");
                                                       
                                                             
   const _component_number_field = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("number-field");
                                                       
+                                                        
                                                       
   const _component_dialog_template = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("dialog-template");
   return (0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(_component_dialog_template, {
@@ -1143,7 +1151,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_switch_card_item, {
           modelValue: $setup.viewEnabled,
           "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => $setup.viewEnabled = $event),
-          title: _ctx.$t('onboard.viewSetting.enabled.title'),
+          title: _ctx.$t('onboard.viewSetting.enabled.' + (_ctx.$vuetify.display.xs ? 'titleShort' : 'title')),
           description: _ctx.$t('onboard.viewSetting.enabled.description'),
           disabled: $props.disabled
         }, null, 8, ["modelValue", "title", "description", "disabled"])]),
@@ -1199,18 +1207,26 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })]),
     btns: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VBtn/* VBtn */.D, {
       color: "primary",
-      "prepend-icon": "mdi-check",
       onClick: $setup.onApplyClick,
       disabled: $props.disabled
     }, {
-      default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.eW)((0,shared_esm_bundler/* toDisplayString */.v_)(_ctx.$t("btn.apply")), 1)]),
+      default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [_ctx.$vuetify.display.xs ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VIcon/* VIcon */.w, {
+        key: 0
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => _cache[6] || (_cache[6] = [(0,runtime_core_esm_bundler/* createTextVNode */.eW)("mdi-check")])),
+        _: 1
+      })) : ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)("span", _hoisted_1, (0,shared_esm_bundler/* toDisplayString */.v_)(_ctx.$t("btn.apply")), 1))]),
       _: 1
     }, 8, ["onClick", "disabled"]), (0,runtime_core_esm_bundler/* createVNode */.bF)(VBtn/* VBtn */.D, {
       color: "primary",
-      "prepend-icon": "mdi-close",
       onClick: _cache[4] || (_cache[4] = $event => $setup.visible = false)
     }, {
-      default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.eW)((0,shared_esm_bundler/* toDisplayString */.v_)(_ctx.$t("btn.close")), 1)]),
+      default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [_ctx.$vuetify.display.xs ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VIcon/* VIcon */.w, {
+        key: 0
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => _cache[7] || (_cache[7] = [(0,runtime_core_esm_bundler/* createTextVNode */.eW)("mdi-close")])),
+        _: 1
+      })) : ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)("span", _hoisted_2, (0,shared_esm_bundler/* toDisplayString */.v_)(_ctx.$t("btn.close")), 1))]),
       _: 1
     })]),
     _: 1
@@ -1222,6 +1238,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 
 
+
+
+;// CONCATENATED MODULE: ./src/components/ViewSettingDialog.vue?vue&type=template&id=ea20ce22&scoped=true&ts=true
 
 // EXTERNAL MODULE: ./node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js
 var reactivity_esm_bundler = __webpack_require__(90144);
@@ -1317,10 +1336,10 @@ var NumberField = __webpack_require__(5076);
 });
 ;// CONCATENATED MODULE: ./src/components/ViewSettingDialog.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/ViewSettingDialog.vue?vue&type=style&index=0&id=ea7d8cf6&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/ViewSettingDialog.vue?vue&type=style&index=0&id=ea20ce22&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/ViewSettingDialog.vue?vue&type=style&index=0&id=ea7d8cf6&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/components/ViewSettingDialog.vue?vue&type=style&index=0&id=ea20ce22&lang=scss&scoped=true
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/dist/exportHelper.js
 var exportHelper = __webpack_require__(71241);
@@ -1332,7 +1351,7 @@ var exportHelper = __webpack_require__(71241);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(ViewSettingDialogvue_type_script_lang_ts, [['render',render],['__scopeId',"data-v-ea7d8cf6"]])
+const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(ViewSettingDialogvue_type_script_lang_ts, [['render',render],['__scopeId',"data-v-ea20ce22"]])
 
 /* harmony default export */ var ViewSettingDialog = (__exports__);
 
@@ -1838,7 +1857,7 @@ const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(InputCardItemvu
 
 /***/ }),
 
-/***/ 19493:
+/***/ 29531:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -1855,7 +1874,7 @@ var VRow = __webpack_require__(56756);
 var VCol = __webpack_require__(35526);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VTextField/VTextField.mjs
 var VTextField = __webpack_require__(43948);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/cards/NumberCardItem.vue?vue&type=template&id=472616e9&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/cards/NumberCardItem.vue?vue&type=template&id=05507288&scoped=true&ts=true
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
                                                                     
@@ -1981,10 +2000,10 @@ var reactivity_esm_bundler = __webpack_require__(90144);
 });
 ;// CONCATENATED MODULE: ./src/components/cards/NumberCardItem.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/cards/NumberCardItem.vue?vue&type=style&index=0&id=472616e9&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/cards/NumberCardItem.vue?vue&type=style&index=0&id=05507288&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/cards/NumberCardItem.vue?vue&type=style&index=0&id=472616e9&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/components/cards/NumberCardItem.vue?vue&type=style&index=0&id=05507288&lang=scss&scoped=true
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/dist/exportHelper.js
 var exportHelper = __webpack_require__(71241);
@@ -1996,7 +2015,7 @@ var exportHelper = __webpack_require__(71241);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(NumberCardItemvue_type_script_lang_ts, [['render',render],['__scopeId',"data-v-472616e9"]])
+const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(NumberCardItemvue_type_script_lang_ts, [['render',render],['__scopeId',"data-v-05507288"]])
 
 /* harmony default export */ var NumberCardItem = (__exports__);
 
@@ -2821,7 +2840,7 @@ const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(IconCustomvue_t
 
 /***/ }),
 
-/***/ 83230:
+/***/ 91801:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -2842,7 +2861,7 @@ var VRow = __webpack_require__(56756);
 var VCol = __webpack_require__(35526);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VTextField/VTextField.mjs
 var VTextField = __webpack_require__(43948);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/AboutDialog.vue?vue&type=template&id=0d6b5d4c&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/AboutDialog.vue?vue&type=template&id=0a06d07a&scoped=true&ts=true
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
                                                                     
@@ -2895,7 +2914,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       _: 1
     }, 8, ["onClick"]), (0,runtime_core_esm_bundler/* createVNode */.bF)(VBtn/* VBtn */.D, {
       color: "primary",
-      "prepend-icon": "mdi-close",
       onClick: _cache[0] || (_cache[0] = $event => $setup.visible = false)
     }, {
       default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.eW)((0,shared_esm_bundler/* toDisplayString */.v_)(_ctx.$t("btn.close")), 1)]),
@@ -2927,9 +2945,9 @@ var vue_i18n = __webpack_require__(85851);
 var store = __webpack_require__(35679);
 // EXTERNAL MODULE: ./src/layout/components/DialogTemplate.vue + 6 modules
 var DialogTemplate = __webpack_require__(92089);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/DeviceInfoDialog.vue?vue&type=template&id=1e0a8822&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/DeviceInfoDialog.vue?vue&type=template&id=04bf17f9&ts=true
 
-function DeviceInfoDialogvue_type_template_id_1e0a8822_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function DeviceInfoDialogvue_type_template_id_04bf17f9_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                                     
                                                       
                                                       
@@ -2938,10 +2956,11 @@ function DeviceInfoDialogvue_type_template_id_1e0a8822_ts_true_render(_ctx, _cac
   const _component_device_reset_dialog = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("device-reset-dialog");
   const _component_scanner = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("scanner");
   const _component_test_dialog = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("test-dialog");
+  const _component_device_config_dialog = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("device-config-dialog");
   return (0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)(runtime_core_esm_bundler/* Fragment */.FK, null, [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_dialog_template, {
     "content-class": "device-info",
     modelValue: $setup.visible,
-    "onUpdate:modelValue": _cache[3] || (_cache[3] = $event => $setup.visible = $event),
+    "onUpdate:modelValue": _cache[4] || (_cache[4] = $event => $setup.visible = $event),
     title: _ctx.$t('deviceInfo.title'),
     icon: "on-board",
     width: "400px",
@@ -2987,9 +3006,13 @@ function DeviceInfoDialogvue_type_template_id_1e0a8822_ts_true_render(_ctx, _cac
       disabled: !$setup.isLoadedValue,
       onClick: _cache[1] || (_cache[1] = $event => $setup.visibleReset = true)
     }, null, 8, ["disabled"]), (0,runtime_core_esm_bundler/* createVNode */.bF)(VBtn/* VBtn */.D, {
+      color: "secondary",
+      icon: "mdi-cog-outline",
+      disabled: !$setup.isLoadedConfig,
+      onClick: _cache[2] || (_cache[2] = $event => $setup.deviceConfigVisible = true)
+    }, null, 8, ["disabled"]), (0,runtime_core_esm_bundler/* createVNode */.bF)(VBtn/* VBtn */.D, {
       color: "primary",
-      "prepend-icon": "mdi-close",
-      onClick: _cache[2] || (_cache[2] = $event => $setup.visible = false)
+      onClick: _cache[3] || (_cache[3] = $event => $setup.visible = false)
     }, {
       default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.eW)((0,shared_esm_bundler/* toDisplayString */.v_)(_ctx.$t("btn.close")), 1)]),
       _: 1
@@ -2997,14 +3020,26 @@ function DeviceInfoDialogvue_type_template_id_1e0a8822_ts_true_render(_ctx, _cac
     _: 1
   }, 8, ["modelValue", "title"]), (0,runtime_core_esm_bundler/* createVNode */.bF)(_component_device_reset_dialog, {
     modelValue: $setup.visibleReset,
-    "onUpdate:modelValue": _cache[4] || (_cache[4] = $event => $setup.visibleReset = $event)
+    "onUpdate:modelValue": _cache[5] || (_cache[5] = $event => $setup.visibleReset = $event)
   }, null, 8, ["modelValue"]), (0,runtime_core_esm_bundler/* createVNode */.bF)(_component_scanner, {
     modelValue: $setup.startedScanner,
-    "onUpdate:modelValue": _cache[5] || (_cache[5] = $event => $setup.startedScanner = $event)
+    "onUpdate:modelValue": _cache[6] || (_cache[6] = $event => $setup.startedScanner = $event)
   }, null, 8, ["modelValue"]), (0,runtime_core_esm_bundler/* createVNode */.bF)(_component_test_dialog, {
     modelValue: $setup.visibleTest,
-    "onUpdate:modelValue": _cache[6] || (_cache[6] = $event => $setup.visibleTest = $event)
-  }, null, 8, ["modelValue"])], 64);
+    "onUpdate:modelValue": _cache[7] || (_cache[7] = $event => $setup.visibleTest = $event)
+  }, null, 8, ["modelValue"]), (0,runtime_core_esm_bundler/* createVNode */.bF)(_component_device_config_dialog, {
+    modelValue: $setup.deviceConfigVisible,
+    "onUpdate:modelValue": _cache[8] || (_cache[8] = $event => $setup.deviceConfigVisible = $event),
+    "disable-led-work": $setup.deviceConfig.disableLedWork,
+    "disable-reverse": $setup.deviceConfig.disableReverse,
+    "disable-r-position": $setup.deviceConfig.disableRPosition,
+    "disable-amp-illum": $setup.deviceConfig.disableAmpIllum,
+    "disable-voltmeter": $setup.deviceConfig.disableVoltmeter,
+    "calibration-of-voltmeter": $setup.deviceConfig.calibrationOfVoltmeter,
+    "visible-r-position": $setup.isRPosition,
+    "visible-voltmeter": $setup.isVoltmeter,
+    "onClick:apply": $setup.onDeviceConfigApply
+  }, null, 8, ["modelValue", "disable-led-work", "disable-reverse", "disable-r-position", "disable-amp-illum", "disable-voltmeter", "calibration-of-voltmeter", "visible-r-position", "visible-voltmeter", "onClick:apply"])], 64);
 }
 
 /* Vuetify */
@@ -3017,9 +3052,9 @@ function DeviceInfoDialogvue_type_template_id_1e0a8822_ts_true_render(_ctx, _cac
 var conversion = __webpack_require__(77503);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VCheckbox/VCheckbox.mjs + 1 modules
 var VCheckbox = __webpack_require__(40276);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/DeviceResetDialog.vue?vue&type=template&id=015e9f40&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/DeviceResetDialog.vue?vue&type=template&id=037c67f6&ts=true
 
-function DeviceResetDialogvue_type_template_id_015e9f40_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function DeviceResetDialogvue_type_template_id_037c67f6_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                                 
                                                       
                                                       
@@ -3045,7 +3080,7 @@ function DeviceResetDialogvue_type_template_id_015e9f40_ts_true_render(_ctx, _ca
         default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VCheckbox/* VCheckbox */.a, {
           modelValue: $setup.resetConfig,
           "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => $setup.resetConfig = $event),
-          label: _ctx.$t('deviceReset.config'),
+          label: _ctx.$t('deviceReset.' + (_ctx.$vuetify.display.xs ? 'configShort' : 'config')),
           "hide-details": ""
         }, null, 8, ["modelValue", "label"])]),
         _: 1
@@ -3056,7 +3091,7 @@ function DeviceResetDialogvue_type_template_id_015e9f40_ts_true_render(_ctx, _ca
         default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VCheckbox/* VCheckbox */.a, {
           modelValue: $setup.resetView,
           "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => $setup.resetView = $event),
-          label: _ctx.$t('deviceReset.view'),
+          label: _ctx.$t('deviceReset.' + (_ctx.$vuetify.display.xs ? 'viewShort' : 'view')),
           "hide-details": ""
         }, null, 8, ["modelValue", "label"])]),
         _: 1
@@ -3067,7 +3102,7 @@ function DeviceResetDialogvue_type_template_id_015e9f40_ts_true_render(_ctx, _ca
         default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VCheckbox/* VCheckbox */.a, {
           modelValue: $setup.resetButtons,
           "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => $setup.resetButtons = $event),
-          label: _ctx.$t('deviceReset.buttons'),
+          label: _ctx.$t('deviceReset.' + (_ctx.$vuetify.display.xs ? 'buttonsShort' : 'buttons')),
           disabled: $setup.resetConfig,
           "hide-details": ""
         }, null, 8, ["modelValue", "label", "disabled"])]),
@@ -3158,17 +3193,17 @@ var exportHelper = __webpack_require__(71241);
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(DeviceResetDialogvue_type_script_lang_ts, [['render',DeviceResetDialogvue_type_template_id_015e9f40_ts_true_render]])
+const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(DeviceResetDialogvue_type_script_lang_ts, [['render',DeviceResetDialogvue_type_template_id_037c67f6_ts_true_render]])
 
 /* harmony default export */ var DeviceResetDialog = (__exports__);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VProgressLinear/VProgressLinear.mjs + 1 modules
 var VProgressLinear = __webpack_require__(19336);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Scanner.vue?vue&type=template&id=4b364b22&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Scanner.vue?vue&type=template&id=42abb18c&ts=true
 
 const _hoisted_1 = {
   class: "mb-2"
 };
-function Scannervue_type_template_id_4b364b22_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function Scannervue_type_template_id_42abb18c_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                                               
   const _component_dialog_template = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("dialog-template");
   return (0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(_component_dialog_template, {
@@ -3195,14 +3230,14 @@ function Scannervue_type_template_id_4b364b22_ts_true_render(_ctx, _cache, $prop
 
 
 
-;// CONCATENATED MODULE: ./src/components/Scanner.vue?vue&type=template&id=4b364b22&ts=true
+;// CONCATENATED MODULE: ./src/components/Scanner.vue?vue&type=template&id=42abb18c&ts=true
 
 // EXTERNAL MODULE: ./node_modules/vue3-toastify/dist/index.mjs
 var dist = __webpack_require__(14084);
 // EXTERNAL MODULE: ./src/api/google.ts
 var google = __webpack_require__(27799);
-// EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 7 modules
-var device = __webpack_require__(94027);
+// EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 8 modules
+var device = __webpack_require__(29801);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Scanner.vue?vue&type=script&lang=ts
 
 
@@ -3279,7 +3314,6 @@ var device = __webpack_require__(94027);
         });
         message.btns?.push({
           title: t("btn.cancel"),
-          icon: "mdi-close",
           on: () => {
             started.value = false;
             scanClose = true;
@@ -3332,14 +3366,14 @@ var device = __webpack_require__(94027);
 
 
 ;
-const Scanner_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(Scannervue_type_script_lang_ts, [['render',Scannervue_type_template_id_4b364b22_ts_true_render]])
+const Scanner_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(Scannervue_type_script_lang_ts, [['render',Scannervue_type_template_id_42abb18c_ts_true_render]])
 
 /* harmony default export */ var Scanner = (Scanner_exports_);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSelect/VSelect.mjs + 1 modules
 var VSelect = __webpack_require__(20105);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/TestDialog.vue?vue&type=template&id=3112a5c2&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/TestDialog.vue?vue&type=template&id=def9d296&scoped=true&ts=true
 
-function TestDialogvue_type_template_id_3112a5c2_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function TestDialogvue_type_template_id_def9d296_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                                     
                                                       
                                                             
@@ -3417,7 +3451,6 @@ function TestDialogvue_type_template_id_3112a5c2_scoped_true_ts_true_render(_ctx
       _: 1
     }, 8, ["onClick"]), (0,runtime_core_esm_bundler/* createVNode */.bF)(VBtn/* VBtn */.D, {
       color: "primary",
-      "prepend-icon": "mdi-close",
       onClick: _cache[3] || (_cache[3] = $event => $setup.visible = false)
     }, {
       default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.eW)((0,shared_esm_bundler/* toDisplayString */.v_)(_ctx.$t("btn.close")), 1)]),
@@ -3526,10 +3559,10 @@ var view = __webpack_require__(77813);
 });
 ;// CONCATENATED MODULE: ./src/components/dialogs/TestDialog.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/TestDialog.vue?vue&type=style&index=0&id=3112a5c2&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/TestDialog.vue?vue&type=style&index=0&id=def9d296&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/dialogs/TestDialog.vue?vue&type=style&index=0&id=3112a5c2&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/components/dialogs/TestDialog.vue?vue&type=style&index=0&id=def9d296&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/components/dialogs/TestDialog.vue
 
@@ -3539,9 +3572,266 @@ var view = __webpack_require__(77813);
 ;
 
 
-const TestDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(TestDialogvue_type_script_lang_ts, [['render',TestDialogvue_type_template_id_3112a5c2_scoped_true_ts_true_render],['__scopeId',"data-v-3112a5c2"]])
+const TestDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(TestDialogvue_type_script_lang_ts, [['render',TestDialogvue_type_template_id_def9d296_scoped_true_ts_true_render],['__scopeId',"data-v-def9d296"]])
 
 /* harmony default export */ var TestDialog = (TestDialog_exports_);
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VIcon/VIcon.mjs + 1 modules
+var VIcon = __webpack_require__(79669);
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/DeviceConfigDialog.vue?vue&type=template&id=e91fe2d6&ts=true
+
+const DeviceConfigDialogvue_type_template_id_e91fe2d6_ts_true_hoisted_1 = {
+  key: 1
+};
+const _hoisted_2 = {
+  key: 1
+};
+const _hoisted_3 = {
+  key: 1
+};
+function DeviceConfigDialogvue_type_template_id_e91fe2d6_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+  const _component_switch_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("switch-card-item");
+                                                      
+  const _component_number_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("number-card-item");
+                                                      
+                                                        
+                                                      
+  const _component_dialog_template = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("dialog-template");
+  return (0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(_component_dialog_template, {
+    "content-class": "device-config",
+    modelValue: $setup.visible,
+    "onUpdate:modelValue": _cache[7] || (_cache[7] = $event => $setup.visible = $event),
+    title: _ctx.$t('onboard.info.device.title'),
+    icon: "door",
+    width: "550px",
+    text: "",
+    actions: ""
+  }, {
+    body: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VRow/* VRow */.L, {
+      class: "pb-2"
+    }, {
+      default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
+        cols: "12",
+        class: "pt-0 pb-0"
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_switch_card_item, {
+          modelValue: $setup.disableLedWorkModel,
+          "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => $setup.disableLedWorkModel = $event),
+          title: _ctx.$t('onboard.info.device.disableLedWork.title'),
+          description: _ctx.$t('onboard.info.device.disableLedWork.description')
+        }, null, 8, ["modelValue", "title", "description"])]),
+        _: 1
+      }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
+        cols: "12",
+        class: "pb-0"
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_switch_card_item, {
+          modelValue: $setup.disableReverseModel,
+          "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => $setup.disableReverseModel = $event),
+          title: _ctx.$t('onboard.info.device.disableReverse.title'),
+          description: _ctx.$t('onboard.info.device.disableReverse.description')
+        }, null, 8, ["modelValue", "title", "description"])]),
+        _: 1
+      }), $props.visibleRPosition ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)(runtime_core_esm_bundler/* Fragment */.FK, {
+        key: 0
+      }, [(0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
+        cols: "12",
+        class: "pb-0"
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_switch_card_item, {
+          modelValue: $setup.disableRPositionModel,
+          "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => $setup.disableRPositionModel = $event),
+          title: _ctx.$t('onboard.info.device.disableRPosition.title'),
+          description: _ctx.$t('onboard.info.device.disableRPosition.description')
+        }, null, 8, ["modelValue", "title", "description"])]),
+        _: 1
+      }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
+        cols: "12",
+        class: "pb-0"
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_switch_card_item, {
+          modelValue: $setup.disableAmpIllumModel,
+          "onUpdate:modelValue": _cache[3] || (_cache[3] = $event => $setup.disableAmpIllumModel = $event),
+          title: _ctx.$t('onboard.info.device.disableAmpIllum.title'),
+          description: _ctx.$t('onboard.info.device.disableAmpIllum.description')
+        }, null, 8, ["modelValue", "title", "description"])]),
+        _: 1
+      })], 64)) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), $props.visibleVoltmeter ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)(runtime_core_esm_bundler/* Fragment */.FK, {
+        key: 1
+      }, [(0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
+        cols: "12",
+        class: "pb-0"
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_switch_card_item, {
+          modelValue: $setup.disableVoltmeterModel,
+          "onUpdate:modelValue": _cache[4] || (_cache[4] = $event => $setup.disableVoltmeterModel = $event),
+          title: _ctx.$t('onboard.info.device.disableVoltmeter.title'),
+          description: _ctx.$t('onboard.info.device.disableVoltmeter.description')
+        }, null, 8, ["modelValue", "title", "description"])]),
+        _: 1
+      }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
+        cols: "12",
+        class: "pb-0"
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_number_card_item, {
+          modelValue: $setup.calibrationOfVoltmeterModel,
+          "onUpdate:modelValue": _cache[5] || (_cache[5] = $event => $setup.calibrationOfVoltmeterModel = $event),
+          title: _ctx.$t('onboard.info.device.calibrationOfVoltmeter.' + (_ctx.$vuetify.display.xs ? 'titleShort' : 'title')),
+          description: _ctx.$t('onboard.info.device.calibrationOfVoltmeter.description'),
+          min: -127,
+          max: 127,
+          step: 1
+        }, null, 8, ["modelValue", "title", "description"])]),
+        _: 1
+      })], 64)) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true)]),
+      _: 1
+    })]),
+    btns: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VBtn/* VBtn */.D, {
+      color: "secondary",
+      onClick: $setup.onResetClick
+    }, {
+      default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [_ctx.$vuetify.display.xs ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VIcon/* VIcon */.w, {
+        key: 0
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => _cache[8] || (_cache[8] = [(0,runtime_core_esm_bundler/* createTextVNode */.eW)("mdi-restart")])),
+        _: 1
+      })) : ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)("span", DeviceConfigDialogvue_type_template_id_e91fe2d6_ts_true_hoisted_1, (0,shared_esm_bundler/* toDisplayString */.v_)(_ctx.$t("btn.reset")), 1))]),
+      _: 1
+    }, 8, ["onClick"]), (0,runtime_core_esm_bundler/* createVNode */.bF)(VBtn/* VBtn */.D, {
+      color: "primary",
+      onClick: $setup.onApplyClick
+    }, {
+      default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [_ctx.$vuetify.display.xs ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VIcon/* VIcon */.w, {
+        key: 0
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => _cache[9] || (_cache[9] = [(0,runtime_core_esm_bundler/* createTextVNode */.eW)("mdi-check")])),
+        _: 1
+      })) : ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)("span", _hoisted_2, (0,shared_esm_bundler/* toDisplayString */.v_)(_ctx.$t("btn.apply")), 1))]),
+      _: 1
+    }, 8, ["onClick"]), (0,runtime_core_esm_bundler/* createVNode */.bF)(VBtn/* VBtn */.D, {
+      color: "primary",
+      onClick: _cache[6] || (_cache[6] = $event => $setup.visible = false)
+    }, {
+      default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [_ctx.$vuetify.display.xs ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VIcon/* VIcon */.w, {
+        key: 0
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => _cache[10] || (_cache[10] = [(0,runtime_core_esm_bundler/* createTextVNode */.eW)("mdi-close")])),
+        _: 1
+      })) : ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)("span", _hoisted_3, (0,shared_esm_bundler/* toDisplayString */.v_)(_ctx.$t("btn.cancel")), 1))]),
+      _: 1
+    })]),
+    _: 1
+  }, 8, ["modelValue", "title"]);
+}
+
+/* Vuetify */
+
+
+
+
+
+;// CONCATENATED MODULE: ./src/components/dialogs/DeviceConfigDialog.vue?vue&type=template&id=e91fe2d6&ts=true
+
+// EXTERNAL MODULE: ./src/components/cards/SwitchCardItem.vue + 6 modules
+var SwitchCardItem = __webpack_require__(62295);
+// EXTERNAL MODULE: ./src/components/cards/NumberCardItem.vue + 5 modules
+var NumberCardItem = __webpack_require__(29531);
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/DeviceConfigDialog.vue?vue&type=script&lang=ts
+
+
+
+
+/* harmony default export */ var DeviceConfigDialogvue_type_script_lang_ts = ({
+  name: "DeviceConfigDialog",
+  components: {
+    NumberCardItem: NumberCardItem/* default */.A,
+    DialogTemplate: DialogTemplate/* default */.A,
+    SwitchCardItem: SwitchCardItem/* default */.A
+  },
+  props: {
+    /** Отображение диалога */
+    modelValue: {
+      type: Boolean,
+      default: false
+    },
+    /** Выключить управление контакта LED_WORK */
+    disableLedWork: Boolean,
+    /** Выключить управление контакта REVERSE */
+    disableReverse: Boolean,
+    /** Выключить управление контакта R_POSITION */
+    disableRPosition: Boolean,
+    /** Выключить управление контакта AMP_ILLUM */
+    disableAmpIllum: Boolean,
+    /** Выключить вольтметр */
+    disableVoltmeter: Boolean,
+    /** Калибровка вольтметра */
+    calibrationOfVoltmeter: Number,
+    /** Не показывать блоки контактов R_POSITION и AMP_ILLUM */
+    visibleRPosition: Boolean,
+    /** Не показывать блоки вольтметра */
+    visibleVoltmeter: Boolean
+  },
+  emits: ["update:modelValue", "click:apply"],
+  setup(props, context) {
+    const {
+      modelValue,
+      disableLedWork,
+      disableReverse,
+      disableRPosition,
+      disableAmpIllum,
+      disableVoltmeter,
+      calibrationOfVoltmeter
+    } = (0,reactivity_esm_bundler/* toRefs */.QW)(props);
+    const visible = (0,runtime_core_esm_bundler/* computed */.EW)({
+      get: () => modelValue.value,
+      set: val => context.emit("update:modelValue", val)
+    });
+    const disableLedWorkModel = (0,reactivity_esm_bundler/* ref */.KR)(false);
+    const disableReverseModel = (0,reactivity_esm_bundler/* ref */.KR)(false);
+    const disableRPositionModel = (0,reactivity_esm_bundler/* ref */.KR)(false);
+    const disableAmpIllumModel = (0,reactivity_esm_bundler/* ref */.KR)(false);
+    const disableVoltmeterModel = (0,reactivity_esm_bundler/* ref */.KR)(false);
+    const calibrationOfVoltmeterModel = (0,reactivity_esm_bundler/* ref */.KR)(0);
+    (0,runtime_core_esm_bundler/* watch */.wB)(visible, val => {
+      if (val) onResetClick();
+    });
+    /** Сбросить */
+    const onResetClick = () => {
+      disableLedWorkModel.value = !disableLedWork.value;
+      disableReverseModel.value = !disableReverse.value;
+      disableRPositionModel.value = !disableRPosition.value;
+      disableAmpIllumModel.value = !disableAmpIllum.value;
+      disableVoltmeterModel.value = !disableVoltmeter.value;
+      calibrationOfVoltmeterModel.value = calibrationOfVoltmeter.value;
+    };
+    /** Применить изменения и закрыть диалог */
+    const onApplyClick = () => {
+      visible.value = false;
+      context.emit("click:apply", !disableLedWorkModel.value, !disableReverseModel.value, !disableRPositionModel.value, !disableAmpIllumModel.value, !disableVoltmeterModel.value, calibrationOfVoltmeterModel.value);
+    };
+    return {
+      visible,
+      disableLedWorkModel,
+      disableReverseModel,
+      disableRPositionModel,
+      disableAmpIllumModel,
+      disableVoltmeterModel,
+      calibrationOfVoltmeterModel,
+      onResetClick,
+      onApplyClick
+    };
+  }
+});
+;// CONCATENATED MODULE: ./src/components/dialogs/DeviceConfigDialog.vue?vue&type=script&lang=ts
+ 
+;// CONCATENATED MODULE: ./src/components/dialogs/DeviceConfigDialog.vue
+
+
+
+
+;
+const DeviceConfigDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(DeviceConfigDialogvue_type_script_lang_ts, [['render',DeviceConfigDialogvue_type_template_id_e91fe2d6_ts_true_render]])
+
+/* harmony default export */ var DeviceConfigDialog = (DeviceConfigDialog_exports_);
 // EXTERNAL MODULE: ./src/models/pjcan/onboard/index.ts + 3 modules
 var onboard = __webpack_require__(32280);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/DeviceInfoDialog.vue?vue&type=script&lang=ts
@@ -3554,9 +3844,11 @@ var onboard = __webpack_require__(32280);
 
 
 
+
 /* harmony default export */ var DeviceInfoDialogvue_type_script_lang_ts = ({
   name: "DeviceInfoDialog",
   components: {
+    DeviceConfigDialog: DeviceConfigDialog,
     TestDialog: TestDialog,
     Scanner: Scanner,
     DialogTemplate: DialogTemplate/* default */.A,
@@ -3580,6 +3872,7 @@ var onboard = __webpack_require__(32280);
       get: () => modelValue.value,
       set: val => context.emit("update:modelValue", val)
     });
+    const isLoadedConfig = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["config/device"].isData);
     const isLoadedValue = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["config/info"].isData);
     const visibleReset = (0,reactivity_esm_bundler/* ref */.KR)(false);
     const startedScanner = (0,reactivity_esm_bundler/* ref */.KR)(false);
@@ -3594,6 +3887,16 @@ var onboard = __webpack_require__(32280);
         efuseMac: (0,conversion/* toMac */.hL)(info.efuseMac),
         sha: (0,conversion/* arrayToHex */.cp)(info.sha)
       };
+    });
+    const deviceConfigVisible = (0,reactivity_esm_bundler/* ref */.KR)(false);
+    const deviceConfig = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["config/device"]);
+    const isVoltmeter = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
+      const hardware = store/* default */.A.getters["value/device"].hardware;
+      return hardware.major === 4 && hardware.minor >= 1 && hardware.build <= 1;
+    });
+    const isRPosition = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
+      const hardware = store/* default */.A.getters["value/device"].hardware;
+      return hardware.major === 4 && hardware.minor >= 1 && hardware.build >= 1;
     });
     /** Циклический запрос данных Info */
     (0,runtime_core_esm_bundler/* watch */.wB)(modelValue, val => {
@@ -3612,20 +3915,44 @@ var onboard = __webpack_require__(32280);
             setTimeout(() => startedScanner.value = true, 400);
           }
         }, {
-          title: t("btn.close"),
-          icon: "mdi-close"
+          title: t("btn.close")
         }]
+      });
+    };
+    /**
+     * Применить параметры устройства
+     * @param disableLedWork
+     * @param disableReverse
+     * @param disableRPosition
+     * @param disableAmpIllum
+     * @param disableVoltmeter
+     * @param calibrationOfVoltmeter
+     */
+    const onDeviceConfigApply = (disableLedWork, disableReverse, disableRPosition, disableAmpIllum, disableVoltmeter, calibrationOfVoltmeter) => {
+      store/* default */.A.commit("config/setDeviceConfig", {
+        disableLedWork,
+        disableReverse,
+        disableRPosition,
+        disableAmpIllum,
+        disableVoltmeter,
+        calibrationOfVoltmeter
       });
     };
     return {
       visible,
+      isLoadedConfig,
       isLoadedValue,
       modelDeviceInfo,
       visibleReset,
       startedScanner,
       visibleTest,
       showButtonTest,
-      onScanClick
+      deviceConfigVisible,
+      deviceConfig,
+      isVoltmeter,
+      isRPosition,
+      onScanClick,
+      onDeviceConfigApply
     };
   }
 });
@@ -3637,11 +3964,11 @@ var onboard = __webpack_require__(32280);
 
 
 ;
-const DeviceInfoDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(DeviceInfoDialogvue_type_script_lang_ts, [['render',DeviceInfoDialogvue_type_template_id_1e0a8822_ts_true_render]])
+const DeviceInfoDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(DeviceInfoDialogvue_type_script_lang_ts, [['render',DeviceInfoDialogvue_type_template_id_04bf17f9_ts_true_render]])
 
 /* harmony default export */ var DeviceInfoDialog = (DeviceInfoDialog_exports_);
 // EXTERNAL MODULE: ./src/components/dialogs/ChoosingCarModelDialog.vue + 3 modules
-var ChoosingCarModelDialog = __webpack_require__(33926);
+var ChoosingCarModelDialog = __webpack_require__(89813);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/AboutDialog.vue?vue&type=script&lang=ts
 
 
@@ -3731,10 +4058,10 @@ const pkg = __webpack_require__(8330);
 });
 ;// CONCATENATED MODULE: ./src/components/dialogs/AboutDialog.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/AboutDialog.vue?vue&type=style&index=0&id=0d6b5d4c&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/AboutDialog.vue?vue&type=style&index=0&id=0a06d07a&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/dialogs/AboutDialog.vue?vue&type=style&index=0&id=0d6b5d4c&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/components/dialogs/AboutDialog.vue?vue&type=style&index=0&id=0a06d07a&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/components/dialogs/AboutDialog.vue
 
@@ -3744,13 +4071,13 @@ const pkg = __webpack_require__(8330);
 ;
 
 
-const AboutDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(AboutDialogvue_type_script_lang_ts, [['render',render],['__scopeId',"data-v-0d6b5d4c"]])
+const AboutDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(AboutDialogvue_type_script_lang_ts, [['render',render],['__scopeId',"data-v-0a06d07a"]])
 
 /* harmony default export */ var AboutDialog = (AboutDialog_exports_);
 
 /***/ }),
 
-/***/ 33926:
+/***/ 89813:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -3771,7 +4098,7 @@ var VRow = __webpack_require__(56756);
 var VCol = __webpack_require__(35526);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSelect/VSelect.mjs + 1 modules
 var VSelect = __webpack_require__(20105);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/ChoosingCarModelDialog.vue?vue&type=template&id=abe88c2a&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/ChoosingCarModelDialog.vue?vue&type=template&id=35bc9cf6&ts=true
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
                                                             
@@ -3821,7 +4148,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }, 8, ["disabled"]), !$props.noClosed ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VBtn/* VBtn */.D, {
       key: 0,
       color: "primary",
-      "prepend-icon": "mdi-close",
       onClick: _cache[2] || (_cache[2] = $event => $setup.visible = false)
     }, {
       default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.eW)((0,shared_esm_bundler/* toDisplayString */.v_)(_ctx.$t("btn.close")), 1)]),
@@ -3918,7 +4244,7 @@ const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(ChoosingCarMode
 
 /***/ }),
 
-/***/ 1635:
+/***/ 51977:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -3939,7 +4265,7 @@ var VRow = __webpack_require__(56756);
 var VCol = __webpack_require__(35526);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSelect/VSelect.mjs + 1 modules
 var VSelect = __webpack_require__(20105);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/LocaleDialog.vue?vue&type=template&id=2028a80e&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/LocaleDialog.vue?vue&type=template&id=ffa273d8&ts=true
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
                                                             
@@ -3986,7 +4312,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       _: 1
     }, 8, ["onClick"]), (0,runtime_core_esm_bundler/* createVNode */.bF)(VBtn/* VBtn */.D, {
       color: "primary",
-      "prepend-icon": "mdi-close",
       onClick: _cache[1] || (_cache[1] = $event => $setup.visible = false)
     }, {
       default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.eW)((0,shared_esm_bundler/* toDisplayString */.v_)(_ctx.$t("btn.close")), 1)]),
@@ -4198,7 +4523,7 @@ const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(MessageDialogvu
 
 /***/ }),
 
-/***/ 57128:
+/***/ 38862:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -4219,7 +4544,7 @@ var VBtnGroup = __webpack_require__(8321);
 var VRow = __webpack_require__(56756);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VCol.mjs
 var VCol = __webpack_require__(35526);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=template&id=251e6b5f&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=template&id=57f84f73&scoped=true&ts=true
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
                                                       
@@ -4260,7 +4585,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             size: "x-large",
             onClick: _cache[1] || (_cache[1] = $event => $setup.send($options.TButtonExec.BUTTON_EXEC_ON_BOARD_BUTTON_INFO))
           }, {
-            default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.eW)((0,shared_esm_bundler/* toDisplayString */.v_)(_ctx.$t("onboardButtons.buttons.info")), 1)]),
+            default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.eW)((0,shared_esm_bundler/* toDisplayString */.v_)(_ctx.$t("onboardButtons.buttons." + (_ctx.$vuetify.display.xs ? "infoShort" : "info"))), 1)]),
             _: 1
           })]),
           _: 1
@@ -4280,7 +4605,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             onClick: _cache[2] || (_cache[2] = $event => $setup.send($options.TButtonExec.BUTTON_EXEC_ON_BOARD_LONG_PRESS_CLOCK)),
             disabled: $setup.disabled
           }, {
-            default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.eW)((0,shared_esm_bundler/* toDisplayString */.v_)(_ctx.$t("onboardButtons.buttons.holdClock")), 1)]),
+            default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.eW)((0,shared_esm_bundler/* toDisplayString */.v_)(_ctx.$t("onboardButtons.buttons." + (_ctx.$vuetify.display.xs ? "holdClockShort" : "holdClock"))), 1)]),
             _: 1
           }, 8, ["disabled"]), (0,runtime_core_esm_bundler/* createVNode */.bF)(VBtn/* VBtn */.D, {
             color: "secondary",
@@ -4288,7 +4613,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             onClick: _cache[3] || (_cache[3] = $event => $setup.send($options.TButtonExec.BUTTON_EXEC_ON_BOARD_LONG_PRESS_INFO)),
             disabled: $setup.disabled
           }, {
-            default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.eW)((0,shared_esm_bundler/* toDisplayString */.v_)(_ctx.$t("onboardButtons.buttons.holdInfo")), 1)]),
+            default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.eW)((0,shared_esm_bundler/* toDisplayString */.v_)(_ctx.$t("onboardButtons.buttons." + (_ctx.$vuetify.display.xs ? "holdInfoShort" : "holdInfo"))), 1)]),
             _: 1
           }, 8, ["disabled"])]),
           _: 1
@@ -4347,7 +4672,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })]),
     btns: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VBtn/* VBtn */.D, {
       color: "primary",
-      "prepend-icon": "mdi-close",
       onClick: _cache[8] || (_cache[8] = $event => $setup.visible = false)
     }, {
       default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createTextVNode */.eW)((0,shared_esm_bundler/* toDisplayString */.v_)(_ctx.$t("btn.close")), 1)]),
@@ -4445,10 +4769,10 @@ var buttons = __webpack_require__(84596);
 });
 ;// CONCATENATED MODULE: ./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=style&index=0&id=251e6b5f&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=style&index=0&id=57f84f73&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=style&index=0&id=251e6b5f&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/components/dialogs/OnboardButtonsDialog.vue?vue&type=style&index=0&id=57f84f73&lang=scss&scoped=true
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/dist/exportHelper.js
 var exportHelper = __webpack_require__(71241);
@@ -4460,7 +4784,7 @@ var exportHelper = __webpack_require__(71241);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(OnboardButtonsDialogvue_type_script_lang_ts, [['render',render],['__scopeId',"data-v-251e6b5f"]])
+const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(OnboardButtonsDialogvue_type_script_lang_ts, [['render',render],['__scopeId',"data-v-57f84f73"]])
 
 /* harmony default export */ var OnboardButtonsDialog = (__exports__);
 
@@ -4559,14 +4883,14 @@ var dist = __webpack_require__(14084);
 var vue_i18n = __webpack_require__(85851);
 // EXTERNAL MODULE: ./src/store/index.ts + 20 modules
 var store = __webpack_require__(35679);
-// EXTERNAL MODULE: ./src/router/index.ts + 98 modules
-var router = __webpack_require__(96768);
+// EXTERNAL MODULE: ./src/router/index.ts + 99 modules
+var router = __webpack_require__(3841);
 // EXTERNAL MODULE: ./src/api/canbus.ts + 2 modules
 var canbus = __webpack_require__(62774);
 // EXTERNAL MODULE: ./src/layout/components/DialogTemplate.vue + 6 modules
 var DialogTemplate = __webpack_require__(92089);
-// EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 7 modules
-var device = __webpack_require__(94027);
+// EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 8 modules
+var device = __webpack_require__(29801);
 // EXTERNAL MODULE: ./src/models/pjcan/version/index.ts + 1 modules
 var version = __webpack_require__(55800);
 // EXTERNAL MODULE: ./src/utils/time.ts
