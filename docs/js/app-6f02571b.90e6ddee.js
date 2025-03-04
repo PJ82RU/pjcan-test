@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkpjcan"] = self["webpackChunkpjcan"] || []).push([[834],{
 
-/***/ 85513:
+/***/ 75701:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -59,9 +59,9 @@ var flicking_esm = __webpack_require__(22180);
 var VRow = __webpack_require__(56756);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VCol.mjs
 var VCol = __webpack_require__(35526);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/InfoCard.vue?vue&type=template&id=d2d42b9e&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/InfoCard.vue?vue&type=template&id=5242db83&ts=true
 
-function InfoCardvue_type_template_id_d2d42b9e_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function InfoCardvue_type_template_id_5242db83_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_icon_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("icon-card-item");
                                                       
   const _component_input_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("input-card-item");
@@ -72,7 +72,7 @@ function InfoCardvue_type_template_id_d2d42b9e_ts_true_render(_ctx, _cache, $pro
   return (0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)(runtime_core_esm_bundler/* Fragment */.FK, null, [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_card, {
     class: "info-card",
     title: _ctx.$t('onboard.info.title'),
-    menu: $setup.carModel !== $options.TCarModel.CAR_MODEL_MAZDA_CX9_REST ? $setup.menu : undefined,
+    menu: $setup.isMenu ? $setup.menu : undefined,
     "onClick:menu": $setup.onMenuClick
   }, {
     body: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(VRow/* VRow */.L, null, {
@@ -116,9 +116,24 @@ function InfoCardvue_type_template_id_d2d42b9e_ts_true_render(_ctx, _cache, $pro
           disabled: !$setup.voltmeterViewLoaded
         }, null, 8, ["value", "title", "description", "nodata", "disabled"])]),
         _: 1
-      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BK || $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BL ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)(runtime_core_esm_bundler/* Fragment */.FK, {
+      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), $setup.isTemperature ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createElementBlock */.CE)(runtime_core_esm_bundler/* Fragment */.FK, {
         key: 1
-      }, [(0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
+      }, [$setup.isTemperatureIn ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VCol/* VCol */.B, {
+        key: 0,
+        cols: "12",
+        class: "pt-0 pb-0"
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_input_card_item, {
+          value: $setup.temperatureIn,
+          title: _ctx.$t('onboard.info.temperatureIn.title'),
+          description: _ctx.$t('onboard.info.temperatureIn.description'),
+          type: "temperature",
+          nodata: !$setup.temperatureValueLoaded,
+          disabled: !$setup.temperatureViewLoaded
+        }, null, 8, ["value", "title", "description", "nodata", "disabled"])]),
+        _: 1
+      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), $setup.isTemperatureOut ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VCol/* VCol */.B, {
+        key: 1,
         cols: "12",
         class: "pt-0 pb-0"
       }, {
@@ -127,11 +142,11 @@ function InfoCardvue_type_template_id_d2d42b9e_ts_true_render(_ctx, _cache, $pro
           title: _ctx.$t('onboard.info.temperatureOut.title'),
           description: _ctx.$t('onboard.info.temperatureOut.description'),
           type: "temperature",
-          nodata: !$setup.temperatureValueLoaded || $setup.temperatureOut > 99,
+          nodata: !$setup.temperatureValueLoaded,
           disabled: !$setup.temperatureViewLoaded
         }, null, 8, ["value", "title", "description", "nodata", "disabled"])]),
         _: 1
-      }), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
+      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), (0,runtime_core_esm_bundler/* createVNode */.bF)(VCol/* VCol */.B, {
         cols: "12",
         class: "pt-0 pb-0"
       }, {
@@ -158,8 +173,22 @@ function InfoCardvue_type_template_id_d2d42b9e_ts_true_render(_ctx, _cache, $pro
           disabled: !$setup.sensorViewLoaded
         }, null, 8, ["model-value", "title", "description", "nodata", "disabled"])]),
         _: 1
-      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BK ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VCol/* VCol */.B, {
+      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), $setup.isAmp ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VCol/* VCol */.B, {
         key: 3,
+        cols: "12",
+        class: "pt-0 pb-0"
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_switch_card_item, {
+          "model-value": $setup.amp,
+          title: _ctx.$t('onboard.info.amp.title'),
+          description: _ctx.$t('onboard.info.amp.description'),
+          color: "warning",
+          nodata: !$setup.sensorValueLoaded,
+          disabled: !$setup.sensorViewLoaded
+        }, null, 8, ["model-value", "title", "description", "nodata", "disabled"])]),
+        _: 1
+      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), $setup.isSeatbelt ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VCol/* VCol */.B, {
+        key: 4,
         cols: "12",
         class: "pt-0 pb-0"
       }, {
@@ -178,8 +207,8 @@ function InfoCardvue_type_template_id_d2d42b9e_ts_true_render(_ctx, _cache, $pro
           disabled: !$setup.sensorViewLoaded
         }, null, 8, ["model-value", "title", "description", "colorsTrue", "colorsFalse", "nodata", "disabled"])]),
         _: 1
-      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), $setup.carModel === $options.TCarModel.CAR_MODEL_MAZDA_3_BK ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VCol/* VCol */.B, {
-        key: 4,
+      })) : (0,runtime_core_esm_bundler/* createCommentVNode */.Q3)("", true), $setup.isSignal ? ((0,runtime_core_esm_bundler/* openBlock */.uX)(), (0,runtime_core_esm_bundler/* createBlock */.Wv)(VCol/* VCol */.B, {
+        key: 5,
         cols: "12",
         class: "pt-0 pb-0"
       }, {
@@ -225,7 +254,10 @@ var IconCardItem = __webpack_require__(58847);
 var ViewSettingDialog = __webpack_require__(12586);
 // EXTERNAL MODULE: ./src/models/pjcan/onboard/index.ts + 3 modules
 var onboard = __webpack_require__(32280);
+// EXTERNAL MODULE: ./src/models/pjcan/device/EDeviceType.ts
+var EDeviceType = __webpack_require__(55819);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/InfoCard.vue?vue&type=script&lang=ts
+
 
 
 
@@ -238,11 +270,6 @@ var onboard = __webpack_require__(32280);
 
 /* harmony default export */ var InfoCardvue_type_script_lang_ts = ({
   name: "InfoCard",
-  computed: {
-    TCarModel() {
-      return onboard/* TCarModel */.oB;
-    }
-  },
   components: {
     Card: Card/* default */.A,
     InputCardItem: InputCardItem/* default */.A,
@@ -262,20 +289,41 @@ var onboard = __webpack_require__(32280);
     const sensorViewLoaded = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["view/sensors"].isData);
     const temperatureViewLoaded = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["view/temperature"].isData);
     const isVoltmeter = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
-      const hardware = store/* default */.A.getters["value/device"].hardware;
-      return hardware.major === 4 && hardware.minor >= 1 && hardware.build <= 1;
+      const type = store/* default */.A.getters["value/device"].type;
+      return type >= EDeviceType/* EDeviceType */.U.PJCAN_41A;
     });
     const disableVoltmeter = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["config/device"].disableVoltmeter);
+    const isTemperature = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
+      const carModel = store/* default */.A.getters["config/carModel"];
+      return carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK || carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BL || carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7_REST;
+    });
+    const isTemperatureIn = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/temperature"].isIn);
+    const isTemperatureOut = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/temperature"].isOut);
     const isReverse = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
       const carModel = store/* default */.A.getters["config/carModel"];
       return carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK || carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BL || carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7 || carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7_REST || carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX9 || carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX9_REST;
     });
+    const isAmp = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
+      const carModel = store/* default */.A.getters["config/carModel"];
+      return carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7 || carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7_REST || carModel === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX9;
+    });
+    const isSeatbelt = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
+      return store/* default */.A.getters["config/carModel"] === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK;
+    });
+    const isSignal = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
+      return store/* default */.A.getters["config/carModel"] === onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK;
+    });
+    const isMenu = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
+      return store/* default */.A.getters["config/carModel"] !== onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX9_REST;
+    });
     const acc = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/sensors"].acc);
     const worktime = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/device"].worktime);
     const voltmeter = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/device"].voltmeter / 100);
-    const temperatureOut = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/temperature"].out / 10);
+    const temperatureIn = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/temperature"].in);
+    const temperatureOut = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/temperature"].out);
     const handbrake = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/sensors"].handbrake);
-    const reverse = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/sensors"].reverse);
+    const reverse = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/device"].stateReverse);
+    const amp = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/device"].stateAmpIllum);
     const seatbeltDriver = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/sensors"].seatbeltDriver);
     const seatbeltPassenger = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/sensors"].seatbeltPassenger);
     const signalLeft = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/sensors"].turnSignalLeft);
@@ -354,13 +402,22 @@ var onboard = __webpack_require__(32280);
       temperatureViewLoaded,
       isVoltmeter,
       disableVoltmeter,
+      isTemperature,
+      isTemperatureIn,
+      isTemperatureOut,
       isReverse,
+      isAmp,
+      isSeatbelt,
+      isSignal,
+      isMenu,
       acc,
       worktime,
       voltmeter,
+      temperatureIn,
       temperatureOut,
       handbrake,
       reverse,
+      amp,
       seatbeltDriver,
       seatbeltPassenger,
       signalLeft,
@@ -384,7 +441,7 @@ var exportHelper = __webpack_require__(71241);
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(InfoCardvue_type_script_lang_ts, [['render',InfoCardvue_type_template_id_d2d42b9e_ts_true_render]])
+const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(InfoCardvue_type_script_lang_ts, [['render',InfoCardvue_type_template_id_5242db83_ts_true_render]])
 
 /* harmony default export */ var InfoCard = (__exports__);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/EngineCard.vue?vue&type=template&id=508e229c&ts=true
@@ -2535,8 +2592,8 @@ var bose = __webpack_require__(89100);
 const BoseCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(BoseCardvue_type_script_lang_ts, [['render',BoseCardvue_type_template_id_b50974fc_ts_true_render]])
 
 /* harmony default export */ var BoseCard = (BoseCard_exports_);
-// EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 8 modules
-var device = __webpack_require__(29801);
+// EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 9 modules
+var device = __webpack_require__(88909);
 // EXTERNAL MODULE: ./src/models/pjcan/sensors/index.ts + 2 modules
 var sensors = __webpack_require__(57411);
 // EXTERNAL MODULE: ./src/models/pjcan/temperature/index.ts + 1 modules
@@ -2682,9 +2739,9 @@ var BaseModel = __webpack_require__(22575);
 const onboard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(onboardvue_type_script_lang_ts, [['render',render],['__scopeId',"data-v-3d37c00a"]])
 
 /* harmony default export */ var views_onboard = (onboard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/index.vue?vue&type=template&id=4e3aded4&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/index.vue?vue&type=template&id=7c69a096&scoped=true&ts=true
 
-function buttonsvue_type_template_id_4e3aded4_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function buttonsvue_type_template_id_7c69a096_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_settings_card = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("settings-card");
   const _component_flicking = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("flicking");
   const _component_button_edit_dialog = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("button-edit-dialog");
@@ -3383,7 +3440,8 @@ var head_unit = __webpack_require__(19661);
         // список функций Bose, который доступен только для моделей автомобилей CX
         excludeId.push(...[buttons/* TButtonExec */.su.BUTTON_EXEC_BOSE_ON, buttons/* TButtonExec */.su.BUTTON_EXEC_BOSE_AUDIO_PLT, buttons/* TButtonExec */.su.BUTTON_EXEC_BOSE_MUTE, buttons/* TButtonExec */.su.BUTTON_EXEC_BOSE_VOL_UP, buttons/* TButtonExec */.su.BUTTON_EXEC_BOSE_VOL_DOWN, buttons/* TButtonExec */.su.BUTTON_EXEC_BOSE_BALANCE_UP, buttons/* TButtonExec */.su.BUTTON_EXEC_BOSE_BALANCE_DOWN, buttons/* TButtonExec */.su.BUTTON_EXEC_BOSE_BASS_UP, buttons/* TButtonExec */.su.BUTTON_EXEC_BOSE_BASS_DOWN, buttons/* TButtonExec */.su.BUTTON_EXEC_BOSE_FADE_UP, buttons/* TButtonExec */.su.BUTTON_EXEC_BOSE_FADE_DOWN, buttons/* TButtonExec */.su.BUTTON_EXEC_BOSE_TREBLE_UP, buttons/* TButtonExec */.su.BUTTON_EXEC_BOSE_TREBLE_DOWN, buttons/* TButtonExec */.su.BUTTON_EXEC_BOSE_CENTER_POINT]);
       }
-      const list = tm("buttons.functions");
+      const version = store/* default */.A.getters["config/version"];
+      const list = tm("buttons.functions." + (version.major === 4 && version.minor >= 1 && version.build >= 5 ? "v4_1_5" : "default"));
       const result = [];
       for (const key in list) {
         const index = parseInt(key);
@@ -3484,10 +3542,10 @@ var head_unit = __webpack_require__(19661);
 });
 ;// CONCATENATED MODULE: ./src/views/buttons/index.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/index.vue?vue&type=style&index=0&id=4e3aded4&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/index.vue?vue&type=style&index=0&id=7c69a096&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/views/buttons/index.vue?vue&type=style&index=0&id=4e3aded4&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/views/buttons/index.vue?vue&type=style&index=0&id=7c69a096&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/views/buttons/index.vue
 
@@ -3497,7 +3555,7 @@ var head_unit = __webpack_require__(19661);
 ;
 
 
-const buttons_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(buttonsvue_type_script_lang_ts, [['render',buttonsvue_type_template_id_4e3aded4_scoped_true_ts_true_render],['__scopeId',"data-v-4e3aded4"]])
+const buttons_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(buttonsvue_type_script_lang_ts, [['render',buttonsvue_type_template_id_7c69a096_scoped_true_ts_true_render],['__scopeId',"data-v-7c69a096"]])
 
 /* harmony default export */ var views_buttons = (buttons_exports_);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/index.vue?vue&type=template&id=4a9a390a&scoped=true&ts=true
@@ -4702,11 +4760,27 @@ __webpack_require__.d(view_mutations_namespaceObject, {
   setDatetime: function() { return mutations_setDatetime; },
   setDoors: function() { return view_mutations_setDoors; },
   setEngine: function() { return view_mutations_setEngine; },
+  setEngineCoolant: function() { return setEngineCoolant; },
+  setEngineEnabled: function() { return setEngineEnabled; },
+  setEngineLoad: function() { return setEngineLoad; },
+  setEngineRPM: function() { return setEngineRPM; },
+  setEngineThrottle: function() { return setEngineThrottle; },
+  setEngineTotalCountRPM: function() { return setEngineTotalCountRPM; },
+  setEngineTotalWorktime: function() { return setEngineTotalWorktime; },
   setFuel: function() { return view_mutations_setFuel; },
+  setFuelAVG: function() { return setFuelAVG; },
+  setFuelCurrent: function() { return setFuelCurrent; },
   setHeadText: function() { return setHeadText; },
   setMovement: function() { return mutations_setMovement; },
+  setMovementRestWay: function() { return setMovementRestWay; },
+  setMovementSpeed: function() { return setMovementSpeed; },
+  setMovementSpeedAVG: function() { return setMovementSpeedAVG; },
   setOnboard: function() { return mutations_setOnboard; },
   setSensors: function() { return mutations_setSensors; },
+  setSensorsHandbrake: function() { return setSensorsHandbrake; },
+  setSensorsReverse: function() { return setSensorsReverse; },
+  setSensorsSeatbelt: function() { return setSensorsSeatbelt; },
+  setSensorsTurnSignal: function() { return setSensorsTurnSignal; },
   setTemperature: function() { return mutations_setTemperature; },
   setView: function() { return setView; },
   setVoltmeter: function() { return setVoltmeter; },
@@ -4742,7 +4816,7 @@ var onboard = __webpack_require__(32280);
 }, {
   name: "doors",
   enabled: true,
-  car: [onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BL]
+  car: [onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BK, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_3_BL, onboard/* TCarModel */.oB.CAR_MODEL_MAZDA_CX7_REST]
 }, {
   name: "climate",
   enabled: true,
@@ -5029,8 +5103,8 @@ const resetSW1 = ({
   mutations: mutations_namespaceObject,
   actions: actions_namespaceObject
 });
-// EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 8 modules
-var device = __webpack_require__(29801);
+// EXTERNAL MODULE: ./src/models/pjcan/device/index.ts + 9 modules
+var device = __webpack_require__(88909);
 // EXTERNAL MODULE: ./src/models/pjcan/head-unit/index.ts + 3 modules
 var head_unit = __webpack_require__(19661);
 // EXTERNAL MODULE: ./src/models/pjcan/buttons/index.ts + 7 modules
@@ -6200,6 +6274,27 @@ const view_mutations_setDoors = (state, data) => {
 const view_mutations_setEngine = (state, data) => {
   state.engine.set(data);
 };
+const setEngineEnabled = (state, data) => {
+  state.engine.enabled.set(data);
+};
+const setEngineTotalWorktime = (state, data) => {
+  state.engine.totalWorktime.set(data);
+};
+const setEngineTotalCountRPM = (state, data) => {
+  state.engine.totalCountRPM.set(data);
+};
+const setEngineCoolant = (state, data) => {
+  state.engine.coolant.set(data);
+};
+const setEngineRPM = (state, data) => {
+  state.engine.rpm.set(data);
+};
+const setEngineLoad = (state, data) => {
+  state.engine.load.set(data);
+};
+const setEngineThrottle = (state, data) => {
+  state.engine.throttle.set(data);
+};
 /**
  * Записать значения отображения расхода
  * @param {any} state
@@ -6207,6 +6302,12 @@ const view_mutations_setEngine = (state, data) => {
  */
 const view_mutations_setFuel = (state, data) => {
   state.fuel.set(data);
+};
+const setFuelCurrent = (state, data) => {
+  state.fuel.current.set(data);
+};
+const setFuelAVG = (state, data) => {
+  state.fuel.avg.set(data);
 };
 /**
  * Записать значения отображения движения
@@ -6216,6 +6317,15 @@ const view_mutations_setFuel = (state, data) => {
 const mutations_setMovement = (state, data) => {
   state.movement.set(data);
 };
+const setMovementSpeed = (state, data) => {
+  state.movement.speed.set(data);
+};
+const setMovementSpeedAVG = (state, data) => {
+  state.movement.speedAVG.set(data);
+};
+const setMovementRestWay = (state, data) => {
+  state.movement.restWay.set(data);
+};
 /**
  * Записать значения отображения датчиков
  * @param {any} state
@@ -6223,6 +6333,18 @@ const mutations_setMovement = (state, data) => {
  */
 const mutations_setSensors = (state, data) => {
   state.sensors.set(data);
+};
+const setSensorsHandbrake = (state, data) => {
+  state.sensors.handbrake.set(data);
+};
+const setSensorsReverse = (state, data) => {
+  state.sensors.reverse.set(data);
+};
+const setSensorsSeatbelt = (state, data) => {
+  state.sensors.seatbelt.set(data);
+};
+const setSensorsTurnSignal = (state, data) => {
+  state.sensors.turnSignal.set(data);
 };
 /**
  * Записать значения отображения температуры
