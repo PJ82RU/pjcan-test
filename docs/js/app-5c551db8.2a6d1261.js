@@ -10,7 +10,7 @@ var runtime_dom_esm_bundler = __webpack_require__(45130);
 // EXTERNAL MODULE: ./src/App.vue + 3 modules
 var App = __webpack_require__(37030);
 // EXTERNAL MODULE: ./src/router/index.ts + 99 modules
-var router = __webpack_require__(75701);
+var router = __webpack_require__(91004);
 // EXTERNAL MODULE: ./src/store/index.ts + 20 modules
 var store = __webpack_require__(35679);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/styles/main.css
@@ -462,7 +462,8 @@ var TButtonExec;
   TButtonExec[TButtonExec["BUTTON_EXEC_BOSE_FADE_DOWN"] = 38] = "BUTTON_EXEC_BOSE_FADE_DOWN";
   TButtonExec[TButtonExec["BUTTON_EXEC_BOSE_TREBLE_UP"] = 39] = "BUTTON_EXEC_BOSE_TREBLE_UP";
   TButtonExec[TButtonExec["BUTTON_EXEC_BOSE_TREBLE_DOWN"] = 40] = "BUTTON_EXEC_BOSE_TREBLE_DOWN";
-  TButtonExec[TButtonExec["BUTTON_EXEC_BOSE_CENTER_POINT"] = 41] = "BUTTON_EXEC_BOSE_CENTER_POINT"; // BOSE: переключение режимов Center Point (циклично)
+  TButtonExec[TButtonExec["BUTTON_EXEC_BOSE_CENTER_POINT"] = 41] = "BUTTON_EXEC_BOSE_CENTER_POINT";
+  TButtonExec[TButtonExec["BUTTON_EXEC_HEAD_UNIT_PAUSE_PLAY"] = 42] = "BUTTON_EXEC_HEAD_UNIT_PAUSE_PLAY"; // ГУ: Пауза/играть
 })(TButtonExec || (TButtonExec = {}));
 ;// CONCATENATED MODULE: ./src/models/pjcan/buttons/SW3Config.ts
 
