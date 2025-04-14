@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkpjcan"] = self["webpackChunkpjcan"] || []).push([[834],{
 
-/***/ 91004:
+/***/ 26801:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -2739,9 +2739,9 @@ var BaseModel = __webpack_require__(22575);
 const onboard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(onboardvue_type_script_lang_ts, [['render',render],['__scopeId',"data-v-3d37c00a"]])
 
 /* harmony default export */ var views_onboard = (onboard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/index.vue?vue&type=template&id=7a5b5dc2&scoped=true&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/index.vue?vue&type=template&id=38b6b135&scoped=true&ts=true
 
-function buttonsvue_type_template_id_7a5b5dc2_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function buttonsvue_type_template_id_38b6b135_scoped_true_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_settings_card = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("settings-card");
   const _component_flicking = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("flicking");
   const _component_button_edit_dialog = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("button-edit-dialog");
@@ -2771,7 +2771,7 @@ function buttonsvue_type_template_id_7a5b5dc2_scoped_true_ts_true_render(_ctx, _
         "onUpdate:extended": $event => $setup.onUpdateExtended(cardButton.id, $event),
         "onUpdate:exec": $event => $setup.onUpdateExec(cardButton.id, $event),
         "onUpdate:execMode": $event => $setup.onUpdateExecMode(cardButton.id, $event),
-        onClick: $event => $setup.onButtonEdit(cardButton)
+        onClick: $event => $setup.onButtonEdit(cardButton, index)
       }, null, 8, ["class", "title", "icon", "extended", "id", "exec", "exec-mode", "list-of-functions", "visible-extended", "onUpdate:extended", "onUpdate:exec", "onUpdate:execMode", "onClick"])], 2);
     }), 128))]),
     _: 1
@@ -3475,12 +3475,20 @@ var head_unit = __webpack_require__(19661);
       return exec.map(x => funcs.findIndex(val => val.value === x) >= 0 ? x : 0);
     };
     const selected = (0,reactivity_esm_bundler/* ref */.KR)({});
+    let lastIndex = -1;
+    (0,runtime_core_esm_bundler/* watch */.wB)(listOfResistance, () => {
+      if (buttonEditVisible.value && lastIndex >= 0 && lastIndex < cardButtons.value.length) {
+        selected.value = cardButtons.value[lastIndex];
+      }
+    });
     /**
      * Открыть окно редактирования кнопки
      * @param {ISW1Card} cardButton Значения кнопки
+     * @param {Number} index Индекс
      */
-    const onButtonEdit = cardButton => {
+    const onButtonEdit = (cardButton, index) => {
       selected.value = cardButton;
+      lastIndex = index;
       store/* default */.A.commit("value/setSW1Resistance");
       buttonEditVisible.value = true;
     };
@@ -3546,10 +3554,10 @@ var head_unit = __webpack_require__(19661);
 });
 ;// CONCATENATED MODULE: ./src/views/buttons/index.vue?vue&type=script&lang=ts
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/index.vue?vue&type=style&index=0&id=7a5b5dc2&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/buttons/index.vue?vue&type=style&index=0&id=38b6b135&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/views/buttons/index.vue?vue&type=style&index=0&id=7a5b5dc2&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/views/buttons/index.vue?vue&type=style&index=0&id=38b6b135&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/views/buttons/index.vue
 
@@ -3559,7 +3567,7 @@ var head_unit = __webpack_require__(19661);
 ;
 
 
-const buttons_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(buttonsvue_type_script_lang_ts, [['render',buttonsvue_type_template_id_7a5b5dc2_scoped_true_ts_true_render],['__scopeId',"data-v-7a5b5dc2"]])
+const buttons_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(buttonsvue_type_script_lang_ts, [['render',buttonsvue_type_template_id_38b6b135_scoped_true_ts_true_render],['__scopeId',"data-v-38b6b135"]])
 
 /* harmony default export */ var views_buttons = (buttons_exports_);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/options/index.vue?vue&type=template&id=4a9a390a&scoped=true&ts=true
