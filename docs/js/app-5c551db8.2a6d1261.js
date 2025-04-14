@@ -8,9 +8,9 @@
 // EXTERNAL MODULE: ./node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js
 var runtime_dom_esm_bundler = __webpack_require__(45130);
 // EXTERNAL MODULE: ./src/App.vue + 3 modules
-var App = __webpack_require__(36757);
+var App = __webpack_require__(37030);
 // EXTERNAL MODULE: ./src/router/index.ts + 99 modules
-var router = __webpack_require__(24906);
+var router = __webpack_require__(91004);
 // EXTERNAL MODULE: ./src/store/index.ts + 20 modules
 var store = __webpack_require__(35679);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/styles/main.css
@@ -750,98 +750,24 @@ const API_CLIMATE_VIEW_EXEC = 0x73;
 const API_CLIMATE_VIEW_EVENT = "ClimateView";
 /** Модель значений климата */
 class ClimateValue extends base/* BaseModel */.t {
-  /**
-   * Обновить версию структуры
-   * @param {IVersion} version Версия протокола
-   */
-  static update(version) {
-    if (version?.major === 4 && (version.minor === 1 && version.build >= 6 || version.minor > 1)) {
-      const structZone = {
-        airFlowLegs: bluetooth/* BluetoothStruct */.iy.bit(),
-        airFlowBody: bluetooth/* BluetoothStruct */.iy.bit(),
-        airFlowUp: bluetooth/* BluetoothStruct */.iy.bit(),
-        heatedSeat: bluetooth/* BluetoothStruct */.iy.uint8(),
-        airRate: bluetooth/* BluetoothStruct */.iy.uint8(),
-        temperature: bluetooth/* BluetoothStruct */.iy.uint8()
-      };
-      ClimateValue.struct = {
-        power: bluetooth/* BluetoothStruct */.iy.bit(),
-        automode: bluetooth/* BluetoothStruct */.iy.bit(),
-        dual: bluetooth/* BluetoothStruct */.iy.bit(),
-        ac: bluetooth/* BluetoothStruct */.iy.bit(),
-        eco: bluetooth/* BluetoothStruct */.iy.bit(),
-        airAuto: bluetooth/* BluetoothStruct */.iy.bit(),
-        airIntake: bluetooth/* BluetoothStruct */.iy.bit(),
-        heatedFrontWindow: bluetooth/* BluetoothStruct */.iy.bit(),
-        heatedRearWindow: bluetooth/* BluetoothStruct */.iy.bit(),
-        temperatureCelsius: bluetooth/* BluetoothStruct */.iy.bit(),
-        driver: bluetooth/* BluetoothStruct */.iy.struct(structZone),
-        passenger: bluetooth/* BluetoothStruct */.iy.struct(structZone)
-      };
-      ClimateValue.size = 12;
-    } else {
-      ClimateValue.struct = {
-        power: bluetooth/* BluetoothStruct */.iy.bit(),
-        automode: bluetooth/* BluetoothStruct */.iy.bit(),
-        ac: bluetooth/* BluetoothStruct */.iy.bit(),
-        eco: bluetooth/* BluetoothStruct */.iy.bit(),
-        _airDLegs: bluetooth/* BluetoothStruct */.iy.bit(),
-        _airDBody: bluetooth/* BluetoothStruct */.iy.bit(),
-        _airDWindshield: bluetooth/* BluetoothStruct */.iy.bit(),
-        _dBackWin: bluetooth/* BluetoothStruct */.iy.bit(),
-        _airInside: bluetooth/* BluetoothStruct */.iy.bit(),
-        _airOutside: bluetooth/* BluetoothStruct */.iy.bit(),
-        _temperatureSettable: bluetooth/* BluetoothStruct */.iy.bit(),
-        _temperatureAmb: bluetooth/* BluetoothStruct */.iy.bit(),
-        temperatureCelsius: bluetooth/* BluetoothStruct */.iy.bit(),
-        _temperatureFahrenheit: bluetooth/* BluetoothStruct */.iy.bit(),
-        _airRate: bluetooth/* BluetoothStruct */.iy.uint8(),
-        _temperature: bluetooth/* BluetoothStruct */.iy.uint16()
-      };
-      ClimateValue.size = 5;
-    }
-  }
   constructor(data) {
     super(API_CLIMATE_VALUE_EXEC);
-    (0,defineProperty/* default */.A)(this, "power", false);
+    (0,defineProperty/* default */.A)(this, "on", false);
     (0,defineProperty/* default */.A)(this, "automode", false);
-    (0,defineProperty/* default */.A)(this, "dual", false);
     (0,defineProperty/* default */.A)(this, "ac", false);
     (0,defineProperty/* default */.A)(this, "eco", false);
-    (0,defineProperty/* default */.A)(this, "airAuto", false);
-    (0,defineProperty/* default */.A)(this, "airIntake", false);
-    (0,defineProperty/* default */.A)(this, "heatedFrontWindow", false);
-    (0,defineProperty/* default */.A)(this, "heatedRearWindow", false);
+    (0,defineProperty/* default */.A)(this, "airDLegs", false);
+    (0,defineProperty/* default */.A)(this, "airDBody", false);
+    (0,defineProperty/* default */.A)(this, "airDWindshield", false);
+    (0,defineProperty/* default */.A)(this, "dBackWin", false);
+    (0,defineProperty/* default */.A)(this, "airInside", false);
+    (0,defineProperty/* default */.A)(this, "airOutside", false);
+    (0,defineProperty/* default */.A)(this, "temperatureSettable", false);
+    (0,defineProperty/* default */.A)(this, "temperatureAmb", false);
     (0,defineProperty/* default */.A)(this, "temperatureCelsius", false);
-    (0,defineProperty/* default */.A)(this, "driver", {
-      airFlowLegs: false,
-      airFlowBody: false,
-      airFlowUp: false,
-      heatedSeat: 0,
-      airRate: 0,
-      temperature: 0
-    });
-    (0,defineProperty/* default */.A)(this, "passenger", {
-      airFlowLegs: false,
-      airFlowBody: false,
-      airFlowUp: false,
-      heatedSeat: 0,
-      airRate: 0,
-      temperature: 0
-    });
-    // переменные для совместимости
-    (0,defineProperty/* default */.A)(this, "_airDLegs", false);
-    (0,defineProperty/* default */.A)(this, "_airDBody", false);
-    (0,defineProperty/* default */.A)(this, "_airDWindshield", false);
-    (0,defineProperty/* default */.A)(this, "_dBackWin", false);
-    (0,defineProperty/* default */.A)(this, "_airInside", false);
-    (0,defineProperty/* default */.A)(this, "_airOutside", false);
-    (0,defineProperty/* default */.A)(this, "_temperatureSettable", false);
-    (0,defineProperty/* default */.A)(this, "_temperatureAmb", false);
-    (0,defineProperty/* default */.A)(this, "_temperatureFahrenheit", false);
-    (0,defineProperty/* default */.A)(this, "_airRate", 0);
-    (0,defineProperty/* default */.A)(this, "_temperature", 0);
-    (0,defineProperty/* default */.A)(this, "_nop", 0);
+    (0,defineProperty/* default */.A)(this, "temperatureFahrenheit", false);
+    (0,defineProperty/* default */.A)(this, "airRate", 0);
+    (0,defineProperty/* default */.A)(this, "temperature", 0);
     if (data) this.set(data);
   }
   /**
@@ -849,25 +775,32 @@ class ClimateValue extends base/* BaseModel */.t {
    * @param {DataView} buf Буфер данных
    */
   set(buf) {
-    const result = this._set(this, this.exec, ClimateValue.size, new bluetooth/* BluetoothStruct */.iy(ClimateValue.struct), buf);
-    if (result && ClimateValue.size === 5) {
-      this.driver.airFlowLegs = this._airDLegs;
-      this.driver.airFlowBody = this._airDBody;
-      this.heatedFrontWindow = this._airDWindshield;
-      this.heatedRearWindow = this._dBackWin;
-      this.airIntake = this._airInside;
-      this.driver.airRate = this._airRate;
-      this.driver.temperature = this._temperature;
-    }
-    return result;
+    return this._set(this, this.exec, ClimateValue.size, new bluetooth/* BluetoothStruct */.iy(ClimateValue.struct), buf);
   }
   /** Чтение данных */
   get() {
     return this._get(this, this.exec);
   }
 }
-(0,defineProperty/* default */.A)(ClimateValue, "struct", void 0);
-(0,defineProperty/* default */.A)(ClimateValue, "size", void 0);
+(0,defineProperty/* default */.A)(ClimateValue, "struct", {
+  on: bluetooth/* BluetoothStruct */.iy.bit(),
+  automode: bluetooth/* BluetoothStruct */.iy.bit(),
+  ac: bluetooth/* BluetoothStruct */.iy.bit(),
+  eco: bluetooth/* BluetoothStruct */.iy.bit(),
+  airDLegs: bluetooth/* BluetoothStruct */.iy.bit(),
+  airDBody: bluetooth/* BluetoothStruct */.iy.bit(),
+  airDWindshield: bluetooth/* BluetoothStruct */.iy.bit(),
+  dBackWin: bluetooth/* BluetoothStruct */.iy.bit(),
+  airInside: bluetooth/* BluetoothStruct */.iy.bit(),
+  airOutside: bluetooth/* BluetoothStruct */.iy.bit(),
+  temperatureSettable: bluetooth/* BluetoothStruct */.iy.bit(),
+  temperatureAmb: bluetooth/* BluetoothStruct */.iy.bit(),
+  temperatureCelsius: bluetooth/* BluetoothStruct */.iy.bit(),
+  temperatureFahrenheit: bluetooth/* BluetoothStruct */.iy.bit(),
+  airRate: bluetooth/* BluetoothStruct */.iy.uint8(),
+  temperature: bluetooth/* BluetoothStruct */.iy.uint16()
+});
+(0,defineProperty/* default */.A)(ClimateValue, "size", 5);
 ;// CONCATENATED MODULE: ./src/models/pjcan/climate/index.ts
 
 
@@ -2140,7 +2073,7 @@ class HeadUnitValue extends base/* BaseModel */.t {
    * @param {IVersion} version Версия протокола
    */
   static update(version) {
-    if (version?.major === 4 && (version.minor === 1 && version.build >= 5 || version.minor > 1)) {
+    if (version && version.major >= 4 && version.minor >= 1 && version.build >= 5) {
       HeadUnitValue.struct = {
         clock: bluetooth/* BluetoothStruct */.iy.struct({
           hour: bluetooth/* BluetoothStruct */.iy.uint8(),
@@ -2618,7 +2551,7 @@ class TemperatureValue extends base/* BaseModel */.t {
    * @param {IVersion} version Версия протокола
    */
   static update(version) {
-    if (version?.major === 4 && (version.minor === 1 && version.build >= 2 || version.minor > 1)) {
+    if (version && version.major >= 4 && version.minor >= 1 && version.build >= 2) {
       TemperatureValue.struct = {
         isIn: bluetooth/* BluetoothStruct */.iy.bit(),
         isOut: bluetooth/* BluetoothStruct */.iy.bit(),

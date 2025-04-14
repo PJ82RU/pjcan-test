@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkpjcan"] = self["webpackChunkpjcan"] || []).push([[834],{
 
-/***/ 24906:
+/***/ 91004:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -1822,9 +1822,9 @@ const DoorsConfigDialog_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(
 const DoorsCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(DoorsCardvue_type_script_lang_ts, [['render',DoorsCardvue_type_template_id_2e29c216_ts_true_render]])
 
 /* harmony default export */ var DoorsCard = (DoorsCard_exports_);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/ClimateCard.vue?vue&type=template&id=4ba99a0c&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/ClimateCard.vue?vue&type=template&id=52fa2169&ts=true
 
-function ClimateCardvue_type_template_id_4ba99a0c_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function ClimateCardvue_type_template_id_52fa2169_ts_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_icon_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("icon-card-item");
                                                       
   const _component_switch_card_item = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("switch-card-item");
@@ -1844,7 +1844,7 @@ function ClimateCardvue_type_template_id_4ba99a0c_ts_true_render(_ctx, _cache, $
         class: "pb-0"
       }, {
         default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_icon_card_item, {
-          "model-value": [$setup.power],
+          "model-value": [$setup.enabled],
           title: _ctx.$t('onboard.climate.enabled.title'),
           description: _ctx.$t('onboard.climate.enabled.description'),
           "icon-name": ['climate'],
@@ -1897,7 +1897,7 @@ function ClimateCardvue_type_template_id_4ba99a0c_ts_true_render(_ctx, _cache, $
         class: "pt-0 pb-0"
       }, {
         default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_icon_card_item, {
-          "model-value": [$setup.power],
+          "model-value": [$setup.airEnabled],
           title: _ctx.$t('onboard.climate.air.title'),
           description: _ctx.$t('onboard.climate.air.description'),
           "icon-name": [$setup.airIconName],
@@ -1910,7 +1910,7 @@ function ClimateCardvue_type_template_id_4ba99a0c_ts_true_render(_ctx, _cache, $
         class: "pt-0 pb-0"
       }, {
         default: (0,runtime_core_esm_bundler/* withCtx */.k6)(() => [(0,runtime_core_esm_bundler/* createVNode */.bF)(_component_icon_card_item, {
-          "model-value": [$setup.heatedFrontWindow, $setup.blowEnabled],
+          "model-value": [$setup.blowWindshield, $setup.blowEnabled],
           title: _ctx.$t('onboard.climate.blow.title'),
           description: _ctx.$t('onboard.climate.blow.description'),
           "icon-name": ['blow-windshield', $setup.blowName],
@@ -1961,27 +1961,31 @@ function ClimateCardvue_type_template_id_4ba99a0c_ts_true_render(_ctx, _cache, $
     } = (0,vue_i18n/* useI18n */.s9)();
     const climateValueLoaded = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/climate"].isData);
     const climateViewLoaded = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["view/climate"].isData);
-    const power = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/climate"].power);
+    const enabled = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/climate"].on);
     const rotation = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
-      const res = store/* default */.A.getters["value/climate"].driver;
+      const res = store/* default */.A.getters["value/climate"];
       return res.airRate > 0 && res.airRate < 8 ? 1 - res.airRate / 10 : 0;
     });
     const autoMode = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/climate"].automode);
     const ac = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/climate"].ac);
     const temperature = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
-      const res = store/* default */.A.getters["value/climate"].driver;
+      const res = store/* default */.A.getters["value/climate"];
       return res.temperature > 0 ? res.temperature / 10 : 0;
     });
-    const airIconName = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/climate"].airIntake ? "air-inside" : "air-outside");
+    const airEnabled = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
+      const res = store/* default */.A.getters["value/climate"];
+      return res.airInside || res.airOutside;
+    });
+    const airIconName = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/climate"].airInside ? "air-inside" : "air-outside");
     const blowEnabled = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
-      const res = store/* default */.A.getters["value/climate"].driver;
-      return res.airFlowBody || res.airFlowLegs;
+      const res = store/* default */.A.getters["value/climate"];
+      return res.airDBody || res.airDLegs;
     });
     const blowName = (0,runtime_core_esm_bundler/* computed */.EW)(() => {
-      const res = store/* default */.A.getters["value/climate"].driver;
-      return res.airFlowLegs && res.airFlowBody ? "blow-feet-body" : res.airFlowLegs ? "blow-feet" : res.airFlowBody ? "blow-body" : "blow-none";
+      const res = store/* default */.A.getters["value/climate"];
+      return res.airDLegs && res.airDBody ? "blow-feet-body" : res.airDLegs ? "blow-feet" : res.airDBody ? "blow-body" : "blow-none";
     });
-    const heatedFrontWindow = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/climate"].heatedFrontWindow);
+    const blowWindshield = (0,runtime_core_esm_bundler/* computed */.EW)(() => store/* default */.A.getters["value/climate"].airDWindshield);
     const menu = (0,runtime_core_esm_bundler/* computed */.EW)(() => [{
       title: t("onboard.climate.menu"),
       view: store/* default */.A.getters["view/climate"],
@@ -2007,15 +2011,16 @@ function ClimateCardvue_type_template_id_4ba99a0c_ts_true_render(_ctx, _cache, $
     return {
       climateValueLoaded,
       climateViewLoaded,
-      power,
+      enabled,
       rotation,
       autoMode,
       ac,
       temperature,
+      airEnabled,
       airIconName,
       blowEnabled,
       blowName,
-      heatedFrontWindow,
+      blowWindshield,
       menu,
       menuVisible,
       menuSelected,
@@ -2032,7 +2037,7 @@ function ClimateCardvue_type_template_id_4ba99a0c_ts_true_render(_ctx, _cache, $
 
 
 ;
-const ClimateCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(ClimateCardvue_type_script_lang_ts, [['render',ClimateCardvue_type_template_id_4ba99a0c_ts_true_render]])
+const ClimateCard_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(ClimateCardvue_type_script_lang_ts, [['render',ClimateCardvue_type_template_id_52fa2169_ts_true_render]])
 
 /* harmony default export */ var ClimateCard = (ClimateCard_exports_);
 ;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/onboard/components/BoseCard.vue?vue&type=template&id=b50974fc&ts=true

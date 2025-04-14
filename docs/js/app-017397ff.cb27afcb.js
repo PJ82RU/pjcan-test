@@ -1087,7 +1087,7 @@ const setScanCan = data => {
 
 /***/ }),
 
-/***/ 36757:
+/***/ 37030:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1099,7 +1099,7 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: ./node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js
 var runtime_core_esm_bundler = __webpack_require__(56768);
-;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=template&id=81ea4512&ts=true
+;// CONCATENATED MODULE: ./node_modules/webpack-plugin-vuetify/dist/scriptLoader.cjs??ruleSet[1].rules[0].use!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-41.use[2]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[5]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=template&id=5e668bcf&ts=true
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_base_layout = (0,runtime_core_esm_bundler/* resolveComponent */.g2)("base-layout");
@@ -1190,7 +1190,6 @@ var datetime = __webpack_require__(9917);
     canbus/* default */.A.addListener(version/* API_VERSION_EVENT */.dD, data => {
       store/* default */.A.commit("config/setVersion", data);
       const version = store/* default */.A.getters["config/version"];
-      climate/* ClimateValue */.lA.update(version);
       head_unit/* HeadUnitValue */.Ox.update(version);
       temperature/* TemperatureValue */.sY.update(version);
     });
